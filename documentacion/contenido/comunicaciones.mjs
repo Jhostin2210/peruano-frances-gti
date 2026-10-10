@@ -358,9 +358,9 @@ export const INT07 = DOC({
       ul(
         `Solo ${R0.contactados.length} de ${INTERESADOS.length} interesados han tenido una comunicación directa; ${sinComunicacion.length} todavía no.`,
         "La segunda entrevista (encargado de TI y gestora de Cubicol) está pendiente desde mayo de 2026. Es la comunicación más urgente del Sprint 1.",
-        "Con los padres y apoderados no ha habido ninguna comunicación del proyecto. Debe haberla antes de cargar datos reales.",
+        "Con los padres y apoderados no ha habido ninguna comunicación del proyecto. El comunicado está programado para el 11/12/2026, antes del cierre del año escolar y de cargar datos reales.",
         "No existe aún un canal acordado para las alertas por correo (SC-09).",
-        "La reunión de inicio con la Dirección todavía no tiene día fijado dentro de la semana del 12/10/2026.",
+        "La reunión de inicio está programada para el 12/10/2026 y todavía falta la confirmación de la Dirección.",
       ),
     ]),
     sec("6. Acciones", [
@@ -368,7 +368,7 @@ export const INT07 = DOC({
         ["Acción", "Responsable", "Fecha límite"],
         [58, 22, 20],
         [
-          ["Fijar con la Dirección el día de la reunión de inicio.", R.jhostin, "13/10/2026"],
+          ["Confirmar con la Dirección la reunión de inicio del 12/10/2026.", R.jhostin, "12/10/2026"],
           ["Coordinar la segunda entrevista con la gestora de Cubicol y el encargado de TI.", R.jadira, "23/10/2026"],
           ["Pedir a la Dirección la lista de correos autorizados de los docentes.", R.jadira, "06/11/2026"],
           ["Redactar el borrador del comunicado a los apoderados para revisión de la Dirección.", R.jhostin, "04/12/2026"],

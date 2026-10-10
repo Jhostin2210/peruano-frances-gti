@@ -1826,7 +1826,7 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "nota",
       "tipo": "aviso",
-      "x": "Documento emitido para firma el 10/10/2026. A esa fecha no cuenta con firmas; la reunión de inicio con la Dirección está prevista para la semana del 12/10/2026."
+      "x": "Documento emitido para firma el 10/10/2026. A esa fecha no cuenta con firmas; la reunión de inicio con la Dirección está programada para el 12/10/2026."
      },
      {
       "t": "firmas",
@@ -1838,10 +1838,6 @@ export const DOCUMENTOS: DocDef[] = [
        {
         "nombre": "Jhostin J. Galarza Camarena",
         "rol": "Director del proyecto"
-       },
-       {
-        "nombre": "Mg. MBA Antonio Arqque Pantigozo",
-        "rol": "Docente asesor (V.º B.º)"
        }
       ]
      }
@@ -7501,25 +7497,25 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Semana del 12/10/2026",
+        "12/10/2026",
         "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos.",
         "I-01, I-02, I-03",
         "Jhostin Galarza"
        ],
        [
-        "Hasta el 23/10/2026",
+        "20/10/2026",
         "Segunda entrevista y acuerdo sobre las exportaciones de datos.",
         "I-07, I-08",
         "Jadira Vasquez"
        ],
        [
-        "Semana 3 (26/10 al 30/10/2026)",
+        "28/10/2026",
         "Taller de validación de variables.",
         "I-05, I-06",
         "Helber Perez"
        ],
        [
-        "Semana 3 o 4",
+        "03/11/2026",
         "Entrevista sobre el registro de incidencias.",
         "I-04",
         "Jadira Vasquez"
@@ -7531,7 +7527,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Equipo del proyecto"
        ],
        [
-        "Antes del Sprint 5",
+        "11/12/2026",
         "Comunicado a los apoderados sobre el proyecto y los datos.",
         "I-11",
         "Dirección"
@@ -8307,7 +8303,7 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Semana del 12/10/2026",
+        "12/10/2026",
         "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
         "I-01, I-02, I-03",
         "Jhostin Galarza",
@@ -8317,7 +8313,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Semana del 12/10/2026",
+        "16/10/2026",
         "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
         "I-13",
         "Equipo del proyecto",
@@ -8327,7 +8323,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Hasta el 23/10/2026",
+        "20/10/2026",
         "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
         "I-07, I-08",
         "Jadira Vasquez",
@@ -8337,7 +8333,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Semana del 19/10/2026",
+        "23/10/2026",
         "Avance semanal al docente asesor",
         "I-13",
         "Equipo del proyecto",
@@ -8347,7 +8343,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Semana del 26/10/2026",
+        "28/10/2026",
         "Taller de validación de las variables del modelo",
         "I-05, I-06",
         "Helber Perez",
@@ -8357,7 +8353,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Semana del 26/10/2026",
+        "30/10/2026",
         "Avance semanal al docente asesor",
         "I-13",
         "Equipo del proyecto",
@@ -8367,7 +8363,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Semana 3 o 4",
+        "03/11/2026",
         "Entrevista sobre el registro de incidencias",
         "I-04",
         "Jadira Vasquez",
@@ -8397,6 +8393,16 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
+        "11/12/2026",
+        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
+        "I-11",
+        "Dirección; redacta el equipo",
+        {
+         "x": "3",
+         "align": "center"
+        }
+       ],
+       [
         "30/12/2026",
         "Revisión del Sprint 3 e informe de desempeño: modelo validado",
         "I-01, I-03, I-13",
@@ -8407,7 +8413,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Durante el Sprint 4",
+        "20/01/2027",
         "Convocatoria a tres docentes tutores para el piloto de marzo",
         "I-05, I-03",
         "Jhostin Galarza",
@@ -8427,16 +8433,6 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Antes del Sprint 5",
-        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
-        "I-11",
-        "Dirección; redacta el equipo",
-        {
-         "x": "4",
-         "align": "center"
-        }
-       ],
-       [
         "24/03/2027",
         "Revisión del Sprint 5 e informe de desempeño: resultado de las pruebas y del piloto",
         "I-01, I-03, I-13",
@@ -8447,7 +8443,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Semana del 12/04/2027",
+        "14/04/2027",
         "Capacitación de dos horas a tutores y coordinadores, y entrega de manuales",
         "I-05, I-03, I-08",
         "Jhostin Galarza",
@@ -8980,7 +8976,7 @@ export const DOCUMENTOS: DocDef[] = [
       "filas": [
        [
         "C-07",
-        "Semana del 12/10/2026",
+        "12/10/2026",
         "Reunión",
         "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
         "Jhostin Galarza",
@@ -9000,7 +8996,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-08",
-        "Semana del 12/10/2026",
+        "16/10/2026",
         "Avance académico",
         "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
         "Equipo del proyecto",
@@ -9018,7 +9014,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-09",
-        "Hasta el 23/10/2026",
+        "20/10/2026",
         "Entrevista",
         "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
         "Jadira Vasquez",
@@ -9037,7 +9033,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-10",
-        "Semana del 19/10/2026",
+        "23/10/2026",
         "Avance académico",
         "Avance semanal al docente asesor",
         "Equipo del proyecto",
@@ -9055,7 +9051,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-11",
-        "Semana del 26/10/2026",
+        "28/10/2026",
         "Taller",
         "Taller de validación de las variables del modelo",
         "Helber Perez",
@@ -9074,7 +9070,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-12",
-        "Semana del 26/10/2026",
+        "30/10/2026",
         "Avance académico",
         "Avance semanal al docente asesor",
         "Equipo del proyecto",
@@ -9092,7 +9088,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-13",
-        "Semana 3 o 4",
+        "03/11/2026",
         "Entrevista",
         "Entrevista sobre el registro de incidencias",
         "Jadira Vasquez",
@@ -9185,6 +9181,24 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-16",
+        "11/12/2026",
+        "Comunicado",
+        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
+        "Dirección; redacta el equipo",
+        [
+         "I-11 Padres de familia y apoderados"
+        ],
+        "Comunicado impreso o agenda",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Comunicado y cargo de recepción"
+       ],
+       [
+        "C-17",
         "30/12/2026",
         "Revisión de sprint",
         "Revisión del Sprint 3 e informe de desempeño: modelo validado",
@@ -9204,8 +9218,8 @@ export const DOCUMENTOS: DocDef[] = [
         "Acta de aceptación e informe de desempeño"
        ],
        [
-        "C-17",
-        "Durante el Sprint 4",
+        "C-18",
+        "20/01/2027",
         "Convocatoria",
         "Convocatoria a tres docentes tutores para el piloto de marzo",
         "Jhostin Galarza",
@@ -9223,7 +9237,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Lista de participantes confirmados"
        ],
        [
-        "C-18",
+        "C-19",
         "29/01/2027",
         "Revisión de sprint",
         "Revisión del Sprint 4 e informe de desempeño: sistema integrado con alertas y tablero",
@@ -9241,24 +9255,6 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Acta de aceptación e informe de desempeño"
-       ],
-       [
-        "C-19",
-        "Antes del Sprint 5",
-        "Comunicado",
-        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
-        "Dirección; redacta el equipo",
-        [
-         "I-11 Padres de familia y apoderados"
-        ],
-        "Comunicado impreso o agenda",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Comunicado y cargo de recepción"
        ],
        [
         "C-20",
@@ -9282,7 +9278,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-21",
-        "Semana del 12/04/2027",
+        "14/04/2027",
         "Capacitación",
         "Capacitación de dos horas a tutores y coordinadores, y entrega de manuales",
         "Jhostin Galarza",
@@ -9419,7 +9415,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         },
         {
@@ -9427,7 +9423,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center",
          "bold": true
         }
@@ -9439,7 +9435,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "3",
+         "x": "2",
          "align": "center"
         },
         {
@@ -9447,7 +9443,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "3",
+         "x": "2",
          "align": "center",
          "bold": true
         }
@@ -10162,9 +10158,9 @@ export const DOCUMENTOS: DocDef[] = [
       "items": [
        "Solo 4 de 17 interesados han tenido una comunicación directa; 13 todavía no.",
        "La segunda entrevista (encargado de TI y gestora de Cubicol) está pendiente desde mayo de 2026. Es la comunicación más urgente del Sprint 1.",
-       "Con los padres y apoderados no ha habido ninguna comunicación del proyecto. Debe haberla antes de cargar datos reales.",
+       "Con los padres y apoderados no ha habido ninguna comunicación del proyecto. El comunicado está programado para el 11/12/2026, antes del cierre del año escolar y de cargar datos reales.",
        "No existe aún un canal acordado para las alertas por correo (SC-09).",
-       "La reunión de inicio con la Dirección todavía no tiene día fijado dentro de la semana del 12/10/2026."
+       "La reunión de inicio está programada para el 12/10/2026 y todavía falta la confirmación de la Dirección."
       ]
      }
     ]
@@ -10187,9 +10183,9 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Fijar con la Dirección el día de la reunión de inicio.",
+        "Confirmar con la Dirección la reunión de inicio del 12/10/2026.",
         "Jhostin Galarza",
-        "13/10/2026"
+        "12/10/2026"
        ],
        [
         "Coordinar la segunda entrevista con la gestora de Cubicol y el encargado de TI.",

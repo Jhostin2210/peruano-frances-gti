@@ -3282,8 +3282,8 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-07",
-  "cuando": "Semana del 12/10/2026",
-  "fecha": "2026-10-16",
+  "cuando": "",
+  "fecha": "2026-10-12",
   "tipo": "Reunión",
   "asunto": "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
   "emisor": "Jhostin Galarza",
@@ -3300,7 +3300,7 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-08",
-  "cuando": "Semana del 12/10/2026",
+  "cuando": "",
   "fecha": "2026-10-16",
   "tipo": "Avance académico",
   "asunto": "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
@@ -3316,8 +3316,8 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-09",
-  "cuando": "Hasta el 23/10/2026",
-  "fecha": "2026-10-23",
+  "cuando": "",
+  "fecha": "2026-10-20",
   "tipo": "Entrevista",
   "asunto": "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
   "emisor": "Jadira Vasquez",
@@ -3333,7 +3333,7 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-10",
-  "cuando": "Semana del 19/10/2026",
+  "cuando": "",
   "fecha": "2026-10-23",
   "tipo": "Avance académico",
   "asunto": "Avance semanal al docente asesor",
@@ -3349,8 +3349,8 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-11",
-  "cuando": "Semana del 26/10/2026",
-  "fecha": "2026-10-30",
+  "cuando": "",
+  "fecha": "2026-10-28",
   "tipo": "Taller",
   "asunto": "Taller de validación de las variables del modelo",
   "emisor": "Helber Perez",
@@ -3366,7 +3366,7 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-12",
-  "cuando": "Semana del 26/10/2026",
+  "cuando": "",
   "fecha": "2026-10-30",
   "tipo": "Avance académico",
   "asunto": "Avance semanal al docente asesor",
@@ -3382,8 +3382,8 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-13",
-  "cuando": "Semana 3 o 4",
-  "fecha": "2026-11-06",
+  "cuando": "",
+  "fecha": "2026-11-03",
   "tipo": "Entrevista",
   "asunto": "Entrevista sobre el registro de incidencias",
   "emisor": "Jadira Vasquez",
@@ -3435,6 +3435,22 @@ export const COMUNICACIONES = [
  {
   "id": "C-16",
   "cuando": "",
+  "fecha": "2026-12-11",
+  "tipo": "Comunicado",
+  "asunto": "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
+  "emisor": "Dirección; redacta el equipo",
+  "interesados": [
+   "I-11"
+  ],
+  "canal": "Comunicado impreso o agenda",
+  "sprint": 3,
+  "estado": "Programada",
+  "constancia": "Comunicado y cargo de recepción",
+  "plan": "PC-07"
+ },
+ {
+  "id": "C-17",
+  "cuando": "",
   "fecha": "2026-12-30",
   "tipo": "Revisión de sprint",
   "asunto": "Revisión del Sprint 3 e informe de desempeño: modelo validado",
@@ -3451,9 +3467,9 @@ export const COMUNICACIONES = [
   "plan": "PC-01 y PC-02"
  },
  {
-  "id": "C-17",
-  "cuando": "Durante el Sprint 4",
-  "fecha": "2027-01-29",
+  "id": "C-18",
+  "cuando": "",
+  "fecha": "2027-01-20",
   "tipo": "Convocatoria",
   "asunto": "Convocatoria a tres docentes tutores para el piloto de marzo",
   "emisor": "Jhostin Galarza",
@@ -3468,7 +3484,7 @@ export const COMUNICACIONES = [
   "plan": "PC-05"
  },
  {
-  "id": "C-18",
+  "id": "C-19",
   "cuando": "",
   "fecha": "2027-01-29",
   "tipo": "Revisión de sprint",
@@ -3484,22 +3500,6 @@ export const COMUNICACIONES = [
   "estado": "Programada",
   "constancia": "Acta de aceptación e informe de desempeño",
   "plan": "PC-01 y PC-02"
- },
- {
-  "id": "C-19",
-  "cuando": "Antes del Sprint 5",
-  "fecha": "2027-02-26",
-  "tipo": "Comunicado",
-  "asunto": "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
-  "emisor": "Dirección; redacta el equipo",
-  "interesados": [
-   "I-11"
-  ],
-  "canal": "Comunicado impreso o agenda",
-  "sprint": 4,
-  "estado": "Programada",
-  "constancia": "Comunicado y cargo de recepción",
-  "plan": "PC-07"
  },
  {
   "id": "C-20",
@@ -3521,8 +3521,8 @@ export const COMUNICACIONES = [
  },
  {
   "id": "C-21",
-  "cuando": "Semana del 12/04/2027",
-  "fecha": "2027-04-16",
+  "cuando": "",
+  "fecha": "2027-04-14",
   "tipo": "Capacitación",
   "asunto": "Capacitación de dos horas a tutores y coordinadores, y entrega de manuales",
   "emisor": "Jhostin Galarza",

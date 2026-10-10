@@ -401,13 +401,12 @@ export const GOB02 = DOC({
         "Con su firma, la patrocinadora autoriza el inicio del proyecto y faculta al director del proyecto a utilizar los recursos descritos en este documento.",
       ),
       nota(
-        `Documento emitido para firma el ${P.fechaEmision}. A esa fecha no cuenta con firmas; la reunión de inicio con la Dirección está prevista para la semana del ${P.inicio}.`,
+        `Documento emitido para firma el ${P.fechaEmision}. A esa fecha no cuenta con firmas; la reunión de inicio con la Dirección está programada para el ${P.inicio}.`,
         "aviso",
       ),
       firmas(
         { nombre: "Promotora Directora", rol: "Patrocinadora — I.E.P. Peruano Francés" },
         { nombre: P.director, rol: "Director del proyecto" },
-        { nombre: P.docente, rol: "Docente asesor (V.º B.º)" },
       ),
     ]),
   ],

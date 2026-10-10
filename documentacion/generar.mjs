@@ -47,17 +47,29 @@ for (const d of DOCUMENTOS) {
 }
 
 const manifiesto = [];
+const pendientes = [];
 const paraBlog = [];
 for (const d of DOCUMENTOS) {
   const nombrePublico = `${d.id}-${slug(d.titulo)}`;
   const docx = path.join(SALIDA, ...d.carpeta.split("/"), `${d.archivo}.docx`);
   if (docx.length > 250) throw new Error(`Ruta demasiado larga para Windows (${docx.length}): ${docx}`);
   if (!soloIds.length || soloIds.includes(d.id)) {
-    await construirDocx(d, docx);
+    // Si el archivo está abierto en Word no se puede reemplazar: se genera aparte para que el blog quede al día
+    // y se avisa para repetir la generación cuando se cierre.
+    let destino = docx;
+    try {
+      await construirDocx(d, docx);
+    } catch (e) {
+      if (e.code !== "EBUSY" && e.code !== "EPERM") throw e;
+      destino = path.join(AQUI, ".salida", "pendientes", `${d.archivo}.docx`);
+      fs.mkdirSync(path.dirname(destino), { recursive: true });
+      await construirDocx(d, destino);
+      pendientes.push(docx);
+    }
     manifiesto.push({
       id: d.id,
-      docx,
-      pdf: docx.replace(/\.docx$/, ".pdf"),
+      docx: destino,
+      pdf: destino.replace(/\.docx$/, ".pdf"),
       publicoDocx: path.join(REPO, "public", "documentos", `${nombrePublico}.docx`),
       publicoPdf: path.join(REPO, "public", "documentos", `${nombrePublico}.pdf`),
     });
@@ -131,3 +143,7 @@ fs.writeFileSync(
 
 console.log(`Word generados: ${manifiesto.length} de ${DOCUMENTOS.length} documentos`);
 console.log(`Carpeta: ${SALIDA}`);
+if (pendientes.length) {
+  console.log(`\nATENCIÓN: ${pendientes.length} archivo(s) estaban abiertos y no se reemplazaron. Ciérralos y vuelve a generar:`);
+  for (const x of pendientes) console.log(`  - ${x}`);
+}
