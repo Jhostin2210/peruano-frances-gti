@@ -1,21 +1,25 @@
 /**
  * Tablero de comunicaciones del proyecto (proceso «Monitorear las comunicaciones»).
  * Lee el registro de comunicaciones (INT-06), que está en documentacion/datos/comunicaciones.mjs.
- * Una comunicación programada cuya fecha límite ya pasó se muestra como vencida hasta que se registre como realizada.
+ * Cuando pasa la fecha de una comunicación programada, se muestra «por confirmar» durante una semana; después, como vencida.
  */
 
 import { useMemo, useState } from "react";
 import { AlertTriangle, CalendarClock, CheckCircle2, ClipboardList, FileCheck2, Users } from "lucide-react";
 import { COMUNICACIONES, CORTE, INTERESADOS, SPRINTS } from "../content/datos";
 
-type Estado = "Realizada" | "Programada" | "Vencida";
+type Estado = "Realizada" | "Programada" | "Por confirmar" | "Vencida";
 
 const COLOR: Record<Estado, { barra: string; chip: string }> = {
   Realizada: { barra: "bg-emerald-500", chip: "bg-emerald-100 text-emerald-800 border-emerald-200" },
   Programada: { barra: "bg-blue-400", chip: "bg-blue-100 text-blue-800 border-blue-200" },
+  "Por confirmar": { barra: "bg-amber-400", chip: "bg-amber-100 text-amber-800 border-amber-200" },
   Vencida: { barra: "bg-rose-500", chip: "bg-rose-100 text-rose-800 border-rose-200" },
 };
-const ESTADOS: Estado[] = ["Realizada", "Programada", "Vencida"];
+const ESTADOS: Estado[] = ["Realizada", "Programada", "Por confirmar", "Vencida"];
+// Plazo para registrar una comunicación con su constancia antes de que cuente como vencida.
+const DIAS_PARA_CONFIRMAR = 7;
+const diasEntre = (desde: string, hasta: string) => Math.round((Date.parse(hasta) - Date.parse(desde)) / 86400000);
 
 const dd = (n: number) => String(n).padStart(2, "0");
 const hoyIso = () => {
@@ -44,7 +48,7 @@ export default function TableroComunicaciones() {
     () =>
       COMUNICACIONES.map((c) => ({
         ...c,
-        efectivo: (c.estado === "Realizada" ? "Realizada" : c.fecha < hoy ? "Vencida" : "Programada") as Estado,
+        efectivo: (c.estado === "Realizada" ? "Realizada" : c.fecha >= hoy ? "Programada" : diasEntre(c.fecha, hoy) <= DIAS_PARA_CONFIRMAR ? "Por confirmar" : "Vencida") as Estado,
       })),
     [hoy],
   );
@@ -53,7 +57,8 @@ export default function TableroComunicaciones() {
   const realizadas = cuenta("Realizada");
   const vencidas = cuenta("Vencida");
   // El cumplimiento se mide sobre el calendario del proyecto (desde el Sprint 1), no sobre el levantamiento previo.
-  const delCalendario = filas.filter((f) => f.sprint > 0 && f.efectivo !== "Programada");
+  const delCalendario = filas.filter((f) => f.sprint > 0 && (f.efectivo === "Realizada" || f.efectivo === "Vencida"));
+  const porConfirmar = cuenta("Por confirmar");
   const cumplidas = delCalendario.filter((f) => f.efectivo === "Realizada").length;
   const contactados = new Set(filas.filter((f) => f.efectivo === "Realizada").flatMap((f) => f.interesados));
   const clave = INTERESADOS.filter((i) => i.clave);
@@ -84,7 +89,7 @@ export default function TableroComunicaciones() {
     { icono: ClipboardList, valor: String(filas.length), etiqueta: "Comunicaciones registradas", detalle: "En el registro INT-06", tono: "text-[#1f3864]" },
     { icono: CheckCircle2, valor: String(realizadas), etiqueta: "Realizadas", detalle: `${conConstancia} con constancia`, tono: "text-emerald-600" },
     { icono: CalendarClock, valor: String(cuenta("Programada")), etiqueta: "Programadas", detalle: "Con fecha límite y responsable", tono: "text-blue-600" },
-    { icono: AlertTriangle, valor: String(vencidas), etiqueta: "Vencidas", detalle: vencidas ? "Fecha límite pasada sin registrar" : "Ninguna fuera de plazo", tono: vencidas ? "text-rose-600" : "text-slate-400" },
+    { icono: AlertTriangle, valor: String(vencidas), etiqueta: "Vencidas", detalle: `${vencidas ? "Más de una semana sin registrar" : "Ninguna fuera de plazo"}${porConfirmar ? ` · ${porConfirmar} por confirmar` : ""}`, tono: vencidas ? "text-rose-600" : "text-slate-400" },
     {
       icono: FileCheck2,
       valor: delCalendario.length ? `${Math.round((cumplidas / delCalendario.length) * 100)} %` : "—",

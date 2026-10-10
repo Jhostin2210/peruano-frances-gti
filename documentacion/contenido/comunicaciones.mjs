@@ -12,7 +12,7 @@ const base = { dominio: "Interesados", carpeta: "02 - Interesados/2.5 Comunicaci
 const nombreDe = (id) => INTERESADOS.find((i) => i.id === id)?.nombre ?? id;
 const destinatarios = (ids) => ids.map((id) => `${id} ${nombreDe(id)}`);
 const cuando = (x) => x.cuando || fmtIso(x.fecha);
-const COLOR_ESTADO = { Realizada: "verde", Programada: "azul", Vencida: "rojo" };
+const COLOR_ESTADO = { Realizada: "verde", Programada: "azul", "Por confirmar": "amarillo", Vencida: "rojo" };
 const estadoCelda = (x) => c(estadoAl(x), COLOR_ESTADO[estadoAl(x)], { bold: true, align: "center" });
 const nombreSprint = (n) => (n === 0 ? "Antes del inicio" : `Sprint ${n}`);
 const R0 = resumenComunicaciones();
@@ -170,7 +170,7 @@ export const INT03 = DOC({
         [30, 46, 24],
         [
           ["Cumplimiento del calendario", "Comunicaciones realizadas entre las que ya debían haberse realizado.", "90 % o más"],
-          ["Comunicaciones vencidas", "Programadas cuya fecha límite pasó sin registrarse como realizadas.", "Cero"],
+          ["Comunicaciones vencidas", "Programadas cuya fecha pasó hace más de una semana sin registrarse como realizadas.", "Cero"],
           ["Cobertura de interesados clave", "Interesados clave con al menos una comunicación realizada.", "Todos al cierre del Sprint 1"],
           ["Constancia", "Comunicaciones realizadas que tienen evidencia.", "100 %"],
           ["Respuesta a los pedidos", "Días entre un pedido al colegio y su respuesta.", "5 días hábiles o menos"],
@@ -223,7 +223,7 @@ export const INT06 = DOC({
   secciones: [
     sec("1. Uso del registro", [
       p(
-        "Gestionar las comunicaciones es ejecutar el plan (INT-03): reunirse, enviar los informes, hacer los talleres y dejar constancia. Cada comunicación se anota aquí cuando se programa y se actualiza cuando se realiza. Una comunicación programada cuya fecha límite pasa sin registrarse como realizada queda como vencida.",
+        "Gestionar las comunicaciones es ejecutar el plan (INT-03): reunirse, enviar los informes, hacer los talleres y dejar constancia. Cada comunicación se anota aquí cuando se programa y se actualiza cuando se realiza. Cuando pasa la fecha de una comunicación programada, queda «por confirmar» durante una semana, que es el plazo para registrarla con su constancia; si no se registra, pasa a vencida.",
       ),
       ul(
         "**Quién lo mantiene:** el director del proyecto; cada responsable informa cuando realiza su comunicación.",

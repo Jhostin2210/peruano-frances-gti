@@ -74,8 +74,12 @@ export const COMUNICACIONES = [
   .sort((a, b) => a.fecha.localeCompare(b.fecha) || a.sprint - b.sprint)
   .map((x, i) => ({ id: `C-${String(i + 1).padStart(2, "0")}`, cuando: "", ...x }));
 
-// Estado de una comunicación a una fecha: una programada cuya fecha límite ya pasó cuenta como vencida.
-export const estadoAl = (c, corte = CORTE) => (c.estado === "Realizada" ? "Realizada" : c.fecha < corte ? "Vencida" : "Programada");
+// Estado de una comunicación a una fecha. Cuando pasa la fecha de una programada, queda «por confirmar»
+// durante DIAS_PARA_CONFIRMAR días (tiempo para registrarla con su constancia); después cuenta como vencida.
+export const DIAS_PARA_CONFIRMAR = 7;
+const diasEntre = (desde, hasta) => Math.round((Date.parse(hasta) - Date.parse(desde)) / 86400000);
+export const estadoAl = (c, corte = CORTE) =>
+  c.estado === "Realizada" ? "Realizada" : c.fecha >= corte ? "Programada" : diasEntre(c.fecha, corte) <= DIAS_PARA_CONFIRMAR ? "Por confirmar" : "Vencida";
 
 export function resumenComunicaciones(corte = CORTE) {
   const por = (e) => COMUNICACIONES.filter((c) => estadoAl(c, corte) === e);

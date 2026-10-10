@@ -8695,7 +8695,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Comunicaciones vencidas",
-        "Programadas cuya fecha límite pasó sin registrarse como realizadas.",
+        "Programadas cuya fecha pasó hace más de una semana sin registrarse como realizadas.",
         "Cero"
        ],
        [
@@ -8796,7 +8796,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "Gestionar las comunicaciones es ejecutar el plan (INT-03): reunirse, enviar los informes, hacer los talleres y dejar constancia. Cada comunicación se anota aquí cuando se programa y se actualiza cuando se realiza. Una comunicación programada cuya fecha límite pasa sin registrarse como realizada queda como vencida."
+      "x": "Gestionar las comunicaciones es ejecutar el plan (INT-03): reunirse, enviar los informes, hacer los talleres y dejar constancia. Cada comunicación se anota aquí cuando se programa y se actualiza cuando se realiza. Cuando pasa la fecha de una comunicación programada, queda «por confirmar» durante una semana, que es el plazo para registrarla con su constancia; si no se registra, pasa a vencida."
      },
      {
       "t": "ul",
@@ -12159,24 +12159,24 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "1.2.1 Integración de datos (ETL)",
         {
-         "x": "Prototipo",
-         "fill": "amarillo",
+         "x": "Demostrable",
+         "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "Esquema de la base de datos con ocho tablas. La carga de datos está esbozada y la base está vacía.",
-        "Cargar las exportaciones de Cubicol y reconciliarlas."
+        "Base de datos de once tablas y carga del registro de notas, probada con el registro real de noviembre y diciembre de 2025 en un equipo del proyecto: 715 notas de 44 estudiantes, reconciliadas y sin duplicados.",
+        "Exportaciones de Cubicol, base gestionada en la nube y consentimiento para cargar ahí datos reales."
        ],
        [
         "1.2.2 Calidad de datos",
         {
-         "x": "No iniciado",
-         "fill": "gris",
+         "x": "Demostrable",
+         "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "—",
-        "Limpieza y reporte de calidad de los datos reales."
+        "Ocho reglas de validación, reporte de calidad y tarea programada que se ejecuta cada noche.",
+        "Quince noches seguidas sin fallas y validación sobre los datos completos del colegio."
        ],
        [
         "1.3.1 Entrenamiento del modelo",
@@ -12197,8 +12197,8 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "La API calcula el riesgo de un caso y lo clasifica en tres niveles.",
-        "Ejecución semanal automática para todos los estudiantes."
+        "Nivel de riesgo de cada estudiante con una regla provisional de tres niveles, que será la referencia del modelo.",
+        "Reemplazar la regla por el modelo validado y ejecutarlo cada semana."
        ],
        [
         "1.3.3 Validación del modelo",
@@ -12241,8 +12241,8 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Tablero, lista y ficha del estudiante conectados a la API, con datos de ejemplo.",
-        "Datos reales, filtros por nivel educativo y reportes exportables."
+        "Tablero, lista y ficha del estudiante que leen la base de datos; tarjeta de datos y calidad.",
+        "Datos reales en la nube, filtros por nivel educativo y reportes exportables."
        ],
        [
         "1.4.2.3 Pruebas con usuarios",
@@ -12296,7 +12296,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Guía de instalación en el repositorio del sistema.",
+        "Guía de instalación, arquitectura y pruebas en el repositorio del sistema.",
         "Manual técnico completo."
        ],
        [
@@ -12388,7 +12388,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "1",
+         "x": "3",
          "align": "center"
         }
        ],
@@ -12399,7 +12399,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "6",
+         "x": "5",
          "align": "center"
         }
        ],
@@ -12410,7 +12410,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "10",
+         "x": "9",
          "align": "center"
         }
        ],
@@ -12441,33 +12441,45 @@ export const DOCUMENTOS: DocDef[] = [
     "apaisada": false,
     "bloques": [
      {
-      "t": "kv",
+      "t": "tabla",
+      "cols": [
+       "Paquete de la EDT",
+       "Criterio de aceptación",
+       "Situación",
+       "Evidencia"
+      ],
+      "anchos": [
+       22,
+       28,
+       24,
+       26
+      ],
       "filas": [
        [
-        "Paquete de la EDT",
-        "1.4.2.1 Diseño de la interfaz, con avance del 1.4.2.2 Desarrollo del tablero"
+        "1.4.2.1 Diseño de la interfaz",
+        "Maquetas aprobadas por el equipo y mostradas a docentes antes de desarrollar.",
+        "Cumplido en parte: falta mostrarlo a los docentes.",
+        "Prototipo navegable en línea."
        ],
        [
-        "Entregable",
-        "Prototipo validado"
+        "1.2.1 Integración de datos",
+        "Carga sin duplicados, validada con reconciliación en tres fechas.",
+        "Cumplido en parte: reconciliación correcta en una fecha, con el registro de un docente.",
+        "Resultado de la carga y bitácora de cargas."
        ],
        [
-        "Criterio de aceptación",
-        "Maquetas aprobadas por el equipo y mostradas a docentes antes de desarrollar."
-       ],
-       [
-        "Situación del criterio",
-        "Cumplido en parte: el equipo lo aprobó; falta mostrarlo a los docentes y recoger sus observaciones."
-       ],
-       [
-        "Evidencia",
-        "Prototipo navegable en línea, conectado a la API, con el simulador usando el modelo."
+        "1.2.2 Calidad de datos",
+        "Sin vacíos críticos, duplicados ni inconsistencias; reporte de calidad.",
+        "Cumplido en parte: reglas y reporte listos; faltan los datos completos.",
+        "Reporte de calidad y ejecuciones nocturnas."
        ]
-      ]
+      ],
+      "titulo": "Paquetes que se demuestran",
+      "compacta": true
      },
      {
       "t": "p",
-      "x": "Se eligió este paquete porque es el único cuyo resultado se puede mostrar funcionando hoy sin presentar como terminado algo que no lo está."
+      "x": "Son los paquetes cuyo resultado se puede mostrar funcionando hoy sin presentar como terminado algo que no lo está. Los de datos corresponden al Sprint 2 y se adelantaron con el registro de notas que el colegio ya había entregado."
      }
     ]
    },
@@ -12529,17 +12541,37 @@ export const DOCUMENTOS: DocDef[] = [
         "Bajo, medio y alto, como define el alcance. Los cortes son provisionales."
        ],
        [
-        "Estudiantes y notas",
+        "Base de datos, carga y validación",
         {
-         "x": "Ejemplo",
+         "x": "Real",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "La carga se probó con el registro real del colegio en un equipo del proyecto; la validación corre cada noche."
+       ],
+       [
+        "Estudiantes y notas de la página pública",
+        {
+         "x": "Práctica",
          "fill": "amarillo",
          "bold": true,
          "align": "center"
         },
-        "Cinco estudiantes ficticios. La base de datos está vacía."
+        "Notas inventadas con la estructura del registro real: 45 estudiantes ficticios. Los datos reales no se publican sin el consentimiento de los apoderados."
        ],
        [
-        "Modelo",
+        "Nivel de riesgo de cada estudiante",
+        {
+         "x": "Regla provisional",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Regla simple y visible, no Machine Learning. Será la referencia contra la que se compare el modelo."
+       ],
+       [
+        "Modelo del simulador",
         {
          "x": "Demostración",
          "fill": "amarillo",
@@ -12604,12 +12636,17 @@ export const DOCUMENTOS: DocDef[] = [
        "Tres niveles de riesgo en la página y en la API (solicitud de cambio SC-04).",
        "Rótulo visible de demostración y de origen de los datos.",
        "La API ya no devuelve métricas por defecto y tiene una consulta de estado que informa qué es real y qué es de ejemplo (incidente IN-03).",
-       "Guía del repositorio con el estado real del sistema."
+       "Guía del repositorio con el estado real del sistema.",
+       "Base de datos nueva: los estudiantes se identifican por código y no se guardan nombres.",
+       "Carga del registro de notas del colegio, con anonimización, control de duplicados y reconciliación.",
+       "Validación de los datos con ocho reglas, ejecutada cada noche por una tarea programada.",
+       "Regla provisional del nivel de riesgo, en reemplazo de los valores de ejemplo.",
+       "Documentos de arquitectura, de datos y variables, y de pruebas en el repositorio del sistema."
       ]
      },
      {
       "t": "p",
-      "x": "No se cambió el modelo ni se agregaron datos: eso corresponde a los Sprints 2 y 3."
+      "x": "El modelo no se cambió: se entrena y valida con datos reales en el Sprint 3. La variable de pensiones ya no forma parte de los datos de los estudiantes."
      }
     ]
    },
@@ -12625,10 +12662,10 @@ export const DOCUMENTOS: DocDef[] = [
       "t": "ol",
       "items": [
        "**Ubicar el entregable.** Mostrar en la EDT el paquete 1.4.2.1 y su criterio de aceptación.",
-       "**Panel principal.** Señalar el rótulo de demostración y explicar qué es de ejemplo. Mostrar la distribución por nivel de riesgo y las alertas.",
-       "**Estudiantes.** Filtrar por nivel de riesgo y abrir la ficha de un estudiante.",
+       "**Panel principal.** Señalar el rótulo de demostración y explicar qué es de práctica. Mostrar la tarjeta de datos y calidad, la distribución por nivel de riesgo y las alertas.",
+       "**Estudiantes.** Filtrar por nivel de riesgo y abrir la ficha de un estudiante: se identifica por código y muestra el motivo de su nivel.",
        "**Simulador.** Ingresar notas bajas y varias inasistencias: el modelo de la API devuelve riesgo alto y los factores. Cambiar a notas altas: devuelve riesgo bajo.",
-       "**Estado de la API.** Abrir la consulta de estado: origen de los datos «ejemplo», modelo cargado y tres niveles.",
+       "**Datos.** Abrir la consulta de estado de la API (datos de práctica, periodos y regla provisional) y el historial de la validación nocturna en el repositorio.",
        "**Avance por EDT.** Mostrar la tabla de la sección 2 y lo que sigue en el cronograma."
       ]
      }
@@ -12659,7 +12696,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Sprint 2 · Gestión y datos",
         "04/12/2026",
-        "Base de datos con notas reales del colegio; la página deja de usar datos de ejemplo."
+        "Base gestionada en la nube con las notas reales del colegio, una vez resuelto el consentimiento; la página deja de usar datos de práctica."
        ],
        [
         "Sprint 3 · Modelo ML",
