@@ -101,7 +101,7 @@ export function crearBASE01(documentos) {
             c(d.estado, COLOR_ESTADO[d.estado], { bold: true }),
             {
               Gobernanza: "Los nueve procesos tienen documento.",
-              Alcance: "Los requisitos, la EDT y su diccionario vienen del curso anterior. El control y la validación están planificados y empiezan con los sprints.",
+              Alcance: "Los requisitos, la EDT y su diccionario vienen del curso anterior. El control tiene su primer informe de avance por EDT; la validación empieza con los sprints.",
               Cronograma: "Línea base versión 3. El control empieza con los sprints.",
               Finanzas: "Estimación y presupuesto del curso anterior; falta redistribuirlos con el calendario nuevo.",
               Interesados: "Los siete procesos tienen documento: cuatro de involucramiento y tres de comunicaciones.",

@@ -59,7 +59,9 @@ export const PROYECTO = {
  "enlaces": {
   "blog": "https://peruano-frances-gti.vercel.app",
   "repositorio": "https://github.com/Jhostin2210/peruano-frances-gti",
-  "prototipo": "https://prototipo-peruano-frances.vercel.app"
+  "prototipo": "https://proyecto-siat.vercel.app",
+  "api": "https://proyecto-siat.onrender.com",
+  "repoSistema": "https://github.com/Jhostin2210/Proyecto-SIAT"
  }
 };
 
@@ -2897,7 +2899,7 @@ export const CAMBIOS = [
   "impacto": "Base de datos, modelo y prototipo.",
   "estado": "Aprobado",
   "decision": "Equipo del proyecto, 10/10/2026",
-  "aplicacion": "Vigente en los documentos. Pendiente en el prototipo (Sprints 3 y 4)."
+  "aplicacion": "Tres niveles aplicados en los documentos y en el prototipo (10/10/2026). Los roles siguen pendientes en el prototipo (Sprint 4)."
  },
  {
   "id": "SC-05",
@@ -2987,7 +2989,7 @@ export const INCIDENTES = [
   "asignado": "Helber Perez",
   "limite": "30/12/2026",
   "estado": "Abierto",
-  "accion": "Presentarlo como demostración y reemplazarlo por el modelo validado (Sprint 3)."
+  "accion": "Rotulado como demostración y métricas por defecto retiradas el 10/10/2026 (ALC-05). Falta reemplazarlo por el modelo validado (Sprint 3)."
  },
  {
   "id": "IN-04",

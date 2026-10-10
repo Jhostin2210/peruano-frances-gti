@@ -128,12 +128,12 @@ export const PROCESOS = [
     docs: [],
   },
   {
-    id: "alc-5", dominio: "Alcance", area: MC, nombre: "Monitorear y controlar el alcance", estado: "Planificado",
+    id: "alc-5", dominio: "Alcance", area: MC, nombre: "Monitorear y controlar el alcance", estado: "Aplicado",
     que: "Vigila que solo se haga el trabajo aprobado y que los entregables cumplan sus requisitos de calidad.",
-    entradas: ["Plan de gestión del alcance", "Plan de gestión de la calidad", "Métricas de calidad"],
-    herramientas: ["Pruebas del producto", "Inspecciones", "Análisis de variación"],
-    salidas: ["Entregables verificados y mediciones de control de calidad, desde el Sprint 2"],
-    docs: ["ALC-01", "ALC-03"],
+    entradas: ["Línea base del alcance: EDT y diccionario", "Plan de gestión del alcance", "Plan de gestión de la calidad", "Prototipo del sistema"],
+    herramientas: ["Inspección del producto", "Pruebas del prototipo", "Análisis de variación frente a la EDT"],
+    salidas: ["Informe de avance del producto por EDT", "Entregables verificados y mediciones de calidad, desde el Sprint 2"],
+    docs: ["ALC-05"],
   },
   {
     id: "alc-6", dominio: "Alcance", area: MC, nombre: "Validar el alcance", estado: "Planificado",

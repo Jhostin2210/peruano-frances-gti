@@ -105,7 +105,7 @@ export default function Portada({ onStartClick }: PortadaProps) {
             Ver proyecto ↓
           </button>
           <a
-            href="https://prototipo-peruano-frances.vercel.app/"
+            href="https://proyecto-siat.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#e8f5f5] hover:bg-[#d8eded] border border-[#a6d7d9] text-[#0a5c5f] font-semibold px-8 py-3 rounded-xl transition-all shadow-xs text-sm cursor-pointer"

@@ -61,7 +61,9 @@ export const PROYECTO = {
   enlaces: {
     blog: "https://peruano-frances-gti.vercel.app",
     repositorio: "https://github.com/Jhostin2210/peruano-frances-gti",
-    prototipo: "https://prototipo-peruano-frances.vercel.app",
+    prototipo: "https://proyecto-siat.vercel.app",
+    api: "https://proyecto-siat.onrender.com",
+    repoSistema: "https://github.com/Jhostin2210/Proyecto-SIAT",
   },
 };
 

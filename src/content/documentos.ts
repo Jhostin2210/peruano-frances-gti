@@ -641,6 +641,17 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         {
+         "x": "ALC-05",
+         "bold": true
+        },
+        "Informe de avance del producto por EDT N.º 1",
+        "Alcance",
+        "Monitorear y controlar el alcance",
+        "Monitoreo y control",
+        "03 - Alcance/3.5 Controlar el alcance"
+       ],
+       [
+        {
          "x": "CRO-01",
          "bold": true
         },
@@ -651,7 +662,7 @@ export const DOCUMENTOS: DocDef[] = [
         "04 - Cronograma"
        ]
       ],
-      "titulo": "Documentos emitidos (24)",
+      "titulo": "Documentos emitidos (25)",
       "compacta": true,
       "fuente": "Cada documento está en Word y en PDF dentro de su carpeta. Los PDF también se publican en el blog."
      }
@@ -706,7 +717,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "3",
          "align": "center"
         },
         {
@@ -714,7 +725,7 @@ export const DOCUMENTOS: DocDef[] = [
          "fill": "amarillo",
          "bold": true
         },
-        "Los requisitos, la EDT y su diccionario vienen del curso anterior. El control y la validación están planificados y empiezan con los sprints."
+        "Los requisitos, la EDT y su diccionario vienen del curso anterior. El control tiene su primer informe de avance por EDT; la validación empieza con los sprints."
        ],
        [
         "Cronograma",
@@ -3158,7 +3169,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Presentarlo como demostración y reemplazarlo por el modelo validado (Sprint 3)."
+        "Rotulado como demostración y métricas por defecto retiradas el 10/10/2026 (ALC-05). Falta reemplazarlo por el modelo validado (Sprint 3)."
        ],
        [
         "IN-04",
@@ -4238,7 +4249,7 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "p",
-      "x": "La planificación de gobernanza, interesados, alcance y cronograma está emitida (24 documentos). El asunto más serio es la calidad del producto: el prototipo heredado no tiene un modelo validado con datos reales."
+      "x": "La planificación de gobernanza, interesados, alcance y cronograma está emitida (25 documentos). El asunto más serio es la calidad del producto: el prototipo heredado no tiene un modelo validado con datos reales."
      }
     ]
    },
@@ -4373,7 +4384,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Alcance",
-        "4"
+        "5"
        ],
        [
         "Cronograma",
@@ -4386,7 +4397,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "24",
+         "x": "25",
          "fill": "gris",
          "bold": true
         }
@@ -4742,7 +4753,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Equipo del proyecto, 10/10/2026",
-        "Vigente en los documentos. Pendiente en el prototipo (Sprints 3 y 4)."
+        "Tres niveles aplicados en los documentos y en el prototipo (10/10/2026). Los roles siguen pendientes en el prototipo (Sprint 4)."
        ],
        [
         "SC-05",
@@ -12053,6 +12064,625 @@ export const DOCUMENTOS: DocDef[] = [
   ]
  },
  {
+  "id": "ALC-05",
+  "titulo": "Informe de avance del producto por EDT N.º 1",
+  "dominio": "Alcance",
+  "area": "Monitoreo y control",
+  "proceso": "Monitorear y controlar el alcance",
+  "salida": "Información de desempeño del trabajo y entregables verificados",
+  "version": "1.0",
+  "fecha": "10/10/2026",
+  "resumen": "Compara lo que existe hoy del sistema con cada paquete de trabajo de la EDT, separa lo real de lo que es demostración y prepara la presentación del entregable al docente asesor.",
+  "carpeta": "03 - Alcance/3.5 Controlar el alcance",
+  "pdf": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-1.pdf",
+  "docx": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-1.docx",
+  "secciones": [
+   {
+    "titulo": "1. Propósito y corte",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Monitorear y controlar el alcance es comparar el trabajo hecho con la línea base. Fecha de corte: 10/10/2026. Los sprints del proyecto empiezan el 12/10/2026, así que lo que se mide aquí es el punto de partida del producto: el prototipo heredado de la fase de formulación, con los ajustes aplicados el 10/10/2026."
+     },
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Página del prototipo",
+        "https://proyecto-siat.vercel.app"
+       ],
+       [
+        "API del prototipo",
+        "https://proyecto-siat.onrender.com"
+       ],
+       [
+        "Repositorio del sistema",
+        "https://github.com/Jhostin2210/Proyecto-SIAT"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "2. Avance por paquete de trabajo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Paquete",
+       "Estado",
+       "Qué existe hoy",
+       "Qué falta para cumplir el criterio"
+      ],
+      "anchos": [
+       22,
+       12,
+       34,
+       32
+      ],
+      "filas": [
+       [
+        "1.1.1 Cronograma de hitos",
+        {
+         "x": "Cumplido",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Línea base del cronograma, versión 3 (CRO-01).",
+        "Mantenerlo actualizado ante cada cambio."
+       ],
+       [
+        "1.1.2 Informes de avance",
+        {
+         "x": "En curso",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Informe de desempeño N.º 1 (GOB-09).",
+        "Un informe al cierre de cada sprint."
+       ],
+       [
+        "1.1.3 Actas y control de cambios",
+        {
+         "x": "En curso",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Registro de cambios con 10 solicitudes (GOB-10).",
+        "Actas de las reuniones desde el inicio."
+       ],
+       [
+        "1.2.1 Integración de datos (ETL)",
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Esquema de la base de datos con ocho tablas. La carga de datos está esbozada y la base está vacía.",
+        "Cargar las exportaciones de Cubicol y reconciliarlas."
+       ],
+       [
+        "1.2.2 Calidad de datos",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Limpieza y reporte de calidad de los datos reales."
+       ],
+       [
+        "1.3.1 Entrenamiento del modelo",
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Modelo Random Forest de demostración, entrenado con un conjunto de datos sintético.",
+        "Entrenarlo con datos reales del colegio."
+       ],
+       [
+        "1.3.2 Clasificación de riesgo",
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "La API calcula el riesgo de un caso y lo clasifica en tres niveles.",
+        "Ejecución semanal automática para todos los estudiantes."
+       ],
+       [
+        "1.3.3 Validación del modelo",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "No hay métricas reales: las que mostraba el prototipo se retiraron.",
+        "Validar con datos que el modelo no vio (SC-08)."
+       ],
+       [
+        "1.4.1 Motor de alertas",
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Lista de alertas en pantalla para los niveles medio y alto.",
+        "Envío por correo, historial y registro de seguimiento."
+       ],
+       [
+        "1.4.2.1 Diseño de la interfaz",
+        {
+         "x": "Demostrable",
+         "fill": "teal",
+         "bold": true,
+         "align": "center"
+        },
+        "Prototipo navegable en línea: inicio, estudiantes, riesgos y simulador.",
+        "Mostrarlo a los docentes y recoger sus observaciones."
+       ],
+       [
+        "1.4.2.2 Desarrollo del tablero",
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Tablero, lista y ficha del estudiante conectados a la API, con datos de ejemplo.",
+        "Datos reales, filtros por nivel educativo y reportes exportables."
+       ],
+       [
+        "1.4.2.3 Pruebas con usuarios",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Pruebas con al menos tres docentes."
+       ],
+       [
+        "1.4.3 Roles y accesos",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "La tabla de usuarios está en el esquema; no hay ingreso con usuario y contraseña.",
+        "Autenticación y vistas por rol."
+       ],
+       [
+        "1.5.1 Despliegue del sistema",
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Entorno de demostración en línea (página y API).",
+        "Entorno de producción con base de datos gestionada y tarea programada (GOB-05)."
+       ],
+       [
+        "1.5.2 Manual de usuario",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Manual de usuario."
+       ],
+       [
+        "1.5.3 Manual técnico",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "Guía de instalación en el repositorio del sistema.",
+        "Manual técnico completo."
+       ],
+       [
+        "1.5.4 Plan de capacitación",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Plan de capacitación."
+       ],
+       [
+        "1.5.5 Capacitación y cierre",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Capacitación y cierre."
+       ],
+       [
+        "1.6.1 Pruebas de integración y rendimiento",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Pruebas de integración y rendimiento."
+       ],
+       [
+        "1.6.2 Piloto y retroalimentación",
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "—",
+        "Piloto con tres docentes tutores."
+       ]
+      ],
+      "titulo": "Estado de los 20 paquetes de la EDT al 10/10/2026",
+      "compacta": true,
+      "fuente": "Cumplido: cumple su criterio de aceptación. En curso: gestión que continúa todo el proyecto. Demostrable: se puede mostrar, con su criterio cumplido en parte. Prototipo: versión de demostración que aún no cumple el criterio."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Estado",
+       "Paquetes"
+      ],
+      "anchos": [
+       60,
+       40
+      ],
+      "filas": [
+       [
+        {
+         "x": "Cumplido",
+         "fill": "verde",
+         "bold": true
+        },
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        {
+         "x": "En curso",
+         "fill": "azul",
+         "bold": true
+        },
+        {
+         "x": "2",
+         "align": "center"
+        }
+       ],
+       [
+        {
+         "x": "Demostrable",
+         "fill": "teal",
+         "bold": true
+        },
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        {
+         "x": "Prototipo",
+         "fill": "amarillo",
+         "bold": true
+        },
+        {
+         "x": "6",
+         "align": "center"
+        }
+       ],
+       [
+        {
+         "x": "No iniciado",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "10",
+         "align": "center"
+        }
+       ],
+       [
+        {
+         "x": "Total",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "20",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Resumen del avance"
+     },
+     {
+      "t": "p",
+      "x": "El avance coincide con el cronograma: los paquetes de datos corresponden al Sprint 2, los del modelo al Sprint 3 y los de alertas y tablero al Sprint 4. En interfaz el producto está adelantado, porque el prototipo se construyó en la fase de formulación."
+     }
+    ]
+   },
+   {
+    "titulo": "3. Entregable que se demuestra",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Paquete de la EDT",
+        "1.4.2.1 Diseño de la interfaz, con avance del 1.4.2.2 Desarrollo del tablero"
+       ],
+       [
+        "Entregable",
+        "Prototipo validado"
+       ],
+       [
+        "Criterio de aceptación",
+        "Maquetas aprobadas por el equipo y mostradas a docentes antes de desarrollar."
+       ],
+       [
+        "Situación del criterio",
+        "Cumplido en parte: el equipo lo aprobó; falta mostrarlo a los docentes y recoger sus observaciones."
+       ],
+       [
+        "Evidencia",
+        "Prototipo navegable en línea, conectado a la API, con el simulador usando el modelo."
+       ]
+      ]
+     },
+     {
+      "t": "p",
+      "x": "Se eligió este paquete porque es el único cuyo resultado se puede mostrar funcionando hoy sin presentar como terminado algo que no lo está."
+     }
+    ]
+   },
+   {
+    "titulo": "4. Qué es real y qué es demostración",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Elemento",
+       "Situación",
+       "Detalle"
+      ],
+      "anchos": [
+       28,
+       18,
+       54
+      ],
+      "filas": [
+       [
+        "Pantallas y navegación",
+        {
+         "x": "Real",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Inicio, estudiantes, ficha, riesgos y simulador funcionan."
+       ],
+       [
+        "Conexión de la página con la API",
+        {
+         "x": "Real",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "La página consulta la API en línea y muestra de dónde vienen los datos."
+       ],
+       [
+        "Cálculo del riesgo en el simulador",
+        {
+         "x": "Real",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Lo calcula el modelo cargado en la API, no una regla escrita en la página."
+       ],
+       [
+        "Tres niveles de riesgo",
+        {
+         "x": "Real",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Bajo, medio y alto, como define el alcance. Los cortes son provisionales."
+       ],
+       [
+        "Estudiantes y notas",
+        {
+         "x": "Ejemplo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Cinco estudiantes ficticios. La base de datos está vacía."
+       ],
+       [
+        "Modelo",
+        {
+         "x": "Demostración",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Entrenado con datos sintéticos: no demuestra capacidad de predicción (SC-08)."
+       ],
+       [
+        "Gráfico de tendencia",
+        {
+         "x": "Ilustrativo",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "No hay historial real de alertas."
+       ],
+       [
+        "Métricas del modelo",
+        {
+         "x": "No hay",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "Se publicarán cuando el modelo se valide con datos reales."
+       ],
+       [
+        "Alertas por correo, usuarios y roles",
+        {
+         "x": "No hay",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        },
+        "Corresponden al Sprint 4."
+       ]
+      ],
+      "titulo": "Lo que la demostración muestra de verdad"
+     },
+     {
+      "t": "nota",
+      "tipo": "info",
+      "x": "La página lleva un rótulo permanente de «Demostración» que dice lo mismo que esta tabla."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Ajustes aplicados al prototipo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Para que la demostración coincida con la documentación, el 10/10/2026 se aplicaron estos ajustes en el repositorio del sistema:"
+     },
+     {
+      "t": "ul",
+      "items": [
+       "La página consulta la API en línea; antes apuntaba a una dirección local y mostraba datos fijos.",
+       "El simulador pide el cálculo al modelo de la API; si la API no responde, lo dice y no presenta el resultado como si fuera del modelo.",
+       "Tres niveles de riesgo en la página y en la API (solicitud de cambio SC-04).",
+       "Rótulo visible de demostración y de origen de los datos.",
+       "La API ya no devuelve métricas por defecto y tiene una consulta de estado que informa qué es real y qué es de ejemplo (incidente IN-03).",
+       "Guía del repositorio con el estado real del sistema."
+      ]
+     },
+     {
+      "t": "p",
+      "x": "No se cambió el modelo ni se agregaron datos: eso corresponde a los Sprints 2 y 3."
+     }
+    ]
+   },
+   {
+    "titulo": "6. Guion de la demostración",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Duración: unos cinco minutos. Conviene abrir la página unos minutos antes, porque la API tarda cerca de un minuto en responder la primera vez."
+     },
+     {
+      "t": "ol",
+      "items": [
+       "**Ubicar el entregable.** Mostrar en la EDT el paquete 1.4.2.1 y su criterio de aceptación.",
+       "**Panel principal.** Señalar el rótulo de demostración y explicar qué es de ejemplo. Mostrar la distribución por nivel de riesgo y las alertas.",
+       "**Estudiantes.** Filtrar por nivel de riesgo y abrir la ficha de un estudiante.",
+       "**Simulador.** Ingresar notas bajas y varias inasistencias: el modelo de la API devuelve riesgo alto y los factores. Cambiar a notas altas: devuelve riesgo bajo.",
+       "**Estado de la API.** Abrir la consulta de estado: origen de los datos «ejemplo», modelo cargado y tres niveles.",
+       "**Avance por EDT.** Mostrar la tabla de la sección 2 y lo que sigue en el cronograma."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "7. Qué sigue",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Sprint",
+       "Cierre",
+       "Qué cambia en el producto"
+      ],
+      "anchos": [
+       26,
+       16,
+       58
+      ],
+      "filas": [
+       [
+        "Sprint 1 · Análisis y diseño",
+        "06/11/2026",
+        "Variables validadas con los docentes y arquitectura definitiva. El prototipo se muestra a los docentes."
+       ],
+       [
+        "Sprint 2 · Gestión y datos",
+        "04/12/2026",
+        "Base de datos con notas reales del colegio; la página deja de usar datos de ejemplo."
+       ],
+       [
+        "Sprint 3 · Modelo ML",
+        "30/12/2026",
+        "Modelo entrenado y validado con datos reales; se publican sus métricas."
+       ],
+       [
+        "Sprint 4 · Alertas y tablero",
+        "29/01/2027",
+        "Alertas por correo, reportes y acceso por rol."
+       ]
+      ],
+      "titulo": "Próximos cambios del producto según el cronograma"
+     },
+     {
+      "t": "p",
+      "x": "No se generan solicitudes de cambio a partir de este informe. El siguiente se emite al cierre del Sprint 1."
+     }
+    ]
+   }
+  ]
+ },
+ {
   "id": "CRO-01",
   "titulo": "Línea base del cronograma",
   "dominio": "Cronograma",
@@ -16559,24 +17189,25 @@ export const PROCESOS: ProcesoDef[] = [
   "dominio": "Alcance",
   "area": "Monitoreo y control",
   "nombre": "Monitorear y controlar el alcance",
-  "estado": "Planificado",
+  "estado": "Aplicado",
   "que": "Vigila que solo se haga el trabajo aprobado y que los entregables cumplan sus requisitos de calidad.",
   "entradas": [
+   "Línea base del alcance: EDT y diccionario",
    "Plan de gestión del alcance",
    "Plan de gestión de la calidad",
-   "Métricas de calidad"
+   "Prototipo del sistema"
   ],
   "herramientas": [
-   "Pruebas del producto",
-   "Inspecciones",
-   "Análisis de variación"
+   "Inspección del producto",
+   "Pruebas del prototipo",
+   "Análisis de variación frente a la EDT"
   ],
   "salidas": [
-   "Entregables verificados y mediciones de control de calidad, desde el Sprint 2"
+   "Informe de avance del producto por EDT",
+   "Entregables verificados y mediciones de calidad, desde el Sprint 2"
   ],
   "docs": [
-   "ALC-01",
-   "ALC-03"
+   "ALC-05"
   ]
  },
  {

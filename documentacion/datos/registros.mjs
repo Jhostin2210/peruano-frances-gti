@@ -39,7 +39,7 @@ export const CAMBIOS = [
     impacto: "Base de datos, modelo y prototipo.",
     estado: "Aprobado",
     decision: "Equipo del proyecto, 10/10/2026",
-    aplicacion: "Vigente en los documentos. Pendiente en el prototipo (Sprints 3 y 4).",
+    aplicacion: "Tres niveles aplicados en los documentos y en el prototipo (10/10/2026). Los roles siguen pendientes en el prototipo (Sprint 4).",
   },
   {
     id: "SC-05",
@@ -101,7 +101,7 @@ export const CAMBIOS = [
 export const INCIDENTES = [
   { id: "IN-01", tipo: "Datos", descripcion: "No está confirmado el acceso a los datos de Cubicol: no se ha comprobado que exista una API y las exportaciones dependen de la gestora de la plataforma.", origen: "Equipo, 10/10/2026", prioridad: "Alta", asignado: R.jadira, limite: "23/10/2026", estado: "Abierto", accion: "Segunda entrevista y acuerdo sobre las exportaciones (Sprint 1)." },
   { id: "IN-02", tipo: "Datos", descripcion: "La asistencia y las incidencias solo existen en papel y en mensajes; no hay datos digitales para el modelo.", origen: "Entrevista, 24/04/2026", prioridad: "Alta", asignado: R.jadira, limite: "04/12/2026", estado: "Abierto", accion: "Definir con la Jefa de Normas un registro digital simple (Sprint 2)." },
-  { id: "IN-03", tipo: "Producto", descripcion: "El prototipo calcula el riesgo con reglas escritas a mano y muestra métricas que no provienen de un entrenamiento real.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Alta", asignado: R.helber, limite: "30/12/2026", estado: "Abierto", accion: "Presentarlo como demostración y reemplazarlo por el modelo validado (Sprint 3)." },
+  { id: "IN-03", tipo: "Producto", descripcion: "El prototipo calcula el riesgo con reglas escritas a mano y muestra métricas que no provienen de un entrenamiento real.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Alta", asignado: R.helber, limite: "30/12/2026", estado: "Abierto", accion: "Rotulado como demostración y métricas por defecto retiradas el 10/10/2026 (ALC-05). Falta reemplazarlo por el modelo validado (Sprint 3)." },
   { id: "IN-04", tipo: "Datos personales", descripcion: "Los archivos de trabajo contienen nombres y notas reales de estudiantes: hojas de cálculo, fotos de cuadernos y datos de carga de la base.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Alta", asignado: R.helber, limite: "23/10/2026", estado: "Abierto", accion: "Retirarlos de las carpetas compartidas, reemplazar nombres por códigos y no subirlos al repositorio." },
   { id: "IN-05", tipo: "Interesados", descripcion: "La segunda entrevista, al soporte técnico y a la gestora de Cubicol, no se realizó; la guía está lista desde mayo.", origen: "Equipo, 10/10/2026", prioridad: "Media", asignado: R.jadira, limite: "23/10/2026", estado: "Abierto", accion: "Programarla en la semana 2 del proyecto." },
   { id: "IN-06", tipo: "Calidad", descripcion: "Los documentos heredados discrepan en fechas, número de actividades, niveles de riesgo y guía de referencia.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Media", asignado: R.carlos, limite: "10/10/2026", estado: "Cerrado", accion: "Cambios SC-02, SC-04, SC-06 y SC-07 aprobados; documentos nuevos emitidos." },
