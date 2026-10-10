@@ -31,7 +31,7 @@ export default function Header({ onOpenSidebar }: HeaderProps) {
             Sistema ML — Alerta Temprana del Bajo Rendimiento Académico
           </p>
           <p className="font-mono text-[10px] text-slate-800 hidden sm:block">
-            UNTELS · ISR0832 · Formulación y Evaluación de Proyectos TI · 2026
+            UNTELS · Gestión de Proyecto de TI · Guía del PMBOK® 8.ª edición · 2026
           </p>
         </div>
         <span className="hidden md:flex items-center gap-1.5 font-mono text-[10px] text-slate-800 border border-slate-200 rounded-full px-3 py-1 flex-shrink-0">

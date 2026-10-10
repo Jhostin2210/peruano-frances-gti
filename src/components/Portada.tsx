@@ -27,7 +27,7 @@ export default function Portada({ onStartClick }: PortadaProps) {
       <div className="px-6 sm:px-10 lg:px-20 text-center w-full py-12">
         <div className="inline-flex items-center gap-2 font-mono text-[11px] text-slate-700 border border-slate-200 rounded-full px-4 py-1.5 mb-4 shadow-xs">
           <span className="w-1.5 h-1.5 rounded-full bg-[#0d7377]" />
-          UNTELS · Escuela de Ingeniería de Sistemas · ISR0832 · 2026
+          UNTELS · Escuela Profesional de Ingeniería de Sistemas · 2026
         </div>
 
         <div className="flex justify-center mb-4">
@@ -42,7 +42,7 @@ export default function Portada({ onStartClick }: PortadaProps) {
         </div>
 
         <p className="font-mono text-[11px] text-[#0d7377] uppercase tracking-widest mb-2 font-bold">
-          Proyecto de Formulación y Evaluación TI
+          Gestión de Proyecto de TI
         </p>
 
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4">
@@ -72,12 +72,12 @@ export default function Portada({ onStartClick }: PortadaProps) {
 
         <p className="font-mono text-slate-600 text-[10px] mb-8">
           Docente: <span className="font-semibold text-slate-800">Arqque Pantigozo Antonio</span>
-          &nbsp;·&nbsp; Formulación y Evaluación de Proyectos TI &nbsp;·&nbsp; Lima, 2026
+          &nbsp;·&nbsp; Gestión de Proyecto de TI &nbsp;·&nbsp; Lima, 2026
         </p>
 
         <div className="inline-flex items-center gap-2 bg-[#e8f5f5] border border-[#c0e0e0] rounded-full px-4 py-1.5 mb-8">
           <span className="font-mono text-[#0a5c5f] text-[10px] font-semibold">
-            Metodología: PMBOK® 6.ª edición
+            Guía del PMBOK® · octava edición (PMI, 2025)
           </span>
         </div>
 
@@ -110,7 +110,7 @@ export default function Portada({ onStartClick }: PortadaProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#e8f5f5] hover:bg-[#d8eded] border border-[#a6d7d9] text-[#0a5c5f] font-semibold px-8 py-3 rounded-xl transition-all shadow-xs text-sm cursor-pointer"
           >
-            Prototipo en Vivo (SIA-T Web) ↗
+            Prototipo de demostración ↗
           </a>
         </div>
       </div>

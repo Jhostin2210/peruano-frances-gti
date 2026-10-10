@@ -19,6 +19,9 @@ import ScheduleBaseline from "./components/ScheduleBaseline";
 import CostBaseline from "./components/CostBaseline";
 import VideoPresentation from "./components/VideoPresentation";
 import ReferenciasBiblio from "./components/ReferenciasBiblio";
+import MarcoPmbok from "./components/MarcoPmbok";
+import DominioPmbok from "./components/DominioPmbok";
+import AvisoEtapa from "./components/AvisoEtapa";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -107,217 +110,274 @@ export default function App() {
 
         {/* Core Layout Content */}
         <main className="flex-1 lg:ml-64 min-w-0 transition-all duration-200">
-          
+
           {/* Main Cover Section */}
           <Portada onStartClick={handleStartProject} />
 
           {/* Research Summary Abstract */}
           <Abstract />
 
-          {/* CHAPTER 00 — INTRODUCCIÓN */}
+          {/* ═════════ PARTE I · FORMULACIÓN (curso anterior) ═════════ */}
+
+          {/* CAPÍTULO 00 — INTRODUCCIÓN */}
           <ChapterIntro
             num="00"
             title="Introducción al Diagnóstico"
-            subtitle="Análisis de motivación académica, perfil del IEP Peruano Francés, organigrama estratégico y propuesta de valor del sistema inteligente."
+            subtitle="Motivación del proyecto, perfil de la I.E.P. Peruano Francés, organigrama y propuesta de valor del sistema de alerta temprana."
             subheading="Capítulo 00 · Introducción"
           />
           <Introduccion />
 
-          {/* CHAPTER 01 — ANÁLISIS DE STAKEHOLDERS */}
+          {/* CAPÍTULO 01 — ANÁLISIS DEL PROBLEMA */}
           <ChapterIntro
-            id="inicio"
             num="01"
-            title="Análisis de Stakeholders"
-            subtitle="Identificación y priorización de interesados institucionales utilizando las matrices de poder e interés recomendadas por el PMBOK 6."
-            subheading="Capítulo 01 · Proceso de Inicio"
-            inputs={[
-              "Caso de negocio (Business Model Canvas)",
-              "Factores ambientales de la empresa",
-              "Activos de los procesos de la organización",
-              "Planificación del proyecto escolar",
-            ]}
-            tools={[
-              "Lluvia de ideas",
-              "Entrevista semi-estructurada",
-              "Análisis de interesados (Poder e Interés)",
-              "Juicio de expertos escolares",
-            ]}
-            outputs={[
-              "Registro de interesados de la IEP",
-              "Estrategia de comunicación y plan de involucramiento",
-              "Sintonización de expectativas iniciales",
-            ]}
-          />
-          <StakeholderAnalysis />
-
-          {/* CHAPTER 02 — ANÁLISIS DEL PROBLEMA */}
-          <ChapterIntro
-            num="02"
             title="Análisis del Problema"
-            subtitle="Evaluación lógica de la brecha mediante la recopilación de datos primarios en encuestas y el desarrollo de talleres adaptativos con design thinking."
-            subheading="Capítulo 02 · Diagnóstico Crítico"
+            subtitle="Diagnóstico de la brecha con datos de la encuesta a docentes y el árbol de problemas del marco lógico."
+            subheading="Capítulo 01 · Formulación · Diagnóstico"
             inputs={[
-              "Percepciones docentes",
-              "Fórmulas físicas de reportes escolares",
-              "Registros tradicionales de auxilio",
+              "Percepción de los docentes",
+              "Formatos físicos de reporte de incidencias",
+              "Registros de asistencia en cuadernos",
             ]}
             tools={[
-              "Marco Lógico (Árbol de problemas)",
-              "Encuestas diagnósticas digitales (Forms)",
-              "Design Thinking (Empatizar, Definir, Idear, Prototipar, Evaluar)",
+              "Marco lógico (árbol de problemas)",
+              "Encuesta en línea a docentes",
             ]}
             outputs={[
-              "Enunciado formal del problema central",
-              "Foco y específico de causas deterministas",
-              "Métricas cuantitativas del cuello de botella",
+              "Enunciado del problema central",
+              "Causas directas e indirectas",
+              "Resultados de la encuesta por pregunta",
             ]}
           />
           <ProblemaAnalysis />
 
-          {/* CHAPTER 03 — ANÁLISIS DEL OBJETIVO */}
+          {/* CAPÍTULO 02 — ANÁLISIS DEL OBJETIVO */}
           <ChapterIntro
-            num="03"
+            num="02"
             title="Análisis del Objetivo"
-            subtitle="Inversión lógica para formular las metas instrumentales preventivas, estructurar el árbol de medios y fines, y validar con el criterio SMART."
-            subheading="Capítulo 03 · Metas y Cierre"
+            subtitle="Árbol de medios y fines, objetivo central y objetivos específicos validados con el criterio SMART."
+            subheading="Capítulo 02 · Formulación · Objetivos"
             inputs={[
-              "Enunciado del problema de riesgo",
-              "Árbol de problemas causa-efecto",
+              "Enunciado del problema central",
+              "Árbol de problemas",
               "Análisis de factibilidad técnica",
             ]}
             tools={[
-              "Árbol de objetivos instrumentales (Marco Lógico)",
-              "Cribado y sintonización de metas SMART",
-              "Mapeo de objetivos específicos",
+              "Árbol de objetivos (marco lógico)",
+              "Criterio SMART",
             ]}
             outputs={[
-              "Objetivo SMART oficial centralizado",
-              "Objetivos específicos funcionales (Medios directos)",
-              "Impacto y fin último del software de tutoría",
+              "Objetivo central",
+              "Objetivos específicos (medios directos)",
+              "Fin último del sistema",
             ]}
           />
           <ObjetivoAnalysis />
 
-          {/* CHAPTER 04 — ANÁLISIS DE ALTERNATIVA DE SOLUCIÓN */}
+          {/* CAPÍTULO 03 — ANÁLISIS DE ALTERNATIVA DE SOLUCIÓN */}
           <ChapterIntro
-            num="04"
+            num="03"
             title="Análisis de Alternativa de Solución"
-            subtitle="Agrupamiento de acciones complementarias para definir alternativas tecnológicas integrales viables e implantación del portafolio UX mediante la metodología Design Thinking."
-            subheading="Capítulo 04 · Soluciones Viables"
+            subtitle="Acciones por cada medio, alternativas tecnológicas evaluadas y diseño de la experiencia con pensamiento de diseño."
+            subheading="Capítulo 03 · Formulación · Alternativas"
             inputs={[
-              "Árbol de Objetivos Fines/Medios (Cap. 03)",
-              "Metodologías ágiles participativas",
-              "Investigación de soluciones tecnológicas homólogas",
+              "Árbol de objetivos (capítulo 02)",
+              "Soluciones tecnológicas comparables",
             ]}
             tools={[
-              "Matriz de mutua exclusión de acciones",
-              "Evaluación cualitativa de suficiencia de la alternativa",
-              "Taller Design Thinking (Fases 1 a 5 relocalizado)",
+              "Matriz de acciones mutuamente excluyentes",
+              "Evaluación de suficiencia de cada alternativa",
+              "Pensamiento de diseño (cinco fases)",
             ]}
             outputs={[
-              "Fórmula teórica ajustada del modelo analítico",
-              "Mockups y Prototipos de bento-grid de experiencia",
-              "Selección de la alternativa idónea recomendada",
+              "Alternativa recomendada",
+              "Maquetas y prototipo de la experiencia",
             ]}
           />
+          <AvisoEtapa tipo="cambio">
+            La evaluación de este capítulo eligió una solución alojada en el colegio. En la etapa actual el alojamiento pasó a
+            servicios gestionados en la nube: el cambio está registrado como <strong>SC-03</strong> y su sustento está en el plan de
+            estrategia de abastecimiento (<a href="#doc-GOB-05" className="underline font-semibold">GOB-05</a>). El modelo, las alertas
+            y el tablero de la alternativa elegida se mantienen.
+          </AvisoEtapa>
           <AlternativesAnalysis />
 
-          {/* CHAPTER 05 — LÍNEA BASE DEL ALCANCE DEL PROYECTO */}
+          {/* ═════════ PARTE II · GESTIÓN DEL PROYECTO (PMBOK® 8) ═════════ */}
+
+          {/* CAPÍTULO 04 — MARCO DE GESTIÓN */}
+          <ChapterIntro
+            num="04"
+            title="Marco de Gestión del Proyecto"
+            subtitle="Cómo se organiza el proyecto según la Guía del PMBOK®, octava edición: principios, áreas de enfoque, dominios de desempeño, procesos desarrollados e índice de documentos."
+            subheading="Capítulo 04 · Guía del PMBOK® · octava edición"
+          />
+          <MarcoPmbok />
+
+          {/* CAPÍTULO 05 — DOMINIO DE GOBERNANZA */}
           <ChapterIntro
             num="05"
-            title="Línea Base del Alcance del Proyecto"
-            subtitle="Planificación del alcance, matriz de trazabilidad RTM de 20 requisitos de software y estructuración jerárquica mediante la EDT y su Diccionario técnico."
-            subheading="Capítulo 05 · Alcance Completo"
+            title="Dominio de Gobernanza"
+            subtitle="Autoriza el proyecto, integra sus planes, dirige la ejecución, asegura la calidad, gestiona el conocimiento, controla el desempeño y los cambios, y cierra cada fase. Nueve procesos."
+            subheading="Capítulo 05 · Dominio de desempeño · 9 procesos"
             inputs={[
-              "Alternativa recomendada (Software SIA-T)",
-              "Registros tradicionales de la mesa de asistencia",
-              "Plataforma Cubicol de notas e incidencias",
+              "Caso de negocio y plan de beneficios",
+              "Factores del entorno y activos del colegio",
+              "Documentos de la fase de formulación",
             ]}
             tools={[
-              "Especificación de requisitos de software (IEEE 830)",
-              "Requirements Traceability Matrix (RTM)",
-              "Desglose jerárquico del Proyecto (EDT / WBS)",
+              "Entrevista y tormenta de ideas",
+              "Análisis de hacer o comprar",
+              "Lista de verificación, Pareto y causa raíz",
+              "Control integrado de cambios",
             ]}
             outputs={[
-              "Matriz interactiva de requisitos (Acceso Google Drive)",
-              "Diagrama interactivo de EDT del Sistema ML",
-              "Diccionario de la EDT completo (18 paquetes de trabajo)",
+              "Acta de constitución y registro de supuestos",
+              "Plan para la dirección del proyecto",
+              "Registros de incidentes, cambios y lecciones",
+              "Informes de calidad, desempeño y cierre de fase",
             ]}
           />
-          <RequisitosAnalysis />
+          <DominioPmbok
+            dominio="Gobernanza"
+            capitulo="05"
+            antes={{ "gob-1": <StakeholderAnalysis parte="caso" /> }}
+          />
 
-          {/* CHAPTER 06 — LÍNEA BASE DEL CRONOGRAMA DEL PROYECTO */}
+          {/* CAPÍTULO 06 — DOMINIO DE INTERESADOS */}
           <ChapterIntro
             num="06"
-            title="Línea Base del Cronograma del Proyecto"
-            subtitle="Planificación del tiempo de ejecución estructurada en 6 Sprints ágiles, estimación estadística por valores PERT, secuenciación lógica y control del desempeño por Valor Ganado."
-            subheading="Capítulo 06 · Control de Plazos"
+            title="Dominio de Interesados"
+            subtitle="Identifica a las personas y organizaciones afectadas por el proyecto, planifica su involucramiento y las comunicaciones, y da seguimiento a su participación."
+            subheading="Capítulo 06 · Dominio de desempeño · 7 procesos"
             inputs={[
-              "Diccionario de la EDT del Software SIA-T (Cap. 05)",
-              "Metodología Agile SCRUM y estimaciones técnicas",
-              "Parámetros de tolerancia institucionales de la IEP",
+              "Acta de constitución",
+              "Organigrama del colegio",
+              "Entrevista y encuesta del levantamiento",
             ]}
             tools={[
-              "Estimación PERT por Tres Valores (Optimista, Probable, Pesimista)",
-              "Diagramación de Red por Precedencia (Método PDM)",
-              "Análisis de Valor Ganado (Earned Value Analysis - EVA)",
+              "Matriz de poder e interés y cubo de interesados",
+              "Modelo de prominencia y dirección de la influencia",
+              "Matriz de evaluación del involucramiento",
+              "Reglas básicas",
             ]}
             outputs={[
-              "Plan de Gestión del Cronograma base y reservas de contingencia",
-              "Lista de 40 actividades acopladas por Sprints",
-              "Ruta crítica e indicadores de desviación con plan de respuestas",
+              "Registro de interesados (17)",
+              "Plan de involucramiento y plan de comunicaciones",
+              "Bitácora e informe de seguimiento",
             ]}
           />
-          <ScheduleBaseline />
+          <DominioPmbok
+            dominio="Interesados"
+            capitulo="06"
+            antes={{ "int-1": <StakeholderAnalysis parte="entrevista" /> }}
+          />
 
-          {/* CHAPTER 07 — LÍNEA BASE DE COSTOS DEL PROYECTO */}
+          {/* CAPÍTULO 07 — DOMINIO DE ALCANCE */}
           <ChapterIntro
             num="07"
-            title="Línea Base de Costos del Proyecto"
-            subtitle="Planificación financiera, estimaciones de costos por categoría y método PERT para paquetes de alto riesgo, agregación de costos de Línea Base y distribución temporal mediante la Curva S."
-            subheading="Capítulo 07 · Línea Base de Costos"
+            title="Dominio de Alcance"
+            subtitle="Define qué se entrega y con qué calidad: plan de gestión, 20 requisitos con su trazabilidad, enunciado del alcance, EDT y validación de los entregables."
+            subheading="Capítulo 07 · Dominio de desempeño · 6 procesos"
             inputs={[
-              "Diccionario de la EDT del Software SIA-T (Cap. 05)",
-              "Cronograma SCRUM de 6 meses (Cap. 06)",
-              "Tarifas de mercado laboral TI de Lima 2026",
+              "Acta de constitución",
+              "Registro de interesados",
+              "Alternativa recomendada",
             ]}
             tools={[
-              "Estimación Ascendente (Bottom-Up)",
-              "Estimación PERT por Tres Valores (Alto Riesgo)",
-              "Análisis de reserva (Contingencia y Gestión)",
-              "Curva S acumulativa por Sprints",
+              "Entrevista, encuesta y pensamiento de diseño",
+              "Matriz de trazabilidad de requisitos",
+              "Descomposición del trabajo (EDT)",
+              "Inspección y pruebas",
             ]}
             outputs={[
-              "Plan de Gestión Financiera y métricas",
-              "Estimación granular de costos por categoría",
-              "Línea Base de Costos v2 (S/. 59,859.17) y Presupuesto Total",
+              "Planes de alcance, requisitos y calidad",
+              "Enunciado del alcance, versión 3",
+              "EDT de seis componentes y su diccionario",
+              "Procedimiento de validación",
             ]}
           />
-          <CostBaseline />
+          <DominioPmbok
+            dominio="Alcance"
+            capitulo="07"
+            despues={{
+              "alc-2": <RequisitosAnalysis parte="requisitos" />,
+              "alc-4": <RequisitosAnalysis parte="edt" />,
+            }}
+          />
 
-          {/* CHAPTER 08 — VIDEO DE PRESENTACIÓN DE LA SOLUCIÓN */}
+          {/* CAPÍTULO 08 — DOMINIO DE CRONOGRAMA */}
           <ChapterIntro
             num="08"
-            title="Video de Presentación de la Solución"
-            subtitle="Sustentación oficial en video de la propuesta estratégica SIA-T, incluyendo el reto académico, justificación, demostración en vivo del prototipo y próximos pasos de adopción."
-            subheading="Capítulo 08 · Video de Presentación"
+            title="Dominio de Cronograma"
+            subtitle="Línea base del cronograma, versión 3: 44 actividades y una reunión diaria en seis sprints, del 12 de octubre de 2026 al 23 de abril de 2027, con receso en febrero."
+            subheading="Capítulo 08 · Dominio de desempeño · 3 procesos"
             inputs={[
-              "Propuesta técnica de los Capítulos 01 al 05",
-              "Planificaciones y Líneas Base de los Capítulos 06 y 07",
-              "Prototipo web funcional de SIA-T (Sustentación)",
+              "Línea base del alcance (capítulo 07)",
+              "Estimaciones de la versión 2",
+              "Calendario escolar y feriados",
             ]}
             tools={[
-              "Pitch de impacto y comunicación estratégica",
-              "Audio Cast inteligente multirrol de NotebookLM",
-              "Sincronización de diapositivas en tiempo real",
-              "Buscador predictivo de la transcripción oficial",
+              "Estimación por tres valores (PERT)",
+              "Método de la ruta crítica",
+              "Planificación por sprints",
+              "Análisis del valor ganado",
             ]}
             outputs={[
-              "Video interactivo oficial de la solución SIA-T",
-              "Guion y transcripción oficial del pitch alineada",
-              "Hoja de ruta pedagógica de adopción e impacto",
+              "Plan de gestión del cronograma",
+              "Línea base del cronograma y calendario",
+              "Cronograma de hitos",
             ]}
           />
+          <DominioPmbok
+            dominio="Cronograma"
+            capitulo="08"
+            despues={{ "cro-2": <ScheduleBaseline /> }}
+          />
+
+          {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}
+
+          {/* CAPÍTULO 09 — DOMINIO DE FINANZAS */}
+          <ChapterIntro
+            num="09"
+            title="Dominio de Finanzas: Línea Base de Costos"
+            subtitle="Estimación de costos por categoría, línea base de costos y distribución en el tiempo. Elaborado en el curso anterior; pendiente de actualizar en esta etapa."
+            subheading="Capítulo 09 · Curso anterior · Pendiente de actualizar"
+            inputs={[
+              "Diccionario de la EDT",
+              "Cronograma de seis sprints",
+              "Tarifas del mercado laboral de TI de Lima, 2026",
+            ]}
+            tools={[
+              "Estimación ascendente",
+              "Estimación por tres valores (PERT)",
+              "Análisis de reserva",
+              "Curva S por sprints",
+            ]}
+            outputs={[
+              "Estimación de costos por categoría",
+              "Línea base de costos: S/ 59,859.17",
+              "Presupuesto total: S/ 63,495.53",
+            ]}
+          />
+          <AvisoEtapa tipo="anterior">
+            Este capítulo se elaboró en el curso anterior con la sexta edición del PMBOK y el equipo de entonces. Los
+            montos siguen vigentes, pero las fechas, los responsables y la partida de servidor local corresponden a la versión anterior:
+            se actualizarán cuando el equipo desarrolle el dominio de Finanzas (pendiente registrado en <strong>SC-02</strong> y{" "}
+            <strong>SC-03</strong>).
+          </AvisoEtapa>
+          <CostBaseline />
+
+          {/* CAPÍTULO 10 — VIDEO DE PRESENTACIÓN */}
+          <ChapterIntro
+            num="10"
+            title="Video de Presentación de la Solución"
+            subtitle="Sustentación en video de la propuesta SIA-T presentada en el curso anterior, con la demostración del prototipo."
+            subheading="Capítulo 10 · Curso anterior"
+          />
+          <AvisoEtapa tipo="anterior">
+            El video y el prototipo que muestra son del curso anterior. El prototipo es una demostración con datos simulados: todavía
+            no usa un modelo validado con datos reales del colegio (incidente <strong>IN-03</strong>).
+          </AvisoEtapa>
           <VideoPresentation />
 
           {/* SYSTEM BIBLIOGRAPHY */}
@@ -326,7 +386,7 @@ export default function App() {
           {/* Persistent global footer */}
           <footer className="bg-slate-900 py-8 text-center text-slate-400 text-xs border-t border-slate-800">
             <p className="font-mono">
-              © 2026 · Sistema ML Alerta Temprana del Bajo Rendimiento Académico · IEP Peruano Francés · UNTELS · ISR0832
+              © 2026 · Sistema ML Alerta Temprana del Bajo Rendimiento Académico · I.E.P. Peruano Francés · UNTELS · Gestión de Proyecto de TI
             </p>
           </footer>
 

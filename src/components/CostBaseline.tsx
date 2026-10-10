@@ -165,7 +165,7 @@ export default function CostBaseline() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
             <div>
               <span className="font-mono text-xs text-[#0d7377] uppercase tracking-wider block mb-2">
-                07 · Línea Base de Costos del Proyecto · PMBOK 6
+                09 · Dominio de Finanzas · Línea base de costos (curso anterior)
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
                 Línea Base de los Costos del Proyecto
@@ -184,7 +184,7 @@ export default function CostBaseline() {
           </div>
 
           <p className="text-slate-600 text-sm leading-relaxed text-justify mb-8 max-w-4xl">
-            La gestión de costos según el estándar PMBOK <Cite r="PMI, 2017" /> engloba los procesos para planificar, estimar, presupuestar y controlar los costos de modo que el proyecto se complete dentro del presupuesto aprobado. Esta sección presenta la <strong>Línea Base de Costos (v2)</strong>, ajustada y alineada de manera rígida con las <strong>24 semanas (6 Sprints)</strong> de ejecución y la dedicación a jornada completa (8 horas/día) del equipo de desarrollo, sumando un costo total de oportunidad de <strong>S/. 59,859.17</strong>.
+            La gestión de costos según el estándar PMBOK <Cite r="PMI, 2025" /> engloba los procesos para planificar, estimar, presupuestar y controlar los costos de modo que el proyecto se complete dentro del presupuesto aprobado. Esta sección presenta la <strong>Línea Base de Costos (v2)</strong>, ajustada y alineada de manera rígida con las <strong>24 semanas (6 Sprints)</strong> de ejecución y la dedicación a jornada completa (8 horas/día) del equipo de desarrollo, sumando un costo total de oportunidad de <strong>S/. 59,859.17</strong>.
           </p>
 
           {/* TAB NAVIGATION */}
@@ -313,7 +313,7 @@ export default function CostBaseline() {
                     </div>
                     <div className="pt-4 border-t border-slate-200/50 mt-4">
                       <span className="font-mono text-[10px] text-slate-400 block">Metodología Aplicada</span>
-                      <span className="text-xs font-bold text-[#0d7377]">PMBOK Capítulo 7 - Costos</span>
+                      <span className="text-xs font-bold text-[#0d7377]">Dominio de Finanzas</span>
                     </div>
                   </div>
                 </div>

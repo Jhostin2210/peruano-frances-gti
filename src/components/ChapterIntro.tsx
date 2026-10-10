@@ -35,7 +35,7 @@ export default function ChapterIntro({
         </span>
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-[#4ec8cc] mb-0.5">
-            {subheading || `Capítulo ${num} · PMBOK® 6.ª ed.`}
+            {subheading || `Capítulo ${num} · Guía del PMBOK® · octava edición`}
           </p>
           <h2 className="font-serif text-2xl font-bold text-white leading-tight">
             {title}

@@ -517,7 +517,7 @@ export default function AlternativesAnalysis() {
       <section id="p04-marco" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            04 · Análisis de Alternativas de Solución · Marco Teórico
+            03 · Análisis de Alternativas de Solución · Marco Teórico
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
             Análisis de Alternativas de Solución (Transition Stage)

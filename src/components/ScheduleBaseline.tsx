@@ -27,6 +27,7 @@ import {
   ZoomOut
 } from "lucide-react";
 import Cite from "./Cite";
+import { ACTIVIDADES, TAREAS_PROJECT, TOTALES } from "../content/datos";
 
 interface ActivityItem {
   id: string;
@@ -46,59 +47,7 @@ interface ActivityItem {
   isNew: boolean;
 }
 
-const ACTIVIDADES_DATA: ActivityItem[] = [
-  // S1
-  { id: "A-0.1.1.1", paquete: "1.1.1", descripcion: "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos", responsable: "Equipo + Directivos", semana: "S1", prioridad: "Alta", sprint: 1, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: false, isNew: true },
-  { id: "A-0.1.1.2", paquete: "1.1.1", descripcion: "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio", responsable: "TI + Equipo ML", semana: "S2", prioridad: "Alta", sprint: 1, to: 3, tm: 5, tp: 8, te: 5.2, sigma: 0.83, sigmaSq: 0.69, isCritical: false, isNew: true },
-  { id: "A-0.1.1.3", paquete: "1.1.1", descripcion: "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento", responsable: "ML + Docentes", semana: "S3", prioridad: "Alta", sprint: 1, to: 2, tm: 4, tp: 6, te: 4.0, sigma: 0.67, sigmaSq: 0.44, isCritical: false, isNew: true },
-  { id: "A-0.1.1.4", paquete: "1.1.1", descripcion: "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías", responsable: "TI + ML", semana: "S4", prioridad: "Alta", sprint: 1, to: 3, tm: 5, tp: 7, te: 5.0, sigma: 0.67, sigmaSq: 0.44, isCritical: false, isNew: true },
-  // S2
-  { id: "A-1.1.1.1", paquete: "1.1.1", descripcion: "Elaborar cronograma de hitos del proyecto (Gantt SCRUM)", responsable: "Equipo", semana: "S5", prioridad: "Alta", sprint: 2, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: false, isNew: false },
-  { id: "A-1.1.1.2", paquete: "1.1.1", descripcion: "Definir Product Backlog y priorizar historias de usuario", responsable: "Equipo", semana: "S5", prioridad: "Alta", sprint: 2, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  { id: "A-1.1.1.3", paquete: "1.1.1", descripcion: "Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team", responsable: "Equipo", semana: "S5", prioridad: "Alta", sprint: 2, to: 1, tm: 1, tp: 2, te: 1.2, sigma: 0.17, sigmaSq: 0.03, isCritical: false, isNew: false },
-  { id: "A-1.2.1.1", paquete: "1.2.1", descripcion: "Establecer plantilla de informe de avance semanal", responsable: "Scrum Master", semana: "S5", prioridad: "Media", sprint: 2, to: 1, tm: 1, tp: 2, te: 1.2, sigma: 0.17, sigmaSq: 0.03, isCritical: false, isNew: false },
-  { id: "A-1.2.1.2", paquete: "1.2.1", descripcion: "Daily Standup 15 min diarios — continuo todo el proyecto", responsable: "Scrum Master", semana: "S5–S24", prioridad: "Alta", sprint: 2, to: 1, tm: 1, tp: 2, te: 1.2, sigma: 0.17, sigmaSq: 0.03, isCritical: false, isNew: false },
-  { id: "A-2.1.1.1", paquete: "2.1.1", descripcion: "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)", responsable: "Área de TI", semana: "S6", prioridad: "Alta", sprint: 2, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-2.1.1.2", paquete: "2.1.1", descripcion: "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)", responsable: "Área de TI", semana: "S6", prioridad: "Alta", sprint: 2, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-2.1.1.3", paquete: "2.1.1", descripcion: "Codificar scripts ETL de extracción, transformación y carga", responsable: "Área de TI", semana: "S7", prioridad: "Alta", sprint: 2, to: 4, tm: 5, tp: 8, te: 5.3, sigma: 0.67, sigmaSq: 0.44, isCritical: true, isNew: false },
-  { id: "A-2.1.1.4", paquete: "2.1.1", descripcion: "Ejecutar prueba de migración de datos y validar integridad", responsable: "Área de TI", semana: "S7", prioridad: "Alta", sprint: 2, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-2.2.1.1", paquete: "2.2.1", descripcion: "Configurar Cron jobs nocturnos de limpieza y validación de datos", responsable: "Área de TI", semana: "S8", prioridad: "Alta", sprint: 2, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-2.2.1.2", paquete: "2.2.1", descripcion: "Verificar consistencia de datos y corrección de registros erróneos", responsable: "Área de TI", semana: "S8", prioridad: "Media", sprint: 2, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  // S3
-  { id: "A-3.1.1.1", paquete: "3.1.1", descripcion: "Análisis exploratorio del dataset académico (EDA)", responsable: "Equipo ML", semana: "S9", prioridad: "Alta", sprint: 3, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-3.1.1.2", paquete: "3.1.1", descripcion: "Preprocesar y normalizar variables académicas para el modelo", responsable: "Equipo ML", semana: "S9", prioridad: "Alta", sprint: 3, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: false, isNew: false },
-  { id: "A-3.1.1.3", paquete: "3.1.1", descripcion: "Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)", responsable: "Equipo ML", semana: "S10", prioridad: "Alta", sprint: 3, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-3.1.1.4", paquete: "3.1.1", descripcion: "Entrenar modelo predictivo con Scikit-learn usando datos históricos", responsable: "Equipo ML", semana: "S10", prioridad: "Alta", sprint: 3, to: 3, tm: 5, tp: 8, te: 5.2, sigma: 0.83, sigmaSq: 0.69, isCritical: true, isNew: false },
-  { id: "A-3.2.1.1", paquete: "3.2.1", descripcion: "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)", responsable: "Equipo ML", semana: "S11", prioridad: "Alta", sprint: 3, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-3.2.1.2", paquete: "3.2.1", descripcion: "Ajustar hiperparámetros hasta alcanzar precisión mínima del 75%", responsable: "Equipo ML", semana: "S11", prioridad: "Alta", sprint: 3, to: 2, tm: 4, tp: 6, te: 4.0, sigma: 0.67, sigmaSq: 0.44, isCritical: true, isNew: false },
-  { id: "A-3.2.1.3", paquete: "3.2.1", descripcion: "Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)", responsable: "Equipo ML", semana: "S11", prioridad: "Alta", sprint: 3, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: true, isNew: false },
-  { id: "A-3.2.1.4", paquete: "3.2.1", descripcion: "Configurar script de actualización semanal automática del modelo", responsable: "Equipo ML", semana: "S12", prioridad: "Media", sprint: 3, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: false, isNew: false },
-  // S4
-  { id: "A-4.1.1.1", paquete: "4.1.1", descripcion: "Diseñar plantilla de correo de alerta para el docente tutor", responsable: "Área de TI", semana: "S13", prioridad: "Alta", sprint: 4, to: 1, tm: 2, tp: 3, te: 2.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  { id: "A-4.1.1.2", paquete: "4.1.1", descripcion: "Desarrollar módulo de envío automático de alertas por correo institucional", responsable: "Área de TI", semana: "S13", prioridad: "Alta", sprint: 4, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: false, isNew: false },
-  { id: "A-4.1.1.3", paquete: "4.1.1", descripcion: "Desarrollar módulo web de alertas críticas en panel del docente", responsable: "Área de TI", semana: "S14", prioridad: "Alta", sprint: 4, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: false, isNew: false },
-  { id: "A-4.1.1.4", paquete: "4.1.1", descripcion: "Implementar módulo de registro de seguimiento de casos críticos", responsable: "Área de TI", semana: "S14", prioridad: "Media", sprint: 4, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  { id: "A-4.2.1.1", paquete: "4.2.1", descripcion: "Diseñar wireframes y prototipo de la interfaz Next.js", responsable: "Área de TI", semana: "S15", prioridad: "Alta", sprint: 4, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-4.2.1.2", paquete: "4.2.1", descripcion: "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado", responsable: "Área de TI", semana: "S15", prioridad: "Alta", sprint: 4, to: 4, tm: 5, tp: 8, te: 5.3, sigma: 0.67, sigmaSq: 0.44, isCritical: true, isNew: false },
-  { id: "A-4.2.1.3", paquete: "4.2.1", descripcion: "Desarrollar ficha individual del estudiante con historial completo", responsable: "Área de TI", semana: "S16", prioridad: "Media", sprint: 4, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-4.2.1.4", paquete: "4.2.1", descripcion: "Implementar módulo de roles y control de acceso por perfil de usuario", responsable: "Área de TI", semana: "S16", prioridad: "Alta", sprint: 4, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: true, isNew: false },
-  { id: "A-4.2.1.5", paquete: "4.2.1", descripcion: "Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa", responsable: "Área de TI", semana: "S16", prioridad: "Media", sprint: 4, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  // S5
-  { id: "A-5.0.1.1", paquete: "6.1.1", descripcion: "Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto", responsable: "Área de TI", semana: "S17", prioridad: "Alta", sprint: 5, to: 3, tm: 5, tp: 8, te: 5.2, sigma: 0.83, sigmaSq: 0.69, isCritical: true, isNew: true },
-  { id: "A-5.0.1.2", paquete: "6.1.1", descripcion: "Pruebas de rendimiento del sistema: confirmar dashboard carga en menos de 3 segundos y clasificación ML en tiempo real", responsable: "Área de TI", semana: "S17", prioridad: "Alta", sprint: 5, to: 2, tm: 4, tp: 6, te: 4.0, sigma: 0.67, sigmaSq: 0.44, isCritical: true, isNew: true },
-  { id: "A-5.0.2.1", paquete: "6.2.1", descripcion: "Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas", responsable: "Equipo + Docentes", semana: "S18–S19", prioridad: "Alta", sprint: 5, to: 5, tm: 7, tp: 10, te: 7.2, sigma: 0.83, sigmaSq: 0.69, isCritical: true, isNew: true },
-  { id: "A-5.0.2.2", paquete: "6.2.1", descripcion: "Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real", responsable: "Equipo + Docentes", semana: "S20", prioridad: "Alta", sprint: 5, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: true },
-  // S6
-  { id: "A-5.1.1.1", paquete: "5.1.1", descripcion: "Configurar servidor VPS con Dokploy para despliegue definitivo del sistema", responsable: "Área de TI", semana: "S21", prioridad: "Alta", sprint: 6, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  { id: "A-5.1.1.2", paquete: "5.1.1", descripcion: "Desplegar sistema completo en entorno de producción definitivo", responsable: "Área de TI", semana: "S21", prioridad: "Alta", sprint: 6, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-5.1.1.3", paquete: "5.1.1", descripcion: "Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores", responsable: "Equipo + Docentes", semana: "S22", prioridad: "Alta", sprint: 6, to: 4, tm: 5, tp: 7, te: 5.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-5.1.1.4", paquete: "5.1.1", descripcion: "Corregir observaciones y bugs detectados en pruebas UAT formales", responsable: "Área de TI", semana: "S22", prioridad: "Alta", sprint: 6, to: 2, tm: 3, tp: 5, te: 3.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false },
-  { id: "A-5.2.1.1", paquete: "5.2.1", descripcion: "Elaborar manual de usuario (docentes y coordinadores)", responsable: "Equipo", semana: "S23", prioridad: "Media", sprint: 6, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  { id: "A-5.2.1.2", paquete: "5.2.1", descripcion: "Elaborar manual técnico del sistema para área de TI", responsable: "Área de TI", semana: "S23", prioridad: "Media", sprint: 6, to: 2, tm: 3, tp: 4, te: 3.0, sigma: 0.33, sigmaSq: 0.11, isCritical: false, isNew: false },
-  { id: "A-5.2.1.3", paquete: "5.2.1", descripcion: "Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)", responsable: "Coord. Académico", semana: "S23", prioridad: "Alta", sprint: 6, to: 1, tm: 2, tp: 3, te: 2.0, sigma: 0.33, sigmaSq: 0.11, isCritical: true, isNew: false },
-  { id: "A-5.2.1.4", paquete: "5.2.1", descripcion: "Realizar retrospectiva final del proyecto SCRUM", responsable: "Scrum Master", semana: "S24", prioridad: "Media", sprint: 6, to: 1, tm: 1, tp: 2, te: 1.2, sigma: 0.17, sigmaSq: 0.03, isCritical: true, isNew: false },
-  { id: "A-5.2.1.5", paquete: "5.2.1", descripcion: "Elaborar informe final del proyecto y presentación de cierre ante el docente del curso", responsable: "Equipo", semana: "S24", prioridad: "Alta", sprint: 6, to: 3, tm: 4, tp: 6, te: 4.2, sigma: 0.50, sigmaSq: 0.25, isCritical: true, isNew: false }
-];
+const ACTIVIDADES_DATA = ACTIVIDADES as ActivityItem[];
 
 interface MSProjectTask {
   id: number;
@@ -112,72 +61,7 @@ interface MSProjectTask {
   isSummary?: boolean;
 }
 
-const MSPROJECT_TASKS: MSProjectTask[] = [
-  { id: 1, nombre: "Sistema ML - Alerta Temprana (Proyecto Completo)", duracion: "125.13 días", comienzo: "lun 3/08/26", fin: "lun 25/01/27", predecesoras: "", recursos: "", sprint: 0, isSummary: true },
-  { id: 2, nombre: "Sprint de Configuración y Datos Iniciales (Fase Preliminar)", duracion: "20.13 días", comienzo: "lun 3/08/26", fin: "lun 31/08/26", predecesoras: "", recursos: "", sprint: 1, isSummary: true },
-  { id: 3, nombre: "Levantamiento de información con directivos y coordinadores", duracion: "3 días", comienzo: "lun 3/08/26", fin: "mié 5/08/26", predecesoras: "", recursos: "Equipo + Directivos", sprint: 1 },
-  { id: 4, nombre: "Análisis de calidad y disponibilidad de datos académicos", duracion: "5 días", comienzo: "lun 10/08/26", fin: "vie 14/08/26", predecesoras: "3", recursos: "TI + Equipo ML", sprint: 1 },
-  { id: 5, nombre: "Definición y validación de variables predictoras clave", duracion: "4 días", comienzo: "lun 17/08/26", fin: "jue 20/08/26", predecesoras: "4", recursos: "ML + Docentes", sprint: 1 },
-  { id: 6, nombre: "Diseño detallado de arquitectura de integración", duracion: "5 días", comienzo: "lun 24/08/26", fin: "vie 28/08/26", predecesoras: "5", recursos: "TI + ML", sprint: 1 },
-  { id: 7, nombre: "Hito: Arquitectura y variables validadas", duracion: "0 días", comienzo: "vie 28/08/26", fin: "vie 28/08/26", predecesoras: "6", recursos: "", sprint: 1 },
-  { id: 8, nombre: "Cierre de fase preliminar y preparación de Sprints", duracion: "1.13 días", comienzo: "vie 28/08/26", fin: "lun 31/08/26", predecesoras: "7", recursos: "", sprint: 1 },
-  { id: 9, nombre: "Sprints de Desarrollo de Software e Implantación (Fase Central)", duracion: "105 días", comienzo: "lun 31/08/26", fin: "vie 22/01/27", predecesoras: "", recursos: "", sprint: 2, isSummary: true },
-  { id: 10, nombre: "Planificación de Sprint 2 (Establecer hito de Gantt)", duracion: "3 días", comienzo: "lun 31/08/26", fin: "mié 2/09/26", predecesoras: "8", recursos: "Equipo", sprint: 2 },
-  { id: 11, nombre: "Definición detallada de Historias de Usuario (Backlog)", duracion: "3 días", comienzo: "mié 2/09/26", fin: "vie 4/09/26", predecesoras: "10", recursos: "Equipo", sprint: 2 },
-  { id: 12, nombre: "Asignación formal de roles ágiles (SM, PO, Dev)", duracion: "1 día", comienzo: "mié 2/09/26", fin: "mié 2/09/26", predecesoras: "11CC", recursos: "Equipo", sprint: 2 },
-  { id: 13, nombre: "Definición del plan de informes de avance semanal", duracion: "1 día", comienzo: "vie 4/09/26", fin: "vie 4/09/26", predecesoras: "11", recursos: "Scrum Master", sprint: 2 },
-  { id: 14, nombre: "Ejecución continua de Daily Standups (20 mins)", duracion: "105 días", comienzo: "lun 31/08/26", fin: "vie 22/01/27", predecesoras: "13CC", recursos: "Scrum Master", sprint: 2 },
-  { id: 15, nombre: "Mapeo detallado de fuentes de datos académicos en IEP", duracion: "4 días", comienzo: "lun 7/09/26", fin: "jue 10/09/26", predecesoras: "13", recursos: "Área de TI", sprint: 2 },
-  { id: 16, nombre: "Modelado físico de la Base de Datos centralizada", duracion: "3 días", comienzo: "jue 10/09/26", fin: "lun 14/09/26", predecesoras: "15", recursos: "Área de TI", sprint: 2 },
-  { id: 17, nombre: "Desarrollo y codificación de scripts ETL iniciales", duracion: "5 días", comienzo: "lun 14/09/26", fin: "vie 18/09/26", predecesoras: "16", recursos: "Área de TI", sprint: 2 },
-  { id: 18, nombre: "Ejecución y pruebas de migración de carga histórica", duracion: "3 días", comienzo: "vie 18/09/26", fin: "mar 22/09/26", predecesoras: "17", recursos: "Área de TI", sprint: 2 },
-  { id: 19, nombre: "Implementación de tareas cron de saneamiento", duracion: "4 días", comienzo: "lun 21/09/26", fin: "jue 24/09/26", predecesoras: "18", recursos: "Área de TI", sprint: 2 },
-  { id: 20, nombre: "Validación de consistencia e integridad de datos", duracion: "3 días", comienzo: "jue 24/09/26", fin: "lun 28/09/26", predecesoras: "19", recursos: "Área de TI", sprint: 2 },
-  { id: 21, nombre: "Hito: Base de datos centralizada operativa", duracion: "0 días", comienzo: "vie 25/09/26", fin: "vie 25/09/26", predecesoras: "20", recursos: "", sprint: 2 },
-  { id: 22, nombre: "Cierre de Sprint 2 y Sprint Review (Demostración de ETL)", duracion: "1.13 días", comienzo: "vie 25/09/26", fin: "lun 28/09/26", predecesoras: "21", recursos: "", sprint: 2 },
-  { id: 23, nombre: "Sprint 3: Desarrollo de Modelo Predictivo ML (Fase Central)", duracion: "20.13 días", comienzo: "lun 28/09/26", fin: "lun 26/10/26", predecesoras: "", recursos: "", sprint: 3, isSummary: true },
-  { id: 24, nombre: "Análisis exploratorio estadístico de datos migrados (EDA)", duracion: "4 días", comienzo: "lun 28/09/26", fin: "jue 1/10/26", predecesoras: "22", recursos: "Equipo ML", sprint: 3 },
-  { id: 25, nombre: "Limpieza profunda y normalización de variables", duracion: "3 días", comienzo: "jue 1/10/26", fin: "lun 5/10/26", predecesoras: "24", recursos: "Equipo ML", sprint: 3 },
-  { id: 26, nombre: "Selección preliminar de algoritmos candidatos ML", duracion: "3 días", comienzo: "lun 5/10/26", fin: "mié 7/10/26", predecesoras: "25", recursos: "Equipo ML", sprint: 3 },
-  { id: 27, nombre: "Entrenamiento inicial del modelo predictivo (Scikit-Learn)", duracion: "5 días", comienzo: "mié 7/10/26", fin: "mar 13/10/26", predecesoras: "26", recursos: "Equipo ML", sprint: 3 },
-  { id: 28, nombre: "Evaluación exhaustiva de métricas del modelo (F1-Score)", duracion: "3 días", comienzo: "lun 12/10/26", fin: "mié 14/10/26", predecesoras: "27", recursos: "Equipo ML", sprint: 3 },
-  { id: 29, nombre: "Ajuste de hiperparámetros y optimización", duracion: "4 días", comienzo: "mié 14/10/26", fin: "lun 19/10/26", predecesoras: "28", recursos: "Equipo ML", sprint: 3 },
-  { id: 30, nombre: "Codificación de la lógica de semaforización de riesgo", duracion: "3 días", comienzo: "lun 19/10/26", fin: "mié 21/10/26", predecesoras: "29", recursos: "Equipo ML", sprint: 3 },
-  { id: 31, nombre: "Scripting para el reentrenamiento automatizado semanal", duracion: "3 días", comienzo: "lun 19/10/26", fin: "mié 21/10/26", predecesoras: "30", recursos: "Equipo ML", sprint: 3 },
-  { id: 32, nombre: "Hito: Modelo predictivo ML validado (>75% precisión)", duracion: "0 días", comienzo: "mié 21/10/26", fin: "mié 21/10/26", predecesoras: "31", recursos: "", sprint: 3 },
-  { id: 33, nombre: "Cierre de Sprint 3 y Sprint Review de Inteligencia", duracion: "1.13 días", comienzo: "vie 23/10/26", fin: "lun 26/10/26", predecesoras: "32", recursos: "", sprint: 3 },
-  { id: 34, nombre: "Sprint 4: Módulo de Alertas y Portal Web (Fase Central)", duracion: "22 días", comienzo: "lun 26/10/26", fin: "mar 24/11/26", predecesoras: "", recursos: "", sprint: 4, isSummary: true },
-  { id: 35, nombre: "Diseño de la plantilla y formato de correo electrónico de alerta", duracion: "2 días", comienzo: "lun 26/10/26", fin: "mar 27/10/26", predecesoras: "33", recursos: "Área de TI", sprint: 4 },
-  { id: 36, nombre: "Desarrollo del motor de alertas automáticas vía SMTP", duracion: "4 días", comienzo: "mar 27/10/26", fin: "vie 30/10/26", predecesoras: "35", recursos: "Área de TI", sprint: 4 },
-  { id: 37, nombre: "Creación de bandeja de entrada de alertas en portal docente", duracion: "4 días", comienzo: "lun 2/11/26", fin: "jue 5/11/26", predecesoras: "36", recursos: "Área de TI", sprint: 4 },
-  { id: 38, nombre: "Módulo de registro para seguimiento de casos críticos", duracion: "3 días", comienzo: "jue 5/11/26", fin: "lun 9/11/26", predecesoras: "37", recursos: "Área de TI", sprint: 4 },
-  { id: 39, nombre: "Maquetación de la interfaz web en Next.js (Wireframes)", duracion: "3 días", comienzo: "lun 9/11/26", fin: "mié 11/11/26", predecesoras: "38", recursos: "Área de TI", sprint: 4 },
-  { id: 40, nombre: "Desarrollo del Dashboard de semáforo interactivo", duracion: "5 días", comienzo: "mié 11/11/26", fin: "mar 17/11/26", predecesoras: "39", recursos: "Área de TI", sprint: 4 },
-  { id: 41, nombre: "Desarrollo de la ficha individual de perfil del estudiante", duracion: "3 días", comienzo: "lun 16/11/26", fin: "mié 18/11/26", predecesoras: "40", recursos: "Área de TI", sprint: 4 },
-  { id: 42, nombre: "Módulo de gestión de roles y permisos de acceso (Auth)", duracion: "3 días", comienzo: "mié 18/11/26", fin: "vie 20/11/26", predecesoras: "41", recursos: "Área de TI", sprint: 4 },
-  { id: 43, nombre: "Exportación de reportes académicos en formato PDF/Excel", duracion: "3 días", comienzo: "vie 20/11/26", fin: "mar 24/11/26", predecesoras: "42", recursos: "Área de TI", sprint: 4 },
-  { id: 44, nombre: "Hito: Portal docente e integración de alertas culminado", duracion: "0 días", comienzo: "vie 20/11/26", fin: "vie 20/11/26", predecesoras: "43", recursos: "", sprint: 4 },
-  { id: 45, nombre: "Cierre de Sprint 4 y Sprint Review (Software Integrado)", duracion: "1 día", comienzo: "vie 20/11/26", fin: "vie 20/11/26", predecesoras: "44", recursos: "", sprint: 4 },
-  { id: 46, nombre: "Sprint 5: Control de Calidad y Piloto de 2 Semanas (NUEVO)", duracion: "20.13 días", comienzo: "lun 23/11/26", fin: "lun 21/12/26", predecesoras: "", recursos: "", sprint: 5, isSummary: true },
-  { id: 47, nombre: "Pruebas integrales de flujo completo (ETL -> ML -> Alerta)", duracion: "5 días", comienzo: "lun 23/11/26", fin: "vie 27/11/26", predecesoras: "45", recursos: "Área de TI", sprint: 5 },
-  { id: 48, nombre: "Pruebas de estrés y tiempos de carga de la base de datos", duracion: "4 días", comienzo: "lun 23/11/26", fin: "jue 26/11/26", predecesoras: "47CC", recursos: "Área de TI", sprint: 5 },
-  { id: 49, nombre: "Preparación de datos reales y enrolamiento de docentes tutores", duracion: "7 días", comienzo: "lun 30/11/26", fin: "mar 8/12/26", predecesoras: "48", recursos: "Equipo + Docentes", sprint: 5 },
-  { id: 50, nombre: "Ejecución formal de prueba piloto en aulas seleccionadas", duracion: "4 días", comienzo: "lun 14/12/26", fin: "jue 17/12/26", predecesoras: "49", recursos: "Equipo + Docentes", sprint: 5 },
-  { id: 51, nombre: "Hito: Piloto docente culminado exitosamente", duracion: "0 días", comienzo: "jue 17/12/26", fin: "jue 17/12/26", predecesoras: "50", recursos: "", sprint: 5 },
-  { id: 52, nombre: "Cierre de Sprint 5 y Análisis de Feedback de Usuario", duracion: "1.13 días", comienzo: "vie 18/12/26", fin: "lun 21/12/26", predecesoras: "51", recursos: "", sprint: 5 },
-  { id: 53, nombre: "Sprint 6: Despliegue, Capacitación y Cierre Formal del Proyecto", duracion: "25.13 días", comienzo: "lun 21/12/26", fin: "lun 25/01/27", predecesoras: "", recursos: "", sprint: 6, isSummary: true },
-  { id: 54, nombre: "Aprovisionamiento y configuración de servidor Dokploy VPS", duracion: "3 días", comienzo: "lun 21/12/26", fin: "mié 23/12/26", predecesoras: "52", recursos: "Área de TI", sprint: 6 },
-  { id: 55, nombre: "Despliegue definitivo en entorno de producción", duracion: "9 días", comienzo: "mié 23/12/26", fin: "lun 4/01/27", predecesoras: "54", recursos: "Área de TI", sprint: 6 },
-  { id: 56, nombre: "Pruebas formales de aceptación de usuario final (UAT)", duracion: "5 días", comienzo: "lun 4/01/27", fin: "vie 8/01/27", predecesoras: "55", recursos: "Equipo + Docentes", sprint: 6 },
-  { id: 57, nombre: "Atención inmediata y corrección de bugs reportados en UAT", duracion: "3 días", comienzo: "lun 4/01/27", fin: "mié 6/01/27", predecesoras: "56CC", recursos: "Área de TI", sprint: 6 },
-  { id: 58, nombre: "Redacción final del Manual de Usuario interactivo", duracion: "3 días", comienzo: "lun 11/01/27", fin: "mié 13/01/27", predecesoras: "57", recursos: "Equipo", sprint: 6 },
-  { id: 59, nombre: "Redacción final del Dossier Técnico de arquitectura para TI", duracion: "3 días", comienzo: "lun 11/01/27", fin: "mié 13/01/27", predecesoras: "58CC", recursos: "Área de TI", sprint: 6 },
-  { id: 60, nombre: "Taller formal de capacitación a docentes y coordinadores", duracion: "2 días", comienzo: "mié 13/01/27", fin: "jue 14/01/27", predecesoras: "58", recursos: "Coord. Académico", sprint: 6 },
-  { id: 61, nombre: "Ejecución de la sesión de retrospectiva de cierre SCRUM", duracion: "1 día", comienzo: "lun 18/01/27", fin: "lun 18/01/27", predecesoras: "60", recursos: "Scrum Master", sprint: 6 },
-  { id: 62, nombre: "Redacción final del informe técnico de cierre de proyecto", duracion: "4 días", comienzo: "lun 18/01/27", fin: "jue 21/01/27", predecesoras: "61", recursos: "Equipo", sprint: 6 },
-  { id: 63, nombre: "Hito: Acta de cierre firmada y proyecto entregado", duracion: "0 días", comienzo: "jue 21/01/27", fin: "jue 21/01/27", predecesoras: "62", recursos: "", sprint: 6 },
-  { id: 64, nombre: "Cierre definitivo administrativo de recursos del proyecto", duracion: "1.13 días", comienzo: "vie 22/01/27", fin: "lun 25/01/27", predecesoras: "63", recursos: "", sprint: 6 }
-];
+const MSPROJECT_TASKS: MSProjectTask[] = TAREAS_PROJECT;
 
 export default function ScheduleBaseline() {
   const [actSearch, setActSearch] = useState("");
@@ -211,7 +95,7 @@ export default function ScheduleBaseline() {
     {
       src: "/DIAGRAMA DE GANT.png",
       alt: "Diagrama de Red del Cronograma - Método PDM (Colegio PF 2026)",
-      caption: "Representación interactiva de las precedencias lógicas (Método de Diagramación por Precedencia - PDM) y la ruta crítica definida para las 40 actividades del proyecto en las 24 semanas."
+      caption: "Representación interactiva de las precedencias lógicas (Método de Diagramación por Precedencia - PDM) y la ruta crítica definida para las 44 actividades del proyecto en las 24 semanas."
     },
     {
       src: "/project.jpeg",
@@ -307,7 +191,7 @@ export default function ScheduleBaseline() {
       <section id="p06-cronograma" className="py-12 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            06 · Línea Base del Cronograma del Proyecto · PMBOK 6
+            08.2 · Desarrollar el cronograma · Vista interactiva de la línea base, versión 3
           </span>
           <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
@@ -319,7 +203,7 @@ export default function ScheduleBaseline() {
             </span>
           </div>
           <p className="text-slate-600 text-sm leading-relaxed max-w-4xl text-justify mb-10">
-            La gestión del cronograma es uno de los dominios de desempeño más críticos según el estándar del PMBOK <Cite r="PMI, 2017" />. Consiste en establecer las políticas, procedimientos y herramientas necesarios para planificar, desarrollar, monitorear y controlar el tiempo requerido. Esta versión ampliada a <strong>6 meses (24 semanas)</strong> organiza las <strong>40 actividades</strong> del sistema escolar en <strong>6 Sprints ágiles SCRUM</strong>, garantizando una validación oportuna del modelo, robustez en el piloto y sostenibilidad de la implantación en la institución educativa.
+            La gestión del cronograma es uno de los dominios de desempeño más críticos según el estándar del PMBOK <Cite r="PMI, 2025" />. Consiste en establecer las políticas, procedimientos y herramientas necesarios para planificar, desarrollar, monitorear y controlar el tiempo requerido. La versión 3 de la línea base organiza las <strong>44 actividades</strong> del proyecto y una reunión diaria en <strong>24 semanas de trabajo</strong> y <strong>6 sprints</strong>, del 12 de octubre de 2026 al 23 de abril de 2027, con un receso en febrero por vacaciones escolares, garantizando una validación oportuna del modelo, robustez en el piloto y sostenibilidad de la implantación en la institución educativa.
           </p>
 
           <div className="space-y-16 max-w-5xl">
@@ -380,31 +264,31 @@ export default function ScheduleBaseline() {
                         </div>
                         <div className="flex justify-between border-b border-slate-800 pb-1.5">
                           <span className="text-slate-400">Duración total:</span>
-                          <span className="font-extrabold text-white">24 sem (Agosto 2026 – Enero 2027)</span>
+                          <span className="font-extrabold text-white">24 sem (12/10/2026 – 23/04/2027)</span>
                         </div>
                         <div className="flex justify-between border-b border-slate-800 pb-1.5">
                           <span className="text-slate-400">Total Actividades:</span>
-                          <span className="font-extrabold text-white">40 (32 orig + 8 nuevas)</span>
+                          <span className="font-extrabold text-white">44 y reunión diaria</span>
                         </div>
                         <div className="flex justify-between border-b border-slate-800 pb-1.5">
-                          <span className="text-slate-400">BAC del proyecto:</span>
-                          <span className="font-extrabold text-teal-300">159.2 días hábiles</span>
+                          <span className="text-slate-400">Suma de duraciones (Te):</span>
+                          <span className="font-extrabold text-teal-300">{TOTALES.te.toFixed(1)} días</span>
                         </div>
                         <div className="flex justify-between border-b border-slate-800 pb-1.5">
                           <span className="text-slate-400">Desviación (σ):</span>
-                          <span className="font-extrabold text-white">±2.1 días hábiles</span>
+                          <span className="font-extrabold text-white">±{TOTALES.sigma.toFixed(2)} días</span>
                         </div>
                         <div className="flex justify-between border-b border-slate-800 pb-1.5">
                           <span className="text-slate-400">Scrum Master:</span>
-                          <span className="font-extrabold text-white text-right">Equipo UNTELS — ISR0832</span>
+                          <span className="font-extrabold text-white text-right">Jhostin Galarza</span>
                         </div>
                         <div className="flex justify-between border-b border-slate-800 pb-1.5">
                           <span className="text-slate-400">Product Owner:</span>
-                          <span className="font-extrabold text-white text-right">Coordinación académica</span>
+                          <span className="font-extrabold text-white text-right">Por designar (coordinación académica)</span>
                         </div>
                         <div className="flex justify-between pb-1">
                           <span className="text-slate-400">Versión:</span>
-                          <span className="font-extrabold text-teal-300">2.0 — Ampliada a 6 meses</span>
+                          <span className="font-extrabold text-teal-300">3.0 — 10/10/2026</span>
                         </div>
                       </div>
                     </div>
@@ -464,16 +348,16 @@ export default function ScheduleBaseline() {
               </div>
             </div>
 
-            {/* ── PASO 2: DEFINIR LAS ACTIVIDADES (40) ── */}
+            {/* ── PASO 2: DEFINIR LAS ACTIVIDADES (44) ── */}
             <div id="p06-lista-actividades" className="space-y-6 pt-6 border-t border-slate-100">
               <div className="flex items-center gap-2">
                 <span className="bg-slate-900 text-white font-mono text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">2</span>
                 <h3 className="font-serif text-xl font-bold text-slate-900">
-                  Lista de Actividades del Proyecto (40 Actividades)
+                  Lista de Actividades del Proyecto (44 actividades)
                 </h3>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                De acuerdo al Diccionario de la EDT ampliado, se han desagregado las actividades necesarias para construir el sistema inteligente en 6 Sprints. Se incluyen las actividades de la fase preliminar (Sprint 1) y de la prueba piloto real con docentes y recolección de retroalimentación (Sprint 5) agregando un total de 40 actividades formales.
+                De acuerdo al Diccionario de la EDT ampliado, se han desagregado las actividades necesarias para construir el sistema inteligente en 6 Sprints. Se incluyen las actividades de la fase preliminar (Sprint 1) y de la prueba piloto real con docentes y recolección de retroalimentación (Sprint 5) con un total de 44 actividades y una reunión diaria continua.
               </p>
 
               <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-4">
@@ -809,7 +693,7 @@ export default function ScheduleBaseline() {
                     Aquí se visualiza la escala temporal de los 6 Sprints. Para una visualización óptima, suba el archivo de imagen <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">project.jpeg</code>, <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">project.png</code> o <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">PLAN DE CRONOGRAMA.png</code> a la carpeta correspondiente.
                   </p>
                   <div className="flex justify-center gap-3 font-mono text-[9px] text-slate-500">
-                    <span className="bg-white border px-2 py-1 rounded">Sprints 1-6 ── Agosto 2026 a Enero 2027</span>
+                    <span className="bg-white border px-2 py-1 rounded">Sprints 1-6 ── octubre de 2026 a abril de 2027</span>
                   </div>
                 </div>
               </div>
@@ -823,7 +707,7 @@ export default function ScheduleBaseline() {
                 <ul className="grid sm:grid-cols-2 gap-3 text-xs text-slate-700 leading-relaxed">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
-                    <span><strong>Duración total:</strong> 24 semanas de duración total, del 03 de agosto de 2026 al 22 de enero de 2027.</span>
+                    <span><strong>Duración total:</strong> 24 semanas de trabajo, del 12 de octubre de 2026 al 23 de abril de 2027, con receso del 1 al 26 de febrero de 2027.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
@@ -831,7 +715,7 @@ export default function ScheduleBaseline() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
-                    <span><strong>40 actividades:</strong> Con duraciones estimadas por el método estadístico PERT.</span>
+                    <span><strong>44 actividades y una reunión diaria:</strong> Con duraciones estimadas por el método estadístico PERT.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
@@ -843,7 +727,7 @@ export default function ScheduleBaseline() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
-                    <span><strong>Duración total esperada:</strong> 159.2 días hábiles con una desviación estándar de ±2.1 días.</span>
+                    <span><strong>Suma de duraciones esperadas:</strong> {TOTALES.te.toFixed(1)} días (σ = {TOTALES.sigma.toFixed(2)}). La ruta crítica reúne {TOTALES.criticas} actividades y {TOTALES.teCritica.toFixed(1)} días (σ = {TOTALES.sigmaCritica.toFixed(2)}).</span>
                   </li>
                 </ul>
               </div>
@@ -872,8 +756,8 @@ export default function ScheduleBaseline() {
                           Sprint 1: Análisis y Diseño (NUEVO)
                         </td>
                         <td className="px-3 py-3 text-center font-mono">S1–S4</td>
-                        <td className="px-3 py-3 text-center">03 Ago</td>
-                        <td className="px-3 py-3 text-center">28 Ago</td>
+                        <td className="px-3 py-3 text-center">12 Oct</td>
+                        <td className="px-3 py-3 text-center">06 Nov</td>
                         <td className="px-3 py-3 text-center font-mono font-bold text-indigo-700">17.4 d</td>
                         <td className="px-4 py-3 text-slate-500">Arquitectura validada y variables del modelo definidas.</td>
                       </tr>
@@ -883,8 +767,8 @@ export default function ScheduleBaseline() {
                           Sprint 2: Gestión + Datos
                         </td>
                         <td className="px-3 py-3 text-center font-mono">S5–S8</td>
-                        <td className="px-3 py-3 text-center">31 Ago</td>
-                        <td className="px-3 py-3 text-center">25 Sep</td>
+                        <td className="px-3 py-3 text-center">09 Nov</td>
+                        <td className="px-3 py-3 text-center">04 Dic</td>
                         <td className="px-3 py-3 text-center font-mono font-bold text-indigo-700">31.7 d</td>
                         <td className="px-4 py-3 text-slate-500">Base de Datos centralizada y validada operativa localmente.</td>
                       </tr>
@@ -894,8 +778,8 @@ export default function ScheduleBaseline() {
                           Sprint 3: Modelo ML Predictivo
                         </td>
                         <td className="px-3 py-3 text-center font-mono">S9–S12</td>
-                        <td className="px-3 py-3 text-center">28 Sep</td>
-                        <td className="px-3 py-3 text-center">23 Oct</td>
+                        <td className="px-3 py-3 text-center">07 Dic</td>
+                        <td className="px-3 py-3 text-center">01 Ene</td>
                         <td className="px-3 py-3 text-center font-mono font-bold text-indigo-700">29.2 d</td>
                         <td className="px-4 py-3 text-slate-500">Modelo ML entrenado con precisión superior o igual al 75%.</td>
                       </tr>
@@ -905,8 +789,8 @@ export default function ScheduleBaseline() {
                           Sprint 4: Alertas + Dashboard
                         </td>
                         <td className="px-3 py-3 text-center font-mono">S13–S16</td>
-                        <td className="px-3 py-3 text-center">26 Oct</td>
-                        <td className="px-3 py-3 text-center">20 Nov</td>
+                        <td className="px-3 py-3 text-center">04 Ene</td>
+                        <td className="px-3 py-3 text-center">29 Ene</td>
                         <td className="px-3 py-3 text-center font-mono font-bold text-indigo-700">31.3 d</td>
                         <td className="px-4 py-3 text-slate-500">Sistema integrado con alertas y paneles web de tutoría operativos.</td>
                       </tr>
@@ -916,8 +800,8 @@ export default function ScheduleBaseline() {
                           Sprint 5: Pruebas + Piloto (NUEVO)
                         </td>
                         <td className="px-3 py-3 text-center font-mono">S17–S20</td>
-                        <td className="px-3 py-3 text-center">23 Nov</td>
-                        <td className="px-3 py-3 text-center">18 Dic</td>
+                        <td className="px-3 py-3 text-center">01 Mar</td>
+                        <td className="px-3 py-3 text-center">26 Mar</td>
                         <td className="px-3 py-3 text-center font-mono font-bold text-indigo-700">20.6 d</td>
                         <td className="px-4 py-3 text-slate-500">Sistema validado con pruebas de integración y piloto real docente.</td>
                       </tr>
@@ -927,18 +811,18 @@ export default function ScheduleBaseline() {
                           Sprint 6: Implantación + Cierre
                         </td>
                         <td className="px-3 py-3 text-center font-mono">S21–S24</td>
-                        <td className="px-3 py-3 text-center">21 Dic</td>
-                        <td className="px-3 py-3 text-center">22 Ene</td>
+                        <td className="px-3 py-3 text-center">29 Mar</td>
+                        <td className="px-3 py-3 text-center">23 Abr</td>
                         <td className="px-3 py-3 text-center font-mono font-bold text-indigo-700">29.0 d</td>
                         <td className="px-4 py-3 text-slate-500">Sistema en producción y proyecto cerrado formalmente.</td>
                       </tr>
                       <tr className="bg-slate-900 text-white font-mono font-bold text-[11px]">
                         <td className="px-4 py-3.5 uppercase font-serif">TOTAL PROYECTO</td>
                         <td className="px-3 py-3.5 text-center">S1–S24</td>
-                        <td className="px-3 py-3.5 text-center">03 Ago</td>
-                        <td className="px-3 py-3.5 text-center">22 Ene</td>
+                        <td className="px-3 py-3.5 text-center">12 Oct</td>
+                        <td className="px-3 py-3.5 text-center">23 Abr</td>
                         <td className="px-3 py-3.5 text-center text-teal-400">159.2 días</td>
-                        <td className="px-4 py-3.5">Proyecto completo entregado exitosamente en 6 meses.</td>
+                        <td className="px-4 py-3.5">24 semanas de trabajo, más el receso de febrero.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -954,10 +838,10 @@ export default function ScheduleBaseline() {
                     </div>
                     <div>
                       <h4 className="font-serif text-base font-bold text-slate-900">
-                        Visor de Tareas de Microsoft Project (Exportación Oficial)
+                        Lista de tareas de la línea base (formato de MS Project)
                       </h4>
                       <p className="text-[11px] text-slate-500 font-sans">
-                        La planificación estructurada del proyecto de 125.13 días hábiles exportada desde MS Project 2026.
+                        Tareas, fechas y responsables de la versión 3, generados desde la misma fuente que el documento CRO-01.
                       </p>
                     </div>
                   </div>
@@ -1104,7 +988,7 @@ export default function ScheduleBaseline() {
                   <div className="bg-[#107c41]/5 border border-[#107c41]/10 p-4 rounded-xl flex items-start gap-3">
                     <HelpCircle className="w-4 h-4 text-[#107c41] flex-shrink-0 mt-0.5" />
                     <p className="text-[10.5px] text-slate-650 leading-normal">
-                      <strong>Acerca de esta exportación:</strong> Los datos anteriores reflejan con total fidelidad el archivo original desarrollado en <strong>Microsoft Project Professional 2026</strong>. El diagrama incluye todas las dependencias cruzadas (tales como las relaciones de Comienzo a Comienzo tipo <em>11CC</em>, <em>13CC</em>, <em>47CC</em> y <em>58CC</em>) y los recursos asignados para la IEP Colegio Peruano Francés.
+                      <strong>Acerca de esta lista:</strong> las fechas corresponden al calendario de la versión 3 (CRO-01). La columna de predecesoras muestra la semana planificada de cada actividad; la red de dependencias elaborada en MS Project en el curso anterior se conserva en el diagrama de red.
                     </p>
                   </div>
                 </div>
@@ -1116,11 +1000,11 @@ export default function ScheduleBaseline() {
               <div className="flex items-center gap-2">
                 <span className="bg-slate-900 text-white font-mono text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">6</span>
                 <h3 className="font-serif text-xl font-bold text-slate-900">
-                  Controlar el Cronograma (Control de Desvíos EVA)
+                  Monitorear y controlar el cronograma: ejercicio de simulación
                 </h3>
               </div>
               <p className="text-slate-650 text-sm leading-relaxed text-justify">
-                El proceso de Controlar el Cronograma monitorea el estado real del proyecto frente a la línea base aprobada para gestionar de manera formal las solicitudes de cambio ante desviaciones insalvables. Se simula el estado al cierre de cada uno de los 6 Sprints mediante el análisis del Valor Ganado:
+                Este proceso compara el avance real con la línea base y gestiona los cambios. El proyecto inicia el 12 de octubre de 2026, así que todavía no hay avance que medir. Lo que sigue es un <strong>ejercicio de simulación del curso anterior</strong>: sus valores son supuestos, sirven para practicar el análisis del valor ganado y no describen lo ocurrido en el proyecto.
               </p>
 
               {/* MS Project Baseline Metrics Card Grid */}
@@ -1130,11 +1014,11 @@ export default function ScheduleBaseline() {
                     M
                   </div>
                   <h4 className="font-serif text-sm font-bold text-slate-900">
-                    Alineación con Línea Base de Microsoft Project
+                    Métricas del ejercicio de simulación
                   </h4>
                 </div>
                 <p className="text-xs text-slate-650 leading-relaxed text-justify">
-                  De acuerdo con el archivo <code>.mpp</code> oficial del proyecto, la línea base quedó fijada el <strong>3 de Agosto de 2026</strong>. El monitoreo en MS Project se realiza contrastando la programación real frente a la prevista. A continuación, se detallan las métricas clave de control de plazos según la última línea base del software de Microsoft:
+                  La línea base vigente es la versión 3, del 10 de octubre de 2026. Las métricas siguientes pertenecen al ejercicio de simulación; solo el número de actividades críticas corresponde a la línea base.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
                   <div className="bg-white border border-slate-200 p-3 rounded-xl shadow-xxs">
@@ -1154,7 +1038,7 @@ export default function ScheduleBaseline() {
                   </div>
                   <div className="bg-white border border-slate-200 p-3 rounded-xl shadow-xxs">
                     <span className="block text-[10px] font-mono font-bold text-slate-400 uppercase">Ruta Crítica Oficial</span>
-                    <span className="block text-sm font-mono font-black text-rose-600 mt-1">18 Tareas</span>
+                    <span className="block text-sm font-mono font-black text-rose-600 mt-1">{TOTALES.criticas} actividades</span>
                     <span className="block text-[9px] text-slate-500 font-sans mt-0.5">Bajo monitoreo diario</span>
                   </div>
                 </div>
@@ -1172,7 +1056,7 @@ export default function ScheduleBaseline() {
                         <th className="px-3 py-3 text-center">SV = EV - PV</th>
                         <th className="px-3 py-3 text-center">SPI = EV / PV</th>
                         <th className="px-3 py-3 text-center">Estado</th>
-                        <th className="px-4 py-3">Observación Analítica del Tribunal</th>
+                        <th className="px-4 py-3">Observación supuesta (simulación)</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-150 text-slate-650">
@@ -1261,10 +1145,10 @@ export default function ScheduleBaseline() {
               {/* SOLICITUDES DE CAMBIO */}
               <div className="space-y-4 pt-4">
                 <h4 className="font-serif text-base font-bold text-slate-900">
-                  Registro Histórico de Solicitudes de Cambio (Control de Cambios)
+                  Solicitudes de cambio supuestas del ejercicio
                 </h4>
                 <p className="text-slate-600 text-xs">
-                  Toda modificación a la línea base se somete al comité de cambios de la IEP Peruano Francés. Las solicitudes SC-03 y SC-04 son consecuencia directa de las lecciones aprendidas en el nuevo Sprint 5 de pruebas y piloto real.
+                  Ejemplos supuestos para practicar el control de cambios. No pertenecen al registro de cambios del proyecto, que es el documento GOB-10 (capítulo 05).
                 </p>
 
                 <div className="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-xs text-xs">
@@ -1283,7 +1167,7 @@ export default function ScheduleBaseline() {
                       </thead>
                       <tbody className="divide-y divide-slate-150 text-slate-650">
                         <tr>
-                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">SC-01</td>
+                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">Ej. 1</td>
                           <td className="px-3 py-3">Sprint 1</td>
                           <td className="px-3 py-3">Ampliar reunion con directivos por necesidad de validar acceso a 3 sistemas adicionales no identificados inicialmente.</td>
                           <td className="px-3 py-3 text-center font-semibold text-slate-800">+1 dia</td>
@@ -1292,7 +1176,7 @@ export default function ScheduleBaseline() {
                           <td className="px-4 py-3">Scrum Master</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">SC-02</td>
+                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">Ej. 2</td>
                           <td className="px-3 py-3">Sprint 3</td>
                           <td className="px-3 py-3">Ampliar ajuste de hiperparametros por precision inicial de 67% que requirio 3 iteraciones adicionales.</td>
                           <td className="px-3 py-3 text-center font-semibold text-slate-800">+2 dias</td>
@@ -1301,7 +1185,7 @@ export default function ScheduleBaseline() {
                           <td className="px-4 py-3">Product Owner</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">SC-03</td>
+                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">Ej. 3</td>
                           <td className="px-3 py-3 font-semibold text-slate-900">Sprint 5 (NUEVO)</td>
                           <td className="px-3 py-3">NUEVO: Ampliar duracion del piloto de 1 a 2 semanas por solicitud de docentes para cubrir un ciclo completo de evaluaciones.</td>
                           <td className="px-3 py-3 text-center font-semibold text-slate-800">+1 sem.</td>
@@ -1310,7 +1194,7 @@ export default function ScheduleBaseline() {
                           <td className="px-4 py-3">Product Owner</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">SC-04</td>
+                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">Ej. 4</td>
                           <td className="px-3 py-3 font-semibold text-slate-900">Sprint 5 (NUEVO)</td>
                           <td className="px-3 py-3">NUEVO: Agregar 6 ajustes de interfaz identificados en el piloto: reordenar columnas dashboard, cambiar paleta semaforo y filtro por docente.</td>
                           <td className="px-3 py-3 text-center font-semibold text-slate-800">+2 dias</td>
@@ -1319,7 +1203,7 @@ export default function ScheduleBaseline() {
                           <td className="px-4 py-3">Product Owner</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">SC-05</td>
+                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">Ej. 5</td>
                           <td className="px-3 py-3">Sprint 5</td>
                           <td className="px-3 py-3 text-slate-400">Agregar modulo de exportacion de alertas a WhatsApp para padres de familia.</td>
                           <td className="px-3 py-3 text-center font-semibold text-slate-400">+5 dias</td>
@@ -1328,7 +1212,7 @@ export default function ScheduleBaseline() {
                           <td className="px-4 py-3 text-slate-400">Scrum Master</td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">SC-06</td>
+                          <td className="px-4 py-3 text-center font-mono font-bold text-slate-900">Ej. 6</td>
                           <td className="px-3 py-3">Sprint 6</td>
                           <td className="px-3 py-3">Reprogramar sesion UAT formal por feriado escolar en semana S22.</td>
                           <td className="px-3 py-3 text-center font-semibold text-slate-800">0 dias</td>
@@ -1377,10 +1261,10 @@ export default function ScheduleBaseline() {
               {/* 4. ACTUALIZACIONES AL PLAN DEL PROYECTO */}
               <div className="space-y-4 pt-6 border-t border-slate-100">
                 <h4 className="font-serif text-base font-bold text-slate-900">
-                  4. Actualizaciones al Plan del Proyecto
+                  4. Documentos que se actualizan al controlar el cronograma
                 </h4>
                 <p className="text-slate-600 text-xs">
-                  Las solicitudes de cambio aprobadas e incidencias registradas durante el control de plazos determinan actualizaciones en los diversos documentos de gestión para mantener alineada la documentación con el avance real:
+                  Cuando el control del cronograma detecte un desvío real, estos son los documentos que deberán actualizarse:
                 </p>
 
                 <div className="border border-slate-200 bg-white rounded-xl overflow-hidden shadow-xs text-xs">
@@ -1397,7 +1281,7 @@ export default function ScheduleBaseline() {
                       <tbody className="divide-y divide-slate-150 text-slate-650">
                         <tr className="hover:bg-slate-50/40">
                           <td className="px-4 py-3 font-semibold text-slate-900">Línea base del cronograma</td>
-                          <td className="px-3 py-3">Fechas de inicio y fin afectadas por cambios aprobados SC-01 al SC-04.</td>
+                          <td className="px-3 py-3">Fechas de inicio y fin afectadas por los cambios aprobados.</td>
                           <td className="px-3 py-3 font-mono text-[10px]">Por Sprint Review</td>
                           <td className="px-4 py-3">Scrum Master</td>
                         </tr>
@@ -1409,7 +1293,7 @@ export default function ScheduleBaseline() {
                         </tr>
                         <tr className="hover:bg-slate-50/40">
                           <td className="px-4 py-3 font-semibold text-slate-900">Product Backlog</td>
-                          <td className="px-3 py-3">Repriorización de HU si hay cambios aprobados. SC-05 (WhatsApp) pasa al backlog de versión 2.0.</td>
+                          <td className="px-3 py-3">Nueva priorización de las historias de usuario cuando haya cambios aprobados.</td>
                           <td className="px-3 py-3 font-mono text-[10px]">Por Sprint Review</td>
                           <td className="px-4 py-3">Product Owner</td>
                         </tr>
@@ -1444,7 +1328,7 @@ export default function ScheduleBaseline() {
                   Conclusión de la Gestión de Tiempos
                 </h4>
                 <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify">
-                  <strong>Conclusión:</strong> El proyecto Sistema ML — Alerta Temprana Académica fue completado con una desviación total de <strong>-4.7 días (SPI = 0.97)</strong>, dentro de la tolerancia de más o menos 1.5 semanas. Los 6 Sprint Reviews fueron ejecutados en sus fechas planificadas. Las 4 solicitudes de cambio aprobadas (SC-01 a SC-04) fueron absorbidas por las reservas de contingencia sin impactar el alcance del producto. La solicitud SC-05 fue correctamente rechazada por exceder el alcance definido. El Sprint 5 de pruebas y piloto — nuevo en esta versión de 6 meses — demostró ser el Sprint de mayor valor agregado al detectar 6 mejoras de interfaz críticas antes del despliegue final.
+                  <strong>Lectura del ejercicio:</strong> en la simulación, el proyecto cerraría con una desviación de <strong>-4.7 días (SPI = 0.97)</strong>, dentro de la tolerancia de una semana y media. Es un resultado supuesto: muestra cómo se interpretarán los indicadores cuando haya mediciones reales, a partir de la revisión del Sprint 1 (6 de noviembre de 2026).
                 </p>
               </div>
             </div>

@@ -7,20 +7,19 @@ import {
   Reference,
   CanvasData,
   Photo,
-  Stakeholder,
-  ActorZone,
-  MonitoreoActor,
   Factor,
   PersonaEmpatia,
   HowMightWe,
   EncuestaPregunta,
   Modulo,
   TocChapter,
+  TocGroup,
   TocSection
 } from "./types";
+import { AREAS, PROCESOS } from "./content/documentos";
 
 export const REFERENCIAS: Reference[] = [
-  { clave: "PMI, 2017", texto: "Project Management Institute. (2017). Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK®), 6.ª ed. Newton Square, PA: Project Management Institute." },
+  { clave: "PMI, 2025", texto: "Project Management Institute. (2025). Guía de los fundamentos para la dirección de proyectos (Guía del PMBOK®) y El estándar para la dirección de proyectos, 8.ª ed. Newtown Square, PA: Project Management Institute." },
   { clave: "Osterwalder & Pigneur, 2010", texto: "Osterwalder, A., & Pigneur, Y. (2010). Business Model Generation: A Handbook for Visionaries, Game Changers, and Challengers. Hoboken, NJ: John Wiley & Sons." },
   { clave: "Romero & Ventura, 2010", texto: "Romero, C., & Ventura, S. (2010). Educational data mining: A review of the state of the art. IEEE Transactions on Systems, Man, and Cybernetics, Part C, 40(6), 601–618. https://doi.org/10.1109/TSMCC.2010.2053532" },
   { clave: "Márquez-Vera et al., 2013", texto: "Márquez-Vera, C., Morales, C. R., & Soto, S. V. (2013). Predicting school failure and dropout by using data mining techniques. IEEE Revista Iberoamericana de Tecnologías del Aprendizaje, 8(1), 7–14. https://doi.org/10.1109/RITA.2013.2244695" },
@@ -36,7 +35,7 @@ export const CANVAS: CanvasData = {
   recursos: ["Datos históricos: asistencia, notas e incidencias", "Infraestructura TI del colegio (Cubicol, internet)", "Equipo de desarrollo UNTELS", "Personal TI de la institución"],
   propuesta: ["Alerta temprana del bajo rendimiento académico mediante ML", "Alertas automáticas para intervención oportuna", "Dashboard visual para toma de decisiones directivas", "Reducción del bajo rendimiento y mejora de resultados académicos"],
   relacion: ["Capacitación presencial al personal docente y administrativo", "Soporte técnico continuo por el área TI de la institución", "Actualizaciones periódicas del sistema ML", "Comunicación mensual de reportes a dirección"],
-  canales: ["Plataforma web responsive (móvil y escritorio)", "Lectura QR para registro de asistencia", "Integración directa con Cubicol", "Notificaciones vía correo y WhatsApp"],
+  canales: ["Plataforma web adaptable (móvil y escritorio)", "Panel de alertas para el docente", "Carga de datos exportados de Cubicol", "Alertas por correo y comunicados a través del colegio"],
   segmentos: ["Director y docentes de la IE Peruano Francés", "Psicólogo escolar", "Personal administrativo y área TI", "Padres de familia (200 alumnos)"],
   costos: ["Desarrollo del sistema — costo mínimo (equipo universitario)", "Hosting cloud — tier gratuito (Vercel / Supabase)", "Capacitación del personal docente", "Mantenimiento y actualizaciones anuales"],
   ingresos: ["Reducción de deserción → matrícula estable → ingresos sostenidos", "Ahorro en procesos manuales de seguimiento estudiantil", "Potencial licenciamiento a otras IEP del distrito de VES", "Mejora de imagen institucional y competitividad"],
@@ -50,35 +49,6 @@ export const PHOTOS: Photo[] = [
   { src: "/img3.jpeg", caption: "Con la directora del colegio en la entrada de la institución" },
   { src: "/img5.jpeg", caption: "Reunión de entrevista con la directora en su oficina" },
   { src: "/img4.jpeg", caption: "Reporte de Incidencia Escolar actual — proceso 100% físico/manual" },
-];
-
-export const STAKEHOLDERS: Stakeholder[] = [
-  { nombre: "Promotora Directora", cargo: "Promotora Directora — Directora General", contacto: "Oficina de Dirección — IE Peruano Francés", rol: "Toma de decisiones estratégicas", interes: "Alto", poder: "Alto", estrategia: "Gestionar de cerca", estado: "Comprometida", estadoColor: "emerald" },
-  { nombre: "Subdirector", cargo: "Subdirector Académico", contacto: "Oficina de Dirección — reuniones académicas", rol: "Supervisión académica", interes: "Alto", poder: "Alto", estrategia: "Gestionar de cerca", estado: "Identificado", estadoColor: "blue" },
-  { nombre: "Área de TI", cargo: "Encargado de Tecnología y Gestora Cubicol", contacto: "Laboratorio de cómputo — IE Peruano Francés", rol: "Implementación y soporte técnico", interes: "Alto", poder: "Alto", estrategia: "Gestionar de cerca", estado: "Comprometida", estadoColor: "emerald" },
-  { nombre: "Docentes", cargo: "Docentes y Auxiliares (16 personas)", contacto: "Aulas y plataforma digital interna Cubicol", rol: "Uso del sistema y seguimiento estudiantil", interes: "Alto", poder: "Medio", estrategia: "Mantener involucrados", estado: "Identificados", estadoColor: "blue" },
-  { nombre: "Jefa de Normas y Coordinadores", cargo: "Jefa de Normas — Coordinadores de CC. y LL.", contacto: "Oficina académica — IE Peruano Francés", rol: "Gestión académica y coordinación curricular", interes: "Alto", poder: "Medio", estrategia: "Mantener involucrados", estado: "Identificados", estadoColor: "blue" },
-  { nombre: "Psicólogo Escolar", cargo: "Psicólogo de la institución", contacto: "Área de psicología — IE Peruano Francés", rol: "Apoyo en casos de riesgo detectados", interes: "Alto", poder: "Medio", estrategia: "Mantener involucrados", estado: "Identificado", estadoColor: "blue" },
-  { nombre: "Padres de Familia", cargo: "Apoderados de los 200 alumnos", contacto: "WhatsApp institucional / Plataforma Cubicol", rol: "Seguimiento del desempeño de sus hijos", interes: "Alto", poder: "Bajo", estrategia: "Mantener satisfechos", estado: "Informados", estadoColor: "amber" },
-  { nombre: "Estudiantes", cargo: "Alumnos de Inicial, Primaria y Secundaria", contacto: "Aulas — Plataforma educativa Cubicol", rol: "Beneficiarios directos del sistema", interes: "Alto", poder: "Bajo", estrategia: "Monitorear", estado: "Monitoreados", estadoColor: "slate" },
-  { nombre: "Personal Administrativo", cargo: "Área administrativa del colegio", contacto: "Oficina administrativa — IE Peruano Francés", rol: "Gestión de datos institucionales", interes: "Medio", poder: "Bajo", estrategia: "Mantener informados", estado: "Informados", estadoColor: "slate" },
-];
-
-export const MAPA_ACTORES: ActorZone[] = [
-  { zona: "Zona de Gestión Directa", color: "border-blue-600 bg-blue-50", colorTexto: "text-blue-800", colorBadge: "bg-blue-600 text-white", descripcion: "Alta influencia y alto interés — decisores clave del proyecto", actores: [{ nombre: "Promotora Directora", relacion: "Entrevistada · Comprometida" }, { nombre: "Área de TI", relacion: "Entrevistada · Comprometida" }, { nombre: "Subdirector", relacion: "Identificado · Por contactar" }] },
-  { zona: "Zona de Involucramiento Activo", color: "border-indigo-500 bg-indigo-50", colorTexto: "text-indigo-800", colorBadge: "bg-indigo-500 text-white", descripcion: "Usuarios directos del sistema — su adopción determina el éxito", actores: [{ nombre: "Docentes y Auxiliares", relacion: "Identificados · Capacitación pendiente" }, { nombre: "Coordinadores Académicos", relacion: "Identificados · Por involucrar" }, { nombre: "Psicólogo Escolar", relacion: "Identificado · Por contactar" }] },
-  { zona: "Zona de Seguimiento y Satisfacción", color: "border-amber-500 bg-amber-50", colorTexto: "text-amber-800", colorBadge: "bg-amber-500 text-white", descripcion: "Beneficiarios indirectos — deben ser informados y satisfechos", actores: [{ nombre: "Padres de Familia", relacion: "Informados vía Cubicol y WhatsApp" }, { nombre: "Estudiantes (200)", relacion: "Beneficiarios finales del sistema" }, { nombre: "Personal Administrativo", relacion: "Informados periódicamente" }] },
-];
-
-export const MONITOREO: MonitoreoActor[] = [
-  { nombre: "Promotora Directora", estado: "Comprometida", nivel: 90, accion: "Entrevista realizada en Abril 2026. Ofrece acceso a datos institucionales. Próximo paso: presentación formal de la propuesta.", color: "bg-emerald-500" },
-  { nombre: "Encargada de Cubicol / TI", estado: "Comprometida", nivel: 85, accion: "Entrevistada junto con la directora. Receptiva a integración técnica. Próximo paso: análisis de API de Cubicol.", color: "bg-emerald-500" },
-  { nombre: "Subdirector", estado: "Identificado", nivel: 40, accion: "Identificado en la estructura organizacional. Pendiente de contacto formal para presentarle el proyecto.", color: "bg-blue-500" },
-  { nombre: "Docentes y Auxiliares", estado: "Identificados", nivel: 35, accion: "Identificados como usuarios primarios. Pendiente taller de sensibilización sobre el sistema y sus beneficios.", color: "bg-blue-500" },
-  { nombre: "Psicólogo Escolar", estado: "Identificado", nivel: 30, accion: "Identificado como actor clave para validar alertas críticas. Pendiente de reunión específica sobre casos de riesgo.", color: "bg-blue-500" },
-  { nombre: "Coordinadores Académicos", estado: "Identificados", nivel: 30, accion: "Identificados por nivel (inicial, primaria, secundaria). Pendiente de sesión de trabajo con el sistema de reportes.", color: "bg-blue-500" },
-  { nombre: "Padres de Familia", estado: "Informados", nivel: 20, accion: "Identificados como destinatarios de alertas. Se comunicará a través de Cubicol y WhatsApp institucional.", color: "bg-amber-500" },
-  { nombre: "Estudiantes", estado: "Monitoreados", nivel: 15, accion: "Beneficiarios finales. El sistema los monitoreará de forma automática sin requerir su participación activa.", color: "bg-slate-400" },
 ];
 
 export const FACTORES_INTERNOS: Factor[] = [
@@ -120,7 +90,7 @@ export const MAPA_EMPATIA: PersonaEmpatia[] = [
     ve: [
       "Reportes académicos llegando tarde o incompletos.",
       "Docentes haciendo seguimiento en cuadernos físicos.",
-      "Padres que no pueden acceder a Cubicol (40%).",
+      "Pocos padres ingresan a Cubicol (alrededor del 40 %).",
     ],
     dice: [
       "\"Necesitamos un sistema que nos ayude a tomar decisiones.\"",
@@ -176,7 +146,7 @@ export const HMW: HowMightWe[] = [
   {
     pregunta: "¿Cómo podríamos centralizar asistencia, notas e incidencias sin aumentar la carga del docente?",
     insight: "83.3% de docentes hace seguimiento diario pero de forma manual (P2). 66.7% necesita datos integrados (P6).",
-    vinculo: "Módulo A — Recolección automatizada desde Cubicol + QR",
+    vinculo: "Módulo A — Integración de datos de Cubicol y registros digitales",
   },
   {
     pregunta: "¿Cómo podríamos alertar al docente antes de que el alumno ya esté en situación crítica?",
@@ -190,7 +160,7 @@ export const HMW: HowMightWe[] = [
   },
   {
     pregunta: "¿Cómo podríamos mantener informados a los padres que no pueden acceder a Cubicol?",
-    insight: "40% de padres no puede ingresar a Cubicol (entrevista con directora).",
+    insight: "Solo alrededor del 40 % de los padres ingresa a Cubicol (entrevista con la directora).",
     vinculo: "Notificaciones vía WhatsApp/correo — canales ya utilizados por la institución",
   },
 ];
@@ -348,6 +318,52 @@ export const MODULOS: Modulo[] = [
   { letra: "E", nombre: "Dashboard", color: "bg-emerald-700", descripcion: "Paneles visuales con reportes e indicadores clave para la toma de decisiones." },
 ];
 
+// ── Índice lateral ──
+// Los capítulos 05 a 08 siguen los dominios de desempeño de la Guía del PMBOK®, octava edición:
+// sus secciones salen de la lista de procesos (src/content/documentos.ts), agrupadas por área de enfoque.
+const COLOR_AREA: Record<string, string> = {
+  "Iniciación": "text-blue-600",
+  "Planificación": "text-amber-600",
+  "Ejecución": "text-purple-600",
+  "Monitoreo y control": "text-rose-600",
+  "Cierre": "text-emerald-600",
+};
+
+// Secciones con material del levantamiento o vistas interactivas que acompañan a un proceso.
+const ANEXOS: Record<string, TocSection[]> = {
+  "gob-1": [
+    { label: "↳ Caso de negocio (lienzo)", href: "#canvas" },
+    { label: "↳ Factores del entorno", href: "#factores" },
+  ],
+  "int-1": [{ label: "↳ Entrevista a la Dirección", href: "#entrevista" }],
+  "alc-2": [
+    { label: "↳ Requisitos del sistema", href: "#p05-requisitos" },
+    { label: "↳ Planillas de requisitos", href: "#p05-planillas" },
+  ],
+  "alc-4": [
+    { label: "↳ Diagrama de la EDT", href: "#p05-diagrama-edt" },
+    { label: "↳ Diccionario de la EDT", href: "#p05-diccionario" },
+  ],
+  "cro-2": [
+    { label: "↳ Lista de actividades (44)", href: "#p06-lista-actividades" },
+    { label: "↳ Diagrama de red", href: "#p06-diagrama-red" },
+    { label: "↳ Estimación PERT", href: "#p06-estimacion-pert" },
+    { label: "↳ Diagrama de Gantt", href: "#p06-gantt" },
+    { label: "↳ Valor ganado (simulación)", href: "#p06-control-desvios" },
+  ],
+};
+
+function gruposDeDominio(dominio: string): TocGroup[] {
+  return AREAS.map((area) => ({
+    label: area,
+    color: COLOR_AREA[area] ?? "text-slate-600",
+    sections: PROCESOS.filter((p) => p.dominio === dominio && p.area === area).flatMap((p) => [
+      { label: p.nombre, href: "#" + p.id },
+      ...(ANEXOS[p.id] ?? []),
+    ]),
+  })).filter((g) => g.sections.length > 0);
+}
+
 export const TOC_CHAPTERS: TocChapter[] = [
   {
     num: "00",
@@ -357,44 +373,11 @@ export const TOC_CHAPTERS: TocChapter[] = [
       { label: "Sobre la institución", href: "#institucion" },
       { label: "Propuesta de valor", href: "#solucion" },
       { label: "La institución en campo", href: "#visita" },
-      { label: "Equipo de investigación", href: "#equipo" },
+      { label: "Equipo del proyecto", href: "#equipo" },
     ],
   },
   {
     num: "01",
-    label: "Análisis de Stakeholders",
-    groups: [
-      {
-        label: "Entradas",
-        color: "text-blue-600",
-        sections: [
-          { label: "Caso de negocio", href: "#canvas" },
-          { label: "Factores ambientales", href: "#factores" },
-        ],
-      },
-      {
-        label: "Herramientas y Técnicas",
-        color: "text-amber-600",
-        sections: [
-          { label: "Entrevista semi-estructurada", href: "#entrevista" },
-          { label: "Mapa de Actores", href: "#mapa-actores" },
-          { label: "Matriz de Poder e Interés", href: "#matriz-poder" },
-          { label: "Análisis de Expectativas", href: "#expectativas" },
-        ],
-      },
-      {
-        label: "Salidas",
-        color: "text-emerald-600",
-        sections: [
-          { label: "Registro de interesados", href: "#stakeholders" },
-          { label: "Plan de Comunicación", href: "#comunicacion" },
-          { label: "Seguimiento de Interesados", href: "#seguimiento" },
-        ],
-      },
-    ],
-  },
-  {
-    num: "02",
     label: "Análisis del Problema",
     groups: [
       { label: "Entradas", color: "text-blue-600", sections: [{ label: "Descripción de la problemática", href: "#p02-entradas" }] },
@@ -410,7 +393,7 @@ export const TOC_CHAPTERS: TocChapter[] = [
     ],
   },
   {
-    num: "03",
+    num: "02",
     label: "Análisis del Objetivo",
     groups: [
       { label: "Entradas", color: "text-blue-600", sections: [{ label: "Problema Central", href: "#p03-entradas" }] },
@@ -422,7 +405,7 @@ export const TOC_CHAPTERS: TocChapter[] = [
     ],
   },
   {
-    num: "04",
+    num: "03",
     label: "Análisis de Alternativa de Solución",
     groups: [
       { label: "Marco y Acciones", color: "text-blue-600", sections: [
@@ -439,40 +422,22 @@ export const TOC_CHAPTERS: TocChapter[] = [
     ],
   },
   {
-    num: "05",
-    label: "Línea Base del Alcance del Proyecto",
-    groups: [
-      { label: "Requisitos", color: "text-blue-600", sections: [
-        { label: "Especificaciones del Sistema", href: "#p05-requisitos" },
-        { label: "Planillas de Requisitos", href: "#p05-planillas" },
-      ] },
-      { label: "Estructura EDT", color: "text-amber-600", sections: [
-        { label: "Diagrama del Sistema ML", href: "#p05-diagrama-edt" },
-        { label: "Diccionario de EDT (SIA-T)", href: "#p05-diccionario" },
-      ] },
+    num: "04",
+    label: "Marco de Gestión: PMBOK® 8",
+    sections: [
+      { label: "La guía de referencia", href: "#pmbok-guia" },
+      { label: "Principios", href: "#pmbok-principios" },
+      { label: "Mapa de los 40 procesos", href: "#pmbok-mapa" },
+      { label: "Índice de documentos", href: "#pmbok-documentos" },
     ],
   },
+  { num: "05", label: "Dominio de Gobernanza", groups: gruposDeDominio("Gobernanza") },
+  { num: "06", label: "Dominio de Interesados", groups: gruposDeDominio("Interesados") },
+  { num: "07", label: "Dominio de Alcance", groups: gruposDeDominio("Alcance") },
+  { num: "08", label: "Dominio de Cronograma", groups: gruposDeDominio("Cronograma") },
   {
-    num: "06",
-    label: "Línea Base del Cronograma del Proyecto",
-    groups: [
-      { label: "Planificación", color: "text-blue-600", sections: [
-        { label: "Plan de Gestión del Cronograma", href: "#p06-cronograma" },
-        { label: "Lista de Actividades (40)", href: "#p06-lista-actividades" },
-      ] },
-      { label: "Secuenciación & Estimación", color: "text-amber-600", sections: [
-        { label: "Diagrama de Red (PDM)", href: "#p06-diagrama-red" },
-        { label: "Estimación por Método PERT", href: "#p06-estimacion-pert" },
-      ] },
-      { label: "Cronograma & Control", color: "text-purple-600", sections: [
-        { label: "Desarrollar Cronograma (Gantt)", href: "#p06-gantt" },
-        { label: "Control de Desvíos (EVA)", href: "#p06-control-desvios" },
-      ] },
-    ],
-  },
-  {
-    num: "07",
-    label: "Línea Base de Costos del Proyecto",
+    num: "09",
+    label: "Dominio de Finanzas (curso anterior)",
     groups: [
       { label: "Planificación & Estimación", color: "text-blue-600", sections: [
         { label: "Plan de Gestión de Costos", href: "#p07-gestion-costos" },
@@ -489,8 +454,8 @@ export const TOC_CHAPTERS: TocChapter[] = [
     ],
   },
   {
-    num: "08",
-    label: "Video de Presentación de la Solución",
+    num: "10",
+    label: "Video de la Solución (curso anterior)",
     groups: [
       { label: "Solución SIA-T", color: "text-[#0d7377]", sections: [
         { label: "Video de la Solución SIA-T", href: "#p08-video-solucion" },

@@ -9,7 +9,7 @@ export default function Abstract() {
   const keywords = [
     "Machine Learning",
     "Bajo rendimiento académico",
-    "PMBOK 6",
+    "PMBOK 8",
     "Gestión de proyectos TI",
     "Alertas tempranas",
     "IEP Peruano Francés",
@@ -24,16 +24,15 @@ export default function Abstract() {
               Resumen / Abstract
             </span>
             <span className="font-mono text-slate-700 text-[10px] sm:text-[11px]">
-              Metodología: PMBOK® 6.ª edición <Cite r="PMI, 2017" />
+              Guía de referencia: PMBOK® 8.ª edición <Cite r="PMI, 2025" />
             </span>
           </div>
           <p className="text-slate-800 leading-relaxed text-xs sm:text-sm text-justify">
-            El presente trabajo formula y evalúa un proyecto de tecnología de información orientado a la detección temprana del riesgo de deserción escolar en la Institución Educativa Privada I.E.P. Peruano Francés, ubicada en Villa el Salvador, Lima, Perú. Siguiendo los lineamientos del{" "}
-            <strong className="text-slate-900">PMBOK® 6.ª edición</strong>
-            <Cite r="PMI, 2017" />, se identificaron los factores ambientales de la empresa, los activos de los procesos de la organización y se realizó un análisis exhaustivo de interesados. El diagnóstico se fundamenta en una entrevista semi-estructurada aplicada en abril de 2026, que evidenció procesos 100&nbsp;% manuales de registro de asistencia e incidencias, y una tasa de acceso del 60&nbsp;% de los padres de familia a la plataforma institucional Cubicol
-            <Cite r="MINEDU, 2023" />. La solución propuesta es un sistema web inteligente basado en técnicas de{" "}
+            Este blog documenta la gestión de un proyecto de tecnología de información orientado a la detección temprana del bajo rendimiento académico en la I.E.P. Peruano Francés, ubicada en Villa El Salvador, Lima, Perú. El proyecto se formuló en el curso anterior y ahora se gestiona siguiendo la{" "}
+            <strong className="text-slate-900">Guía del PMBOK®, octava edición</strong>
+            <Cite r="PMI, 2025" />: en esta etapa se desarrollan los dominios de Gobernanza y de Interesados y se completan los de Alcance y Cronograma. El diagnóstico se apoya en una entrevista a la Dirección (24 de abril de 2026) y en una encuesta a seis docentes (15 de mayo de 2026), que mostraron un registro manual de la asistencia y de las incidencias y que solo alrededor del 40&nbsp;% de los padres de familia ingresa a la plataforma Cubicol. La solución propuesta es un sistema web inteligente basado en técnicas de{" "}
             <strong className="text-slate-900">Machine Learning</strong>
-            <Cite r="Romero & Ventura, 2010" /> que procesa variables de asistencia, rendimiento académico e incidencias conductuales para generar alertas tempranas de intervención. El modelo de negocio fue estructurado mediante el{" "}
+            <Cite r="Romero & Ventura, 2010" /> que procesa las notas, la asistencia y las incidencias para clasificar a cada estudiante en riesgo bajo, medio o alto y avisar a tiempo al docente tutor. El caso de negocio se estructuró con el{" "}
             <strong className="text-slate-900">Business Model Canvas</strong>
             <Cite r="Osterwalder & Pigneur, 2010" />.
           </p>

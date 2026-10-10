@@ -38,7 +38,7 @@ export default function ProblemaAnalysis() {
       <section id="p02-entradas" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            02 · Análisis del Problema · Entrada
+            01 · Análisis del Problema · Entrada
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
             Descripción de la Problemática
@@ -127,7 +127,7 @@ export default function ProblemaAnalysis() {
       <section id="p02-herramientas" className="py-14 bg-slate-50 border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            02 · Análisis del Problema · Herramientas y Técnicas
+            01 · Análisis del Problema · Herramientas y Técnicas
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-4">
             Análisis de Diagnóstico (Marco Lógico + Encuesta)
@@ -279,7 +279,7 @@ export default function ProblemaAnalysis() {
       <section id="p02-evidencias" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            02 · Análisis del Problema · Evidencia
+            01 · Análisis del Problema · Evidencia
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-4">
             Evidencia Documental del Proceso de Captura
@@ -321,7 +321,7 @@ export default function ProblemaAnalysis() {
       <section id="p02-resultados" className="py-14 bg-slate-50 border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            02 · Análisis del Problema · Métricas de Respuestas
+            01 · Análisis del Problema · Métricas de Respuestas
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
             Análisis de Resultados de la Encuesta
@@ -452,7 +452,7 @@ export default function ProblemaAnalysis() {
       <section id="p02-salidas" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            02 · Análisis del Problema · Salida
+            01 · Análisis del Problema · Salida
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-8">
             Enunciado Formal del Problema

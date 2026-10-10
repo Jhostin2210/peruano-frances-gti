@@ -327,7 +327,7 @@ export default function VideoPresentation() {
           {/* HEADER DE CAPÍTULO */}
           <div className="mb-4">
             <span className="font-mono text-xs text-[#0d7377] uppercase tracking-wider block mb-2">
-              08 · Presentación en Video de la Solución · Pitch Académico
+              10 · Presentación en Video de la Solución · Pitch Académico
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
               Video de la Solución SIA-T

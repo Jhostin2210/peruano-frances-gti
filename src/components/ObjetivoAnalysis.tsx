@@ -57,9 +57,9 @@ export default function ObjetivoAnalysis() {
       nombre: "Temporal (Time-bound)",
       estado: "corregido",
       cumple: [
-        "Acotado al horizonte temporal del ciclo lectivo escolar del año 2026",
+        "Acotado al horizonte temporal del ciclo lectivo escolar del año 2027",
       ],
-      mejora: "Se agregó la acotación temporal 'durante el año escolar 2026' — omitida en el Marco Lógico original.",
+      mejora: "Se agregó la acotación temporal 'durante el año escolar 2027' — omitida en el Marco Lógico original.",
     },
   ];
 
@@ -69,7 +69,7 @@ export default function ObjetivoAnalysis() {
       <section id="p03-entradas" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            03 · Análisis del Objetivo · Entrada
+            02 · Análisis del Objetivo · Entrada
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
             Inversión del Enunciado del Problema
@@ -107,7 +107,7 @@ export default function ObjetivoAnalysis() {
       <section id="p03-herramientas" className="py-14 bg-slate-50 border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            03 · Análisis del Objetivo · Herramientas y Técnicas
+            02 · Análisis del Objetivo · Herramientas y Técnicas
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
             Árbol de Objetivos (Estructura de Medios y Fines)
@@ -198,14 +198,14 @@ export default function ObjetivoAnalysis() {
       <section id="p03-smart" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            03 · Análisis del Objetivo · Pruebas de Calidad
+            02 · Análisis del Objetivo · Pruebas de Calidad
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
             Ajuste SMART de los Enunciados
           </h2>
           <p className="text-slate-650 text-sm mb-8 leading-relaxed max-w-4xl text-justify">
             Para blindar metodológicamente el objetivo derivado del Marco Lógico, se cruzó minuciosamente por las cinco dimensiones regulatorias del estándar SMART
-            <Cite r="PMI, 2017" />.
+            <Cite r="PMI, 2025" />.
           </p>
 
           <div className="space-y-4 max-w-4xl">
@@ -261,7 +261,7 @@ export default function ObjetivoAnalysis() {
       <section id="p03-salidas" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            03 · Análisis del Objetivo · Salida
+            02 · Análisis del Objetivo · Salida
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-8">
             Enunciado Consolidado del Objetivo Temporalizado
@@ -303,7 +303,7 @@ export default function ObjetivoAnalysis() {
                 Enunciado Oficial del Objetivo SMART Refinado
               </h3>
               <p className="text-xl sm:text-2xl font-serif font-bold text-slate-900 leading-snug text-justify">
-                "Reducir en al menos un <strong className="text-blue-800">30%</strong> la detección tardía del bajo rendimiento académico estudiantil en la <strong className="text-blue-800">IE Peruano Francés</strong>, mediante un sistema inteligente consolidado basado en Machine Learning que asocie <strong className="text-blue-800">asistencias, notas e incidencias</strong> de los <strong className="text-blue-800">200 alumnos</strong>, emitiendo alarmas inmediatas a docentes y directores, <strong className="text-blue-800">durante el año escolar 202Cycle 2026</strong>."
+                "Reducir en al menos un <strong className="text-blue-800">30%</strong> la detección tardía del bajo rendimiento académico estudiantil en la <strong className="text-blue-800">IE Peruano Francés</strong>, mediante un sistema inteligente consolidado basado en Machine Learning que asocie <strong className="text-blue-800">asistencias, notas e incidencias</strong> de los <strong className="text-blue-800">200 alumnos</strong>, emitiendo alarmas inmediatas a docentes y directores, <strong className="text-blue-800">durante el año escolar 2027</strong>."
               </p>
             </div>
           </div>

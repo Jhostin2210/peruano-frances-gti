@@ -43,12 +43,14 @@ import {
   Mail
 } from "lucide-react";
 import Cite from "./Cite";
+import { REQUISITOS } from "../content/datos";
 
 interface Requirement {
   id: string; // REQ-01, RNF-01
   tipo: "Funcional" | "No Funcional";
   caso: string; // CU-01
   titulo: string;
+  prioridad: string;
   descripcion: string;
   justificacion: string;
   fuente: string;
@@ -74,10 +76,39 @@ interface EDTWorkPackage {
   supuestos: string;
   recursos: string;
   duracion: string;
-  categoria: "Gestión" | "Datos" | "Modelado ML" | "Alertas" | "Despliegue" | "Capacitación";
+  categoria: "Gestión" | "Datos" | "Modelado ML" | "Alertas" | "Despliegue" | "Capacitación" | "Pruebas y piloto";
 }
 
-export default function RequisitosAnalysis() {
+// Agrupación de los requisitos para los filtros del explorador.
+const CATEGORIA: Record<string, Requirement["categoria"]> = {
+  "REQ-01": "Recolección",
+  "REQ-02": "Recolección",
+  "REQ-03": "Algoritmo",
+  "REQ-04": "Algoritmo",
+  "REQ-05": "Alertas",
+  "REQ-06": "Alertas",
+  "REQ-07": "Alertas",
+  "REQ-08": "Dashboard",
+  "REQ-09": "Dashboard",
+  "REQ-10": "Dashboard",
+  "REQ-11": "Seguridad",
+  "REQ-12": "Alertas",
+  "RNF-01": "Usabilidad",
+  "RNF-02": "Rendimiento",
+  "RNF-03": "Seguridad",
+  "RNF-04": "Cumplimiento",
+  "RNF-05": "Infraestructura",
+  "RNF-06": "Usabilidad",
+  "RNF-07": "Rendimiento",
+  "RNF-08": "Infraestructura",
+};
+
+// "requisitos": resumen y explorador de requisitos. "edt": diagrama y diccionario de la EDT.
+interface RequisitosAnalysisProps {
+  parte: "requisitos" | "edt";
+}
+
+export default function RequisitosAnalysis({ parte }: RequisitosAnalysisProps) {
   // Requirement states
   const [activeTab, setActiveTab] = useState<"todos" | "funcional" | "no-funcional">("todos");
   const [searchTerm, setSearchTerm] = useState("");
@@ -99,351 +130,27 @@ export default function RequisitosAnalysis() {
   const googleDocUri = "https://docs.google.com/document/d/1zlgbDf6TJQEyCT0cXs2hXvkgiy9CvxvK/edit?usp=sharing&ouid=107121906244921513138&rtpof=true&sd=true";
   const googleSheetUri = "https://docs.google.com/spreadsheets/d/1O8zNQFLdGbagfmUx7dz59Y51JzoM5kqF/edit?usp=sharing&ouid=107121906244921513138&rtpof=true&sd=true";
 
-  // The 12 Functional and 8 Non-Functional requirements compiled from the provided system analysis
-  const requisitosData: Requirement[] = [
-    {
-      id: "REQ-01",
-      tipo: "Funcional",
-      caso: "CU-01",
-      titulo: "Integración de datos académicos multivariable",
-      descripcion: "El sistema debe integrar los datos de asistencia, calificaciones, participación e incidencias desde los sistemas académicos existentes (Cubicol y registros físicos) en una base de datos centralizada única, evitando la duplicación y dispersión de la información académica de los 200 estudiantes.",
-      justificacion: "Actualmente la información académica se encuentra fragmentada entre Cubicol, cuadernos físicos de asistencia y notificaciones de incidencias por WhatsApp, sin trazabilidad centralizada (Entrevista de campo, Abril 2026). El 66.7% de los docentes señala que necesita datos unificados multivariable para detectar oportunamente el riesgo académico (Encuesta Docente P6). Este requisito es la base de todo el sistema de recolección de datos.",
-      fuente: "Promotora Directora / Área de TI",
-      unidad: "Dirección Académica",
-      criterios: "La base de datos centralizada debe consolidar el 100% de los registros de asistencia, notas e incidencias sin pérdida de información. La integración debe completarse sin generar registros duplicados ni huérfanos. Se validará mediante pruebas de reconciliación comparando los registros de origen (Cubicol, físicos) con la base de datos centralizada en tres fechas distintas.",
-      satisfaccion: 5,
-      insatisfaccion: 4,
-      dependencias: "REQ-02, REQ-07",
-      conflictos: "Ninguno",
-      soporte: "Entrevista de campo Abril 2026; Encuesta Docente P6",
-      categoria: "Recolección"
-    },
-    {
-      id: "REQ-02",
-      tipo: "Funcional",
-      caso: "CU-02",
-      titulo: "Limpieza y validación automatizada por Cron Job",
-      descripcion: "El sistema debe ejecutar procesos automáticos nocturnos (Cron jobs) de limpieza, validación y corrección de inconsistencias en los datos académicos integrados, asegurando que la información utilizada por los modelos de Machine Learning sea consistente y confiable.",
-      justificacion: "Los datos provenientes de fuentes manuales (cuadernos físicos, WhatsApp) presentan inconsistencias y errores de registro propios de un proceso 100% manual (Entrevista de campo, Abril 2026). Sin un proceso de limpieza automatizado, el modelo ML entrenaría con datos de baja calidad, afectando la precisión la predicción.",
-      fuente: "Área de TI / Encargada de Cubicol",
-      unidad: "Área de Tecnología",
-      criterios: "El proceso de limpieza debe ejecutarse diariamente en horario nocturno sin afectar la disponibilidad del sistema durante el horario escolar. Debe detectar y reportar como mínimo: registros duplicados, valores nulos críticos e inconsistencias de fechas. Se validará revisando los logs de ejecución durante 15 días continuos sin fallos críticos.",
-      satisfaccion: 5,
-      insatisfaccion: 4,
-      dependencias: "REQ-01",
-      conflictos: "Ninguno",
-      soporte: "Entrevista de campo Abril 2026; Manual técnico Cubicol",
-      categoria: "Recolección"
-    },
-    {
-      id: "REQ-03",
-      tipo: "Funcional",
-      caso: "CU-03",
-      titulo: "Entrenamiento del algoritmo clasificador de niveles de riesgo ML",
-      descripcion: "El sistema debe entrenar un modelo predictivo de Machine Learning con datos históricos académicos (asistencia, calificaciones e incidencias) para clasificar a cada uno de los 200 estudiantes en niveles de riesgo de bajo rendimiento académico: alto (rojo), medio (amarillo) y bajo (verde).",
-      justificacion: "El 100% de los docentes encuestados reconoce que los problemas académicos se detectan tardíamente (Encuesta Docente P7, Abril 2026). El 83.3% acepta la solución ML como herramienta de mejora (Encuesta P8). La literatura científica respalda la efectividad del ML en la predicción del bajo rendimiento académico.",
-      fuente: "Directorio Lógico (Árbol de Objetivos)",
-      unidad: "Científico de Datos",
-      criterios: "El modelo ML debe ser entrenado usando algoritmos de clasificación de Scikit-learn (como Random Forest o Gradient Boosting). La clasificación final debe generar de forma robusta las 3 etiquetas de riesgo especificadas. Se validará mediante validación cruzada y el informe técnico de precisión debidamente firmado.",
-      satisfaccion: 5,
-      insatisfaccion: 5,
-      dependencias: "REQ-01, REQ-02",
-      conflictos: "Ninguno",
-      soporte: "Árbol de Objetivos Cap. 03; Encuesta Docente P7 Y P8",
-      categoria: "Algoritmo"
-    },
-    {
-      id: "REQ-04",
-      tipo: "Funcional",
-      caso: "CU-04",
-      titulo: "Ejecución predictiva semanal programada",
-      descripcion: "El sistema debe procesar predictivamente y de forma semanal los datos consolidados acumulados de todos los estudiantes activos, actualizando sus clasificaciones académicas en la base de datos de manera automatizada y desatendida.",
-      justificacion: "Para garantizar que las alertas tempranas sean oportunas, las clasificaciones no pueden depender del entrenamiento o activación manual por el personal técnico. La retroalimentación oportuna en el 83.3% de los profesores demanda que la predicción llegue con periodicidad controlada.",
-      fuente: "Subdirector / Coordinadores de CC. y LL.",
-      unidad: "Dirección Académica",
-      criterios: "La rutina predictiva debe ejecutarse de forma semanal (los días domingos por la noche), procesando el total de la matrícula estudiantil. Debe actualizar los valores en la tabla de resultados de riesgo con una duración inferior a 5 minutos. Se validará mediante logs de base de datos.",
-      satisfaccion: 5,
-      insatisfaccion: 3,
-      dependencias: "REQ-03",
-      conflictos: "Ninguno",
-      soporte: "Encuesta Docente P10; Agenda pedagógica",
-      categoria: "Algoritmo"
-    },
-    {
-      id: "REQ-05",
-      tipo: "Funcional",
-      caso: "CU-05",
-      titulo: "Generación de alertas automáticas inmediatas",
-      descripcion: "El sistema debe iniciar e inyectar notificaciones automáticas inmediatas visibles en pantalla e emails institucionales dirigidos a docentes tutores y coordinadores pedagógicos cuando un alumno pase de riesgo bajo a riesgo medio o alto.",
-      justificacion: "El problema de base es la notificación ausente al docente ante el riesgo inminente del alumno (Cap. 02, Cap. 03). El envío automático de alertas es el gatillador prioritario para activar los planes de intervención y acompañamiento escolar individualizado.",
-      fuente: "Docentes Tutores / Coordinador de Nivel",
-      unidad: "Plan de Tutoría",
-      criterios: "Las alertas predictivas deben crearse en la base de datos en menos de 5 segundos tras procesar la predicción y enviarse por correo electrónico en menos de 24 horas. Deben registrar historial con fecha, rol del alumno, nivel detectado y estado (leído/no leído). Se validará a través de pruebas de envío SMTP.",
-      satisfaccion: 5,
-      insatisfaccion: 5,
-      dependencias: "REQ-04",
-      conflictos: "Ninguno",
-      soporte: "Árbol de Objetivos; Entrevista de campo, Abril 2026",
-      categoria: "Alertas"
-    },
-    {
-      id: "REQ-06",
-      tipo: "Funcional",
-      caso: "CU-06",
-      titulo: "Dashboard interactivo con semáforos de riesgo",
-      descripcion: "El sistema debe proveer un panel de control interactivo (dashboard) con gráficos descriptivos en tiempo real y semáforos de riesgo (rojo, amarillo y verde) que clasifiquen a la población estudiantil agregada por grado y sección escolar.",
-      justificacion: "La directora y el subdirector académico necesitan de una visualización ejecutiva, agregada y depurada que facilite la toma de decisiones estratégicas, asignando psicólogos y recursos específicos a los grados con mayores cuellos de botella.",
-      fuente: "Promotora Directora / Subdirector",
-      unidad: "Dirección General",
-      criterios: "La interfaz web debe presentar indicadores gráficos interactivos (en Nevers/Next.js) con distribución de riesgo porcentual por aula. La actualización debe ser reactiva tras el procesamiento semanal. Se validará mediante pruebas funcionales de usabilidad con la directiva.",
-      satisfaccion: 4,
-      insatisfaccion: 3,
-      dependencias: "REQ-04",
-      conflictos: "Ninguno",
-      soporte: "Entrevista de campo con la Directora (WhatsApp bimensual)",
-      categoria: "Dashboard"
-    },
-    {
-      id: "REQ-07",
-      tipo: "Funcional",
-      caso: "CU-07",
-      titulo: "Lectura QR para control de asistencia presencial",
-      descripcion: "El sistema debe ofrecer soporte para registrar inasistencias mediante dispositivos lectores ópticos o una interfaz de cámara que escanee códigos QR asignados a los estudiantes en sus credenciales, sincronizando el flujo de inmediato a la base de datos local.",
-      justificacion: "En la entrevista con la Directora (Abril 2026), se priorizó explícitamente el uso de códigos QR para agilizar la entrada y automatizar el reporte de asistencia física. La inasistencia recurrente es el factor desencadenante del 70% de casos de riesgo académico (Marco Lógico).",
-      fuente: "Promotora Directora / Auxiliares de Normas",
-      unidad: "Normas de Asistencia",
-      criterios: "El escáner de códigos QR debe realizar la identificación y registro del alumno en menos de 1.5 segundos. En caso de fallas de lectura, la interfaz del auxiliar debe permitir la inserción del código manualmente. Se validará mediante pruebas de velocidad presenciales en puerta de ingreso.",
-      satisfaccion: 5,
-      insatisfaccion: 2,
-      dependencias: "REQ-01",
-      conflictos: "Ninguno",
-      soporte: "Entrevista de Campo, Abril 2026 (QR priorizado)",
-      categoria: "Recolección"
-    },
-    {
-      id: "REQ-08",
-      tipo: "Funcional",
-      caso: "CU-08",
-      titulo: "Ficha del estudiante unificada de trazabilidad",
-      descripcion: "El sistema debe proveer una vista dedicada individual (Ficha de Estudiante) donde se exhiba la traza histórica completa del alumno: evolución de promedios, récord acumulado de inasistencias, incidencias conductuales graves y un timeline de alertas disparadas.",
-      justificacion: "Para que el docente tutor o psicólogo escolar diseñe la intervención, es mandatorio examinar el panorama general del alumno y no únicamente una alerta cruda aislada. Este es el entregable integrador del expediente computado.",
-      fuente: "Psicólogo Escolar / Docentes Tutores",
-      unidad: "Servicio de Psicopedagogía",
-      criterios: "Al hacer clic sobre un alumno alertado en el dashboard, se cargará su ficha técnica unificada completa en menos de 2 segundos. Debe presentar de manera obligatoria las variables del comportamiento histórico. Se validará con flujos funcionales UX.",
-      satisfaccion: 5,
-      insatisfaccion: 4,
-      dependencias: "REQ-01, REQ-06",
-      conflictos: "Ninguno",
-      soporte: "Foco de acompañamiento psicopedagógico (Cap. 01)",
-      categoria: "Dashboard"
-    },
-    {
-      id: "REQ-09",
-      tipo: "Funcional",
-      caso: "CU-09",
-      titulo: "Generación de reportes PDF descargables",
-      descripcion: "El sistema debe permitir a coordinadores de nivel y dirección descargar reportes ejecutivos consolidados en formato PDF que contengan estadísticas del riesgo general, evolución de alertas y efectividad de las intervenciones aplicadas.",
-      justificacion: "Se requieren entregables físicos/digitales portables para ser discutidos en las reuniones bimestrales del consejo pedagógico institucional o ser archivados como documentos oficiales del colegio.",
-      fuente: "Coordinadores Pedagógicos",
-      unidad: "Coordinación de Ciencias y Letras",
-      criterios: "La exportación del reporte general en el dashboard a PDF portátil debe completarse sin deformaciones visuales en menos de 5 segundos. El archivo resultante debe ser un archivo .pdf estándar que incluya gráficos y tablas legibles. Se validará mediante descarga.",
-      satisfaccion: 4,
-      insatisfaccion: 2,
-      dependencias: "REQ-06, REQ-08",
-      conflictos: "Ninguno",
-      soporte: "Reuniones de Gestión Escolar del Colegio",
-      categoria: "Dashboard"
-    },
-    {
-      id: "REQ-10",
-      tipo: "Funcional",
-      caso: "CU-10",
-      titulo: "Registro manual de bitácoras de intervención",
-      descripcion: "El sistema debe permitir a los docentes tutores y al psicólogo escolar registrar de forma escrita las acciones de intervención preventiva aplicadas al alumno alertado (e.g., cita con apoderado, refuerzo académico), actualizando de forma bidireccional el estado del riesgo.",
-      justificacion: "Para evaluar la eficacia de la alerta temprana, es mandatorio registrar si la retroalimentación condujo a una acción pedagógica. Sin este registro, no es factible dar seguimiento técnico a la rehabilitación escolar.",
-      fuente: "Psicólogo Escolar / Docentes de Aula",
-      unidad: "Plan de Tutoría Escolar",
-      criterios: "La interfaz de la ficha de estudiante debe habilitar un formulario simplificado de inserción de bitácora (máximo 500 caracteres, fecha y tipología de acción). Una vez guardado, se indexará al timeline de forma síncrona. Se validará con pruebas de guardado en base de datos.",
-      satisfaccion: 5,
-      insatisfaccion: 3,
-      dependencias: "REQ-08",
-      conflictos: "Ninguno",
-      soporte: "Plan de Acción de Tutoría y Orientación Educativa (TOE)",
-      categoria: "Usabilidad"
-    },
-    {
-      id: "REQ-11",
-      tipo: "Funcional",
-      caso: "CU-11",
-      titulo: "Módulo de gestión de accesos diferenciados por rol",
-      descripcion: "El sistema debe bloquear y habilitar las vistas e información del software conforme al rol del usuario autenticado (Director, Subdirector, Docente Tutor, Psicólogo, Administrador), previniendo el acceso no autorizado de usuarios genéricos.",
-      justificacion: "La protección de datos de menores exige un riguroso control donde los auxiliares únicamente puedan visualizar datos de asistencia, mientras que datos psicopedagógicos sensibles queden restringidos al psicólogo escolar y directora académica (Ley N° 29733 de Protección de Datos).",
-      fuente: "Promotora Directora / Responsable de TI",
-      unidad: "Tecnología y Seguridad",
-      criterios: "El sistema modular debe validar las credenciales de ingreso y aplicar políticas de autorización por rol. Un docente tutor no debe visualizar la sección de reconfiguración del modelo ML o accesos ajenos a sus grados asignados. Se validará recreando accesos cruzados.",
-      satisfaccion: 5,
-      insatisfaccion: 5,
-      dependencias: "RNF-02, RNF-08",
-      conflictos: "Ninguno",
-      soporte: "Cumplimiento normativo y Ley N° 29733 (Cap. 01)",
-      categoria: "Seguridad"
-    },
-    {
-      id: "REQ-12",
-      tipo: "Funcional",
-      caso: "CU-12",
-      titulo: "Notificaciones secundarias a familias vía WhatsApp",
-      descripcion: "El sistema debe permitir disparar notificaciones simplificadas de alerta constructiva mediante APIs de mensajería (WhatsApp) dirigidas directamente al número asignado del padre o madre de familia si la alerta de riesgo persistiera de forma recurrente.",
-      justificacion: "La inasistencia o baja de promedio detectada se mitiga notablemente al concientizar a la familia. El WhatsApp es el canal preferencial declarado para contactar de forma oportuna a la población de apoderados (Encuesta Stakeholders Cap. 01).",
-      fuente: "Padres de Familia / Auxiliares",
-      unidad: "Normatividad e Inclusión",
-      criterios: "El despacho de mensajes a través de WhatsApp Web con plantillas predefinidas no debe generar recargos económicos críticos para la institución. Debe ser un proceso activable mediante clics controlados en la vista docente. Se validará mediante simulación de mensajes.",
-      satisfaccion: 4,
-      insatisfaccion: 2,
-      dependencias: "REQ-05, REQ-06",
-      conflictos: "Ninguno",
-      soporte: "Mapeo de Canales Críticos de Comunicación (Cap. 01)",
-      categoria: "Alertas"
-    },
-    {
-      id: "RNF-01",
-      tipo: "No Funcional",
-      caso: "Garantía de Precisión",
-      titulo: "Precisión mínima admisible del modelo predictivo (>= 75%)",
-      descripcion: "El modelo predictivo de Machine Learning implementado localmente en Python/Scikit-learn debe reportar una precisión mayor o igual al 75% en las predicciones lógicas computadas de detección de estudiantes en riesgo académico.",
-      justificacion: "Una precisión reducida genera un escenario de falsos positivos o falsos negativos masivos, saturando al psicólogo escolar de intervenciones estériles o dejando estudiantes vulnerables desamparados.",
-      fuente: "Área de TI / Científico de Datos",
-      unidad: "Área de Tecnología",
-      criterios: "El entrenamiento semanal validará que la métrica F1-score y Precisión del algoritmo sea mayor o igual que 0.75 sobre el dataset de validación del Colegio Peruano Francés. Validado por el reporte de entrenamiento emitido localmente.",
-      satisfaccion: 5,
-      insatisfaccion: 5,
-      dependencias: "REQ-03, REQ-04",
-      conflictos: "Ninguno",
-      soporte: "Criterio de sintonización metodológica (Cap. 03)",
-      categoria: "Rendimiento"
-    },
-    {
-      id: "RNF-02",
-      tipo: "No Funcional",
-      caso: "Soberanía de Datos",
-      titulo: "Soberanía de datos sensibles locales (Cumplimiento Ley N° 29733)",
-      descripcion: "El sistema se desplegará localmente en un servidor de la institución o VPS administrada (bajo Dokploy) de forma que el 100% de los datos personales sensibles de los alumnos permanezcan bajo la custodia del colegio, sin ser expuestos de forma de APIs cloud de terceros.",
-      justificacion: "Cumplimiento normativo riguroso con la legislación peruana vigente aplicable a la custodia y tenencia de base de datos de menores (conforme a los lineamientos declarados de la Ley N° 29733).",
-      fuente: "Promotora Directora / Ministerio de Educación",
-      unidad: "Cumplimiento Legal",
-      criterios: "Las contraseñas de las bases de datos PostgreSQL y logs deben residir en variables de entorno locales protegidas. Ningún trigger enviará datos crudos de nombres o notas a servidores remotos internacionales. Se validará mediante auditoría técnica de red local.",
-      satisfaccion: 5,
-      insatisfaccion: 5,
-      dependencias: "REQ-11, RNF-08",
-      conflictos: "Ninguno",
-      soporte: "Ley de Protección de Datos Personales N° 29733",
-      categoria: "Cumplimiento"
-    },
-    {
-      id: "RNF-03",
-      tipo: "No Funcional",
-      caso: "Velocidad de Carga",
-      titulo: "Velocidad y latencia de carga inferior a 3 segundos",
-      descripcion: "La carga inicial de la aplicación web, el refresco interactivo de las vistas y la generación del panel bento general en tiempo real debe completarse en menos de 3 segundos bajo redes de conectividad del colegio.",
-      justificacion: "Garantizar una óptima experiencia del usuario y viabilidad de adopción (Next.js/React con renderizado optimizado del lado del cliente) disminuyendo la lentitud percibida.",
-      fuente: "Docentes de Aula / Coordinadores",
-      unidad: "Infraestructura Técnica",
-      criterios: "El primer despliegue sobre el servidor local de producción reportará un tiempo inferior a los 3 segundos en el Lighthouse Speed Index. Se validará con herramientas estándar del inspector del navegador.",
-      satisfaccion: 4,
-      insatisfaccion: 3,
-      dependencias: "REQ-06, REQ-08",
-      conflictos: "Ninguno",
-      soporte: "Estándares Web y optimización Next.js / Vite",
-      categoria: "Rendimiento"
-    },
-    {
-      id: "RNF-04",
-      tipo: "No Funcional",
-      caso: "Disponibilidad Local",
-      titulo: "Disponibilidad continua del servicio local del 99.5%",
-      descripcion: "El software web local debe permanecer disponible para consulta y registro del personal autorizado durante todo el transcurso del horario escolar (7:30 AM a 6:00 PM Lunes a Viernes), con tolerancia cero a caídas prolongadas.",
-      justificacion: "Bajo el enfoque de uso del QR en la puerta de entrada presencial diario, una interrupción de disponibilidad detiene el ingreso de los estudiantes y el normal funcionamiento del centro educativo.",
-      fuente: "Auxiliares de Normas / Promotora Directora",
-      unidad: "Dirección de Escuela",
-      criterios: "El sistema no debe experimentar caídas acumuladas semanales superiores a 30 minutos escolares ordinarios. Se validará mediante un script automatizado local de ping (uptime) con alertas al encargado TI.",
-      satisfaccion: 5,
-      insatisfaccion: 4,
-      dependencias: "REQ-07",
-      conflictos: "Ninguno",
-      soporte: "Garantía de conectividad fibra óptica Win 1000 Mbps",
-      categoria: "Infraestructura"
-    },
-    {
-      id: "RNF-05",
-      tipo: "No Funcional",
-      caso: "Diseño Adaptativo",
-      titulo: "Interfaz de usuario responsive móvil/escritorio (Tailwind)",
-      descripcion: "La interfaz gráfica del dashboard web debe moldearse de manera adaptativa a pantallas de computadoras, pizarras interactivas, tabletas y teléfonos celulares de los profesores tutores.",
-      justificacion: "Los docentes consumen la información en computadoras de laboratorio, pero las auxiliares y el director consultan alertas desde teléfonos inteligentes portables mientras circulan por las aulas escolares.",
-      fuente: "Docentes de Aula / Auxiliar de Asistencia",
-      unidad: "Usabilidad UI",
-      criterios: "La maquetación en Tailwind CSS debe soportar la escala responsiva de visualizaciones y mantener los targets de contacto a un mínimo de 44px de tamaño táctil. Se validará mediante simulaciones dinámicas.",
-      satisfaccion: 4,
-      insatisfaccion: 3,
-      dependencias: "REQ-06, REQ-08",
-      conflictos: "Ninguno",
-      soporte: "Estándares de Accesibilidad W3C e interfaces móviles",
-      categoria: "Usabilidad"
-    },
-    {
-      id: "RNF-06",
-      tipo: "No Funcional",
-      caso: "Facilidad de Adopción",
-      titulo: "Facilidad de uso con tiempo máximo de capacitación <= 2 horas",
-      descripcion: "La visualización de semáforos, listados de estudiantes y carga de fichas individuales debe estar diseñada para requerir menos de 2 horas de capacitación docente para un uso autónomo y correcto.",
-      justificacion: "El personal cuenta con tiempo limitado para inducción, y algunos profesores son ajenos al uso sofisticado de datos predictivos. Se necesita una curva de aprendizaje mínima y sumamente amigable.",
-      fuente: "Docentes de Primaria y Secundaria",
-      unidad: "Tutoría y Normas",
-      criterios: "Al menos el 90% de los docentes tutores que asistan a la capacitación de inducción de 2 horas deben manifestar dominio autónomo en dos pruebas de consulta básicas simuladas. Se validará mediante encuestas de salida.",
-      satisfaccion: 5,
-      insatisfaccion: 4,
-      dependencias: "REQ-06, REQ-10",
-      conflictos: "Ninguno",
-      soporte: "Facilidad de adopción metodológica PMBOK®",
-      categoria: "Usabilidad"
-    },
-    {
-      id: "RNF-07",
-      tipo: "No Funcional",
-      caso: "Escalabilidad Modular",
-      titulo: "Código modular reutilizable y documentado en TypeScript",
-      descripcion: "La estructura de desarrollo del frontend (Next.js/TSX) y el backend debe estar formalizada y desacoplada mediante componentes limpios e interfaces de types estrictas en TypeScript.",
-      justificacion: "Al ser un prototipo diseñado por estudiantes universitarios (UNTELS), el proyecto debe ser de fácil mantención y ampliación para que futuros alumnos puedan incorporar nuevos algoritmos analíticos.",
-      fuente: "Equipo de Desarrollo UNTELS / Área de TI",
-      unidad: "Coordinación Tecnológica",
-      criterios: "La estructura del software no superará las advertencias críticas del linter (ESLint / Compile tests) y contará con tipados estrictos en todo el flujo local de datos (Types.ts). Se validará con el build compilado.",
-      satisfaccion: 4,
-      insatisfaccion: 2,
-      dependencias: "Ninguna",
-      conflictos: "Ninguno",
-      soporte: "Políticas de Calidad de Software Unificado",
-      categoria: "Infraestructura"
-    },
-    {
-      id: "RNF-08",
-      tipo: "No Funcional",
-      caso: "Encriptación Local",
-      titulo: "Cifrado local de contraseñas de accesos de TI",
-      descripcion: "Las claves de acceso y contraseñas de la base de datos PostgreSQL, los secretos del API SMTP de correos y los hashes de autenticación de directores y docentes deben ser encriptadas de forma unidireccional (vía algoritmos como bcrypt) en la base de datos local.",
-      justificacion: "Evitar la filtración del acceso que comprometa el historial personal, notas del Cubicol y datos reservados de los menores y docentes.",
-      fuente: "Responsable de TI / Subdirector",
-      unidad: "Seguridad Digital",
-      criterios: "Ninguna clave de usuario o del sistema residirá expresada en texto plano legible en ninguna tabla. Toda verificación de ingreso validará el hash correspondiente. Se validará mediante revisión selecta de base de datos.",
-      satisfaccion: 5,
-      insatisfaccion: 5,
-      dependencias: "REQ-11",
-      conflictos: "Ninguno",
-      soporte: "Normativa de Seguridad de la Información (MinEdu)",
-      categoria: "Seguridad"
-    }
-  ];
+  // Los 20 requisitos de la línea base del alcance, versión 3. Fuente única: documentacion/datos (requisitos y planillas).
+  const requisitosData: Requirement[] = REQUISITOS.map((r) => ({
+    id: r.id,
+    tipo: r.tipo === "Funcional" ? "Funcional" : "No Funcional",
+    caso: r.caso,
+    titulo: r.titulo,
+    prioridad: r.prioridad,
+    descripcion: r.descripcion,
+    justificacion: r.justificacion,
+    fuente: r.fuente,
+    unidad: r.unidad,
+    criterios: r.v3 ? `${r.criterio} Cambio en la versión 3: ${r.v3}` : r.criterio,
+    satisfaccion: r.satisfaccion,
+    insatisfaccion: r.insatisfaccion,
+    dependencias: r.dependencias,
+    conflictos: r.conflictos,
+    soporte: r.soporte,
+    categoria: CATEGORIA[r.id],
+  }));
 
-  // The 18 detailed Work Package entries compiled from "Diccionario de EDT"
+  // Paquetes de trabajo del diccionario de la EDT, con los responsables del equipo actual.
   const edtDictionaryData: EDTWorkPackage[] = [
     {
       id: "1.1.1",
@@ -454,7 +161,7 @@ export default function RequisitosAnalysis() {
       descripcion: "Elaboración y actualización periódica del cronograma general del proyecto, detallando hitos fundamentales, fechas estimadas de entrega, duraciones y lógica relacional entre requerimientos.",
       criterioAceptacion: "El cronograma debe estar formalmente visado por el docente asesor de UNTELS y ser modificado sistemáticamente ante cualquier cambio en el plan.",
       entregables: "Cronograma de hitos detallado en formato Gantt con visualización de responsables y estado de avance del software.",
-      supuestos: "El equipo dispone de herramientas de gestión de proyectos (Excel / ProjectLibre / Dokploy) de forma gratuita. Los plazos generales no sufrirán ampliaciones externas.",
+      supuestos: "El equipo dispone de herramientas de gestión de proyectos (MS Project, hojas de cálculo y tablero de tareas) de forma gratuita. Los plazos generales no sufrirán ampliaciones externas.",
       recursos: "1 Líder de proyecto, 1 Computadora con herramientas de diagramación.",
       duracion: "Durante todo el ciclo del proyecto (Monitoreo y reporte semanal)",
       categoria: "Gestión"
@@ -493,11 +200,11 @@ export default function RequisitosAnalysis() {
       titulo: "Integración de Scripts ETL",
       responsable: "Jadira D. Vasquez Castro",
       fecha: "Junio 2026",
-      descripcion: "Planificación y desarrollo de rutinas en Python (scripts de ETL relacional y Cron jobs) para la extracción, limpieza de duplicados y migración diaria automatizada de registros académicos de Cubicol hacia PostgreSQL.",
+      descripcion: "Planificación y desarrollo de rutinas en Python (procesos de carga y tareas programadas) para la extracción, limpieza de duplicados y migración diaria automatizada de registros académicos de Cubicol hacia PostgreSQL.",
       criterioAceptacion: "El pipeline automatizado de integración de datos debe ejecutarse en menos de 15 minutos, ofrecer consistencia bidireccional, omitir duplicados de alumnos y reportar logs de depuración.",
-      entregables: "Scripts de nivel técnico en Python debidamente documentados, triggers relacionales configurados en base de datos PostgreSQL local.",
-      supuestos: "El Colegio Peruano Francés provee permisos de lectura de la base de datos técnica o API local de Cubicol.",
-      recursos: "1 Desarrollador Backend, Computadora local con entorno ejecutándose en Python / Docker.",
+      entregables: "Scripts de nivel técnico en Python debidamente documentados, triggers relacionales configurados en base de datos PostgreSQL en la nube.",
+      supuestos: "El colegio entrega exportaciones de notas de Cubicol (supuesto S-01); no se ha comprobado que exista una API.",
+      recursos: "1 Desarrollador Backend, Computadora con entorno de Python.",
       duracion: "15 días hábiles",
       categoria: "Datos"
     },
@@ -510,7 +217,7 @@ export default function RequisitosAnalysis() {
       descripcion: "Análisis preliminar, minería de datos, imputación de nulos y verificación de redundancias en promedios y asistencias escolares acumuladas de los tres últimos años académicos.",
       criterioAceptacion: "El dataset pulido final no presentará valores nulos en columnas críticas (promedios, faltas). Se acompañará de informe de indicadores de completitud general.",
       entregables: "Dataset (.csv / .sql) unificado depurado histórico, Reporte de calidad y depuración formal.",
-      supuestos: "La plataforma Cubicol alberga por lo menos 3 años de datos continuos detallados del comportamiento de la matrícula escolar.",
+      supuestos: "Los datos históricos cubren al menos dos periodos consecutivos por estudiante (supuesto S-02).",
       recursos: "1 Analista de datos, Computadora personal con Jupyter / Pandas configurado.",
       duracion: "10 días hábiles",
       categoria: "Datos"
@@ -535,11 +242,11 @@ export default function RequisitosAnalysis() {
       titulo: "Clasificación de Riesgo predictivo",
       responsable: "Helber J. Perez Gutierrez",
       fecha: "Junio 2026",
-      descripcion: "Escritura de la API o módulo local encargado de consumir semanalmente el archivo del clasificador para procesar la matraícula vigente, grabando puntuaciones de riesgo en PostgreSQL.",
+      descripcion: "Escritura del módulo encargado de consumir semanalmente el archivo del clasificador para procesar la matraícula vigente, grabando puntuaciones de riesgo en PostgreSQL.",
       criterioAceptacion: "La rutina clasificatoria recopilará calificaciones vigentes e inasistencias y las rotulará semanalmente sin requerimiento de activación o mediación humana.",
-      entregables: "Módulo back-end de predicción indexada ejecutado en base de datos local mediante llamadas automatizadas.",
+      entregables: "Módulo back-end de predicción indexada ejecutado con una tarea programada en la nube, que guarda los resultados en la base de datos.",
       supuestos: "El pipeline de extracción ETL opera en correspondencia alimentando la base de datos de manera previa.",
-      recursos: "1 Desarrollador de Inteligencia artificial, PostgreSQL local, API backend Python.",
+      recursos: "1 Desarrollador de Inteligencia artificial, PostgreSQL gestionado y tarea programada en Python.",
       duracion: "8 días hábiles",
       categoria: "Modelado ML"
     },
@@ -563,11 +270,11 @@ export default function RequisitosAnalysis() {
       titulo: "Desarrollo del Motor de Alertas",
       responsable: "Jadira D. Vasquez Castro",
       fecha: "Junio 2026",
-      descripcion: "Desarrollo de los triggers lógicos encargados de disparar el envío de correos automatizados (vía SMTP de la intranet) a docentes y coordinadores al detectarse alumnos de alto riesgo.",
+      descripcion: "Desarrollo de los triggers lógicos encargados de disparar el envío de correos automatizados (mediante un servicio de envío de correo) a docentes y coordinadores al detectarse alumnos de alto riesgo.",
       criterioAceptacion: "El correo electrónico debe generarse y despacharse antes de transcurrir 24 horas del procesamiento predictivo semanal e indexar histórico de despachos.",
-      entregables: "Módulo de código del motor de alertas SMTP, Historial relacional de despacho de alertas.",
-      supuestos: "La dirección del colegio provee las credenciales del servidor SMTP corporativo del dominio peruanofrances.edu.pe.",
-      recursos: "1 Desarrollador Backend, Servidor SMTP, Acceso a PostgreSQL.",
+      entregables: "Módulo de código del motor de alertas, Historial relacional de despacho de alertas.",
+      supuestos: "Los docentes tienen un correo personal donde recibir las alertas y la Dirección autoriza la lista de direcciones (supuesto S-11 y solicitud SC-09).",
+      recursos: "1 Desarrollador Backend, Servicio de envío de correo y acceso a la base de datos.",
       duracion: "10 días hábiles",
       categoria: "Alertas"
     },
@@ -592,8 +299,8 @@ export default function RequisitosAnalysis() {
       responsable: "Carlos A. Curo Ramos",
       fecha: "Junio 2026",
       descripcion: "Desarrollo frontend en React con Next.js y Tailwind CSS del panel que exhibe las semaforizaciones de alertas académicas de los 200 estudiantes del colegio.",
-      criterioAceptacion: "La aplicación debe registrar Lighthouse de rendimiento superior al 90% y cargarse en un lapso absoluto inferior a los 3 segundos en red local.",
-      entregables: "Código fuente frontend web modular en repositorio Git unificado, Despliegue preliminar local.",
+      criterioAceptacion: "La aplicación debe registrar Lighthouse de rendimiento superior al 90% y cargarse en un lapso absoluto inferior a los 3 segundos con la conexión del colegio.",
+      entregables: "Código fuente frontend web modular en repositorio Git unificado, Despliegue preliminar de prueba.",
       supuestos: "Los mockups preliminares Figma (paquete 1.4.2.1) cuentan con la aprobación firmada de la gerencia técnica.",
       recursos: "1 Desarrollador Frontend, Entorno Node.js, Librerías React / Tailwind CSS.",
       duracion: "15 días hábiles",
@@ -609,7 +316,7 @@ export default function RequisitosAnalysis() {
       criterioAceptacion: "El 90% de los docentes convocados debe navegar autónomamente el software tras recibir una inducción de un lapso no superior de 2 horas.",
       entregables: "Informe de diagnóstico de usabilidad detallando correcciones funcionales aplicadas e incidentes documentados.",
       supuestos: "El colegio otorga disponibilidad para convocar por lo menos a 3 profesores de aula de primaria y secundaria.",
-      recursos: "1 Tester de experiencia de usuario (UX), Docente de prueba, Computadora con versión local de pruebas.",
+      recursos: "1 Tester de experiencia de usuario (UX), Docente de prueba, Computadora con la versión de pruebas.",
       duracion: "5 días hábiles",
       categoria: "Alertas"
     },
@@ -622,7 +329,7 @@ export default function RequisitosAnalysis() {
       descripcion: "Desarrollo del módulo de ingreso de credenciales de usuario y control fino de accesos por roles (Director, Auxiliar, Coordinador, Tutor, Psicólogo).",
       criterioAceptacion: "Cada rol tendrá acceso únicamente a las secciones de la base de datos permitidas, encriptando las contraseñas lógicas de forma obligatoria en hash (bcrypt).",
       entregables: "Módulo backend de control de ingreso, Tablas relacionales de usuarios con políticas de accesos.",
-      supuestos: "El listado oficial de roles y privilegios está visado por psicología y dirección (Cap. 01) previamente.",
+      supuestos: "El listado oficial de roles y privilegios está visado por psicología y dirección previamente.",
       recursos: "1 Desarrollador backend de seguridad, Base de datos PostgreSQL, Librería de hashing.",
       duracion: "8 días hábiles",
       categoria: "Alertas"
@@ -630,14 +337,14 @@ export default function RequisitosAnalysis() {
     {
       id: "1.5.1",
       controlAccount: "1.5",
-      titulo: "Instalación en la Infraestructura del Colegio",
+      titulo: "Despliegue del Sistema en la Nube",
       responsable: "Jadira D. Vasquez Castro",
       fecha: "Junio 2026",
-      descripcion: "Montaje, instalación física/digital del servidor, base de datos local PostgreSQL y despliegue del software mediante contenedores locales de Dokploy en el colegio.",
-      criterioAceptacion: "El software debe estar 100% operativo en la red local del Colegio Peruano Francés sin reportar dependencias de nubes externas remuneradas.",
-      entregables: "Servidor local provisto e instalado, Reporte técnico formal de instalación unificada y logs lógicos verdes.",
-      supuestos: "El colegio suministra hardware que cumpla las especificaciones mínimas (8GB RAM, procesador multi-core) y acceso.",
-      recursos: "1 Especialista de redes e infraestructura, Servidor local, Red interna.",
+      descripcion: "Configuración del entorno de producción en servicios gestionados en la nube (alojamiento web, base de datos PostgreSQL y tarea programada) y despliegue del sistema desde el repositorio.",
+      criterioAceptacion: "El sistema debe estar operativo en el entorno de producción, dentro de los planes gratuitos de los servicios, y los accesos de administración deben quedar entregados al colegio.",
+      entregables: "Entorno de producción configurado, reporte técnico del despliegue y registros de ejecución sin errores.",
+      supuestos: "Los planes gratuitos de alojamiento y base de datos alcanzan para 200 estudiantes y unos 20 usuarios (supuesto S-05).",
+      recursos: "1 responsable de despliegue, cuentas de los servicios en la nube y conexión a internet.",
       duracion: "5 días hábiles",
       categoria: "Despliegue"
     },
@@ -692,10 +399,38 @@ export default function RequisitosAnalysis() {
       descripcion: "Despliegue del taller de inducción para docentes, psicólogo, auxiliares y firma de la Entrega Formal y Acta de Aceptación de Cierre del software por la directora.",
       criterioAceptacion: "Por lo menos el 80% de los profesores firmarán asistencia, y la promotora directora firmará formalmente el acta de conformidad de Cierre del Proyecto.",
       entregables: "Lista de asistencia certificada con firmas, Acta de conformidad y cierre de proyecto SIA-T firmada en físico.",
-      supuestos: "El sistema de Alera Temprana se desempeña de modo estable durante la simulación de entrada masiva de asistencia con los alumnos.",
+      supuestos: "El sistema se mantiene estable durante la capacitación y las pruebas de aceptación.",
       recursos: "4 Integrantes del equipo UNTELS, Sala escolar, Proyector de diapositivas, Acta física de cierre.",
       duracion: "2 días hábiles (Taller de cierre)",
       categoria: "Capacitación"
+    },
+    {
+      id: "1.6.1",
+      controlAccount: "1.6",
+      titulo: "Pruebas de Integración y Rendimiento",
+      responsable: "Equipo del proyecto",
+      fecha: "Junio 2026",
+      descripcion: "Pruebas de integración entre todos los módulos del sistema (carga de datos, modelo, motor de alertas y tablero) y pruebas de rendimiento para validar los tiempos de respuesta antes del despliegue definitivo.",
+      criterioAceptacion: "Todos los módulos funcionan en conjunto sin errores de integración. El tablero carga en menos de 3 segundos y la clasificación semanal se ejecuta sin intervención manual.",
+      entregables: "Reporte de pruebas de integración y rendimiento, con los tiempos de carga y de clasificación.",
+      supuestos: "Los módulos individuales están desarrollados y disponibles para probarse juntos antes de iniciar este paquete.",
+      recursos: "Equipo completo, entorno de pruebas y sistema desplegado en un ambiente previo a producción.",
+      duracion: "Semana 17 (Sprint 5)",
+      categoria: "Pruebas y piloto"
+    },
+    {
+      id: "1.6.2",
+      controlAccount: "1.6",
+      titulo: "Piloto y Retroalimentación",
+      responsable: "Equipo del proyecto",
+      fecha: "Junio 2026",
+      descripcion: "Prueba piloto con tres docentes tutores, usando datos académicos reales del colegio durante dos semanas, para recoger sus observaciones y ajustar el sistema antes del despliegue definitivo.",
+      criterioAceptacion: "El piloto se realiza con al menos 3 docentes tutores durante 2 semanas seguidas. Las observaciones quedan documentadas y los ajustes se aplican antes del cierre del sprint.",
+      entregables: "Informe del piloto con los hallazgos y los ajustes aplicados (entregable E-09).",
+      supuestos: "Tres docentes tutores participan de forma voluntaria (supuesto S-07) y hay datos reales disponibles con el consentimiento de los apoderados (supuesto S-06).",
+      recursos: "Equipo completo, 3 docentes tutores, sistema en ambiente de pruebas y guía de retroalimentación.",
+      duracion: "Semanas 18 a 20 (Sprint 5)",
+      categoria: "Pruebas y piloto"
     }
   ];
 
@@ -747,17 +482,19 @@ export default function RequisitosAnalysis() {
 
   return (
     <div className="animate-fade-in text-slate-805">
-      {/* ── SECCIÓN 5.1: REQUISITOS (ESPECIFICACIONES DEL SISTEMA) ── */}
+      {parte === "requisitos" && (
+      <>
+      {/* ── REQUISITOS (ESPECIFICACIONES DEL SISTEMA) ── */}
       <section id="p05-requisitos" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            05 · Línea Base del Alcance del Proyecto · Requisitos de Software
+            07.2 · Recopilar y analizar los requisitos · Curso anterior, actualizado a la versión 3
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
             Línea Base del Alcance: 20 Especificaciones de Sistema
           </h2>
           <p className="text-slate-650 text-sm leading-relaxed max-w-4xl text-justify mb-8 font-medium">
-            Acorde al estándar del <strong>PMBOK® 6.ª edición (PMI, 2017)</strong>, la Línea Base del Alcance del proyecto está constituida directamente por el Documento de Especificación de Requisitos y su respectiva Estructura de Desglose del Trabajo (EDT). Un levantamiento exhaustivo en la <strong>IEP Peruano Francés</strong> determinó un total de <strong>12 requerimientos funcionales</strong> y <strong>8 requerimientos no funcionales</strong> que unifican el control analítico de la matrícula escolar frente al riesgo de bajo rendimiento de los 200 alumnos <Cite r="PMI, 2017" />.
+            La línea base del alcance está formada por el enunciado del alcance, la estructura de desglose del trabajo (EDT) y su diccionario <Cite r="PMI, 2025" />. El levantamiento en la <strong>I.E.P. Peruano Francés</strong> determinó <strong>12 requisitos funcionales</strong> y <strong>8 no funcionales</strong>, cada uno con cuatro casos de prueba. La lista que se muestra aquí es la misma del enunciado del alcance (ALC-02), versión 3: incluye el alojamiento en la nube y deja fuera el registro de asistencia con código QR y el envío por WhatsApp.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mb-12">
@@ -766,10 +503,10 @@ export default function RequisitosAnalysis() {
                 <FileText className="w-5 h-5 animate-pulse" />
               </div>
               <h3 className="font-serif font-bold text-slate-910 text-sm mb-2">
-                Documento de Requisitos (IEEE 830)
+                Documentación de requisitos
               </h3>
               <p className="text-xs text-slate-650 leading-relaxed text-justify">
-                Cada especificación contempla trazabilidad directa a su origen (Gatilladores UX del Cap. 01) y planes de mitigación de cuellos de botella del Cap 02.
+                Cada requisito tiene una planilla con su justificación, el interesado que lo propone y su criterio de validación.
               </p>
             </div>
 
@@ -778,10 +515,10 @@ export default function RequisitosAnalysis() {
                 <Sliders className="w-5 h-5" />
               </div>
               <h3 className="font-serif font-bold text-slate-910 text-sm mb-2">
-                Trazabilidad Bidireccional
+                Matriz de trazabilidad
               </h3>
               <p className="text-xs text-slate-650 leading-relaxed text-justify">
-                Integración de la RTM (Requirements Traceability Matrix) en Google Sheets que asocia requerimientos funcionales con objetivos SMART de gestión escolar (Cap. 03).
+                Enlaza cada requisito con su objetivo, su entregable de la EDT y sus casos de prueba: 80 en total (CP-01 a CP-80).
               </p>
             </div>
 
@@ -790,10 +527,10 @@ export default function RequisitosAnalysis() {
                 <BookOpenCheck className="w-5 h-5" />
               </div>
               <h3 className="font-serif font-bold text-slate-910 text-sm mb-2">
-                Formatos Compartidos
+                Documentos de origen
               </h3>
               <p className="text-xs text-slate-650 leading-relaxed text-justify font-medium">
-                Soporte de planillas unificadas y descargables alojadas en el ecosistema de Google Drive para revisión técnica remota.
+                La documentación de requisitos V3 y la matriz de trazabilidad son del curso anterior y siguen vigentes; sus cambios están en ALC-02.
               </p>
             </div>
           </div>
@@ -864,10 +601,10 @@ export default function RequisitosAnalysis() {
       <section id="p05-planillas" className="py-14 bg-slate-50 border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            05 · Línea Base del Alcance del Proyecto · Planillas Técnicas
+            07.2 · Recopilar y analizar los requisitos · Planillas
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-3">
-            Explorador de Requisitos Funcionales y No Funcionales (RTM)
+            Explorador de requisitos funcionales y no funcionales
           </h2>
           <p className="text-slate-650 text-sm leading-relaxed max-w-4xl text-justify mb-8 font-medium">
             Explore interactivamente el catálogo detallado de requisitos unificados del SIA-T. Filtre por tipo de requerimiento, busque por coincidencia de términos claves o examine el plan de criterios de validación escolar.
@@ -1014,7 +751,7 @@ export default function RequisitosAnalysis() {
 
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-[9px] bg-slate-100 text-slate-650 px-2 py-0.5 rounded hidden sm:inline border border-slate-200">
-                          Prioridad: Alta
+                          Prioridad: {req.prioridad}
                         </span>
                         <div className="p-1 rounded-lg hover:bg-slate-100 text-slate-400">
                           {isOpen ? (
@@ -1123,11 +860,16 @@ export default function RequisitosAnalysis() {
         </div>
       </section>
 
-      {/* ── SECCIÓN 5.2: DIAGRAMA DEL SISTEMA ML (EDT) ── */}
+      </>
+      )}
+
+      {parte === "edt" && (
+      <>
+      {/* ── DIAGRAMA DE LA EDT ── */}
       <section id="p05-diagrama-edt" className="py-14 bg-white border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            05 · Línea Base del Alcance del Proyecto · Estructura EDT
+            07.4 · Desarrollar la estructura del alcance · EDT
           </span>
           
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
@@ -1651,7 +1393,7 @@ export default function RequisitosAnalysis() {
       <section id="p05-diccionario" className="py-14 bg-slate-50 border-b border-slate-200">
         <div className="px-6 sm:px-10 lg:px-12">
           <span className="font-mono text-xs text-slate-500 uppercase tracking-wider block mb-2">
-            05 · Línea Base del Alcance del Proyecto · Diccionario de EDT
+            07.4 · Desarrollar la estructura del alcance · Diccionario
           </span>
           <h2 className="font-serif text-3xl font-bold text-slate-900 mb-2">
             Diccionario de la EDT del SIA-T
@@ -1676,7 +1418,7 @@ export default function RequisitosAnalysis() {
 
               {/* HORIZONTAL CATEGORY SWITCHER */}
               <div className="flex flex-wrap gap-1.5">
-                {["Todas", "Gestión", "Datos", "Modelado ML", "Alertas", "Despliegue", "Capacitación"].map((cat) => (
+                {["Todas", "Gestión", "Datos", "Modelado ML", "Alertas", "Despliegue", "Capacitación", "Pruebas y piloto"].map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setEdtActiveCat(cat)}
@@ -1825,6 +1567,8 @@ export default function RequisitosAnalysis() {
           </div>
         </div>
       </section>
+      </>
+      )}
     </div>
   );
 }

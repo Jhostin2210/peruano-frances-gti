@@ -21,8 +21,8 @@ export default function Introduccion() {
     },
     {
       num: "3",
-      titulo: "40% de Padres No Usa la Plataforma",
-      desc: "4 de cada 10 padres no tiene el hábito ni la cultura de ingresar a Cubicol. Las notificaciones por WhatsApp no garantizan respuesta inmediata.",
+      titulo: "Pocos Padres Usan la Plataforma",
+      desc: "Solo alrededor del 40 % de los padres ingresa a Cubicol. El colegio se comunica con ellos por WhatsApp y por la agenda, sin constancia de lectura.",
     },
   ];
 
@@ -41,7 +41,7 @@ export default function Introduccion() {
   const teamMembers = [
     { nombre: "Curo Ramos, Carlos Agustín", codigo: "2113010682" },
     { nombre: "Perez Gutierrez, Helber Javier", codigo: "2008100137" },
-    { nombre: "Vasquez Castro, Jadira Dina", codigo: "20a3110232" },
+    { nombre: "Vasquez Castro, Jadira Dina", codigo: "2213100026" },
     { nombre: "Galarza Camarena, Jhostin Jefry", codigo: "2123010051" },
   ];
 
@@ -463,8 +463,8 @@ export default function Introduccion() {
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
               {[
                 { dt: "Docente del Curso", dd: "Mg. Arqque Pantigozo Antonio" },
-                { dt: "Asignatura", dd: "Formulación y Evaluación de Proyectos TI" },
-                { dt: "Código oficial", dd: "ISR0832" },
+                { dt: "Asignatura", dd: "Gestión de Proyecto de TI" },
+                { dt: "Guía de referencia", dd: "PMBOK® 8.ª edición (PMI, 2025)" },
                 { dt: "Lugar & Fecha", dd: "Lima, Perú — 2026" },
               ].map(({ dt, dd }) => (
                 <div key={dt} className="border-r border-slate-200 last:border-0 pr-2">
