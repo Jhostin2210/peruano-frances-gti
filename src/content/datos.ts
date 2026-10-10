@@ -3078,3 +3078,482 @@ export const INCIDENTES = [
   "accion": "Volver a escanearlo en la próxima visita al colegio."
  }
 ];
+
+export const CORTE = "2026-10-10";
+
+export const PLAN_COMUNICACIONES = [
+ {
+  "id": "PC-01",
+  "que": "Informe de desempeño del proyecto",
+  "para": "Patrocinadora, Product Owner y docente asesor",
+  "emisor": "Jhostin Galarza",
+  "canal": "Reunión presencial y documento PDF",
+  "frecuencia": "Al cierre de cada sprint",
+  "constancia": "Informe (GOB-09 y siguientes)"
+ },
+ {
+  "id": "PC-02",
+  "que": "Demostración de avances (revisión del sprint)",
+  "para": "Patrocinadora, coordinación y tutores invitados",
+  "emisor": "Equipo del proyecto",
+  "canal": "Reunión presencial en el colegio",
+  "frecuencia": "Cada cuatro semanas",
+  "constancia": "Acta de aceptación (ALC-04)"
+ },
+ {
+  "id": "PC-03",
+  "que": "Coordinación del trabajo diario",
+  "para": "Equipo del proyecto",
+  "emisor": "Jhostin Galarza",
+  "canal": "Reunión breve y grupo de mensajería del equipo",
+  "frecuencia": "Diaria, 15 minutos",
+  "constancia": "Tablero de tareas"
+ },
+ {
+  "id": "PC-04",
+  "que": "Pedidos y entregas de datos",
+  "para": "Gestora de Cubicol y encargado de TI",
+  "emisor": "Jadira Vasquez",
+  "canal": "Presencial; mensaje directo para coordinar",
+  "frecuencia": "Semanal en los Sprints 1 a 3",
+  "constancia": "Registro de entrega de datos"
+ },
+ {
+  "id": "PC-05",
+  "que": "Validación de variables y del tablero",
+  "para": "Docentes tutores",
+  "emisor": "Helber Perez y Carlos Curo",
+  "canal": "Taller presencial",
+  "frecuencia": "Semanas 3 y 15, y piloto",
+  "constancia": "Lista de asistencia y acuerdos"
+ },
+ {
+  "id": "PC-06",
+  "que": "Avance académico del proyecto",
+  "para": "Docente asesor",
+  "emisor": "Equipo del proyecto",
+  "canal": "Clase y blog del proyecto",
+  "frecuencia": "Semanal",
+  "constancia": "Blog actualizado"
+ },
+ {
+  "id": "PC-07",
+  "que": "Aviso sobre el proyecto y el uso de los datos",
+  "para": "Padres y apoderados",
+  "emisor": "Dirección; redacta el equipo",
+  "canal": "Comunicado impreso o agenda, y WhatsApp del colegio",
+  "frecuencia": "Antes de cargar datos reales y al iniciar el piloto",
+  "constancia": "Comunicado y cargo de recepción"
+ },
+ {
+  "id": "PC-08",
+  "que": "Solicitudes de cambio y su decisión",
+  "para": "Solicitante, patrocinadora y Product Owner",
+  "emisor": "Carlos Curo",
+  "canal": "Reunión y documento",
+  "frecuencia": "Cuando ocurre",
+  "constancia": "Registro de cambios (GOB-10)"
+ },
+ {
+  "id": "PC-09",
+  "que": "Incidentes de prioridad alta",
+  "para": "Product Owner y afectados",
+  "emisor": "Jhostin Galarza",
+  "canal": "Llamada o mensaje directo",
+  "frecuencia": "En menos de 24 horas",
+  "constancia": "Registro de incidentes (GOB-06)"
+ },
+ {
+  "id": "PC-10",
+  "que": "Capacitación y manuales",
+  "para": "Tutores, coordinación y encargado de TI",
+  "emisor": "Jhostin Galarza",
+  "canal": "Sesión presencial de 2 horas y manuales",
+  "frecuencia": "Semana 23",
+  "constancia": "Lista de asistencia"
+ },
+ {
+  "id": "PC-11",
+  "que": "Cierre del proyecto",
+  "para": "Todos los interesados del colegio y docente asesor",
+  "emisor": "Jhostin Galarza",
+  "canal": "Reunión de cierre",
+  "frecuencia": "23/04/2027",
+  "constancia": "Acta de cierre e informe final"
+ }
+];
+
+export const COMUNICACIONES = [
+ {
+  "id": "C-01",
+  "cuando": "",
+  "fecha": "2026-04-24",
+  "tipo": "Entrevista",
+  "asunto": "Entrevista semiestructurada de diagnóstico a la Promotora Directora",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 0,
+  "estado": "Realizada",
+  "constancia": "Transcripción, video y fotografías",
+  "plan": "—"
+ },
+ {
+  "id": "C-02",
+  "cuando": "",
+  "fecha": "2026-04-24",
+  "tipo": "Solicitud",
+  "asunto": "Pedido y recojo del organigrama y del formato de reporte de incidencias",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 0,
+  "estado": "Realizada",
+  "constancia": "Fotografías de los documentos",
+  "plan": "—"
+ },
+ {
+  "id": "C-03",
+  "cuando": "",
+  "fecha": "2026-05-15",
+  "tipo": "Encuesta",
+  "asunto": "Encuesta sobre seguimiento y rendimiento académico: 6 respuestas de 16 docentes",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-05"
+  ],
+  "canal": "Formulario en línea",
+  "sprint": 0,
+  "estado": "Realizada",
+  "constancia": "Hoja de respuestas y gráficos",
+  "plan": "—"
+ },
+ {
+  "id": "C-04",
+  "cuando": "",
+  "fecha": "2026-07-05",
+  "tipo": "Entrega de datos",
+  "asunto": "Recepción de registros de notas de marzo, abril y primer trimestre de 2026",
+  "emisor": "Docentes del colegio",
+  "interesados": [
+   "I-05"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 0,
+  "estado": "Realizada",
+  "constancia": "Hoja de cálculo y fotografías, en custodia del equipo",
+  "plan": "PC-04"
+ },
+ {
+  "id": "C-05",
+  "cuando": "",
+  "fecha": "2026-10-10",
+  "tipo": "Reunión",
+  "asunto": "Sesión de trabajo del equipo: análisis de interesados y emisión de los documentos de gestión",
+  "emisor": "Jhostin Galarza",
+  "interesados": [
+   "I-12"
+  ],
+  "canal": "Reunión del equipo",
+  "sprint": 0,
+  "estado": "Realizada",
+  "constancia": "Documentos INT-01 e INT-02",
+  "plan": "PC-03"
+ },
+ {
+  "id": "C-06",
+  "cuando": "",
+  "fecha": "2026-10-10",
+  "tipo": "Publicación",
+  "asunto": "Publicación del blog del proyecto con el equipo y el periodo actuales",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-13"
+  ],
+  "canal": "Blog del proyecto",
+  "sprint": 0,
+  "estado": "Realizada",
+  "constancia": "Blog en línea",
+  "plan": "PC-06"
+ },
+ {
+  "id": "C-07",
+  "cuando": "Semana del 12/10/2026",
+  "fecha": "2026-10-16",
+  "tipo": "Reunión",
+  "asunto": "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
+  "emisor": "Jhostin Galarza",
+  "interesados": [
+   "I-01",
+   "I-02",
+   "I-03"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Acta de reunión y acta de constitución firmada",
+  "plan": "PC-01"
+ },
+ {
+  "id": "C-08",
+  "cuando": "Semana del 12/10/2026",
+  "fecha": "2026-10-16",
+  "tipo": "Avance académico",
+  "asunto": "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-13"
+  ],
+  "canal": "Clase y blog del proyecto",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Blog actualizado y observaciones del docente",
+  "plan": "PC-06"
+ },
+ {
+  "id": "C-09",
+  "cuando": "Hasta el 23/10/2026",
+  "fecha": "2026-10-23",
+  "tipo": "Entrevista",
+  "asunto": "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
+  "emisor": "Jadira Vasquez",
+  "interesados": [
+   "I-07",
+   "I-08"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Notas de la entrevista y acuerdo de entrega de datos",
+  "plan": "PC-04"
+ },
+ {
+  "id": "C-10",
+  "cuando": "Semana del 19/10/2026",
+  "fecha": "2026-10-23",
+  "tipo": "Avance académico",
+  "asunto": "Avance semanal al docente asesor",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-13"
+  ],
+  "canal": "Clase y blog del proyecto",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Blog actualizado",
+  "plan": "PC-06"
+ },
+ {
+  "id": "C-11",
+  "cuando": "Semana del 26/10/2026",
+  "fecha": "2026-10-30",
+  "tipo": "Taller",
+  "asunto": "Taller de validación de las variables del modelo",
+  "emisor": "Helber Perez",
+  "interesados": [
+   "I-05",
+   "I-06"
+  ],
+  "canal": "Taller presencial",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Lista de asistencia y acuerdos",
+  "plan": "PC-05"
+ },
+ {
+  "id": "C-12",
+  "cuando": "Semana del 26/10/2026",
+  "fecha": "2026-10-30",
+  "tipo": "Avance académico",
+  "asunto": "Avance semanal al docente asesor",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-13"
+  ],
+  "canal": "Clase y blog del proyecto",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Blog actualizado",
+  "plan": "PC-06"
+ },
+ {
+  "id": "C-13",
+  "cuando": "Semana 3 o 4",
+  "fecha": "2026-11-06",
+  "tipo": "Entrevista",
+  "asunto": "Entrevista sobre el registro de incidencias",
+  "emisor": "Jadira Vasquez",
+  "interesados": [
+   "I-04"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Notas de la entrevista",
+  "plan": "PC-04"
+ },
+ {
+  "id": "C-14",
+  "cuando": "",
+  "fecha": "2026-11-06",
+  "tipo": "Revisión de sprint",
+  "asunto": "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01",
+   "I-03",
+   "I-13"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Acta de aceptación e informe de desempeño",
+  "plan": "PC-01 y PC-02"
+ },
+ {
+  "id": "C-15",
+  "cuando": "",
+  "fecha": "2026-12-04",
+  "tipo": "Revisión de sprint",
+  "asunto": "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01",
+   "I-03",
+   "I-13"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 2,
+  "estado": "Programada",
+  "constancia": "Acta de aceptación e informe de desempeño",
+  "plan": "PC-01 y PC-02"
+ },
+ {
+  "id": "C-16",
+  "cuando": "",
+  "fecha": "2026-12-30",
+  "tipo": "Revisión de sprint",
+  "asunto": "Revisión del Sprint 3 e informe de desempeño: modelo validado",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01",
+   "I-03",
+   "I-13"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 3,
+  "estado": "Programada",
+  "constancia": "Acta de aceptación e informe de desempeño",
+  "plan": "PC-01 y PC-02"
+ },
+ {
+  "id": "C-17",
+  "cuando": "Durante el Sprint 4",
+  "fecha": "2027-01-29",
+  "tipo": "Convocatoria",
+  "asunto": "Convocatoria a tres docentes tutores para el piloto de marzo",
+  "emisor": "Jhostin Galarza",
+  "interesados": [
+   "I-05",
+   "I-03"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 4,
+  "estado": "Programada",
+  "constancia": "Lista de participantes confirmados",
+  "plan": "PC-05"
+ },
+ {
+  "id": "C-18",
+  "cuando": "",
+  "fecha": "2027-01-29",
+  "tipo": "Revisión de sprint",
+  "asunto": "Revisión del Sprint 4 e informe de desempeño: sistema integrado con alertas y tablero",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01",
+   "I-03",
+   "I-13"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 4,
+  "estado": "Programada",
+  "constancia": "Acta de aceptación e informe de desempeño",
+  "plan": "PC-01 y PC-02"
+ },
+ {
+  "id": "C-19",
+  "cuando": "Antes del Sprint 5",
+  "fecha": "2027-02-26",
+  "tipo": "Comunicado",
+  "asunto": "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
+  "emisor": "Dirección; redacta el equipo",
+  "interesados": [
+   "I-11"
+  ],
+  "canal": "Comunicado impreso o agenda",
+  "sprint": 4,
+  "estado": "Programada",
+  "constancia": "Comunicado y cargo de recepción",
+  "plan": "PC-07"
+ },
+ {
+  "id": "C-20",
+  "cuando": "",
+  "fecha": "2027-03-24",
+  "tipo": "Revisión de sprint",
+  "asunto": "Revisión del Sprint 5 e informe de desempeño: resultado de las pruebas y del piloto",
+  "emisor": "Equipo del proyecto",
+  "interesados": [
+   "I-01",
+   "I-03",
+   "I-13"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 5,
+  "estado": "Programada",
+  "constancia": "Acta de aceptación e informe de desempeño",
+  "plan": "PC-01 y PC-02"
+ },
+ {
+  "id": "C-21",
+  "cuando": "Semana del 12/04/2027",
+  "fecha": "2027-04-16",
+  "tipo": "Capacitación",
+  "asunto": "Capacitación de dos horas a tutores y coordinadores, y entrega de manuales",
+  "emisor": "Jhostin Galarza",
+  "interesados": [
+   "I-05",
+   "I-03",
+   "I-08"
+  ],
+  "canal": "Taller presencial",
+  "sprint": 6,
+  "estado": "Programada",
+  "constancia": "Lista de asistencia",
+  "plan": "PC-10"
+ },
+ {
+  "id": "C-22",
+  "cuando": "",
+  "fecha": "2027-04-23",
+  "tipo": "Reunión",
+  "asunto": "Reunión de cierre del proyecto e informe final",
+  "emisor": "Jhostin Galarza",
+  "interesados": [
+   "I-01",
+   "I-02",
+   "I-03",
+   "I-13"
+  ],
+  "canal": "Reunión presencial",
+  "sprint": 6,
+  "estado": "Programada",
+  "constancia": "Acta de cierre e informe final",
+  "plan": "PC-11"
+ }
+];

@@ -22,6 +22,7 @@ import ReferenciasBiblio from "./components/ReferenciasBiblio";
 import MarcoPmbok from "./components/MarcoPmbok";
 import DominioPmbok from "./components/DominioPmbok";
 import AvisoEtapa from "./components/AvisoEtapa";
+import TableroComunicaciones from "./components/TableroComunicaciones";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -262,15 +263,42 @@ export default function App() {
             ]}
             outputs={[
               "Registro de interesados (17)",
-              "Plan de involucramiento y plan de comunicaciones",
-              "Bitácora e informe de seguimiento",
+              "Plan de involucramiento y plan de gestión de las comunicaciones",
+              "Bitácora, registro de comunicaciones e informes de seguimiento",
+              "Tablero de comunicaciones",
             ]}
           />
           <DominioPmbok
             dominio="Interesados"
             capitulo="06"
+            grupo="Involucramiento"
             antes={{ "int-1": <StakeholderAnalysis parte="entrevista" /> }}
           />
+
+          {/* Gestión de las comunicaciones: tres procesos del mismo dominio y su tablero */}
+          <section id="comunicaciones" className="py-10 px-8 lg:px-12 bg-[#12305a] text-white border-y border-slate-700">
+            <p className="font-mono text-xs uppercase tracking-widest text-[#4ec8cc] mb-1">Capítulo 06 · Segunda parte</p>
+            <h2 className="font-serif text-2xl font-bold leading-tight">Gestión de las comunicaciones del proyecto</h2>
+            <p className="text-slate-300 text-sm mt-2 max-w-3xl">
+              La octava edición de la Guía del PMBOK® ubica las comunicaciones dentro del dominio de Interesados. Son tres procesos:
+              planificar la gestión de las comunicaciones, gestionarlas y monitorearlas.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-3 mt-5 max-w-4xl">
+              {[
+                ["Planificación", "Planificar la gestión de las comunicaciones", "Plan de gestión de las comunicaciones", "#int-3"],
+                ["Ejecución", "Gestionar las comunicaciones", "Registro de comunicaciones", "#int-5"],
+                ["Monitoreo y control", "Monitorear las comunicaciones", "Informe de monitoreo y tablero", "#int-7"],
+              ].map(([area, proceso, salida, enlace]) => (
+                <a key={enlace} href={enlace} className="block bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl p-4 transition-colors">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-[#4ec8cc]">{area}</p>
+                  <p className="font-serif font-bold text-sm mt-1 leading-snug">{proceso}</p>
+                  <p className="text-[11px] text-slate-300 mt-1.5">{salida}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+          <DominioPmbok dominio="Interesados" capitulo="06" grupo="Comunicaciones" desde={5} />
+          <TableroComunicaciones />
 
           {/* CAPÍTULO 07 — DOMINIO DE ALCANCE */}
           <ChapterIntro

@@ -542,17 +542,6 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         {
-         "x": "INT-03",
-         "bold": true
-        },
-        "Plan de gestión de las comunicaciones",
-        "Interesados",
-        "Planificar la gestión de las comunicaciones",
-        "Planificación",
-        "02 - Interesados/2.2 Planificar"
-       ],
-       [
-        {
          "x": "INT-04",
          "bold": true
         },
@@ -572,6 +561,39 @@ export const DOCUMENTOS: DocDef[] = [
         "Monitorear el involucramiento de los interesados",
         "Monitoreo y control",
         "02 - Interesados/2.4 Monitorear"
+       ],
+       [
+        {
+         "x": "INT-03",
+         "bold": true
+        },
+        "Plan de gestión de las comunicaciones",
+        "Interesados",
+        "Planificar la gestión de las comunicaciones",
+        "Planificación",
+        "02 - Interesados/2.5 Comunicaciones"
+       ],
+       [
+        {
+         "x": "INT-06",
+         "bold": true
+        },
+        "Registro de comunicaciones",
+        "Interesados",
+        "Gestionar las comunicaciones",
+        "Ejecución",
+        "02 - Interesados/2.5 Comunicaciones"
+       ],
+       [
+        {
+         "x": "INT-07",
+         "bold": true
+        },
+        "Informe de monitoreo de las comunicaciones N.º 1",
+        "Interesados",
+        "Monitorear las comunicaciones",
+        "Monitoreo y control",
+        "02 - Interesados/2.5 Comunicaciones"
        ],
        [
         {
@@ -629,7 +651,7 @@ export const DOCUMENTOS: DocDef[] = [
         "04 - Cronograma"
        ]
       ],
-      "titulo": "Documentos emitidos (22)",
+      "titulo": "Documentos emitidos (24)",
       "compacta": true,
       "fuente": "Cada documento está en Word y en PDF dentro de su carpeta. Los PDF también se publican en el blog."
      }
@@ -641,7 +663,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "La octava edición organiza la dirección de proyectos en siete dominios de desempeño y 40 procesos. En esta entrega el equipo desarrolló los dominios de Gobernanza y de Interesados, y completó lo que faltaba de Alcance y de Cronograma."
+      "x": "La octava edición organiza la dirección de proyectos en siete dominios de desempeño y 40 procesos. En esta entrega el equipo desarrolló los dominios de Gobernanza y de Interesados (con sus comunicaciones), y completó lo que faltaba de Alcance y de Cronograma."
      },
      {
       "t": "tabla",
@@ -735,7 +757,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "5",
+         "x": "7",
          "align": "center"
         },
         {
@@ -743,7 +765,7 @@ export const DOCUMENTOS: DocDef[] = [
          "fill": "verde",
          "bold": true
         },
-        "Los cuatro procesos de involucramiento y el plan de comunicaciones tienen documento."
+        "Los siete procesos tienen documento: cuatro de involucramiento y tres de comunicaciones."
        ],
        [
         "Recursos",
@@ -870,7 +892,7 @@ export const DOCUMENTOS: DocDef[] = [
       "items": [
        "**00 - Ficha e índice.** Este documento.",
        "**01 - Gobernanza.** Una subcarpeta por proceso, de 1.1 a 1.9.",
-       "**02 - Interesados.** Una subcarpeta por proceso, de 2.1 a 2.4.",
+       "**02 - Interesados.** De 2.1 a 2.4, los procesos de involucramiento; en 2.5, los tres de comunicaciones.",
        "**03 - Alcance.** Planificación, enunciado, calidad y validación.",
        "**04 - Cronograma.** Línea base del cronograma."
       ]
@@ -4220,7 +4242,7 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "p",
-      "x": "La planificación de gobernanza, interesados, alcance y cronograma está emitida (22 documentos). El asunto más serio es la calidad del producto: el prototipo heredado no tiene un modelo validado con datos reales."
+      "x": "La planificación de gobernanza, interesados, alcance y cronograma está emitida (24 documentos). El asunto más serio es la calidad del producto: el prototipo heredado no tiene un modelo validado con datos reales."
      }
     ]
    },
@@ -4351,7 +4373,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Interesados",
-        "5"
+        "7"
        ],
        [
         "Alcance",
@@ -4368,7 +4390,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "22",
+         "x": "24",
          "fill": "gris",
          "bold": true
         }
@@ -7303,292 +7325,6 @@ export const DOCUMENTOS: DocDef[] = [
   ]
  },
  {
-  "id": "INT-03",
-  "titulo": "Plan de gestión de las comunicaciones",
-  "dominio": "Interesados",
-  "area": "Planificación",
-  "proceso": "Planificar la gestión de las comunicaciones",
-  "salida": "Plan de gestión de las comunicaciones",
-  "version": "1.0",
-  "fecha": "10/10/2026",
-  "resumen": "Establece qué información recibe cada interesado, quién la envía, por qué canal y con qué frecuencia, y las reglas para proteger los datos de los estudiantes.",
-  "carpeta": "02 - Interesados/2.2 Planificar",
-  "pdf": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.pdf",
-  "docx": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.docx",
-  "secciones": [
-   {
-    "titulo": "1. Objetivo y principios",
-    "apaisada": false,
-    "bloques": [
-     {
-      "t": "p",
-      "x": "El plan asegura que cada interesado reciba la información que necesita para decidir o actuar, a tiempo y por un canal que realmente use."
-     },
-     {
-      "t": "ul",
-      "items": [
-       "**Canal real.** Se usa el medio que cada grupo ya utiliza: reunión presencial con la Dirección, WhatsApp y agenda con las familias, correo personal con los docentes.",
-       "**Lenguaje claro.** Nada de términos técnicos con docentes y familias: «riesgo alto» se explica como «necesita atención esta semana».",
-       "**Constancia.** Toda comunicación que implique una decisión deja un registro: acta, mensaje o documento.",
-       "**Reserva.** Los datos de un estudiante solo se comparten con quien debe actuar sobre su caso."
-      ]
-     }
-    ]
-   },
-   {
-    "titulo": "2. Matriz de comunicaciones",
-    "apaisada": true,
-    "bloques": [
-     {
-      "t": "tabla",
-      "cols": [
-       "Qué se comunica",
-       "A quién",
-       "Quién lo emite",
-       "Canal",
-       "Frecuencia",
-       "Constancia"
-      ],
-      "anchos": [
-       22,
-       18,
-       13,
-       17,
-       15,
-       15
-      ],
-      "filas": [
-       [
-        "Informe de desempeño del proyecto",
-        "Patrocinadora, Product Owner y docente asesor",
-        "Jhostin Galarza",
-        "Reunión presencial y documento PDF",
-        "Al cierre de cada sprint",
-        "Informe (GOB-09 y siguientes)"
-       ],
-       [
-        "Demostración de avances (revisión del sprint)",
-        "Patrocinadora, coordinación y tutores invitados",
-        "Equipo del proyecto",
-        "Reunión presencial en el colegio",
-        "Cada cuatro semanas",
-        "Acta de aceptación (ALC-04)"
-       ],
-       [
-        "Coordinación del trabajo diario",
-        "Equipo del proyecto",
-        "Jhostin Galarza",
-        "Reunión breve y grupo de mensajería del equipo",
-        "Diaria, 15 minutos",
-        "Tablero de tareas"
-       ],
-       [
-        "Pedidos y entregas de datos",
-        "Gestora de Cubicol y encargado de TI",
-        "Jadira Vasquez",
-        "Presencial; mensaje directo para coordinar",
-        "Semanal en los Sprints 1 a 3",
-        "Registro de entrega de datos"
-       ],
-       [
-        "Validación de variables y del tablero",
-        "Docentes tutores",
-        "Helber Perez y Carlos Curo",
-        "Taller presencial",
-        "Semanas 3 y 15, y piloto",
-        "Lista de asistencia y acuerdos"
-       ],
-       [
-        "Avance académico del proyecto",
-        "Docente asesor",
-        "Equipo del proyecto",
-        "Clase y blog del proyecto",
-        "Semanal",
-        "Blog actualizado"
-       ],
-       [
-        "Aviso sobre el proyecto y el uso de los datos",
-        "Padres y apoderados",
-        "Dirección; redacta el equipo",
-        "Comunicado impreso o agenda, y WhatsApp del colegio",
-        "Antes de cargar datos reales y al iniciar el piloto",
-        "Comunicado y cargo de recepción"
-       ],
-       [
-        "Solicitudes de cambio y su decisión",
-        "Solicitante, patrocinadora y Product Owner",
-        "Carlos Curo",
-        "Reunión y documento",
-        "Cuando ocurre",
-        "Registro de cambios (GOB-10)"
-       ],
-       [
-        "Incidentes de prioridad alta",
-        "Product Owner y afectados",
-        "Jhostin Galarza",
-        "Llamada o mensaje directo",
-        "En menos de 24 horas",
-        "Registro de incidentes (GOB-06)"
-       ],
-       [
-        "Capacitación y manuales",
-        "Tutores, coordinación y encargado de TI",
-        "Jhostin Galarza",
-        "Sesión presencial de 2 horas y manuales",
-        "Semana 23",
-        "Lista de asistencia"
-       ],
-       [
-        "Cierre del proyecto",
-        "Todos los interesados del colegio y docente asesor",
-        "Jhostin Galarza",
-        "Reunión de cierre",
-        "23/04/2027",
-        "Acta de cierre e informe final"
-       ]
-      ],
-      "titulo": "Matriz de comunicaciones del proyecto",
-      "compacta": true
-     }
-    ]
-   },
-   {
-    "titulo": "3. Canales y tecnología",
-    "apaisada": false,
-    "bloques": [
-     {
-      "t": "tabla",
-      "cols": [
-       "Canal",
-       "Se usa para",
-       "Consideraciones"
-      ],
-      "anchos": [
-       24,
-       34,
-       42
-      ],
-      "filas": [
-       [
-        "Reunión presencial en el colegio",
-        "Decisiones, demostraciones, talleres y capacitación.",
-        "Se coordina con la Dirección según el horario escolar."
-       ],
-       [
-        "WhatsApp",
-        "Coordinación con la Dirección y avisos generales a las familias a través del colegio.",
-        "Es el canal que el colegio ya usa con los padres. No se envían por este medio notas ni niveles de riesgo."
-       ],
-       [
-        "Correo electrónico personal",
-        "Alertas del sistema a los docentes y envío de informes.",
-        "El colegio no tiene correo institucional: se requiere la lista de direcciones autorizadas (SC-09)."
-       ],
-       [
-        "Comunicado impreso o agenda",
-        "Información a los apoderados y consentimiento.",
-        "Llega también a quienes no usan plataformas."
-       ],
-       [
-        "Blog del proyecto",
-        "Avance público y documentos de gestión.",
-        "Es público: no contiene datos personales."
-       ],
-       [
-        "Repositorio en GitHub",
-        "Código, contenido de los documentos y control de cambios técnicos.",
-        "Es público: no contiene datos del colegio."
-       ],
-       [
-        "Panel web del sistema",
-        "Alertas y fichas de estudiantes.",
-        "Acceso con usuario y contraseña, según el rol."
-       ]
-      ],
-      "titulo": "Canales de comunicación"
-     }
-    ]
-   },
-   {
-    "titulo": "4. Comunicaciones del producto",
-    "apaisada": false,
-    "bloques": [
-     {
-      "t": "p",
-      "x": "Además de las comunicaciones del proyecto, el sistema emitirá sus propias comunicaciones una vez en operación. Se describen aquí porque forman parte de lo que los interesados recibirán."
-     },
-     {
-      "t": "tabla",
-      "cols": [
-       "Comunicación",
-       "Destinatario",
-       "Momento",
-       "Contenido"
-      ],
-      "anchos": [
-       22,
-       20,
-       24,
-       34
-      ],
-      "filas": [
-       [
-        "Alerta de riesgo alto",
-        "Docente tutor y coordinación",
-        "Dentro de las 24 horas siguientes al cálculo semanal",
-        "Estudiante, nivel de riesgo y variables que lo explican."
-       ],
-       [
-        "Resumen de alertas",
-        "Docente, al ingresar al panel",
-        "En cada ingreso",
-        "Estudiantes en riesgo alto y medio, con acceso a su ficha."
-       ],
-       [
-        "Comunicado al apoderado",
-        "Padre o apoderado",
-        "Dentro de las 24 horas, a través del colegio",
-        "Áreas con dificultad y recomendaciones de apoyo, en lenguaje simple."
-       ],
-       [
-        "Reporte por unidad",
-        "Coordinación y dirección",
-        "Al cierre de cada unidad",
-        "Estudiantes en riesgo por aula y grado, y comparación con el periodo anterior."
-       ]
-      ],
-      "titulo": "Comunicaciones que emitirá el sistema"
-     }
-    ]
-   },
-   {
-    "titulo": "5. Reglas de reserva de la información",
-    "apaisada": false,
-    "bloques": [
-     {
-      "t": "ul",
-      "items": [
-       "El nivel de riesgo de un estudiante se comunica solo a su tutor, a la coordinación, a psicología y a la dirección; al apoderado se le comunica el de su hijo.",
-       "No se comparten listas de estudiantes ni notas por grupos de mensajería.",
-       "Los archivos con datos reales no salen del colegio sin anonimizar y nunca se publican.",
-       "Las fotos y los videos donde aparecen personas se publican solo con su autorización."
-      ]
-     }
-    ]
-   },
-   {
-    "titulo": "6. Escalamiento y actualización",
-    "apaisada": false,
-    "bloques": [
-     {
-      "t": "p",
-      "x": "Un asunto sin respuesta en dos días hábiles se eleva del responsable al director del proyecto, de este al Product Owner y, por último, a la patrocinadora. El plan se revisa al cierre de cada sprint junto con el plan de involucramiento."
-     }
-    ]
-   }
-  ]
- },
- {
   "id": "INT-04",
   "titulo": "Bitácora de involucramiento y reglas básicas",
   "dominio": "Interesados",
@@ -8263,6 +7999,2227 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "p",
       "x": "La próxima medición se hará al cierre del Sprint 1, el 06/11/2026."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "INT-03",
+  "titulo": "Plan de gestión de las comunicaciones",
+  "dominio": "Interesados",
+  "area": "Planificación",
+  "proceso": "Planificar la gestión de las comunicaciones",
+  "salida": "Plan de gestión de las comunicaciones",
+  "version": "1.1",
+  "fecha": "10/10/2026",
+  "resumen": "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
+  "carpeta": "02 - Interesados/2.5 Comunicaciones",
+  "pdf": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.pdf",
+  "docx": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.docx",
+  "secciones": [
+   {
+    "titulo": "1. Objetivo y principios",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "El plan asegura que cada interesado reciba la información que necesita para decidir o actuar, a tiempo y por un canal que realmente use."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "**Canal real.** Se usa el medio que cada grupo ya utiliza: reunión presencial con la Dirección, WhatsApp y agenda con las familias, correo personal con los docentes.",
+       "**Lenguaje claro.** Nada de términos técnicos con docentes y familias: «riesgo alto» se explica como «necesita atención esta semana».",
+       "**Constancia.** Toda comunicación que implique una decisión deja un registro: acta, mensaje o documento.",
+       "**Reserva.** Los datos de un estudiante solo se comparten con quien debe actuar sobre su caso."
+      ]
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Proceso",
+       "Qué hace",
+       "Documento"
+      ],
+      "anchos": [
+       34,
+       42,
+       24
+      ],
+      "filas": [
+       [
+        "Planificar la gestión de las comunicaciones",
+        "Define qué, a quién, cómo y cuándo se comunica.",
+        "Este plan (INT-03)"
+       ],
+       [
+        "Gestionar las comunicaciones",
+        "Envía la información y deja constancia.",
+        "Registro de comunicaciones (INT-06)"
+       ],
+       [
+        "Monitorear las comunicaciones",
+        "Comprueba que la información llegó y sirvió.",
+        "Informe de monitoreo (INT-07) y tablero del blog"
+       ]
+      ],
+      "titulo": "Los tres procesos de comunicaciones y sus documentos"
+     }
+    ]
+   },
+   {
+    "titulo": "2. Requisitos de información de los interesados",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "El análisis parte del registro de interesados (INT-01). Para cada grupo se definió qué necesita saber y en qué forma le sirve recibirlo."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Interesado",
+       "Qué necesita saber",
+       "Forma que le sirve",
+       "Momento"
+      ],
+      "anchos": [
+       22,
+       36,
+       24,
+       18
+      ],
+      "filas": [
+       [
+        "Patrocinadora (I-01)",
+        "Estado del proyecto, decisiones que se le piden, cambios a las líneas base y situación de los datos personales.",
+        "Resumen de una página y reunión breve.",
+        "Cierre de cada sprint y cuando haya una decisión"
+       ],
+       [
+        "Subdirector y coordinación académica (I-02, I-03)",
+        "Qué se entrega en cada sprint, qué deben priorizar y qué deben aceptar.",
+        "Demostración del sistema y acta.",
+        "Cada cuatro semanas"
+       ],
+       [
+        "Docentes tutores, Jefa de Normas y psicología (I-04, I-05, I-06)",
+        "Qué hará el sistema, qué se les pide y cómo se lee una alerta.",
+        "Taller presencial, en lenguaje sencillo.",
+        "Semana 3, Sprint 4 y piloto"
+       ],
+       [
+        "Gestora de Cubicol y encargado de TI (I-07, I-08)",
+        "Qué datos se piden, en qué formato y para qué fecha; qué deberán operar después.",
+        "Pedido escrito breve y reunión.",
+        "Sprints 1 a 3 y Sprint 6"
+       ],
+       [
+        "Padres y apoderados (I-11)",
+        "Qué datos de sus hijos se usan, con qué fin y cuáles son sus derechos.",
+        "Comunicado del colegio.",
+        "Antes de cargar datos reales"
+       ],
+       [
+        "Estudiantes (I-10)",
+        "Reciben la información a través de sus tutores.",
+        "Sin comunicación directa del proyecto.",
+        "—"
+       ],
+       [
+        "Docente asesor (I-13)",
+        "Avance frente al plan y aplicación de la guía.",
+        "Blog y presentación en clase.",
+        "Cada semana"
+       ],
+       [
+        "Equipo del proyecto (I-12)",
+        "Tareas, impedimentos y cambios aprobados.",
+        "Reunión breve y tablero de tareas.",
+        "Cada día"
+       ],
+       [
+        "Personal administrativo, proveedores y reguladores (I-09, I-14 a I-17)",
+        "No requieren información periódica; se consultan sus normas y condiciones de servicio.",
+        "Consulta puntual.",
+        "Cuando haga falta"
+       ]
+      ],
+      "titulo": "Requisitos de información por interesado",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "3. Matriz de comunicaciones",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Código",
+       "Qué se comunica",
+       "A quién",
+       "Quién lo emite",
+       "Canal",
+       "Frecuencia",
+       "Constancia"
+      ],
+      "anchos": [
+       7,
+       20,
+       17,
+       12,
+       16,
+       14,
+       14
+      ],
+      "filas": [
+       [
+        "PC-01",
+        "Informe de desempeño del proyecto",
+        "Patrocinadora, Product Owner y docente asesor",
+        "Jhostin Galarza",
+        "Reunión presencial y documento PDF",
+        "Al cierre de cada sprint",
+        "Informe (GOB-09 y siguientes)"
+       ],
+       [
+        "PC-02",
+        "Demostración de avances (revisión del sprint)",
+        "Patrocinadora, coordinación y tutores invitados",
+        "Equipo del proyecto",
+        "Reunión presencial en el colegio",
+        "Cada cuatro semanas",
+        "Acta de aceptación (ALC-04)"
+       ],
+       [
+        "PC-03",
+        "Coordinación del trabajo diario",
+        "Equipo del proyecto",
+        "Jhostin Galarza",
+        "Reunión breve y grupo de mensajería del equipo",
+        "Diaria, 15 minutos",
+        "Tablero de tareas"
+       ],
+       [
+        "PC-04",
+        "Pedidos y entregas de datos",
+        "Gestora de Cubicol y encargado de TI",
+        "Jadira Vasquez",
+        "Presencial; mensaje directo para coordinar",
+        "Semanal en los Sprints 1 a 3",
+        "Registro de entrega de datos"
+       ],
+       [
+        "PC-05",
+        "Validación de variables y del tablero",
+        "Docentes tutores",
+        "Helber Perez y Carlos Curo",
+        "Taller presencial",
+        "Semanas 3 y 15, y piloto",
+        "Lista de asistencia y acuerdos"
+       ],
+       [
+        "PC-06",
+        "Avance académico del proyecto",
+        "Docente asesor",
+        "Equipo del proyecto",
+        "Clase y blog del proyecto",
+        "Semanal",
+        "Blog actualizado"
+       ],
+       [
+        "PC-07",
+        "Aviso sobre el proyecto y el uso de los datos",
+        "Padres y apoderados",
+        "Dirección; redacta el equipo",
+        "Comunicado impreso o agenda, y WhatsApp del colegio",
+        "Antes de cargar datos reales y al iniciar el piloto",
+        "Comunicado y cargo de recepción"
+       ],
+       [
+        "PC-08",
+        "Solicitudes de cambio y su decisión",
+        "Solicitante, patrocinadora y Product Owner",
+        "Carlos Curo",
+        "Reunión y documento",
+        "Cuando ocurre",
+        "Registro de cambios (GOB-10)"
+       ],
+       [
+        "PC-09",
+        "Incidentes de prioridad alta",
+        "Product Owner y afectados",
+        "Jhostin Galarza",
+        "Llamada o mensaje directo",
+        "En menos de 24 horas",
+        "Registro de incidentes (GOB-06)"
+       ],
+       [
+        "PC-10",
+        "Capacitación y manuales",
+        "Tutores, coordinación y encargado de TI",
+        "Jhostin Galarza",
+        "Sesión presencial de 2 horas y manuales",
+        "Semana 23",
+        "Lista de asistencia"
+       ],
+       [
+        "PC-11",
+        "Cierre del proyecto",
+        "Todos los interesados del colegio y docente asesor",
+        "Jhostin Galarza",
+        "Reunión de cierre",
+        "23/04/2027",
+        "Acta de cierre e informe final"
+       ]
+      ],
+      "titulo": "Matriz de comunicaciones del proyecto",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "4. Calendario de comunicaciones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 10/10/2026; el registro y el tablero del blog muestran su estado actualizado."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Fecha",
+       "Comunicación",
+       "Destinatarios",
+       "Responsable",
+       "Sprint"
+      ],
+      "anchos": [
+       16,
+       40,
+       20,
+       14,
+       10
+      ],
+      "filas": [
+       [
+        "Semana del 12/10/2026",
+        "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
+        "I-01, I-02, I-03",
+        "Jhostin Galarza",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Semana del 12/10/2026",
+        "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
+        "I-13",
+        "Equipo del proyecto",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Hasta el 23/10/2026",
+        "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
+        "I-07, I-08",
+        "Jadira Vasquez",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Semana del 19/10/2026",
+        "Avance semanal al docente asesor",
+        "I-13",
+        "Equipo del proyecto",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Semana del 26/10/2026",
+        "Taller de validación de las variables del modelo",
+        "I-05, I-06",
+        "Helber Perez",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Semana del 26/10/2026",
+        "Avance semanal al docente asesor",
+        "I-13",
+        "Equipo del proyecto",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Semana 3 o 4",
+        "Entrevista sobre el registro de incidencias",
+        "I-04",
+        "Jadira Vasquez",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "06/11/2026",
+        "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
+        "I-01, I-03, I-13",
+        "Equipo del proyecto",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "04/12/2026",
+        "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
+        "I-01, I-03, I-13",
+        "Equipo del proyecto",
+        {
+         "x": "2",
+         "align": "center"
+        }
+       ],
+       [
+        "30/12/2026",
+        "Revisión del Sprint 3 e informe de desempeño: modelo validado",
+        "I-01, I-03, I-13",
+        "Equipo del proyecto",
+        {
+         "x": "3",
+         "align": "center"
+        }
+       ],
+       [
+        "Durante el Sprint 4",
+        "Convocatoria a tres docentes tutores para el piloto de marzo",
+        "I-05, I-03",
+        "Jhostin Galarza",
+        {
+         "x": "4",
+         "align": "center"
+        }
+       ],
+       [
+        "29/01/2027",
+        "Revisión del Sprint 4 e informe de desempeño: sistema integrado con alertas y tablero",
+        "I-01, I-03, I-13",
+        "Equipo del proyecto",
+        {
+         "x": "4",
+         "align": "center"
+        }
+       ],
+       [
+        "Antes del Sprint 5",
+        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
+        "I-11",
+        "Dirección; redacta el equipo",
+        {
+         "x": "4",
+         "align": "center"
+        }
+       ],
+       [
+        "24/03/2027",
+        "Revisión del Sprint 5 e informe de desempeño: resultado de las pruebas y del piloto",
+        "I-01, I-03, I-13",
+        "Equipo del proyecto",
+        {
+         "x": "5",
+         "align": "center"
+        }
+       ],
+       [
+        "Semana del 12/04/2027",
+        "Capacitación de dos horas a tutores y coordinadores, y entrega de manuales",
+        "I-05, I-03, I-08",
+        "Jhostin Galarza",
+        {
+         "x": "6",
+         "align": "center"
+        }
+       ],
+       [
+        "23/04/2027",
+        "Reunión de cierre del proyecto e informe final",
+        "I-01, I-02, I-03, I-13",
+        "Jhostin Galarza",
+        {
+         "x": "6",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Comunicaciones programadas",
+      "compacta": true,
+      "fuente": "Los códigos de los destinatarios corresponden al registro de interesados (INT-01)."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Canales y tecnología",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Canal",
+       "Se usa para",
+       "Consideraciones"
+      ],
+      "anchos": [
+       24,
+       34,
+       42
+      ],
+      "filas": [
+       [
+        "Reunión presencial en el colegio",
+        "Decisiones, demostraciones, talleres y capacitación.",
+        "Se coordina con la Dirección según el horario escolar."
+       ],
+       [
+        "WhatsApp",
+        "Coordinación con la Dirección y avisos generales a las familias a través del colegio.",
+        "Es el canal que el colegio ya usa con los padres. No se envían por este medio notas ni niveles de riesgo."
+       ],
+       [
+        "Correo electrónico personal",
+        "Alertas del sistema a los docentes y envío de informes.",
+        "El colegio no tiene correo institucional: se requiere la lista de direcciones autorizadas (SC-09)."
+       ],
+       [
+        "Comunicado impreso o agenda",
+        "Información a los apoderados y consentimiento.",
+        "Llega también a quienes no usan plataformas."
+       ],
+       [
+        "Blog del proyecto",
+        "Avance público, documentos de gestión y tablero de comunicaciones.",
+        "Es público: no contiene datos personales."
+       ],
+       [
+        "Repositorio en GitHub",
+        "Código, contenido de los documentos y control de cambios técnicos.",
+        "Es público: no contiene datos del colegio."
+       ],
+       [
+        "Panel web del sistema",
+        "Alertas y fichas de estudiantes.",
+        "Acceso con usuario y contraseña, según el rol."
+       ]
+      ],
+      "titulo": "Canales de comunicación"
+     }
+    ]
+   },
+   {
+    "titulo": "6. Comunicaciones del producto",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Además de las comunicaciones del proyecto, el sistema emitirá sus propias comunicaciones una vez en operación. Se describen aquí porque forman parte de lo que los interesados recibirán."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Comunicación",
+       "Destinatario",
+       "Momento",
+       "Contenido"
+      ],
+      "anchos": [
+       22,
+       20,
+       24,
+       34
+      ],
+      "filas": [
+       [
+        "Alerta de riesgo alto",
+        "Docente tutor y coordinación",
+        "Dentro de las 24 horas siguientes al cálculo semanal",
+        "Estudiante, nivel de riesgo y variables que lo explican."
+       ],
+       [
+        "Resumen de alertas",
+        "Docente, al ingresar al panel",
+        "En cada ingreso",
+        "Estudiantes en riesgo alto y medio, con acceso a su ficha."
+       ],
+       [
+        "Comunicado al apoderado",
+        "Padre o apoderado",
+        "Dentro de las 24 horas, a través del colegio",
+        "Áreas con dificultad y recomendaciones de apoyo, en lenguaje simple."
+       ],
+       [
+        "Reporte por unidad",
+        "Coordinación y dirección",
+        "Al cierre de cada unidad",
+        "Estudiantes en riesgo por aula y grado, y comparación con el periodo anterior."
+       ]
+      ],
+      "titulo": "Comunicaciones que emitirá el sistema"
+     }
+    ]
+   },
+   {
+    "titulo": "7. Formatos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "h",
+      "x": "Acta de reunión"
+     },
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Reunión N.° y tipo",
+        ""
+       ],
+       [
+        "Fecha, hora y lugar",
+        ""
+       ],
+       [
+        "Convocó",
+        ""
+       ],
+       [
+        "Asistentes",
+        ""
+       ],
+       [
+        "Objetivo",
+        ""
+       ],
+       [
+        "Temas tratados",
+        ""
+       ],
+       [
+        "Acuerdos (qué, quién y cuándo)",
+        ""
+       ],
+       [
+        "Próxima reunión",
+        ""
+       ]
+      ]
+     },
+     {
+      "t": "h",
+      "x": "Informe de desempeño"
+     },
+     {
+      "t": "p",
+      "x": "Sigue la estructura del informe N.º 1 (GOB-09): datos del informe, resumen, estado por dominio, avance de los entregables, hitos próximos y decisiones que se solicitan."
+     },
+     {
+      "t": "h",
+      "x": "Registro de una comunicación"
+     },
+     {
+      "t": "p",
+      "x": "Cada comunicación se anota en el registro (INT-06) con estos datos: fecha, tipo, asunto, quién la emite, interesados que participan, canal, estado y constancia."
+     }
+    ]
+   },
+   {
+    "titulo": "8. Reglas de reserva de la información",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "El nivel de riesgo de un estudiante se comunica solo a su tutor, a la coordinación, a psicología y a la dirección; al apoderado se le comunica el de su hijo.",
+       "No se comparten listas de estudiantes ni notas por grupos de mensajería.",
+       "Los archivos con datos reales no salen del colegio sin anonimizar y nunca se publican.",
+       "Las fotos y los videos donde aparecen personas se publican solo con su autorización."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "9. Monitoreo, escalamiento y actualización",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "El director del proyecto revisa el registro cada semana y emite un informe de monitoreo al cierre de cada sprint. Los indicadores son estos:"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Indicador",
+       "Cómo se calcula",
+       "Meta"
+      ],
+      "anchos": [
+       30,
+       46,
+       24
+      ],
+      "filas": [
+       [
+        "Cumplimiento del calendario",
+        "Comunicaciones realizadas entre las que ya debían haberse realizado.",
+        "90 % o más"
+       ],
+       [
+        "Comunicaciones vencidas",
+        "Programadas cuya fecha límite pasó sin registrarse como realizadas.",
+        "Cero"
+       ],
+       [
+        "Cobertura de interesados clave",
+        "Interesados clave con al menos una comunicación realizada.",
+        "Todos al cierre del Sprint 1"
+       ],
+       [
+        "Constancia",
+        "Comunicaciones realizadas que tienen evidencia.",
+        "100 %"
+       ],
+       [
+        "Respuesta a los pedidos",
+        "Días entre un pedido al colegio y su respuesta.",
+        "5 días hábiles o menos"
+       ]
+      ],
+      "titulo": "Indicadores de las comunicaciones"
+     },
+     {
+      "t": "p",
+      "x": "Un asunto sin respuesta en dos días hábiles se eleva del responsable al director del proyecto, de este al Product Owner y, por último, a la patrocinadora. El plan se revisa al cierre de cada sprint junto con el plan de involucramiento."
+     }
+    ]
+   },
+   {
+    "titulo": "10. Glosario",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Término",
+       "Cómo se explica a los interesados"
+      ],
+      "anchos": [
+       26,
+       74
+      ],
+      "filas": [
+       [
+        "Alerta",
+        "Aviso de que un estudiante necesita atención esta semana."
+       ],
+       [
+        "Nivel de riesgo",
+        "Señal de tres colores (verde, amarillo y rojo) sobre la probabilidad de que un estudiante baje su rendimiento. No es un diagnóstico."
+       ],
+       [
+        "Sprint",
+        "Periodo de trabajo de cuatro semanas que termina con una demostración al colegio."
+       ],
+       [
+        "Revisión del sprint",
+        "Reunión en la que el equipo muestra lo avanzado y el colegio lo acepta u observa."
+       ],
+       [
+        "Product Owner",
+        "Persona del colegio que decide qué es prioritario y acepta los entregables."
+       ],
+       [
+        "Línea base",
+        "Versión aprobada del alcance, del cronograma o de los costos, contra la que se mide el avance."
+       ],
+       [
+        "Solicitud de cambio",
+        "Pedido formal para modificar algo ya aprobado."
+       ],
+       [
+        "Piloto",
+        "Dos semanas de uso real del sistema por tres docentes tutores antes de ponerlo en marcha."
+       ]
+      ],
+      "titulo": "Glosario común"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "INT-06",
+  "titulo": "Registro de comunicaciones",
+  "dominio": "Interesados",
+  "area": "Ejecución",
+  "proceso": "Gestionar las comunicaciones",
+  "salida": "Comunicaciones del proyecto",
+  "version": "1.0",
+  "fecha": "10/10/2026",
+  "resumen": "Lleva la cuenta de cada comunicación del proyecto: las que ya se hicieron, con su constancia, y las programadas, con su fecha límite y su responsable. Es la fuente del tablero de comunicaciones del blog.",
+  "carpeta": "02 - Interesados/2.5 Comunicaciones",
+  "pdf": "/documentos/INT-06-registro-de-comunicaciones.pdf",
+  "docx": "/documentos/INT-06-registro-de-comunicaciones.docx",
+  "secciones": [
+   {
+    "titulo": "1. Uso del registro",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Gestionar las comunicaciones es ejecutar el plan (INT-03): reunirse, enviar los informes, hacer los talleres y dejar constancia. Cada comunicación se anota aquí cuando se programa y se actualiza cuando se realiza. Una comunicación programada cuya fecha límite pasa sin registrarse como realizada queda como vencida."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "**Quién lo mantiene:** el director del proyecto; cada responsable informa cuando realiza su comunicación.",
+       "**Constancia:** acta, lista de asistencia, mensaje, documento o publicación. Sin constancia no se marca como realizada.",
+       "**Reserva:** el registro nombra cargos, no personas, y no incluye datos de estudiantes."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "2. Comunicaciones realizadas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Fecha",
+       "Tipo",
+       "Asunto",
+       "Emite",
+       "Interesados",
+       "Canal",
+       "Estado",
+       "Constancia"
+      ],
+      "anchos": [
+       5,
+       9,
+       9,
+       23,
+       10,
+       15,
+       10,
+       8,
+       11
+      ],
+      "filas": [
+       [
+        "C-01",
+        "24/04/2026",
+        "Entrevista",
+        "Entrevista semiestructurada de diagnóstico a la Promotora Directora",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Transcripción, video y fotografías"
+       ],
+       [
+        "C-02",
+        "24/04/2026",
+        "Solicitud",
+        "Pedido y recojo del organigrama y del formato de reporte de incidencias",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Fotografías de los documentos"
+       ],
+       [
+        "C-03",
+        "15/05/2026",
+        "Encuesta",
+        "Encuesta sobre seguimiento y rendimiento académico: 6 respuestas de 16 docentes",
+        "Equipo del proyecto",
+        [
+         "I-05 Docentes tutores y auxiliares"
+        ],
+        "Formulario en línea",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Hoja de respuestas y gráficos"
+       ],
+       [
+        "C-04",
+        "05/07/2026",
+        "Entrega de datos",
+        "Recepción de registros de notas de marzo, abril y primer trimestre de 2026",
+        "Docentes del colegio",
+        [
+         "I-05 Docentes tutores y auxiliares"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Hoja de cálculo y fotografías, en custodia del equipo"
+       ],
+       [
+        "C-05",
+        "10/10/2026",
+        "Reunión",
+        "Sesión de trabajo del equipo: análisis de interesados y emisión de los documentos de gestión",
+        "Jhostin Galarza",
+        [
+         "I-12 Equipo del proyecto"
+        ],
+        "Reunión del equipo",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Documentos INT-01 e INT-02"
+       ],
+       [
+        "C-06",
+        "10/10/2026",
+        "Publicación",
+        "Publicación del blog del proyecto con el equipo y el periodo actuales",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Blog del proyecto",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Blog en línea"
+       ]
+      ],
+      "titulo": "Comunicaciones realizadas al 10/10/2026",
+      "compacta": true
+     },
+     {
+      "t": "nota",
+      "tipo": "aviso",
+      "x": "Las cuatro primeras corresponden al levantamiento de información de la fase de formulación. La segunda entrevista, al encargado de soporte de TI y a la gestora de Cubicol, no se realizó entonces y está programada para el Sprint 1 (incidente IN-05)."
+     }
+    ]
+   },
+   {
+    "titulo": "3. Comunicaciones programadas del Sprint 1",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Fecha",
+       "Tipo",
+       "Asunto",
+       "Emite",
+       "Interesados",
+       "Canal",
+       "Estado",
+       "Constancia"
+      ],
+      "anchos": [
+       5,
+       9,
+       9,
+       23,
+       10,
+       15,
+       10,
+       8,
+       11
+      ],
+      "filas": [
+       [
+        "C-07",
+        "Semana del 12/10/2026",
+        "Reunión",
+        "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
+        "Jhostin Galarza",
+        [
+         "I-01 Promotora Directora",
+         "I-02 Subdirector",
+         "I-03 Coordinación académica"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de reunión y acta de constitución firmada"
+       ],
+       [
+        "C-08",
+        "Semana del 12/10/2026",
+        "Avance académico",
+        "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Clase y blog del proyecto",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Blog actualizado y observaciones del docente"
+       ],
+       [
+        "C-09",
+        "Hasta el 23/10/2026",
+        "Entrevista",
+        "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
+        "Jadira Vasquez",
+        [
+         "I-07 Gestora de la plataforma Cubicol",
+         "I-08 Encargado de soporte de TI"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Notas de la entrevista y acuerdo de entrega de datos"
+       ],
+       [
+        "C-10",
+        "Semana del 19/10/2026",
+        "Avance académico",
+        "Avance semanal al docente asesor",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Clase y blog del proyecto",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Blog actualizado"
+       ],
+       [
+        "C-11",
+        "Semana del 26/10/2026",
+        "Taller",
+        "Taller de validación de las variables del modelo",
+        "Helber Perez",
+        [
+         "I-05 Docentes tutores y auxiliares",
+         "I-06 Responsable de psicología"
+        ],
+        "Taller presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Lista de asistencia y acuerdos"
+       ],
+       [
+        "C-12",
+        "Semana del 26/10/2026",
+        "Avance académico",
+        "Avance semanal al docente asesor",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Clase y blog del proyecto",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Blog actualizado"
+       ],
+       [
+        "C-13",
+        "Semana 3 o 4",
+        "Entrevista",
+        "Entrevista sobre el registro de incidencias",
+        "Jadira Vasquez",
+        [
+         "I-04 Jefa de Normas"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Notas de la entrevista"
+       ],
+       [
+        "C-14",
+        "06/11/2026",
+        "Revisión de sprint",
+        "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora",
+         "I-03 Coordinación académica",
+         "I-13 Docente asesor del curso"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de aceptación e informe de desempeño"
+       ]
+      ],
+      "titulo": "Sprint 1: del 12/10/2026 al 06/11/2026",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "4. Comunicaciones programadas de los Sprints 2 a 6",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Fecha",
+       "Tipo",
+       "Asunto",
+       "Emite",
+       "Interesados",
+       "Canal",
+       "Estado",
+       "Constancia"
+      ],
+      "anchos": [
+       5,
+       9,
+       9,
+       23,
+       10,
+       15,
+       10,
+       8,
+       11
+      ],
+      "filas": [
+       [
+        "C-15",
+        "04/12/2026",
+        "Revisión de sprint",
+        "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora",
+         "I-03 Coordinación académica",
+         "I-13 Docente asesor del curso"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de aceptación e informe de desempeño"
+       ],
+       [
+        "C-16",
+        "30/12/2026",
+        "Revisión de sprint",
+        "Revisión del Sprint 3 e informe de desempeño: modelo validado",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora",
+         "I-03 Coordinación académica",
+         "I-13 Docente asesor del curso"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de aceptación e informe de desempeño"
+       ],
+       [
+        "C-17",
+        "Durante el Sprint 4",
+        "Convocatoria",
+        "Convocatoria a tres docentes tutores para el piloto de marzo",
+        "Jhostin Galarza",
+        [
+         "I-05 Docentes tutores y auxiliares",
+         "I-03 Coordinación académica"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Lista de participantes confirmados"
+       ],
+       [
+        "C-18",
+        "29/01/2027",
+        "Revisión de sprint",
+        "Revisión del Sprint 4 e informe de desempeño: sistema integrado con alertas y tablero",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora",
+         "I-03 Coordinación académica",
+         "I-13 Docente asesor del curso"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de aceptación e informe de desempeño"
+       ],
+       [
+        "C-19",
+        "Antes del Sprint 5",
+        "Comunicado",
+        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
+        "Dirección; redacta el equipo",
+        [
+         "I-11 Padres de familia y apoderados"
+        ],
+        "Comunicado impreso o agenda",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Comunicado y cargo de recepción"
+       ],
+       [
+        "C-20",
+        "24/03/2027",
+        "Revisión de sprint",
+        "Revisión del Sprint 5 e informe de desempeño: resultado de las pruebas y del piloto",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora",
+         "I-03 Coordinación académica",
+         "I-13 Docente asesor del curso"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de aceptación e informe de desempeño"
+       ],
+       [
+        "C-21",
+        "Semana del 12/04/2027",
+        "Capacitación",
+        "Capacitación de dos horas a tutores y coordinadores, y entrega de manuales",
+        "Jhostin Galarza",
+        [
+         "I-05 Docentes tutores y auxiliares",
+         "I-03 Coordinación académica",
+         "I-08 Encargado de soporte de TI"
+        ],
+        "Taller presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Lista de asistencia"
+       ],
+       [
+        "C-22",
+        "23/04/2027",
+        "Reunión",
+        "Reunión de cierre del proyecto e informe final",
+        "Jhostin Galarza",
+        [
+         "I-01 Promotora Directora",
+         "I-02 Subdirector",
+         "I-03 Coordinación académica",
+         "I-13 Docente asesor del curso"
+        ],
+        "Reunión presencial",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de cierre e informe final"
+       ]
+      ],
+      "titulo": "Sprints 2 a 6",
+      "compacta": true
+     },
+     {
+      "t": "p",
+      "x": "La coordinación diaria del equipo, los pedidos de datos semanales, las solicitudes de cambio y los incidentes de prioridad alta se registran cuando ocurren; por eso no figuran con fecha en esta lista."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Resumen",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Momento",
+       "Realizadas",
+       "Programadas",
+       "Vencidas",
+       "Total"
+      ],
+      "anchos": [
+       40,
+       15,
+       15,
+       15,
+       15
+      ],
+      "filas": [
+       [
+        "Antes del inicio",
+        {
+         "x": "6",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "6",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Sprint 1",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "8",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "8",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Sprint 2",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Sprint 3",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Sprint 4",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Sprint 5",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Sprint 6",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "Total",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "6",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "16",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "0",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "22",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Comunicaciones por momento del proyecto, al 10/10/2026"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "INT-07",
+  "titulo": "Informe de monitoreo de las comunicaciones N.º 1",
+  "dominio": "Interesados",
+  "area": "Monitoreo y control",
+  "proceso": "Monitorear las comunicaciones",
+  "salida": "Información de desempeño del trabajo sobre las comunicaciones",
+  "version": "1.0",
+  "fecha": "10/10/2026",
+  "resumen": "Comprueba si las comunicaciones se están haciendo según el plan y si llegan a quienes deben. Es la primera medición, antes del inicio del Sprint 1, y fija el punto de partida.",
+  "carpeta": "02 - Interesados/2.5 Comunicaciones",
+  "pdf": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-1.pdf",
+  "docx": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-1.docx",
+  "secciones": [
+   {
+    "titulo": "1. Corte y método",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Fecha de corte: 10/10/2026. El informe se elabora con el registro de comunicaciones (INT-06): compara lo realizado con lo programado en el plan (INT-03) y revisa a qué interesados se ha llegado. Los mismos indicadores se ven, actualizados, en el tablero de comunicaciones del blog."
+     }
+    ]
+   },
+   {
+    "titulo": "2. Indicadores",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Indicador",
+       "Valor",
+       "Meta",
+       "Lectura"
+      ],
+      "anchos": [
+       28,
+       16,
+       20,
+       36
+      ],
+      "filas": [
+       [
+        "Comunicaciones registradas",
+        "22",
+        "—",
+        "6 realizadas y 16 programadas."
+       ],
+       [
+        "Cumplimiento del calendario",
+        "Aún no aplica",
+        "90 % o más",
+        "Ninguna comunicación programada ha llegado a su fecha límite."
+       ],
+       [
+        "Comunicaciones vencidas",
+        {
+         "x": "0",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Cero",
+        "Se medirá por primera vez en la semana del 12/10/2026."
+       ],
+       [
+        "Cobertura de interesados",
+        "4 de 17",
+        "—",
+        "Coincide con el seguimiento del involucramiento (INT-05)."
+       ],
+       [
+        "Cobertura de interesados clave",
+        {
+         "x": "4 de 8",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Todos al cierre del Sprint 1",
+        "Faltan: Subdirector, Coordinación académica, Gestora de la plataforma Cubicol, Encargado de soporte de TI."
+       ],
+       [
+        "Constancia",
+        {
+         "x": "6 de 6",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "100 %",
+        "Toda comunicación realizada tiene evidencia."
+       ]
+      ],
+      "titulo": "Indicadores de las comunicaciones al 10/10/2026"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Comunicaciones por canal",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Canal",
+       "Realizadas",
+       "Programadas",
+       "Vencidas",
+       "Total"
+      ],
+      "anchos": [
+       40,
+       15,
+       15,
+       15,
+       15
+      ],
+      "filas": [
+       [
+        "Reunión presencial",
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "10",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "13",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Clase y blog del proyecto",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Taller presencial",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Formulario en línea",
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Reunión del equipo",
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Blog del proyecto",
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Comunicado impreso o agenda",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Uso de los canales"
+     },
+     {
+      "t": "p",
+      "x": "La reunión presencial es el canal principal, como pidió la Dirección. Todavía no se usa el correo: el colegio no tiene correo institucional y la lista de direcciones personales autorizadas está pendiente (SC-09)."
+     }
+    ]
+   },
+   {
+    "titulo": "4. Cobertura por interesado",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Interesado",
+       "Clave",
+       "Realizadas",
+       "Programadas",
+       "Situación"
+      ],
+      "anchos": [
+       40,
+       10,
+       14,
+       14,
+       22
+      ],
+      "filas": [
+       [
+        "I-01 Promotora Directora",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "7",
+         "align": "center"
+        },
+        {
+         "x": "Con comunicación",
+         "fill": "verde"
+        }
+       ],
+       [
+        "I-02 Subdirector",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-03 Coordinación académica",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "9",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-04 Jefa de Normas",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-05 Docentes tutores y auxiliares",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "Con comunicación",
+         "fill": "verde"
+        }
+       ],
+       [
+        "I-06 Responsable de psicología",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-07 Gestora de la plataforma Cubicol",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-08 Encargado de soporte de TI",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-09 Personal administrativo",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Sin comunicación directa",
+         "fill": "gris"
+        }
+       ],
+       [
+        "I-10 Estudiantes",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Sin comunicación directa",
+         "fill": "gris"
+        }
+       ],
+       [
+        "I-11 Padres de familia y apoderados",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Programada",
+         "fill": "azul"
+        }
+       ],
+       [
+        "I-12 Equipo del proyecto",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Con comunicación",
+         "fill": "verde"
+        }
+       ],
+       [
+        "I-13 Docente asesor del curso",
+        {
+         "x": "Sí",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "9",
+         "align": "center"
+        },
+        {
+         "x": "Con comunicación",
+         "fill": "verde"
+        }
+       ],
+       [
+        "I-14 Cubicol (proveedor)",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Sin comunicación directa",
+         "fill": "gris"
+        }
+       ],
+       [
+        "I-15 Proveedores de nube e internet",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Sin comunicación directa",
+         "fill": "gris"
+        }
+       ],
+       [
+        "I-16 UGEL 01 y MINEDU",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Sin comunicación directa",
+         "fill": "gris"
+        }
+       ],
+       [
+        "I-17 Autoridad de Protección de Datos Personales",
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "Sin comunicación directa",
+         "fill": "gris"
+        }
+       ]
+      ],
+      "titulo": "Comunicaciones por interesado",
+      "compacta": true
+     },
+     {
+      "t": "p",
+      "x": "6 interesados no tienen una comunicación directa prevista: Personal administrativo, Estudiantes, Cubicol (proveedor), Proveedores de nube e internet, UGEL 01 y MINEDU, Autoridad de Protección de Datos Personales. Es lo que establece el plan: los estudiantes reciben la información a través de sus tutores, y al personal administrativo, a los proveedores y a los reguladores solo se les consulta cuando hace falta."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Hallazgos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Solo 4 de 17 interesados han tenido una comunicación directa; 13 todavía no.",
+       "La segunda entrevista (encargado de TI y gestora de Cubicol) está pendiente desde mayo de 2026. Es la comunicación más urgente del Sprint 1.",
+       "Con los padres y apoderados no ha habido ninguna comunicación del proyecto. Debe haberla antes de cargar datos reales.",
+       "No existe aún un canal acordado para las alertas por correo (SC-09).",
+       "La reunión de inicio con la Dirección todavía no tiene día fijado dentro de la semana del 12/10/2026."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "6. Acciones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Acción",
+       "Responsable",
+       "Fecha límite"
+      ],
+      "anchos": [
+       58,
+       22,
+       20
+      ],
+      "filas": [
+       [
+        "Fijar con la Dirección el día de la reunión de inicio.",
+        "Jhostin Galarza",
+        "13/10/2026"
+       ],
+       [
+        "Coordinar la segunda entrevista con la gestora de Cubicol y el encargado de TI.",
+        "Jadira Vasquez",
+        "23/10/2026"
+       ],
+       [
+        "Pedir a la Dirección la lista de correos autorizados de los docentes.",
+        "Jadira Vasquez",
+        "06/11/2026"
+       ],
+       [
+        "Redactar el borrador del comunicado a los apoderados para revisión de la Dirección.",
+        "Jhostin Galarza",
+        "04/12/2026"
+       ],
+       [
+        "Actualizar el registro y el tablero cada viernes.",
+        "Jhostin Galarza",
+        "Semanal"
+       ]
+      ],
+      "titulo": "Acciones derivadas del monitoreo"
+     },
+     {
+      "t": "ol",
+      "items": [
+       "No se generan solicitudes de cambio a partir de este informe.",
+       "La próxima medición se hará al cierre del Sprint 1, el 06/11/2026."
+      ]
      }
     ]
    }
@@ -14763,6 +16720,7 @@ export const PROCESOS: ProcesoDef[] = [
  {
   "id": "int-1",
   "dominio": "Interesados",
+  "grupo": "Involucramiento",
   "area": "Iniciación",
   "nombre": "Identificar a los interesados",
   "estado": "Aplicado",
@@ -14792,6 +16750,7 @@ export const PROCESOS: ProcesoDef[] = [
  {
   "id": "int-2",
   "dominio": "Interesados",
+  "grupo": "Involucramiento",
   "area": "Planificación",
   "nombre": "Planificar el involucramiento de los interesados",
   "estado": "Aplicado",
@@ -14814,32 +16773,9 @@ export const PROCESOS: ProcesoDef[] = [
   ]
  },
  {
-  "id": "int-3",
-  "dominio": "Interesados",
-  "area": "Planificación",
-  "nombre": "Planificar la gestión de las comunicaciones",
-  "estado": "Aplicado",
-  "que": "Define qué información recibe cada interesado, por qué canal y con qué frecuencia.",
-  "entradas": [
-   "Registro de interesados",
-   "Plan de involucramiento",
-   "Documentación de requisitos"
-  ],
-  "herramientas": [
-   "Análisis de requisitos de comunicación",
-   "Tecnología y métodos de comunicación",
-   "Matriz de evaluación del involucramiento"
-  ],
-  "salidas": [
-   "Plan de gestión de las comunicaciones"
-  ],
-  "docs": [
-   "INT-03"
-  ]
- },
- {
   "id": "int-4",
   "dominio": "Interesados",
+  "grupo": "Involucramiento",
   "area": "Ejecución",
   "nombre": "Gestionar el involucramiento de los interesados",
   "estado": "Aplicado",
@@ -14864,31 +16800,9 @@ export const PROCESOS: ProcesoDef[] = [
   ]
  },
  {
-  "id": "int-5",
-  "dominio": "Interesados",
-  "area": "Ejecución",
-  "nombre": "Gestionar las comunicaciones",
-  "estado": "Planificado",
-  "que": "Distribuye la información del proyecto según el plan.",
-  "entradas": [
-   "Plan de gestión de las comunicaciones",
-   "Informes de desempeño"
-  ],
-  "herramientas": [
-   "Informes del proyecto",
-   "Reuniones",
-   "Blog del proyecto"
-  ],
-  "salidas": [
-   "Comunicaciones del proyecto, desde la reunión de inicio"
-  ],
-  "docs": [
-   "INT-03"
-  ]
- },
- {
   "id": "int-6",
   "dominio": "Interesados",
+  "grupo": "Involucramiento",
   "area": "Monitoreo y control",
   "nombre": "Monitorear el involucramiento de los interesados",
   "estado": "Aplicado",
@@ -14911,25 +16825,83 @@ export const PROCESOS: ProcesoDef[] = [
   ]
  },
  {
+  "id": "int-3",
+  "dominio": "Interesados",
+  "grupo": "Comunicaciones",
+  "area": "Planificación",
+  "nombre": "Planificar la gestión de las comunicaciones",
+  "estado": "Aplicado",
+  "que": "Define qué información recibe cada interesado, por qué canal, con qué frecuencia y en qué fechas.",
+  "entradas": [
+   "Registro de interesados",
+   "Plan de involucramiento",
+   "Documentación de requisitos",
+   "Cronograma del proyecto"
+  ],
+  "herramientas": [
+   "Análisis de requisitos de comunicación",
+   "Tecnología y métodos de comunicación",
+   "Matriz de evaluación del involucramiento"
+  ],
+  "salidas": [
+   "Plan de gestión de las comunicaciones: requisitos de información, matriz, calendario, formatos e indicadores"
+  ],
+  "docs": [
+   "INT-03"
+  ]
+ },
+ {
+  "id": "int-5",
+  "dominio": "Interesados",
+  "grupo": "Comunicaciones",
+  "area": "Ejecución",
+  "nombre": "Gestionar las comunicaciones",
+  "estado": "Aplicado",
+  "que": "Ejecuta el plan: reúne, informa y deja constancia de cada comunicación.",
+  "entradas": [
+   "Plan de gestión de las comunicaciones",
+   "Registro de interesados",
+   "Informes de desempeño"
+  ],
+  "herramientas": [
+   "Reuniones",
+   "Informes del proyecto",
+   "Blog del proyecto como sistema de información",
+   "Retroalimentación"
+  ],
+  "salidas": [
+   "Comunicaciones del proyecto",
+   "Registro de comunicaciones"
+  ],
+  "docs": [
+   "INT-06"
+  ]
+ },
+ {
   "id": "int-7",
   "dominio": "Interesados",
+  "grupo": "Comunicaciones",
   "area": "Monitoreo y control",
   "nombre": "Monitorear las comunicaciones",
-  "estado": "Planificado",
+  "estado": "Aplicado",
   "que": "Comprueba que la información llega a quien debe y cuando debe.",
   "entradas": [
    "Plan de gestión de las comunicaciones",
-   "Comunicaciones del proyecto"
+   "Registro de comunicaciones",
+   "Registro de incidentes"
   ],
   "herramientas": [
+   "Tablero de comunicaciones",
+   "Matriz de cobertura por interesado",
    "Observación y conversación",
    "Reuniones"
   ],
   "salidas": [
-   "Se revisa junto con el involucramiento al cierre de cada sprint"
+   "Informe de monitoreo de las comunicaciones",
+   "Acciones de mejora"
   ],
   "docs": [
-   "INT-03"
+   "INT-07"
   ]
  },
  {

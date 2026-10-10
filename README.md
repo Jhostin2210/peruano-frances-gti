@@ -44,6 +44,7 @@ El blog sigue la Guía del PMBOK®, octava edición. Los capítulos 00 a 03 son 
 | Cap. 03 Alternativas y Design Thinking | `src/components/AlternativesAnalysis.tsx` |
 | Cap. 04 Marco de gestión (principios, mapa de procesos, índice de documentos) | `src/components/MarcoPmbok.tsx` |
 | Cap. 05 a 08: procesos y documentos de Gobernanza, Interesados, Alcance y Cronograma | `documentacion/` (ver abajo) |
+| Tablero de comunicaciones (cap. 06) | `src/components/TableroComunicaciones.tsx`; sus datos están en `documentacion/datos/comunicaciones.mjs` |
 | Vistas interactivas de requisitos y EDT (cap. 07) | `src/components/RequisitosAnalysis.tsx` |
 | Vista interactiva del cronograma (cap. 08) | `src/components/ScheduleBaseline.tsx` |
 | Cap. 09 Costos | `src/components/CostBaseline.tsx` |

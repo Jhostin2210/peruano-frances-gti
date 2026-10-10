@@ -177,8 +177,9 @@ export const PROCESOS = [
   { id: "fin-4", dominio: "Finanzas", area: MC, nombre: "Monitorear y controlar las finanzas", estado: "Pendiente", docs: [] },
 
   // ───────────── Interesados ─────────────
+  // grupo: la guía de clase trata por separado el involucramiento (cuatro procesos) y las comunicaciones (tres).
   {
-    id: "int-1", dominio: "Interesados", area: I, nombre: "Identificar a los interesados", estado: "Aplicado",
+    id: "int-1", dominio: "Interesados", grupo: "Involucramiento", area: I, nombre: "Identificar a los interesados", estado: "Aplicado",
     que: "Reconoce a las personas y organizaciones afectadas y analiza su poder, interés e influencia.",
     entradas: ["Acta de constitución", "Caso de negocio", "Organigrama del colegio"],
     herramientas: ["Cuestionario", "Tormenta de ideas", "Análisis de interesados", "Matriz de poder e interés", "Cubo de interesados", "Modelo de prominencia", "Dirección de la influencia", "Priorización"],
@@ -186,7 +187,7 @@ export const PROCESOS = [
     docs: ["INT-01"],
   },
   {
-    id: "int-2", dominio: "Interesados", area: PL, nombre: "Planificar el involucramiento de los interesados", estado: "Aplicado",
+    id: "int-2", dominio: "Interesados", grupo: "Involucramiento", area: PL, nombre: "Planificar el involucramiento de los interesados", estado: "Aplicado",
     que: "Define cómo lograr que cada interesado participe en la medida que el proyecto necesita.",
     entradas: ["Registro de interesados", "Registro de supuestos", "Cronograma del proyecto"],
     herramientas: ["Matriz de evaluación del involucramiento", "Priorización", "Análisis de supuestos y restricciones"],
@@ -194,15 +195,7 @@ export const PROCESOS = [
     docs: ["INT-02"],
   },
   {
-    id: "int-3", dominio: "Interesados", area: PL, nombre: "Planificar la gestión de las comunicaciones", estado: "Aplicado",
-    que: "Define qué información recibe cada interesado, por qué canal y con qué frecuencia.",
-    entradas: ["Registro de interesados", "Plan de involucramiento", "Documentación de requisitos"],
-    herramientas: ["Análisis de requisitos de comunicación", "Tecnología y métodos de comunicación", "Matriz de evaluación del involucramiento"],
-    salidas: ["Plan de gestión de las comunicaciones"],
-    docs: ["INT-03"],
-  },
-  {
-    id: "int-4", dominio: "Interesados", area: E, nombre: "Gestionar el involucramiento de los interesados", estado: "Aplicado",
+    id: "int-4", dominio: "Interesados", grupo: "Involucramiento", area: E, nombre: "Gestionar el involucramiento de los interesados", estado: "Aplicado",
     que: "Trabaja con los interesados para atender sus necesidades y expectativas.",
     entradas: ["Plan de involucramiento", "Plan de comunicaciones", "Registro de incidentes"],
     herramientas: ["Reglas básicas", "Reuniones", "Observación y conversación", "Retroalimentación"],
@@ -210,15 +203,7 @@ export const PROCESOS = [
     docs: ["INT-04"],
   },
   {
-    id: "int-5", dominio: "Interesados", area: E, nombre: "Gestionar las comunicaciones", estado: "Planificado",
-    que: "Distribuye la información del proyecto según el plan.",
-    entradas: ["Plan de gestión de las comunicaciones", "Informes de desempeño"],
-    herramientas: ["Informes del proyecto", "Reuniones", "Blog del proyecto"],
-    salidas: ["Comunicaciones del proyecto, desde la reunión de inicio"],
-    docs: ["INT-03"],
-  },
-  {
-    id: "int-6", dominio: "Interesados", area: MC, nombre: "Monitorear el involucramiento de los interesados", estado: "Aplicado",
+    id: "int-6", dominio: "Interesados", grupo: "Involucramiento", area: MC, nombre: "Monitorear el involucramiento de los interesados", estado: "Aplicado",
     que: "Compara el involucramiento real con el deseado y ajusta las estrategias.",
     entradas: ["Plan de involucramiento", "Registro de interesados", "Bitácora de involucramiento"],
     herramientas: ["Matriz de evaluación del involucramiento", "Análisis de interesados", "Análisis de causa raíz"],
@@ -226,12 +211,28 @@ export const PROCESOS = [
     docs: ["INT-05"],
   },
   {
-    id: "int-7", dominio: "Interesados", area: MC, nombre: "Monitorear las comunicaciones", estado: "Planificado",
-    que: "Comprueba que la información llega a quien debe y cuando debe.",
-    entradas: ["Plan de gestión de las comunicaciones", "Comunicaciones del proyecto"],
-    herramientas: ["Observación y conversación", "Reuniones"],
-    salidas: ["Se revisa junto con el involucramiento al cierre de cada sprint"],
+    id: "int-3", dominio: "Interesados", grupo: "Comunicaciones", area: PL, nombre: "Planificar la gestión de las comunicaciones", estado: "Aplicado",
+    que: "Define qué información recibe cada interesado, por qué canal, con qué frecuencia y en qué fechas.",
+    entradas: ["Registro de interesados", "Plan de involucramiento", "Documentación de requisitos", "Cronograma del proyecto"],
+    herramientas: ["Análisis de requisitos de comunicación", "Tecnología y métodos de comunicación", "Matriz de evaluación del involucramiento"],
+    salidas: ["Plan de gestión de las comunicaciones: requisitos de información, matriz, calendario, formatos e indicadores"],
     docs: ["INT-03"],
+  },
+  {
+    id: "int-5", dominio: "Interesados", grupo: "Comunicaciones", area: E, nombre: "Gestionar las comunicaciones", estado: "Aplicado",
+    que: "Ejecuta el plan: reúne, informa y deja constancia de cada comunicación.",
+    entradas: ["Plan de gestión de las comunicaciones", "Registro de interesados", "Informes de desempeño"],
+    herramientas: ["Reuniones", "Informes del proyecto", "Blog del proyecto como sistema de información", "Retroalimentación"],
+    salidas: ["Comunicaciones del proyecto", "Registro de comunicaciones"],
+    docs: ["INT-06"],
+  },
+  {
+    id: "int-7", dominio: "Interesados", grupo: "Comunicaciones", area: MC, nombre: "Monitorear las comunicaciones", estado: "Aplicado",
+    que: "Comprueba que la información llega a quien debe y cuando debe.",
+    entradas: ["Plan de gestión de las comunicaciones", "Registro de comunicaciones", "Registro de incidentes"],
+    herramientas: ["Tablero de comunicaciones", "Matriz de cobertura por interesado", "Observación y conversación", "Reuniones"],
+    salidas: ["Informe de monitoreo de las comunicaciones", "Acciones de mejora"],
+    docs: ["INT-07"],
   },
 
   // ───────────── Recursos ─────────────

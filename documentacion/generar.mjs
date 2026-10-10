@@ -16,6 +16,7 @@ import { INTERESADOS, NIVELES, brecha, cuadrante, prominencia } from "./datos/in
 import { CAMBIOS, INCIDENTES } from "./datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, PAQUETES, REQUISITOS, TOTALES_ALCANCE } from "./datos/requisitos.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
+import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(AQUI, "..");
@@ -115,6 +116,9 @@ const datos = {
   TOTALES_ALCANCE,
   CAMBIOS,
   INCIDENTES,
+  CORTE,
+  PLAN_COMUNICACIONES,
+  COMUNICACIONES,
 };
 fs.writeFileSync(
   path.join(REPO, "src", "content", "datos.ts"),

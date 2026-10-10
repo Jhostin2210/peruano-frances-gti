@@ -89,7 +89,7 @@ export function crearBASE01(documentos) {
       ]),
       sec("5. Cobertura de la Guía del PMBOK®", [
         p(
-          "La octava edición organiza la dirección de proyectos en siete dominios de desempeño y 40 procesos. En esta entrega el equipo desarrolló los dominios de Gobernanza y de Interesados, y completó lo que faltaba de Alcance y de Cronograma.",
+          "La octava edición organiza la dirección de proyectos en siete dominios de desempeño y 40 procesos. En esta entrega el equipo desarrolló los dominios de Gobernanza y de Interesados (con sus comunicaciones), y completó lo que faltaba de Alcance y de Cronograma.",
         ),
         tabla(
           ["Dominio", "Procesos", "Con documento nuevo", "Estado", "Observación"],
@@ -104,7 +104,7 @@ export function crearBASE01(documentos) {
               Alcance: "Los requisitos, la EDT y su diccionario vienen del curso anterior. El control y la validación están planificados y empiezan con los sprints.",
               Cronograma: "Línea base versión 3. El control empieza con los sprints.",
               Finanzas: "Estimación y presupuesto del curso anterior; falta redistribuirlos con el calendario nuevo.",
-              Interesados: "Los cuatro procesos de involucramiento y el plan de comunicaciones tienen documento.",
+              Interesados: "Los siete procesos tienen documento: cuatro de involucramiento y tres de comunicaciones.",
               Recursos: "Por desarrollar.",
               Riesgo: "Por desarrollar. Hay una lista de riesgos de alto nivel en GOB-01.",
             }[d.nombre],
@@ -136,7 +136,7 @@ export function crearBASE01(documentos) {
         ul(
           "**00 - Ficha e índice.** Este documento.",
           "**01 - Gobernanza.** Una subcarpeta por proceso, de 1.1 a 1.9.",
-          "**02 - Interesados.** Una subcarpeta por proceso, de 2.1 a 2.4.",
+          "**02 - Interesados.** De 2.1 a 2.4, los procesos de involucramiento; en 2.5, los tres de comunicaciones.",
           "**03 - Alcance.** Planificación, enunciado, calidad y validación.",
           "**04 - Cronograma.** Línea base del cronograma.",
         ),

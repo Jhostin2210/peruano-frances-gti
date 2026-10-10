@@ -353,6 +353,27 @@ const ANEXOS: Record<string, TocSection[]> = {
   ],
 };
 
+// El capítulo de Interesados se divide en involucramiento y comunicaciones, como en la guía de clase.
+function gruposDeInteresados(): TocGroup[] {
+  const de = (grupo: string) =>
+    PROCESOS.filter((p) => p.dominio === "Interesados" && p.grupo === grupo).flatMap((p) => [
+      { label: p.nombre, href: "#" + p.id },
+      ...(ANEXOS[p.id] ?? []),
+    ]);
+  return [
+    { label: "Involucramiento", color: "text-blue-600", sections: de("Involucramiento") },
+    {
+      label: "Gestión de las comunicaciones",
+      color: "text-[#0d7377]",
+      sections: [
+        { label: "Los tres procesos", href: "#comunicaciones" },
+        ...de("Comunicaciones"),
+        { label: "Tablero de comunicaciones", href: "#com-tablero" },
+      ],
+    },
+  ];
+}
+
 function gruposDeDominio(dominio: string): TocGroup[] {
   return AREAS.map((area) => ({
     label: area,
@@ -432,7 +453,7 @@ export const TOC_CHAPTERS: TocChapter[] = [
     ],
   },
   { num: "05", label: "Dominio de Gobernanza", groups: gruposDeDominio("Gobernanza") },
-  { num: "06", label: "Dominio de Interesados", groups: gruposDeDominio("Interesados") },
+  { num: "06", label: "Dominio de Interesados", groups: gruposDeInteresados() },
   { num: "07", label: "Dominio de Alcance", groups: gruposDeDominio("Alcance") },
   { num: "08", label: "Dominio de Cronograma", groups: gruposDeDominio("Cronograma") },
   {

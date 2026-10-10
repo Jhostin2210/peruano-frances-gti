@@ -46,6 +46,7 @@ export interface DocDef {
 export interface ProcesoDef {
   id: string;
   dominio: string;
+  grupo?: string;
   area: string;
   nombre: string;
   estado: string;

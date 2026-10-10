@@ -1,5 +1,5 @@
 // Dominio de Interesados: identificar, planificar, gestionar y monitorear el involucramiento.
-// El plan de comunicaciones se incluye aquí porque la Guía del PMBOK®, octava edición, lo ubica en este dominio.
+// Los tres procesos de comunicaciones del mismo dominio están en comunicaciones.mjs.
 
 import { c, h, kv, nota, ol, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P, R } from "../proyecto.mjs";
@@ -273,100 +273,6 @@ export const INT02 = DOC({
         "Un interesado nuevo se agrega al registro en cuanto se identifica.",
         "Si un interesado clave baja de nivel o aparece resistencia, se registra un incidente.",
         "Las estrategias individuales son de uso interno del equipo: la versión que se publica en el blog describe cargos, no personas.",
-      ),
-    ]),
-  ],
-});
-
-// ───────────────────────── INT-03 ─────────────────────────
-export const INT03 = DOC({
-  ...base,
-  id: "INT-03",
-  titulo: "Plan de gestión de las comunicaciones",
-  archivo: "INT-03 Plan de comunicaciones",
-  carpeta: "02 - Interesados/2.2 Planificar",
-  area: "Planificación",
-  proceso: "Planificar la gestión de las comunicaciones",
-  salida: "Plan de gestión de las comunicaciones",
-  resumen:
-    "Establece qué información recibe cada interesado, quién la envía, por qué canal y con qué frecuencia, y las reglas para proteger los datos de los estudiantes.",
-  secciones: [
-    sec("1. Objetivo y principios", [
-      p("El plan asegura que cada interesado reciba la información que necesita para decidir o actuar, a tiempo y por un canal que realmente use."),
-      ul(
-        "**Canal real.** Se usa el medio que cada grupo ya utiliza: reunión presencial con la Dirección, WhatsApp y agenda con las familias, correo personal con los docentes.",
-        "**Lenguaje claro.** Nada de términos técnicos con docentes y familias: «riesgo alto» se explica como «necesita atención esta semana».",
-        "**Constancia.** Toda comunicación que implique una decisión deja un registro: acta, mensaje o documento.",
-        "**Reserva.** Los datos de un estudiante solo se comparten con quien debe actuar sobre su caso.",
-      ),
-    ]),
-    sec(
-      "2. Matriz de comunicaciones",
-      [
-        tabla(
-          ["Qué se comunica", "A quién", "Quién lo emite", "Canal", "Frecuencia", "Constancia"],
-          [22, 18, 13, 17, 15, 15],
-          [
-            ["Informe de desempeño del proyecto", "Patrocinadora, Product Owner y docente asesor", R.jhostin, "Reunión presencial y documento PDF", "Al cierre de cada sprint", "Informe (GOB-09 y siguientes)"],
-            ["Demostración de avances (revisión del sprint)", "Patrocinadora, coordinación y tutores invitados", R.equipo, "Reunión presencial en el colegio", "Cada cuatro semanas", "Acta de aceptación (ALC-04)"],
-            ["Coordinación del trabajo diario", "Equipo del proyecto", R.jhostin, "Reunión breve y grupo de mensajería del equipo", "Diaria, 15 minutos", "Tablero de tareas"],
-            ["Pedidos y entregas de datos", "Gestora de Cubicol y encargado de TI", R.jadira, "Presencial; mensaje directo para coordinar", "Semanal en los Sprints 1 a 3", "Registro de entrega de datos"],
-            ["Validación de variables y del tablero", "Docentes tutores", `${R.helber} y ${R.carlos}`, "Taller presencial", "Semanas 3 y 15, y piloto", "Lista de asistencia y acuerdos"],
-            ["Avance académico del proyecto", "Docente asesor", R.equipo, "Clase y blog del proyecto", "Semanal", "Blog actualizado"],
-            ["Aviso sobre el proyecto y el uso de los datos", "Padres y apoderados", "Dirección; redacta el equipo", "Comunicado impreso o agenda, y WhatsApp del colegio", "Antes de cargar datos reales y al iniciar el piloto", "Comunicado y cargo de recepción"],
-            ["Solicitudes de cambio y su decisión", "Solicitante, patrocinadora y Product Owner", R.carlos, "Reunión y documento", "Cuando ocurre", "Registro de cambios (GOB-10)"],
-            ["Incidentes de prioridad alta", "Product Owner y afectados", R.jhostin, "Llamada o mensaje directo", "En menos de 24 horas", "Registro de incidentes (GOB-06)"],
-            ["Capacitación y manuales", "Tutores, coordinación y encargado de TI", R.jhostin, "Sesión presencial de 2 horas y manuales", "Semana 23", "Lista de asistencia"],
-            ["Cierre del proyecto", "Todos los interesados del colegio y docente asesor", R.jhostin, "Reunión de cierre", P.fin, "Acta de cierre e informe final"],
-          ],
-          { titulo: "Matriz de comunicaciones del proyecto", compacta: true },
-        ),
-      ],
-      { apaisada: true },
-    ),
-    sec("3. Canales y tecnología", [
-      tabla(
-        ["Canal", "Se usa para", "Consideraciones"],
-        [24, 34, 42],
-        [
-          ["Reunión presencial en el colegio", "Decisiones, demostraciones, talleres y capacitación.", "Se coordina con la Dirección según el horario escolar."],
-          ["WhatsApp", "Coordinación con la Dirección y avisos generales a las familias a través del colegio.", "Es el canal que el colegio ya usa con los padres. No se envían por este medio notas ni niveles de riesgo."],
-          ["Correo electrónico personal", "Alertas del sistema a los docentes y envío de informes.", "El colegio no tiene correo institucional: se requiere la lista de direcciones autorizadas (SC-09)."],
-          ["Comunicado impreso o agenda", "Información a los apoderados y consentimiento.", "Llega también a quienes no usan plataformas."],
-          ["Blog del proyecto", "Avance público y documentos de gestión.", "Es público: no contiene datos personales."],
-          ["Repositorio en GitHub", "Código, contenido de los documentos y control de cambios técnicos.", "Es público: no contiene datos del colegio."],
-          ["Panel web del sistema", "Alertas y fichas de estudiantes.", "Acceso con usuario y contraseña, según el rol."],
-        ],
-        { titulo: "Canales de comunicación" },
-      ),
-    ]),
-    sec("4. Comunicaciones del producto", [
-      p(
-        "Además de las comunicaciones del proyecto, el sistema emitirá sus propias comunicaciones una vez en operación. Se describen aquí porque forman parte de lo que los interesados recibirán.",
-      ),
-      tabla(
-        ["Comunicación", "Destinatario", "Momento", "Contenido"],
-        [22, 20, 24, 34],
-        [
-          ["Alerta de riesgo alto", "Docente tutor y coordinación", "Dentro de las 24 horas siguientes al cálculo semanal", "Estudiante, nivel de riesgo y variables que lo explican."],
-          ["Resumen de alertas", "Docente, al ingresar al panel", "En cada ingreso", "Estudiantes en riesgo alto y medio, con acceso a su ficha."],
-          ["Comunicado al apoderado", "Padre o apoderado", "Dentro de las 24 horas, a través del colegio", "Áreas con dificultad y recomendaciones de apoyo, en lenguaje simple."],
-          ["Reporte por unidad", "Coordinación y dirección", "Al cierre de cada unidad", "Estudiantes en riesgo por aula y grado, y comparación con el periodo anterior."],
-        ],
-        { titulo: "Comunicaciones que emitirá el sistema" },
-      ),
-    ]),
-    sec("5. Reglas de reserva de la información", [
-      ul(
-        "El nivel de riesgo de un estudiante se comunica solo a su tutor, a la coordinación, a psicología y a la dirección; al apoderado se le comunica el de su hijo.",
-        "No se comparten listas de estudiantes ni notas por grupos de mensajería.",
-        "Los archivos con datos reales no salen del colegio sin anonimizar y nunca se publican.",
-        "Las fotos y los videos donde aparecen personas se publican solo con su autorización.",
-      ),
-    ]),
-    sec("6. Escalamiento y actualización", [
-      p(
-        "Un asunto sin respuesta en dos días hábiles se eleva del responsable al director del proyecto, de este al Product Owner y, por último, a la patrocinadora. El plan se revisa al cierre de cada sprint junto con el plan de involucramiento.",
       ),
     ]),
   ],

@@ -115,19 +115,23 @@ interface DominioProps {
   antes?: Record<string, ReactNode>;
   // Vistas interactivas de un proceso (requisitos, EDT, cronograma): se muestran a todo el ancho, después de su sección.
   despues?: Record<string, ReactNode>;
+  // Parte del dominio que se muestra (en Interesados: "Involucramiento" o "Comunicaciones"). Sin valor, todo el dominio.
+  grupo?: string;
+  // Número del primer proceso dentro del capítulo (por defecto, 1).
+  desde?: number;
   // Documentos que el capítulo muestra en otro lugar y no deben repetirse bajo el proceso.
   docsAparte?: string[];
 }
 
-export default function DominioPmbok({ dominio, capitulo, antes = {}, despues = {}, docsAparte }: DominioProps) {
-  const procesos = PROCESOS.filter((p) => p.dominio === dominio);
+export default function DominioPmbok({ dominio, capitulo, grupo, desde = 1, antes = {}, despues = {}, docsAparte }: DominioProps) {
+  const procesos = PROCESOS.filter((p) => p.dominio === dominio && (!grupo || p.grupo === grupo));
   return (
     <>
       {procesos.map((p, i) => (
         <Fragment key={p.id}>
           <Proceso
             proceso={p}
-            numero={`${capitulo}.${i + 1}`}
+            numero={`${capitulo}.${i + desde}`}
             fondo={i % 2 === 0 ? "bg-white" : "bg-slate-50"}
             docsAparte={docsAparte}
           >
