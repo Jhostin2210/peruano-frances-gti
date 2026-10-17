@@ -340,7 +340,7 @@ export default function VideoPresentation() {
             </p>
             <div className="w-full sm:w-auto">
               <a
-                href="https://prototipo-peruano-frances.vercel.app/"
+                href="https://proyecto-siat.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#0d7377] hover:bg-[#0d7377]/90 text-white font-mono text-xs font-bold px-5 py-3 rounded-2xl shadow-md transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer whitespace-nowrap"
@@ -764,10 +764,10 @@ export default function VideoPresentation() {
                     Plataforma Web SIA-T
                   </h5>
                   <p className="text-slate-300 text-xs text-justify leading-relaxed">
-                    Accede directamente al prototipo web completamente funcional en producción para evaluar el simulador de riesgo y la gestión escolar:
+                    Accede directamente al sistema en producción: panel de riesgo, aulas, fichas de estudiantes y evaluación con la red neuronal:
                   </p>
                   <a
-                    href="https://prototipo-peruano-frances.vercel.app/"
+                    href="https://proyecto-siat.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 bg-[#0d7377] hover:bg-[#0d7377]/90 text-white font-mono text-xs font-bold py-2.5 px-4 rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
@@ -777,7 +777,7 @@ export default function VideoPresentation() {
                   </a>
                   <div className="text-center">
                     <code className="text-[10px] text-slate-500 font-mono">
-                      prototipo-peruano-frances.vercel.app
+                      proyecto-siat.vercel.app
                     </code>
                   </div>
                 </div>
