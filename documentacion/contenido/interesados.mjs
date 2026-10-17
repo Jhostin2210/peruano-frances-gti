@@ -257,9 +257,9 @@ export const INT02 = DOC({
         ["Expectativa", "De quién", "Situación en el alcance", "Cómo se gestiona"],
         [26, 16, 28, 30],
         [
-          ["Registrar la asistencia con código QR.", "Promotora Directora", "Fuera del alcance de esta versión.", "Explicarlo en la reunión de inicio y anotarlo como candidato a una segunda versión."],
-          ["Guías para que los padres ingresen a Cubicol.", "Promotora Directora", "Ofrecido en la entrevista; no figura en ninguna línea base (IN-10).", "Decidir con la Dirección: solicitud de cambio o descarte formal."],
-          ["Juegos interactivos para los estudiantes en la plataforma.", "Promotora Directora", "Fuera del alcance: Cubicol es de un tercero.", "Aclararlo en la reunión de inicio."],
+          ["Registrar la asistencia con código QR.", "Promotora Directora", "Fuera del alcance de esta versión.", "Descartado en la reunión de inicio (12/10/2026)."],
+          ["Guías para que los padres ingresen a Cubicol.", "Promotora Directora", "Ofrecido en la entrevista; no figura en ninguna línea base (IN-10).", "Descartado en la reunión de inicio (12/10/2026); incidente IN-10 cerrado."],
+          ["Juegos interactivos para los estudiantes en la plataforma.", "Promotora Directora", "Fuera del alcance: Cubicol es de un tercero.", "Descartado en la reunión de inicio (12/10/2026)."],
           ["Que el sistema no aumente la carga de trabajo.", "Docentes y gestora de Cubicol", "Requisito de usabilidad RNF-01.", "Mostrar el tablero en el Sprint 4 y medir el tiempo de uso en el piloto."],
           ["Aviso inmediato a los padres.", "Dirección y padres", "El sistema calcula el riesgo cada semana; el comunicado sale en 24 horas.", "Explicar la frecuencia semanal y no prometer tiempo real."],
           ["Predicciones exactas.", "Todos los usuarios", "El modelo no garantiza 100 % de acierto.", "Presentar el nivel de riesgo como una señal para revisar el caso, no como un diagnóstico."],

@@ -17,6 +17,8 @@ export const PROYECTO = {
  "fechaEmision": "10/10/2026",
  "patrocinadora": "Promotora Directora de la I.E.P. Peruano Francés",
  "director": "Jhostin J. Galarza Camarena",
+ "productOwner": "Helber J. Perez Gutierrez, docente de la institución",
+ "fechaCorte": "17/10/2026",
  "inicio": "12/10/2026",
  "fin": "23/04/2027",
  "equipo": [
@@ -32,7 +34,7 @@ export const PROYECTO = {
    "nombres": "Helber Javier",
    "corto": "Helber J. Perez Gutierrez",
    "codigo": "2008100137",
-   "rol": "Responsable del modelo de Machine Learning"
+   "rol": "Responsable del modelo de Machine Learning y Product Owner"
   },
   {
    "apellidos": "Curo Ramos",
@@ -2880,7 +2882,7 @@ export const CAMBIOS = [
   "origen": "El calendario anterior (marzo a agosto de 2026) ya venció y ubicaba el piloto en vacaciones escolares.",
   "impacto": "Línea base del cronograma: del 12/10/2026 al 23/04/2027, receso en febrero y piloto en marzo. Línea base de costos: mismas cifras, nuevas fechas. El objetivo se mide en el año escolar 2027.",
   "estado": "Aprobado",
-  "decision": "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora: pendiente.",
+  "decision": "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora en la reunión de inicio, 12/10/2026 (GOB-12).",
   "aplicacion": "Aplicado en el cronograma v3. Pendiente: distribución de costos por fechas."
  },
  {
@@ -2889,7 +2891,7 @@ export const CAMBIOS = [
   "origen": "El colegio no tiene personal dedicado a administrar un servidor; tres requisitos ya citaban servicios en la nube.",
   "impacto": "Exclusiones del alcance, requisitos no funcionales, paquetes 1.4.1 y 1.5.1 de la EDT, actividad A-5.1.1.1, abastecimiento y categoría de servicios de los costos. Agrega obligaciones de protección de datos.",
   "estado": "Aprobado",
-  "decision": "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora: pendiente.",
+  "decision": "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora en la reunión de inicio, 12/10/2026 (GOB-12).",
   "aplicacion": "Aplicado en el enunciado del alcance v3, en el cronograma v3 y en GOB-05. Pendiente: capítulos de alternativas y de costos del blog."
  },
  {
@@ -2954,6 +2956,15 @@ export const CAMBIOS = [
   "estado": "En evaluación",
   "decision": "Se decide al revisar la estructura del alcance en el Sprint 1.",
   "aplicacion": "—"
+ },
+ {
+  "id": "SC-11",
+  "titulo": "Comunicación con el colegio a través del Product Owner",
+  "origen": "En la reunión de inicio se acordó que no habrá más reuniones con la Dirección, por el cruce de horarios del equipo, y que el contacto con el colegio será Helber Perez, docente de la institución, integrante del equipo y Product Owner.",
+  "impacto": "Plan de comunicaciones (INT-03): las entrevistas y los pedidos de datos se canalizan por el Product Owner, y las revisiones de sprint se le presentan a él. Agrega la restricción R-08 y el supuesto S-12 (GOB-03).",
+  "estado": "Aprobado",
+  "decision": "Patrocinadora y equipo, reunión de inicio, 12/10/2026 (GOB-12)",
+  "aplicacion": "Aplicado en INT-03, INT-06 y el tablero de comunicaciones el 17/10/2026."
  }
 ];
 
@@ -2967,7 +2978,7 @@ export const INCIDENTES = [
   "asignado": "Jadira Vasquez",
   "limite": "23/10/2026",
   "estado": "Abierto",
-  "accion": "Segunda entrevista y acuerdo sobre las exportaciones (Sprint 1)."
+  "accion": "Pedido de las exportaciones a través del Product Owner, programado para el 20/10/2026 (SC-11)."
  },
  {
   "id": "IN-02",
@@ -2988,8 +2999,8 @@ export const INCIDENTES = [
   "prioridad": "Alta",
   "asignado": "Helber Perez",
   "limite": "30/12/2026",
-  "estado": "Abierto",
-  "accion": "Rotulado como demostración y métricas por defecto retiradas el 10/10/2026 (ALC-05). Falta reemplazarlo por el modelo validado (Sprint 3)."
+  "estado": "Cerrado",
+  "accion": "Reemplazado por una red neuronal entrenada y probada con una base pública y aplicada a los datos del colegio; sus métricas salen del entrenamiento (ALC-05 N.º 2, 17/10/2026)."
  },
  {
   "id": "IN-04",
@@ -3010,8 +3021,8 @@ export const INCIDENTES = [
   "prioridad": "Media",
   "asignado": "Jadira Vasquez",
   "limite": "23/10/2026",
-  "estado": "Abierto",
-  "accion": "Programarla en la semana 2 del proyecto."
+  "estado": "Cerrado",
+  "accion": "Reemplazada: en la reunión de inicio se acordó canalizar la comunicación con el colegio por el Product Owner (SC-11)."
  },
  {
   "id": "IN-06",
@@ -3065,8 +3076,8 @@ export const INCIDENTES = [
   "prioridad": "Baja",
   "asignado": "Jhostin Galarza",
   "limite": "06/11/2026",
-  "estado": "Abierto",
-  "accion": "Aclararlo con la Dirección: incluirlo mediante una solicitud de cambio o descartarlo."
+  "estado": "Cerrado",
+  "accion": "Descartado en la reunión de inicio del 12/10/2026 (GOB-12)."
  },
  {
   "id": "IN-11",
@@ -3081,7 +3092,7 @@ export const INCIDENTES = [
  }
 ];
 
-export const CORTE = "2026-10-10";
+export const CORTE = "2026-10-17";
 
 export const PLAN_COMUNICACIONES = [
  {
@@ -3089,16 +3100,16 @@ export const PLAN_COMUNICACIONES = [
   "que": "Informe de desempeño del proyecto",
   "para": "Patrocinadora, Product Owner y docente asesor",
   "emisor": "Jhostin Galarza",
-  "canal": "Reunión presencial y documento PDF",
+  "canal": "Documento PDF que el Product Owner entrega a la Dirección",
   "frecuencia": "Al cierre de cada sprint",
   "constancia": "Informe (GOB-09 y siguientes)"
  },
  {
   "id": "PC-02",
   "que": "Demostración de avances (revisión del sprint)",
-  "para": "Patrocinadora, coordinación y tutores invitados",
+  "para": "Product Owner; la Dirección da su conformidad por su intermedio",
   "emisor": "Equipo del proyecto",
-  "canal": "Reunión presencial en el colegio",
+  "canal": "Demostración al Product Owner",
   "frecuencia": "Cada cuatro semanas",
   "constancia": "Acta de aceptación (ALC-04)"
  },
@@ -3115,8 +3126,8 @@ export const PLAN_COMUNICACIONES = [
   "id": "PC-04",
   "que": "Pedidos y entregas de datos",
   "para": "Gestora de Cubicol y encargado de TI",
-  "emisor": "Jadira Vasquez",
-  "canal": "Presencial; mensaje directo para coordinar",
+  "emisor": "Jadira Vasquez, por medio del Product Owner",
+  "canal": "Pedido escrito que el Product Owner entrega en el colegio",
   "frecuencia": "Semanal en los Sprints 1 a 3",
   "constancia": "Registro de entrega de datos"
  },
@@ -3142,10 +3153,10 @@ export const PLAN_COMUNICACIONES = [
   "id": "PC-07",
   "que": "Aviso sobre el proyecto y el uso de los datos",
   "para": "Padres y apoderados",
-  "emisor": "Dirección; redacta el equipo",
-  "canal": "Comunicado impreso o agenda, y WhatsApp del colegio",
+  "emisor": "Dirección, por medio de los tutores; redacta el equipo",
+  "canal": "Mensaje de WhatsApp del tutor de cada aula",
   "frecuencia": "Antes de cargar datos reales y al iniciar el piloto",
-  "constancia": "Comunicado y cargo de recepción"
+  "constancia": "Texto del mensaje y confirmación de envío de cada tutor"
  },
  {
   "id": "PC-08",
@@ -3173,6 +3184,15 @@ export const PLAN_COMUNICACIONES = [
   "canal": "Sesión presencial de 2 horas y manuales",
   "frecuencia": "Semana 23",
   "constancia": "Lista de asistencia"
+ },
+ {
+  "id": "PC-12",
+  "que": "Coordinación con el colegio: pedidos, observaciones e indicaciones",
+  "para": "Dirección, coordinación y docentes",
+  "emisor": "Helber Perez (Product Owner)",
+  "canal": "Comunicación directa del Product Owner en el colegio y grupo del equipo",
+  "frecuencia": "Cuando haga falta; reemplaza a las entrevistas",
+  "constancia": "Mensaje en el grupo del equipo y registro de comunicaciones"
  },
  {
   "id": "PC-11",
@@ -3287,25 +3307,25 @@ export const COMUNICACIONES = [
   "cuando": "",
   "fecha": "2026-10-12",
   "tipo": "Reunión",
-  "asunto": "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
+  "asunto": "Reunión de inicio: acta de constitución, calendario, Product Owner, tratamiento de datos y canal de comunicación con el colegio",
   "emisor": "Jhostin Galarza",
   "interesados": [
    "I-01",
-   "I-02",
-   "I-03"
+   "I-03",
+   "I-12"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Reunión virtual",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Acta de reunión y acta de constitución firmada",
+  "estado": "Realizada",
+  "constancia": "Acta de la reunión de inicio (GOB-12) y acta de constitución firmada (GOB-02)",
   "plan": "PC-01"
  },
  {
   "id": "C-08",
   "cuando": "",
-  "fecha": "2026-10-16",
+  "fecha": "2026-10-17",
   "tipo": "Avance académico",
-  "asunto": "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
+  "asunto": "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)",
   "emisor": "Equipo del proyecto",
   "interesados": [
    "I-13"
@@ -3320,23 +3340,23 @@ export const COMUNICACIONES = [
   "id": "C-09",
   "cuando": "",
   "fecha": "2026-10-20",
-  "tipo": "Entrevista",
-  "asunto": "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
-  "emisor": "Jadira Vasquez",
+  "tipo": "Solicitud",
+  "asunto": "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner",
+  "emisor": "Jadira Vasquez y Helber Perez",
   "interesados": [
    "I-07",
    "I-08"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Pedido escrito entregado por el Product Owner",
   "sprint": 1,
   "estado": "Programada",
-  "constancia": "Notas de la entrevista y acuerdo de entrega de datos",
-  "plan": "PC-04"
+  "constancia": "Pedido escrito y respuesta del colegio",
+  "plan": "PC-04 y PC-12"
  },
  {
   "id": "C-10",
   "cuando": "",
-  "fecha": "2026-10-23",
+  "fecha": "2026-10-24",
   "tipo": "Avance académico",
   "asunto": "Avance semanal al docente asesor",
   "emisor": "Equipo del proyecto",
@@ -3354,13 +3374,13 @@ export const COMUNICACIONES = [
   "cuando": "",
   "fecha": "2026-10-28",
   "tipo": "Taller",
-  "asunto": "Taller de validación de las variables del modelo",
-  "emisor": "Helber Perez",
+  "asunto": "Taller de validación de las variables del modelo, organizado por el Product Owner",
+  "emisor": "Helber Perez y Carlos Curo",
   "interesados": [
    "I-05",
    "I-06"
   ],
-  "canal": "Taller presencial",
+  "canal": "Taller presencial en el colegio",
   "sprint": 1,
   "estado": "Programada",
   "constancia": "Lista de asistencia y acuerdos",
@@ -3369,7 +3389,7 @@ export const COMUNICACIONES = [
  {
   "id": "C-12",
   "cuando": "",
-  "fecha": "2026-10-30",
+  "fecha": "2026-10-31",
   "tipo": "Avance académico",
   "asunto": "Avance semanal al docente asesor",
   "emisor": "Equipo del proyecto",
@@ -3386,20 +3406,37 @@ export const COMUNICACIONES = [
   "id": "C-13",
   "cuando": "",
   "fecha": "2026-11-03",
-  "tipo": "Entrevista",
-  "asunto": "Entrevista sobre el registro de incidencias",
-  "emisor": "Jadira Vasquez",
+  "tipo": "Consulta",
+  "asunto": "Consulta sobre el registro de incidencias, a través del Product Owner",
+  "emisor": "Jadira Vasquez y Helber Perez",
   "interesados": [
    "I-04"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Consulta del Product Owner en el colegio",
   "sprint": 1,
   "estado": "Programada",
-  "constancia": "Notas de la entrevista",
-  "plan": "PC-04"
+  "constancia": "Nota de la consulta en el grupo del equipo",
+  "plan": "PC-12"
  },
  {
   "id": "C-14",
+  "cuando": "",
+  "fecha": "2026-11-06",
+  "tipo": "Comunicado",
+  "asunto": "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)",
+  "emisor": "Dirección, por medio de los tutores; redacta el equipo",
+  "interesados": [
+   "I-11",
+   "I-05"
+  ],
+  "canal": "Mensaje de WhatsApp del tutor de cada aula",
+  "sprint": 1,
+  "estado": "Programada",
+  "constancia": "Texto del mensaje y confirmación de envío de cada tutor",
+  "plan": "PC-07"
+ },
+ {
+  "id": "C-15",
   "cuando": "",
   "fecha": "2026-11-06",
   "tipo": "Revisión de sprint",
@@ -3407,29 +3444,11 @@ export const COMUNICACIONES = [
   "emisor": "Equipo del proyecto",
   "interesados": [
    "I-01",
-   "I-03",
+   "I-12",
    "I-13"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Acta de aceptación e informe de desempeño",
-  "plan": "PC-01 y PC-02"
- },
- {
-  "id": "C-15",
-  "cuando": "",
-  "fecha": "2026-12-04",
-  "tipo": "Revisión de sprint",
-  "asunto": "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
-  "emisor": "Equipo del proyecto",
-  "interesados": [
-   "I-01",
-   "I-03",
-   "I-13"
-  ],
-  "canal": "Reunión presencial",
-  "sprint": 2,
   "estado": "Programada",
   "constancia": "Acta de aceptación e informe de desempeño",
   "plan": "PC-01 y PC-02"
@@ -3437,18 +3456,20 @@ export const COMUNICACIONES = [
  {
   "id": "C-16",
   "cuando": "",
-  "fecha": "2026-12-11",
-  "tipo": "Comunicado",
-  "asunto": "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
-  "emisor": "Dirección; redacta el equipo",
+  "fecha": "2026-12-04",
+  "tipo": "Revisión de sprint",
+  "asunto": "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
+  "emisor": "Equipo del proyecto",
   "interesados": [
-   "I-11"
+   "I-01",
+   "I-12",
+   "I-13"
   ],
-  "canal": "Comunicado impreso o agenda",
-  "sprint": 3,
+  "canal": "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
+  "sprint": 2,
   "estado": "Programada",
-  "constancia": "Comunicado y cargo de recepción",
-  "plan": "PC-07"
+  "constancia": "Acta de aceptación e informe de desempeño",
+  "plan": "PC-01 y PC-02"
  },
  {
   "id": "C-17",
@@ -3459,10 +3480,10 @@ export const COMUNICACIONES = [
   "emisor": "Equipo del proyecto",
   "interesados": [
    "I-01",
-   "I-03",
+   "I-12",
    "I-13"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
   "sprint": 3,
   "estado": "Programada",
   "constancia": "Acta de aceptación e informe de desempeño",
@@ -3474,12 +3495,12 @@ export const COMUNICACIONES = [
   "fecha": "2027-01-20",
   "tipo": "Convocatoria",
   "asunto": "Convocatoria a tres docentes tutores para el piloto de marzo",
-  "emisor": "Jhostin Galarza",
+  "emisor": "Helber Perez (Product Owner)",
   "interesados": [
    "I-05",
    "I-03"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Convocatoria del Product Owner en el colegio",
   "sprint": 4,
   "estado": "Programada",
   "constancia": "Lista de participantes confirmados",
@@ -3494,10 +3515,10 @@ export const COMUNICACIONES = [
   "emisor": "Equipo del proyecto",
   "interesados": [
    "I-01",
-   "I-03",
+   "I-12",
    "I-13"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
   "sprint": 4,
   "estado": "Programada",
   "constancia": "Acta de aceptación e informe de desempeño",
@@ -3512,10 +3533,10 @@ export const COMUNICACIONES = [
   "emisor": "Equipo del proyecto",
   "interesados": [
    "I-01",
-   "I-03",
+   "I-12",
    "I-13"
   ],
-  "canal": "Reunión presencial",
+  "canal": "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
   "sprint": 5,
   "estado": "Programada",
   "constancia": "Acta de aceptación e informe de desempeño",

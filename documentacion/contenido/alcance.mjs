@@ -466,7 +466,7 @@ export const ALC04 = DOC({
         { titulo: "Validación de entregables por hito", compacta: true },
       ),
       nota(
-        `Al ${P.fechaEmision} no se ha validado ningún entregable: el Sprint 1 empieza el ${P.inicio}. Mientras la Dirección no designe al Product Owner (supuesto S-04), la aceptación la da la patrocinadora.`,
+        `Al ${P.fechaEmision} no se había validado ningún entregable: el Sprint 1 empezó el ${P.inicio}. En la reunión de inicio se designó Product Owner a Helber Perez, docente de la institución (GOB-12); la Dirección da su conformidad por su intermedio.`,
         "aviso",
       ),
     ]),

@@ -19,6 +19,8 @@ export const PROYECTO = {
   fechaEmision: "10/10/2026",
   patrocinadora: "Promotora Directora de la I.E.P. Peruano Francés",
   director: "Jhostin J. Galarza Camarena",
+  productOwner: "Helber J. Perez Gutierrez, docente de la institución",
+  fechaCorte: "17/10/2026",
   inicio: "12/10/2026",
   fin: "23/04/2027",
   equipo: [
@@ -34,7 +36,7 @@ export const PROYECTO = {
       nombres: "Helber Javier",
       corto: "Helber J. Perez Gutierrez",
       codigo: "2008100137",
-      rol: "Responsable del modelo de Machine Learning",
+      rol: "Responsable del modelo de Machine Learning y Product Owner",
     },
     {
       apellidos: "Curo Ramos",

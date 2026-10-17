@@ -25,9 +25,9 @@ export const PROCESOS = [
     id: "gob-1", dominio: "Gobernanza", area: I, nombre: "Iniciar el proyecto o fase", estado: "Aplicado",
     que: "Autoriza formalmente el proyecto y da al director la autoridad para usar los recursos.",
     entradas: ["Caso de negocio y plan de gestión de beneficios", "Factores ambientales del colegio", "Activos de los procesos: organigrama y formatos"],
-    herramientas: ["Entrevista a la Promotora Directora", "Tormenta de ideas del equipo", "Lienzo del proyecto", "Reuniones"],
-    salidas: ["Acta de constitución del proyecto", "Registro de supuestos"],
-    docs: ["GOB-01", "GOB-02", "GOB-03"],
+    herramientas: ["Entrevista a la Promotora Directora", "Tormenta de ideas del equipo", "Lienzo del proyecto", "Reunión de inicio con la Dirección (12/10/2026)"],
+    salidas: ["Acta de constitución del proyecto", "Registro de supuestos", "Acta de la reunión de inicio"],
+    docs: ["GOB-01", "GOB-02", "GOB-03", "GOB-12"],
   },
   {
     id: "gob-2", dominio: "Gobernanza", area: PL, nombre: "Integrar y alinear los planes del proyecto", estado: "Aplicado",

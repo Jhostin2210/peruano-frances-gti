@@ -20,7 +20,7 @@ export const CAMBIOS = [
     origen: "El calendario anterior (marzo a agosto de 2026) ya venció y ubicaba el piloto en vacaciones escolares.",
     impacto: "Línea base del cronograma: del 12/10/2026 al 23/04/2027, receso en febrero y piloto en marzo. Línea base de costos: mismas cifras, nuevas fechas. El objetivo se mide en el año escolar 2027.",
     estado: "Aprobado",
-    decision: "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora: pendiente.",
+    decision: "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora en la reunión de inicio, 12/10/2026 (GOB-12).",
     aplicacion: "Aplicado en el cronograma v3. Pendiente: distribución de costos por fechas.",
   },
   {
@@ -29,7 +29,7 @@ export const CAMBIOS = [
     origen: "El colegio no tiene personal dedicado a administrar un servidor; tres requisitos ya citaban servicios en la nube.",
     impacto: "Exclusiones del alcance, requisitos no funcionales, paquetes 1.4.1 y 1.5.1 de la EDT, actividad A-5.1.1.1, abastecimiento y categoría de servicios de los costos. Agrega obligaciones de protección de datos.",
     estado: "Aprobado",
-    decision: "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora: pendiente.",
+    decision: "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora en la reunión de inicio, 12/10/2026 (GOB-12).",
     aplicacion: "Aplicado en el enunciado del alcance v3, en el cronograma v3 y en GOB-05. Pendiente: capítulos de alternativas y de costos del blog.",
   },
   {
@@ -95,20 +95,29 @@ export const CAMBIOS = [
     decision: "Se decide al revisar la estructura del alcance en el Sprint 1.",
     aplicacion: "—",
   },
+  {
+    id: "SC-11",
+    titulo: "Comunicación con el colegio a través del Product Owner",
+    origen: "En la reunión de inicio se acordó que no habrá más reuniones con la Dirección, por el cruce de horarios del equipo, y que el contacto con el colegio será Helber Perez, docente de la institución, integrante del equipo y Product Owner.",
+    impacto: "Plan de comunicaciones (INT-03): las entrevistas y los pedidos de datos se canalizan por el Product Owner, y las revisiones de sprint se le presentan a él. Agrega la restricción R-08 y el supuesto S-12 (GOB-03).",
+    estado: "Aprobado",
+    decision: "Patrocinadora y equipo, reunión de inicio, 12/10/2026 (GOB-12)",
+    aplicacion: "Aplicado en INT-03, INT-06 y el tablero de comunicaciones el 17/10/2026.",
+  },
 ];
 
 // ───────────────────────── Incidentes (GOB-06) ─────────────────────────
 export const INCIDENTES = [
-  { id: "IN-01", tipo: "Datos", descripcion: "No está confirmado el acceso a los datos de Cubicol: no se ha comprobado que exista una API y las exportaciones dependen de la gestora de la plataforma.", origen: "Equipo, 10/10/2026", prioridad: "Alta", asignado: R.jadira, limite: "23/10/2026", estado: "Abierto", accion: "Segunda entrevista y acuerdo sobre las exportaciones (Sprint 1)." },
+  { id: "IN-01", tipo: "Datos", descripcion: "No está confirmado el acceso a los datos de Cubicol: no se ha comprobado que exista una API y las exportaciones dependen de la gestora de la plataforma.", origen: "Equipo, 10/10/2026", prioridad: "Alta", asignado: R.jadira, limite: "23/10/2026", estado: "Abierto", accion: "Pedido de las exportaciones a través del Product Owner, programado para el 20/10/2026 (SC-11)." },
   { id: "IN-02", tipo: "Datos", descripcion: "La asistencia y las incidencias solo existen en papel y en mensajes; no hay datos digitales para el modelo.", origen: "Entrevista, 24/04/2026", prioridad: "Alta", asignado: R.jadira, limite: "04/12/2026", estado: "Abierto", accion: "Definir con la Jefa de Normas un registro digital simple (Sprint 2)." },
-  { id: "IN-03", tipo: "Producto", descripcion: "El prototipo calcula el riesgo con reglas escritas a mano y muestra métricas que no provienen de un entrenamiento real.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Alta", asignado: R.helber, limite: "30/12/2026", estado: "Abierto", accion: "Rotulado como demostración y métricas por defecto retiradas el 10/10/2026 (ALC-05). Falta reemplazarlo por el modelo validado (Sprint 3)." },
+  { id: "IN-03", tipo: "Producto", descripcion: "El prototipo calcula el riesgo con reglas escritas a mano y muestra métricas que no provienen de un entrenamiento real.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Alta", asignado: R.helber, limite: "30/12/2026", estado: "Cerrado", accion: "Reemplazado por una red neuronal entrenada y probada con una base pública y aplicada a los datos del colegio; sus métricas salen del entrenamiento (ALC-05 N.º 2, 17/10/2026)." },
   { id: "IN-04", tipo: "Datos personales", descripcion: "Los archivos de trabajo contienen nombres y notas reales de estudiantes: hojas de cálculo, fotos de cuadernos y datos de carga de la base.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Alta", asignado: R.helber, limite: "23/10/2026", estado: "Abierto", accion: "Retirarlos de las carpetas compartidas, reemplazar nombres por códigos y no subirlos al repositorio." },
-  { id: "IN-05", tipo: "Interesados", descripcion: "La segunda entrevista, al soporte técnico y a la gestora de Cubicol, no se realizó; la guía está lista desde mayo.", origen: "Equipo, 10/10/2026", prioridad: "Media", asignado: R.jadira, limite: "23/10/2026", estado: "Abierto", accion: "Programarla en la semana 2 del proyecto." },
+  { id: "IN-05", tipo: "Interesados", descripcion: "La segunda entrevista, al soporte técnico y a la gestora de Cubicol, no se realizó; la guía está lista desde mayo.", origen: "Equipo, 10/10/2026", prioridad: "Media", asignado: R.jadira, limite: "23/10/2026", estado: "Cerrado", accion: "Reemplazada: en la reunión de inicio se acordó canalizar la comunicación con el colegio por el Product Owner (SC-11)." },
   { id: "IN-06", tipo: "Calidad", descripcion: "Los documentos heredados discrepan en fechas, número de actividades, niveles de riesgo y guía de referencia.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Media", asignado: R.carlos, limite: "10/10/2026", estado: "Cerrado", accion: "Cambios SC-02, SC-04, SC-06 y SC-07 aprobados; documentos nuevos emitidos." },
   { id: "IN-07", tipo: "Comunicación", descripcion: "No existe correo institucional para los docentes; las alertas se diseñaron para ese canal.", origen: "Entrevista, 24/04/2026", prioridad: "Media", asignado: R.jadira, limite: "06/11/2026", estado: "Abierto", accion: "Solicitud SC-09 en evaluación: envío a correos personales autorizados." },
   { id: "IN-08", tipo: "Gestión", descripcion: "Varios enlaces del blog apuntan a documentos guardados en la cuenta de un integrante que ya no está en el equipo.", origen: "Equipo, 10/10/2026", prioridad: "Media", asignado: R.carlos, limite: "06/11/2026", estado: "En curso", accion: "Los documentos nuevos se publican en el propio blog; los anteriores se migran al trabajar cada dominio." },
   { id: "IN-09", tipo: "Cronograma", descripcion: "El calendario anterior ubicaba el piloto con docentes en vacaciones escolares.", origen: "Equipo, 10/10/2026", prioridad: "Alta", asignado: R.jhostin, limite: "10/10/2026", estado: "Cerrado", accion: "Cambio SC-02 aprobado: receso en febrero y piloto en marzo." },
-  { id: "IN-10", tipo: "Alcance", descripcion: "En la entrevista se ofreció elaborar guías para que los padres ingresen a Cubicol; ese trabajo no figura en ninguna línea base.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Baja", asignado: R.jhostin, limite: "06/11/2026", estado: "Abierto", accion: "Aclararlo con la Dirección: incluirlo mediante una solicitud de cambio o descartarlo." },
+  { id: "IN-10", tipo: "Alcance", descripcion: "En la entrevista se ofreció elaborar guías para que los padres ingresen a Cubicol; ese trabajo no figura en ninguna línea base.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Baja", asignado: R.jhostin, limite: "06/11/2026", estado: "Cerrado", accion: "Descartado en la reunión de inicio del 12/10/2026 (GOB-12)." },
   { id: "IN-11", tipo: "Calidad", descripcion: "El archivo del formato de reporte de incidencia escolar está vacío; solo existe la foto del formato.", origen: "Revisión de calidad, 10/10/2026", prioridad: "Baja", asignado: R.carlos, limite: "06/11/2026", estado: "Abierto", accion: "Volver a escanearlo en la próxima visita al colegio." },
 ];
 

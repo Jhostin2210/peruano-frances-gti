@@ -51,7 +51,7 @@ export const GOB06 = DOC({
           estado(i.estado),
           i.accion,
         ]),
-        { titulo: "Registro de incidentes al 10/10/2026", compacta: true },
+        { titulo: `Registro de incidentes al ${P.fechaCorte}`, compacta: true },
       ),
     ]),
     sec("3. Resumen", [
@@ -398,11 +398,11 @@ export const GOB10 = DOC({
           ["ID", "Cambio", "Origen", "Efecto", "Estado", "Decisión", "Aplicación"],
           [5, 14, 20, 23, 8, 14, 16],
           CAMBIOS.map((x) => [x.id, x.titulo, x.origen, x.impacto, estado(x.estado), x.decision, x.aplicacion]),
-          { titulo: "Registro de cambios al 10/10/2026", compacta: true },
+          { titulo: `Registro de cambios al ${P.fechaCorte}`, compacta: true },
         ),
         nota(
-          "Los cambios SC-02 y SC-03 alteran líneas base. Fueron aprobados por el equipo para poder planificar y se presentarán a la patrocinadora en la reunión de inicio; su conformidad está pendiente.",
-          "aviso",
+          "Los cambios SC-02 y SC-03 alteran líneas base. Fueron aprobados por el equipo para poder planificar y la patrocinadora dio su conformidad en la reunión de inicio del 12/10/2026 (GOB-12). En esa reunión se aprobó también el SC-11.",
+          "info",
         ),
         nota(
           "El cronograma anterior incluía una lista de solicitudes de cambio numeradas SC-01 a SC-06 que formaban parte de un ejercicio de simulación. No pertenecen a este registro.",

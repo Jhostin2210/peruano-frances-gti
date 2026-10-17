@@ -195,7 +195,13 @@ export const GOB02 = DOC({
   titulo: "Acta de constitución del proyecto",
   archivo: "GOB-02 Acta de constitución",
   salida: "Acta de constitución del proyecto",
-  aprobacion: "Pendiente de firma de la patrocinadora",
+  aprobacion: "Firmada por la patrocinadora y el director del proyecto",
+  version: "1.1",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial, emitida para firma.", P.director],
+    ["1.1", P.fechaCorte, "Se registra la aprobación y la firma en la reunión de inicio del 12/10/2026 (GOB-12).", P.director],
+  ],
   resumen:
     "Autoriza formalmente el proyecto y da al director del proyecto la autoridad para usar los recursos. Contiene los doce elementos que pide la Guía del PMBOK® para un acta de constitución.",
   secciones: [
@@ -401,8 +407,8 @@ export const GOB02 = DOC({
         "Con su firma, la patrocinadora autoriza el inicio del proyecto y faculta al director del proyecto a utilizar los recursos descritos en este documento.",
       ),
       nota(
-        `Documento emitido para firma el ${P.fechaEmision}. A esa fecha no cuenta con firmas; la reunión de inicio con la Dirección está programada para el ${P.inicio}.`,
-        "aviso",
+        `Documento emitido para firma el ${P.fechaEmision}. Aprobado en la reunión de inicio del ${P.inicio} (GOB-12) y firmado en físico por la Promotora Directora y el director del proyecto. El original firmado queda en custodia del equipo.`,
+        "info",
       ),
       firmas(
         { nombre: "Promotora Directora", rol: "Patrocinadora — I.E.P. Peruano Francés" },
@@ -444,7 +450,7 @@ export const GOB03 = DOC({
               c("Comprobado en parte: hay registros de marzo a mayo y del primer trimestre de 2026 para algunos cursos", "azul"),
             ],
             ["S-03", "La asistencia y las incidencias podrán registrarse en formato digital desde el Sprint 2.", "El modelo trabaja solo con notas y pierde variables.", `${R.jadira}, con la Dirección`, "Sprint 2", c("Por comprobar", "amarillo")],
-            ["S-04", "El colegio designará a una persona como Product Owner.", "Se retrasan las decisiones de prioridad y la aceptación de entregables.", R.jhostin, `Semana del ${P.inicio}`, c("Por comprobar", "amarillo")],
+            ["S-04", "El colegio designará a una persona como Product Owner.", "Se retrasan las decisiones de prioridad y la aceptación de entregables.", R.jhostin, `Semana del ${P.inicio}`, c("Comprobado: Helber Perez, docente de la institución (reunión de inicio, 12/10/2026)", "verde")],
             ["S-05", "Los planes gratuitos de alojamiento y base de datos alcanzan para 200 estudiantes y unos 20 usuarios.", "Se requiere un plan de pago o cambiar de proveedor.", R.jadira, "Sprint 1 (diseño de arquitectura)", c("Por comprobar", "amarillo")],
             ["S-06", "Los apoderados serán informados y darán su consentimiento para el tratamiento de los datos.", "No se pueden cargar datos reales en la nube; el piloto se haría con datos anonimizados.", "Dirección, con apoyo del equipo", "Antes del Sprint 5", c("Por comprobar", "amarillo")],
             ["S-07", "Tres docentes tutores participarán en el piloto en marzo de 2027.", "El piloto no se realiza o pierde validez.", R.jhostin, "Sprint 4", c("Por comprobar", "amarillo")],
@@ -459,6 +465,7 @@ export const GOB03 = DOC({
               "Sprint 4",
               c("Comprobado en parte: usan correo personal de Gmail; falta la lista de direcciones", "azul"),
             ],
+            ["S-12", "El Product Owner dispone de tiempo cada semana para llevar los pedidos y observaciones entre el colegio y el equipo.", "Se retrasan los pedidos de datos, el taller con docentes y la aceptación de los entregables.", R.jhostin, "Cada semana", c("Por comprobar", "amarillo")],
           ],
           { titulo: "Registro de supuestos", compacta: true },
         ),
@@ -476,6 +483,7 @@ export const GOB03 = DOC({
           ["R-04", "Ley N.° 29733 de Protección de Datos Personales: los estudiantes son menores de edad.", "Legal", "Consentimiento, medidas de seguridad y reglas para alojar datos fuera del país."],
           ["R-05", "Receso del 01/02/2027 al 26/02/2027.", "Calendario escolar", "No hay actividades con docentes; el piloto pasa a marzo."],
           ["R-06", "El repositorio y el blog del proyecto son públicos.", "Decisión del equipo", "No pueden contener datos personales de estudiantes, docentes ni apoderados."],
+          ["R-08", "La comunicación con el colegio se hace a través del Product Owner; no se programan más reuniones con la Dirección (SC-11).", "Reunión de inicio, 12/10/2026", "Los pedidos de datos, las validaciones con docentes y la conformidad de los entregables dependen de su disponibilidad."],
           ["R-07", "Cubicol es propiedad de un tercero.", "Proveedor", "El proyecto no puede modificarlo; solo usa sus exportaciones."],
         ],
         { titulo: "Registro de restricciones" },

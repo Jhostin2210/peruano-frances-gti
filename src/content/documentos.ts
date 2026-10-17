@@ -101,7 +101,7 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "2008100137",
          "align": "center"
         },
-        "Responsable del modelo de Machine Learning"
+        "Responsable del modelo de Machine Learning y Product Owner"
        ],
        [
         "Curo Ramos, Carlos Agustín",
@@ -227,7 +227,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Solicitudes de cambio registradas",
-        "10",
+        "11",
         "GOB-10"
        ]
       ],
@@ -520,6 +520,17 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         {
+         "x": "GOB-12",
+         "bold": true
+        },
+        "Acta de la reunión de inicio",
+        "Gobernanza",
+        "Iniciar el proyecto o fase",
+        "Iniciación",
+        "01 - Gobernanza/1.1 Iniciar el proyecto"
+       ],
+       [
+        {
          "x": "INT-01",
          "bold": true
         },
@@ -589,7 +600,7 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "INT-07",
          "bold": true
         },
-        "Informe de monitoreo de las comunicaciones N.º 1",
+        "Informe de monitoreo de las comunicaciones N.º 2",
         "Interesados",
         "Monitorear las comunicaciones",
         "Monitoreo y control",
@@ -644,7 +655,7 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "ALC-05",
          "bold": true
         },
-        "Informe de avance del producto por EDT N.º 1",
+        "Informe de avance del producto por EDT N.º 2",
         "Alcance",
         "Monitorear y controlar el alcance",
         "Monitoreo y control",
@@ -662,7 +673,7 @@ export const DOCUMENTOS: DocDef[] = [
         "04 - Cronograma"
        ]
       ],
-      "titulo": "Documentos emitidos (25)",
+      "titulo": "Documentos emitidos (26)",
       "compacta": true,
       "fuente": "Cada documento está en Word y en PDF dentro de su carpeta. Los PDF también se publican en el blog."
      }
@@ -1266,8 +1277,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Iniciación",
   "proceso": "Iniciar el proyecto o fase",
   "salida": "Acta de constitución del proyecto",
-  "version": "1.0",
-  "fecha": "10/10/2026",
+  "version": "1.1",
+  "fecha": "17/10/2026",
   "resumen": "Autoriza formalmente el proyecto y da al director del proyecto la autoridad para usar los recursos. Contiene los doce elementos que pide la Guía del PMBOK® para un acta de constitución.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
   "pdf": "/documentos/GOB-02-acta-de-constitucion-del-proyecto.pdf",
@@ -1836,8 +1847,8 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "nota",
-      "tipo": "aviso",
-      "x": "Documento emitido para firma el 10/10/2026. A esa fecha no cuenta con firmas; la reunión de inicio con la Dirección está programada para el 12/10/2026."
+      "tipo": "info",
+      "x": "Documento emitido para firma el 10/10/2026. Aprobado en la reunión de inicio del 12/10/2026 (GOB-12) y firmado en físico por la Promotora Directora y el director del proyecto. El original firmado queda en custodia del equipo."
      },
      {
       "t": "firmas",
@@ -1947,8 +1958,8 @@ export const DOCUMENTOS: DocDef[] = [
         "Jhostin Galarza",
         "Semana del 12/10/2026",
         {
-         "x": "Por comprobar",
-         "fill": "amarillo"
+         "x": "Comprobado: Helber Perez, docente de la institución (reunión de inicio, 12/10/2026)",
+         "fill": "verde"
         }
        ],
        [
@@ -2027,6 +2038,17 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "Comprobado en parte: usan correo personal de Gmail; falta la lista de direcciones",
          "fill": "azul"
         }
+       ],
+       [
+        "S-12",
+        "El Product Owner dispone de tiempo cada semana para llevar los pedidos y observaciones entre el colegio y el equipo.",
+        "Se retrasan los pedidos de datos, el taller con docentes y la aceptación de los entregables.",
+        "Jhostin Galarza",
+        "Cada semana",
+        {
+         "x": "Por comprobar",
+         "fill": "amarillo"
+        }
        ]
       ],
       "titulo": "Registro de supuestos",
@@ -2088,6 +2110,12 @@ export const DOCUMENTOS: DocDef[] = [
         "El repositorio y el blog del proyecto son públicos.",
         "Decisión del equipo",
         "No pueden contener datos personales de estudiantes, docentes ni apoderados."
+       ],
+       [
+        "R-08",
+        "La comunicación con el colegio se hace a través del Product Owner; no se programan más reuniones con la Dirección (SC-11).",
+        "Reunión de inicio, 12/10/2026",
+        "Los pedidos de datos, las validaciones con docentes y la conformidad de los entregables dependen de su disponibilidad."
        ],
        [
         "R-07",
@@ -3129,7 +3157,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Segunda entrevista y acuerdo sobre las exportaciones (Sprint 1)."
+        "Pedido de las exportaciones a través del Product Owner, programado para el 20/10/2026 (SC-11)."
        ],
        [
         "IN-02",
@@ -3164,12 +3192,12 @@ export const DOCUMENTOS: DocDef[] = [
         "Helber Perez",
         "30/12/2026",
         {
-         "x": "Abierto",
-         "fill": "amarillo",
+         "x": "Cerrado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Rotulado como demostración y métricas por defecto retiradas el 10/10/2026 (ALC-05). Falta reemplazarlo por el modelo validado (Sprint 3)."
+        "Reemplazado por una red neuronal entrenada y probada con una base pública y aplicada a los datos del colegio; sus métricas salen del entrenamiento (ALC-05 N.º 2, 17/10/2026)."
        ],
        [
         "IN-04",
@@ -3204,12 +3232,12 @@ export const DOCUMENTOS: DocDef[] = [
         "Jadira Vasquez",
         "23/10/2026",
         {
-         "x": "Abierto",
-         "fill": "amarillo",
+         "x": "Cerrado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Programarla en la semana 2 del proyecto."
+        "Reemplazada: en la reunión de inicio se acordó canalizar la comunicación con el colegio por el Product Owner (SC-11)."
        ],
        [
         "IN-06",
@@ -3304,12 +3332,12 @@ export const DOCUMENTOS: DocDef[] = [
         "Jhostin Galarza",
         "06/11/2026",
         {
-         "x": "Abierto",
-         "fill": "amarillo",
+         "x": "Cerrado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Aclararlo con la Dirección: incluirlo mediante una solicitud de cambio o descartarlo."
+        "Descartado en la reunión de inicio del 12/10/2026 (GOB-12)."
        ],
        [
         "IN-11",
@@ -3332,7 +3360,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Volver a escanearlo en la próxima visita al colegio."
        ]
       ],
-      "titulo": "Registro de incidentes al 10/10/2026",
+      "titulo": "Registro de incidentes al 17/10/2026",
       "compacta": true
      }
     ]
@@ -3358,7 +3386,7 @@ export const DOCUMENTOS: DocDef[] = [
       "filas": [
        [
         "Abierto",
-        "8",
+        "5",
         "Alta",
         "5"
        ],
@@ -3370,7 +3398,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Cerrado",
-        "2",
+        "5",
         "Baja",
         "2"
        ],
@@ -3968,8 +3996,8 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "ul",
       "items": [
-       "Se registraron 10 solicitudes de cambio (GOB-10): 7 aprobadas por el equipo y 3 en evaluación.",
-       "Se registraron 11 incidentes (GOB-06), de los cuales 2 ya están cerrados.",
+       "Se registraron 11 solicitudes de cambio (GOB-10): 8 aprobadas por el equipo y 3 en evaluación.",
+       "Se registraron 11 incidentes (GOB-06), de los cuales 5 ya están cerrados.",
        "Los hallazgos de coherencia quedan atendidos con los cambios SC-01 a SC-07. Los del modelo dependen de SC-08, en evaluación. Los de datos personales tienen abierto el incidente IN-04."
       ]
      }
@@ -4249,7 +4277,7 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "p",
-      "x": "La planificación de gobernanza, interesados, alcance y cronograma está emitida (25 documentos). El asunto más serio es la calidad del producto: el prototipo heredado no tiene un modelo validado con datos reales."
+      "x": "La planificación de gobernanza, interesados, alcance y cronograma está emitida (26 documentos). El asunto más serio es la calidad del producto: el prototipo heredado no tiene un modelo validado con datos reales."
      }
     ]
    },
@@ -4376,7 +4404,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Gobernanza",
-        "11"
+        "12"
        ],
        [
         "Interesados",
@@ -4397,7 +4425,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "25",
+         "x": "26",
          "fill": "gris",
          "bold": true
         }
@@ -4410,7 +4438,7 @@ export const DOCUMENTOS: DocDef[] = [
       "t": "ul",
       "items": [
        "Blog del proyecto publicado en https://peruano-frances-gti.vercel.app y conectado al repositorio.",
-       "Registro de cambios con 10 solicitudes e incidentes registrados: 11."
+       "Registro de cambios con 11 solicitudes e incidentes registrados: 11."
       ]
      }
     ]
@@ -4724,7 +4752,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora: pendiente.",
+        "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora en la reunión de inicio, 12/10/2026 (GOB-12).",
         "Aplicado en el cronograma v3. Pendiente: distribución de costos por fechas."
        ],
        [
@@ -4738,7 +4766,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora: pendiente.",
+        "Equipo del proyecto, 10/10/2026. Conformidad de la patrocinadora en la reunión de inicio, 12/10/2026 (GOB-12).",
         "Aplicado en el enunciado del alcance v3, en el cronograma v3 y en GOB-05. Pendiente: capítulos de alternativas y de costos del blog."
        ],
        [
@@ -4838,15 +4866,29 @@ export const DOCUMENTOS: DocDef[] = [
         },
         "Se decide al revisar la estructura del alcance en el Sprint 1.",
         "—"
+       ],
+       [
+        "SC-11",
+        "Comunicación con el colegio a través del Product Owner",
+        "En la reunión de inicio se acordó que no habrá más reuniones con la Dirección, por el cruce de horarios del equipo, y que el contacto con el colegio será Helber Perez, docente de la institución, integrante del equipo y Product Owner.",
+        "Plan de comunicaciones (INT-03): las entrevistas y los pedidos de datos se canalizan por el Product Owner, y las revisiones de sprint se le presentan a él. Agrega la restricción R-08 y el supuesto S-12 (GOB-03).",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Patrocinadora y equipo, reunión de inicio, 12/10/2026 (GOB-12)",
+        "Aplicado en INT-03, INT-06 y el tablero de comunicaciones el 17/10/2026."
        ]
       ],
-      "titulo": "Registro de cambios al 10/10/2026",
+      "titulo": "Registro de cambios al 17/10/2026",
       "compacta": true
      },
      {
       "t": "nota",
-      "tipo": "aviso",
-      "x": "Los cambios SC-02 y SC-03 alteran líneas base. Fueron aprobados por el equipo para poder planificar y se presentarán a la patrocinadora en la reunión de inicio; su conformidad está pendiente."
+      "tipo": "info",
+      "x": "Los cambios SC-02 y SC-03 alteran líneas base. Fueron aprobados por el equipo para poder planificar y la patrocinadora dio su conformidad en la reunión de inicio del 12/10/2026 (GOB-12). En esa reunión se aprobó también el SC-11."
      },
      {
       "t": "nota",
@@ -5232,6 +5274,238 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "p",
       "x": "La fase de formulación queda cerrada. Entregó el sustento del proyecto y sus líneas base; no dejó constancia de la aceptación del colegio, que se obtendrá con la firma del acta de constitución. El proyecto continúa con la fase de dirección según el plan GOB-04."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "GOB-12",
+  "titulo": "Acta de la reunión de inicio",
+  "dominio": "Gobernanza",
+  "area": "Iniciación",
+  "proceso": "Iniciar el proyecto o fase",
+  "salida": "Acta de reunión",
+  "version": "1.0",
+  "fecha": "17/10/2026",
+  "resumen": "Deja constancia de la reunión de inicio con la Dirección del colegio: la firma del acta de constitución, la conformidad con el calendario y con el alojamiento en la nube, la designación del Product Owner, el canal de comunicación con el colegio y el tratamiento de los datos.",
+  "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
+  "pdf": "/documentos/GOB-12-acta-de-la-reunion-de-inicio.pdf",
+  "docx": "/documentos/GOB-12-acta-de-la-reunion-de-inicio.docx",
+  "secciones": [
+   {
+    "titulo": "1. Datos de la reunión",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Reunión",
+        "N.º 1 · Reunión de inicio del proyecto"
+       ],
+       [
+        "Fecha",
+        "12/10/2026, primer día del Sprint 1"
+       ],
+       [
+        "Modalidad",
+        "Virtual"
+       ],
+       [
+        "Convocó",
+        "Jhostin Galarza, director del proyecto"
+       ],
+       [
+        "Objetivo",
+        "Iniciar formalmente el proyecto y acordar con la Dirección cómo se trabajará con el colegio."
+       ]
+      ]
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Asistente",
+       "Cargo o rol"
+      ],
+      "anchos": [
+       40,
+       60
+      ],
+      "filas": [
+       [
+        "Promotora Directora",
+        "Patrocinadora del proyecto · I.E.P. Peruano Francés"
+       ],
+       [
+        "Coordinación académica",
+        "I.E.P. Peruano Francés"
+       ],
+       [
+        "Jhostin J. Galarza Camarena",
+        "Director del proyecto y Scrum Master"
+       ],
+       [
+        "Helber J. Perez Gutierrez",
+        "Responsable del modelo de Machine Learning y docente de la institución"
+       ]
+      ],
+      "titulo": "Asistentes"
+     }
+    ]
+   },
+   {
+    "titulo": "2. Temas tratados",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "N.º",
+       "Tema",
+       "Qué se resolvió"
+      ],
+      "anchos": [
+       6,
+       30,
+       64
+      ],
+      "filas": [
+       [
+        "1",
+        "Acta de constitución del proyecto (GOB-02)",
+        "Se aprobó. La firman la Promotora Directora, en físico, y el director del proyecto."
+       ],
+       [
+        "2",
+        "Calendario del proyecto (cambio SC-02)",
+        "La patrocinadora dio su conformidad: del 12/10/2026 al 23/04/2027, seis sprints de cuatro semanas y receso en febrero de 2027."
+       ],
+       [
+        "3",
+        "Alojamiento del sistema en servicios de la nube (cambio SC-03)",
+        "La patrocinadora dio su conformidad."
+       ],
+       [
+        "4",
+        "Product Owner",
+        "Se designó a Helber Perez, docente de la institución e integrante del equipo."
+       ],
+       [
+        "5",
+        "Comunicación con el colegio",
+        "Por el cruce de horarios del equipo no se programarán más reuniones como esta. La comunicación con el colegio será a través de Helber Perez, que tiene contacto directo con la institución: por él llegan las observaciones y las indicaciones."
+       ],
+       [
+        "6",
+        "Tratamiento de los datos",
+        "La Dirección autorizó el uso de las notas de los estudiantes para el proyecto. Se avisará a los apoderados mediante un mensaje de WhatsApp del tutor de cada aula, lo antes posible."
+       ],
+       [
+        "7",
+        "Exportaciones de notas de Cubicol",
+        "Se acordó pedirlas a través del Product Owner."
+       ],
+       [
+        "8",
+        "Solicitudes de la entrevista de abril de 2026",
+        "Se descartaron la asistencia con código QR, los juegos interactivos para estudiantes y las guías para que los padres ingresen a Cubicol."
+       ]
+      ],
+      "titulo": "Temas y resoluciones"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Acuerdos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "N.º",
+       "Acuerdo",
+       "Responsable",
+       "Plazo"
+      ],
+      "anchos": [
+       6,
+       54,
+       22,
+       18
+      ],
+      "filas": [
+       [
+        "A-1",
+        "Firmar el acta de constitución del proyecto.",
+        "Promotora Directora y Jhostin Galarza",
+        {
+         "x": "Cumplido",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "A-2",
+        "Canalizar toda la comunicación con el colegio a través del Product Owner.",
+        "Helber Perez",
+        "Desde el 12/10/2026"
+       ],
+       [
+        "A-3",
+        "Avisar a los apoderados sobre el proyecto y el uso de los datos por WhatsApp de los tutores.",
+        "Dirección, por medio de los tutores; redacta el equipo",
+        "Lo antes posible"
+       ],
+       [
+        "A-4",
+        "Pedir las exportaciones de notas de Cubicol a través del Product Owner.",
+        "Jadira Vasquez y Helber Perez",
+        "—"
+       ]
+      ],
+      "titulo": "Acuerdos de la reunión"
+     },
+     {
+      "t": "p",
+      "x": "Los acuerdos A-2 y A-4 cambian el plan de comunicaciones y quedan registrados como el cambio SC-11 (GOB-10). La fecha tentativa del aviso a los apoderados figura en el registro de comunicaciones (INT-06)."
+     }
+    ]
+   },
+   {
+    "titulo": "4. Próximos pasos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Próxima reunión con la Dirección",
+        "No se programa. La coordinación sigue a través del Product Owner."
+       ],
+       [
+        "Próxima revisión de avance",
+        "Revisión del Sprint 1, el 06/11/2026, presentada al Product Owner."
+       ]
+      ]
+     },
+     {
+      "t": "nota",
+      "tipo": "info",
+      "x": "Acta emitida para firma el 17/10/2026."
+     },
+     {
+      "t": "firmas",
+      "firmantes": [
+       {
+        "nombre": "Promotora Directora",
+        "rol": "Patrocinadora — I.E.P. Peruano Francés"
+       },
+       {
+        "nombre": "Jhostin J. Galarza Camarena",
+        "rol": "Director del proyecto"
+       }
+      ]
      }
     ]
    }
@@ -7277,19 +7551,19 @@ export const DOCUMENTOS: DocDef[] = [
         "Registrar la asistencia con código QR.",
         "Promotora Directora",
         "Fuera del alcance de esta versión.",
-        "Explicarlo en la reunión de inicio y anotarlo como candidato a una segunda versión."
+        "Descartado en la reunión de inicio (12/10/2026)."
        ],
        [
         "Guías para que los padres ingresen a Cubicol.",
         "Promotora Directora",
         "Ofrecido en la entrevista; no figura en ninguna línea base (IN-10).",
-        "Decidir con la Dirección: solicitud de cambio o descarte formal."
+        "Descartado en la reunión de inicio (12/10/2026); incidente IN-10 cerrado."
        ],
        [
         "Juegos interactivos para los estudiantes en la plataforma.",
         "Promotora Directora",
         "Fuera del alcance: Cubicol es de un tercero.",
-        "Aclararlo en la reunión de inicio."
+        "Descartado en la reunión de inicio (12/10/2026)."
        ],
        [
         "Que el sistema no aumente la carga de trabajo.",
@@ -8018,8 +8292,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Planificar la gestión de las comunicaciones",
   "salida": "Plan de gestión de las comunicaciones",
-  "version": "1.1",
-  "fecha": "10/10/2026",
+  "version": "1.2",
+  "fecha": "17/10/2026",
   "resumen": "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
   "pdf": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.pdf",
@@ -8101,13 +8375,13 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Patrocinadora (I-01)",
         "Estado del proyecto, decisiones que se le piden, cambios a las líneas base y situación de los datos personales.",
-        "Resumen de una página y reunión breve.",
+        "Resumen de una página que le entrega el Product Owner.",
         "Cierre de cada sprint y cuando haya una decisión"
        ],
        [
         "Subdirector y coordinación académica (I-02, I-03)",
         "Qué se entrega en cada sprint, qué deben priorizar y qué deben aceptar.",
-        "Demostración del sistema y acta.",
+        "Información y demostración a través del Product Owner.",
         "Cada cuatro semanas"
        ],
        [
@@ -8119,13 +8393,13 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Gestora de Cubicol y encargado de TI (I-07, I-08)",
         "Qué datos se piden, en qué formato y para qué fecha; qué deberán operar después.",
-        "Pedido escrito breve y reunión.",
+        "Pedido escrito breve que entrega el Product Owner.",
         "Sprints 1 a 3 y Sprint 6"
        ],
        [
         "Padres y apoderados (I-11)",
         "Qué datos de sus hijos se usan, con qué fin y cuáles son sus derechos.",
-        "Comunicado del colegio.",
+        "Mensaje de WhatsApp del tutor de aula.",
         "Antes de cargar datos reales"
        ],
        [
@@ -8188,16 +8462,16 @@ export const DOCUMENTOS: DocDef[] = [
         "Informe de desempeño del proyecto",
         "Patrocinadora, Product Owner y docente asesor",
         "Jhostin Galarza",
-        "Reunión presencial y documento PDF",
+        "Documento PDF que el Product Owner entrega a la Dirección",
         "Al cierre de cada sprint",
         "Informe (GOB-09 y siguientes)"
        ],
        [
         "PC-02",
         "Demostración de avances (revisión del sprint)",
-        "Patrocinadora, coordinación y tutores invitados",
+        "Product Owner; la Dirección da su conformidad por su intermedio",
         "Equipo del proyecto",
-        "Reunión presencial en el colegio",
+        "Demostración al Product Owner",
         "Cada cuatro semanas",
         "Acta de aceptación (ALC-04)"
        ],
@@ -8214,8 +8488,8 @@ export const DOCUMENTOS: DocDef[] = [
         "PC-04",
         "Pedidos y entregas de datos",
         "Gestora de Cubicol y encargado de TI",
-        "Jadira Vasquez",
-        "Presencial; mensaje directo para coordinar",
+        "Jadira Vasquez, por medio del Product Owner",
+        "Pedido escrito que el Product Owner entrega en el colegio",
         "Semanal en los Sprints 1 a 3",
         "Registro de entrega de datos"
        ],
@@ -8241,10 +8515,10 @@ export const DOCUMENTOS: DocDef[] = [
         "PC-07",
         "Aviso sobre el proyecto y el uso de los datos",
         "Padres y apoderados",
-        "Dirección; redacta el equipo",
-        "Comunicado impreso o agenda, y WhatsApp del colegio",
+        "Dirección, por medio de los tutores; redacta el equipo",
+        "Mensaje de WhatsApp del tutor de cada aula",
         "Antes de cargar datos reales y al iniciar el piloto",
-        "Comunicado y cargo de recepción"
+        "Texto del mensaje y confirmación de envío de cada tutor"
        ],
        [
         "PC-08",
@@ -8274,6 +8548,15 @@ export const DOCUMENTOS: DocDef[] = [
         "Lista de asistencia"
        ],
        [
+        "PC-12",
+        "Coordinación con el colegio: pedidos, observaciones e indicaciones",
+        "Dirección, coordinación y docentes",
+        "Helber Perez (Product Owner)",
+        "Comunicación directa del Product Owner en el colegio y grupo del equipo",
+        "Cuando haga falta; reemplaza a las entrevistas",
+        "Mensaje en el grupo del equipo y registro de comunicaciones"
+       ],
+       [
         "PC-11",
         "Cierre del proyecto",
         "Todos los interesados del colegio y docente asesor",
@@ -8294,7 +8577,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 10/10/2026; el registro y el tablero del blog muestran su estado actualizado."
+      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 17/10/2026; el registro y el tablero del blog muestran su estado actualizado."
      },
      {
       "t": "tabla",
@@ -8314,18 +8597,8 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "12/10/2026",
-        "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
-        "I-01, I-02, I-03",
-        "Jhostin Galarza",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "16/10/2026",
-        "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
+        "17/10/2026",
+        "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)",
         "I-13",
         "Equipo del proyecto",
         {
@@ -8335,16 +8608,16 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "20/10/2026",
-        "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
+        "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner",
         "I-07, I-08",
-        "Jadira Vasquez",
+        "Jadira Vasquez y Helber Perez",
         {
          "x": "1",
          "align": "center"
         }
        ],
        [
-        "23/10/2026",
+        "24/10/2026",
         "Avance semanal al docente asesor",
         "I-13",
         "Equipo del proyecto",
@@ -8355,16 +8628,16 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "28/10/2026",
-        "Taller de validación de las variables del modelo",
+        "Taller de validación de las variables del modelo, organizado por el Product Owner",
         "I-05, I-06",
-        "Helber Perez",
+        "Helber Perez y Carlos Curo",
         {
          "x": "1",
          "align": "center"
         }
        ],
        [
-        "30/10/2026",
+        "31/10/2026",
         "Avance semanal al docente asesor",
         "I-13",
         "Equipo del proyecto",
@@ -8375,9 +8648,19 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "03/11/2026",
-        "Entrevista sobre el registro de incidencias",
+        "Consulta sobre el registro de incidencias, a través del Product Owner",
         "I-04",
-        "Jadira Vasquez",
+        "Jadira Vasquez y Helber Perez",
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "06/11/2026",
+        "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)",
+        "I-11, I-05",
+        "Dirección, por medio de los tutores; redacta el equipo",
         {
          "x": "1",
          "align": "center"
@@ -8386,7 +8669,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "06/11/2026",
         "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
-        "I-01, I-03, I-13",
+        "I-01, I-12, I-13",
         "Equipo del proyecto",
         {
          "x": "1",
@@ -8396,7 +8679,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "04/12/2026",
         "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
-        "I-01, I-03, I-13",
+        "I-01, I-12, I-13",
         "Equipo del proyecto",
         {
          "x": "2",
@@ -8404,19 +8687,9 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "11/12/2026",
-        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
-        "I-11",
-        "Dirección; redacta el equipo",
-        {
-         "x": "3",
-         "align": "center"
-        }
-       ],
-       [
         "30/12/2026",
         "Revisión del Sprint 3 e informe de desempeño: modelo validado",
-        "I-01, I-03, I-13",
+        "I-01, I-12, I-13",
         "Equipo del proyecto",
         {
          "x": "3",
@@ -8427,7 +8700,7 @@ export const DOCUMENTOS: DocDef[] = [
         "20/01/2027",
         "Convocatoria a tres docentes tutores para el piloto de marzo",
         "I-05, I-03",
-        "Jhostin Galarza",
+        "Helber Perez (Product Owner)",
         {
          "x": "4",
          "align": "center"
@@ -8436,7 +8709,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "29/01/2027",
         "Revisión del Sprint 4 e informe de desempeño: sistema integrado con alertas y tablero",
-        "I-01, I-03, I-13",
+        "I-01, I-12, I-13",
         "Equipo del proyecto",
         {
          "x": "4",
@@ -8446,7 +8719,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "24/03/2027",
         "Revisión del Sprint 5 e informe de desempeño: resultado de las pruebas y del piloto",
-        "I-01, I-03, I-13",
+        "I-01, I-12, I-13",
         "Equipo del proyecto",
         {
          "x": "5",
@@ -8498,14 +8771,24 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Reunión presencial en el colegio",
-        "Decisiones, demostraciones, talleres y capacitación.",
-        "Se coordina con la Dirección según el horario escolar."
+        "Product Owner (Helber Perez)",
+        "Pedidos, observaciones, indicaciones y conformidad de la Dirección.",
+        "Canal único con el colegio, acordado en la reunión de inicio (SC-11). Es docente de la institución."
        ],
        [
-        "WhatsApp",
-        "Coordinación con la Dirección y avisos generales a las familias a través del colegio.",
-        "Es el canal que el colegio ya usa con los padres. No se envían por este medio notas ni niveles de riesgo."
+        "Reunión presencial en el colegio",
+        "Talleres con docentes y capacitación.",
+        "Las organiza el Product Owner según el horario escolar."
+       ],
+       [
+        "Reunión virtual",
+        "Reuniones con la Dirección cuando sean indispensables.",
+        "La reunión de inicio fue virtual; no se prevén otras (R-08)."
+       ],
+       [
+        "WhatsApp del tutor de aula",
+        "Aviso a los apoderados sobre el proyecto y comunicado al apoderado de un estudiante en riesgo alto.",
+        "Solo mensajes individuales al apoderado de cada estudiante, nunca en grupos. El mensaje no menciona a otros estudiantes ni el porcentaje del modelo."
        ],
        [
         "Correo electrónico personal",
@@ -8514,7 +8797,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Comunicado impreso o agenda",
-        "Información a los apoderados y consentimiento.",
+        "Respaldo para los apoderados que no usan WhatsApp.",
         "Llega también a quienes no usan plataformas."
        ],
        [
@@ -8575,8 +8858,8 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Comunicado al apoderado",
         "Padre o apoderado",
-        "Dentro de las 24 horas, a través del colegio",
-        "Áreas con dificultad y recomendaciones de apoyo, en lenguaje simple."
+        "Dentro de las 24 horas; lo redacta el sistema y lo envía el tutor por WhatsApp",
+        "Áreas con dificultad, notas del periodo y recomendaciones de apoyo, en lenguaje simple."
        ],
        [
         "Reporte por unidad",
@@ -8751,11 +9034,11 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Revisión del sprint",
-        "Reunión en la que el equipo muestra lo avanzado y el colegio lo acepta u observa."
+        "Demostración en la que el equipo muestra lo avanzado al Product Owner, y el colegio lo acepta u observa."
        ],
        [
         "Product Owner",
-        "Persona del colegio que decide qué es prioritario y acepta los entregables."
+        "Persona del colegio que decide qué es prioritario y acepta los entregables. En este proyecto, Helber Perez, docente de la institución."
        ],
        [
         "Línea base",
@@ -8944,15 +9227,35 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Blog en línea"
+       ],
+       [
+        "C-07",
+        "12/10/2026",
+        "Reunión",
+        "Reunión de inicio: acta de constitución, calendario, Product Owner, tratamiento de datos y canal de comunicación con el colegio",
+        "Jhostin Galarza",
+        [
+         "I-01 Promotora Directora",
+         "I-03 Coordinación académica",
+         "I-12 Equipo del proyecto"
+        ],
+        "Reunión virtual",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Acta de la reunión de inicio (GOB-12) y acta de constitución firmada (GOB-02)"
        ]
       ],
-      "titulo": "Comunicaciones realizadas al 10/10/2026",
+      "titulo": "Comunicaciones realizadas al 17/10/2026",
       "compacta": true
      },
      {
       "t": "nota",
-      "tipo": "aviso",
-      "x": "Las cuatro primeras corresponden al levantamiento de información de la fase de formulación. La segunda entrevista, al encargado de soporte de TI y a la gestora de Cubicol, no se realizó entonces y está programada para el Sprint 1 (incidente IN-05)."
+      "tipo": "info",
+      "x": "Las cuatro primeras corresponden al levantamiento de información de la fase de formulación. En la reunión de inicio del 12/10/2026 se acordó que la comunicación con el colegio pasa por el Product Owner (SC-11); por eso la segunda entrevista se reemplazó por un pedido escrito que él entrega (incidente IN-05)."
      }
     ]
    },
@@ -8986,30 +9289,10 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "C-07",
-        "12/10/2026",
-        "Reunión",
-        "Reunión de inicio: acta de constitución, calendario, Product Owner y tratamiento de datos",
-        "Jhostin Galarza",
-        [
-         "I-01 Promotora Directora",
-         "I-02 Subdirector",
-         "I-03 Coordinación académica"
-        ],
-        "Reunión presencial",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Acta de reunión y acta de constitución firmada"
-       ],
-       [
         "C-08",
-        "16/10/2026",
+        "17/10/2026",
         "Avance académico",
-        "Avance semanal al docente asesor y demostración del entregable del sistema según la EDT",
+        "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)",
         "Equipo del proyecto",
         [
          "I-13 Docente asesor del curso"
@@ -9026,25 +9309,25 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "C-09",
         "20/10/2026",
-        "Entrevista",
-        "Segunda entrevista y acuerdo sobre las exportaciones de datos de Cubicol",
-        "Jadira Vasquez",
+        "Solicitud",
+        "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner",
+        "Jadira Vasquez y Helber Perez",
         [
          "I-07 Gestora de la plataforma Cubicol",
          "I-08 Encargado de soporte de TI"
         ],
-        "Reunión presencial",
+        "Pedido escrito entregado por el Product Owner",
         {
          "x": "Programada",
          "fill": "azul",
          "bold": true,
          "align": "center"
         },
-        "Notas de la entrevista y acuerdo de entrega de datos"
+        "Pedido escrito y respuesta del colegio"
        ],
        [
         "C-10",
-        "23/10/2026",
+        "24/10/2026",
         "Avance académico",
         "Avance semanal al docente asesor",
         "Equipo del proyecto",
@@ -9064,13 +9347,13 @@ export const DOCUMENTOS: DocDef[] = [
         "C-11",
         "28/10/2026",
         "Taller",
-        "Taller de validación de las variables del modelo",
-        "Helber Perez",
+        "Taller de validación de las variables del modelo, organizado por el Product Owner",
+        "Helber Perez y Carlos Curo",
         [
          "I-05 Docentes tutores y auxiliares",
          "I-06 Responsable de psicología"
         ],
-        "Taller presencial",
+        "Taller presencial en el colegio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9081,7 +9364,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "C-12",
-        "30/10/2026",
+        "31/10/2026",
         "Avance académico",
         "Avance semanal al docente asesor",
         "Equipo del proyecto",
@@ -9100,33 +9383,52 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "C-13",
         "03/11/2026",
-        "Entrevista",
-        "Entrevista sobre el registro de incidencias",
-        "Jadira Vasquez",
+        "Consulta",
+        "Consulta sobre el registro de incidencias, a través del Product Owner",
+        "Jadira Vasquez y Helber Perez",
         [
          "I-04 Jefa de Normas"
         ],
-        "Reunión presencial",
+        "Consulta del Product Owner en el colegio",
         {
          "x": "Programada",
          "fill": "azul",
          "bold": true,
          "align": "center"
         },
-        "Notas de la entrevista"
+        "Nota de la consulta en el grupo del equipo"
        ],
        [
         "C-14",
+        "06/11/2026",
+        "Comunicado",
+        "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)",
+        "Dirección, por medio de los tutores; redacta el equipo",
+        [
+         "I-11 Padres de familia y apoderados",
+         "I-05 Docentes tutores y auxiliares"
+        ],
+        "Mensaje de WhatsApp del tutor de cada aula",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Texto del mensaje y confirmación de envío de cada tutor"
+       ],
+       [
+        "C-15",
         "06/11/2026",
         "Revisión de sprint",
         "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
         "Equipo del proyecto",
         [
          "I-01 Promotora Directora",
-         "I-03 Coordinación académica",
+         "I-12 Equipo del proyecto",
          "I-13 Docente asesor del curso"
         ],
-        "Reunión presencial",
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9171,17 +9473,17 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "C-15",
+        "C-16",
         "04/12/2026",
         "Revisión de sprint",
         "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
         "Equipo del proyecto",
         [
          "I-01 Promotora Directora",
-         "I-03 Coordinación académica",
+         "I-12 Equipo del proyecto",
          "I-13 Docente asesor del curso"
         ],
-        "Reunión presencial",
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9191,24 +9493,6 @@ export const DOCUMENTOS: DocDef[] = [
         "Acta de aceptación e informe de desempeño"
        ],
        [
-        "C-16",
-        "11/12/2026",
-        "Comunicado",
-        "Comunicado a los apoderados sobre el proyecto y el uso de los datos",
-        "Dirección; redacta el equipo",
-        [
-         "I-11 Padres de familia y apoderados"
-        ],
-        "Comunicado impreso o agenda",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Comunicado y cargo de recepción"
-       ],
-       [
         "C-17",
         "30/12/2026",
         "Revisión de sprint",
@@ -9216,10 +9500,10 @@ export const DOCUMENTOS: DocDef[] = [
         "Equipo del proyecto",
         [
          "I-01 Promotora Directora",
-         "I-03 Coordinación académica",
+         "I-12 Equipo del proyecto",
          "I-13 Docente asesor del curso"
         ],
-        "Reunión presencial",
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9233,12 +9517,12 @@ export const DOCUMENTOS: DocDef[] = [
         "20/01/2027",
         "Convocatoria",
         "Convocatoria a tres docentes tutores para el piloto de marzo",
-        "Jhostin Galarza",
+        "Helber Perez (Product Owner)",
         [
          "I-05 Docentes tutores y auxiliares",
          "I-03 Coordinación académica"
         ],
-        "Reunión presencial",
+        "Convocatoria del Product Owner en el colegio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9255,10 +9539,10 @@ export const DOCUMENTOS: DocDef[] = [
         "Equipo del proyecto",
         [
          "I-01 Promotora Directora",
-         "I-03 Coordinación académica",
+         "I-12 Equipo del proyecto",
          "I-13 Docente asesor del curso"
         ],
-        "Reunión presencial",
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9275,10 +9559,10 @@ export const DOCUMENTOS: DocDef[] = [
         "Equipo del proyecto",
         [
          "I-01 Promotora Directora",
-         "I-03 Coordinación académica",
+         "I-12 Equipo del proyecto",
          "I-13 Docente asesor del curso"
         ],
-        "Reunión presencial",
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
         {
          "x": "Programada",
          "fill": "azul",
@@ -9334,7 +9618,7 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "p",
-      "x": "La coordinación diaria del equipo, los pedidos de datos semanales, las solicitudes de cambio y los incidentes de prioridad alta se registran cuando ocurren; por eso no figuran con fecha en esta lista."
+      "x": "La coordinación diaria del equipo, las coordinaciones del Product Owner con el colegio, los pedidos de datos semanales, las solicitudes de cambio y los incidentes de prioridad alta se registran cuando ocurren; por eso no figuran con fecha en esta lista."
      }
     ]
    },
@@ -9382,7 +9666,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Sprint 1",
         {
-         "x": "0",
+         "x": "1",
          "align": "center"
         },
         {
@@ -9394,7 +9678,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "8",
+         "x": "9",
          "align": "center",
          "bold": true
         }
@@ -9426,7 +9710,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "1",
          "align": "center"
         },
         {
@@ -9434,7 +9718,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "1",
          "align": "center",
          "bold": true
         }
@@ -9506,13 +9790,13 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "6",
+         "x": "7",
          "fill": "gris",
          "align": "center",
          "bold": true
         },
         {
-         "x": "16",
+         "x": "15",
          "fill": "gris",
          "align": "center",
          "bold": true
@@ -9531,7 +9815,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ]
       ],
-      "titulo": "Comunicaciones por momento del proyecto, al 10/10/2026"
+      "titulo": "Comunicaciones por momento del proyecto, al 17/10/2026"
      }
     ]
    }
@@ -9539,17 +9823,17 @@ export const DOCUMENTOS: DocDef[] = [
  },
  {
   "id": "INT-07",
-  "titulo": "Informe de monitoreo de las comunicaciones N.º 1",
+  "titulo": "Informe de monitoreo de las comunicaciones N.º 2",
   "dominio": "Interesados",
   "area": "Monitoreo y control",
   "proceso": "Monitorear las comunicaciones",
   "salida": "Información de desempeño del trabajo sobre las comunicaciones",
-  "version": "1.0",
-  "fecha": "10/10/2026",
-  "resumen": "Comprueba si las comunicaciones se están haciendo según el plan y si llegan a quienes deben. Es la primera medición, antes del inicio del Sprint 1, y fija el punto de partida.",
+  "version": "2.0",
+  "fecha": "17/10/2026",
+  "resumen": "Comprueba si las comunicaciones se están haciendo según el plan y si llegan a quienes deben. Es la segunda medición: cubre la primera semana del Sprint 1, con la reunión de inicio y el nuevo canal con el colegio.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
-  "pdf": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-1.pdf",
-  "docx": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-1.docx",
+  "pdf": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-2.pdf",
+  "docx": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-2.docx",
   "secciones": [
    {
     "titulo": "1. Corte y método",
@@ -9557,7 +9841,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "Fecha de corte: 10/10/2026. El informe se elabora con el registro de comunicaciones (INT-06): compara lo realizado con lo programado en el plan (INT-03) y revisa a qué interesados se ha llegado. Los mismos indicadores se ven, actualizados, en el tablero de comunicaciones del blog."
+      "x": "Fecha de corte: 17/10/2026. El informe se elabora con el registro de comunicaciones (INT-06): compara lo realizado con lo programado en el plan (INT-03) y revisa a qué interesados se ha llegado. Los mismos indicadores se ven, actualizados, en el tablero de comunicaciones del blog."
      }
     ]
    },
@@ -9584,13 +9868,18 @@ export const DOCUMENTOS: DocDef[] = [
         "Comunicaciones registradas",
         "22",
         "—",
-        "6 realizadas y 16 programadas."
+        "7 realizadas y 15 programadas."
        ],
        [
         "Cumplimiento del calendario",
-        "Aún no aplica",
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
         "90 % o más",
-        "Ninguna comunicación programada ha llegado a su fecha límite."
+        "7 de 7 comunicaciones que debían hacerse hasta el corte están realizadas."
        ],
        [
         "Comunicaciones vencidas",
@@ -9601,29 +9890,29 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Cero",
-        "Se medirá por primera vez en la semana del 12/10/2026."
+        "Ninguna comunicación fuera de plazo."
        ],
        [
         "Cobertura de interesados",
-        "4 de 17",
+        "5 de 17",
         "—",
         "Coincide con el seguimiento del involucramiento (INT-05)."
        ],
        [
         "Cobertura de interesados clave",
         {
-         "x": "4 de 8",
+         "x": "5 de 8",
          "fill": "amarillo",
          "bold": true,
          "align": "center"
         },
         "Todos al cierre del Sprint 1",
-        "Faltan: Subdirector, Coordinación académica, Gestora de la plataforma Cubicol, Encargado de soporte de TI."
+        "Faltan: Subdirector, Gestora de la plataforma Cubicol, Encargado de soporte de TI."
        ],
        [
         "Constancia",
         {
-         "x": "6 de 6",
+         "x": "7 de 7",
          "fill": "verde",
          "bold": true,
          "align": "center"
@@ -9632,7 +9921,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Toda comunicación realizada tiene evidencia."
        ]
       ],
-      "titulo": "Indicadores de las comunicaciones al 10/10/2026"
+      "titulo": "Indicadores de las comunicaciones al 17/10/2026"
      }
     ]
    },
@@ -9658,13 +9947,13 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Reunión presencial",
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
         {
-         "x": "3",
+         "x": "0",
          "align": "center"
         },
         {
-         "x": "10",
+         "x": "5",
          "align": "center"
         },
         {
@@ -9672,7 +9961,27 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "13",
+         "x": "5",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Reunión presencial",
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "4",
          "align": "center",
          "bold": true
         }
@@ -9693,26 +10002,6 @@ export const DOCUMENTOS: DocDef[] = [
         },
         {
          "x": "3",
-         "align": "center",
-         "bold": true
-        }
-       ],
-       [
-        "Taller presencial",
-        {
-         "x": "0",
-         "align": "center"
-        },
-        {
-         "x": "2",
-         "align": "center"
-        },
-        {
-         "x": "0",
-         "align": "center"
-        },
-        {
-         "x": "2",
          "align": "center",
          "bold": true
         }
@@ -9778,7 +10067,127 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ],
        [
-        "Comunicado impreso o agenda",
+        "Reunión virtual",
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Pedido escrito entregado por el Product Owner",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Taller presencial en el colegio",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Consulta del Product Owner en el colegio",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Mensaje de WhatsApp del tutor de cada aula",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Convocatoria del Product Owner en el colegio",
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Taller presencial",
         {
          "x": "0",
          "align": "center"
@@ -9802,7 +10211,7 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "p",
-      "x": "La reunión presencial es el canal principal, como pidió la Dirección. Todavía no se usa el correo: el colegio no tiene correo institucional y la lista de direcciones personales autorizadas está pendiente (SC-09)."
+      "x": "Desde la reunión de inicio, el canal principal con el colegio es el Product Owner (SC-11): los pedidos de datos y las consultas pasan por él, y la reunión con la Dirección fue virtual. Los apoderados recibirán el aviso por WhatsApp de sus tutores. Todavía no se usa el correo: el colegio no tiene correo institucional y la lista de direcciones personales autorizadas está pendiente (SC-09)."
      }
     ]
    },
@@ -9834,11 +10243,11 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "3",
          "align": "center"
         },
         {
-         "x": "7",
+         "x": "6",
          "align": "center"
         },
         {
@@ -9857,7 +10266,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "1",
          "align": "center"
         },
         {
@@ -9872,16 +10281,16 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "0",
+         "x": "1",
          "align": "center"
         },
         {
-         "x": "9",
+         "x": "3",
          "align": "center"
         },
         {
-         "x": "Programada",
-         "fill": "azul"
+         "x": "Con comunicación",
+         "fill": "verde"
         }
        ],
        [
@@ -9914,7 +10323,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "3",
+         "x": "4",
          "align": "center"
         },
         {
@@ -10043,11 +10452,11 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         },
         {
-         "x": "0",
+         "x": "5",
          "align": "center"
         },
         {
@@ -10167,11 +10576,12 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "ul",
       "items": [
-       "Solo 4 de 17 interesados han tenido una comunicación directa; 13 todavía no.",
-       "La segunda entrevista (encargado de TI y gestora de Cubicol) está pendiente desde mayo de 2026. Es la comunicación más urgente del Sprint 1.",
-       "Con los padres y apoderados no ha habido ninguna comunicación del proyecto. El comunicado está programado para el 11/12/2026, antes del cierre del año escolar y de cargar datos reales.",
-       "No existe aún un canal acordado para las alertas por correo (SC-09).",
-       "La reunión de inicio está programada para el 12/10/2026 y todavía falta la confirmación de la Dirección."
+       "Solo 5 de 17 interesados han tenido una comunicación directa; 12 todavía no.",
+       "La reunión de inicio se realizó el 12/10/2026, de forma virtual, con la Promotora Directora y la coordinación académica. Se firmó el acta de constitución y quedó registrada en su acta (GOB-12).",
+       "Se acordó un canal único con el colegio a través del Product Owner, Helber Perez (SC-11). Reduce la dependencia de las agendas de la Dirección, pero concentra la comunicación en una sola persona (restricción R-08 y supuesto S-12).",
+       "La segunda entrevista, pendiente desde mayo de 2026, se reemplazó por un pedido escrito de las exportaciones de Cubicol que entrega el Product Owner (20/10/2026).",
+       "Con los padres y apoderados todavía no ha habido comunicación del proyecto. La Dirección autorizó el uso de las notas y el aviso se adelantó: lo enviarán los tutores por WhatsApp, a más tardar el 06/11/2026.",
+       "No existe aún un canal acordado para las alertas por correo (SC-09)."
       ]
      }
     ]
@@ -10194,27 +10604,32 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Confirmar con la Dirección la reunión de inicio del 12/10/2026.",
-        "Jhostin Galarza",
-        "12/10/2026"
+        "Obtener la firma del acta de la reunión de inicio (GOB-12).",
+        "Jhostin Galarza, por medio de Helber Perez",
+        "24/10/2026"
        ],
        [
-        "Coordinar la segunda entrevista con la gestora de Cubicol y el encargado de TI.",
-        "Jadira Vasquez",
-        "23/10/2026"
+        "Redactar el pedido escrito de las exportaciones de Cubicol y entregarlo en el colegio.",
+        "Jadira Vasquez y Helber Perez",
+        "20/10/2026"
        ],
        [
-        "Pedir a la Dirección la lista de correos autorizados de los docentes.",
+        "Redactar el mensaje de aviso a los apoderados y entregarlo a los tutores.",
+        "Jhostin Galarza y Helber Perez",
+        "30/10/2026"
+       ],
+       [
+        "Organizar el taller de validación de variables con los docentes.",
+        "Helber Perez",
+        "28/10/2026"
+       ],
+       [
+        "Pedir, a través del Product Owner, la lista de correos autorizados de los docentes.",
         "Jadira Vasquez",
         "06/11/2026"
        ],
        [
-        "Redactar el borrador del comunicado a los apoderados para revisión de la Dirección.",
-        "Jhostin Galarza",
-        "04/12/2026"
-       ],
-       [
-        "Actualizar el registro y el tablero cada viernes.",
+        "Actualizar el registro y el tablero cada sábado, después de la clase.",
         "Jhostin Galarza",
         "Semanal"
        ]
@@ -11955,7 +12370,7 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "nota",
       "tipo": "aviso",
-      "x": "Al 10/10/2026 no se ha validado ningún entregable: el Sprint 1 empieza el 12/10/2026. Mientras la Dirección no designe al Product Owner (supuesto S-04), la aceptación la da la patrocinadora."
+      "x": "Al 10/10/2026 no se había validado ningún entregable: el Sprint 1 empezó el 12/10/2026. En la reunión de inicio se designó Product Owner a Helber Perez, docente de la institución (GOB-12); la Dirección da su conformidad por su intermedio."
      }
     ]
    },
@@ -12065,17 +12480,17 @@ export const DOCUMENTOS: DocDef[] = [
  },
  {
   "id": "ALC-05",
-  "titulo": "Informe de avance del producto por EDT N.º 1",
+  "titulo": "Informe de avance del producto por EDT N.º 2",
   "dominio": "Alcance",
   "area": "Monitoreo y control",
   "proceso": "Monitorear y controlar el alcance",
   "salida": "Información de desempeño del trabajo y entregables verificados",
-  "version": "1.0",
-  "fecha": "10/10/2026",
-  "resumen": "Compara lo que existe hoy del sistema con cada paquete de trabajo de la EDT, separa lo real de lo que es demostración y prepara la presentación del entregable al docente asesor.",
+  "version": "2.0",
+  "fecha": "17/10/2026",
+  "resumen": "Compara lo que existe del sistema con cada paquete de trabajo de la EDT y presenta para su validación el primer entregable del producto: el módulo de integración y limpieza de datos (E-01).",
   "carpeta": "03 - Alcance/3.5 Controlar el alcance",
-  "pdf": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-1.pdf",
-  "docx": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-1.docx",
+  "pdf": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-2.pdf",
+  "docx": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-2.docx",
   "secciones": [
    {
     "titulo": "1. Propósito y corte",
@@ -12083,17 +12498,17 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "Monitorear y controlar el alcance es comparar el trabajo hecho con la línea base. Fecha de corte: 10/10/2026. Los sprints del proyecto empiezan el 12/10/2026, así que lo que se mide aquí es el punto de partida del producto: el prototipo heredado de la fase de formulación, con los ajustes aplicados el 10/10/2026."
+      "x": "Monitorear y controlar el alcance es comparar el trabajo hecho con la línea base. Fecha de corte: 17/10/2026, primera semana del Sprint 1. Este informe reemplaza al N.º 1 (10/10/2026), que describía el prototipo heredado de la fase de formulación."
      },
      {
       "t": "kv",
       "filas": [
        [
-        "Página del prototipo",
+        "Página del sistema",
         "https://proyecto-siat.vercel.app"
        ],
        [
-        "API del prototipo",
+        "API del sistema",
         "https://proyecto-siat.onrender.com"
        ],
        [
@@ -12105,7 +12520,166 @@ export const DOCUMENTOS: DocDef[] = [
     ]
    },
    {
-    "titulo": "2. Avance por paquete de trabajo",
+    "titulo": "2. Entregable que se valida: E-01",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Entregable",
+        "E-01 · Módulo de integración y limpieza de datos"
+       ],
+       [
+        "Paquetes de la EDT",
+        "1.2.1 Integración de datos (ETL) y 1.2.2 Calidad de datos"
+       ],
+       [
+        "Requisitos",
+        "REQ-01 Centralización de los datos académicos y REQ-02 Limpieza y validación automática de los datos"
+       ],
+       [
+        "Criterio de REQ-01",
+        "La base reúne el 100 % de los registros entregados, sin duplicados ni registros huérfanos. Se comprueba comparando el origen con la base en tres fechas distintas."
+       ],
+       [
+        "Criterio de REQ-02",
+        "La tarea corre fuera del horario escolar y detecta, como mínimo, duplicados, vacíos críticos y fechas inconsistentes. Se revisan los registros de ejecución de 15 días seguidos sin fallas críticas."
+       ],
+       [
+        "Sprint en que se acepta",
+        "Sprint 2 · revisión del 04/12/2026, con el Product Owner"
+       ],
+       [
+        "Situación",
+        "Cumplido en parte: seis de los ocho casos de prueba aprobados, uno aprobado en parte y uno en curso."
+       ]
+      ]
+     },
+     {
+      "t": "p",
+      "x": "Es el primer entregable de la EDT y el único que hoy se puede validar con su criterio de aceptación: la carga, la reconciliación y las reglas de calidad funcionan y se probaron con la base consolidada de notas del colegio."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Caso",
+       "Qué comprueba",
+       "Resultado",
+       "Evidencia"
+      ],
+      "anchos": [
+       8,
+       30,
+       16,
+       46
+      ],
+      "filas": [
+       [
+        "CP-01",
+        "Se consolidan todos los registros válidos",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "3 878 notas válidas leídas y 3 878 cargadas, de 3 937 filas de 173 estudiantes. Las 59 restantes se reportan con su motivo."
+       ],
+       [
+        "CP-02",
+        "No se generan duplicados",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Segunda carga del mismo archivo: 0 cargadas y 3 878 «ya estaban»."
+       ],
+       [
+        "CP-03",
+        "Reconciliación entre el origen y la base en tres fechas",
+        {
+         "x": "Aprobado en parte",
+         "fill": "teal",
+         "bold": true,
+         "align": "center"
+        },
+        "La reconciliación es correcta; falta repetirla con cargas sucesivas en tres fechas."
+       ],
+       [
+        "CP-04",
+        "Integridad referencial",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Ninguna nota sin estudiante, curso o periodo; ningún estudiante sin matrícula."
+       ],
+       [
+        "CP-05",
+        "La validación corre cada noche 15 días seguidos sin fallas",
+        {
+         "x": "En curso",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "6 de 15 noches seguidas sin fallas al 17/10/2026, en GitHub Actions."
+       ],
+       [
+        "CP-06",
+        "Detecta duplicados",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "33 notas repetidas en el origen: la carga conserva la primera y las cuenta."
+       ],
+       [
+        "CP-07",
+        "Detecta vacíos críticos",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "7 casillas vacías o con texto y 15 notas sin periodo identificable, detectadas y no cargadas."
+       ],
+       [
+        "CP-08",
+        "El resultado queda disponible para el responsable de TI",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Pantalla «Datos» del sistema, consulta de la API y reporte de cada ejecución nocturna."
+       ]
+      ],
+      "titulo": "Casos de prueba del E-01 (matriz de trazabilidad)",
+      "compacta": true,
+      "fuente": "Pruebas ejecutadas el 10/10/2026 con la base real del colegio, en un equipo del proyecto; la validación nocturna se revisó el 17/10/2026. Detalle en el documento de pruebas del repositorio del sistema."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "**Alcance de los datos.** El E-01 integra hoy las notas, que son los únicos datos digitales del colegio. La asistencia y las incidencias tienen sus tablas, pero el colegio aún las lleva en papel (incidente IN-02).",
+       "**Fechas inconsistentes.** Las notas no llevan fechas sueltas: cada una pertenece a un periodo del catálogo (mes o trimestre). La carga rechaza las que no tienen un periodo identificable.",
+       "**Datos reales y datos de práctica.** Las pruebas se hicieron con la base real del colegio, que no se publica sin el consentimiento de los apoderados. El sistema en línea usa datos de práctica con la misma estructura."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "3. Avance por paquete de trabajo",
     "apaisada": false,
     "bloques": [
      {
@@ -12113,14 +12687,16 @@ export const DOCUMENTOS: DocDef[] = [
       "cols": [
        "Paquete",
        "Estado",
-       "Qué existe hoy",
+       "Avance",
+       "Qué existe",
        "Qué falta para cumplir el criterio"
       ],
       "anchos": [
-       22,
+       20,
        12,
-       34,
-       32
+       8,
+       32,
+       28
       ],
       "filas": [
        [
@@ -12131,8 +12707,12 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Línea base del cronograma, versión 3 (CRO-01).",
-        "Mantenerlo actualizado ante cada cambio."
+        {
+         "x": "—",
+         "align": "center"
+        },
+        "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).",
+        "Mantenerla actualizada ante cada cambio."
        ],
        [
         "1.1.2 Informes de avance",
@@ -12140,6 +12720,10 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "En curso",
          "fill": "azul",
          "bold": true,
+         "align": "center"
+        },
+        {
+         "x": "—",
          "align": "center"
         },
         "Informe de desempeño N.º 1 (GOB-09).",
@@ -12153,41 +12737,57 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Registro de cambios con 10 solicitudes (GOB-10).",
-        "Actas de las reuniones desde el inicio."
+        {
+         "x": "—",
+         "align": "center"
+        },
+        "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).",
+        "Actas y cambios hasta el cierre."
        ],
        [
         "1.2.1 Integración de datos (ETL)",
         {
-         "x": "Prototipo",
-         "fill": "amarillo",
+         "x": "Cumplido en parte",
+         "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "Esquema de la base de datos con ocho tablas. La carga de datos está esbozada y la base está vacía.",
-        "Cargar las exportaciones de Cubicol y reconciliarlas."
+        {
+         "x": "85 %",
+         "align": "center"
+        },
+        "Carga de la base consolidada de notas del colegio: 3 878 notas de 173 estudiantes, sin duplicados y reconciliada con el archivo de origen.",
+        "Repetir la reconciliación en tres fechas y cargar las exportaciones de Cubicol."
        ],
        [
         "1.2.2 Calidad de datos",
         {
-         "x": "No iniciado",
-         "fill": "gris",
+         "x": "Cumplido en parte",
+         "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "—",
-        "Limpieza y reporte de calidad de los datos reales."
+        {
+         "x": "85 %",
+         "align": "center"
+        },
+        "Diez reglas de calidad y validación automática cada noche: 6 noches seguidas sin fallas críticas al 17/10/2026.",
+        "Completar 15 noches seguidas y cotejar las notas transcritas de fotografías."
        ],
        [
         "1.3.1 Entrenamiento del modelo",
         {
-         "x": "Prototipo",
-         "fill": "amarillo",
+         "x": "Cumplido",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Modelo Random Forest de demostración, entrenado con un conjunto de datos sintético.",
-        "Entrenarlo con datos reales del colegio."
+        {
+         "x": "100 %",
+         "align": "center"
+        },
+        "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.",
+        "Volver a entrenarla cuando el colegio acumule datos propios."
        ],
        [
         "1.3.2 Clasificación de riesgo",
@@ -12197,19 +12797,27 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "La API calcula el riesgo de un caso y lo clasifica en tres niveles.",
-        "Ejecución semanal automática para todos los estudiantes."
+        {
+         "x": "50 %",
+         "align": "center"
+        },
+        "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
+        "Ejecución semanal automática."
        ],
        [
         "1.3.3 Validación del modelo",
         {
-         "x": "No iniciado",
-         "fill": "gris",
+         "x": "Cumplido en parte",
+         "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "No hay métricas reales: las que mostraba el prototipo se retiraron.",
-        "Validar con datos que el modelo no vio (SC-08)."
+        {
+         "x": "70 %",
+         "align": "center"
+        },
+        "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.",
+        "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes."
        ],
        [
         "1.4.1 Motor de alertas",
@@ -12219,30 +12827,42 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Lista de alertas en pantalla para los niveles medio y alto.",
-        "Envío por correo, historial y registro de seguimiento."
+        {
+         "x": "40 %",
+         "align": "center"
+        },
+        "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).",
+        "Correo al tutor, historial de alertas y registro de seguimiento."
        ],
        [
         "1.4.2.1 Diseño de la interfaz",
         {
-         "x": "Demostrable",
+         "x": "Cumplido en parte",
          "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "Prototipo navegable en línea: inicio, estudiantes, riesgos y simulador.",
-        "Mostrarlo a los docentes y recoger sus observaciones."
+        {
+         "x": "80 %",
+         "align": "center"
+        },
+        "Interfaz en línea: inicio, aulas, estudiantes, ficha, evaluación de un caso, modelo y datos.",
+        "Mostrarla a los docentes en el taller del 28/10/2026."
        ],
        [
         "1.4.2.2 Desarrollo del tablero",
         {
-         "x": "Prototipo",
-         "fill": "amarillo",
+         "x": "Cumplido en parte",
+         "fill": "teal",
          "bold": true,
          "align": "center"
         },
-        "Tablero, lista y ficha del estudiante conectados a la API, con datos de ejemplo.",
-        "Datos reales, filtros por nivel educativo y reportes exportables."
+        {
+         "x": "75 %",
+         "align": "center"
+        },
+        "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
+        "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge."
        ],
        [
         "1.4.2.3 Pruebas con usuarios",
@@ -12250,6 +12870,10 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "No iniciado",
          "fill": "gris",
          "bold": true,
+         "align": "center"
+        },
+        {
+         "x": "0 %",
          "align": "center"
         },
         "—",
@@ -12263,8 +12887,12 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "La tabla de usuarios está en el esquema; no hay ingreso con usuario y contraseña.",
-        "Autenticación y vistas por rol."
+        {
+         "x": "5 %",
+         "align": "center"
+        },
+        "La tabla de usuarios con los cuatro roles está en la base de datos.",
+        "Inicio de sesión y vistas por rol."
        ],
        [
         "1.5.1 Despliegue del sistema",
@@ -12274,8 +12902,12 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Entorno de demostración en línea (página y API).",
-        "Entorno de producción con base de datos gestionada y tarea programada (GOB-05)."
+        {
+         "x": "40 %",
+         "align": "center"
+        },
+        "Sistema en línea (página en Vercel y API en Render) con datos de práctica.",
+        "Base gestionada y entorno de producción con datos reales."
        ],
        [
         "1.5.2 Manual de usuario",
@@ -12285,19 +12917,27 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
+        {
+         "x": "0 %",
+         "align": "center"
+        },
         "—",
         "Manual de usuario."
        ],
        [
         "1.5.3 Manual técnico",
         {
-         "x": "No iniciado",
-         "fill": "gris",
+         "x": "Prototipo",
+         "fill": "amarillo",
          "bold": true,
          "align": "center"
         },
-        "Guía de instalación en el repositorio del sistema.",
-        "Manual técnico completo."
+        {
+         "x": "40 %",
+         "align": "center"
+        },
+        "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.",
+        "Completarlo y validarlo con el encargado de TI."
        ],
        [
         "1.5.4 Plan de capacitación",
@@ -12305,6 +12945,10 @@ export const DOCUMENTOS: DocDef[] = [
          "x": "No iniciado",
          "fill": "gris",
          "bold": true,
+         "align": "center"
+        },
+        {
+         "x": "0 %",
          "align": "center"
         },
         "—",
@@ -12318,19 +12962,27 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
+        {
+         "x": "0 %",
+         "align": "center"
+        },
         "—",
         "Capacitación y cierre."
        ],
        [
         "1.6.1 Pruebas de integración y rendimiento",
         {
-         "x": "No iniciado",
-         "fill": "gris",
+         "x": "Prototipo",
+         "fill": "amarillo",
          "bold": true,
          "align": "center"
         },
-        "—",
-        "Pruebas de integración y rendimiento."
+        {
+         "x": "20 %",
+         "align": "center"
+        },
+        "Pruebas del entregable E-01 y de los flujos de la página.",
+        "Reporte formal de integración y prueba de rendimiento."
        ],
        [
         "1.6.2 Piloto y retroalimentación",
@@ -12340,13 +12992,80 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
+        {
+         "x": "0 %",
+         "align": "center"
+        },
         "—",
         "Piloto con tres docentes tutores."
        ]
       ],
-      "titulo": "Estado de los 20 paquetes de la EDT al 10/10/2026",
+      "titulo": "Estado de los 20 paquetes de la EDT al 17/10/2026",
       "compacta": true,
-      "fuente": "Cumplido: cumple su criterio de aceptación. En curso: gestión que continúa todo el proyecto. Demostrable: se puede mostrar, con su criterio cumplido en parte. Prototipo: versión de demostración que aún no cumple el criterio."
+      "fuente": "Cumplido: cumple su criterio de aceptación. En curso: gestión que continúa todo el proyecto. Cumplido en parte: funciona y se puede mostrar, con su criterio cumplido en parte. Prototipo: versión inicial que aún no cumple el criterio. El avance es una estimación del equipo frente al criterio de cada paquete."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Grupo de la EDT",
+       "Avance"
+      ],
+      "anchos": [
+       70,
+       30
+      ],
+      "filas": [
+       [
+        "1.2 Datos e integración",
+        {
+         "x": "85 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.3 Modelo ML predictivo",
+        {
+         "x": "73 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.4 Alertas y tablero",
+        {
+         "x": "40 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.5 Implantación y cierre",
+        {
+         "x": "16 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.6 Pruebas y piloto",
+        {
+         "x": "10 %",
+         "align": "center"
+        }
+       ],
+       [
+        {
+         "x": "Producto (paquetes 1.2 a 1.6)",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "41 %",
+         "fill": "gris",
+         "bold": true,
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Avance por grupo",
+      "fuente": "Promedio simple de los paquetes de cada grupo."
      },
      {
       "t": "tabla",
@@ -12366,7 +13085,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         }
        ],
@@ -12383,12 +13102,12 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         {
-         "x": "Demostrable",
+         "x": "Cumplido en parte",
          "fill": "teal",
          "bold": true
         },
         {
-         "x": "1",
+         "x": "5",
          "align": "center"
         }
        ],
@@ -12399,7 +13118,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "6",
+         "x": "5",
          "align": "center"
         }
        ],
@@ -12410,7 +13129,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "10",
+         "x": "6",
          "align": "center"
         }
        ],
@@ -12432,47 +13151,12 @@ export const DOCUMENTOS: DocDef[] = [
      },
      {
       "t": "p",
-      "x": "El avance coincide con el cronograma: los paquetes de datos corresponden al Sprint 2, los del modelo al Sprint 3 y los de alertas y tablero al Sprint 4. En interfaz el producto está adelantado, porque el prototipo se construyó en la fase de formulación."
+      "x": "En lo técnico, el producto cubre lo previsto para los Sprints 1 a 3 y la mitad del Sprint 4. Lo que falta en esos sprints depende del colegio: la validación de las variables con los docentes, las exportaciones de Cubicol, la métrica acordada para el modelo y las pruebas con usuarios. Las fechas del cronograma se mantienen."
      }
     ]
    },
    {
-    "titulo": "3. Entregable que se demuestra",
-    "apaisada": false,
-    "bloques": [
-     {
-      "t": "kv",
-      "filas": [
-       [
-        "Paquete de la EDT",
-        "1.4.2.1 Diseño de la interfaz, con avance del 1.4.2.2 Desarrollo del tablero"
-       ],
-       [
-        "Entregable",
-        "Prototipo validado"
-       ],
-       [
-        "Criterio de aceptación",
-        "Maquetas aprobadas por el equipo y mostradas a docentes antes de desarrollar."
-       ],
-       [
-        "Situación del criterio",
-        "Cumplido en parte: el equipo lo aprobó; falta mostrarlo a los docentes y recoger sus observaciones."
-       ],
-       [
-        "Evidencia",
-        "Prototipo navegable en línea, conectado a la API, con el simulador usando el modelo."
-       ]
-      ]
-     },
-     {
-      "t": "p",
-      "x": "Se eligió este paquete porque es el único cuyo resultado se puede mostrar funcionando hoy sin presentar como terminado algo que no lo está."
-     }
-    ]
-   },
-   {
-    "titulo": "4. Qué es real y qué es demostración",
+    "titulo": "4. Qué es real y qué es de práctica",
     "apaisada": false,
     "bloques": [
      {
@@ -12484,89 +13168,59 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "anchos": [
        28,
-       18,
-       54
+       16,
+       56
       ],
       "filas": [
        [
-        "Pantallas y navegación",
+        "Base de datos, carga y reconciliación",
         {
          "x": "Real",
          "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Inicio, estudiantes, ficha, riesgos y simulador funcionan."
+        "Probadas con la base consolidada de notas del colegio."
        ],
        [
-        "Conexión de la página con la API",
+        "Validación automática de los datos",
         {
          "x": "Real",
          "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "La página consulta la API en línea y muestra de dónde vienen los datos."
+        "Se ejecuta cada noche en GitHub Actions."
        ],
        [
-        "Cálculo del riesgo en el simulador",
+        "Modelo de riesgo",
         {
          "x": "Real",
          "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Lo calcula el modelo cargado en la API, no una regla escrita en la página."
+        "Red neuronal entrenada y probada con una base pública y aplicada a los datos del colegio; sus métricas salen del entrenamiento."
        ],
        [
-        "Tres niveles de riesgo",
+        "Pantallas, reporte PDF y comunicado",
         {
          "x": "Real",
          "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Bajo, medio y alto, como define el alcance. Los cortes son provisionales."
+        "Funcionan en línea con la base de datos y el modelo."
        ],
        [
-        "Estudiantes y notas",
+        "Estudiantes y notas del sistema en línea",
         {
-         "x": "Ejemplo",
+         "x": "Práctica",
          "fill": "amarillo",
          "bold": true,
          "align": "center"
         },
-        "Cinco estudiantes ficticios. La base de datos está vacía."
-       ],
-       [
-        "Modelo",
-        {
-         "x": "Demostración",
-         "fill": "amarillo",
-         "bold": true,
-         "align": "center"
-        },
-        "Entrenado con datos sintéticos: no demuestra capacidad de predicción (SC-08)."
-       ],
-       [
-        "Gráfico de tendencia",
-        {
-         "x": "Ilustrativo",
-         "fill": "amarillo",
-         "bold": true,
-         "align": "center"
-        },
-        "No hay historial real de alertas."
-       ],
-       [
-        "Métricas del modelo",
-        {
-         "x": "No hay",
-         "fill": "gris",
-         "bold": true,
-         "align": "center"
-        },
-        "Se publicarán cuando el modelo se valide con datos reales."
+        "135 estudiantes ficticios con la estructura de la base real. Los datos reales no se publican sin el consentimiento de los apoderados."
        ],
        [
         "Alertas por correo, usuarios y roles",
@@ -12579,42 +13233,28 @@ export const DOCUMENTOS: DocDef[] = [
         "Corresponden al Sprint 4."
        ]
       ],
-      "titulo": "Lo que la demostración muestra de verdad"
-     },
-     {
-      "t": "nota",
-      "tipo": "info",
-      "x": "La página lleva un rótulo permanente de «Demostración» que dice lo mismo que esta tabla."
+      "titulo": "Lo que el sistema muestra de verdad"
      }
     ]
    },
    {
-    "titulo": "5. Ajustes aplicados al prototipo",
+    "titulo": "5. Cambios desde el informe N.º 1",
     "apaisada": false,
     "bloques": [
      {
-      "t": "p",
-      "x": "Para que la demostración coincida con la documentación, el 10/10/2026 se aplicaron estos ajustes en el repositorio del sistema:"
-     },
-     {
       "t": "ul",
       "items": [
-       "La página consulta la API en línea; antes apuntaba a una dirección local y mostraba datos fijos.",
-       "El simulador pide el cálculo al modelo de la API; si la API no responde, lo dice y no presenta el resultado como si fuera del modelo.",
-       "Tres niveles de riesgo en la página y en la API (solicitud de cambio SC-04).",
-       "Rótulo visible de demostración y de origen de los datos.",
-       "La API ya no devuelve métricas por defecto y tiene una consulta de estado que informa qué es real y qué es de ejemplo (incidente IN-03).",
-       "Guía del repositorio con el estado real del sistema."
+       "Base de datos de 13 tablas, con la carga de la base consolidada del colegio, reconciliación y bitácora de cargas.",
+       "Diez reglas de calidad y validación automática cada noche.",
+       "Red neuronal entrenada y probada con una base pública, que reemplaza al modelo de demostración entrenado con datos sintéticos (incidente IN-03 cerrado).",
+       "Interfaz rediseñada: inicio, aulas, estudiantes, ficha con informe y acciones, evaluación de un caso, modelo y datos.",
+       "Reporte del estudiante en PDF, exportación por aula y comunicado al apoderado por WhatsApp del tutor."
       ]
-     },
-     {
-      "t": "p",
-      "x": "No se cambió el modelo ni se agregaron datos: eso corresponde a los Sprints 2 y 3."
      }
     ]
    },
    {
-    "titulo": "6. Guion de la demostración",
+    "titulo": "6. Guion de la validación",
     "apaisada": false,
     "bloques": [
      {
@@ -12624,12 +13264,12 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "ol",
       "items": [
-       "**Ubicar el entregable.** Mostrar en la EDT el paquete 1.4.2.1 y su criterio de aceptación.",
-       "**Panel principal.** Señalar el rótulo de demostración y explicar qué es de ejemplo. Mostrar la distribución por nivel de riesgo y las alertas.",
-       "**Estudiantes.** Filtrar por nivel de riesgo y abrir la ficha de un estudiante.",
-       "**Simulador.** Ingresar notas bajas y varias inasistencias: el modelo de la API devuelve riesgo alto y los factores. Cambiar a notas altas: devuelve riesgo bajo.",
-       "**Estado de la API.** Abrir la consulta de estado: origen de los datos «ejemplo», modelo cargado y tres niveles.",
-       "**Avance por EDT.** Mostrar la tabla de la sección 2 y lo que sigue en el cronograma."
+       "**Ubicar el entregable.** Mostrar en la EDT los paquetes 1.2.1 y 1.2.2 y los criterios de REQ-01 y REQ-02 (sección 2).",
+       "**Pantalla «Datos» del sistema.** Bitácora de cargas y reconciliación, las diez reglas de calidad con su resultado y el historial de validaciones.",
+       "**Casos de prueba.** Recorrer la tabla de la sección 2 y su evidencia con la base real.",
+       "**Validación nocturna.** Abrir las ejecuciones de GitHub Actions del repositorio del sistema: una por noche, sin fallas.",
+       "**Los datos en uso.** Mostrar que esos datos alimentan el inicio, las aulas y la ficha del estudiante.",
+       "**Avance por EDT.** Mostrar la tabla de la sección 3 y lo que sigue."
       ]
      }
     ]
@@ -12641,41 +13281,47 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "tabla",
       "cols": [
-       "Sprint",
-       "Cierre",
-       "Qué cambia en el producto"
+       "Qué",
+       "Cuándo",
+       "Paquete"
       ],
       "anchos": [
-       26,
-       16,
-       58
+       56,
+       22,
+       22
       ],
       "filas": [
        [
-        "Sprint 1 · Análisis y diseño",
-        "06/11/2026",
-        "Variables validadas con los docentes y arquitectura definitiva. El prototipo se muestra a los docentes."
+        "Pedido de las exportaciones de Cubicol a través del Product Owner",
+        "20/10/2026",
+        "1.2.1"
        ],
        [
-        "Sprint 2 · Gestión y datos",
+        "Completar 15 noches seguidas de validación sin fallas",
+        "25/10/2026",
+        "1.2.2"
+       ],
+       [
+        "Taller de validación de las variables y de la interfaz con docentes",
+        "28/10/2026",
+        "1.4.2.1"
+       ],
+       [
+        "Reconciliación en tres fechas con las cargas de Cubicol",
+        "Sprint 2",
+        "1.2.1"
+       ],
+       [
+        "Aceptación del E-01 por el Product Owner",
         "04/12/2026",
-        "Base de datos con notas reales del colegio; la página deja de usar datos de ejemplo."
-       ],
-       [
-        "Sprint 3 · Modelo ML",
-        "30/12/2026",
-        "Modelo entrenado y validado con datos reales; se publican sus métricas."
-       ],
-       [
-        "Sprint 4 · Alertas y tablero",
-        "29/01/2027",
-        "Alertas por correo, reportes y acceso por rol."
+        "1.2"
        ]
       ],
-      "titulo": "Próximos cambios del producto según el cronograma"
+      "titulo": "Próximos pasos"
      },
      {
-      "t": "p",
+      "t": "nota",
+      "tipo": "info",
       "x": "No se generan solicitudes de cambio a partir de este informe. El siguiente se emite al cierre del Sprint 1."
      }
     ]
@@ -16492,7 +17138,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Helber Perez",
-        "Responsable del modelo de Machine Learning",
+        "Responsable del modelo de Machine Learning y Product Owner",
         {
          "x": "12",
          "align": "center"
@@ -16879,16 +17525,18 @@ export const PROCESOS: ProcesoDef[] = [
    "Entrevista a la Promotora Directora",
    "Tormenta de ideas del equipo",
    "Lienzo del proyecto",
-   "Reuniones"
+   "Reunión de inicio con la Dirección (12/10/2026)"
   ],
   "salidas": [
    "Acta de constitución del proyecto",
-   "Registro de supuestos"
+   "Registro de supuestos",
+   "Acta de la reunión de inicio"
   ],
   "docs": [
    "GOB-01",
    "GOB-02",
-   "GOB-03"
+   "GOB-03",
+   "GOB-12"
   ]
  },
  {

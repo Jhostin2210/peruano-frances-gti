@@ -1,154 +1,195 @@
 // Monitorear y controlar el alcance: avance del producto frente a la EDT.
-// ALC-05 compara lo que existe hoy (el prototipo) con cada paquete de trabajo y prepara la demostración.
+// ALC-05 compara lo que existe del sistema con cada paquete de trabajo y presenta el entregable que se valida.
 
 import { c, kv, nota, ol, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P } from "../proyecto.mjs";
 import { SPRINTS, fmtIso } from "../datos/calendario.mjs";
-import { PAQUETES } from "../datos/requisitos.mjs";
+import { PAQUETES, REQUISITOS } from "../datos/requisitos.mjs";
 import { DOC } from "./comunes.mjs";
 
-// Estado de cada paquete al 10/10/2026, según la revisión del repositorio del sistema.
-// Cumplido: cumple su criterio de aceptación. En curso: trabajo de gestión que continúa todo el proyecto.
-// Prototipo: existe una versión de demostración que aún no cumple el criterio. No iniciado: sin trabajo.
+// Estado de cada paquete al 17/10/2026, según el sistema publicado y su repositorio.
+// [estado, % de avance (null en los paquetes de gestión), qué existe, qué falta]
 const AVANCE = {
-  "1.1.1": ["Cumplido", "Línea base del cronograma, versión 3 (CRO-01).", "Mantenerlo actualizado ante cada cambio."],
-  "1.1.2": ["En curso", "Informe de desempeño N.º 1 (GOB-09).", "Un informe al cierre de cada sprint."],
-  "1.1.3": ["En curso", "Registro de cambios con 10 solicitudes (GOB-10).", "Actas de las reuniones desde el inicio."],
-  "1.2.1": ["Prototipo", "Esquema de la base de datos con ocho tablas. La carga de datos está esbozada y la base está vacía.", "Cargar las exportaciones de Cubicol y reconciliarlas."],
-  "1.2.2": ["No iniciado", "—", "Limpieza y reporte de calidad de los datos reales."],
-  "1.3.1": ["Prototipo", "Modelo Random Forest de demostración, entrenado con un conjunto de datos sintético.", "Entrenarlo con datos reales del colegio."],
-  "1.3.2": ["Prototipo", "La API calcula el riesgo de un caso y lo clasifica en tres niveles.", "Ejecución semanal automática para todos los estudiantes."],
-  "1.3.3": ["No iniciado", "No hay métricas reales: las que mostraba el prototipo se retiraron.", "Validar con datos que el modelo no vio (SC-08)."],
-  "1.4.1": ["Prototipo", "Lista de alertas en pantalla para los niveles medio y alto.", "Envío por correo, historial y registro de seguimiento."],
-  "1.4.2.1": ["Demostrable", "Prototipo navegable en línea: inicio, estudiantes, riesgos y simulador.", "Mostrarlo a los docentes y recoger sus observaciones."],
-  "1.4.2.2": ["Prototipo", "Tablero, lista y ficha del estudiante conectados a la API, con datos de ejemplo.", "Datos reales, filtros por nivel educativo y reportes exportables."],
-  "1.4.2.3": ["No iniciado", "—", "Pruebas con al menos tres docentes."],
-  "1.4.3": ["No iniciado", "La tabla de usuarios está en el esquema; no hay ingreso con usuario y contraseña.", "Autenticación y vistas por rol."],
-  "1.5.1": ["Prototipo", "Entorno de demostración en línea (página y API).", "Entorno de producción con base de datos gestionada y tarea programada (GOB-05)."],
-  "1.5.2": ["No iniciado", "—", "Manual de usuario."],
-  "1.5.3": ["No iniciado", "Guía de instalación en el repositorio del sistema.", "Manual técnico completo."],
-  "1.5.4": ["No iniciado", "—", "Plan de capacitación."],
-  "1.5.5": ["No iniciado", "—", "Capacitación y cierre."],
-  "1.6.1": ["No iniciado", "—", "Pruebas de integración y rendimiento."],
-  "1.6.2": ["No iniciado", "—", "Piloto con tres docentes tutores."],
+  "1.1.1": ["Cumplido", null, "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).", "Mantenerla actualizada ante cada cambio."],
+  "1.1.2": ["En curso", null, "Informe de desempeño N.º 1 (GOB-09).", "Un informe al cierre de cada sprint."],
+  "1.1.3": ["En curso", null, "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).", "Actas y cambios hasta el cierre."],
+  "1.2.1": ["Cumplido en parte", 85, "Carga de la base consolidada de notas del colegio: 3 878 notas de 173 estudiantes, sin duplicados y reconciliada con el archivo de origen.", "Repetir la reconciliación en tres fechas y cargar las exportaciones de Cubicol."],
+  "1.2.2": ["Cumplido en parte", 85, "Diez reglas de calidad y validación automática cada noche: 6 noches seguidas sin fallas críticas al 17/10/2026.", "Completar 15 noches seguidas y cotejar las notas transcritas de fotografías."],
+  "1.3.1": ["Cumplido", 100, "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.", "Volver a entrenarla cuando el colegio acumule datos propios."],
+  "1.3.2": ["Prototipo", 50, "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».", "Ejecución semanal automática."],
+  "1.3.3": ["Cumplido en parte", 70, "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.", "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes."],
+  "1.4.1": ["Prototipo", 40, "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).", "Correo al tutor, historial de alertas y registro de seguimiento."],
+  "1.4.2.1": ["Cumplido en parte", 80, "Interfaz en línea: inicio, aulas, estudiantes, ficha, evaluación de un caso, modelo y datos.", "Mostrarla a los docentes en el taller del 28/10/2026."],
+  "1.4.2.2": ["Cumplido en parte", 75, "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.", "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge."],
+  "1.4.2.3": ["No iniciado", 0, "—", "Pruebas con al menos tres docentes."],
+  "1.4.3": ["No iniciado", 5, "La tabla de usuarios con los cuatro roles está en la base de datos.", "Inicio de sesión y vistas por rol."],
+  "1.5.1": ["Prototipo", 40, "Sistema en línea (página en Vercel y API en Render) con datos de práctica.", "Base gestionada y entorno de producción con datos reales."],
+  "1.5.2": ["No iniciado", 0, "—", "Manual de usuario."],
+  "1.5.3": ["Prototipo", 40, "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.", "Completarlo y validarlo con el encargado de TI."],
+  "1.5.4": ["No iniciado", 0, "—", "Plan de capacitación."],
+  "1.5.5": ["No iniciado", 0, "—", "Capacitación y cierre."],
+  "1.6.1": ["Prototipo", 20, "Pruebas del entregable E-01 y de los flujos de la página.", "Reporte formal de integración y prueba de rendimiento."],
+  "1.6.2": ["No iniciado", 0, "—", "Piloto con tres docentes tutores."],
 };
-const COLOR = { Cumplido: "verde", "En curso": "azul", Demostrable: "teal", Prototipo: "amarillo", "No iniciado": "gris" };
+const COLOR = { Cumplido: "verde", "En curso": "azul", "Cumplido en parte": "teal", Prototipo: "amarillo", "No iniciado": "gris" };
 const cuenta = (estado) => PAQUETES.filter((x) => AVANCE[x.id][0] === estado).length;
+const delProducto = PAQUETES.filter((x) => AVANCE[x.id][1] !== null);
+const promedio = (lista) => Math.round(lista.reduce((s, x) => s + AVANCE[x.id][1], 0) / lista.length);
+const GRUPOS = [
+  ["1.2", "Datos e integración"],
+  ["1.3", "Modelo ML predictivo"],
+  ["1.4", "Alertas y tablero"],
+  ["1.5", "Implantación y cierre"],
+  ["1.6", "Pruebas y piloto"],
+];
 const SISTEMA = P.enlaces;
+const req = (id) => REQUISITOS.find((r) => r.id === id);
+const CASOS = [
+  ["CP-01", "Se consolidan todos los registros válidos", c("Aprobado", "verde", { bold: true, align: "center" }), "3 878 notas válidas leídas y 3 878 cargadas, de 3 937 filas de 173 estudiantes. Las 59 restantes se reportan con su motivo."],
+  ["CP-02", "No se generan duplicados", c("Aprobado", "verde", { bold: true, align: "center" }), "Segunda carga del mismo archivo: 0 cargadas y 3 878 «ya estaban»."],
+  ["CP-03", "Reconciliación entre el origen y la base en tres fechas", c("Aprobado en parte", "teal", { bold: true, align: "center" }), "La reconciliación es correcta; falta repetirla con cargas sucesivas en tres fechas."],
+  ["CP-04", "Integridad referencial", c("Aprobado", "verde", { bold: true, align: "center" }), "Ninguna nota sin estudiante, curso o periodo; ningún estudiante sin matrícula."],
+  ["CP-05", "La validación corre cada noche 15 días seguidos sin fallas", c("En curso", "azul", { bold: true, align: "center" }), "6 de 15 noches seguidas sin fallas al 17/10/2026, en GitHub Actions."],
+  ["CP-06", "Detecta duplicados", c("Aprobado", "verde", { bold: true, align: "center" }), "33 notas repetidas en el origen: la carga conserva la primera y las cuenta."],
+  ["CP-07", "Detecta vacíos críticos", c("Aprobado", "verde", { bold: true, align: "center" }), "7 casillas vacías o con texto y 15 notas sin periodo identificable, detectadas y no cargadas."],
+  ["CP-08", "El resultado queda disponible para el responsable de TI", c("Aprobado", "verde", { bold: true, align: "center" }), "Pantalla «Datos» del sistema, consulta de la API y reporte de cada ejecución nocturna."],
+];
 
 export const ALC05 = DOC({
   id: "ALC-05",
-  titulo: "Informe de avance del producto por EDT N.º 1",
-  archivo: "ALC-05 Avance del producto por EDT 01",
+  titulo: "Informe de avance del producto por EDT N.º 2",
+  archivo: "ALC-05 Avance del producto por EDT 02",
   carpeta: "03 - Alcance/3.5 Controlar el alcance",
   dominio: "Alcance",
   area: "Monitoreo y control",
   proceso: "Monitorear y controlar el alcance",
   salida: "Información de desempeño del trabajo y entregables verificados",
+  version: "2.0",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Informe N.º 1: punto de partida, con el prototipo heredado de la fase de formulación.", P.director],
+    ["2.0", P.fechaCorte, "Informe N.º 2: presenta el primer entregable del producto (E-01) para su validación y el avance de cada paquete. Reemplaza al N.º 1.", P.director],
+  ],
   resumen:
-    "Compara lo que existe hoy del sistema con cada paquete de trabajo de la EDT, separa lo real de lo que es demostración y prepara la presentación del entregable al docente asesor.",
+    "Compara lo que existe del sistema con cada paquete de trabajo de la EDT y presenta para su validación el primer entregable del producto: el módulo de integración y limpieza de datos (E-01).",
   secciones: [
     sec("1. Propósito y corte", [
       p(
-        `Monitorear y controlar el alcance es comparar el trabajo hecho con la línea base. Fecha de corte: ${P.fechaEmision}. Los sprints del proyecto empiezan el ${P.inicio}, así que lo que se mide aquí es el punto de partida del producto: el prototipo heredado de la fase de formulación, con los ajustes aplicados el ${P.fechaEmision}.`,
+        `Monitorear y controlar el alcance es comparar el trabajo hecho con la línea base. Fecha de corte: ${P.fechaCorte}, primera semana del Sprint 1. Este informe reemplaza al N.º 1 (${P.fechaEmision}), que describía el prototipo heredado de la fase de formulación.`,
       ),
       kv(
-        ["Página del prototipo", SISTEMA.prototipo],
-        ["API del prototipo", SISTEMA.api],
+        ["Página del sistema", SISTEMA.prototipo],
+        ["API del sistema", SISTEMA.api],
         ["Repositorio del sistema", SISTEMA.repoSistema],
       ),
     ]),
-    sec("2. Avance por paquete de trabajo", [
+    sec("2. Entregable que se valida: E-01", [
+      kv(
+        ["Entregable", "E-01 · Módulo de integración y limpieza de datos"],
+        ["Paquetes de la EDT", "1.2.1 Integración de datos (ETL) y 1.2.2 Calidad de datos"],
+        ["Requisitos", "REQ-01 Centralización de los datos académicos y REQ-02 Limpieza y validación automática de los datos"],
+        ["Criterio de REQ-01", req("REQ-01").criterio],
+        ["Criterio de REQ-02", req("REQ-02").criterio],
+        ["Sprint en que se acepta", `Sprint 2 · revisión del ${fmtIso(SPRINTS[1].revision)}, con el Product Owner`],
+        ["Situación", "Cumplido en parte: seis de los ocho casos de prueba aprobados, uno aprobado en parte y uno en curso."],
+      ),
+      p(
+        "Es el primer entregable de la EDT y el único que hoy se puede validar con su criterio de aceptación: la carga, la reconciliación y las reglas de calidad funcionan y se probaron con la base consolidada de notas del colegio.",
+      ),
       tabla(
-        ["Paquete", "Estado", "Qué existe hoy", "Qué falta para cumplir el criterio"],
-        [22, 12, 34, 32],
+        ["Caso", "Qué comprueba", "Resultado", "Evidencia"],
+        [8, 30, 16, 46],
+        CASOS,
+        { titulo: "Casos de prueba del E-01 (matriz de trazabilidad)", compacta: true, fuente: "Pruebas ejecutadas el 10/10/2026 con la base real del colegio, en un equipo del proyecto; la validación nocturna se revisó el 17/10/2026. Detalle en el documento de pruebas del repositorio del sistema." },
+      ),
+      ul(
+        "**Alcance de los datos.** El E-01 integra hoy las notas, que son los únicos datos digitales del colegio. La asistencia y las incidencias tienen sus tablas, pero el colegio aún las lleva en papel (incidente IN-02).",
+        "**Fechas inconsistentes.** Las notas no llevan fechas sueltas: cada una pertenece a un periodo del catálogo (mes o trimestre). La carga rechaza las que no tienen un periodo identificable.",
+        "**Datos reales y datos de práctica.** Las pruebas se hicieron con la base real del colegio, que no se publica sin el consentimiento de los apoderados. El sistema en línea usa datos de práctica con la misma estructura.",
+      ),
+    ]),
+    sec("3. Avance por paquete de trabajo", [
+      tabla(
+        ["Paquete", "Estado", "Avance", "Qué existe", "Qué falta para cumplir el criterio"],
+        [20, 12, 8, 32, 28],
         PAQUETES.map((x) => {
-          const [estado, existe, falta] = AVANCE[x.id];
-          return [`${x.id} ${x.nombre}`, c(estado, COLOR[estado], { bold: true, align: "center" }), existe, falta];
+          const [estado, pct, existe, falta] = AVANCE[x.id];
+          return [`${x.id} ${x.nombre}`, c(estado, COLOR[estado], { bold: true, align: "center" }), c(pct === null ? "—" : `${pct} %`, undefined, { align: "center" }), existe, falta];
         }),
         {
-          titulo: `Estado de los ${PAQUETES.length} paquetes de la EDT al ${P.fechaEmision}`,
+          titulo: `Estado de los ${PAQUETES.length} paquetes de la EDT al ${P.fechaCorte}`,
           compacta: true,
-          fuente: "Cumplido: cumple su criterio de aceptación. En curso: gestión que continúa todo el proyecto. Demostrable: se puede mostrar, con su criterio cumplido en parte. Prototipo: versión de demostración que aún no cumple el criterio.",
+          fuente: "Cumplido: cumple su criterio de aceptación. En curso: gestión que continúa todo el proyecto. Cumplido en parte: funciona y se puede mostrar, con su criterio cumplido en parte. Prototipo: versión inicial que aún no cumple el criterio. El avance es una estimación del equipo frente al criterio de cada paquete.",
         },
+      ),
+      tabla(
+        ["Grupo de la EDT", "Avance"],
+        [70, 30],
+        [
+          ...GRUPOS.map(([id, nombre]) => [`${id} ${nombre}`, c(`${promedio(delProducto.filter((x) => x.id.startsWith(id + ".")))} %`, undefined, { align: "center" })]),
+          [c("Producto (paquetes 1.2 a 1.6)", "gris", { bold: true }), c(`${promedio(delProducto)} %`, "gris", { bold: true, align: "center" })],
+        ],
+        { titulo: "Avance por grupo", fuente: "Promedio simple de los paquetes de cada grupo." },
       ),
       tabla(
         ["Estado", "Paquetes"],
         [60, 40],
-        [...["Cumplido", "En curso", "Demostrable", "Prototipo", "No iniciado"].map((e) => [c(e, COLOR[e], { bold: true }), c(String(cuenta(e)), undefined, { align: "center" })]), [c("Total", "gris", { bold: true }), c(String(PAQUETES.length), "gris", { align: "center", bold: true })]],
+        [...["Cumplido", "En curso", "Cumplido en parte", "Prototipo", "No iniciado"].map((e) => [c(e, COLOR[e], { bold: true }), c(String(cuenta(e)), undefined, { align: "center" })]), [c("Total", "gris", { bold: true }), c(String(PAQUETES.length), "gris", { align: "center", bold: true })]],
         { titulo: "Resumen del avance" },
       ),
       p(
-        "El avance coincide con el cronograma: los paquetes de datos corresponden al Sprint 2, los del modelo al Sprint 3 y los de alertas y tablero al Sprint 4. En interfaz el producto está adelantado, porque el prototipo se construyó en la fase de formulación.",
+        "En lo técnico, el producto cubre lo previsto para los Sprints 1 a 3 y la mitad del Sprint 4. Lo que falta en esos sprints depende del colegio: la validación de las variables con los docentes, las exportaciones de Cubicol, la métrica acordada para el modelo y las pruebas con usuarios. Las fechas del cronograma se mantienen.",
       ),
     ]),
-    sec("3. Entregable que se demuestra", [
-      kv(
-        ["Paquete de la EDT", "1.4.2.1 Diseño de la interfaz, con avance del 1.4.2.2 Desarrollo del tablero"],
-        ["Entregable", "Prototipo validado"],
-        ["Criterio de aceptación", "Maquetas aprobadas por el equipo y mostradas a docentes antes de desarrollar."],
-        ["Situación del criterio", "Cumplido en parte: el equipo lo aprobó; falta mostrarlo a los docentes y recoger sus observaciones."],
-        ["Evidencia", "Prototipo navegable en línea, conectado a la API, con el simulador usando el modelo."],
-      ),
-      p(
-        "Se eligió este paquete porque es el único cuyo resultado se puede mostrar funcionando hoy sin presentar como terminado algo que no lo está.",
-      ),
-    ]),
-    sec("4. Qué es real y qué es demostración", [
+    sec("4. Qué es real y qué es de práctica", [
       tabla(
         ["Elemento", "Situación", "Detalle"],
-        [28, 18, 54],
+        [28, 16, 56],
         [
-          ["Pantallas y navegación", c("Real", "verde", { bold: true, align: "center" }), "Inicio, estudiantes, ficha, riesgos y simulador funcionan."],
-          ["Conexión de la página con la API", c("Real", "verde", { bold: true, align: "center" }), "La página consulta la API en línea y muestra de dónde vienen los datos."],
-          ["Cálculo del riesgo en el simulador", c("Real", "verde", { bold: true, align: "center" }), "Lo calcula el modelo cargado en la API, no una regla escrita en la página."],
-          ["Tres niveles de riesgo", c("Real", "verde", { bold: true, align: "center" }), "Bajo, medio y alto, como define el alcance. Los cortes son provisionales."],
-          ["Estudiantes y notas", c("Ejemplo", "amarillo", { bold: true, align: "center" }), "Cinco estudiantes ficticios. La base de datos está vacía."],
-          ["Modelo", c("Demostración", "amarillo", { bold: true, align: "center" }), "Entrenado con datos sintéticos: no demuestra capacidad de predicción (SC-08)."],
-          ["Gráfico de tendencia", c("Ilustrativo", "amarillo", { bold: true, align: "center" }), "No hay historial real de alertas."],
-          ["Métricas del modelo", c("No hay", "gris", { bold: true, align: "center" }), "Se publicarán cuando el modelo se valide con datos reales."],
+          ["Base de datos, carga y reconciliación", c("Real", "verde", { bold: true, align: "center" }), "Probadas con la base consolidada de notas del colegio."],
+          ["Validación automática de los datos", c("Real", "verde", { bold: true, align: "center" }), "Se ejecuta cada noche en GitHub Actions."],
+          ["Modelo de riesgo", c("Real", "verde", { bold: true, align: "center" }), "Red neuronal entrenada y probada con una base pública y aplicada a los datos del colegio; sus métricas salen del entrenamiento."],
+          ["Pantallas, reporte PDF y comunicado", c("Real", "verde", { bold: true, align: "center" }), "Funcionan en línea con la base de datos y el modelo."],
+          ["Estudiantes y notas del sistema en línea", c("Práctica", "amarillo", { bold: true, align: "center" }), "135 estudiantes ficticios con la estructura de la base real. Los datos reales no se publican sin el consentimiento de los apoderados."],
           ["Alertas por correo, usuarios y roles", c("No hay", "gris", { bold: true, align: "center" }), "Corresponden al Sprint 4."],
         ],
-        { titulo: "Lo que la demostración muestra de verdad" },
+        { titulo: "Lo que el sistema muestra de verdad" },
       ),
-      nota("La página lleva un rótulo permanente de «Demostración» que dice lo mismo que esta tabla.", "info"),
     ]),
-    sec("5. Ajustes aplicados al prototipo", [
-      p(`Para que la demostración coincida con la documentación, el ${P.fechaEmision} se aplicaron estos ajustes en el repositorio del sistema:`),
+    sec("5. Cambios desde el informe N.º 1", [
       ul(
-        "La página consulta la API en línea; antes apuntaba a una dirección local y mostraba datos fijos.",
-        "El simulador pide el cálculo al modelo de la API; si la API no responde, lo dice y no presenta el resultado como si fuera del modelo.",
-        "Tres niveles de riesgo en la página y en la API (solicitud de cambio SC-04).",
-        "Rótulo visible de demostración y de origen de los datos.",
-        "La API ya no devuelve métricas por defecto y tiene una consulta de estado que informa qué es real y qué es de ejemplo (incidente IN-03).",
-        "Guía del repositorio con el estado real del sistema.",
+        "Base de datos de 13 tablas, con la carga de la base consolidada del colegio, reconciliación y bitácora de cargas.",
+        "Diez reglas de calidad y validación automática cada noche.",
+        "Red neuronal entrenada y probada con una base pública, que reemplaza al modelo de demostración entrenado con datos sintéticos (incidente IN-03 cerrado).",
+        "Interfaz rediseñada: inicio, aulas, estudiantes, ficha con informe y acciones, evaluación de un caso, modelo y datos.",
+        "Reporte del estudiante en PDF, exportación por aula y comunicado al apoderado por WhatsApp del tutor.",
       ),
-      p("No se cambió el modelo ni se agregaron datos: eso corresponde a los Sprints 2 y 3."),
     ]),
-    sec("6. Guion de la demostración", [
+    sec("6. Guion de la validación", [
       p("Duración: unos cinco minutos. Conviene abrir la página unos minutos antes, porque la API tarda cerca de un minuto en responder la primera vez."),
       ol(
-        "**Ubicar el entregable.** Mostrar en la EDT el paquete 1.4.2.1 y su criterio de aceptación.",
-        "**Panel principal.** Señalar el rótulo de demostración y explicar qué es de ejemplo. Mostrar la distribución por nivel de riesgo y las alertas.",
-        "**Estudiantes.** Filtrar por nivel de riesgo y abrir la ficha de un estudiante.",
-        "**Simulador.** Ingresar notas bajas y varias inasistencias: el modelo de la API devuelve riesgo alto y los factores. Cambiar a notas altas: devuelve riesgo bajo.",
-        "**Estado de la API.** Abrir la consulta de estado: origen de los datos «ejemplo», modelo cargado y tres niveles.",
-        "**Avance por EDT.** Mostrar la tabla de la sección 2 y lo que sigue en el cronograma.",
+        "**Ubicar el entregable.** Mostrar en la EDT los paquetes 1.2.1 y 1.2.2 y los criterios de REQ-01 y REQ-02 (sección 2).",
+        "**Pantalla «Datos» del sistema.** Bitácora de cargas y reconciliación, las diez reglas de calidad con su resultado y el historial de validaciones.",
+        "**Casos de prueba.** Recorrer la tabla de la sección 2 y su evidencia con la base real.",
+        "**Validación nocturna.** Abrir las ejecuciones de GitHub Actions del repositorio del sistema: una por noche, sin fallas.",
+        "**Los datos en uso.** Mostrar que esos datos alimentan el inicio, las aulas y la ficha del estudiante.",
+        "**Avance por EDT.** Mostrar la tabla de la sección 3 y lo que sigue.",
       ),
     ]),
     sec("7. Qué sigue", [
       tabla(
-        ["Sprint", "Cierre", "Qué cambia en el producto"],
-        [26, 16, 58],
+        ["Qué", "Cuándo", "Paquete"],
+        [56, 22, 22],
         [
-          ["Sprint 1 · Análisis y diseño", fmtIso(SPRINTS[0].revision), "Variables validadas con los docentes y arquitectura definitiva. El prototipo se muestra a los docentes."],
-          ["Sprint 2 · Gestión y datos", fmtIso(SPRINTS[1].revision), "Base de datos con notas reales del colegio; la página deja de usar datos de ejemplo."],
-          ["Sprint 3 · Modelo ML", fmtIso(SPRINTS[2].revision), "Modelo entrenado y validado con datos reales; se publican sus métricas."],
-          ["Sprint 4 · Alertas y tablero", fmtIso(SPRINTS[3].revision), "Alertas por correo, reportes y acceso por rol."],
+          ["Pedido de las exportaciones de Cubicol a través del Product Owner", "20/10/2026", "1.2.1"],
+          ["Completar 15 noches seguidas de validación sin fallas", "25/10/2026", "1.2.2"],
+          ["Taller de validación de las variables y de la interfaz con docentes", "28/10/2026", "1.4.2.1"],
+          ["Reconciliación en tres fechas con las cargas de Cubicol", "Sprint 2", "1.2.1"],
+          [`Aceptación del E-01 por el Product Owner`, fmtIso(SPRINTS[1].revision), "1.2"],
         ],
-        { titulo: "Próximos cambios del producto según el cronograma" },
+        { titulo: "Próximos pasos" },
       ),
-      p("No se generan solicitudes de cambio a partir de este informe. El siguiente se emite al cierre del Sprint 1."),
+      nota("No se generan solicitudes de cambio a partir de este informe. El siguiente se emite al cierre del Sprint 1.", "info"),
     ]),
   ],
 });
