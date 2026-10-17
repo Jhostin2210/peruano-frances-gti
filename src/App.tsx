@@ -402,10 +402,6 @@ export default function App() {
             subtitle="Sustentación en video de la propuesta SIA-T presentada en el curso anterior, con la demostración del prototipo."
             subheading="Capítulo 10 · Curso anterior"
           />
-          <AvisoEtapa tipo="anterior">
-            El video y el prototipo que muestra son del curso anterior. El prototipo es una demostración con datos simulados: todavía
-            no usa un modelo validado con datos reales del colegio (incidente <strong>IN-03</strong>).
-          </AvisoEtapa>
           <VideoPresentation />
 
           {/* SYSTEM BIBLIOGRAPHY */}
