@@ -224,6 +224,12 @@ const matrizInvolucramiento = (titulo) =>
 export const INT02 = DOC({
   ...base,
   id: "INT-02",
+  version: "1.1",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", P.fechaCorte, "Las expectativas de asistencia con QR, juegos y guías de Cubicol se descartaron en la reunión de inicio.", P.director],
+  ],
   titulo: "Plan de involucramiento de los interesados",
   archivo: "INT-02 Plan de involucramiento",
   carpeta: "02 - Interesados/2.2 Planificar",

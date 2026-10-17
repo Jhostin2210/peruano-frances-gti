@@ -17,6 +17,12 @@ const porPrioridad = contar(INCIDENTES, "prioridad");
 
 export const GOB06 = DOC({
   id: "GOB-06",
+  version: "1.1",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", P.fechaCorte, "Se cierran los incidentes IN-03, IN-05 e IN-10 y se actualiza el IN-01.", P.director],
+  ],
   titulo: "Registro de incidentes",
   archivo: "GOB-06 Registro de incidentes",
   carpeta: "01 - Gobernanza/1.4 Ejecución",
@@ -335,6 +341,12 @@ export function crearGOB09(documentos) {
 // ───────────────────────── GOB-10 ─────────────────────────
 export const GOB10 = DOC({
   id: "GOB-10",
+  version: "1.1",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", P.fechaCorte, "Conformidad de la patrocinadora con SC-02 y SC-03 y nuevo cambio SC-11.", P.director],
+  ],
   titulo: "Plan de gestión de cambios y registro de cambios",
   archivo: "GOB-10 Plan y registro de cambios",
   carpeta: "01 - Gobernanza/1.8 Cambios",

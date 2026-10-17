@@ -421,6 +421,12 @@ export const GOB02 = DOC({
 export const GOB03 = DOC({
   ...base,
   id: "GOB-03",
+  version: "1.1",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", P.fechaCorte, "Se registran el Product Owner designado (S-04 comprobado), la restricción R-08 y el supuesto S-12.", P.director],
+  ],
   titulo: "Registro de supuestos y restricciones",
   archivo: "GOB-03 Registro de supuestos",
   salida: "Registro de supuestos",

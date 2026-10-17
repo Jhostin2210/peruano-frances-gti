@@ -418,6 +418,12 @@ const VALIDACION = {
 export const ALC04 = DOC({
   ...base,
   id: "ALC-04",
+  version: "1.1",
+  fecha: P.fechaCorte,
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", P.fechaCorte, "Se registra la designación del Product Owner en la reunión de inicio.", P.director],
+  ],
   titulo: "Procedimiento de validación del alcance",
   archivo: "ALC-04 Validación del alcance",
   carpeta: "03 - Alcance/3.4 Validar el alcance",

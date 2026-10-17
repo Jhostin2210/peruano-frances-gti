@@ -3,6 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+// Alterna el modo oscuro: clase «dark» en <html> y preferencia guardada en el navegador.
+function BotonTema() {
+  const [oscuro, setOscuro] = useState(() => document.documentElement.classList.contains("dark"));
+  const alternar = () => {
+    const nuevo = !oscuro;
+    document.documentElement.classList.toggle("dark", nuevo);
+    try {
+      localStorage.setItem("tema", nuevo ? "oscuro" : "claro");
+    } catch {
+      /* sin almacenamiento: el cambio dura hasta recargar */
+    }
+    setOscuro(nuevo);
+  };
+  return (
+    <button
+      onClick={alternar}
+      aria-label={oscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      title={oscuro ? "Modo claro" : "Modo oscuro"}
+      className="flex h-9 w-9 flex-shrink-0 cursor-pointer items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-100"
+    >
+      {oscuro ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
+  );
+}
+
 interface HeaderProps {
   onOpenSidebar: () => void;
 }
@@ -38,6 +66,7 @@ export default function Header({ onOpenSidebar }: HeaderProps) {
           <span className="w-1.5 h-1.5 rounded-full bg-[#0d7377] animate-pulse" />
           Proyecto Académico
         </span>
+        <BotonTema />
       </div>
     </header>
   );
