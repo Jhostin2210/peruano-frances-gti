@@ -8597,16 +8597,6 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "17/10/2026",
-        "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)",
-        "I-13",
-        "Equipo del proyecto",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
         "20/10/2026",
         "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner",
         "I-07, I-08",
@@ -9066,8 +9056,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Ejecución",
   "proceso": "Gestionar las comunicaciones",
   "salida": "Comunicaciones del proyecto",
-  "version": "1.1",
-  "fecha": "17/10/2026",
+  "version": "1.2",
+  "fecha": "19/10/2026",
   "resumen": "Lleva la cuenta de cada comunicación del proyecto: las que ya se hicieron, con su constancia, y las programadas, con su fecha límite y su responsable. Es la fuente del tablero de comunicaciones del blog.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
   "pdf": "/documentos/INT-06-registro-de-comunicaciones.pdf",
@@ -9247,6 +9237,24 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Acta de la reunión de inicio (GOB-12) y acta de constitución firmada (GOB-02)"
+       ],
+       [
+        "C-08",
+        "17/10/2026",
+        "Avance académico",
+        "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Clase y blog del proyecto",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Observaciones del docente: habilitar un enlace para los entregables y que los documentos se vean por Drive. Sin observaciones al E-01"
        ]
       ],
       "titulo": "Comunicaciones realizadas al 17/10/2026",
@@ -9288,24 +9296,6 @@ export const DOCUMENTOS: DocDef[] = [
        11
       ],
       "filas": [
-       [
-        "C-08",
-        "17/10/2026",
-        "Avance académico",
-        "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)",
-        "Equipo del proyecto",
-        [
-         "I-13 Docente asesor del curso"
-        ],
-        "Clase y blog del proyecto",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Blog actualizado y observaciones del docente"
-       ],
        [
         "C-09",
         "20/10/2026",
@@ -9666,11 +9656,11 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Sprint 1",
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         },
         {
-         "x": "8",
+         "x": "7",
          "align": "center"
         },
         {
@@ -9790,13 +9780,13 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "7",
+         "x": "8",
          "fill": "gris",
          "align": "center",
          "bold": true
         },
         {
-         "x": "15",
+         "x": "14",
          "fill": "gris",
          "align": "center",
          "bold": true
@@ -9868,7 +9858,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Comunicaciones registradas",
         "22",
         "—",
-        "7 realizadas y 15 programadas."
+        "8 realizadas y 14 programadas."
        ],
        [
         "Cumplimiento del calendario",
@@ -9912,7 +9902,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Constancia",
         {
-         "x": "7 de 7",
+         "x": "8 de 8",
          "fill": "verde",
          "bold": true,
          "align": "center"
@@ -9989,11 +9979,11 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Clase y blog del proyecto",
         {
-         "x": "0",
+         "x": "1",
          "align": "center"
         },
         {
-         "x": "3",
+         "x": "2",
          "align": "center"
         },
         {
@@ -10471,11 +10461,11 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         },
         {
-         "x": "9",
+         "x": "8",
          "align": "center"
         },
         {

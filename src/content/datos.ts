@@ -3332,8 +3332,8 @@ export const COMUNICACIONES = [
   ],
   "canal": "Clase y blog del proyecto",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Blog actualizado y observaciones del docente",
+  "estado": "Realizada",
+  "constancia": "Observaciones del docente: habilitar un enlace para los entregables y que los documentos se vean por Drive. Sin observaciones al E-01",
   "plan": "PC-06"
  },
  {
