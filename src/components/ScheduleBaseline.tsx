@@ -552,7 +552,7 @@ export default function ScheduleBaseline() {
                 </button>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                El diagrama de Gantt reparte las actividades en los 6 sprints de 4 semanas, del 12 de octubre de 2026 al 23 de abril de 2027, con el receso de febrero, los feriados y los 6 hitos de Sprint Review. Elija un sprint para verlo por días, con sus dependencias y responsables. Se dibuja con los mismos datos del documento CRO-01 y del archivo de MS Project (CRO-01 Cronograma SIA-T v3), así que no queda desactualizado.
+                La vista del proyecto completo es el diagrama de Gantt del documento CRO-01 (sección 7): los grupos de actividades en las 24 semanas, del 12 de octubre de 2026 al 23 de abril de 2027, con el receso de febrero y los 6 hitos de Sprint Review. Elija un sprint para verlo por días, con sus responsables y dependencias. Se dibuja con los mismos datos del documento CRO-01 y del archivo de MS Project (CRO-01 Cronograma SIA-T v3), así que no queda desactualizado.
               </p>
 
               <GanttCronograma />
@@ -570,7 +570,7 @@ export default function ScheduleBaseline() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
-                    <span><strong>6 Sprints Scrum de 4 semanas:</strong> cada uno con su barra de resumen y su hito de Sprint Review al cierre.</span>
+                    <span><strong>6 Sprints Scrum de 4 semanas:</strong> cada uno cerrado por su hito de Sprint Review.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />

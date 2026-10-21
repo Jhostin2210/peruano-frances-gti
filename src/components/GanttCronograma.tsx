@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { FERIADOS, RECESO, RED, SPRINTS } from "../content/datos";
+import { FERIADOS, GANTT_SEMANAS, RECESO, RED, SPRINTS } from "../content/datos";
 
 type Nodo = (typeof RED)[number];
 
@@ -49,76 +49,24 @@ function Detalle({ nodo }: { nodo: Nodo | null }) {
   );
 }
 
-type Fila = { clave: string; tipo: "sprint" | Nodo["tipo"]; etiqueta: string; codigo?: string; inicio: string; fin: string; nodo?: Nodo };
+// Colores del documento CRO-01: rojo claro (grupo con ruta crítica), verde azulado (sin críticas),
+// gris (receso) y azul marino (encabezados e hitos).
+const NAVY = "#1F3864";
+const CELDA_CRITICA = "bg-red-200";
+const CELDA_NORMAL = "bg-teal-100";
+const CELDA_RECESO = "bg-slate-200";
+const COLUMNAS: (number | "R")[] = [...Array.from({ length: 16 }, (_, i) => i + 1), "R", ...Array.from({ length: 8 }, (_, i) => i + 17)];
+const semanaDe = (f: string) => {
+  const t = ms(f);
+  for (let k = 1; k <= 24; k++) if (t >= lunesDeSemana(k) && t < lunesDeSemana(k) + 7 * DIA) return k;
+  return null;
+};
 
 export function GanttCronograma() {
   const [sprint, setSprint] = useState(0);
-  const [elegido, setElegido] = useState<Nodo | null>(null);
-  // El ancho de la escala se ajusta al espacio disponible para que el proyecto completo quepa sin desplazarse.
-  const caja = useRef<HTMLDivElement>(null);
-  const [disponible, setDisponible] = useState(1000);
-  useEffect(() => {
-    if (!caja.current) return;
-    const obs = new ResizeObserver(([e]) => setDisponible(e.contentRect.width));
-    obs.observe(caja.current);
-    return () => obs.disconnect();
-  }, []);
-  const etiqueta = disponible >= 640 ? 260 : 150;
-
-  const filas = useMemo(() => {
-    const lista: Fila[] = [];
-    for (const sp of SPRINTS) {
-      if (sprint && sp.n !== sprint) continue;
-      const del = RED.filter((n) => n.sprint === sp.n && (n.tipo === "actividad" || n.tipo === "hito"));
-      lista.push({ clave: `S${sp.n}`, tipo: "sprint", etiqueta: `Sprint ${sp.n}: ${sp.nombre}`, inicio: sp.inicio, fin: del[del.length - 1].fin });
-      for (const n of del) lista.push({ clave: n.id, tipo: n.tipo, codigo: n.tipo === "actividad" ? n.id : "", etiqueta: nombreCorto(n), inicio: n.inicio, fin: n.fin, nodo: n });
-      if (!sprint && sp.n === 4) {
-        const r = POR_ID.get("REC")!;
-        lista.push({ clave: r.id, tipo: "receso", etiqueta: "Receso de febrero", inicio: r.inicio, fin: r.fin, nodo: r });
-      }
-    }
-    if (!sprint) for (const n of RED.filter((x) => x.tipo === "continua")) lista.push({ clave: n.id, tipo: "continua", codigo: n.id, etiqueta: "Reunión diaria (continua)", inicio: n.inicio, fin: n.fin, nodo: n });
-    return lista;
-  }, [sprint]);
-
-  const sp = sprint ? SPRINTS[sprint - 1] : null;
-  const desde = sp ? ms(sp.inicio) - 2 * DIA : ms("2026-10-12");
-  const hasta = sp ? ms(filas[0].fin) + 6 * DIA : ms("2027-04-26");
-  const totalDias = Math.round((hasta - desde) / DIA);
-  const px = Math.max(sp ? 22 : 3.5, (disponible - etiqueta - 6) / totalDias);
-  const ancho = totalDias * px;
-  const x = (f: string) => ((ms(f) - desde) / DIA) * px;
-  const xFin = (f: string) => x(f) + px;
-  const ALTO = 26;
-  const filaDe = new Map<string, number>(filas.map((f, i) => [f.clave, i]));
-
-  const meses: { x: number; ancho: number; texto: string }[] = [];
-  for (let d = new Date(desde); d.getTime() < hasta; d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1))) {
-    const a = Math.max(d.getTime(), desde);
-    const b = Math.min(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1), hasta);
-    meses.push({ x: ((a - desde) / DIA) * px, ancho: ((b - a) / DIA) * px, texto: `${MESES[d.getUTCMonth()]} ${d.getUTCFullYear()}` });
-  }
-  const semanas = Array.from({ length: 24 }, (_, i) => ({ k: i + 1, t: lunesDeSemana(i + 1) })).filter((s) => s.t >= desde && s.t < hasta);
-  const dias = sp ? Array.from({ length: totalDias }, (_, i) => desde + i * DIA) : [];
-  const fechaHoy = hoy();
-  const flechas = sp
-    ? filas.flatMap((f) =>
-        (f.nodo?.preds ?? [])
-          .filter((p) => filaDe.has(p))
-          .map((p) => {
-            const pred = POR_ID.get(p)!;
-            const x1 = xFin(pred.fin);
-            const y1 = filaDe.get(p)! * ALTO + ALTO / 2;
-            const x2 = f.tipo === "hito" ? xFin(f.fin) - 6 : x(f.inicio);
-            const y2 = filaDe.get(f.clave)! * ALTO + ALTO / 2;
-            return { clave: `${p}-${f.clave}`, d: `M${x1},${y1} C${x1 + 14},${y1} ${x2 - 14},${y2} ${x2},${y2}`, critica: Boolean(pred.critica && f.nodo?.critica) };
-          }),
-      )
-    : [];
-
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap items-center gap-1.5">
         {[0, ...SPRINTS.map((s) => s.n)].map((n) => (
           <button
             key={n}
@@ -130,142 +78,265 @@ export function GanttCronograma() {
             {n ? `Sprint ${n}` : "Proyecto completo"}
           </button>
         ))}
+        <span className="text-[11px] text-slate-400 ml-1">{sprint ? "Detalle por días del sprint elegido." : "Elija un sprint para ver el detalle por días."}</span>
       </div>
+      {sprint ? <GanttSprint n={sprint} /> : <GanttSemanas />}
+    </div>
+  );
+}
 
-      <div ref={caja} className="border border-slate-200 rounded-xl bg-white overflow-x-auto">
-        <div className="flex min-w-max">
-          {/* Columna de nombres */}
-          <div className="sticky left-0 z-20 bg-white border-r border-slate-200 shrink-0" style={{ width: etiqueta }}>
-            <div className="h-[44px] border-b border-slate-200 px-2 flex items-end pb-1.5 text-[10px] font-mono font-bold uppercase text-slate-400">Tarea</div>
-            {filas.map((f) => (
-              <div
-                key={f.clave}
-                style={{ height: ALTO }}
-                onMouseEnter={() => f.nodo && setElegido(f.nodo)}
-                onClick={() => f.nodo && setElegido(f.nodo)}
-                className={`px-2 flex items-center gap-1.5 text-[11px] border-b border-slate-100 truncate ${
-                  f.tipo === "sprint" ? "font-bold text-slate-900 bg-slate-50" : f.tipo === "hito" ? "text-amber-700 font-semibold" : "text-slate-600"
-                } ${elegido && f.nodo?.id === elegido.id ? "bg-indigo-50" : ""}`}
-                title={f.nodo?.descripcion ?? f.etiqueta}
-              >
-                {f.codigo && <span className={`font-mono text-[10px] shrink-0 ${f.nodo?.critica ? "text-rose-600 font-bold" : "text-slate-400"}`}>{f.codigo}</span>}
-                <span className="truncate">{f.etiqueta}</span>
-              </div>
+// Vista principal: la misma tabla del CRO-01 (sección 7), un grupo de actividades por fila y una columna por semana.
+function GanttSemanas() {
+  const [grupo, setGrupo] = useState<(typeof GANTT_SEMANAS)[number] | null>(null);
+  const actual = semanaDe(hoy());
+  const borde = "border border-slate-300";
+  const titulo = (k: number) => `Semana ${k}: ${corta(iso(lunesDeSemana(k)))} al ${corta(iso(lunesDeSemana(k) + 4 * DIA))}`;
+  return (
+    <div className="space-y-3">
+      <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+        <table className="w-full min-w-[760px] border-collapse text-[11px] text-slate-700">
+          <thead>
+            <tr>
+              <th className={`${borde} px-2 py-1 text-left font-semibold`} style={{ background: NAVY, color: "#fff" }} rowSpan={2}>
+                Grupo de actividades
+              </th>
+              {SPRINTS.map((s) => (
+                <React.Fragment key={s.n}>
+                  <th colSpan={4} className={`${borde} py-1 font-semibold text-[10px]`} style={{ background: NAVY, color: "#fff" }}>
+                    Sprint {s.n}
+                  </th>
+                  {s.n === 4 && <th className={`${borde} ${CELDA_RECESO}`} rowSpan={2} title={`Receso: ${larga(RECESO.inicio)} al ${larga(RECESO.fin)}`}>R</th>}
+                </React.Fragment>
+              ))}
+            </tr>
+            <tr>
+              {COLUMNAS.filter((k) => k !== "R").map((k) => (
+                <th
+                  key={k}
+                  title={titulo(k as number)}
+                  className={`${borde} w-[26px] py-1 font-mono font-semibold text-[10px] ${k === actual ? "outline-2 outline-red-500 -outline-offset-2" : ""}`}
+                  style={{ background: NAVY, color: "#fff" }}
+                >
+                  {k}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {GANTT_SEMANAS.map((g) => (
+              <tr key={g.prefijo} onMouseEnter={() => setGrupo(g)} onClick={() => setGrupo(g)} className={`cursor-pointer ${grupo?.prefijo === g.prefijo ? "bg-indigo-50" : ""}`}>
+                <td className={`${borde} px-2 py-1.5 whitespace-nowrap`}>{g.nombre}</td>
+                {COLUMNAS.map((k) =>
+                  k === "R" ? (
+                    <td key="R" className={`${borde} ${CELDA_RECESO}`} />
+                  ) : (
+                    <td key={k} title={titulo(k)} className={`${borde} ${g.semanas.includes(k) ? (g.critico ? CELDA_CRITICA : CELDA_NORMAL) : ""}`} />
+                  ),
+                )}
+              </tr>
             ))}
+            <tr>
+              <td className={`${borde} px-2 py-1.5 font-bold whitespace-nowrap`}>Revisión del sprint (hito)</td>
+              {COLUMNAS.map((k) =>
+                k === "R" ? (
+                  <td key="R" className={`${borde} ${CELDA_RECESO}`} />
+                ) : k % 4 === 0 ? (
+                  <td key={k} className={`${borde} text-center font-bold`} style={{ background: NAVY, color: "#fff" }} title={SPRINTS[k / 4 - 1] ? `Sprint Review ${k / 4}: ${larga(RED.find((n) => n.id === `H${k / 4}`)!.fin)}` : ""}>
+                    ◆
+                  </td>
+                ) : (
+                  <td key={k} className={borde} />
+                ),
+              )}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="text-[11px] text-slate-500 leading-relaxed">
+        <span className={`inline-block w-3 h-3 align-middle mr-1 border border-slate-300 ${CELDA_CRITICA}`} />Rojo: grupo con actividades de la ruta crítica.{" "}
+        <span className={`inline-block w-3 h-3 align-middle mx-1 border border-slate-300 ${CELDA_NORMAL}`} />Verde azulado: grupo sin actividades críticas.{" "}
+        <span className={`inline-block w-3 h-3 align-middle mx-1 border border-slate-300 ${CELDA_RECESO}`} />R: receso de febrero. ◆: revisión del sprint.
+        {actual && <> Semana actual: S{actual} (marcada en el encabezado).</>}
+      </p>
+      {grupo ? (
+        <div className="text-xs text-slate-700 px-3 py-2.5 border border-slate-200 bg-slate-50 rounded-lg space-y-1">
+          <p>
+            <strong className="text-slate-900">{grupo.nombre}</strong>
+            <span className="text-slate-500"> · semanas S{grupo.semanas[0]} a S{grupo.semanas[grupo.semanas.length - 1]}{grupo.critico ? " · tiene actividades de la ruta crítica" : ""}</span>
+          </p>
+          <ul className="text-slate-500 space-y-0.5">
+            {grupo.actividades.map((id) => {
+              const n = POR_ID.get(id)!;
+              return (
+                <li key={id}>
+                  <span className={`font-mono ${n.critica ? "text-red-700 font-bold" : ""}`}>{id}</span> {n.descripcion} · {corta(n.inicio)} al {corta(n.fin)} · {n.responsable}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        <p className="text-xs text-slate-400 px-3 py-2.5 border border-dashed border-slate-200 rounded-lg">Pase el cursor o toque un grupo para ver sus actividades, fechas y responsables.</p>
+      )}
+    </div>
+  );
+}
+
+// Detalle de un sprint por días: código, actividad y responsable a la izquierda; barras y dependencias a la derecha.
+// Las flechas van en escalón (salen del final de la predecesora, bajan y entran por el inicio de la sucesora)
+// y se dibujan debajo de las barras, para no tapar textos.
+function GanttSprint({ n }: { n: number }) {
+  const [elegido, setElegido] = useState<Nodo | null>(null);
+  const caja = useRef<HTMLDivElement>(null);
+  const [disponible, setDisponible] = useState(1000);
+  useEffect(() => {
+    if (!caja.current) return;
+    const obs = new ResizeObserver(([e]) => setDisponible(e.contentRect.width));
+    obs.observe(caja.current);
+    return () => obs.disconnect();
+  }, []);
+  const ancho1 = disponible >= 640 ? 300 : 150;
+  const anchoResp = disponible >= 640 ? 140 : 0;
+  const izquierda = ancho1 + anchoResp;
+
+  const sp = SPRINTS[n - 1];
+  const filas = RED.filter((x) => x.sprint === n && (x.tipo === "actividad" || x.tipo === "hito"));
+  const desde = ms(sp.inicio) - DIA;
+  const hasta = ms(filas[filas.length - 1].fin) + 3 * DIA;
+  const totalDias = Math.round((hasta - desde) / DIA);
+  const px = Math.max(20, (disponible - izquierda - 6) / totalDias);
+  const ancho = totalDias * px;
+  const x = (f: string) => ((ms(f) - desde) / DIA) * px;
+  const xFin = (f: string) => x(f) + px;
+  const ALTO = 28;
+  const filaDe = new Map<string, number>(filas.map((f, i) => [f.id, i]));
+  const dias = Array.from({ length: totalDias }, (_, i) => desde + i * DIA);
+  const meses = [...new Set(dias.filter((t) => t >= ms(sp.inicio)).map((t) => `${MESES[new Date(t).getUTCMonth()]} ${new Date(t).getUTCFullYear()}`))];
+  const fechaHoy = hoy();
+
+  const flechas = filas.flatMap((f) =>
+    f.preds
+      .filter((p) => filaDe.has(p))
+      .map((p) => {
+        const pred = POR_ID.get(p)!;
+        const x1 = xFin(pred.fin);
+        const y1 = filaDe.get(p)! * ALTO + ALTO / 2;
+        const x2 = f.tipo === "hito" ? xFin(f.fin) - 7 : x(f.inicio);
+        const y2 = filaDe.get(f.id)! * ALTO + ALTO / 2;
+        const d =
+          x2 - x1 >= 12
+            ? `M${x1},${y1} H${x1 + 6} V${y2} H${x2}`
+            : `M${x1},${y1} H${x1 + 6} V${y2 - ALTO / 2} H${x2 - 6} V${y2} H${x2}`;
+        return { clave: `${p}-${f.id}`, d, critica: Boolean(pred.critica && (f.critica || f.tipo === "hito")) };
+      }),
+  );
+
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-slate-600">
+        <strong className="text-slate-900">Sprint {sp.n}: {sp.nombre}</strong> · {larga(sp.inicio)} al {larga(filas[filas.length - 1].fin)} · Entregable: {sp.entregable}
+      </p>
+      <div ref={caja} className="border border-slate-200 rounded-xl bg-white overflow-x-auto">
+        <div className="flex min-w-max text-[11px]">
+          {/* Columnas fijas */}
+          <div className="sticky left-0 z-20 bg-white border-r border-slate-300 shrink-0 flex" style={{ width: izquierda }}>
+            <div style={{ width: ancho1 }}>
+              <div className="h-[44px] px-2 flex items-end pb-1.5 font-semibold" style={{ background: NAVY, color: "#fff" }}>Actividad</div>
+              {filas.map((f) => (
+                <div
+                  key={f.id}
+                  style={{ height: ALTO }}
+                  onMouseEnter={() => setElegido(f)}
+                  onClick={() => setElegido(f)}
+                  title={f.descripcion}
+                  className={`px-2 flex items-center gap-1.5 border-b border-slate-100 cursor-pointer ${elegido?.id === f.id ? "bg-indigo-50" : ""} ${f.tipo === "hito" ? "font-semibold text-slate-900" : "text-slate-600"}`}
+                >
+                  {f.tipo === "actividad" && <span className={`font-mono text-[10px] shrink-0 ${f.critica ? "text-red-700 font-bold" : "text-slate-400"}`}>{f.id}</span>}
+                  <span className="truncate">{nombreCorto(f)}</span>
+                </div>
+              ))}
+            </div>
+            {anchoResp > 0 && (
+              <div style={{ width: anchoResp }} className="border-l border-slate-200">
+                <div className="h-[44px] px-2 flex items-end pb-1.5 font-semibold" style={{ background: NAVY, color: "#fff" }}>Responsable</div>
+                {filas.map((f) => (
+                  <div key={f.id} style={{ height: ALTO }} title={f.responsable} className={`px-2 flex items-center border-b border-slate-100 text-slate-500 ${elegido?.id === f.id ? "bg-indigo-50" : ""}`}>
+                    <span className="truncate">{f.responsable || "—"}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
-          {/* Escala de tiempo y barras */}
+          {/* Días y barras */}
           <div className="relative shrink-0" style={{ width: ancho }}>
-            <div className="h-[44px] border-b border-slate-200 relative text-[10px] text-slate-500">
-              {meses.map((m) => (
-                <div key={m.texto} className="absolute top-0 h-[22px] border-l border-slate-200 px-1.5 flex items-center font-semibold capitalize truncate" style={{ left: m.x, width: m.ancho }}>
-                  {m.texto}
+            <div className="h-[44px] relative" style={{ background: NAVY, color: "#fff" }}>
+              <div className="absolute top-1 left-2 text-[10px] font-semibold capitalize">
+                {meses.join(" – ")}
+              </div>
+              {dias.map((t) => (
+                <div key={t} className="absolute top-[22px] h-[22px] flex items-center justify-center font-mono text-[9px]" style={{ left: ((t - desde) / DIA) * px, width: px, opacity: [0, 6].includes(new Date(t).getUTCDay()) ? 0.5 : 1 }}>
+                  {new Date(t).getUTCDate()}
                 </div>
               ))}
-              {sp
-                ? dias.map((t) => (
-                    <div key={t} className={`absolute top-[22px] h-[22px] flex items-center justify-center font-mono text-[9px] ${[0, 6].includes(new Date(t).getUTCDay()) ? "text-slate-300" : ""}`} style={{ left: ((t - desde) / DIA) * px, width: px }}>
-                      {new Date(t).getUTCDate()}
-                    </div>
-                  ))
-                : semanas.map((s) => (
-                    <div key={s.k} className="absolute top-[22px] h-[22px] border-l border-slate-200 pl-0.5 flex items-center font-mono text-[9px]" style={{ left: ((s.t - desde) / DIA) * px }}>
-                      S{s.k}
-                    </div>
-                  ))}
-              {!sp && (
-                <div className="absolute top-[22px] h-[22px] flex items-center justify-center font-mono text-[9px] text-amber-700" style={{ left: x(RECESO.inicio), width: xFin(RECESO.fin) - x(RECESO.inicio) }}>
-                  receso
-                </div>
-              )}
             </div>
-
             <div className="relative" style={{ height: filas.length * ALTO }}>
-              {/* Fondo: fines de semana o semanas, feriados, receso y hoy */}
-              {sp
-                ? dias
-                    .filter((t) => [0, 6].includes(new Date(t).getUTCDay()))
-                    .map((t) => <div key={t} className="absolute top-0 bottom-0 bg-slate-50" style={{ left: ((t - desde) / DIA) * px, width: px }} />)
-                : semanas.map((s) => <div key={s.k} className="absolute top-0 bottom-0 border-l border-slate-100" style={{ left: ((s.t - desde) / DIA) * px }} />)}
-              {!sp && <div className="absolute top-0 bottom-0 bg-amber-200/25" style={{ left: x(RECESO.inicio), width: xFin(RECESO.fin) - x(RECESO.inicio) }} />}
+              {dias
+                .filter((t) => [0, 6].includes(new Date(t).getUTCDay()))
+                .map((t) => <div key={t} className="absolute top-0 bottom-0 bg-slate-100/70" style={{ left: ((t - desde) / DIA) * px, width: px }} />)}
               {FERIADOS.filter((f) => ms(f.fecha) >= desde && ms(f.fecha) < hasta).map((f) => (
-                <div key={f.fecha} title={`Feriado: ${f.nombre}`} className="absolute top-0 bottom-0 bg-orange-300/35" style={{ left: x(f.fecha), width: Math.max(px, 2) }} />
+                <div key={f.fecha} title={`Feriado: ${f.nombre}`} className="absolute top-0 bottom-0 bg-orange-300/35" style={{ left: x(f.fecha), width: px }} />
               ))}
-              {ms(fechaHoy) >= desde && ms(fechaHoy) < hasta && (
-                <div className="absolute top-0 bottom-0 border-l-2 border-rose-500 z-10" style={{ left: x(fechaHoy) + px / 2 }}>
-                  <span className="absolute -top-0 left-1 text-[9px] font-bold text-rose-600 bg-white px-1 rounded">Hoy</span>
-                </div>
-              )}
+              {filas.map((f, i) => <div key={f.id} className="absolute left-0 right-0 border-b border-slate-100" style={{ top: i * ALTO, height: ALTO }} />)}
+              {ms(fechaHoy) >= desde && ms(fechaHoy) < hasta && <div className="absolute top-0 bottom-0 border-l-2 border-red-500" style={{ left: x(fechaHoy) + px / 2 }} title="Hoy" />}
+
+              {/* Flechas debajo de las barras */}
+              <svg className="absolute inset-0 pointer-events-none" width={ancho} height={filas.length * ALTO}>
+                <defs>
+                  <marker id="gantt-punta" markerWidth="5" markerHeight="5" refX="4.5" refY="2.5" orient="auto">
+                    <path d="M0,0 L5,2.5 L0,5 z" className="fill-slate-400" />
+                  </marker>
+                  <marker id="gantt-punta-c" markerWidth="5" markerHeight="5" refX="4.5" refY="2.5" orient="auto">
+                    <path d="M0,0 L5,2.5 L0,5 z" className="fill-red-500" />
+                  </marker>
+                </defs>
+                {flechas.map((a) => (
+                  <path key={a.clave} d={a.d} fill="none" strokeWidth={1.1} strokeLinejoin="round" className={a.critica ? "stroke-red-500" : "stroke-slate-400"} markerEnd={`url(#${a.critica ? "gantt-punta-c" : "gantt-punta"})`} />
+                ))}
+              </svg>
 
               {filas.map((f, i) => {
                 const top = i * ALTO;
-                const sel = elegido && f.nodo?.id === elegido.id;
-                const eventos = { onMouseEnter: () => f.nodo && setElegido(f.nodo), onClick: () => f.nodo && setElegido(f.nodo) };
-                return (
-                  <div key={f.clave} className="absolute left-0 right-0 border-b border-slate-100" style={{ top, height: ALTO }}>
-                    {f.tipo === "sprint" && (
-                      <div className="absolute top-[9px] h-[8px] bg-slate-700 rounded-sm" style={{ left: x(f.inicio), width: xFin(f.fin) - x(f.inicio) }} />
-                    )}
-                    {(f.tipo === "actividad" || f.tipo === "continua") && (
-                      <>
-                        <div
-                          {...eventos}
-                          title={`${f.codigo} ${f.nodo?.descripcion}`}
-                          className={`absolute top-[7px] h-[12px] rounded cursor-pointer ${
-                            f.tipo === "continua" ? "bg-slate-300" : f.nodo?.critica ? "bg-rose-500" : "bg-indigo-500"
-                          } ${sel ? "ring-2 ring-offset-1 ring-amber-400" : ""}`}
-                          style={{ left: x(f.inicio), width: Math.max(xFin(f.fin) - x(f.inicio), 3) }}
-                        />
-                        {sp && f.nodo?.responsable && (
-                          <span className="absolute top-[5px] text-[10px] text-slate-500 whitespace-nowrap" style={{ left: xFin(f.fin) + 6 }}>
-                            {f.nodo.responsable}
-                          </span>
-                        )}
-                      </>
-                    )}
-                    {f.tipo === "receso" && (
-                      <div {...eventos} className="absolute top-[5px] h-[16px] rounded border border-dashed border-amber-400 bg-amber-100 text-[9px] text-amber-800 flex items-center justify-center cursor-pointer whitespace-nowrap overflow-hidden" style={{ left: x(f.inicio), width: xFin(f.fin) - x(f.inicio) }}>
-                        Receso
-                      </div>
-                    )}
-                    {f.tipo === "hito" && (
-                      <>
-                        <div {...eventos} title={f.nodo?.descripcion} className={`absolute top-[7px] w-[12px] h-[12px] rotate-45 bg-amber-500 border border-amber-700 cursor-pointer ${sel ? "ring-2 ring-amber-300" : ""}`} style={{ left: xFin(f.fin) - 6 }} />
-                        <span className="absolute top-[5px] text-[10px] font-semibold text-amber-700 whitespace-nowrap" style={{ left: xFin(f.fin) + 10 }}>
-                          {corta(f.fin)}
-                        </span>
-                      </>
-                    )}
-                  </div>
+                const sel = elegido?.id === f.id;
+                const eventos = { onMouseEnter: () => setElegido(f), onClick: () => setElegido(f) };
+                return f.tipo === "hito" ? (
+                  <React.Fragment key={f.id}>
+                    <div {...eventos} title={f.descripcion} className={`absolute w-[13px] h-[13px] rotate-45 bg-slate-700 cursor-pointer ${sel ? "ring-2 ring-amber-400" : ""}`} style={{ top: top + 7.5, left: xFin(f.fin) - 6.5 }} />
+                    <span className="absolute text-[10px] font-semibold text-slate-700 whitespace-nowrap" style={{ top: top + 7, left: xFin(f.fin) + 10 }}>
+                      {corta(f.fin)}
+                    </span>
+                  </React.Fragment>
+                ) : (
+                  <div
+                    key={f.id}
+                    {...eventos}
+                    title={`${f.id} ${f.descripcion}`}
+                    className={`absolute h-[14px] rounded-sm border cursor-pointer ${f.critica ? "bg-red-200 border-red-500" : "bg-teal-100 border-teal-600"} ${sel ? "ring-2 ring-offset-1 ring-amber-400" : ""}`}
+                    style={{ top: top + 7, left: x(f.inicio) + 1, width: Math.max(xFin(f.fin) - x(f.inicio) - 2, 4) }}
+                  />
                 );
               })}
-
-              {flechas.length > 0 && (
-                <svg className="absolute inset-0 pointer-events-none overflow-visible" width={ancho} height={filas.length * ALTO}>
-                  <defs>
-                    <marker id="gantt-punta" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                      <path d="M0,0 L6,3 L0,6 z" className="fill-slate-400" />
-                    </marker>
-                  </defs>
-                  {flechas.map((a) => (
-                    <path key={a.clave} d={a.d} fill="none" strokeWidth={1.2} markerEnd="url(#gantt-punta)" className={a.critica ? "stroke-rose-400" : "stroke-slate-400"} />
-                  ))}
-                </svg>
-              )}
             </div>
           </div>
         </div>
       </div>
-
       <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-slate-500">
-        <span className="flex items-center gap-1.5"><span className="w-5 h-2.5 rounded bg-indigo-500" />Actividad</span>
-        <span className="flex items-center gap-1.5"><span className="w-5 h-2.5 rounded bg-rose-500" />Ruta crítica (PERT)</span>
-        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rotate-45 bg-amber-500 border border-amber-700" />Hito: Sprint Review</span>
-        <span className="flex items-center gap-1.5"><span className="w-5 h-2 rounded-sm bg-slate-700" />Sprint (resumen)</span>
-        <span className="flex items-center gap-1.5"><span className="w-3 h-3 bg-orange-100 border border-orange-200" />Feriado</span>
-        <span className="flex items-center gap-1.5"><span className="w-3 h-3 bg-amber-50 border border-amber-200" />Receso de febrero</span>
-        <span className="flex items-center gap-1.5"><span className="w-0.5 h-3 bg-rose-500" />Hoy</span>
-        {sp && <span className="flex items-center gap-1.5"><span className="w-5 border-t border-slate-400" />Dependencia fin-comienzo</span>}
+        <span className="flex items-center gap-1.5"><span className="w-5 h-3 rounded-sm border bg-teal-100 border-teal-600" />Actividad</span>
+        <span className="flex items-center gap-1.5"><span className="w-5 h-3 rounded-sm border bg-red-200 border-red-500" />Ruta crítica (PERT)</span>
+        <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rotate-45 bg-slate-700" />Revisión del sprint</span>
+        <span className="flex items-center gap-1.5"><span className="w-5 border-t border-slate-400" />Dependencia fin-comienzo</span>
+        <span className="flex items-center gap-1.5"><span className="w-3 h-3 bg-orange-300/35 border border-orange-200" />Feriado</span>
+        <span className="flex items-center gap-1.5"><span className="w-0.5 h-3 bg-red-500" />Hoy</span>
       </div>
       <Detalle nodo={elegido} />
     </div>

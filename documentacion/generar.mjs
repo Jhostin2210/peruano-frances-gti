@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 import { construirDocx } from "./lib/docx-builder.mjs";
 import { AREAS, DOCUMENTOS, DOMINIOS, PROCESOS } from "./contenido/index.mjs";
 import { PROYECTO } from "./proyecto.mjs";
-import { FERIADOS, RECESO, SPRINTS, TOTALES, aIso, fmt, programar, red, tareasProject } from "./datos/calendario.mjs";
+import { FERIADOS, RECESO, SPRINTS, TOTALES, aIso, fmt, ganttPorSemanas, programar, red, tareasProject } from "./datos/calendario.mjs";
 import { INTERESADOS, NIVELES, brecha, cuadrante, prominencia } from "./datos/interesados.mjs";
 import { CAMBIOS, INCIDENTES } from "./datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, PAQUETES, REQUISITOS, TOTALES_ALCANCE } from "./datos/requisitos.mjs";
@@ -119,6 +119,7 @@ const datos = {
   TOTALES,
   ACTIVIDADES: actividades,
   TAREAS_PROJECT: tareasProject(),
+  GANTT_SEMANAS: ganttPorSemanas(),
   RED: red().map((n) => ({ id: n.id, tipo: n.tipo, sprint: n.sprint, descripcion: n.descripcion, responsable: n.responsable ?? "", paquete: n.paquete ?? "", te: n.te ?? 0, critica: Boolean(n.isCritical), dias: n.dias, inicio: aIso(n.inicio), fin: aIso(n.fin), preds: n.preds })),
   NIVELES,
   INTERESADOS: interesados,

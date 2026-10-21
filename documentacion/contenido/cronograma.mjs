@@ -4,7 +4,7 @@
 import { c, h, nota, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P, R } from "../proyecto.mjs";
 import { ACTIVIDADES } from "../datos/actividades.mjs";
-import { FERIADOS, RECESO, SPRINTS, TOTALES as T, fmt, fmtIso, programar } from "../datos/calendario.mjs";
+import { FERIADOS, GRUPOS, RECESO, SPRINTS, TOTALES as T, fmt, fmtIso, programar } from "../datos/calendario.mjs";
 import { DOC, tablaFeriados, tablaHitos, tablaSprints } from "./comunes.mjs";
 
 const prog = programar();
@@ -53,22 +53,6 @@ const tablaActividades = (s) => {
   );
 };
 
-// Gantt por semanas: una fila por grupo de actividades.
-const GRUPOS = [
-  ["A-0.1.1", "Análisis y diseño"],
-  ["A-1.1.1", "Organización del trabajo Scrum"],
-  ["A-1.2.1", "Seguimiento y reunión diaria"],
-  ["A-2.1.1", "Integración de datos"],
-  ["A-2.2.1", "Calidad de datos"],
-  ["A-3.1.1", "Entrenamiento del modelo"],
-  ["A-3.2.1", "Validación y clasificación de riesgo"],
-  ["A-4.1.1", "Motor de alertas"],
-  ["A-4.2.1", "Tablero web y accesos"],
-  ["A-5.0.1", "Pruebas de integración y rendimiento"],
-  ["A-5.0.2", "Piloto con docentes"],
-  ["A-5.1.1", "Despliegue y pruebas de aceptación"],
-  ["A-5.2.1", "Manuales, capacitación y cierre"],
-];
 const SEMANAS = Array.from({ length: 24 }, (_, i) => i + 1);
 const filaGantt = ([prefijo, nombre]) => {
   const lista = prog.filter((a) => a.id.startsWith(`${prefijo}.`));

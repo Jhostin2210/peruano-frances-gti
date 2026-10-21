@@ -165,6 +165,33 @@ export function red() {
   return nodos;
 }
 
+// Gantt por semanas (CRO-01, sección 7, y vista principal del blog): una fila por grupo de actividades.
+export const GRUPOS = [
+  ["A-0.1.1", "Análisis y diseño"],
+  ["A-1.1.1", "Organización del trabajo Scrum"],
+  ["A-1.2.1", "Seguimiento y reunión diaria"],
+  ["A-2.1.1", "Integración de datos"],
+  ["A-2.2.1", "Calidad de datos"],
+  ["A-3.1.1", "Entrenamiento del modelo"],
+  ["A-3.2.1", "Validación y clasificación de riesgo"],
+  ["A-4.1.1", "Motor de alertas"],
+  ["A-4.2.1", "Tablero web y accesos"],
+  ["A-5.0.1", "Pruebas de integración y rendimiento"],
+  ["A-5.0.2", "Piloto con docentes"],
+  ["A-5.1.1", "Despliegue y pruebas de aceptación"],
+  ["A-5.2.1", "Manuales, capacitación y cierre"],
+];
+
+// Semanas que ocupa cada grupo y si tiene actividades de la ruta crítica (mismo criterio que el CRO-01).
+export function ganttPorSemanas() {
+  const prog = programar();
+  return GRUPOS.map(([prefijo, nombre]) => {
+    const lista = prog.filter((a) => a.id.startsWith(`${prefijo}.`));
+    const semanas = Array.from({ length: 24 }, (_, i) => i + 1).filter((s) => lista.some((a) => s >= a.semanasNum[0] && s <= a.semanasNum[1]));
+    return { prefijo, nombre, critico: lista.some((a) => a.isCritical), semanas, actividades: lista.map((a) => a.id) };
+  });
+}
+
 // Lista tipo MS Project para el blog. Mismas filas, en el mismo orden y con los mismos números que el archivo
 // de MS Project (generar-project.mjs): resumen del proyecto, cada sprint con sus actividades y su hito, el
 // receso después del Sprint 4 y la reunión diaria al final. Las predecesoras son números de fila.

@@ -1706,6 +1706,215 @@ export const TAREAS_PROJECT = [
  }
 ];
 
+export const GANTT_SEMANAS = [
+ {
+  "prefijo": "A-0.1.1",
+  "nombre": "Análisis y diseño",
+  "critico": false,
+  "semanas": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "actividades": [
+   "A-0.1.1.1",
+   "A-0.1.1.2",
+   "A-0.1.1.3",
+   "A-0.1.1.4"
+  ]
+ },
+ {
+  "prefijo": "A-1.1.1",
+  "nombre": "Organización del trabajo Scrum",
+  "critico": false,
+  "semanas": [
+   5
+  ],
+  "actividades": [
+   "A-1.1.1.1",
+   "A-1.1.1.2",
+   "A-1.1.1.3"
+  ]
+ },
+ {
+  "prefijo": "A-1.2.1",
+  "nombre": "Seguimiento y reunión diaria",
+  "critico": false,
+  "semanas": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24
+  ],
+  "actividades": [
+   "A-1.2.1.1",
+   "A-1.2.1.2"
+  ]
+ },
+ {
+  "prefijo": "A-2.1.1",
+  "nombre": "Integración de datos",
+  "critico": true,
+  "semanas": [
+   6,
+   7
+  ],
+  "actividades": [
+   "A-2.1.1.1",
+   "A-2.1.1.2",
+   "A-2.1.1.3",
+   "A-2.1.1.4"
+  ]
+ },
+ {
+  "prefijo": "A-2.2.1",
+  "nombre": "Calidad de datos",
+  "critico": true,
+  "semanas": [
+   8
+  ],
+  "actividades": [
+   "A-2.2.1.1",
+   "A-2.2.1.2"
+  ]
+ },
+ {
+  "prefijo": "A-3.1.1",
+  "nombre": "Entrenamiento del modelo",
+  "critico": true,
+  "semanas": [
+   9,
+   10
+  ],
+  "actividades": [
+   "A-3.1.1.1",
+   "A-3.1.1.2",
+   "A-3.1.1.3",
+   "A-3.1.1.4"
+  ]
+ },
+ {
+  "prefijo": "A-3.2.1",
+  "nombre": "Validación y clasificación de riesgo",
+  "critico": true,
+  "semanas": [
+   11,
+   12
+  ],
+  "actividades": [
+   "A-3.2.1.1",
+   "A-3.2.1.2",
+   "A-3.2.1.3",
+   "A-3.2.1.4"
+  ]
+ },
+ {
+  "prefijo": "A-4.1.1",
+  "nombre": "Motor de alertas",
+  "critico": false,
+  "semanas": [
+   13,
+   14
+  ],
+  "actividades": [
+   "A-4.1.1.1",
+   "A-4.1.1.2",
+   "A-4.1.1.3",
+   "A-4.1.1.4"
+  ]
+ },
+ {
+  "prefijo": "A-4.2.1",
+  "nombre": "Tablero web y accesos",
+  "critico": true,
+  "semanas": [
+   15,
+   16
+  ],
+  "actividades": [
+   "A-4.2.1.1",
+   "A-4.2.1.2",
+   "A-4.2.1.3",
+   "A-4.2.1.4",
+   "A-4.2.1.5"
+  ]
+ },
+ {
+  "prefijo": "A-5.0.1",
+  "nombre": "Pruebas de integración y rendimiento",
+  "critico": true,
+  "semanas": [
+   17
+  ],
+  "actividades": [
+   "A-5.0.1.1",
+   "A-5.0.1.2"
+  ]
+ },
+ {
+  "prefijo": "A-5.0.2",
+  "nombre": "Piloto con docentes",
+  "critico": true,
+  "semanas": [
+   18,
+   19,
+   20
+  ],
+  "actividades": [
+   "A-5.0.2.1",
+   "A-5.0.2.2"
+  ]
+ },
+ {
+  "prefijo": "A-5.1.1",
+  "nombre": "Despliegue y pruebas de aceptación",
+  "critico": true,
+  "semanas": [
+   21,
+   22
+  ],
+  "actividades": [
+   "A-5.1.1.1",
+   "A-5.1.1.2",
+   "A-5.1.1.3",
+   "A-5.1.1.4"
+  ]
+ },
+ {
+  "prefijo": "A-5.2.1",
+  "nombre": "Manuales, capacitación y cierre",
+  "critico": true,
+  "semanas": [
+   23,
+   24
+  ],
+  "actividades": [
+   "A-5.2.1.1",
+   "A-5.2.1.2",
+   "A-5.2.1.3",
+   "A-5.2.1.4",
+   "A-5.2.1.5"
+  ]
+ }
+];
+
 export const RED = [
  {
   "id": "A-0.1.1.1",
