@@ -3,8 +3,9 @@
  * qué procesos están desarrollados y dónde está cada documento.
  */
 
-import { Download, FileText } from "lucide-react";
+import { ExternalLink, FolderOpen } from "lucide-react";
 import { AREAS, DOCUMENTOS, DOMINIOS, PROCESOS } from "../content/documentos";
+import { DRIVE_CARPETA } from "../content/datos";
 import DocView from "./DocView";
 import { EstadoProceso } from "./DominioPmbok";
 
@@ -221,9 +222,18 @@ export default function MarcoPmbok() {
           <p className="font-mono text-[11px] font-bold text-[#0d7377] mb-1">04.4 · Documentación</p>
           <h3 className="font-serif text-2xl font-bold text-slate-900">Índice de documentos del proyecto</h3>
           <p className="text-sm text-slate-700 leading-relaxed mt-3 max-w-3xl">
-            Los {DOCUMENTOS.length} documentos de gestión de esta etapa se pueden leer aquí mismo, abrir en PDF o descargar en Word. El blog y los
-            archivos se generan desde un mismo contenido, de modo que siempre dicen lo mismo.
+            Los {DOCUMENTOS.length} documentos de gestión de esta etapa se pueden leer aquí mismo o ver en Google Drive, en su versión en Word. El
+            blog y los archivos se generan desde un mismo contenido, de modo que siempre dicen lo mismo.
           </p>
+          <a
+            href={DRIVE_CARPETA}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 mt-4 text-xs font-semibold bg-[#0d7377] text-white px-3.5 py-2 rounded-lg hover:bg-[#0a5c5f] transition-colors"
+          >
+            <FolderOpen className="w-4 h-4" />
+            Ver la carpeta de documentos en Drive
+          </a>
 
           <div className="overflow-x-auto border border-slate-200 rounded-lg mt-6 bg-white">
             <table className="w-full text-xs text-left min-w-[720px]">
@@ -233,7 +243,7 @@ export default function MarcoPmbok() {
                   <th className="px-3 py-2 font-semibold">Documento</th>
                   <th className="px-3 py-2 font-semibold">Dominio</th>
                   <th className="px-3 py-2 font-semibold">Proceso</th>
-                  <th className="px-3 py-2 font-semibold text-center">Archivos</th>
+                  <th className="px-3 py-2 font-semibold text-center">Google Drive</th>
                 </tr>
               </thead>
               <tbody>
@@ -247,26 +257,20 @@ export default function MarcoPmbok() {
                     </td>
                     <td className="px-3 py-2 border-t border-slate-200 text-slate-600">{d.dominio ?? "Transversal"}</td>
                     <td className="px-3 py-2 border-t border-slate-200 text-slate-600">{d.proceso}</td>
-                    <td className="px-3 py-2 border-t border-slate-200">
-                      <div className="flex items-center justify-center gap-1.5">
+                    <td className="px-3 py-2 border-t border-slate-200 text-center">
+                      {d.drive ? (
                         <a
-                          href={d.pdf}
+                          href={d.drive}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label={`Abrir ${d.id} en PDF`}
-                          className="inline-flex items-center gap-1 border border-slate-300 rounded px-2 py-1 text-[10px] font-semibold text-slate-700 hover:bg-slate-100"
+                          aria-label={`Ver ${d.id} en Google Drive`}
+                          className="inline-flex items-center gap-1 border border-slate-300 rounded px-2 py-1 text-[10px] font-semibold text-slate-700 hover:bg-slate-100 whitespace-nowrap"
                         >
-                          <FileText className="w-3 h-3" /> PDF
+                          <ExternalLink className="w-3 h-3" /> Ver en Drive
                         </a>
-                        <a
-                          href={d.docx}
-                          download
-                          aria-label={`Descargar ${d.id} en Word`}
-                          className="inline-flex items-center gap-1 border border-slate-300 rounded px-2 py-1 text-[10px] font-semibold text-slate-700 hover:bg-slate-100"
-                        >
-                          <Download className="w-3 h-3" /> Word
-                        </a>
-                      </div>
+                      ) : (
+                        <span className="text-slate-400">—</span>
+                      )}
                     </td>
                   </tr>
                 ))}

@@ -38,8 +38,7 @@ export interface DocDef {
   fecha: string;
   resumen: string;
   carpeta: string;
-  pdf: string;
-  docx: string;
+  drive: string | null;
   secciones: SeccionDef[];
 }
 

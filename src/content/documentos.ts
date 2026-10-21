@@ -14,8 +14,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Punto de entrada a la documentación. Reúne los datos que deben coincidir en todos los documentos, la lista de documentos emitidos y su ubicación, y lo que falta por desarrollar.",
   "carpeta": "00 - Ficha e índice",
-  "pdf": "/documentos/BASE-01-ficha-del-proyecto-e-indice-de-la-documentacion.pdf",
-  "docx": "/documentos/BASE-01-ficha-del-proyecto-e-indice-de-la-documentacion.docx",
+  "drive": "https://drive.google.com/file/d/18jk_u6bpUdz6KDBml4QRbArNp2XAPoxg/view",
   "secciones": [
    {
     "titulo": "1. Ficha del proyecto",
@@ -959,8 +958,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Justifica el proyecto ante el colegio: qué necesidad atiende, qué opciones se evaluaron, qué beneficios se esperan, cómo se medirán y cuánto cuesta.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
-  "pdf": "/documentos/GOB-01-caso-de-negocio-y-plan-de-gestion-de-beneficios.pdf",
-  "docx": "/documentos/GOB-01-caso-de-negocio-y-plan-de-gestion-de-beneficios.docx",
+  "drive": "https://drive.google.com/file/d/1-LXALLy0nxrjBx8jUOSZuRXyGG1FgGL7/view",
   "secciones": [
    {
     "titulo": "1. Necesidad del negocio",
@@ -1281,8 +1279,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Autoriza formalmente el proyecto y da al director del proyecto la autoridad para usar los recursos. Contiene los doce elementos que pide la Guía del PMBOK® para un acta de constitución.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
-  "pdf": "/documentos/GOB-02-acta-de-constitucion-del-proyecto.pdf",
-  "docx": "/documentos/GOB-02-acta-de-constitucion-del-proyecto.docx",
+  "drive": "https://drive.google.com/file/d/1-RV3qy4tNcR463oq5pzNUkhc97x_2gtX/view",
   "secciones": [
    {
     "titulo": "1. Datos generales",
@@ -1878,8 +1875,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Lista lo que el proyecto da por cierto sin tener aún la prueba y los límites que no puede cambiar. Cada supuesto tiene quién lo comprueba y cuándo.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
-  "pdf": "/documentos/GOB-03-registro-de-supuestos-y-restricciones.pdf",
-  "docx": "/documentos/GOB-03-registro-de-supuestos-y-restricciones.docx",
+  "drive": "https://drive.google.com/file/d/13gZY5mrzkBrcbx5i_OsVqMEZaP60hFWG/view",
   "secciones": [
    {
     "titulo": "1. Uso del registro",
@@ -2183,8 +2179,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Reúne en un solo documento cómo se ejecuta, se controla y se cierra el proyecto: enfoque de desarrollo, planes que lo componen, líneas base, gobernanza, configuración y medición del desempeño.",
   "carpeta": "01 - Gobernanza/1.2 Integrar los planes",
-  "pdf": "/documentos/GOB-04-plan-para-la-direccion-del-proyecto.pdf",
-  "docx": "/documentos/GOB-04-plan-para-la-direccion-del-proyecto.docx",
+  "drive": "https://drive.google.com/file/d/1-JZ8qVz3mV2Th8U1F1Wu9iH-kMVjb81X/view",
   "secciones": [
    {
     "titulo": "1. Enfoque de desarrollo y ciclo de vida",
@@ -2700,8 +2695,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Define qué hace el equipo y qué se obtiene de terceros, con qué criterios se eligen los proveedores y cómo se protegen los datos alojados fuera del colegio.",
   "carpeta": "01 - Gobernanza/1.3 Abastecimiento",
-  "pdf": "/documentos/GOB-05-plan-de-estrategia-de-abastecimiento.pdf",
-  "docx": "/documentos/GOB-05-plan-de-estrategia-de-abastecimiento.docx",
+  "drive": "https://drive.google.com/file/d/1aX92fDwIJr1aoTdSGRptSgRmtjL6BnaT/view",
   "secciones": [
    {
     "titulo": "1. Propósito",
@@ -3093,8 +3087,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Lleva la cuenta de los problemas que ya ocurrieron y que afectan al proyecto: quién los planteó, quién los atiende, para cuándo y cómo se resolvieron.",
   "carpeta": "01 - Gobernanza/1.4 Ejecución",
-  "pdf": "/documentos/GOB-06-registro-de-incidentes.pdf",
-  "docx": "/documentos/GOB-06-registro-de-incidentes.docx",
+  "drive": "https://drive.google.com/file/d/1FY-VMvSE0sm9kHGWZpGRWwdOC37kyv4k/view",
   "secciones": [
    {
     "titulo": "1. Uso del registro",
@@ -3442,8 +3435,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Revisión de aseguramiento de la calidad del material heredado de la fase de formulación. Aplica una lista de verificación, registra los hallazgos, analiza sus causas y deriva las acciones.",
   "carpeta": "01 - Gobernanza/1.5 Calidad",
-  "pdf": "/documentos/GOB-07-informe-de-calidad-n-1.pdf",
-  "docx": "/documentos/GOB-07-informe-de-calidad-n-1.docx",
+  "drive": "https://drive.google.com/file/d/1qrXurvAGQcby22hl4nRlMm4u8yxlYHRS/view",
   "secciones": [
    {
     "titulo": "1. Objetivo y alcance de la revisión",
@@ -4026,8 +4018,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Recoge lo que el equipo aprendió en la fase de formulación para aplicarlo en esta fase: la situación, su impacto, la recomendación y la acción tomada.",
   "carpeta": "01 - Gobernanza/1.6 Conocimiento",
-  "pdf": "/documentos/GOB-08-registro-de-lecciones-aprendidas.pdf",
-  "docx": "/documentos/GOB-08-registro-de-lecciones-aprendidas.docx",
+  "drive": "https://drive.google.com/file/d/1-ypTO7ajwz8qvHAOojb-51sM9XvjRrWC/view",
   "secciones": [
    {
     "titulo": "1. Cómo se gestiona el conocimiento",
@@ -4229,8 +4220,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Primer informe de estado. El proyecto todavía no inicia sus sprints, así que fija el punto de partida: qué está listo, qué falta y qué debe decidir la patrocinadora.",
   "carpeta": "01 - Gobernanza/1.7 Desempeño",
-  "pdf": "/documentos/GOB-09-informe-de-desempeno-n-1.pdf",
-  "docx": "/documentos/GOB-09-informe-de-desempeno-n-1.docx",
+  "drive": "https://drive.google.com/file/d/1yY1gNRBcI8Ydz9QnOreItt2CgU9-BdsG/view",
   "secciones": [
    {
     "titulo": "1. Datos del informe",
@@ -4572,8 +4562,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Establece cómo se solicita, evalúa y decide un cambio, y registra los cambios que separan la versión anterior del proyecto de la versión vigente.",
   "carpeta": "01 - Gobernanza/1.8 Cambios",
-  "pdf": "/documentos/GOB-10-plan-de-gestion-de-cambios-y-registro-de-cambios.pdf",
-  "docx": "/documentos/GOB-10-plan-de-gestion-de-cambios-y-registro-de-cambios.docx",
+  "drive": "https://drive.google.com/file/d/16NuJVDQzJAE-Uk9rGZfLq8uTR_qgt0ue/view",
   "secciones": [
    {
     "titulo": "1. Propósito y alcance",
@@ -4996,8 +4985,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Cierra formalmente la fase de formulación y evaluación: qué se entregó, qué queda pendiente y cómo se transfirió el trabajo al equipo actual.",
   "carpeta": "01 - Gobernanza/1.9 Cierre de fase",
-  "pdf": "/documentos/GOB-11-informe-de-cierre-de-la-fase-de-formulacion.pdf",
-  "docx": "/documentos/GOB-11-informe-de-cierre-de-la-fase-de-formulacion.docx",
+  "drive": "https://drive.google.com/file/d/1vfRV84qb3XeNQX4uQCi1YzsUWlMbCBcl/view",
   "secciones": [
    {
     "titulo": "1. Datos de la fase",
@@ -5290,8 +5278,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Deja constancia de la reunión de inicio con la Dirección del colegio: la firma del acta de constitución, la conformidad con el calendario y con el alojamiento en la nube, la designación del Product Owner, el canal de comunicación con el colegio y el tratamiento de los datos.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
-  "pdf": "/documentos/GOB-12-acta-de-la-reunion-de-inicio.pdf",
-  "docx": "/documentos/GOB-12-acta-de-la-reunion-de-inicio.docx",
+  "drive": "https://drive.google.com/file/d/1-fKkCdb72Xk3e0t6xDx93MtEv6CdJnQU/view",
   "secciones": [
    {
     "titulo": "1. Datos de la reunión",
@@ -5522,8 +5509,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Identifica a todas las personas y organizaciones que afectan al proyecto o son afectadas por él, las evalúa y las clasifica con cuatro técnicas: poder e interés, cubo, dirección de la influencia y prominencia.",
   "carpeta": "02 - Interesados/2.1 Identificar",
-  "pdf": "/documentos/INT-01-registro-y-analisis-de-interesados.pdf",
-  "docx": "/documentos/INT-01-registro-y-analisis-de-interesados.docx",
+  "drive": "https://drive.google.com/file/d/1YaZAbDKjUrvsv5Z70W6DSHpPaNy1jAky/view",
   "secciones": [
    {
     "titulo": "1. Cómo se identificó a los interesados",
@@ -7012,8 +6998,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Define cómo llevar a cada interesado desde su nivel de involucramiento actual hasta el que el proyecto necesita, con acciones, responsables y momentos concretos.",
   "carpeta": "02 - Interesados/2.2 Planificar",
-  "pdf": "/documentos/INT-02-plan-de-involucramiento-de-los-interesados.pdf",
-  "docx": "/documentos/INT-02-plan-de-involucramiento-de-los-interesados.docx",
+  "drive": "https://drive.google.com/file/d/1OtMy3BWJtM8krDqc9J0HZNm4tqd-oPj9/view",
   "secciones": [
    {
     "titulo": "1. Objetivo",
@@ -7616,8 +7601,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Registra lo que efectivamente se ha hecho con los interesados, con su evidencia, y fija las reglas de trato que el equipo sigue con el colegio.",
   "carpeta": "02 - Interesados/2.3 Gestionar",
-  "pdf": "/documentos/INT-04-bitacora-de-involucramiento-y-reglas-basicas.pdf",
-  "docx": "/documentos/INT-04-bitacora-de-involucramiento-y-reglas-basicas.docx",
+  "drive": "https://drive.google.com/file/d/1G7BiLno-vOih88EHfWyWRzb-Wbvx6W1w/view",
   "secciones": [
    {
     "titulo": "1. Reglas básicas",
@@ -7835,8 +7819,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Compara el nivel de involucramiento actual de cada interesado con el deseado, con la evidencia que lo sustenta, y define las acciones para cerrar la distancia.",
   "carpeta": "02 - Interesados/2.4 Monitorear",
-  "pdf": "/documentos/INT-05-informe-de-seguimiento-del-involucramiento-n-1.pdf",
-  "docx": "/documentos/INT-05-informe-de-seguimiento-del-involucramiento-n-1.docx",
+  "drive": "https://drive.google.com/file/d/1nWB2M13GjDzbzT7KCtCbWB0B8I0bQ1F8/view",
   "secciones": [
    {
     "titulo": "1. Corte y método",
@@ -8296,8 +8279,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
-  "pdf": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.pdf",
-  "docx": "/documentos/INT-03-plan-de-gestion-de-las-comunicaciones.docx",
+  "drive": "https://drive.google.com/file/d/1z0R1F6IIdWfBQqQl-jj5WkgVUop6X6Fo/view",
   "secciones": [
    {
     "titulo": "1. Objetivo y principios",
@@ -9060,8 +9042,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "19/10/2026",
   "resumen": "Lleva la cuenta de cada comunicación del proyecto: las que ya se hicieron, con su constancia, y las programadas, con su fecha límite y su responsable. Es la fuente del tablero de comunicaciones del blog.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
-  "pdf": "/documentos/INT-06-registro-de-comunicaciones.pdf",
-  "docx": "/documentos/INT-06-registro-de-comunicaciones.docx",
+  "drive": "https://drive.google.com/file/d/1rDKKC1FdkN3tliwMU3pRPU0jP1AhH_G7/view",
   "secciones": [
    {
     "titulo": "1. Uso del registro",
@@ -9822,8 +9803,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Comprueba si las comunicaciones se están haciendo según el plan y si llegan a quienes deben. Es la segunda medición: cubre la primera semana del Sprint 1, con la reunión de inicio y el nuevo canal con el colegio.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
-  "pdf": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-2.pdf",
-  "docx": "/documentos/INT-07-informe-de-monitoreo-de-las-comunicaciones-n-2.docx",
+  "drive": "https://drive.google.com/file/d/1yiOygw7RhtpYNvbmNy-AVPT6qO6VG7U-/view",
   "secciones": [
    {
     "titulo": "1. Corte y método",
@@ -10648,8 +10628,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Explica cómo se define, se desglosa, se valida y se controla el alcance del proyecto, y cómo se registran, priorizan y siguen los requisitos.",
   "carpeta": "03 - Alcance/3.1 Planificar",
-  "pdf": "/documentos/ALC-01-plan-de-gestion-del-alcance-y-de-los-requisitos.pdf",
-  "docx": "/documentos/ALC-01-plan-de-gestion-del-alcance-y-de-los-requisitos.docx",
+  "drive": "https://drive.google.com/file/d/1h09v8TvLCfzdkgl0Ev4BmcUNuugNOcAn/view",
   "secciones": [
    {
     "titulo": "1. Propósito y enfoque",
@@ -10963,8 +10942,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Describe el producto, sus entregables y criterios de aceptación, lo que queda fuera, y los supuestos y restricciones. Es la versión 3: reemplaza el alojamiento en el colegio por servicios en la nube.",
   "carpeta": "03 - Alcance/3.2 Definir el alcance",
-  "pdf": "/documentos/ALC-02-enunciado-del-alcance-del-proyecto.pdf",
-  "docx": "/documentos/ALC-02-enunciado-del-alcance-del-proyecto.docx",
+  "drive": "https://drive.google.com/file/d/1sYJbV7kekeXonhte9MUjnuu1h6ykjZ5t/view",
   "secciones": [
    {
     "titulo": "1. Descripción del producto",
@@ -11827,8 +11805,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Define qué significa calidad en este proyecto, con qué métricas se mide, cómo se asegura durante el trabajo y cómo se controla cada entregable antes de presentarlo.",
   "carpeta": "03 - Alcance/3.3 Calidad",
-  "pdf": "/documentos/ALC-03-plan-de-gestion-de-la-calidad.pdf",
-  "docx": "/documentos/ALC-03-plan-de-gestion-de-la-calidad.docx",
+  "drive": "https://drive.google.com/file/d/1RXk1r5n5JhTDOGN35ybWJgnHi50bpvRc/view",
   "secciones": [
    {
     "titulo": "1. Enfoque de la calidad",
@@ -12200,8 +12177,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Establece cómo el colegio acepta formalmente cada entregable: quién lo revisa, contra qué criterio, en qué fecha y con qué formato queda la constancia.",
   "carpeta": "03 - Alcance/3.4 Validar el alcance",
-  "pdf": "/documentos/ALC-04-procedimiento-de-validacion-del-alcance.pdf",
-  "docx": "/documentos/ALC-04-procedimiento-de-validacion-del-alcance.docx",
+  "drive": "https://drive.google.com/file/d/1LSWrbXPY2o7ChgUFdcmdPe__dA1xf6Ai/view",
   "secciones": [
    {
     "titulo": "1. Propósito",
@@ -12479,8 +12455,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "17/10/2026",
   "resumen": "Compara lo que existe del sistema con cada paquete de trabajo de la EDT y presenta para su validación el primer entregable del producto: el módulo de integración y limpieza de datos (E-01).",
   "carpeta": "03 - Alcance/3.5 Controlar el alcance",
-  "pdf": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-2.pdf",
-  "docx": "/documentos/ALC-05-informe-de-avance-del-producto-por-edt-n-2.docx",
+  "drive": "https://drive.google.com/file/d/1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ/view",
   "secciones": [
    {
     "titulo": "1. Propósito y corte",
@@ -13329,8 +13304,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "10/10/2026",
   "resumen": "Programa las 44 actividades del proyecto y la reunión diaria en seis sprints, del 12/10/2026 al 23/04/2027, con receso en febrero por vacaciones escolares. Mantiene la estimación PERT de la versión 2 y actualiza equipo, fechas y totales.",
   "carpeta": "04 - Cronograma",
-  "pdf": "/documentos/CRO-01-linea-base-del-cronograma.pdf",
-  "docx": "/documentos/CRO-01-linea-base-del-cronograma.docx",
+  "drive": "https://drive.google.com/file/d/1qtjLB_ofYWwJJDKiBJqYF5eWmoyd_PQM/view",
   "secciones": [
    {
     "titulo": "1. Cambios respecto de la versión 2",

@@ -5,32 +5,9 @@ import { c, kv, nota, ol, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P } from "../proyecto.mjs";
 import { SPRINTS, fmtIso } from "../datos/calendario.mjs";
 import { PAQUETES, REQUISITOS } from "../datos/requisitos.mjs";
+import { AVANCE } from "../datos/avance.mjs";
 import { DOC } from "./comunes.mjs";
 
-// Estado de cada paquete al 17/10/2026, según el sistema publicado y su repositorio.
-// [estado, % de avance (null en los paquetes de gestión), qué existe, qué falta]
-const AVANCE = {
-  "1.1.1": ["Cumplido", null, "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).", "Mantenerla actualizada ante cada cambio."],
-  "1.1.2": ["En curso", null, "Informe de desempeño N.º 1 (GOB-09).", "Un informe al cierre de cada sprint."],
-  "1.1.3": ["En curso", null, "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).", "Actas y cambios hasta el cierre."],
-  "1.2.1": ["Cumplido en parte", 85, "Carga de la base consolidada de notas del colegio: 3 878 notas de 173 estudiantes, sin duplicados y reconciliada con el archivo de origen.", "Repetir la reconciliación en tres fechas y cargar las exportaciones de Cubicol."],
-  "1.2.2": ["Cumplido en parte", 85, "Diez reglas de calidad y validación automática cada noche: 6 noches seguidas sin fallas críticas al 17/10/2026.", "Completar 15 noches seguidas y cotejar las notas transcritas de fotografías."],
-  "1.3.1": ["Cumplido", 100, "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.", "Volver a entrenarla cuando el colegio acumule datos propios."],
-  "1.3.2": ["Prototipo", 50, "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».", "Ejecución semanal automática."],
-  "1.3.3": ["Cumplido en parte", 70, "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.", "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes."],
-  "1.4.1": ["Prototipo", 40, "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).", "Correo al tutor, historial de alertas y registro de seguimiento."],
-  "1.4.2.1": ["Cumplido en parte", 80, "Interfaz en línea: inicio, aulas, estudiantes, ficha, evaluación de un caso, modelo y datos.", "Mostrarla a los docentes en el taller del 28/10/2026."],
-  "1.4.2.2": ["Cumplido en parte", 75, "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.", "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge."],
-  "1.4.2.3": ["No iniciado", 0, "—", "Pruebas con al menos tres docentes."],
-  "1.4.3": ["No iniciado", 5, "La tabla de usuarios con los cuatro roles está en la base de datos.", "Inicio de sesión y vistas por rol."],
-  "1.5.1": ["Prototipo", 40, "Sistema en línea (página en Vercel y API en Render) con datos de práctica.", "Base gestionada y entorno de producción con datos reales."],
-  "1.5.2": ["No iniciado", 0, "—", "Manual de usuario."],
-  "1.5.3": ["Prototipo", 40, "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.", "Completarlo y validarlo con el encargado de TI."],
-  "1.5.4": ["No iniciado", 0, "—", "Plan de capacitación."],
-  "1.5.5": ["No iniciado", 0, "—", "Capacitación y cierre."],
-  "1.6.1": ["Prototipo", 20, "Pruebas del entregable E-01 y de los flujos de la página.", "Reporte formal de integración y prueba de rendimiento."],
-  "1.6.2": ["No iniciado", 0, "—", "Piloto con tres docentes tutores."],
-};
 const COLOR = { Cumplido: "verde", "En curso": "azul", "Cumplido en parte": "teal", Prototipo: "amarillo", "No iniciado": "gris" };
 const cuenta = (estado) => PAQUETES.filter((x) => AVANCE[x.id][0] === estado).length;
 const delProducto = PAQUETES.filter((x) => AVANCE[x.id][1] !== null);

@@ -15,6 +15,8 @@ import { FERIADOS, RECESO, SPRINTS, TOTALES, aIso, fmt, ganttPorSemanas, program
 import { INTERESADOS, NIVELES, brecha, cuadrante, prominencia } from "./datos/interesados.mjs";
 import { CAMBIOS, INCIDENTES } from "./datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, PAQUETES, REQUISITOS, TOTALES_ALCANCE } from "./datos/requisitos.mjs";
+import { AVANCE, ENTREGABLES_AVANCE } from "./datos/avance.mjs";
+import { DRIVE_CARPETA, enlaceDrive } from "./datos/drive.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
 import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
 
@@ -85,8 +87,7 @@ for (const d of DOCUMENTOS) {
     fecha: d.fecha,
     resumen: d.resumen ?? "",
     carpeta: d.carpeta,
-    pdf: `/documentos/${nombrePublico}.pdf`,
-    docx: `/documentos/${nombrePublico}.docx`,
+    drive: enlaceDrive(d.id),
     secciones: d.secciones.map((s) => ({ titulo: s.titulo, apaisada: Boolean(s.apaisada), bloques: s.bloques })),
   });
 }
@@ -110,6 +111,25 @@ fs.writeFileSync(
 
 // Datos que usan los capítulos del blog (cronograma, interesados y alcance).
 const actividades = programar().map(({ inicio, fin, semanasNum, dias, ...a }) => ({ ...a, inicio: fmt(inicio), fin: fmt(fin) }));
+// Entregables del producto con su estado al corte del ALC-05, para la sección «Entregables» del blog.
+const entregables = ENTREGABLES.map((e) => {
+  const x = ENTREGABLES_AVANCE[e.id];
+  const paquetes = x.paquetes.map((id) => {
+    const [estado, pct, existe, falta] = AVANCE[id];
+    return { id, nombre: PAQUETES.find((p) => p.id === id).nombre, estado, pct, existe, falta };
+  });
+  return {
+    ...e,
+    estado: x.estado,
+    nota: x.nota,
+    avance: Math.round(paquetes.reduce((t, p) => t + (p.pct ?? 0), 0) / paquetes.length),
+    revision: fmt(new Date(`${SPRINTS[e.sprint - 1].revision}T00:00:00Z`)),
+    paquetes,
+    requisitos: REQUISITOS.filter((q) => q.entregable.includes(e.id)).map((q) => ({ id: q.id, titulo: q.titulo })),
+    evidencias: x.evidencias,
+    documentos: x.documentos.map((id) => ({ id, titulo: DOCUMENTOS.find((d) => d.id === id).titulo, drive: enlaceDrive(id) })),
+  };
+});
 const interesados = INTERESADOS.map((i) => ({ ...i, cuadrante: cuadrante(i), prominencia: prominencia(i), brecha: brecha(i) }));
 const datos = {
   PROYECTO,
@@ -125,6 +145,8 @@ const datos = {
   INTERESADOS: interesados,
   REQUISITOS: REQUISITOS.map((r) => ({ ...r, ...PLANILLAS[r.id] })),
   ENTREGABLES,
+  ENTREGABLES_ESTADO: entregables,
+  DRIVE_CARPETA,
   COMPONENTES,
   PAQUETES,
   TOTALES_ALCANCE,

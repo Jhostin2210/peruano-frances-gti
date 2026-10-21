@@ -3998,6 +3998,448 @@ export const ENTREGABLES = [
  }
 ];
 
+export const ENTREGABLES_ESTADO = [
+ {
+  "id": "E-01",
+  "nombre": "Módulo de integración y limpieza de datos",
+  "tipo": "Software",
+  "sprint": 2,
+  "descripcion": "Procesos que reúnen y limpian los datos académicos en una base de datos en la nube.",
+  "estado": "En validación",
+  "nota": "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2: seis de los ocho casos de prueba aprobados, uno aprobado en parte y uno en curso. Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
+  "avance": 85,
+  "revision": "04/12/2026",
+  "paquetes": [
+   {
+    "id": "1.2.1",
+    "nombre": "Integración de datos (ETL)",
+    "estado": "Cumplido en parte",
+    "pct": 85,
+    "existe": "Carga de la base consolidada de notas del colegio: 3 878 notas de 173 estudiantes, sin duplicados y reconciliada con el archivo de origen.",
+    "falta": "Repetir la reconciliación en tres fechas y cargar las exportaciones de Cubicol."
+   },
+   {
+    "id": "1.2.2",
+    "nombre": "Calidad de datos",
+    "estado": "Cumplido en parte",
+    "pct": 85,
+    "existe": "Diez reglas de calidad y validación automática cada noche: 6 noches seguidas sin fallas críticas al 17/10/2026.",
+    "falta": "Completar 15 noches seguidas y cotejar las notas transcritas de fotografías."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-01",
+    "titulo": "Centralización de los datos académicos"
+   },
+   {
+    "id": "REQ-02",
+    "titulo": "Limpieza y validación automática de los datos"
+   },
+   {
+    "id": "RNF-07",
+    "titulo": "Capacidad y escalabilidad"
+   }
+  ],
+  "evidencias": [
+   {
+    "texto": "Pantalla «Datos» del sistema",
+    "url": "https://proyecto-siat.vercel.app/#/datos"
+   },
+   {
+    "texto": "Casos de prueba del Sprint 2",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/pruebas-sprint-2.md"
+   },
+   {
+    "texto": "Datos y variables",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/datos-y-variables.md"
+   }
+  ],
+  "documentos": [
+   {
+    "id": "ALC-05",
+    "titulo": "Informe de avance del producto por EDT N.º 2",
+    "drive": "https://drive.google.com/file/d/1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ/view"
+   },
+   {
+    "id": "ALC-04",
+    "titulo": "Procedimiento de validación del alcance",
+    "drive": "https://drive.google.com/file/d/1LSWrbXPY2o7ChgUFdcmdPe__dA1xf6Ai/view"
+   }
+  ]
+ },
+ {
+  "id": "E-02",
+  "nombre": "Modelo predictivo de riesgo académico",
+  "tipo": "Software",
+  "sprint": 3,
+  "descripcion": "Modelo entrenado en Python con Scikit-learn que clasifica a cada estudiante en riesgo bajo, medio o alto y se actualiza cada semana.",
+  "estado": "En desarrollo",
+  "nota": "La red neuronal está entrenada y clasifica en tres niveles; falta la ejecución semanal automática y cerrar la métrica acordada (SC-08).",
+  "avance": 73,
+  "revision": "30/12/2026",
+  "paquetes": [
+   {
+    "id": "1.3.1",
+    "nombre": "Entrenamiento del modelo",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.",
+    "falta": "Volver a entrenarla cuando el colegio acumule datos propios."
+   },
+   {
+    "id": "1.3.2",
+    "nombre": "Clasificación de riesgo",
+    "estado": "Prototipo",
+    "pct": 50,
+    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
+    "falta": "Ejecución semanal automática."
+   },
+   {
+    "id": "1.3.3",
+    "nombre": "Validación del modelo",
+    "estado": "Cumplido en parte",
+    "pct": 70,
+    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.",
+    "falta": "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-03",
+    "titulo": "Modelo de clasificación del riesgo académico"
+   },
+   {
+    "id": "REQ-04",
+    "titulo": "Actualización semanal automática del modelo"
+   }
+  ],
+  "evidencias": [
+   {
+    "texto": "Pantalla «Modelo» del sistema",
+    "url": "https://proyecto-siat.vercel.app/#/modelo"
+   },
+   {
+    "texto": "Evaluar un caso",
+    "url": "https://proyecto-siat.vercel.app/#/evaluar"
+   },
+   {
+    "texto": "Modelo y validación",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/modelo-y-validacion.md"
+   }
+  ],
+  "documentos": [
+   {
+    "id": "ALC-05",
+    "titulo": "Informe de avance del producto por EDT N.º 2",
+    "drive": "https://drive.google.com/file/d/1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ/view"
+   }
+  ]
+ },
+ {
+  "id": "E-03",
+  "nombre": "Motor de alertas tempranas",
+  "tipo": "Software",
+  "sprint": 4,
+  "descripcion": "Módulo que avisa por correo y en el panel web al docente tutor y a la coordinación.",
+  "estado": "En desarrollo",
+  "nota": "Hay un prototipo: lista de estudiantes en riesgo alto y comunicado al apoderado que redacta el sistema. Faltan el correo al tutor y el registro de seguimiento.",
+  "avance": 40,
+  "revision": "29/01/2027",
+  "paquetes": [
+   {
+    "id": "1.4.1",
+    "nombre": "Motor de alertas",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).",
+    "falta": "Correo al tutor, historial de alertas y registro de seguimiento."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-05",
+    "titulo": "Alertas automáticas por correo al docente tutor"
+   },
+   {
+    "id": "REQ-06",
+    "titulo": "Panel web de alertas para el docente"
+   },
+   {
+    "id": "REQ-07",
+    "titulo": "Registro del seguimiento de cada caso"
+   },
+   {
+    "id": "REQ-12",
+    "titulo": "Comunicado al apoderado del estudiante en riesgo alto"
+   }
+  ],
+  "evidencias": [
+   {
+    "texto": "Inicio del sistema (riesgo alto)",
+    "url": "https://proyecto-siat.vercel.app"
+   }
+  ],
+  "documentos": [
+   {
+    "id": "ALC-05",
+    "titulo": "Informe de avance del producto por EDT N.º 2",
+    "drive": "https://drive.google.com/file/d/1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ/view"
+   }
+  ]
+ },
+ {
+  "id": "E-04",
+  "nombre": "Tablero web",
+  "tipo": "Software",
+  "sprint": 4,
+  "descripcion": "Interfaz web con semáforo de riesgo, fichas de estudiante, reportes y comparación por aula y grado.",
+  "estado": "En desarrollo",
+  "nota": "La interfaz en línea tiene aulas, estudiantes, ficha y reportes en PDF. Faltan las pruebas con docentes.",
+  "avance": 52,
+  "revision": "29/01/2027",
+  "paquetes": [
+   {
+    "id": "1.4.2.1",
+    "nombre": "Diseño de la interfaz",
+    "estado": "Cumplido en parte",
+    "pct": 80,
+    "existe": "Interfaz en línea: inicio, aulas, estudiantes, ficha, evaluación de un caso, modelo y datos.",
+    "falta": "Mostrarla a los docentes en el taller del 28/10/2026."
+   },
+   {
+    "id": "1.4.2.2",
+    "nombre": "Desarrollo del tablero",
+    "estado": "Cumplido en parte",
+    "pct": 75,
+    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
+    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge."
+   },
+   {
+    "id": "1.4.2.3",
+    "nombre": "Pruebas con usuarios",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Pruebas con al menos tres docentes."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-08",
+    "titulo": "Tablero de indicadores de riesgo"
+   },
+   {
+    "id": "REQ-09",
+    "titulo": "Reportes exportables en PDF y Excel"
+   },
+   {
+    "id": "REQ-10",
+    "titulo": "Ficha individual del estudiante"
+   },
+   {
+    "id": "RNF-01",
+    "titulo": "Facilidad de uso"
+   },
+   {
+    "id": "RNF-02",
+    "titulo": "Rendimiento del tablero"
+   },
+   {
+    "id": "RNF-05",
+    "titulo": "Disponibilidad en horario escolar"
+   },
+   {
+    "id": "RNF-06",
+    "titulo": "Compatibilidad con navegadores"
+   },
+   {
+    "id": "RNF-07",
+    "titulo": "Capacidad y escalabilidad"
+   }
+  ],
+  "evidencias": [
+   {
+    "texto": "Pantalla «Aulas»",
+    "url": "https://proyecto-siat.vercel.app/#/aulas"
+   },
+   {
+    "texto": "Pantalla «Estudiantes»",
+    "url": "https://proyecto-siat.vercel.app/#/estudiantes"
+   }
+  ],
+  "documentos": [
+   {
+    "id": "ALC-05",
+    "titulo": "Informe de avance del producto por EDT N.º 2",
+    "drive": "https://drive.google.com/file/d/1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ/view"
+   }
+  ]
+ },
+ {
+  "id": "E-05",
+  "nombre": "Gestión de roles y accesos",
+  "tipo": "Software",
+  "sprint": 4,
+  "descripcion": "Ingreso con usuario y contraseña y vistas distintas para docente, coordinación, psicología y dirección.",
+  "estado": "No iniciado",
+  "nota": "Solo existe la tabla de usuarios con los cuatro roles en la base de datos.",
+  "avance": 5,
+  "revision": "29/01/2027",
+  "paquetes": [
+   {
+    "id": "1.4.3",
+    "nombre": "Roles y accesos",
+    "estado": "No iniciado",
+    "pct": 5,
+    "existe": "La tabla de usuarios con los cuatro roles está en la base de datos.",
+    "falta": "Inicio de sesión y vistas por rol."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-11",
+    "titulo": "Roles y accesos diferenciados"
+   },
+   {
+    "id": "RNF-03",
+    "titulo": "Autenticación y control de acceso"
+   },
+   {
+    "id": "RNF-04",
+    "titulo": "Cumplimiento de la Ley N.° 29733"
+   }
+  ],
+  "evidencias": [],
+  "documentos": []
+ },
+ {
+  "id": "E-06",
+  "nombre": "Manual de usuario",
+  "tipo": "Documento",
+  "sprint": 6,
+  "descripcion": "Guía de uso para docentes y coordinadores, en lenguaje sencillo y con capturas de pantalla.",
+  "estado": "No iniciado",
+  "nota": "Se elabora en el Sprint 6.",
+  "avance": 0,
+  "revision": "23/04/2027",
+  "paquetes": [
+   {
+    "id": "1.5.2",
+    "nombre": "Manual de usuario",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Manual de usuario."
+   }
+  ],
+  "requisitos": [],
+  "evidencias": [],
+  "documentos": []
+ },
+ {
+  "id": "E-07",
+  "nombre": "Manual técnico",
+  "tipo": "Documento",
+  "sprint": 6,
+  "descripcion": "Arquitectura, configuración de los servicios en la nube y procedimientos básicos de mantenimiento.",
+  "estado": "En desarrollo",
+  "nota": "Hay documentos de arquitectura, datos, modelo y pruebas en el repositorio del sistema; falta completarlo y validarlo con el encargado de TI.",
+  "avance": 40,
+  "revision": "23/04/2027",
+  "paquetes": [
+   {
+    "id": "1.5.3",
+    "nombre": "Manual técnico",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.",
+    "falta": "Completarlo y validarlo con el encargado de TI."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "RNF-04",
+    "titulo": "Cumplimiento de la Ley N.° 29733"
+   },
+   {
+    "id": "RNF-08",
+    "titulo": "Documentación y transferencia"
+   }
+  ],
+  "evidencias": [
+   {
+    "texto": "Arquitectura del sistema",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/arquitectura.md"
+   }
+  ],
+  "documentos": []
+ },
+ {
+  "id": "E-08",
+  "nombre": "Plan y sesión de capacitación",
+  "tipo": "Capacitación",
+  "sprint": 6,
+  "descripcion": "Programa de dos horas para docentes y coordinadores.",
+  "estado": "No iniciado",
+  "nota": "Se elabora y se dicta en el Sprint 6.",
+  "avance": 0,
+  "revision": "23/04/2027",
+  "paquetes": [
+   {
+    "id": "1.5.4",
+    "nombre": "Plan de capacitación",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Plan de capacitación."
+   },
+   {
+    "id": "1.5.5",
+    "nombre": "Capacitación y cierre",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Capacitación y cierre."
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "RNF-01",
+    "titulo": "Facilidad de uso"
+   }
+  ],
+  "evidencias": [],
+  "documentos": []
+ },
+ {
+  "id": "E-09",
+  "nombre": "Informe del piloto",
+  "tipo": "Validación",
+  "sprint": 5,
+  "descripcion": "Resultados del piloto con docentes tutores, observaciones y ajustes aplicados antes del despliegue definitivo.",
+  "estado": "No iniciado",
+  "nota": "El piloto con tres docentes tutores es en el Sprint 5 (marzo de 2027).",
+  "avance": 0,
+  "revision": "24/03/2027",
+  "paquetes": [
+   {
+    "id": "1.6.2",
+    "nombre": "Piloto y retroalimentación",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Piloto con tres docentes tutores."
+   }
+  ],
+  "requisitos": [],
+  "evidencias": [],
+  "documentos": []
+ }
+];
+
+export const DRIVE_CARPETA = "https://drive.google.com/drive/folders/1XRES5CZ7T-1BxqLaRGALFxZDjROnNjF7";
+
 export const COMPONENTES = [
  {
   "id": "1.1",

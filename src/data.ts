@@ -387,6 +387,14 @@ function gruposDeDominio(dominio: string): TocGroup[] {
 
 export const TOC_CHAPTERS: TocChapter[] = [
   {
+    num: "",
+    label: "Entregables",
+    sections: [
+      { label: "Entregables del producto", href: "#entregables" },
+      { label: "Documentos en Drive", href: "#entregables-documentos" },
+    ],
+  },
+  {
     num: "00",
     label: "Introducción",
     sections: [

@@ -23,6 +23,7 @@ import MarcoPmbok from "./components/MarcoPmbok";
 import DominioPmbok from "./components/DominioPmbok";
 import AvisoEtapa from "./components/AvisoEtapa";
 import TableroComunicaciones from "./components/TableroComunicaciones";
+import Entregables from "./components/Entregables";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -117,6 +118,9 @@ export default function App() {
 
           {/* Research Summary Abstract */}
           <Abstract />
+
+          {/* ENTREGABLES: estado de E-01 a E-09 y documentos en Drive (enlace directo #entregables) */}
+          <Entregables />
 
           {/* ═════════ PARTE I · FORMULACIÓN (curso anterior) ═════════ */}
 

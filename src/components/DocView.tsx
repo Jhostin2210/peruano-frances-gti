@@ -6,7 +6,7 @@
 
 import { Fragment, useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { ChevronDown, Download, FileText } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import type { Bloque, Celda, CeldaDef, DocDef } from "../content/tipos";
 
 const RELLENO: Record<string, string> = {
@@ -195,23 +195,17 @@ export default function DocView({ doc, abierto = false }: DocViewProps) {
             <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
             {open ? "Ocultar el documento" : "Leer el documento"}
           </button>
-          <a
-            href={doc.pdf}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold border border-slate-300 text-slate-700 px-3.5 py-2 rounded-lg hover:bg-slate-50 transition-colors"
-          >
-            <FileText className="w-3.5 h-3.5" />
-            Abrir PDF
-          </a>
-          <a
-            href={doc.docx}
-            download
-            className="inline-flex items-center gap-1.5 text-xs font-semibold border border-slate-300 text-slate-700 px-3.5 py-2 rounded-lg hover:bg-slate-50 transition-colors"
-          >
-            <Download className="w-3.5 h-3.5" />
-            Descargar Word
-          </a>
+          {doc.drive && (
+            <a
+              href={doc.drive}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold border border-slate-300 text-slate-700 px-3.5 py-2 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Ver en Drive
+            </a>
+          )}
         </div>
       </header>
 
