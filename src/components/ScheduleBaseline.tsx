@@ -23,11 +23,10 @@ import {
   TrendingDown,
   RefreshCw,
   Check,
-  ZoomIn,
-  ZoomOut
 } from "lucide-react";
 import Cite from "./Cite";
 import { ACTIVIDADES, TAREAS_PROJECT, TOTALES } from "../content/datos";
+import { GanttCronograma, RedCronograma } from "./GanttCronograma";
 
 interface ActivityItem {
   id: string;
@@ -68,41 +67,12 @@ export default function ScheduleBaseline() {
   const [selectedSprint, setSelectedSprint] = useState<string>("Todos");
   const [selectedResp, setSelectedResp] = useState<string>("Todos");
   const [activePertEq, setActivePertEq] = useState<string | null>("A-0.1.1.1");
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [zoom, setZoom] = useState<number>(1);
-  const [pan, setPan] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [pantalla, setPantalla] = useState<"red" | "gantt" | null>(null);
 
   // MS Project state variables
   const [mspSearch, setMspSearch] = useState("");
   const [mspSprint, setMspSprint] = useState<string>("Todos");
   const [mspShowOnlySummary, setMspShowOnlySummary] = useState<boolean>(false);
-
-  const openLightbox = (index: number) => {
-    setZoom(1);
-    setPan({ x: 0, y: 0 });
-    setLightboxIndex(index);
-  };
-
-  const closeLightbox = () => {
-    setLightboxIndex(null);
-    setZoom(1);
-    setPan({ x: 0, y: 0 });
-  };
-
-  const images = [
-    {
-      src: "/DIAGRAMA DE GANT.png",
-      alt: "Diagrama de Red del Cronograma - Método PDM (Colegio PF 2026)",
-      caption: "Representación interactiva de las precedencias lógicas (Método de Diagramación por Precedencia - PDM) y la ruta crítica definida para las 44 actividades del proyecto en las 24 semanas."
-    },
-    {
-      src: "/project.jpeg",
-      alt: "Diagrama de Gantt del Cronograma - Planificación de 6 Meses",
-      caption: "Línea temporal oficial estructurada en 6 Sprints de 4 semanas cada uno, mapeando las ventanas de desarrollo de modelos ML, módulos de alertas, periodo piloto docente formal y hitos de Sprint Review."
-    }
-  ];
 
   // Unique lists for filtering
   const responsabilidades = useMemo(() => {
@@ -135,55 +105,6 @@ export default function ScheduleBaseline() {
       return matchSearch && matchSprint && matchSummaryOnly;
     });
   }, [mspSearch, mspSprint, mspShowOnlySummary]);
-
-  const handleZoomIn = () => {
-    setZoom((prev) => Math.min(prev + 0.5, 4));
-  };
-
-  const handleZoomOut = () => {
-    setZoom((prev) => Math.max(prev - 0.5, 1));
-  };
-
-  const handleZoomReset = () => {
-    setZoom(1);
-    setPan({ x: 0, y: 0 });
-  };
-
-  const onMouseDown = (e: React.MouseEvent) => {
-    if (zoom <= 1) return;
-    e.preventDefault();
-    setIsDragging(true);
-    setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
-  };
-
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || zoom <= 1) return;
-    e.preventDefault();
-    setPan({
-      x: e.clientX - dragStart.x,
-      y: e.clientY - dragStart.y,
-    });
-  };
-
-  const onMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    if (zoom <= 1) return;
-    setIsDragging(true);
-    const touch = e.touches[0];
-    setDragStart({ x: touch.clientX - pan.x, y: touch.clientY - pan.y });
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || zoom <= 1) return;
-    const touch = e.touches[0];
-    setPan({
-      x: touch.clientX - dragStart.x,
-      y: touch.clientY - dragStart.y,
-    });
-  };
 
   return (
     <div className="animate-fade-in text-slate-800">
@@ -496,46 +417,18 @@ export default function ScheduleBaseline() {
                   </h3>
                 </div>
                 <button
-                  onClick={() => openLightbox(0)}
+                  onClick={() => setPantalla("red")}
                   className="flex items-center gap-1.5 text-xs text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-150 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
-                  Expandir Diagrama
+                  Pantalla completa
                 </button>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                El Diagrama de Red representa el flujo lógico de ejecución con método PDM. Define dependencias obligatorias (técnicas) y discretas, mapeando la secuencia crítica desde el Hito de Inicio en S1 hasta el Hito de Cierre en S24.
+                El diagrama de red muestra la secuencia de las actividades con el método de diagramación por precedencia (PDM) y dependencias fin-comienzo. Hay una franja por sprint: cada una empieza en el hito del sprint anterior (la del Sprint 5, en el receso de febrero) y termina en su Sprint Review. En rojo, las actividades de la ruta crítica según el análisis PERT. Es la misma red del archivo de MS Project.
               </p>
 
-              {/* Network Diagram Graphic Container */}
-              <div className="border border-slate-200 bg-slate-50 rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
-                {/* Real Image Render */}
-                <img
-                  src="/DIAGRAMA DE GANT.png"
-                  alt="Diagrama de Red del Cronograma"
-                  referrerPolicy="no-referrer"
-                  className="max-h-[350px] max-w-full object-contain rounded-lg shadow-sm border bg-white hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
-                  onClick={() => openLightbox(0)}
-                  onError={(e) => {
-                    // fallback representation if the image file isn't uploaded yet or has issues
-                    e.currentTarget.style.display = 'none';
-                    const el = document.getElementById('diagram-red-fallback');
-                    if (el) el.classList.remove('hidden');
-                  }}
-                />
-
-                {/* Fallback Beautiful Vector Representation */}
-                <div id="diagram-red-fallback" className="hidden text-center max-w-md py-6">
-                  <Activity className="w-12 h-12 text-slate-300 mx-auto mb-3 animate-pulse" />
-                  <h5 className="font-serif font-bold text-slate-800 text-sm mb-1.5">Diagrama de Red del Cronograma (PDM)</h5>
-                  <p className="text-slate-400 text-xs leading-normal mb-4">
-                    Aquí se visualiza la red interactiva de precedencias lógicas (Ruta Crítica destacada). Para una visualización óptima, suba el archivo <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">DIAGRAMA DE GANT.png</code> al directorio raíz.
-                  </p>
-                  <div className="flex justify-center gap-3 font-mono text-[9px] text-slate-500">
-                    <span className="bg-white border px-2 py-1 rounded">Inicio ── S1 ── S2 ── S3 ── S4 ── S5 ── S6 ── Fin</span>
-                  </div>
-                </div>
-              </div>
+              <RedCronograma />
             </div>
 
             {/* ── PASO 4: ESTIMAR EL ESFUERZO: MÉTODO PERT ── */}
@@ -646,57 +539,23 @@ export default function ScheduleBaseline() {
                       Desarrollar el Cronograma (Diagrama de Gantt)
                     </h3>
                     <span className="inline-flex items-center gap-1 bg-slate-100 border border-slate-200 text-slate-600 px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold self-start sm:self-auto">
-                      Modelado en MS Project 2026
+                      Mismos datos que el archivo de MS Project
                     </span>
                   </div>
                 </div>
                 <button
-                  onClick={() => openLightbox(1)}
+                  onClick={() => setPantalla("gantt")}
                   className="flex items-center gap-1.5 text-xs text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-150 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
-                  Expandir Gantt
+                  Pantalla completa
                 </button>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                El Diagrama de Gantt detalla la distribución de los 6 Sprints ágiles de 4 semanas cada uno. Destaca las ventanas de trabajo, dependencias secuenciales y enmarca los 6 hitos formales de entrega en cada Sprint Review.
+                El diagrama de Gantt reparte las actividades en los 6 sprints de 4 semanas, del 12 de octubre de 2026 al 23 de abril de 2027, con el receso de febrero, los feriados y los 6 hitos de Sprint Review. Elija un sprint para verlo por días, con sus dependencias y responsables. Se dibuja con los mismos datos del documento CRO-01 y del archivo de MS Project (CRO-01 Cronograma SIA-T v3), así que no queda desactualizado.
               </p>
 
-              {/* Gantt Image Container */}
-              <div className="border border-slate-200 bg-slate-50 rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
-                {/* Real Image Render */}
-                <img
-                  src="/project.jpeg"
-                  alt="Diagrama de Gantt del Cronograma"
-                  referrerPolicy="no-referrer"
-                  className="max-h-[350px] max-w-full object-contain rounded-lg shadow-sm border bg-white hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
-                  onClick={() => openLightbox(1)}
-                  onError={(e) => {
-                    const currentSrc = e.currentTarget.src;
-                    if (currentSrc.includes("/project.jpeg")) {
-                      e.currentTarget.src = "/project.png";
-                    } else if (currentSrc.includes("/project.png")) {
-                      e.currentTarget.src = "/PLAN DE CRONOGRAMA.png";
-                    } else {
-                      e.currentTarget.style.display = 'none';
-                      const el = document.getElementById('diagram-gantt-fallback');
-                      if (el) el.classList.remove('hidden');
-                    }
-                  }}
-                />
-
-                {/* Fallback Beautiful Vector Representation */}
-                <div id="diagram-gantt-fallback" className="hidden text-center max-w-md py-6">
-                  <Calendar className="w-12 h-12 text-slate-300 mx-auto mb-3 animate-pulse" />
-                  <h5 className="font-serif font-bold text-slate-800 text-sm mb-1.5">Diagrama de Gantt del Cronograma (Plan Base)</h5>
-                  <p className="text-slate-400 text-xs leading-normal mb-4">
-                    Aquí se visualiza la escala temporal de los 6 Sprints. Para una visualización óptima, suba el archivo de imagen <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">project.jpeg</code>, <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">project.png</code> o <code className="font-mono text-[10px] bg-slate-200 px-1 py-0.5 rounded text-slate-700">PLAN DE CRONOGRAMA.png</code> a la carpeta correspondiente.
-                  </p>
-                  <div className="flex justify-center gap-3 font-mono text-[9px] text-slate-500">
-                    <span className="bg-white border px-2 py-1 rounded">Sprints 1-6 ── octubre de 2026 a abril de 2027</span>
-                  </div>
-                </div>
-              </div>
+              <GanttCronograma />
 
               {/* COMPONENTES DEL CRONOGRAMA DESDE PDF PAGE 14 */}
               <div className="bg-[#0d7377]/5 border border-[#0d7377]/10 p-5 rounded-3xl space-y-3">
@@ -711,7 +570,7 @@ export default function ScheduleBaseline() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
-                    <span><strong>6 Sprints SCRUM de 4 semanas:</strong> Sprint 1 verde oscuro (NUEVO), Sprint 2 verde claro, Sprint 3 azul, Sprint 4 morado, Sprint 5 rosado (NUEVO), Sprint 6 dorado.</span>
+                    <span><strong>6 Sprints Scrum de 4 semanas:</strong> cada uno con su barra de resumen y su hito de Sprint Review al cierre.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
@@ -719,7 +578,7 @@ export default function ScheduleBaseline() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
-                    <span><strong>Ruta crítica destacada:</strong> Marcada en color naranja/coral con símbolo de estrella (8 actividades nuevas marcadas con cuadrado).</span>
+                    <span><strong>Ruta crítica destacada:</strong> las {TOTALES.criticas} actividades críticas del análisis PERT van en rojo en el Gantt y en el diagrama de red.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#0d7377] mt-0.5 flex-shrink-0" />
@@ -847,7 +706,7 @@ export default function ScheduleBaseline() {
                   </div>
                   <span className="inline-flex items-center gap-1.5 self-start sm:self-auto bg-[#eafaf1] border border-[#a2e2bd] text-[#107c41] px-2.5 py-1 rounded-full text-[10px] font-mono font-extrabold shadow-xxs">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#107c41] animate-pulse"></span>
-                    64 Filas de MS Project Vinculadas
+                    {MSPROJECT_TASKS.length} filas, iguales al archivo de MS Project
                   </span>
                 </div>
 
@@ -988,7 +847,7 @@ export default function ScheduleBaseline() {
                   <div className="bg-[#107c41]/5 border border-[#107c41]/10 p-4 rounded-xl flex items-start gap-3">
                     <HelpCircle className="w-4 h-4 text-[#107c41] flex-shrink-0 mt-0.5" />
                     <p className="text-[10.5px] text-slate-650 leading-normal">
-                      <strong>Acerca de esta lista:</strong> las fechas corresponden al calendario de la versión 3 (CRO-01). La columna de predecesoras muestra la semana planificada de cada actividad; la red de dependencias elaborada en MS Project en el curso anterior se conserva en el diagrama de red.
+                      <strong>Acerca de esta lista:</strong> las fechas corresponden al calendario de la versión 3 (CRO-01). Las filas, sus números y las predecesoras (dependencias fin-comienzo, por número de fila) son las mismas del archivo de MS Project «CRO-01 Cronograma SIA-T v3», del diagrama de Gantt y del diagrama de red de esta página.
                     </p>
                   </div>
                 </div>
@@ -1337,115 +1196,21 @@ export default function ScheduleBaseline() {
         </div>
       </section>
 
-      {/* ── IMAGE ZOOM LIGHTBOX MODAL ── */}
-      {lightboxIndex !== null && (
-        <div className="fixed inset-0 bg-slate-950/95 z-50 flex flex-col items-center justify-between p-4 md:p-6 select-none">
-          {/* Header */}
-          <div className="w-full flex items-center justify-between max-w-7xl border-b border-slate-800 pb-3">
-            <h4 className="font-serif text-white font-bold text-sm sm:text-base text-left truncate pr-4">
-              {images[lightboxIndex].alt}
+      {pantalla && (
+        <div className="fixed inset-0 z-50 bg-white overflow-auto p-4 sm:p-6" role="dialog" aria-modal="true">
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <h4 className="font-serif font-bold text-slate-900 text-base">
+              {pantalla === "red" ? "Diagrama de red del cronograma (PDM)" : "Diagrama de Gantt del cronograma, versión 3"}
             </h4>
             <button
-              onClick={closeLightbox}
-              className="text-slate-400 hover:text-white p-2 rounded-full bg-slate-900 hover:bg-slate-800 transition-colors border border-slate-800 cursor-pointer flex items-center justify-center"
+              onClick={() => setPantalla(null)}
+              className="text-slate-500 hover:text-slate-900 p-2 rounded-full border border-slate-200 hover:bg-slate-50 cursor-pointer"
+              aria-label="Cerrar"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
-          
-          {/* Main Stage */}
-          <div className="w-full flex-1 flex items-center justify-center my-4 overflow-hidden relative">
-            <div 
-              className={`relative max-w-full max-h-[66vh] rounded-2xl bg-slate-900 border border-slate-800 p-2 sm:p-4 overflow-hidden flex items-center justify-center ${
-                zoom > 1 ? "cursor-grab active:cursor-grabbing" : "cursor-zoom-in"
-              }`}
-              onMouseDown={onMouseDown}
-              onMouseMove={onMouseMove}
-              onMouseUp={onMouseUp}
-              onMouseLeave={onMouseUp}
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onMouseUp}
-              onClick={(e) => {
-                if (isDragging) return;
-                if (zoom === 1) {
-                  setZoom(2);
-                } else {
-                  handleZoomReset();
-                }
-              }}
-            >
-              <img
-                src={images[lightboxIndex].src}
-                alt={images[lightboxIndex].alt}
-                referrerPolicy="no-referrer"
-                className="max-h-[60vh] max-w-full object-contain rounded-lg select-none pointer-events-none"
-                style={{
-                  transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
-                  transformOrigin: "center center",
-                  transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), translate 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-                }}
-                onError={(e) => {
-                  const currentSrc = e.currentTarget.src;
-                  if (currentSrc.includes("/project.jpeg")) {
-                    e.currentTarget.src = "/project.png";
-                  } else if (currentSrc.includes("/project.png")) {
-                    e.currentTarget.src = "/PLAN DE CRONOGRAMA.png";
-                  } else {
-                    e.currentTarget.style.display = 'none';
-                    const msg = document.getElementById('lightbox-error');
-                    if (msg) msg.classList.remove('hidden');
-                  }
-                }}
-              />
-              <div id="lightbox-error" className="hidden text-slate-400 py-12 text-center text-sm font-mono">
-                La imagen <code className="bg-slate-950 p-1 rounded">{images[lightboxIndex].src}</code> no se encuentra en el servidor. <br />
-                Suba el archivo correspondiente para visualizarlo.
-              </div>
-            </div>
-          </div>
-
-          {/* Footer Controls */}
-          <div className="w-full max-w-2xl text-center space-y-4">
-            {/* Zoom Controls Bar */}
-            <div className="inline-flex items-center gap-4 bg-slate-900/80 border border-slate-800 px-4 py-2 rounded-full shadow-lg backdrop-blur-md">
-              <button
-                onClick={(e) => { e.stopPropagation(); handleZoomOut(); }}
-                disabled={zoom <= 1}
-                className="text-slate-400 hover:text-white disabled:text-slate-700 disabled:cursor-not-allowed transition-colors p-1.5 hover:bg-slate-800 rounded-full cursor-pointer flex items-center justify-center"
-                title="Alejar"
-              >
-                <ZoomOut className="w-4 h-4" />
-              </button>
-              
-              <span className="text-white font-mono text-xs min-w-[50px] select-none text-center">
-                {Math.round(zoom * 100)}%
-              </span>
-              
-              <button
-                onClick={(e) => { e.stopPropagation(); handleZoomIn(); }}
-                disabled={zoom >= 4}
-                className="text-slate-400 hover:text-white disabled:text-slate-700 disabled:cursor-not-allowed transition-colors p-1.5 hover:bg-slate-800 rounded-full cursor-pointer flex items-center justify-center"
-                title="Acercar"
-              >
-                <ZoomIn className="w-4 h-4" />
-              </button>
-
-              <div className="w-px h-4 bg-slate-800" />
-
-              <button
-                onClick={(e) => { e.stopPropagation(); handleZoomReset(); }}
-                disabled={zoom === 1 && pan.x === 0 && pan.y === 0}
-                className="text-xs text-slate-400 hover:text-white disabled:text-slate-700 disabled:cursor-not-allowed transition-colors px-2.5 py-1 hover:bg-slate-850 rounded-md font-mono cursor-pointer"
-              >
-                Restablecer
-              </button>
-            </div>
-
-            <p className="text-slate-400 text-xs max-w-3xl mx-auto leading-relaxed px-4">
-              {images[lightboxIndex].caption}
-            </p>
-          </div>
+          {pantalla === "red" ? <RedCronograma /> : <GanttCronograma />}
         </div>
       )}
     </div>

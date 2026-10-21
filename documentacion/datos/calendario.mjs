@@ -105,69 +105,108 @@ export function programar() {
   });
 }
 
-// Lista tipo MS Project para el blog: resumen del proyecto, resumen por sprint, actividades e hitos.
-export function tareasProject() {
+export function diasHabiles(a, b) {
+  let n = 0;
+  for (let d = a; d <= b; d = mover(d, 1)) if (esHabil(d)) n++;
+  return n;
+}
+
+// Red de dependencias fin-comienzo del cronograma. La usan el Gantt y el diagrama de red del blog y el
+// archivo de MS Project. Regla: dentro de cada sprint, una actividad depende de las que terminan justo
+// antes de que empiece; la primera de cada sprint depende del hito del sprint anterior (la del Sprint 5,
+// del receso de febrero). El hito depende de las actividades del sprint que no tienen sucesora.
+export function red() {
   const prog = programar();
-  const filas = [];
-  let id = 1;
-  filas.push({
-    id: id++,
-    nombre: "Sistema ML - Alerta Temprana (proyecto completo)",
-    duracion: "24 semanas",
-    comienzo: fmtProject(aFecha(SPRINTS[0].inicio)),
-    fin: fmtProject(aFecha(SPRINTS[5].fin)),
-    predecesoras: "",
-    recursos: "",
-    sprint: 0,
-    isSummary: true,
-  });
+  const nodos = [];
+  let hitoAnterior = null;
+  let receso = null;
   for (const sp of SPRINTS) {
-    filas.push({
-      id: id++,
-      nombre: `Sprint ${sp.n}: ${sp.nombre} (S${sp.semanas[0]}–S${sp.semanas[1]})`,
-      duracion: "4 semanas",
-      comienzo: fmtProject(aFecha(sp.inicio)),
-      fin: fmtProject(ajustarHabil(aFecha(sp.fin), -1)),
-      predecesoras: "",
-      recursos: "",
-      sprint: sp.n,
-      isSummary: true,
-    });
-    for (const a of prog.filter((x) => x.sprint === sp.n)) {
-      filas.push({
-        id: id++,
-        nombre: `${a.id} ${a.descripcion}`,
-        duracion: a.dias ? `${a.dias} ${a.dias === 1 ? "día" : "días"}` : `S${a.semanasNum[0]}–S${a.semanasNum[1]}`,
-        comienzo: fmtProject(a.inicio),
-        fin: fmtProject(a.fin),
-        predecesoras: a.semana,
-        recursos: a.responsable,
-        sprint: sp.n,
-      });
+    const hechas = [];
+    for (const a of prog.filter((x) => x.sprint === sp.n && !x.continua)) {
+      const antes = hechas.filter((h) => h.fin < a.inicio);
+      let preds = [];
+      if (antes.length) {
+        const ultimo = Math.max(...antes.map((h) => h.fin.getTime()));
+        preds = antes.filter((h) => h.fin.getTime() === ultimo).map((h) => h.id);
+      } else if (sp.n === 5 && receso) preds = [receso.id];
+      else if (hitoAnterior) preds = [hitoAnterior.id];
+      const n = { ...a, tipo: "actividad", dias: diasHabiles(a.inicio, a.fin), preds };
+      nodos.push(n);
+      hechas.push(n);
     }
-    filas.push({
-      id: id++,
-      nombre: `Hito ${sp.n}: Sprint Review — ${sp.entregable}`,
-      duracion: "0 días",
-      comienzo: fmtProject(aFecha(sp.revision)),
-      fin: fmtProject(aFecha(sp.revision)),
-      predecesoras: "",
-      recursos: "",
+    const finSprint = new Date(Math.max(...hechas.map((h) => h.fin.getTime())));
+    const conSucesora = new Set(hechas.flatMap((h) => h.preds));
+    hitoAnterior = {
+      id: `H${sp.n}`,
+      tipo: "hito",
       sprint: sp.n,
-    });
+      descripcion: `Hito ${sp.n}: Sprint Review — ${sp.entregable}`,
+      inicio: finSprint,
+      fin: finSprint,
+      dias: 0,
+      preds: hechas.filter((h) => !conSucesora.has(h.id)).map((h) => h.id),
+    };
+    nodos.push(hitoAnterior);
     if (sp.n === 4) {
-      filas.push({
-        id: id++,
-        nombre: "Receso por vacaciones escolares (incluye la reserva de gestión del 22 al 26 de febrero)",
-        duracion: "4 semanas",
-        comienzo: fmtProject(aFecha(RECESO.inicio)),
-        fin: fmtProject(aFecha(RECESO.fin)),
-        predecesoras: "",
-        recursos: "",
+      receso = {
+        id: "REC",
+        tipo: "receso",
         sprint: 4,
-        isSummary: true,
-      });
+        descripcion: "Receso por vacaciones escolares (incluye la reserva de gestión del 22 al 26 de febrero)",
+        inicio: aFecha(RECESO.inicio),
+        fin: aFecha(RECESO.fin),
+        dias: diasHabiles(aFecha(RECESO.inicio), aFecha(RECESO.fin)),
+        preds: [hitoAnterior.id],
+      };
+      nodos.push(receso);
     }
+  }
+  for (const a of prog.filter((x) => x.continua)) nodos.push({ ...a, tipo: "continua", dias: diasHabiles(a.inicio, a.fin), preds: ["H1"] });
+  return nodos;
+}
+
+// Lista tipo MS Project para el blog. Mismas filas, en el mismo orden y con los mismos números que el archivo
+// de MS Project (generar-project.mjs): resumen del proyecto, cada sprint con sus actividades y su hito, el
+// receso después del Sprint 4 y la reunión diaria al final. Las predecesoras son números de fila.
+export function tareasProject() {
+  const nodos = red();
+  const filas = [];
+  const filaDe = new Map();
+  const dur = (n) => `${n} ${n === 1 ? "día" : "días"}`;
+  const agregar = (f, clave) => {
+    const fila = { id: filas.length + 1, predecesoras: "", recursos: "", ...f };
+    filas.push(fila);
+    if (clave) filaDe.set(clave, fila);
+    return fila;
+  };
+  const deNodo = (n) =>
+    agregar(
+      {
+        nombre: n.tipo === "hito" || n.tipo === "receso" ? n.descripcion : `${n.id} ${n.descripcion}`,
+        duracion: dur(n.dias),
+        comienzo: fmtProject(n.inicio),
+        fin: fmtProject(n.fin),
+        recursos: n.responsable ?? "",
+        sprint: n.sprint,
+        preds: n.preds,
+      },
+      n.id,
+    );
+  const inicio = aFecha(SPRINTS[0].inicio);
+  const fin = ajustarHabil(aFecha(SPRINTS[5].fin), -1);
+  agregar({ nombre: "Sistema ML - Alerta Temprana Académica SIA-T (proyecto completo)", duracion: dur(diasHabiles(inicio, fin)), comienzo: fmtProject(inicio), fin: fmtProject(fin), sprint: 0, isSummary: true });
+  for (const sp of SPRINTS) {
+    const del = nodos.filter((n) => n.sprint === sp.n && (n.tipo === "actividad" || n.tipo === "hito"));
+    const a = del[0].inicio;
+    const b = del[del.length - 1].fin;
+    agregar({ nombre: `Sprint ${sp.n}: ${sp.nombre} (S${sp.semanas[0]}–S${sp.semanas[1]})`, duracion: dur(diasHabiles(a, b)), comienzo: fmtProject(a), fin: fmtProject(b), sprint: sp.n, isSummary: true });
+    del.forEach(deNodo);
+    if (sp.n === 4) deNodo(nodos.find((n) => n.tipo === "receso"));
+  }
+  nodos.filter((n) => n.tipo === "continua").forEach(deNodo);
+  for (const f of filas) {
+    if (f.preds) f.predecesoras = f.preds.map((p) => filaDe.get(p).id).join(";");
+    delete f.preds;
   }
   return filas;
 }

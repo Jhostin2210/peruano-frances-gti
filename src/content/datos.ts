@@ -1109,601 +1109,1449 @@ export const ACTIVIDADES = [
 export const TAREAS_PROJECT = [
  {
   "id": 1,
-  "nombre": "Sistema ML - Alerta Temprana (proyecto completo)",
-  "duracion": "24 semanas",
-  "comienzo": "lun 12/10/26",
-  "fin": "vie 23/04/27",
   "predecesoras": "",
   "recursos": "",
+  "nombre": "Sistema ML - Alerta Temprana Académica SIA-T (proyecto completo)",
+  "duracion": "134 días",
+  "comienzo": "lun 12/10/26",
+  "fin": "vie 23/04/27",
   "sprint": 0,
   "isSummary": true
  },
  {
   "id": 2,
-  "nombre": "Sprint 1: Análisis y diseño (S1–S4)",
-  "duracion": "4 semanas",
-  "comienzo": "lun 12/10/26",
-  "fin": "vie 6/11/26",
   "predecesoras": "",
   "recursos": "",
+  "nombre": "Sprint 1: Análisis y diseño (S1–S4)",
+  "duracion": "20 días",
+  "comienzo": "lun 12/10/26",
+  "fin": "vie 6/11/26",
   "sprint": 1,
   "isSummary": true
  },
  {
   "id": 3,
+  "predecesoras": "",
+  "recursos": "Equipo del proyecto + Dirección",
   "nombre": "A-0.1.1.1 Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
   "duracion": "3 días",
   "comienzo": "lun 12/10/26",
   "fin": "mié 14/10/26",
-  "predecesoras": "S1",
-  "recursos": "Equipo del proyecto + Dirección",
   "sprint": 1
  },
  {
   "id": 4,
+  "predecesoras": "3",
+  "recursos": "Jadira Vasquez + Helber Perez",
   "nombre": "A-0.1.1.2 Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
   "duracion": "5 días",
   "comienzo": "lun 19/10/26",
   "fin": "vie 23/10/26",
-  "predecesoras": "S2",
-  "recursos": "Jadira Vasquez + Helber Perez",
   "sprint": 1
  },
  {
   "id": 5,
+  "predecesoras": "4",
+  "recursos": "Helber Perez + docentes",
   "nombre": "A-0.1.1.3 Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
   "duracion": "4 días",
   "comienzo": "lun 26/10/26",
   "fin": "jue 29/10/26",
-  "predecesoras": "S3",
-  "recursos": "Helber Perez + docentes",
   "sprint": 1
  },
  {
   "id": 6,
+  "predecesoras": "5",
+  "recursos": "Jadira Vasquez + Helber Perez",
   "nombre": "A-0.1.1.4 Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
   "duracion": "5 días",
   "comienzo": "lun 2/11/26",
   "fin": "vie 6/11/26",
-  "predecesoras": "S4",
-  "recursos": "Jadira Vasquez + Helber Perez",
   "sprint": 1
  },
  {
   "id": 7,
+  "predecesoras": "6",
+  "recursos": "",
   "nombre": "Hito 1: Sprint Review — Arquitectura validada y variables del modelo definidas",
   "duracion": "0 días",
   "comienzo": "vie 6/11/26",
   "fin": "vie 6/11/26",
-  "predecesoras": "",
-  "recursos": "",
   "sprint": 1
  },
  {
   "id": 8,
-  "nombre": "Sprint 2: Gestión y datos (S5–S8)",
-  "duracion": "4 semanas",
-  "comienzo": "lun 9/11/26",
-  "fin": "vie 4/12/26",
   "predecesoras": "",
   "recursos": "",
+  "nombre": "Sprint 2: Gestión y datos (S5–S8)",
+  "duracion": "20 días",
+  "comienzo": "lun 9/11/26",
+  "fin": "vie 4/12/26",
   "sprint": 2,
   "isSummary": true
  },
  {
   "id": 9,
+  "predecesoras": "7",
+  "recursos": "Jhostin Galarza",
   "nombre": "A-1.1.1.1 Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
   "duracion": "3 días",
   "comienzo": "lun 9/11/26",
   "fin": "mié 11/11/26",
-  "predecesoras": "S5",
-  "recursos": "Jhostin Galarza",
   "sprint": 2
  },
  {
   "id": 10,
+  "predecesoras": "7",
+  "recursos": "Equipo del proyecto",
   "nombre": "A-1.1.1.2 Definir Product Backlog y priorizar historias de usuario",
   "duracion": "3 días",
   "comienzo": "mié 11/11/26",
   "fin": "vie 13/11/26",
-  "predecesoras": "S5",
-  "recursos": "Equipo del proyecto",
   "sprint": 2
  },
  {
   "id": 11,
+  "predecesoras": "9",
+  "recursos": "Equipo del proyecto",
   "nombre": "A-1.1.1.3 Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
   "duracion": "1 día",
   "comienzo": "jue 12/11/26",
   "fin": "jue 12/11/26",
-  "predecesoras": "S5",
-  "recursos": "Equipo del proyecto",
   "sprint": 2
  },
  {
   "id": 12,
+  "predecesoras": "11",
+  "recursos": "Jhostin Galarza",
   "nombre": "A-1.2.1.1 Establecer plantilla de informe de avance semanal",
   "duracion": "1 día",
   "comienzo": "vie 13/11/26",
   "fin": "vie 13/11/26",
-  "predecesoras": "S5",
-  "recursos": "Jhostin Galarza",
   "sprint": 2
  },
  {
   "id": 13,
-  "nombre": "A-1.2.1.2 Daily Standup 15 min diarios — continuo todo el proyecto",
-  "duracion": "S5–S24",
-  "comienzo": "lun 9/11/26",
-  "fin": "vie 23/04/27",
-  "predecesoras": "S5–S24",
-  "recursos": "Jhostin Galarza",
-  "sprint": 2
- },
- {
-  "id": 14,
+  "predecesoras": "10;12",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-2.1.1.1 Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
   "duracion": "4 días",
   "comienzo": "lun 16/11/26",
   "fin": "jue 19/11/26",
-  "predecesoras": "S6",
-  "recursos": "Jadira Vasquez",
   "sprint": 2
  },
  {
-  "id": 15,
+  "id": 14,
+  "predecesoras": "10;12",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-2.1.1.2 Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
   "duracion": "3 días",
   "comienzo": "mié 18/11/26",
   "fin": "vie 20/11/26",
-  "predecesoras": "S6",
-  "recursos": "Jadira Vasquez",
   "sprint": 2
  },
  {
-  "id": 16,
+  "id": 15,
+  "predecesoras": "14",
+  "recursos": "Jadira Vasquez + Carlos Curo",
   "nombre": "A-2.1.1.3 Codificar scripts ETL de extracción, transformación y carga",
   "duracion": "5 días",
   "comienzo": "lun 23/11/26",
   "fin": "vie 27/11/26",
-  "predecesoras": "S7",
-  "recursos": "Jadira Vasquez + Carlos Curo",
   "sprint": 2
  },
  {
-  "id": 17,
+  "id": 16,
+  "predecesoras": "14",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-2.1.1.4 Ejecutar prueba de migración de datos y validar integridad",
   "duracion": "3 días",
   "comienzo": "mié 25/11/26",
   "fin": "vie 27/11/26",
-  "predecesoras": "S7",
-  "recursos": "Jadira Vasquez",
   "sprint": 2
  },
  {
-  "id": 18,
+  "id": 17,
+  "predecesoras": "15;16",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-2.2.1.1 Configurar tareas programadas nocturnas de limpieza y validación de datos",
   "duracion": "4 días",
   "comienzo": "lun 30/11/26",
   "fin": "jue 3/12/26",
-  "predecesoras": "S8",
-  "recursos": "Jadira Vasquez",
   "sprint": 2
  },
  {
-  "id": 19,
+  "id": 18,
+  "predecesoras": "15;16",
+  "recursos": "Jadira Vasquez + Carlos Curo",
   "nombre": "A-2.2.1.2 Verificar consistencia de datos y corrección de registros erróneos",
   "duracion": "3 días",
   "comienzo": "mié 2/12/26",
   "fin": "vie 4/12/26",
-  "predecesoras": "S8",
-  "recursos": "Jadira Vasquez + Carlos Curo",
   "sprint": 2
  },
  {
-  "id": 20,
+  "id": 19,
+  "predecesoras": "13;17;18",
+  "recursos": "",
   "nombre": "Hito 2: Sprint Review — Base de datos centralizada y validada",
   "duracion": "0 días",
   "comienzo": "vie 4/12/26",
   "fin": "vie 4/12/26",
-  "predecesoras": "",
-  "recursos": "",
   "sprint": 2
  },
  {
-  "id": 21,
-  "nombre": "Sprint 3: Modelo ML (S9–S12)",
-  "duracion": "4 semanas",
-  "comienzo": "lun 7/12/26",
-  "fin": "jue 31/12/26",
+  "id": 20,
   "predecesoras": "",
   "recursos": "",
+  "nombre": "Sprint 3: Modelo ML (S9–S12)",
+  "duracion": "15 días",
+  "comienzo": "lun 7/12/26",
+  "fin": "mié 30/12/26",
   "sprint": 3,
   "isSummary": true
  },
  {
-  "id": 22,
+  "id": 21,
+  "predecesoras": "19",
+  "recursos": "Helber Perez",
   "nombre": "A-3.1.1.1 Análisis exploratorio del dataset académico (EDA)",
   "duracion": "4 días",
   "comienzo": "lun 7/12/26",
   "fin": "lun 14/12/26",
-  "predecesoras": "S9",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 23,
+  "id": 22,
+  "predecesoras": "19",
+  "recursos": "Helber Perez",
   "nombre": "A-3.1.1.2 Preprocesar y normalizar variables académicas para el modelo",
   "duracion": "3 días",
   "comienzo": "jue 10/12/26",
   "fin": "lun 14/12/26",
-  "predecesoras": "S9",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 24,
+  "id": 23,
+  "predecesoras": "19",
+  "recursos": "Helber Perez",
   "nombre": "A-3.1.1.3 Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)",
   "duracion": "3 días",
   "comienzo": "lun 14/12/26",
   "fin": "mié 16/12/26",
-  "predecesoras": "S10",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 25,
+  "id": 24,
+  "predecesoras": "21;22",
+  "recursos": "Helber Perez",
   "nombre": "A-3.1.1.4 Entrenar modelo predictivo con Scikit-learn usando datos históricos",
   "duracion": "5 días",
   "comienzo": "mié 16/12/26",
   "fin": "mar 22/12/26",
-  "predecesoras": "S10",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 26,
+  "id": 25,
+  "predecesoras": "23",
+  "recursos": "Helber Perez",
   "nombre": "A-3.2.1.1 Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
   "duracion": "3 días",
   "comienzo": "lun 21/12/26",
   "fin": "mié 23/12/26",
-  "predecesoras": "S11",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 27,
+  "id": 26,
+  "predecesoras": "24",
+  "recursos": "Helber Perez",
   "nombre": "A-3.2.1.2 Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
   "duracion": "4 días",
   "comienzo": "mié 23/12/26",
   "fin": "mar 29/12/26",
-  "predecesoras": "S11",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 28,
+  "id": 27,
+  "predecesoras": "25",
+  "recursos": "Helber Perez",
   "nombre": "A-3.2.1.3 Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)",
   "duracion": "3 días",
   "comienzo": "jue 24/12/26",
   "fin": "mar 29/12/26",
-  "predecesoras": "S11",
-  "recursos": "Helber Perez",
   "sprint": 3
  },
  {
-  "id": 29,
+  "id": 28,
+  "predecesoras": "25",
+  "recursos": "Helber Perez + Jadira Vasquez",
   "nombre": "A-3.2.1.4 Configurar script de actualización semanal automática del modelo",
   "duracion": "3 días",
   "comienzo": "lun 28/12/26",
   "fin": "mié 30/12/26",
-  "predecesoras": "S12",
-  "recursos": "Helber Perez + Jadira Vasquez",
   "sprint": 3
  },
  {
-  "id": 30,
+  "id": 29,
+  "predecesoras": "26;27;28",
+  "recursos": "",
   "nombre": "Hito 3: Sprint Review — Modelo ML validado con el criterio acordado",
   "duracion": "0 días",
   "comienzo": "mié 30/12/26",
   "fin": "mié 30/12/26",
-  "predecesoras": "",
-  "recursos": "",
   "sprint": 3
  },
  {
-  "id": 31,
-  "nombre": "Sprint 4: Alertas y tablero (S13–S16)",
-  "duracion": "4 semanas",
-  "comienzo": "lun 4/01/27",
-  "fin": "vie 29/01/27",
+  "id": 30,
   "predecesoras": "",
   "recursos": "",
+  "nombre": "Sprint 4: Alertas y tablero (S13–S16)",
+  "duracion": "20 días",
+  "comienzo": "lun 4/01/27",
+  "fin": "vie 29/01/27",
   "sprint": 4,
   "isSummary": true
  },
  {
-  "id": 32,
+  "id": 31,
+  "predecesoras": "29",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-4.1.1.1 Diseñar plantilla de correo de alerta para el docente tutor",
   "duracion": "2 días",
   "comienzo": "lun 4/01/27",
   "fin": "mar 5/01/27",
-  "predecesoras": "S13",
-  "recursos": "Jadira Vasquez",
   "sprint": 4
  },
  {
-  "id": 33,
+  "id": 32,
+  "predecesoras": "31",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-4.1.1.2 Desarrollar módulo de envío automático de alertas por correo electrónico",
   "duracion": "4 días",
   "comienzo": "mié 6/01/27",
   "fin": "lun 11/01/27",
-  "predecesoras": "S13",
-  "recursos": "Jadira Vasquez",
   "sprint": 4
  },
  {
-  "id": 34,
+  "id": 33,
+  "predecesoras": "31",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-4.1.1.3 Desarrollar módulo web de alertas críticas en panel del docente",
   "duracion": "4 días",
   "comienzo": "lun 11/01/27",
   "fin": "jue 14/01/27",
-  "predecesoras": "S14",
-  "recursos": "Jadira Vasquez",
   "sprint": 4
  },
  {
-  "id": 35,
+  "id": 34,
+  "predecesoras": "32",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-4.1.1.4 Implementar módulo de registro de seguimiento de casos críticos",
   "duracion": "3 días",
   "comienzo": "mié 13/01/27",
   "fin": "vie 15/01/27",
-  "predecesoras": "S14",
-  "recursos": "Jadira Vasquez",
   "sprint": 4
  },
  {
-  "id": 36,
+  "id": 35,
+  "predecesoras": "34",
+  "recursos": "Carlos Curo",
   "nombre": "A-4.2.1.1 Diseñar wireframes y prototipo de la interfaz Next.js",
   "duracion": "3 días",
   "comienzo": "lun 18/01/27",
   "fin": "mié 20/01/27",
-  "predecesoras": "S15",
-  "recursos": "Carlos Curo",
   "sprint": 4
  },
  {
-  "id": 37,
+  "id": 36,
+  "predecesoras": "34",
+  "recursos": "Carlos Curo",
   "nombre": "A-4.2.1.2 Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
   "duracion": "5 días",
   "comienzo": "mié 20/01/27",
   "fin": "mar 26/01/27",
-  "predecesoras": "S15",
-  "recursos": "Carlos Curo",
   "sprint": 4
  },
  {
-  "id": 38,
+  "id": 37,
+  "predecesoras": "35",
+  "recursos": "Carlos Curo",
   "nombre": "A-4.2.1.3 Desarrollar ficha individual del estudiante con historial completo",
   "duracion": "3 días",
   "comienzo": "lun 25/01/27",
   "fin": "mié 27/01/27",
-  "predecesoras": "S16",
-  "recursos": "Carlos Curo",
   "sprint": 4
  },
  {
-  "id": 39,
+  "id": 38,
+  "predecesoras": "36",
+  "recursos": "Jhostin Galarza",
   "nombre": "A-4.2.1.4 Implementar módulo de roles y control de acceso por perfil de usuario",
   "duracion": "3 días",
   "comienzo": "mié 27/01/27",
   "fin": "vie 29/01/27",
-  "predecesoras": "S16",
-  "recursos": "Jhostin Galarza",
   "sprint": 4
  },
  {
-  "id": 40,
+  "id": 39,
+  "predecesoras": "36",
+  "recursos": "Carlos Curo",
   "nombre": "A-4.2.1.5 Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa",
   "duracion": "3 días",
   "comienzo": "mié 27/01/27",
   "fin": "vie 29/01/27",
-  "predecesoras": "S16",
-  "recursos": "Carlos Curo",
   "sprint": 4
  },
  {
-  "id": 41,
+  "id": 40,
+  "predecesoras": "33;37;38;39",
+  "recursos": "",
   "nombre": "Hito 4: Sprint Review — Sistema integrado con alertas y tablero operativos",
   "duracion": "0 días",
   "comienzo": "vie 29/01/27",
   "fin": "vie 29/01/27",
-  "predecesoras": "",
+  "sprint": 4
+ },
+ {
+  "id": 41,
+  "predecesoras": "40",
   "recursos": "",
+  "nombre": "Receso por vacaciones escolares (incluye la reserva de gestión del 22 al 26 de febrero)",
+  "duracion": "20 días",
+  "comienzo": "lun 1/02/27",
+  "fin": "vie 26/02/27",
   "sprint": 4
  },
  {
   "id": 42,
-  "nombre": "Receso por vacaciones escolares (incluye la reserva de gestión del 22 al 26 de febrero)",
-  "duracion": "4 semanas",
-  "comienzo": "lun 1/02/27",
-  "fin": "vie 26/02/27",
   "predecesoras": "",
   "recursos": "",
-  "sprint": 4,
-  "isSummary": true
- },
- {
-  "id": 43,
   "nombre": "Sprint 5: Pruebas y piloto (S17–S20)",
-  "duracion": "4 semanas",
+  "duracion": "18 días",
   "comienzo": "lun 1/03/27",
   "fin": "mié 24/03/27",
-  "predecesoras": "",
-  "recursos": "",
   "sprint": 5,
   "isSummary": true
  },
  {
-  "id": 44,
+  "id": 43,
+  "predecesoras": "41",
+  "recursos": "Equipo del proyecto",
   "nombre": "A-5.0.1.1 Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto",
   "duracion": "5 días",
   "comienzo": "lun 1/03/27",
   "fin": "vie 5/03/27",
-  "predecesoras": "S17",
-  "recursos": "Equipo del proyecto",
   "sprint": 5
  },
  {
-  "id": 45,
+  "id": 44,
+  "predecesoras": "41",
+  "recursos": "Carlos Curo + Jadira Vasquez",
   "nombre": "A-5.0.1.2 Pruebas de rendimiento del sistema: confirmar que el tablero carga en menos de 3 segundos y que la clasificación semanal se ejecuta sin intervención manual",
   "duracion": "4 días",
   "comienzo": "mié 3/03/27",
   "fin": "lun 8/03/27",
-  "predecesoras": "S17",
-  "recursos": "Carlos Curo + Jadira Vasquez",
+  "sprint": 5
+ },
+ {
+  "id": 45,
+  "predecesoras": "43",
+  "recursos": "Equipo del proyecto + docentes",
+  "nombre": "A-5.0.2.1 Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
+  "duracion": "10 días",
+  "comienzo": "lun 8/03/27",
+  "fin": "vie 19/03/27",
   "sprint": 5
  },
  {
   "id": 46,
-  "nombre": "A-5.0.2.1 Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
-  "duracion": "S18–S19",
-  "comienzo": "lun 8/03/27",
-  "fin": "vie 19/03/27",
-  "predecesoras": "S18–S19",
+  "predecesoras": "44",
   "recursos": "Equipo del proyecto + docentes",
-  "sprint": 5
- },
- {
-  "id": 47,
   "nombre": "A-5.0.2.2 Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real",
   "duracion": "4 días",
   "comienzo": "vie 19/03/27",
   "fin": "mié 24/03/27",
-  "predecesoras": "S20",
-  "recursos": "Equipo del proyecto + docentes",
   "sprint": 5
  },
  {
-  "id": 48,
+  "id": 47,
+  "predecesoras": "45;46",
+  "recursos": "",
   "nombre": "Hito 5: Sprint Review — Sistema validado con pruebas y piloto real con docentes",
   "duracion": "0 días",
   "comienzo": "mié 24/03/27",
   "fin": "mié 24/03/27",
-  "predecesoras": "",
-  "recursos": "",
   "sprint": 5
  },
  {
-  "id": 49,
-  "nombre": "Sprint 6: Implantación y cierre (S21–S24)",
-  "duracion": "4 semanas",
-  "comienzo": "lun 29/03/27",
-  "fin": "vie 23/04/27",
+  "id": 48,
   "predecesoras": "",
   "recursos": "",
+  "nombre": "Sprint 6: Implantación y cierre (S21–S24)",
+  "duracion": "20 días",
+  "comienzo": "lun 29/03/27",
+  "fin": "vie 23/04/27",
   "sprint": 6,
   "isSummary": true
  },
  {
-  "id": 50,
+  "id": 49,
+  "predecesoras": "47",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-5.1.1.1 Configurar el entorno de producción en la nube (alojamiento web, base de datos y tarea programada)",
   "duracion": "3 días",
   "comienzo": "lun 29/03/27",
   "fin": "mié 31/03/27",
-  "predecesoras": "S21",
-  "recursos": "Jadira Vasquez",
   "sprint": 6
  },
  {
-  "id": 51,
+  "id": 50,
+  "predecesoras": "47",
+  "recursos": "Jadira Vasquez",
   "nombre": "A-5.1.1.2 Desplegar sistema completo en entorno de producción definitivo",
   "duracion": "4 días",
   "comienzo": "mié 31/03/27",
   "fin": "lun 5/04/27",
-  "predecesoras": "S21",
-  "recursos": "Jadira Vasquez",
   "sprint": 6
  },
  {
-  "id": 52,
+  "id": 51,
+  "predecesoras": "49",
+  "recursos": "Equipo del proyecto + docentes",
   "nombre": "A-5.1.1.3 Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores",
   "duracion": "5 días",
   "comienzo": "lun 5/04/27",
   "fin": "vie 9/04/27",
-  "predecesoras": "S22",
-  "recursos": "Equipo del proyecto + docentes",
   "sprint": 6
  },
  {
-  "id": 53,
+  "id": 52,
+  "predecesoras": "50",
+  "recursos": "Carlos Curo + Jadira Vasquez",
   "nombre": "A-5.1.1.4 Corregir observaciones y bugs detectados en pruebas UAT formales",
   "duracion": "3 días",
   "comienzo": "mié 7/04/27",
   "fin": "vie 9/04/27",
-  "predecesoras": "S22",
-  "recursos": "Carlos Curo + Jadira Vasquez",
   "sprint": 6
  },
  {
-  "id": 54,
+  "id": 53,
+  "predecesoras": "51;52",
+  "recursos": "Carlos Curo",
   "nombre": "A-5.2.1.1 Elaborar manual de usuario (docentes y coordinadores)",
   "duracion": "3 días",
   "comienzo": "lun 12/04/27",
   "fin": "mié 14/04/27",
-  "predecesoras": "S23",
-  "recursos": "Carlos Curo",
   "sprint": 6
  },
  {
-  "id": 55,
+  "id": 54,
+  "predecesoras": "51;52",
+  "recursos": "Helber Perez",
   "nombre": "A-5.2.1.2 Elaborar manual técnico del sistema para el responsable de TI del colegio",
   "duracion": "3 días",
   "comienzo": "mié 14/04/27",
   "fin": "vie 16/04/27",
-  "predecesoras": "S23",
-  "recursos": "Helber Perez",
   "sprint": 6
  },
  {
-  "id": 56,
+  "id": 55,
+  "predecesoras": "53",
+  "recursos": "Jhostin Galarza + Coordinación académica",
   "nombre": "A-5.2.1.3 Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)",
   "duracion": "2 días",
   "comienzo": "jue 15/04/27",
   "fin": "vie 16/04/27",
-  "predecesoras": "S23",
-  "recursos": "Jhostin Galarza + Coordinación académica",
   "sprint": 6
  },
  {
-  "id": 57,
+  "id": 56,
+  "predecesoras": "54;55",
+  "recursos": "Jhostin Galarza",
   "nombre": "A-5.2.1.4 Realizar retrospectiva final del proyecto SCRUM",
   "duracion": "1 día",
   "comienzo": "lun 19/04/27",
   "fin": "lun 19/04/27",
-  "predecesoras": "S24",
-  "recursos": "Jhostin Galarza",
   "sprint": 6
  },
  {
-  "id": 58,
+  "id": 57,
+  "predecesoras": "56",
+  "recursos": "Equipo del proyecto",
   "nombre": "A-5.2.1.5 Elaborar informe final del proyecto y presentación de cierre ante el docente del curso",
   "duracion": "4 días",
   "comienzo": "mar 20/04/27",
   "fin": "vie 23/04/27",
-  "predecesoras": "S24",
-  "recursos": "Equipo del proyecto",
   "sprint": 6
  },
  {
-  "id": 59,
+  "id": 58,
+  "predecesoras": "57",
+  "recursos": "",
   "nombre": "Hito 6: Sprint Review — Sistema en producción, capacitación realizada y proyecto cerrado",
   "duracion": "0 días",
   "comienzo": "vie 23/04/27",
   "fin": "vie 23/04/27",
-  "predecesoras": "",
-  "recursos": "",
   "sprint": 6
+ },
+ {
+  "id": 59,
+  "predecesoras": "7",
+  "recursos": "Jhostin Galarza",
+  "nombre": "A-1.2.1.2 Daily Standup 15 min diarios — continuo todo el proyecto",
+  "duracion": "114 días",
+  "comienzo": "lun 9/11/26",
+  "fin": "vie 23/04/27",
+  "sprint": 2
+ }
+];
+
+export const RED = [
+ {
+  "id": "A-0.1.1.1",
+  "tipo": "actividad",
+  "sprint": 1,
+  "descripcion": "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
+  "responsable": "Equipo del proyecto + Dirección",
+  "paquete": "1.1.1",
+  "te": 3.2,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2026-10-12",
+  "fin": "2026-10-14",
+  "preds": []
+ },
+ {
+  "id": "A-0.1.1.2",
+  "tipo": "actividad",
+  "sprint": 1,
+  "descripcion": "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
+  "responsable": "Jadira Vasquez + Helber Perez",
+  "paquete": "1.1.1",
+  "te": 5.2,
+  "critica": false,
+  "dias": 5,
+  "inicio": "2026-10-19",
+  "fin": "2026-10-23",
+  "preds": [
+   "A-0.1.1.1"
+  ]
+ },
+ {
+  "id": "A-0.1.1.3",
+  "tipo": "actividad",
+  "sprint": 1,
+  "descripcion": "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
+  "responsable": "Helber Perez + docentes",
+  "paquete": "1.1.1",
+  "te": 4,
+  "critica": false,
+  "dias": 4,
+  "inicio": "2026-10-26",
+  "fin": "2026-10-29",
+  "preds": [
+   "A-0.1.1.2"
+  ]
+ },
+ {
+  "id": "A-0.1.1.4",
+  "tipo": "actividad",
+  "sprint": 1,
+  "descripcion": "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
+  "responsable": "Jadira Vasquez + Helber Perez",
+  "paquete": "1.1.1",
+  "te": 5,
+  "critica": false,
+  "dias": 5,
+  "inicio": "2026-11-02",
+  "fin": "2026-11-06",
+  "preds": [
+   "A-0.1.1.3"
+  ]
+ },
+ {
+  "id": "H1",
+  "tipo": "hito",
+  "sprint": 1,
+  "descripcion": "Hito 1: Sprint Review — Arquitectura validada y variables del modelo definidas",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 0,
+  "inicio": "2026-11-06",
+  "fin": "2026-11-06",
+  "preds": [
+   "A-0.1.1.4"
+  ]
+ },
+ {
+  "id": "A-1.1.1.1",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.1.1",
+  "te": 3.2,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2026-11-09",
+  "fin": "2026-11-11",
+  "preds": [
+   "H1"
+  ]
+ },
+ {
+  "id": "A-1.1.1.2",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Definir Product Backlog y priorizar historias de usuario",
+  "responsable": "Equipo del proyecto",
+  "paquete": "1.1.1",
+  "te": 3,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2026-11-11",
+  "fin": "2026-11-13",
+  "preds": [
+   "H1"
+  ]
+ },
+ {
+  "id": "A-1.1.1.3",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
+  "responsable": "Equipo del proyecto",
+  "paquete": "1.1.1",
+  "te": 1.2,
+  "critica": false,
+  "dias": 1,
+  "inicio": "2026-11-12",
+  "fin": "2026-11-12",
+  "preds": [
+   "A-1.1.1.1"
+  ]
+ },
+ {
+  "id": "A-1.2.1.1",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Establecer plantilla de informe de avance semanal",
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.2.1",
+  "te": 1.2,
+  "critica": false,
+  "dias": 1,
+  "inicio": "2026-11-13",
+  "fin": "2026-11-13",
+  "preds": [
+   "A-1.1.1.3"
+  ]
+ },
+ {
+  "id": "A-2.1.1.1",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
+  "responsable": "Jadira Vasquez",
+  "paquete": "2.1.1",
+  "te": 4.2,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2026-11-16",
+  "fin": "2026-11-19",
+  "preds": [
+   "A-1.1.1.2",
+   "A-1.2.1.1"
+  ]
+ },
+ {
+  "id": "A-2.1.1.2",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
+  "responsable": "Jadira Vasquez",
+  "paquete": "2.1.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2026-11-18",
+  "fin": "2026-11-20",
+  "preds": [
+   "A-1.1.1.2",
+   "A-1.2.1.1"
+  ]
+ },
+ {
+  "id": "A-2.1.1.3",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Codificar scripts ETL de extracción, transformación y carga",
+  "responsable": "Jadira Vasquez + Carlos Curo",
+  "paquete": "2.1.1",
+  "te": 5.3,
+  "critica": true,
+  "dias": 5,
+  "inicio": "2026-11-23",
+  "fin": "2026-11-27",
+  "preds": [
+   "A-2.1.1.2"
+  ]
+ },
+ {
+  "id": "A-2.1.1.4",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Ejecutar prueba de migración de datos y validar integridad",
+  "responsable": "Jadira Vasquez",
+  "paquete": "2.1.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2026-11-25",
+  "fin": "2026-11-27",
+  "preds": [
+   "A-2.1.1.2"
+  ]
+ },
+ {
+  "id": "A-2.2.1.1",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Configurar tareas programadas nocturnas de limpieza y validación de datos",
+  "responsable": "Jadira Vasquez",
+  "paquete": "2.2.1",
+  "te": 4.2,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2026-11-30",
+  "fin": "2026-12-03",
+  "preds": [
+   "A-2.1.1.3",
+   "A-2.1.1.4"
+  ]
+ },
+ {
+  "id": "A-2.2.1.2",
+  "tipo": "actividad",
+  "sprint": 2,
+  "descripcion": "Verificar consistencia de datos y corrección de registros erróneos",
+  "responsable": "Jadira Vasquez + Carlos Curo",
+  "paquete": "2.2.1",
+  "te": 3,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2026-12-02",
+  "fin": "2026-12-04",
+  "preds": [
+   "A-2.1.1.3",
+   "A-2.1.1.4"
+  ]
+ },
+ {
+  "id": "H2",
+  "tipo": "hito",
+  "sprint": 2,
+  "descripcion": "Hito 2: Sprint Review — Base de datos centralizada y validada",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 0,
+  "inicio": "2026-12-04",
+  "fin": "2026-12-04",
+  "preds": [
+   "A-2.1.1.1",
+   "A-2.2.1.1",
+   "A-2.2.1.2"
+  ]
+ },
+ {
+  "id": "A-3.1.1.1",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Análisis exploratorio del dataset académico (EDA)",
+  "responsable": "Helber Perez",
+  "paquete": "3.1.1",
+  "te": 4.2,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2026-12-07",
+  "fin": "2026-12-14",
+  "preds": [
+   "H2"
+  ]
+ },
+ {
+  "id": "A-3.1.1.2",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Preprocesar y normalizar variables académicas para el modelo",
+  "responsable": "Helber Perez",
+  "paquete": "3.1.1",
+  "te": 3.2,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2026-12-10",
+  "fin": "2026-12-14",
+  "preds": [
+   "H2"
+  ]
+ },
+ {
+  "id": "A-3.1.1.3",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)",
+  "responsable": "Helber Perez",
+  "paquete": "3.1.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2026-12-14",
+  "fin": "2026-12-16",
+  "preds": [
+   "H2"
+  ]
+ },
+ {
+  "id": "A-3.1.1.4",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Entrenar modelo predictivo con Scikit-learn usando datos históricos",
+  "responsable": "Helber Perez",
+  "paquete": "3.1.1",
+  "te": 5.2,
+  "critica": true,
+  "dias": 5,
+  "inicio": "2026-12-16",
+  "fin": "2026-12-22",
+  "preds": [
+   "A-3.1.1.1",
+   "A-3.1.1.2"
+  ]
+ },
+ {
+  "id": "A-3.2.1.1",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
+  "responsable": "Helber Perez",
+  "paquete": "3.2.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2026-12-21",
+  "fin": "2026-12-23",
+  "preds": [
+   "A-3.1.1.3"
+  ]
+ },
+ {
+  "id": "A-3.2.1.2",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
+  "responsable": "Helber Perez",
+  "paquete": "3.2.1",
+  "te": 4,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2026-12-23",
+  "fin": "2026-12-29",
+  "preds": [
+   "A-3.1.1.4"
+  ]
+ },
+ {
+  "id": "A-3.2.1.3",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)",
+  "responsable": "Helber Perez",
+  "paquete": "3.2.1",
+  "te": 3,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2026-12-24",
+  "fin": "2026-12-29",
+  "preds": [
+   "A-3.2.1.1"
+  ]
+ },
+ {
+  "id": "A-3.2.1.4",
+  "tipo": "actividad",
+  "sprint": 3,
+  "descripcion": "Configurar script de actualización semanal automática del modelo",
+  "responsable": "Helber Perez + Jadira Vasquez",
+  "paquete": "3.2.1",
+  "te": 3.2,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2026-12-28",
+  "fin": "2026-12-30",
+  "preds": [
+   "A-3.2.1.1"
+  ]
+ },
+ {
+  "id": "H3",
+  "tipo": "hito",
+  "sprint": 3,
+  "descripcion": "Hito 3: Sprint Review — Modelo ML validado con el criterio acordado",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 0,
+  "inicio": "2026-12-30",
+  "fin": "2026-12-30",
+  "preds": [
+   "A-3.2.1.2",
+   "A-3.2.1.3",
+   "A-3.2.1.4"
+  ]
+ },
+ {
+  "id": "A-4.1.1.1",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Diseñar plantilla de correo de alerta para el docente tutor",
+  "responsable": "Jadira Vasquez",
+  "paquete": "4.1.1",
+  "te": 2,
+  "critica": false,
+  "dias": 2,
+  "inicio": "2027-01-04",
+  "fin": "2027-01-05",
+  "preds": [
+   "H3"
+  ]
+ },
+ {
+  "id": "A-4.1.1.2",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Desarrollar módulo de envío automático de alertas por correo electrónico",
+  "responsable": "Jadira Vasquez",
+  "paquete": "4.1.1",
+  "te": 4.2,
+  "critica": false,
+  "dias": 4,
+  "inicio": "2027-01-06",
+  "fin": "2027-01-11",
+  "preds": [
+   "A-4.1.1.1"
+  ]
+ },
+ {
+  "id": "A-4.1.1.3",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Desarrollar módulo web de alertas críticas en panel del docente",
+  "responsable": "Jadira Vasquez",
+  "paquete": "4.1.1",
+  "te": 4.2,
+  "critica": false,
+  "dias": 4,
+  "inicio": "2027-01-11",
+  "fin": "2027-01-14",
+  "preds": [
+   "A-4.1.1.1"
+  ]
+ },
+ {
+  "id": "A-4.1.1.4",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Implementar módulo de registro de seguimiento de casos críticos",
+  "responsable": "Jadira Vasquez",
+  "paquete": "4.1.1",
+  "te": 3,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2027-01-13",
+  "fin": "2027-01-15",
+  "preds": [
+   "A-4.1.1.2"
+  ]
+ },
+ {
+  "id": "A-4.2.1.1",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Diseñar wireframes y prototipo de la interfaz Next.js",
+  "responsable": "Carlos Curo",
+  "paquete": "4.2.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2027-01-18",
+  "fin": "2027-01-20",
+  "preds": [
+   "A-4.1.1.4"
+  ]
+ },
+ {
+  "id": "A-4.2.1.2",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
+  "responsable": "Carlos Curo",
+  "paquete": "4.2.1",
+  "te": 5.3,
+  "critica": true,
+  "dias": 5,
+  "inicio": "2027-01-20",
+  "fin": "2027-01-26",
+  "preds": [
+   "A-4.1.1.4"
+  ]
+ },
+ {
+  "id": "A-4.2.1.3",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Desarrollar ficha individual del estudiante con historial completo",
+  "responsable": "Carlos Curo",
+  "paquete": "4.2.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2027-01-25",
+  "fin": "2027-01-27",
+  "preds": [
+   "A-4.2.1.1"
+  ]
+ },
+ {
+  "id": "A-4.2.1.4",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Implementar módulo de roles y control de acceso por perfil de usuario",
+  "responsable": "Jhostin Galarza",
+  "paquete": "4.2.1",
+  "te": 3,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2027-01-27",
+  "fin": "2027-01-29",
+  "preds": [
+   "A-4.2.1.2"
+  ]
+ },
+ {
+  "id": "A-4.2.1.5",
+  "tipo": "actividad",
+  "sprint": 4,
+  "descripcion": "Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa",
+  "responsable": "Carlos Curo",
+  "paquete": "4.2.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2027-01-27",
+  "fin": "2027-01-29",
+  "preds": [
+   "A-4.2.1.2"
+  ]
+ },
+ {
+  "id": "H4",
+  "tipo": "hito",
+  "sprint": 4,
+  "descripcion": "Hito 4: Sprint Review — Sistema integrado con alertas y tablero operativos",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 0,
+  "inicio": "2027-01-29",
+  "fin": "2027-01-29",
+  "preds": [
+   "A-4.1.1.3",
+   "A-4.2.1.3",
+   "A-4.2.1.4",
+   "A-4.2.1.5"
+  ]
+ },
+ {
+  "id": "REC",
+  "tipo": "receso",
+  "sprint": 4,
+  "descripcion": "Receso por vacaciones escolares (incluye la reserva de gestión del 22 al 26 de febrero)",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 20,
+  "inicio": "2027-02-01",
+  "fin": "2027-02-26",
+  "preds": [
+   "H4"
+  ]
+ },
+ {
+  "id": "A-5.0.1.1",
+  "tipo": "actividad",
+  "sprint": 5,
+  "descripcion": "Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto",
+  "responsable": "Equipo del proyecto",
+  "paquete": "6.1.1",
+  "te": 5.2,
+  "critica": true,
+  "dias": 5,
+  "inicio": "2027-03-01",
+  "fin": "2027-03-05",
+  "preds": [
+   "REC"
+  ]
+ },
+ {
+  "id": "A-5.0.1.2",
+  "tipo": "actividad",
+  "sprint": 5,
+  "descripcion": "Pruebas de rendimiento del sistema: confirmar que el tablero carga en menos de 3 segundos y que la clasificación semanal se ejecuta sin intervención manual",
+  "responsable": "Carlos Curo + Jadira Vasquez",
+  "paquete": "6.1.1",
+  "te": 4,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2027-03-03",
+  "fin": "2027-03-08",
+  "preds": [
+   "REC"
+  ]
+ },
+ {
+  "id": "A-5.0.2.1",
+  "tipo": "actividad",
+  "sprint": 5,
+  "descripcion": "Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
+  "responsable": "Equipo del proyecto + docentes",
+  "paquete": "6.2.1",
+  "te": 7.2,
+  "critica": true,
+  "dias": 10,
+  "inicio": "2027-03-08",
+  "fin": "2027-03-19",
+  "preds": [
+   "A-5.0.1.1"
+  ]
+ },
+ {
+  "id": "A-5.0.2.2",
+  "tipo": "actividad",
+  "sprint": 5,
+  "descripcion": "Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real",
+  "responsable": "Equipo del proyecto + docentes",
+  "paquete": "6.2.1",
+  "te": 4.2,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2027-03-19",
+  "fin": "2027-03-24",
+  "preds": [
+   "A-5.0.1.2"
+  ]
+ },
+ {
+  "id": "H5",
+  "tipo": "hito",
+  "sprint": 5,
+  "descripcion": "Hito 5: Sprint Review — Sistema validado con pruebas y piloto real con docentes",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 0,
+  "inicio": "2027-03-24",
+  "fin": "2027-03-24",
+  "preds": [
+   "A-5.0.2.1",
+   "A-5.0.2.2"
+  ]
+ },
+ {
+  "id": "A-5.1.1.1",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Configurar el entorno de producción en la nube (alojamiento web, base de datos y tarea programada)",
+  "responsable": "Jadira Vasquez",
+  "paquete": "5.1.1",
+  "te": 3,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2027-03-29",
+  "fin": "2027-03-31",
+  "preds": [
+   "H5"
+  ]
+ },
+ {
+  "id": "A-5.1.1.2",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Desplegar sistema completo en entorno de producción definitivo",
+  "responsable": "Jadira Vasquez",
+  "paquete": "5.1.1",
+  "te": 4.2,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2027-03-31",
+  "fin": "2027-04-05",
+  "preds": [
+   "H5"
+  ]
+ },
+ {
+  "id": "A-5.1.1.3",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores",
+  "responsable": "Equipo del proyecto + docentes",
+  "paquete": "5.1.1",
+  "te": 5.2,
+  "critica": true,
+  "dias": 5,
+  "inicio": "2027-04-05",
+  "fin": "2027-04-09",
+  "preds": [
+   "A-5.1.1.1"
+  ]
+ },
+ {
+  "id": "A-5.1.1.4",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Corregir observaciones y bugs detectados en pruebas UAT formales",
+  "responsable": "Carlos Curo + Jadira Vasquez",
+  "paquete": "5.1.1",
+  "te": 3.2,
+  "critica": true,
+  "dias": 3,
+  "inicio": "2027-04-07",
+  "fin": "2027-04-09",
+  "preds": [
+   "A-5.1.1.2"
+  ]
+ },
+ {
+  "id": "A-5.2.1.1",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Elaborar manual de usuario (docentes y coordinadores)",
+  "responsable": "Carlos Curo",
+  "paquete": "5.2.1",
+  "te": 3,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2027-04-12",
+  "fin": "2027-04-14",
+  "preds": [
+   "A-5.1.1.3",
+   "A-5.1.1.4"
+  ]
+ },
+ {
+  "id": "A-5.2.1.2",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Elaborar manual técnico del sistema para el responsable de TI del colegio",
+  "responsable": "Helber Perez",
+  "paquete": "5.2.1",
+  "te": 3,
+  "critica": false,
+  "dias": 3,
+  "inicio": "2027-04-14",
+  "fin": "2027-04-16",
+  "preds": [
+   "A-5.1.1.3",
+   "A-5.1.1.4"
+  ]
+ },
+ {
+  "id": "A-5.2.1.3",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)",
+  "responsable": "Jhostin Galarza + Coordinación académica",
+  "paquete": "5.2.1",
+  "te": 2,
+  "critica": true,
+  "dias": 2,
+  "inicio": "2027-04-15",
+  "fin": "2027-04-16",
+  "preds": [
+   "A-5.2.1.1"
+  ]
+ },
+ {
+  "id": "A-5.2.1.4",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Realizar retrospectiva final del proyecto SCRUM",
+  "responsable": "Jhostin Galarza",
+  "paquete": "5.2.1",
+  "te": 1.2,
+  "critica": true,
+  "dias": 1,
+  "inicio": "2027-04-19",
+  "fin": "2027-04-19",
+  "preds": [
+   "A-5.2.1.2",
+   "A-5.2.1.3"
+  ]
+ },
+ {
+  "id": "A-5.2.1.5",
+  "tipo": "actividad",
+  "sprint": 6,
+  "descripcion": "Elaborar informe final del proyecto y presentación de cierre ante el docente del curso",
+  "responsable": "Equipo del proyecto",
+  "paquete": "5.2.1",
+  "te": 4.2,
+  "critica": true,
+  "dias": 4,
+  "inicio": "2027-04-20",
+  "fin": "2027-04-23",
+  "preds": [
+   "A-5.2.1.4"
+  ]
+ },
+ {
+  "id": "H6",
+  "tipo": "hito",
+  "sprint": 6,
+  "descripcion": "Hito 6: Sprint Review — Sistema en producción, capacitación realizada y proyecto cerrado",
+  "responsable": "",
+  "paquete": "",
+  "te": 0,
+  "critica": false,
+  "dias": 0,
+  "inicio": "2027-04-23",
+  "fin": "2027-04-23",
+  "preds": [
+   "A-5.2.1.5"
+  ]
+ },
+ {
+  "id": "A-1.2.1.2",
+  "tipo": "continua",
+  "sprint": 2,
+  "descripcion": "Daily Standup 15 min diarios — continuo todo el proyecto",
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.2.1",
+  "te": 1.2,
+  "critica": false,
+  "dias": 114,
+  "inicio": "2026-11-09",
+  "fin": "2027-04-23",
+  "preds": [
+   "H1"
+  ]
  }
 ];
 
