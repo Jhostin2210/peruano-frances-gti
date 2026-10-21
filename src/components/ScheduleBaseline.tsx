@@ -552,7 +552,7 @@ export default function ScheduleBaseline() {
                 </button>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed text-justify">
-                La vista del proyecto completo es el diagrama de Gantt del documento CRO-01 (sección 7): los grupos de actividades en las 24 semanas, del 12 de octubre de 2026 al 23 de abril de 2027, con el receso de febrero y los 6 hitos de Sprint Review. Elija un sprint para verlo por días, con sus responsables y dependencias. Se dibuja con los mismos datos del documento CRO-01 y del archivo de MS Project (CRO-01 Cronograma SIA-T v3), así que no queda desactualizado.
+                El cronograma va del 12 de octubre de 2026 al 23 de abril de 2027, en 6 sprints de 4 semanas con receso en febrero. La primera vista tiene el formato del diagrama de Gantt de MS Project, con las tareas, duraciones, fechas, predecesoras y recursos del archivo de Project. «Resumen por semanas» es el Gantt del documento CRO-01 (sección 7), y cada sprint puede verse por días. Se dibuja con los mismos datos del documento CRO-01 y del archivo de MS Project (CRO-01 Cronograma SIA-T v3), así que no queda desactualizado.
               </p>
 
               <GanttCronograma />

@@ -209,6 +209,11 @@ export function tareasProject() {
   const deNodo = (n) =>
     agregar(
       {
+        nivel: n.tipo === "actividad" || n.tipo === "hito" ? 3 : 2,
+        desde: aIso(n.inicio),
+        hasta: aIso(n.fin),
+        hito: n.tipo === "hito",
+        critica: Boolean(n.isCritical),
         nombre: n.tipo === "hito" || n.tipo === "receso" ? n.descripcion : `${n.id} ${n.descripcion}`,
         duracion: dur(n.dias),
         comienzo: fmtProject(n.inicio),
@@ -221,12 +226,12 @@ export function tareasProject() {
     );
   const inicio = aFecha(SPRINTS[0].inicio);
   const fin = ajustarHabil(aFecha(SPRINTS[5].fin), -1);
-  agregar({ nombre: "Sistema ML - Alerta Temprana Académica SIA-T (proyecto completo)", duracion: dur(diasHabiles(inicio, fin)), comienzo: fmtProject(inicio), fin: fmtProject(fin), sprint: 0, isSummary: true });
+  agregar({ nombre: "Sistema ML - Alerta Temprana Académica SIA-T (proyecto completo)", nivel: 1, desde: aIso(inicio), hasta: aIso(fin), duracion: dur(diasHabiles(inicio, fin)), comienzo: fmtProject(inicio), fin: fmtProject(fin), sprint: 0, isSummary: true });
   for (const sp of SPRINTS) {
     const del = nodos.filter((n) => n.sprint === sp.n && (n.tipo === "actividad" || n.tipo === "hito"));
     const a = del[0].inicio;
     const b = del[del.length - 1].fin;
-    agregar({ nombre: `Sprint ${sp.n}: ${sp.nombre} (S${sp.semanas[0]}–S${sp.semanas[1]})`, duracion: dur(diasHabiles(a, b)), comienzo: fmtProject(a), fin: fmtProject(b), sprint: sp.n, isSummary: true });
+    agregar({ nombre: `Sprint ${sp.n}: ${sp.nombre} (S${sp.semanas[0]}–S${sp.semanas[1]})`, nivel: 2, desde: aIso(a), hasta: aIso(b), duracion: dur(diasHabiles(a, b)), comienzo: fmtProject(a), fin: fmtProject(b), sprint: sp.n, isSummary: true });
     del.forEach(deNodo);
     if (sp.n === 4) deNodo(nodos.find((n) => n.tipo === "receso"));
   }

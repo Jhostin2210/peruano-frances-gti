@@ -5,6 +5,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FERIADOS, GANTT_SEMANAS, RECESO, RED, SPRINTS } from "../content/datos";
+import GanttMSProject from "./GanttMSProject";
 
 type Nodo = (typeof RED)[number];
 
@@ -62,12 +63,13 @@ const semanaDe = (f: string) => {
   return null;
 };
 
+// Vistas: -1 formato MS Project (principal), 0 resumen por semanas del CRO-01, 1 a 6 detalle de un sprint.
 export function GanttCronograma() {
-  const [sprint, setSprint] = useState(0);
+  const [sprint, setSprint] = useState(-1);
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-1.5">
-        {[0, ...SPRINTS.map((s) => s.n)].map((n) => (
+        {[-1, 0, ...SPRINTS.map((s) => s.n)].map((n) => (
           <button
             key={n}
             onClick={() => setSprint(n)}
@@ -75,12 +77,11 @@ export function GanttCronograma() {
               sprint === n ? "bg-indigo-600 text-white border-indigo-600" : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"
             }`}
           >
-            {n ? `Sprint ${n}` : "Proyecto completo"}
+            {n === -1 ? "Formato MS Project" : n ? `Sprint ${n}` : "Resumen por semanas (CRO-01)"}
           </button>
         ))}
-        <span className="text-[11px] text-slate-400 ml-1">{sprint ? "Detalle por días del sprint elegido." : "Elija un sprint para ver el detalle por días."}</span>
       </div>
-      {sprint ? <GanttSprint n={sprint} /> : <GanttSemanas />}
+      {sprint === -1 ? <GanttMSProject /> : sprint ? <GanttSprint n={sprint} /> : <GanttSemanas />}
     </div>
   );
 }
