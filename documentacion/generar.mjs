@@ -15,7 +15,7 @@ import { FERIADOS, RECESO, SPRINTS, TOTALES, aIso, fmt, ganttPorSemanas, program
 import { INTERESADOS, NIVELES, brecha, cuadrante, prominencia } from "./datos/interesados.mjs";
 import { CAMBIOS, INCIDENTES } from "./datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, PAQUETES, REQUISITOS, TOTALES_ALCANCE } from "./datos/requisitos.mjs";
-import { AVANCE, ENTREGABLES_AVANCE } from "./datos/avance.mjs";
+import { AVANCE, CASOS_E01, CORTES_ALCANCE, ENTREGABLES_AVANCE } from "./datos/avance.mjs";
 import { DRIVE_CARPETA, enlaceDrive } from "./datos/drive.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
 import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
@@ -111,11 +111,35 @@ fs.writeFileSync(
 
 // Datos que usan los capítulos del blog (cronograma, interesados y alcance).
 const actividades = programar().map(({ inicio, fin, semanasNum, dias, ...a }) => ({ ...a, inicio: fmt(inicio), fin: fmt(fin) }));
-// Entregables del producto con su estado al corte del ALC-05, para la sección «Entregables» del blog.
+// Seguimiento semanal del alcance (tablero del capítulo 07): cada corte acumula sus cambios sobre el anterior.
+const entregableDe = (paquete) => Object.keys(ENTREGABLES_AVANCE).find((k) => ENTREGABLES_AVANCE[k].paquetes.includes(paquete)) ?? null;
+const isoAFecha = (iso) => iso.split("-").reverse().join("/");
+let acumulado = { ...AVANCE };
+let casos = { ...CASOS_E01 };
+const seguimiento = CORTES_ALCANCE.map((k) => {
+  acumulado = { ...acumulado, ...k.cambios };
+  casos = { ...casos, ...k.casos };
+  const paquetes = PAQUETES.map((p) => {
+    const [estado, pct, existe, falta] = acumulado[p.id];
+    const e = entregableDe(p.id);
+    const revision = e ? SPRINTS[ENTREGABLES.find((x) => x.id === e).sprint - 1].revision : null;
+    return { id: p.id, nombre: p.nombre, componente: p.id.split(".").slice(0, 2).join("."), estado, pct, existe, falta, entregable: e, revision, cambio: p.id in k.cambios };
+  });
+  // Estado de cada requisito según los paquetes que lo producen (ALC-01, sección 3). Ninguno está aceptado aún.
+  const requisitos = REQUISITOS.map((q) => {
+    const suyos = q.paquete.match(/\d+(\.\d+)+/g).map((id) => paquetes.find((p) => p.id === id));
+    const empezado = suyos.some((p) => (p.pct ?? 0) > 0);
+    return { id: q.id, titulo: q.titulo, prioridad: q.prioridad, entregable: q.entregable, paquete: q.paquete, casos: q.cp, estado: empezado ? "En desarrollo" : "Pendiente" };
+  });
+  return { ...k, paquetes, requisitos, casos: Object.entries(casos).map(([id, estado]) => ({ id, estado })) };
+});
+const ultimo = seguimiento[seguimiento.length - 1];
+
+// Entregables del producto con su estado al último corte del seguimiento, para la sección «Entregables» del blog.
 const entregables = ENTREGABLES.map((e) => {
   const x = ENTREGABLES_AVANCE[e.id];
   const paquetes = x.paquetes.map((id) => {
-    const [estado, pct, existe, falta] = AVANCE[id];
+    const { estado, pct, existe, falta } = ultimo.paquetes.find((p) => p.id === id);
     return { id, nombre: PAQUETES.find((p) => p.id === id).nombre, estado, pct, existe, falta };
   });
   return {
@@ -146,6 +170,9 @@ const datos = {
   REQUISITOS: REQUISITOS.map((r) => ({ ...r, ...PLANILLAS[r.id] })),
   ENTREGABLES,
   ENTREGABLES_ESTADO: entregables,
+  CORTE_ALCANCE: isoAFecha(ultimo.fecha),
+  SEGUIMIENTO_ALCANCE: seguimiento,
+  COMPONENTES_EDT: COMPONENTES,
   DRIVE_CARPETA,
   COMPONENTES,
   PAQUETES,

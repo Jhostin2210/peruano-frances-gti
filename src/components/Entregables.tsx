@@ -5,7 +5,7 @@
 
 import { useEffect } from "react";
 import { ExternalLink, FolderOpen, Github, MonitorSmartphone } from "lucide-react";
-import { DRIVE_CARPETA, ENTREGABLES_ESTADO, PROYECTO } from "../content/datos";
+import { CORTE_ALCANCE, DRIVE_CARPETA, ENTREGABLES_ESTADO, PROYECTO } from "../content/datos";
 import { DOCUMENTOS } from "../content/documentos";
 
 const ESTILO_ESTADO: Record<string, string> = {
@@ -48,9 +48,10 @@ export default function Entregables() {
           <p className="font-mono text-[11px] font-bold text-[#0d7377] mb-1">Entregables del proyecto</p>
           <h2 className="font-serif text-3xl font-bold text-slate-900">Entregables del producto</h2>
           <p className="text-sm text-slate-700 leading-relaxed mt-3 max-w-3xl">
-            Los {ENTREGABLES_ESTADO.length} entregables del producto definidos en el enunciado del alcance (ALC-02), con su estado al{" "}
-            {PROYECTO.fechaCorte} según el informe de avance del producto (ALC-05 N.º 2) y los enlaces para revisarlos. Cada entregable se acepta en la
-            revisión del sprint indicado, con el Product Owner.
+            Los {ENTREGABLES_ESTADO.length} entregables del producto definidos en el enunciado del alcance (ALC-02), con su estado al {CORTE_ALCANCE} según
+            el seguimiento semanal del alcance (último informe de avance: ALC-05 N.º 2) y los enlaces para revisarlos. Cada entregable se acepta en la revisión
+            del sprint indicado, con el Product Owner. El detalle está en el{" "}
+            <a href="#alc-tablero" className="underline font-semibold text-[#0d7377]">tablero de monitoreo del alcance</a>.
           </p>
 
           <div className="flex flex-wrap gap-2 mt-5">

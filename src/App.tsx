@@ -24,6 +24,7 @@ import DominioPmbok from "./components/DominioPmbok";
 import AvisoEtapa from "./components/AvisoEtapa";
 import TableroComunicaciones from "./components/TableroComunicaciones";
 import Entregables from "./components/Entregables";
+import TableroAlcance from "./components/TableroAlcance";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -334,6 +335,7 @@ export default function App() {
             despues={{
               "alc-2": <RequisitosAnalysis parte="requisitos" />,
               "alc-4": <RequisitosAnalysis parte="edt" />,
+              "alc-5": <TableroAlcance />,
             }}
           />
 

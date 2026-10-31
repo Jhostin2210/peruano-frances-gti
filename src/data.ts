@@ -340,6 +340,7 @@ const ANEXOS: Record<string, TocSection[]> = {
     { label: "↳ Requisitos del sistema", href: "#p05-requisitos" },
     { label: "↳ Planillas de requisitos", href: "#p05-planillas" },
   ],
+  "alc-5": [{ label: "↳ Tablero de monitoreo del alcance", href: "#alc-tablero" }],
   "alc-4": [
     { label: "↳ Diagrama de la EDT", href: "#p05-diagrama-edt" },
     { label: "↳ Diccionario de la EDT", href: "#p05-diccionario" },

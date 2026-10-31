@@ -15,7 +15,10 @@ const cuando = (x) => x.cuando || fmtIso(x.fecha);
 const COLOR_ESTADO = { Realizada: "verde", Programada: "azul", "Por confirmar": "amarillo", Vencida: "rojo" };
 const estadoCelda = (x) => c(estadoAl(x), COLOR_ESTADO[estadoAl(x)], { bold: true, align: "center" });
 const nombreSprint = (n) => (n === 0 ? "Antes del inicio" : `Sprint ${n}`);
-const R0 = resumenComunicaciones();
+// El plan (INT-03, versión 1.2) y el informe INT-07 N.º 2 se emitieron con corte al 17/10/2026; el registro (INT-06) sigue el corte vigente.
+const CORTE_INFORME = "2026-10-17";
+const R0 = resumenComunicaciones(CORTE_INFORME);
+const R6 = resumenComunicaciones();
 const clave = INTERESADOS.filter((i) => i.clave);
 const claveContactados = clave.filter((i) => R0.contactados.includes(i.id));
 const sinComunicacion = INTERESADOS.filter((i) => !R0.contactados.includes(i.id));
@@ -93,12 +96,12 @@ export const INT03 = DOC({
     ),
     sec("4. Calendario de comunicaciones", [
       p(
-        `La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al ${fmtIso(CORTE)}; el registro y el tablero del blog muestran su estado actualizado.`,
+        `La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al ${fmtIso(CORTE_INFORME)}; el registro y el tablero del blog muestran su estado actualizado.`,
       ),
       tabla(
         ["Fecha", "Comunicación", "Destinatarios", "Responsable", "Sprint"],
         [16, 40, 20, 14, 10],
-        COMUNICACIONES.filter((x) => x.estado !== "Realizada").map((x) => [
+        COMUNICACIONES.filter((x) => estadoAl(x, CORTE_INFORME) !== "Realizada").map((x) => [
           cuando(x),
           x.asunto,
           x.interesados.join(", "),
@@ -216,12 +219,13 @@ const tablaRegistro = (lista, titulo) =>
 export const INT06 = DOC({
   ...base,
   id: "INT-06",
-  version: "1.2",
-  fecha: "19/10/2026",
+  version: "1.3",
+  fecha: "31/10/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Reunión de inicio realizada, canal por el Product Owner, avances los sábados y aviso a los apoderados por WhatsApp de los tutores.", P.director],
   ["1.2", "19/10/2026", "Se registra la presentación del 17/10/2026 al docente asesor y sus observaciones.", P.director],
+    ["1.3", "31/10/2026", "Se registran el pedido de las exportaciones de Cubicol y el taller de validación con los docentes tutores del 28/10/2026. Corte al 31/10/2026.", P.director],
   ],
   titulo: "Registro de comunicaciones",
   archivo: "INT-06 Registro de comunicaciones",
@@ -244,7 +248,7 @@ export const INT06 = DOC({
     ]),
     sec("2. Comunicaciones realizadas", [
       tablaRegistro(
-        COMUNICACIONES.filter((x) => x.estado === "Realizada"),
+        COMUNICACIONES.filter((x) => estadoAl(x) === "Realizada"),
         `Comunicaciones realizadas al ${fmtIso(CORTE)}`,
       ),
       nota(
@@ -254,13 +258,13 @@ export const INT06 = DOC({
     ]),
     sec("3. Comunicaciones programadas del Sprint 1", [
       tablaRegistro(
-        COMUNICACIONES.filter((x) => x.estado !== "Realizada" && x.sprint === 1),
+        COMUNICACIONES.filter((x) => estadoAl(x) !== "Realizada" && x.sprint === 1),
         `Sprint 1: del ${fmtIso(SPRINTS[0].inicio)} al ${fmtIso(SPRINTS[0].fin)}`,
       ),
     ]),
     sec("4. Comunicaciones programadas de los Sprints 2 a 6", [
       tablaRegistro(
-        COMUNICACIONES.filter((x) => x.estado !== "Realizada" && x.sprint > 1),
+        COMUNICACIONES.filter((x) => estadoAl(x) !== "Realizada" && x.sprint > 1),
         "Sprints 2 a 6",
       ),
       p(
@@ -279,10 +283,10 @@ export const INT06 = DOC({
           }),
           [
             c("Total", "gris", { bold: true }),
-            c(String(R0.realizadas), "gris", { align: "center", bold: true }),
-            c(String(R0.programadas), "gris", { align: "center", bold: true }),
-            c(String(R0.vencidas), "gris", { align: "center", bold: true }),
-            c(String(R0.total), "gris", { align: "center", bold: true }),
+            c(String(R6.realizadas), "gris", { align: "center", bold: true }),
+            c(String(R6.programadas), "gris", { align: "center", bold: true }),
+            c(String(R6.vencidas), "gris", { align: "center", bold: true }),
+            c(String(R6.total), "gris", { align: "center", bold: true }),
           ],
         ],
         { titulo: `Comunicaciones por momento del proyecto, al ${fmtIso(CORTE)}` },
@@ -295,13 +299,13 @@ export const INT06 = DOC({
 const porCanal = Object.entries(
   COMUNICACIONES.reduce((a, x) => {
     a[x.canal] ??= { Realizada: 0, Programada: 0, "Por confirmar": 0, Vencida: 0 };
-    a[x.canal][estadoAl(x)]++;
+    a[x.canal][estadoAl(x, CORTE_INFORME)]++;
     return a;
   }, {}),
 ).sort((a, b) => b[1].Realizada + b[1].Programada + b[1].Vencida - (a[1].Realizada + a[1].Programada + a[1].Vencida));
 const centro = (n, extra = {}) => c(String(n), undefined, { align: "center", ...extra });
-const debidas = COMUNICACIONES.filter((x) => x.fecha < CORTE);
-const pctCalendario = debidas.length ? `${Math.round((100 * debidas.filter((x) => estadoAl(x) === "Realizada").length) / debidas.length)} %` : "—";
+const debidas = COMUNICACIONES.filter((x) => x.fecha < CORTE_INFORME);
+const pctCalendario = debidas.length ? `${Math.round((100 * debidas.filter((x) => estadoAl(x, CORTE_INFORME) === "Realizada").length) / debidas.length)} %` : "—";
 
 export const INT07 = DOC({
   ...base,
@@ -322,7 +326,7 @@ export const INT07 = DOC({
   secciones: [
     sec("1. Corte y método", [
       p(
-        `Fecha de corte: ${fmtIso(CORTE)}. El informe se elabora con el registro de comunicaciones (INT-06): compara lo realizado con lo programado en el plan (INT-03) y revisa a qué interesados se ha llegado. Los mismos indicadores se ven, actualizados, en el tablero de comunicaciones del blog.`,
+        `Fecha de corte: ${fmtIso(CORTE_INFORME)}. El informe se elabora con el registro de comunicaciones (INT-06): compara lo realizado con lo programado en el plan (INT-03) y revisa a qué interesados se ha llegado. Los mismos indicadores se ven, actualizados, en el tablero de comunicaciones del blog.`,
       ),
     ]),
     sec("2. Indicadores", [
@@ -331,7 +335,7 @@ export const INT07 = DOC({
         [28, 16, 20, 36],
         [
           ["Comunicaciones registradas", String(R0.total), "—", `${R0.realizadas} realizadas y ${R0.programadas} programadas.`],
-          ["Cumplimiento del calendario", c(`${pctCalendario}`, "verde", { bold: true, align: "center" }), "90 % o más", `${debidas.filter((x) => estadoAl(x) === "Realizada").length} de ${debidas.length} comunicaciones que debían hacerse hasta el corte están realizadas.`],
+          ["Cumplimiento del calendario", c(`${pctCalendario}`, "verde", { bold: true, align: "center" }), "90 % o más", `${debidas.filter((x) => estadoAl(x, CORTE_INFORME) === "Realizada").length} de ${debidas.length} comunicaciones que debían hacerse hasta el corte están realizadas.`],
           ["Comunicaciones vencidas", c(String(R0.vencidas), R0.vencidas ? "rojo" : "verde", { bold: true, align: "center" }), "Cero", R0.vencidas ? "Hay comunicaciones fuera de plazo." : "Ninguna comunicación fuera de plazo."],
           ["Cobertura de interesados", `${R0.contactados.length} de ${INTERESADOS.length}`, "—", "Coincide con el seguimiento del involucramiento (INT-05)."],
           [
@@ -342,7 +346,7 @@ export const INT07 = DOC({
           ],
           ["Constancia", c(`${R0.conConstancia} de ${R0.realizadas}`, "verde", { bold: true, align: "center" }), "100 %", "Toda comunicación realizada tiene evidencia."],
         ],
-        { titulo: `Indicadores de las comunicaciones al ${fmtIso(CORTE)}` },
+        { titulo: `Indicadores de las comunicaciones al ${fmtIso(CORTE_INFORME)}` },
       ),
     ]),
     sec("3. Comunicaciones por canal", [
@@ -362,8 +366,8 @@ export const INT07 = DOC({
         [40, 10, 14, 14, 22],
         INTERESADOS.map((i) => {
           const suyas = COMUNICACIONES.filter((x) => x.interesados.includes(i.id));
-          const hechas = suyas.filter((x) => estadoAl(x) === "Realizada").length;
-          const prog = suyas.filter((x) => estadoAl(x) === "Programada").length;
+          const hechas = suyas.filter((x) => estadoAl(x, CORTE_INFORME) === "Realizada").length;
+          const prog = suyas.filter((x) => estadoAl(x, CORTE_INFORME) === "Programada").length;
           const situacion = hechas ? c("Con comunicación", "verde") : prog ? c("Programada", "azul") : c("Sin comunicación directa", "gris");
           return [`${i.id} ${i.nombre}`, centro(i.clave ? "Sí" : ""), centro(hechas), centro(prog), situacion];
         }),

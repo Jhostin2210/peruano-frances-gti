@@ -4006,8 +4006,8 @@ export const ENTREGABLES_ESTADO = [
   "sprint": 2,
   "descripcion": "Procesos que reúnen y limpian los datos académicos en una base de datos en la nube.",
   "estado": "En validación",
-  "nota": "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2: seis de los ocho casos de prueba aprobados, uno aprobado en parte y uno en curso. Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
-  "avance": 85,
+  "nota": "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Al 31/10/2026, siete de los ocho casos de prueba están aprobados; falta repetir la reconciliación en tres fechas (CP-03). Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
+  "avance": 90,
   "revision": "04/12/2026",
   "paquetes": [
    {
@@ -4015,16 +4015,16 @@ export const ENTREGABLES_ESTADO = [
     "nombre": "Integración de datos (ETL)",
     "estado": "Cumplido en parte",
     "pct": 85,
-    "existe": "Carga de la base consolidada de notas del colegio: 3 878 notas de 173 estudiantes, sin duplicados y reconciliada con el archivo de origen.",
-    "falta": "Repetir la reconciliación en tres fechas y cargar las exportaciones de Cubicol."
+    "existe": "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
+    "falta": "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03)."
    },
    {
     "id": "1.2.2",
     "nombre": "Calidad de datos",
     "estado": "Cumplido en parte",
-    "pct": 85,
-    "existe": "Diez reglas de calidad y validación automática cada noche: 6 noches seguidas sin fallas críticas al 17/10/2026.",
-    "falta": "Completar 15 noches seguidas y cotejar las notas transcritas de fotografías."
+    "pct": 95,
+    "existe": "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
+    "falta": "Cotejar las notas transcritas de fotografías."
    }
   ],
   "requisitos": [
@@ -4195,17 +4195,17 @@ export const ENTREGABLES_ESTADO = [
   "sprint": 4,
   "descripcion": "Interfaz web con semáforo de riesgo, fichas de estudiante, reportes y comparación por aula y grado.",
   "estado": "En desarrollo",
-  "nota": "La interfaz en línea tiene aulas, estudiantes, ficha y reportes en PDF. Faltan las pruebas con docentes.",
-  "avance": 52,
+  "nota": "La interfaz en línea tiene aulas, estudiantes, ficha y reportes en PDF, y los docentes tutores le dieron su conformidad en el taller del 28/10/2026. Faltan las pruebas de uso con docentes (1.4.2.3).",
+  "avance": 58,
   "revision": "29/01/2027",
   "paquetes": [
    {
     "id": "1.4.2.1",
     "nombre": "Diseño de la interfaz",
-    "estado": "Cumplido en parte",
-    "pct": 80,
-    "existe": "Interfaz en línea: inicio, aulas, estudiantes, ficha, evaluación de un caso, modelo y datos.",
-    "falta": "Mostrarla a los docentes en el taller del 28/10/2026."
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Interfaz en línea revisada con los docentes tutores en el taller del 28/10/2026, que dieron su conformidad.",
+    "falta": "Mantenerla al día con los ajustes de los sprints siguientes."
    },
    {
     "id": "1.4.2.2",
@@ -4435,6 +4435,1046 @@ export const ENTREGABLES_ESTADO = [
   "requisitos": [],
   "evidencias": [],
   "documentos": []
+ }
+];
+
+export const CORTE_ALCANCE = "31/10/2026";
+
+export const SEGUIMIENTO_ALCANCE = [
+ {
+  "fecha": "2026-10-17",
+  "fuente": "Informe ALC-05 N.º 2",
+  "cambios": {},
+  "casos": [
+   {
+    "id": "CP-01",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-02",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-03",
+    "estado": "Aprobado en parte"
+   },
+   {
+    "id": "CP-04",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-05",
+    "estado": "En curso"
+   },
+   {
+    "id": "CP-06",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-07",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-08",
+    "estado": "Aprobado"
+   }
+  ],
+  "hechos": [
+   "Se presenta al docente asesor el primer entregable del producto (E-01) con el informe ALC-05 N.º 2."
+  ],
+  "sprint": [],
+  "alertas": [],
+  "fueraDeAlcance": [],
+  "paquetes": [
+   {
+    "id": "1.1.1",
+    "nombre": "Cronograma de hitos",
+    "componente": "1.1",
+    "estado": "Cumplido",
+    "pct": null,
+    "existe": "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).",
+    "falta": "Mantenerla actualizada ante cada cambio.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.2",
+    "nombre": "Informes de avance",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Informe de desempeño N.º 1 (GOB-09).",
+    "falta": "Un informe al cierre de cada sprint.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.3",
+    "nombre": "Actas y control de cambios",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).",
+    "falta": "Actas y cambios hasta el cierre.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.2.1",
+    "nombre": "Integración de datos (ETL)",
+    "componente": "1.2",
+    "estado": "Cumplido en parte",
+    "pct": 85,
+    "existe": "Carga de la base consolidada de notas del colegio: 3 878 notas de 173 estudiantes, sin duplicados y reconciliada con el archivo de origen.",
+    "falta": "Repetir la reconciliación en tres fechas y cargar las exportaciones de Cubicol.",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": false
+   },
+   {
+    "id": "1.2.2",
+    "nombre": "Calidad de datos",
+    "componente": "1.2",
+    "estado": "Cumplido en parte",
+    "pct": 85,
+    "existe": "Diez reglas de calidad y validación automática cada noche: 6 noches seguidas sin fallas críticas al 17/10/2026.",
+    "falta": "Completar 15 noches seguidas y cotejar las notas transcritas de fotografías.",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": false
+   },
+   {
+    "id": "1.3.1",
+    "nombre": "Entrenamiento del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.",
+    "falta": "Volver a entrenarla cuando el colegio acumule datos propios.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.2",
+    "nombre": "Clasificación de riesgo",
+    "componente": "1.3",
+    "estado": "Prototipo",
+    "pct": 50,
+    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
+    "falta": "Ejecución semanal automática.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.3",
+    "nombre": "Validación del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido en parte",
+    "pct": 70,
+    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.",
+    "falta": "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.4.1",
+    "nombre": "Motor de alertas",
+    "componente": "1.4",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).",
+    "falta": "Correo al tutor, historial de alertas y registro de seguimiento.",
+    "entregable": "E-03",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.1",
+    "nombre": "Diseño de la interfaz",
+    "componente": "1.4",
+    "estado": "Cumplido en parte",
+    "pct": 80,
+    "existe": "Interfaz en línea: inicio, aulas, estudiantes, ficha, evaluación de un caso, modelo y datos.",
+    "falta": "Mostrarla a los docentes en el taller del 28/10/2026.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.2",
+    "nombre": "Desarrollo del tablero",
+    "componente": "1.4",
+    "estado": "Cumplido en parte",
+    "pct": 75,
+    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
+    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.3",
+    "nombre": "Pruebas con usuarios",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Pruebas con al menos tres docentes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.3",
+    "nombre": "Roles y accesos",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 5,
+    "existe": "La tabla de usuarios con los cuatro roles está en la base de datos.",
+    "falta": "Inicio de sesión y vistas por rol.",
+    "entregable": "E-05",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.5.1",
+    "nombre": "Despliegue del sistema",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Sistema en línea (página en Vercel y API en Render) con datos de práctica.",
+    "falta": "Base gestionada y entorno de producción con datos reales.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.5.2",
+    "nombre": "Manual de usuario",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Manual de usuario.",
+    "entregable": "E-06",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.3",
+    "nombre": "Manual técnico",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.",
+    "falta": "Completarlo y validarlo con el encargado de TI.",
+    "entregable": "E-07",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.4",
+    "nombre": "Plan de capacitación",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Plan de capacitación.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.5",
+    "nombre": "Capacitación y cierre",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Capacitación y cierre.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.6.1",
+    "nombre": "Pruebas de integración y rendimiento",
+    "componente": "1.6",
+    "estado": "Prototipo",
+    "pct": 20,
+    "existe": "Pruebas del entregable E-01 y de los flujos de la página.",
+    "falta": "Reporte formal de integración y prueba de rendimiento.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.6.2",
+    "nombre": "Piloto y retroalimentación",
+    "componente": "1.6",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Piloto con tres docentes tutores.",
+    "entregable": "E-09",
+    "revision": "2027-03-24",
+    "cambio": false
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-01",
+    "titulo": "Centralización de los datos académicos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.1",
+    "casos": "CP-01 a CP-04",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-02",
+    "titulo": "Limpieza y validación automática de los datos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.2",
+    "casos": "CP-05 a CP-08",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-03",
+    "titulo": "Modelo de clasificación del riesgo académico",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.1 y 1.3.3",
+    "casos": "CP-09 a CP-12",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-04",
+    "titulo": "Actualización semanal automática del modelo",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.2",
+    "casos": "CP-13 a CP-16",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-05",
+    "titulo": "Alertas automáticas por correo al docente tutor",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-17 a CP-20",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-06",
+    "titulo": "Panel web de alertas para el docente",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-21 a CP-24",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-07",
+    "titulo": "Registro del seguimiento de cada caso",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-25 a CP-28",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-08",
+    "titulo": "Tablero de indicadores de riesgo",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-29 a CP-32",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-09",
+    "titulo": "Reportes exportables en PDF y Excel",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-33 a CP-36",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-10",
+    "titulo": "Ficha individual del estudiante",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-37 a CP-40",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-11",
+    "titulo": "Roles y accesos diferenciados",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-41 a CP-44",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-12",
+    "titulo": "Comunicado al apoderado del estudiante en riesgo alto",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-45 a CP-48",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-01",
+    "titulo": "Facilidad de uso",
+    "prioridad": "Alta",
+    "entregable": "E-04 y E-08",
+    "paquete": "1.4.2.3 y 1.5.4",
+    "casos": "CP-49 a CP-52",
+    "estado": "Pendiente"
+   },
+   {
+    "id": "RNF-02",
+    "titulo": "Rendimiento del tablero",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-53 a CP-56",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-03",
+    "titulo": "Autenticación y control de acceso",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-57 a CP-60",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-04",
+    "titulo": "Cumplimiento de la Ley N.° 29733",
+    "prioridad": "Alta",
+    "entregable": "E-05 y E-07",
+    "paquete": "1.5.1 y 1.5.3",
+    "casos": "CP-61 a CP-64",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-05",
+    "titulo": "Disponibilidad en horario escolar",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.5.1",
+    "casos": "CP-65 a CP-68",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-06",
+    "titulo": "Compatibilidad con navegadores",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-69 a CP-72",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-07",
+    "titulo": "Capacidad y escalabilidad",
+    "prioridad": "Media",
+    "entregable": "E-01 y E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-73 a CP-76",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-08",
+    "titulo": "Documentación y transferencia",
+    "prioridad": "Media",
+    "entregable": "E-07",
+    "paquete": "1.5.3",
+    "casos": "CP-77 a CP-80",
+    "estado": "En desarrollo"
+   }
+  ]
+ },
+ {
+  "fecha": "2026-10-31",
+  "fuente": "Seguimiento semanal",
+  "cambios": {
+   "1.2.1": [
+    "Cumplido en parte",
+    85,
+    "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
+    "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03)."
+   ],
+   "1.2.2": [
+    "Cumplido en parte",
+    95,
+    "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
+    "Cotejar las notas transcritas de fotografías."
+   ],
+   "1.4.2.1": [
+    "Cumplido",
+    100,
+    "Interfaz en línea revisada con los docentes tutores en el taller del 28/10/2026, que dieron su conformidad.",
+    "Mantenerla al día con los ajustes de los sprints siguientes."
+   ]
+  },
+  "casos": [
+   {
+    "id": "CP-01",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-02",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-03",
+    "estado": "Aprobado en parte"
+   },
+   {
+    "id": "CP-04",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-05",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-06",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-07",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-08",
+    "estado": "Aprobado"
+   }
+  ],
+  "hechos": [
+   "28/10: taller de validación con los docentes tutores, organizado por el Product Owner. Conformidad con las variables del modelo y con la interfaz.",
+   "El colegio entrega las exportaciones de notas de Cubicol de forma periódica, a través del Product Owner.",
+   "25/10: se completan 15 noches seguidas de validación de datos sin fallas (CP-05). Al 31/10 son 21."
+  ],
+  "sprint": [
+   {
+    "que": "Arquitectura del sistema",
+    "estado": "Lista para revisión",
+    "evidencia": "Documento de arquitectura en el repositorio del sistema; se revisa el 06/11/2026.",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/arquitectura.md"
+   },
+   {
+    "que": "Lista de variables del modelo validada con docentes",
+    "estado": "Cumplido",
+    "evidencia": "Taller del 28/10/2026: los docentes tutores dieron su conformidad. Constancia: lista de asistencia y acuerdos."
+   }
+  ],
+  "alertas": [
+   {
+    "nivel": "Atención",
+    "texto": "Archivar la lista de asistencia y los acuerdos del taller del 28/10: son la evidencia para aceptar el alcance del Sprint 1.",
+    "responsable": "Helber Perez",
+    "fecha": "06/11/2026"
+   },
+   {
+    "nivel": "Atención",
+    "texto": "Decidir la solicitud SC-08 (rediseño de la validación del modelo) en la revisión del Sprint 1.",
+    "responsable": "Jhostin Galarza",
+    "fecha": "06/11/2026"
+   },
+   {
+    "nivel": "Atención",
+    "texto": "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.",
+    "responsable": "Jadira Vasquez",
+    "fecha": "04/12/2026"
+   },
+   {
+    "nivel": "Seguimiento",
+    "texto": "SC-09 (canal de las alertas por correo) y SC-10 (unificación de la EDT) siguen en evaluación.",
+    "responsable": "Carlos Curo",
+    "fecha": "Sprint 2"
+   }
+  ],
+  "fueraDeAlcance": [
+   {
+    "texto": "Pantalla «Evaluar un caso»: evalúa a un estudiante con datos ingresados a mano. No figura en la matriz de requisitos.",
+    "estado": "Por revisar",
+    "accion": "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo."
+   }
+  ],
+  "paquetes": [
+   {
+    "id": "1.1.1",
+    "nombre": "Cronograma de hitos",
+    "componente": "1.1",
+    "estado": "Cumplido",
+    "pct": null,
+    "existe": "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).",
+    "falta": "Mantenerla actualizada ante cada cambio.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.2",
+    "nombre": "Informes de avance",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Informe de desempeño N.º 1 (GOB-09).",
+    "falta": "Un informe al cierre de cada sprint.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.3",
+    "nombre": "Actas y control de cambios",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).",
+    "falta": "Actas y cambios hasta el cierre.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.2.1",
+    "nombre": "Integración de datos (ETL)",
+    "componente": "1.2",
+    "estado": "Cumplido en parte",
+    "pct": 85,
+    "existe": "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
+    "falta": "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03).",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": true
+   },
+   {
+    "id": "1.2.2",
+    "nombre": "Calidad de datos",
+    "componente": "1.2",
+    "estado": "Cumplido en parte",
+    "pct": 95,
+    "existe": "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
+    "falta": "Cotejar las notas transcritas de fotografías.",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": true
+   },
+   {
+    "id": "1.3.1",
+    "nombre": "Entrenamiento del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.",
+    "falta": "Volver a entrenarla cuando el colegio acumule datos propios.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.2",
+    "nombre": "Clasificación de riesgo",
+    "componente": "1.3",
+    "estado": "Prototipo",
+    "pct": 50,
+    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
+    "falta": "Ejecución semanal automática.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.3",
+    "nombre": "Validación del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido en parte",
+    "pct": 70,
+    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.",
+    "falta": "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.4.1",
+    "nombre": "Motor de alertas",
+    "componente": "1.4",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).",
+    "falta": "Correo al tutor, historial de alertas y registro de seguimiento.",
+    "entregable": "E-03",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.1",
+    "nombre": "Diseño de la interfaz",
+    "componente": "1.4",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Interfaz en línea revisada con los docentes tutores en el taller del 28/10/2026, que dieron su conformidad.",
+    "falta": "Mantenerla al día con los ajustes de los sprints siguientes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": true
+   },
+   {
+    "id": "1.4.2.2",
+    "nombre": "Desarrollo del tablero",
+    "componente": "1.4",
+    "estado": "Cumplido en parte",
+    "pct": 75,
+    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
+    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.3",
+    "nombre": "Pruebas con usuarios",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Pruebas con al menos tres docentes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.3",
+    "nombre": "Roles y accesos",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 5,
+    "existe": "La tabla de usuarios con los cuatro roles está en la base de datos.",
+    "falta": "Inicio de sesión y vistas por rol.",
+    "entregable": "E-05",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.5.1",
+    "nombre": "Despliegue del sistema",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Sistema en línea (página en Vercel y API en Render) con datos de práctica.",
+    "falta": "Base gestionada y entorno de producción con datos reales.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.5.2",
+    "nombre": "Manual de usuario",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Manual de usuario.",
+    "entregable": "E-06",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.3",
+    "nombre": "Manual técnico",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.",
+    "falta": "Completarlo y validarlo con el encargado de TI.",
+    "entregable": "E-07",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.4",
+    "nombre": "Plan de capacitación",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Plan de capacitación.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.5",
+    "nombre": "Capacitación y cierre",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Capacitación y cierre.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.6.1",
+    "nombre": "Pruebas de integración y rendimiento",
+    "componente": "1.6",
+    "estado": "Prototipo",
+    "pct": 20,
+    "existe": "Pruebas del entregable E-01 y de los flujos de la página.",
+    "falta": "Reporte formal de integración y prueba de rendimiento.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.6.2",
+    "nombre": "Piloto y retroalimentación",
+    "componente": "1.6",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Piloto con tres docentes tutores.",
+    "entregable": "E-09",
+    "revision": "2027-03-24",
+    "cambio": false
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-01",
+    "titulo": "Centralización de los datos académicos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.1",
+    "casos": "CP-01 a CP-04",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-02",
+    "titulo": "Limpieza y validación automática de los datos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.2",
+    "casos": "CP-05 a CP-08",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-03",
+    "titulo": "Modelo de clasificación del riesgo académico",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.1 y 1.3.3",
+    "casos": "CP-09 a CP-12",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-04",
+    "titulo": "Actualización semanal automática del modelo",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.2",
+    "casos": "CP-13 a CP-16",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-05",
+    "titulo": "Alertas automáticas por correo al docente tutor",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-17 a CP-20",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-06",
+    "titulo": "Panel web de alertas para el docente",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-21 a CP-24",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-07",
+    "titulo": "Registro del seguimiento de cada caso",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-25 a CP-28",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-08",
+    "titulo": "Tablero de indicadores de riesgo",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-29 a CP-32",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-09",
+    "titulo": "Reportes exportables en PDF y Excel",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-33 a CP-36",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-10",
+    "titulo": "Ficha individual del estudiante",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-37 a CP-40",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-11",
+    "titulo": "Roles y accesos diferenciados",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-41 a CP-44",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-12",
+    "titulo": "Comunicado al apoderado del estudiante en riesgo alto",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-45 a CP-48",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-01",
+    "titulo": "Facilidad de uso",
+    "prioridad": "Alta",
+    "entregable": "E-04 y E-08",
+    "paquete": "1.4.2.3 y 1.5.4",
+    "casos": "CP-49 a CP-52",
+    "estado": "Pendiente"
+   },
+   {
+    "id": "RNF-02",
+    "titulo": "Rendimiento del tablero",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-53 a CP-56",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-03",
+    "titulo": "Autenticación y control de acceso",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-57 a CP-60",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-04",
+    "titulo": "Cumplimiento de la Ley N.° 29733",
+    "prioridad": "Alta",
+    "entregable": "E-05 y E-07",
+    "paquete": "1.5.1 y 1.5.3",
+    "casos": "CP-61 a CP-64",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-05",
+    "titulo": "Disponibilidad en horario escolar",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.5.1",
+    "casos": "CP-65 a CP-68",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-06",
+    "titulo": "Compatibilidad con navegadores",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-69 a CP-72",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-07",
+    "titulo": "Capacidad y escalabilidad",
+    "prioridad": "Media",
+    "entregable": "E-01 y E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-73 a CP-76",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-08",
+    "titulo": "Documentación y transferencia",
+    "prioridad": "Media",
+    "entregable": "E-07",
+    "paquete": "1.5.3",
+    "casos": "CP-77 a CP-80",
+    "estado": "En desarrollo"
+   }
+  ]
+ }
+];
+
+export const COMPONENTES_EDT = [
+ {
+  "id": "1.1",
+  "nombre": "Gestión del proyecto",
+  "descripcion": "Planificación, seguimiento y control del proyecto."
+ },
+ {
+  "id": "1.2",
+  "nombre": "Datos e integración",
+  "descripcion": "Integración, validación y preparación de los datos académicos."
+ },
+ {
+  "id": "1.3",
+  "nombre": "Modelo ML predictivo",
+  "descripcion": "Entrenamiento, validación y clasificación del riesgo."
+ },
+ {
+  "id": "1.4",
+  "nombre": "Alertas y tablero",
+  "descripcion": "Alertas automáticas, tablero web y control de accesos."
+ },
+ {
+  "id": "1.5",
+  "nombre": "Implantación y cierre",
+  "descripcion": "Despliegue, documentación, capacitación y cierre."
+ },
+ {
+  "id": "1.6",
+  "nombre": "Pruebas y piloto",
+  "descripcion": "Pruebas de integración y rendimiento, y piloto con docentes."
  }
 ];
 
@@ -4872,7 +5912,7 @@ export const INCIDENTES = [
  }
 ];
 
-export const CORTE = "2026-10-17";
+export const CORTE = "2026-10-31";
 
 export const PLAN_COMUNICACIONES = [
  {
@@ -5129,8 +6169,8 @@ export const COMUNICACIONES = [
   ],
   "canal": "Pedido escrito entregado por el Product Owner",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Pedido escrito y respuesta del colegio",
+  "estado": "Realizada",
+  "constancia": "El colegio entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner",
   "plan": "PC-04 y PC-12"
  },
  {
@@ -5162,8 +6202,8 @@ export const COMUNICACIONES = [
   ],
   "canal": "Taller presencial en el colegio",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Lista de asistencia y acuerdos",
+  "estado": "Realizada",
+  "constancia": "Los docentes tutores dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos",
   "plan": "PC-05"
  },
  {

@@ -8,7 +8,7 @@ import { R } from "../proyecto.mjs";
 import { SPRINTS } from "./calendario.mjs";
 
 // Fecha de corte de los documentos emitidos.
-export const CORTE = "2026-10-17";
+export const CORTE = "2026-10-31";
 
 // ───────────────────────── Matriz del plan (INT-03) ─────────────────────────
 export const PLAN_COMUNICACIONES = [
@@ -55,9 +55,9 @@ export const COMUNICACIONES = [
   // Sprint 1
   { fecha: "2026-10-12", tipo: "Reunión", asunto: "Reunión de inicio: acta de constitución, calendario, Product Owner, tratamiento de datos y canal de comunicación con el colegio", emisor: R.jhostin, interesados: ["I-01", "I-03", "I-12"], canal: "Reunión virtual", sprint: 1, estado: "Realizada", constancia: "Acta de la reunión de inicio (GOB-12) y acta de constitución firmada (GOB-02)", plan: "PC-01" },
   { fecha: "2026-10-17", tipo: "Avance académico", asunto: "Avance semanal al docente asesor: gestión de las comunicaciones y validación del primer entregable del sistema según la EDT (E-01)", emisor: R.equipo, interesados: ["I-13"], canal: "Clase y blog del proyecto", sprint: 1, estado: "Realizada", constancia: "Observaciones del docente: habilitar un enlace para los entregables y que los documentos se vean por Drive. Sin observaciones al E-01", plan: "PC-06" },
-  { fecha: "2026-10-20", tipo: "Solicitud", asunto: "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner", emisor: `${R.jadira} y ${R.helber}`, interesados: ["I-07", "I-08"], canal: "Pedido escrito entregado por el Product Owner", sprint: 1, estado: "Programada", constancia: "Pedido escrito y respuesta del colegio", plan: "PC-04 y PC-12" },
+  { fecha: "2026-10-20", tipo: "Solicitud", asunto: "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner", emisor: `${R.jadira} y ${R.helber}`, interesados: ["I-07", "I-08"], canal: "Pedido escrito entregado por el Product Owner", sprint: 1, estado: "Realizada", constancia: "El colegio entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner", plan: "PC-04 y PC-12" },
   { fecha: "2026-10-24", tipo: "Avance académico", asunto: "Avance semanal al docente asesor", emisor: R.equipo, interesados: ["I-13"], canal: "Clase y blog del proyecto", sprint: 1, estado: "Programada", constancia: "Blog actualizado", plan: "PC-06" },
-  { fecha: "2026-10-28", tipo: "Taller", asunto: "Taller de validación de las variables del modelo, organizado por el Product Owner", emisor: `${R.helber} y ${R.carlos}`, interesados: ["I-05", "I-06"], canal: "Taller presencial en el colegio", sprint: 1, estado: "Programada", constancia: "Lista de asistencia y acuerdos", plan: "PC-05" },
+  { fecha: "2026-10-28", tipo: "Taller", asunto: "Taller de validación de las variables del modelo, organizado por el Product Owner", emisor: `${R.helber} y ${R.carlos}`, interesados: ["I-05", "I-06"], canal: "Taller presencial en el colegio", sprint: 1, estado: "Realizada", constancia: "Los docentes tutores dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos", plan: "PC-05" },
   { fecha: "2026-10-31", tipo: "Avance académico", asunto: "Avance semanal al docente asesor", emisor: R.equipo, interesados: ["I-13"], canal: "Clase y blog del proyecto", sprint: 1, estado: "Programada", constancia: "Blog actualizado", plan: "PC-06" },
   { fecha: "2026-11-03", tipo: "Consulta", asunto: "Consulta sobre el registro de incidencias, a través del Product Owner", emisor: `${R.jadira} y ${R.helber}`, interesados: ["I-04"], canal: "Consulta del Product Owner en el colegio", sprint: 1, estado: "Programada", constancia: "Nota de la consulta en el grupo del equipo", plan: "PC-12" },
   { fecha: "2026-11-06", tipo: "Comunicado", asunto: "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)", emisor: "Dirección, por medio de los tutores; redacta el equipo", interesados: ["I-11", "I-05"], canal: "Mensaje de WhatsApp del tutor de cada aula", sprint: 1, estado: "Programada", constancia: "Texto del mensaje y confirmación de envío de cada tutor", plan: "PC-07" },
@@ -79,8 +79,9 @@ export const COMUNICACIONES = [
 // durante DIAS_PARA_CONFIRMAR días (tiempo para registrarla con su constancia); después cuenta como vencida.
 export const DIAS_PARA_CONFIRMAR = 7;
 const diasEntre = (desde, hasta) => Math.round((Date.parse(hasta) - Date.parse(desde)) / 86400000);
+// Una comunicación con fecha posterior al corte cuenta como programada en ese corte, aunque hoy ya esté realizada.
 export const estadoAl = (c, corte = CORTE) =>
-  c.estado === "Realizada" ? "Realizada" : c.fecha >= corte ? "Programada" : diasEntre(c.fecha, corte) <= DIAS_PARA_CONFIRMAR ? "Por confirmar" : "Vencida";
+  c.fecha > corte ? "Programada" : c.estado === "Realizada" ? "Realizada" : c.fecha >= corte ? "Programada" : diasEntre(c.fecha, corte) <= DIAS_PARA_CONFIRMAR ? "Por confirmar" : "Vencida";
 
 export function resumenComunicaciones(corte = CORTE) {
   const por = (e) => COMUNICACIONES.filter((c) => estadoAl(c, corte) === e);

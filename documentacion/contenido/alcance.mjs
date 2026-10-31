@@ -21,8 +21,14 @@ export const ALC01 = DOC({
   area: "Planificación",
   proceso: "Planificar la gestión del alcance",
   salida: "Plan de gestión del alcance y plan de gestión de los requisitos",
+  version: "1.1",
+  fecha: "31/10/2026",
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", "31/10/2026", "Se agrega el tablero de monitoreo y control del alcance (sección 7), con los umbrales de sus indicadores y el procedimiento cuando uno pasa a rojo.", P.director],
+  ],
   resumen:
-    "Explica cómo se define, se desglosa, se valida y se controla el alcance del proyecto, y cómo se registran, priorizan y siguen los requisitos.",
+    "Explica cómo se define, se desglosa, se valida y se controla el alcance del proyecto, y cómo se registran, priorizan y siguen los requisitos. Incluye el tablero con que se monitorea y controla el alcance cada semana.",
   secciones: [
     sec("1. Propósito y enfoque", [
       p(
@@ -115,6 +121,61 @@ export const ALC01 = DOC({
           ["Equipo de desarrollo", "Construye los entregables según los criterios de aceptación y la definición de terminado (ALC-03)."],
         ],
         { titulo: "Roles en la gestión del alcance" },
+      ),
+    ]),
+    sec("7. Tablero de monitoreo y control del alcance", [
+      p(
+        "El alcance se monitorea con un tablero que compara cada semana lo construido con la línea base del alcance (enunciado ALC-02, EDT y diccionario). Sirve para ver de un vistazo cuánto del producto existe, qué entregables están listos para aceptarse, si los requisitos siguen estables y si se está haciendo trabajo que no corresponde a un requisito ni a un cambio aprobado. Cuando un indicador sale de su umbral, se actúa con el procedimiento de esta sección.",
+      ),
+      h("Indicadores y umbrales"),
+      tabla(
+        ["Indicador", "Cómo se calcula", "Verde", "Amarillo", "Rojo"],
+        [22, 33, 15, 15, 15],
+        [
+          ["Avance del alcance", "Paquetes de trabajo terminados frente a los que el cronograma pide terminados a la fecha.", "Igual o más que el plan", "Un paquete menos", "Dos o más menos"],
+          ["Avance del producto", "Promedio del porcentaje de avance de los paquetes del producto (componentes 1.2 a 1.6), según el informe ALC-05.", "Igual o más que el plan", "Hasta 10 puntos menos", "Más de 10 puntos menos"],
+          ["Cobertura de trazabilidad", "Requisitos con casos de prueba entre el total de requisitos.", "100 %", "90 % a 99 %", "Menos de 90 %"],
+          ["Estabilidad de los requisitos", "Requisitos sin cambios aprobados en el sprint entre el total.", "90 % o más", "80 % a 89 %", "Menos de 80 %"],
+          ["Casos de prueba aprobados", "Casos aprobados del entregable que se valida entre sus casos.", "90 % o más", "75 % a 89 %", "Menos de 75 %"],
+          ["Requisitos aceptados", "Requisitos aceptados entre los comprometidos en el sprint (desde la revisión del Sprint 2).", "80 % o más", "60 % a 79 %", "Menos de 60 %"],
+          ["Aceptación a la primera", "Entregables aceptados sin observaciones entre los presentados.", "80 % o más", "60 % a 79 %", "Menos de 60 %"],
+          ["Cambios en evaluación", "Solicitudes de cambio del alcance sin decisión (GOB-10).", "Ninguna con más de un sprint", "Alguna por decidir en la próxima revisión", "Alguna con más de un sprint"],
+          ["Corrupción del alcance", "Trabajo realizado que no corresponde a un requisito ni a un cambio aprobado.", "Cero casos", "Un caso por revisar", "Un caso confirmado o más"],
+        ],
+        { titulo: "Indicadores del tablero", fuente: "Los seis primeros desarrollan las métricas de la sección 4; los umbrales de esta tabla rigen el color de cada indicador en el tablero." },
+      ),
+      h("Qué muestra el tablero"),
+      ol(
+        "**Indicadores.** Una tarjeta por indicador, con su valor, su meta y su color.",
+        "**Avance por la EDT.** Cada componente y paquete de trabajo con su estado y su porcentaje, y lo que cambió desde el corte anterior.",
+        "**Entregables en el tiempo.** Los nueve entregables (E-01 a E-09) en el sprint en que se aceptan, con su estado.",
+        "**Alcance del sprint en curso.** Lo que el procedimiento de validación (ALC-04) pide aceptar en la próxima revisión y su situación.",
+        "**Requisitos.** Los 20 requisitos con su estado (pendiente, en desarrollo, completado o bloqueado, según la sección 3).",
+        "**Control de cambios.** Las solicitudes de cambio por estado y las que esperan decisión.",
+        "**Alertas y trabajo fuera del alcance.** Lo que requiere una acción, con su responsable y su fecha, y los casos de posible corrupción del alcance.",
+      ),
+      h("Actualización y uso"),
+      tabla(
+        ["Aspecto", "Definición"],
+        [26, 74],
+        [
+          ["Fuentes", "Informe de avance del producto (ALC-05), matriz de trazabilidad y casos de prueba, registro de cambios (GOB-10) y procedimiento de validación (ALC-04). El tablero no tiene datos propios: lee los mismos datos que los documentos."],
+          ["Quién lo actualiza", `${R.carlos}, responsable del control de cambios, registra cada corte; ${R.jhostin}, director del proyecto, lo revisa.`],
+          ["Frecuencia", "Un corte cada semana, antes de la clase del sábado. Al cierre de cada sprint, el corte se emite como informe ALC-05."],
+          ["Dónde se consulta", `En el blog del proyecto (capítulo 07, después del proceso «Monitorear y controlar el alcance»): ${P.enlaces.blog}`],
+          ["Quién lo usa", "El equipo, cada semana; el Product Owner, en cada revisión del sprint; la patrocinadora y el docente asesor, al cierre de cada sprint."],
+          ["Herramienta", "Se construye dentro del blog, con los mismos datos de los documentos, para que no se desactualice. Una herramienta de inteligencia de negocios (Power BI o Looker Studio) obligaría a copiar los datos a otro lugar."],
+        ],
+        { titulo: "Cómo se actualiza y se usa el tablero" },
+      ),
+      h("Qué se hace cuando un indicador pasa a rojo"),
+      ol(
+        "**Detectar.** El corte semanal marca el indicador en rojo y lo lleva a la lista de alertas.",
+        "**Analizar la causa.** El director y el responsable del paquete revisan por qué se desvió el alcance.",
+        "**Decidir la respuesta.** Si se puede corregir sin tocar la línea base, se asigna una acción correctiva con responsable y fecha. Si hay que cambiar requisitos, entregables o la EDT, se presenta una solicitud de cambio.",
+        "**Aprobar.** El Product Owner aprueba las acciones dentro del sprint; la patrocinadora aprueba los cambios a la línea base, según el plan de cambios (GOB-10).",
+        "**Registrar.** La decisión queda en el registro de cambios y en el siguiente informe ALC-05.",
+        "**Verificar.** El corte siguiente comprueba que el indicador volvió a su umbral; si no, la alerta sigue abierta.",
       ),
     ]),
   ],

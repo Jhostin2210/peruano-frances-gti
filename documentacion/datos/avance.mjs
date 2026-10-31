@@ -1,7 +1,7 @@
 // Avance del producto al corte del informe ALC-05 N.º 2 (17/10/2026). Lo usan el ALC-05 y la sección
 // «Entregables» del blog, para que ambos digan lo mismo.
 
-import { PROYECTO as P } from "../proyecto.mjs";
+import { PROYECTO as P, R } from "../proyecto.mjs";
 
 // Estado de cada paquete al 17/10/2026, según el sistema publicado y su repositorio.
 // [estado, % de avance (null en los paquetes de gestión), qué existe, qué falta]
@@ -36,7 +36,7 @@ export const ENTREGABLES_AVANCE = {
   "E-01": {
     paquetes: ["1.2.1", "1.2.2"],
     estado: "En validación",
-    nota: "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2: seis de los ocho casos de prueba aprobados, uno aprobado en parte y uno en curso. Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
+    nota: "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Al 31/10/2026, siete de los ocho casos de prueba están aprobados; falta repetir la reconciliación en tres fechas (CP-03). Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
     evidencias: [
       { texto: "Pantalla «Datos» del sistema", url: `${sistema}/#/datos` },
       { texto: "Casos de prueba del Sprint 2", url: `${repo}/pruebas-sprint-2.md` },
@@ -65,7 +65,7 @@ export const ENTREGABLES_AVANCE = {
   "E-04": {
     paquetes: ["1.4.2.1", "1.4.2.2", "1.4.2.3"],
     estado: "En desarrollo",
-    nota: "La interfaz en línea tiene aulas, estudiantes, ficha y reportes en PDF. Faltan las pruebas con docentes.",
+    nota: "La interfaz en línea tiene aulas, estudiantes, ficha y reportes en PDF, y los docentes tutores le dieron su conformidad en el taller del 28/10/2026. Faltan las pruebas de uso con docentes (1.4.2.3).",
     evidencias: [
       { texto: "Pantalla «Aulas»", url: `${sistema}/#/aulas` },
       { texto: "Pantalla «Estudiantes»", url: `${sistema}/#/estudiantes` },
@@ -84,3 +84,79 @@ export const ENTREGABLES_AVANCE = {
   "E-08": { paquetes: ["1.5.4", "1.5.5"], estado: "No iniciado", nota: "Se elabora y se dicta en el Sprint 6.", evidencias: [], documentos: [] },
   "E-09": { paquetes: ["1.6.2"], estado: "No iniciado", nota: "El piloto con tres docentes tutores es en el Sprint 5 (marzo de 2027).", evidencias: [], documentos: [] },
 };
+
+// Casos de prueba del entregable en validación (E-01), como quedaron en el informe ALC-05 N.º 2.
+export const CASOS_E01 = {
+  "CP-01": "Aprobado",
+  "CP-02": "Aprobado",
+  "CP-03": "Aprobado en parte",
+  "CP-04": "Aprobado",
+  "CP-05": "En curso",
+  "CP-06": "Aprobado",
+  "CP-07": "Aprobado",
+  "CP-08": "Aprobado",
+};
+
+// Seguimiento semanal del alcance: alimenta el tablero de monitoreo y control del alcance (ALC-01, sección 7).
+// Cada corte registra solo lo que cambió respecto del anterior; el primero es el del informe ALC-05 N.º 2.
+// [estado, % de avance, qué existe, qué falta], igual que AVANCE.
+export const CORTES_ALCANCE = [
+  {
+    fecha: "2026-10-17",
+    fuente: "Informe ALC-05 N.º 2",
+    cambios: {},
+    casos: {},
+    hechos: ["Se presenta al docente asesor el primer entregable del producto (E-01) con el informe ALC-05 N.º 2."],
+    sprint: [],
+    alertas: [],
+    fueraDeAlcance: [],
+  },
+  {
+    fecha: "2026-10-31",
+    fuente: "Seguimiento semanal",
+    cambios: {
+      "1.2.1": [
+        "Cumplido en parte",
+        85,
+        "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
+        "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03).",
+      ],
+      "1.2.2": [
+        "Cumplido en parte",
+        95,
+        "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
+        "Cotejar las notas transcritas de fotografías.",
+      ],
+      "1.4.2.1": [
+        "Cumplido",
+        100,
+        "Interfaz en línea revisada con los docentes tutores en el taller del 28/10/2026, que dieron su conformidad.",
+        "Mantenerla al día con los ajustes de los sprints siguientes.",
+      ],
+    },
+    casos: { "CP-05": "Aprobado" },
+    hechos: [
+      "28/10: taller de validación con los docentes tutores, organizado por el Product Owner. Conformidad con las variables del modelo y con la interfaz.",
+      "El colegio entrega las exportaciones de notas de Cubicol de forma periódica, a través del Product Owner.",
+      "25/10: se completan 15 noches seguidas de validación de datos sin fallas (CP-05). Al 31/10 son 21.",
+    ],
+    // Alcance comprometido del sprint en curso (ALC-04, Sprint 1) y su situación.
+    sprint: [
+      { que: "Arquitectura del sistema", estado: "Lista para revisión", evidencia: "Documento de arquitectura en el repositorio del sistema; se revisa el 06/11/2026.", url: `${repo}/arquitectura.md` },
+      { que: "Lista de variables del modelo validada con docentes", estado: "Cumplido", evidencia: "Taller del 28/10/2026: los docentes tutores dieron su conformidad. Constancia: lista de asistencia y acuerdos." },
+    ],
+    alertas: [
+      { nivel: "Atención", texto: "Archivar la lista de asistencia y los acuerdos del taller del 28/10: son la evidencia para aceptar el alcance del Sprint 1.", responsable: R.helber, fecha: "06/11/2026" },
+      { nivel: "Atención", texto: "Decidir la solicitud SC-08 (rediseño de la validación del modelo) en la revisión del Sprint 1.", responsable: R.jhostin, fecha: "06/11/2026" },
+      { nivel: "Atención", texto: "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.", responsable: R.jadira, fecha: "04/12/2026" },
+      { nivel: "Seguimiento", texto: "SC-09 (canal de las alertas por correo) y SC-10 (unificación de la EDT) siguen en evaluación.", responsable: R.carlos, fecha: "Sprint 2" },
+    ],
+    fueraDeAlcance: [
+      {
+        texto: "Pantalla «Evaluar un caso»: evalúa a un estudiante con datos ingresados a mano. No figura en la matriz de requisitos.",
+        estado: "Por revisar",
+        accion: "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo.",
+      },
+    ],
+  },
+];
