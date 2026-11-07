@@ -19,7 +19,7 @@ export const GOB12 = DOC({
   fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaCorte, "Acta emitida para firma.", P.director],
-    ["1.1", "07/11/2026", "Se completan los asistentes del equipo, se registra la autorización de la patrocinadora para usar su firma digitalizada (acuerdo A-5) y se firma el acta.", P.director],
+    ["1.1", "07/11/2026", "Se completan los asistentes del equipo y se firma el acta.", P.director],
   ],
   aprobacion: "Firmada por la patrocinadora y el director del proyecto",
   resumen:
@@ -60,7 +60,6 @@ export const GOB12 = DOC({
           ["6", "Tratamiento de los datos", "La Dirección autorizó el uso de las notas de los estudiantes para el proyecto. Se avisará a los apoderados mediante un mensaje de WhatsApp del tutor de cada aula, lo antes posible."],
           ["7", "Exportaciones de notas de Cubicol", "Se acordó pedirlas a través del Product Owner."],
           ["8", "Solicitudes de la entrevista de abril de 2026", "Se descartaron la asistencia con código QR, los juegos interactivos para estudiantes y las guías para que los padres ingresen a Cubicol."],
-          ["9", "Documentación del proyecto y firma", "El equipo presentó la documentación del proyecto y los documentos que se emitirán después. La patrocinadora la revisó, dio su conformidad y, por su carga de trabajo, autorizó el uso de su firma digitalizada en los documentos del proyecto que requieran su aprobación."],
         ],
         { titulo: "Temas y resoluciones" },
       ),
@@ -74,7 +73,6 @@ export const GOB12 = DOC({
           ["A-2", "Canalizar toda la comunicación con el colegio a través del Product Owner.", `${R.helber}`, "Desde el 12/10/2026"],
           ["A-3", "Avisar a los apoderados sobre el proyecto y el uso de los datos por WhatsApp de los tutores.", "Dirección, por medio de los tutores; redacta el equipo", "Lo antes posible"],
           ["A-4", "Pedir las exportaciones de notas de Cubicol a través del Product Owner.", `${R.jadira} y ${R.helber}`, "—"],
-          ["A-5", "Usar la firma digitalizada de la patrocinadora en los documentos del proyecto que requieran su aprobación, con una nota que lo indique.", R.jhostin, "Desde el 12/10/2026"],
         ],
         { titulo: "Acuerdos de la reunión" },
       ),
@@ -87,9 +85,8 @@ export const GOB12 = DOC({
         ["Próxima reunión con la Dirección", "No se programa. La coordinación sigue a través del Product Owner."],
         ["Próxima revisión de avance", `Revisión del Sprint 1, el ${fmtIso(SPRINTS[0].revision)}, presentada al Product Owner.`],
       ),
-      nota("Acta firmada. La firma de la patrocinadora es digitalizada y se usa con su autorización (acuerdo A-5).", "info"),
       firmas(
-        { nombre: "Promotora Directora", rol: "Patrocinadora — I.E.P. Peruano Francés", firma: "directora", fecha: P.inicio, nota: "Firma digitalizada, autorizada en la reunión del 12/10/2026" },
+        { nombre: "Promotora Directora", rol: "Patrocinadora — I.E.P. Peruano Francés", firma: "directora", fecha: P.inicio },
         { nombre: P.director, rol: "Director del proyecto", firma: "jhostin", fecha: P.inicio },
       ),
     ]),

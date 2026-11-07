@@ -5409,11 +5409,6 @@ export const DOCUMENTOS: DocDef[] = [
         "8",
         "Solicitudes de la entrevista de abril de 2026",
         "Se descartaron la asistencia con código QR, los juegos interactivos para estudiantes y las guías para que los padres ingresen a Cubicol."
-       ],
-       [
-        "9",
-        "Documentación del proyecto y firma",
-        "El equipo presentó la documentación del proyecto y los documentos que se emitirán después. La patrocinadora la revisó, dio su conformidad y, por su carga de trabajo, autorizó el uso de su firma digitalizada en los documentos del proyecto que requieran su aprobación."
        ]
       ],
       "titulo": "Temas y resoluciones"
@@ -5466,12 +5461,6 @@ export const DOCUMENTOS: DocDef[] = [
         "Pedir las exportaciones de notas de Cubicol a través del Product Owner.",
         "Jadira Vasquez y Helber Perez",
         "—"
-       ],
-       [
-        "A-5",
-        "Usar la firma digitalizada de la patrocinadora en los documentos del proyecto que requieran su aprobación, con una nota que lo indique.",
-        "Jhostin Galarza",
-        "Desde el 12/10/2026"
        ]
       ],
       "titulo": "Acuerdos de la reunión"
@@ -5500,19 +5489,13 @@ export const DOCUMENTOS: DocDef[] = [
       ]
      },
      {
-      "t": "nota",
-      "tipo": "info",
-      "x": "Acta firmada. La firma de la patrocinadora es digitalizada y se usa con su autorización (acuerdo A-5)."
-     },
-     {
       "t": "firmas",
       "firmantes": [
        {
         "nombre": "Promotora Directora",
         "rol": "Patrocinadora — I.E.P. Peruano Francés",
         "firma": "directora",
-        "fecha": "12/10/2026",
-        "nota": "Firma digitalizada, autorizada en la reunión del 12/10/2026"
+        "fecha": "12/10/2026"
        },
        {
         "nombre": "Jhostin J. Galarza Camarena",
