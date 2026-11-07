@@ -13486,7 +13486,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Deja constancia de la aceptación de los entregables del Sprint 1 (análisis y diseño) en la revisión del sprint, según el procedimiento de validación del alcance (ALC-04).",
   "carpeta": "03 - Alcance/3.4 Validar el alcance",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1T3PgIWVC0eormz5T792ulzb-uxGjeNuQ/view",
   "secciones": [
    {
     "titulo": "1. Datos de la revisión",

@@ -30,6 +30,7 @@ const ARCHIVOS = {
   "ALC-03": "1RXk1r5n5JhTDOGN35ybWJgnHi50bpvRc",
   "ALC-04": "1LSWrbXPY2o7ChgUFdcmdPe__dA1xf6Ai",
   "ALC-05": "1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ",
+  "ALC-06": "1T3PgIWVC0eormz5T792ulzb-uxGjeNuQ", // subido el 07/11/2026
   "CRO-01": "1qtjLB_ofYWwJJDKiBJqYF5eWmoyd_PQM",
   "REC-01": "1r71Hlpg_NXEQUV4vVLHpBPlkZ6U-c_Ze", // subido el 07/11/2026
 };
