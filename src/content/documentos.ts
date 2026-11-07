@@ -18224,7 +18224,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Estima los recursos del equipo y los recursos físicos, tecnológicos, de datos e instalaciones que necesita cada actividad del cronograma, y los organiza en una estructura de desglose de recursos.",
   "carpeta": "05 - Recursos",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1r71Hlpg_NXEQUV4vVLHpBPlkZ6U-c_Ze/view",
   "secciones": [
    {
     "titulo": "1. Propósito y entradas",
