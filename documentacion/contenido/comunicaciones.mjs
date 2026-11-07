@@ -15,7 +15,7 @@ const cuando = (x) => x.cuando || fmtIso(x.fecha);
 const COLOR_ESTADO = { Realizada: "verde", Programada: "azul", "Por confirmar": "amarillo", Vencida: "rojo" };
 const estadoCelda = (x) => c(estadoAl(x), COLOR_ESTADO[estadoAl(x)], { bold: true, align: "center" });
 const nombreSprint = (n) => (n === 0 ? "Antes del inicio" : `Sprint ${n}`);
-// El plan (INT-03, versión 1.2) y el informe INT-07 N.º 2 se emitieron con corte al 17/10/2026; el registro (INT-06) sigue el corte vigente.
+// El informe INT-07 N.º 2 se emitió con corte al 17/10/2026; el plan (INT-03) y el registro (INT-06) siguen el corte vigente.
 const CORTE_INFORME = "2026-10-17";
 const R0 = resumenComunicaciones(CORTE_INFORME);
 const R6 = resumenComunicaciones();
@@ -34,12 +34,13 @@ export const INT03 = DOC({
   area: "Planificación",
   proceso: "Planificar la gestión de las comunicaciones",
   salida: "Plan de gestión de las comunicaciones",
-  version: "1.2",
-  fecha: P.fechaCorte,
+  version: "1.3",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaEmision, "Se agregan los requisitos de información, el calendario de comunicaciones, los formatos, los indicadores y el glosario.", P.director],
     ["1.2", P.fechaCorte, "Canal único con el colegio a través del Product Owner (SC-11), aviso a los apoderados por WhatsApp de los tutores y avances semanales los sábados.", P.director],
+    ["1.3", "07/11/2026", "El aviso a los apoderados se reprograma para el 20/11/2026 (fecha tentativa).", P.director],
   ],
   resumen:
     "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
@@ -96,12 +97,12 @@ export const INT03 = DOC({
     ),
     sec("4. Calendario de comunicaciones", [
       p(
-        `La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al ${fmtIso(CORTE_INFORME)}; el registro y el tablero del blog muestran su estado actualizado.`,
+        `La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al ${fmtIso(CORTE)}; el registro y el tablero del blog muestran su estado actualizado.`,
       ),
       tabla(
         ["Fecha", "Comunicación", "Destinatarios", "Responsable", "Sprint"],
         [16, 40, 20, 14, 10],
-        COMUNICACIONES.filter((x) => estadoAl(x, CORTE_INFORME) !== "Realizada").map((x) => [
+        COMUNICACIONES.filter((x) => estadoAl(x) !== "Realizada").map((x) => [
           cuando(x),
           x.asunto,
           x.interesados.join(", "),
@@ -226,7 +227,7 @@ export const INT06 = DOC({
     ["1.1", P.fechaCorte, "Reunión de inicio realizada, canal por el Product Owner, avances los sábados y aviso a los apoderados por WhatsApp de los tutores.", P.director],
   ["1.2", "19/10/2026", "Se registra la presentación del 17/10/2026 al docente asesor y sus observaciones.", P.director],
     ["1.3", "31/10/2026", "Se registran el pedido de las exportaciones de Cubicol y el taller de validación con los docentes tutores del 28/10/2026. Corte al 31/10/2026.", P.director],
-    ["1.4", "07/11/2026", "Se completa la asistencia al taller del 28/10/2026.", P.director],
+    ["1.4", "07/11/2026", "Se registran las comunicaciones del 24/10 al 06/11/2026, la asistencia al taller del 28/10 y la revisión del Sprint 1; el aviso a los apoderados se reprograma.", P.director],
   ],
   titulo: "Registro de comunicaciones",
   archivo: "INT-06 Registro de comunicaciones",

@@ -7288,7 +7288,7 @@ export const INCIDENTES = [
  }
 ];
 
-export const CORTE = "2026-10-31";
+export const CORTE = "2026-11-07";
 
 export const PLAN_COMUNICACIONES = [
  {
@@ -7561,8 +7561,8 @@ export const COMUNICACIONES = [
   ],
   "canal": "Clase y blog del proyecto",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Blog actualizado",
+  "estado": "Realizada",
+  "constancia": "Avance presentado en clase",
   "plan": "PC-06"
  },
  {
@@ -7594,8 +7594,8 @@ export const COMUNICACIONES = [
   ],
   "canal": "Clase y blog del proyecto",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Blog actualizado",
+  "estado": "Realizada",
+  "constancia": "Avance presentado en clase",
   "plan": "PC-06"
  },
  {
@@ -7610,29 +7610,12 @@ export const COMUNICACIONES = [
   ],
   "canal": "Consulta del Product Owner en el colegio",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Nota de la consulta en el grupo del equipo",
+  "estado": "Realizada",
+  "constancia": "El colegio registra las incidencias en papel con su formato «Reporte de incidencia escolar», que el Product Owner obtuvo: datos generales (fecha, hora, lugar y quién reporta), estudiantes involucrados con su grado y sección, tipo de incidencia (conductual, académica, salud o accidente, propiedad u otros), descripción de los hechos, acciones inmediatas, compromisos y seguimiento, y firmas del docente y del alumno. Para usarlas en el sistema hay que digitalizarlas; las académicas y las conductuales son las más relacionadas con el rendimiento",
   "plan": "PC-12"
  },
  {
   "id": "C-14",
-  "cuando": "",
-  "fecha": "2026-11-06",
-  "tipo": "Comunicado",
-  "asunto": "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)",
-  "emisor": "Dirección, por medio de los tutores; redacta el equipo",
-  "interesados": [
-   "I-11",
-   "I-05"
-  ],
-  "canal": "Mensaje de WhatsApp del tutor de cada aula",
-  "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Texto del mensaje y confirmación de envío de cada tutor",
-  "plan": "PC-07"
- },
- {
-  "id": "C-15",
   "cuando": "",
   "fecha": "2026-11-06",
   "tipo": "Revisión de sprint",
@@ -7645,9 +7628,26 @@ export const COMUNICACIONES = [
   ],
   "canal": "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
   "sprint": 1,
-  "estado": "Programada",
-  "constancia": "Acta de aceptación e informe de desempeño",
+  "estado": "Realizada",
+  "constancia": "Se aprobaron la arquitectura del sistema, la lista de variables del modelo y la solicitud SC-08",
   "plan": "PC-01 y PC-02"
+ },
+ {
+  "id": "C-15",
+  "cuando": "",
+  "fecha": "2026-11-20",
+  "tipo": "Comunicado",
+  "asunto": "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
+  "emisor": "Dirección, por medio de los tutores; redacta el equipo",
+  "interesados": [
+   "I-11",
+   "I-05"
+  ],
+  "canal": "Mensaje de WhatsApp del tutor de cada aula",
+  "sprint": 2,
+  "estado": "Programada",
+  "constancia": "Texto del mensaje y confirmación de envío de cada tutor",
+  "plan": "PC-07"
  },
  {
   "id": "C-16",

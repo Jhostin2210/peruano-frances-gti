@@ -8286,8 +8286,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Planificar la gestión de las comunicaciones",
   "salida": "Plan de gestión de las comunicaciones",
-  "version": "1.2",
-  "fecha": "17/10/2026",
+  "version": "1.3",
+  "fecha": "07/11/2026",
   "resumen": "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
   "drive": "https://drive.google.com/file/d/1z0R1F6IIdWfBQqQl-jj5WkgVUop6X6Fo/view",
@@ -8570,7 +8570,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 17/10/2026; el registro y el tablero del blog muestran su estado actualizado."
+      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 07/11/2026; el registro y el tablero del blog muestran su estado actualizado."
      },
      {
       "t": "tabla",
@@ -8590,72 +8590,12 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "20/10/2026",
-        "Pedido de las exportaciones de notas de Cubicol, a través del Product Owner",
-        "I-07, I-08",
-        "Jadira Vasquez y Helber Perez",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "24/10/2026",
-        "Avance semanal al docente asesor",
-        "I-13",
-        "Equipo del proyecto",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "28/10/2026",
-        "Taller de validación de las variables del modelo, organizado por el Product Owner",
-        "I-05, I-06",
-        "Helber Perez y Carlos Curo",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "31/10/2026",
-        "Avance semanal al docente asesor",
-        "I-13",
-        "Equipo del proyecto",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "03/11/2026",
-        "Consulta sobre el registro de incidencias, a través del Product Owner",
-        "I-04",
-        "Jadira Vasquez y Helber Perez",
-        {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "06/11/2026",
-        "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)",
+        "20/11/2026",
+        "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
         "I-11, I-05",
         "Dirección, por medio de los tutores; redacta el equipo",
         {
-         "x": "1",
-         "align": "center"
-        }
-       ],
-       [
-        "06/11/2026",
-        "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
-        "I-01, I-12, I-13",
-        "Equipo del proyecto",
-        {
-         "x": "1",
+         "x": "2",
          "align": "center"
         }
        ],
@@ -9268,6 +9208,24 @@ export const DOCUMENTOS: DocDef[] = [
         "El colegio entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner"
        ],
        [
+        "C-10",
+        "24/10/2026",
+        "Avance académico",
+        "Avance semanal al docente asesor",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Clase y blog del proyecto",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Avance presentado en clase"
+       ],
+       [
         "C-11",
         "28/10/2026",
         "Taller",
@@ -9285,9 +9243,65 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Asistieron los 16 docentes y la directora, que dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos"
+       ],
+       [
+        "C-12",
+        "31/10/2026",
+        "Avance académico",
+        "Avance semanal al docente asesor",
+        "Equipo del proyecto",
+        [
+         "I-13 Docente asesor del curso"
+        ],
+        "Clase y blog del proyecto",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Avance presentado en clase"
+       ],
+       [
+        "C-13",
+        "03/11/2026",
+        "Consulta",
+        "Consulta sobre el registro de incidencias, a través del Product Owner",
+        "Jadira Vasquez y Helber Perez",
+        [
+         "I-04 Jefa de Normas"
+        ],
+        "Consulta del Product Owner en el colegio",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "El colegio registra las incidencias en papel con su formato «Reporte de incidencia escolar», que el Product Owner obtuvo: datos generales (fecha, hora, lugar y quién reporta), estudiantes involucrados con su grado y sección, tipo de incidencia (conductual, académica, salud o accidente, propiedad u otros), descripción de los hechos, acciones inmediatas, compromisos y seguimiento, y firmas del docente y del alumno. Para usarlas en el sistema hay que digitalizarlas; las académicas y las conductuales son las más relacionadas con el rendimiento"
+       ],
+       [
+        "C-14",
+        "06/11/2026",
+        "Revisión de sprint",
+        "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
+        "Equipo del proyecto",
+        [
+         "I-01 Promotora Directora",
+         "I-12 Equipo del proyecto",
+         "I-13 Docente asesor del curso"
+        ],
+        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Se aprobaron la arquitectura del sistema, la lista de variables del modelo y la solicitud SC-08"
        ]
       ],
-      "titulo": "Comunicaciones realizadas al 31/10/2026",
+      "titulo": "Comunicaciones realizadas al 07/11/2026",
       "compacta": true
      },
      {
@@ -9325,101 +9339,7 @@ export const DOCUMENTOS: DocDef[] = [
        8,
        11
       ],
-      "filas": [
-       [
-        "C-10",
-        "24/10/2026",
-        "Avance académico",
-        "Avance semanal al docente asesor",
-        "Equipo del proyecto",
-        [
-         "I-13 Docente asesor del curso"
-        ],
-        "Clase y blog del proyecto",
-        {
-         "x": "Por confirmar",
-         "fill": "amarillo",
-         "bold": true,
-         "align": "center"
-        },
-        "Blog actualizado"
-       ],
-       [
-        "C-12",
-        "31/10/2026",
-        "Avance académico",
-        "Avance semanal al docente asesor",
-        "Equipo del proyecto",
-        [
-         "I-13 Docente asesor del curso"
-        ],
-        "Clase y blog del proyecto",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Blog actualizado"
-       ],
-       [
-        "C-13",
-        "03/11/2026",
-        "Consulta",
-        "Consulta sobre el registro de incidencias, a través del Product Owner",
-        "Jadira Vasquez y Helber Perez",
-        [
-         "I-04 Jefa de Normas"
-        ],
-        "Consulta del Product Owner en el colegio",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Nota de la consulta en el grupo del equipo"
-       ],
-       [
-        "C-14",
-        "06/11/2026",
-        "Comunicado",
-        "Aviso a los apoderados sobre el proyecto y el uso de los datos (fecha tentativa)",
-        "Dirección, por medio de los tutores; redacta el equipo",
-        [
-         "I-11 Padres de familia y apoderados",
-         "I-05 Docentes tutores y auxiliares"
-        ],
-        "Mensaje de WhatsApp del tutor de cada aula",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Texto del mensaje y confirmación de envío de cada tutor"
-       ],
-       [
-        "C-15",
-        "06/11/2026",
-        "Revisión de sprint",
-        "Revisión del Sprint 1 e informe de desempeño: arquitectura y variables del modelo",
-        "Equipo del proyecto",
-        [
-         "I-01 Promotora Directora",
-         "I-12 Equipo del proyecto",
-         "I-13 Docente asesor del curso"
-        ],
-        "Demostración al Product Owner; conformidad de la Dirección por su intermedio",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Acta de aceptación e informe de desempeño"
-       ]
-      ],
+      "filas": [],
       "titulo": "Sprint 1: del 12/10/2026 al 06/11/2026",
       "compacta": true
      }
@@ -9454,6 +9374,25 @@ export const DOCUMENTOS: DocDef[] = [
        11
       ],
       "filas": [
+       [
+        "C-15",
+        "20/11/2026",
+        "Comunicado",
+        "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
+        "Dirección, por medio de los tutores; redacta el equipo",
+        [
+         "I-11 Padres de familia y apoderados",
+         "I-05 Docentes tutores y auxiliares"
+        ],
+        "Mensaje de WhatsApp del tutor de cada aula",
+        {
+         "x": "Programada",
+         "fill": "azul",
+         "bold": true,
+         "align": "center"
+        },
+        "Texto del mensaje y confirmación de envío de cada tutor"
+       ],
        [
         "C-16",
         "04/12/2026",
@@ -9648,11 +9587,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Sprint 1",
         {
-         "x": "4",
-         "align": "center"
-        },
-        {
-         "x": "4",
+         "x": "8",
          "align": "center"
         },
         {
@@ -9660,7 +9595,11 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "9",
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "8",
          "align": "center",
          "bold": true
         }
@@ -9672,7 +9611,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         },
         {
@@ -9680,7 +9619,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center",
          "bold": true
         }
@@ -9772,13 +9711,13 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "10",
+         "x": "14",
          "fill": "gris",
          "align": "center",
          "bold": true
         },
         {
-         "x": "11",
+         "x": "8",
          "fill": "gris",
          "align": "center",
          "bold": true
@@ -9797,7 +9736,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ]
       ],
-      "titulo": "Comunicaciones por momento del proyecto, al 31/10/2026"
+      "titulo": "Comunicaciones por momento del proyecto, al 07/11/2026"
      }
     ]
    }
