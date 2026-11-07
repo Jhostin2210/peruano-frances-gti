@@ -349,7 +349,7 @@ export const GOB10 = DOC({
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Conformidad de la patrocinadora con SC-02 y SC-03 y nuevo cambio SC-11.", P.director],
-    ["1.2", "07/11/2026", "SC-08 aprobado en la revisión del Sprint 1; SC-10 propone la EDT versión 4.", P.director],
+    ["1.2", "07/11/2026", "SC-08 y SC-10 aprobados; la EDT pasa a la versión 4.", P.director],
   ],
   titulo: "Plan de gestión de cambios y registro de cambios",
   archivo: "GOB-10 Plan y registro de cambios",
@@ -433,10 +433,10 @@ export const GOB10 = DOC({
         [36, 22, 42],
         [
           ["Acta de constitución (GOB-02)", "SC-01, SC-02, SC-03", c("Emitida con los cambios incorporados", "verde")],
-          ["Enunciado del alcance (ALC-02)", "SC-03, SC-04", c("Versión 3 emitida", "verde")],
-          ["EDT y diccionario", "SC-01, SC-03, SC-10", c("Responsables y despliegue actualizados; unificación pendiente", "amarillo")],
-          ["Requisitos y matriz de trazabilidad", "SC-03, SC-08, SC-09", c("Requisitos de despliegue actualizados; SC-08 y SC-09 en evaluación", "amarillo")],
-          ["Línea base del cronograma (CRO-01)", "SC-01, SC-02, SC-03, SC-06", c("Versión 3 emitida", "verde")],
+          ["Enunciado del alcance (ALC-02)", "SC-03, SC-04, SC-08, SC-10", c("Versión 4 emitida", "verde")],
+          ["EDT y diccionario", "SC-01, SC-03, SC-10", c("EDT versión 4: unificada y enlazada con el cronograma", "verde")],
+          ["Requisitos y matriz de trazabilidad", "SC-03, SC-08, SC-09", c("SC-08 aprobado: falta actualizar el criterio de REQ-03 en la matriz; SC-09 en evaluación", "amarillo")],
+          ["Línea base del cronograma (CRO-01)", "SC-01, SC-02, SC-03, SC-06, SC-10", c("Versión 3.1 emitida", "verde")],
           ["Línea base de costos", "SC-02, SC-03", c("Pendiente: fechas y categoría de servicios", "rojo")],
           ["Análisis de alternativas (blog)", "SC-03", c("Nota de actualización publicada; reevaluación en GOB-05", "amarillo")],
           ["Prototipo", "SC-04, SC-08", c("Pendiente (Sprints 3 y 4)", "rojo")],

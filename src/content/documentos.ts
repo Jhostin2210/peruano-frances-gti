@@ -871,7 +871,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "EDT y diccionario de la EDT",
-        "Vigentes; por unificar.",
+        "Unificados en la EDT versión 4.",
         "SC-10"
        ],
        [
@@ -2179,8 +2179,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Integrar y alinear los planes del proyecto",
   "salida": "Plan para la dirección del proyecto",
-  "version": "1.0",
-  "fecha": "10/10/2026",
+  "version": "1.1",
+  "fecha": "07/11/2026",
   "resumen": "Reúne en un solo documento cómo se ejecuta, se controla y se cierra el proyecto: enfoque de desarrollo, planes que lo componen, líneas base, gobernanza, configuración y medición del desempeño.",
   "carpeta": "01 - Gobernanza/1.2 Integrar los planes",
   "drive": "https://drive.google.com/file/d/1-JZ8qVz3mV2Th8U1F1Wu9iH-kMVjb81X/view",
@@ -2432,7 +2432,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Alcance",
         "Enunciado del alcance (ALC-02), EDT de seis componentes y su diccionario.",
         "v3 (10/10/2026)",
-        "Enunciado actualizado con el despliegue en la nube. La EDT y su diccionario están por unificar (SC-10)."
+        "Enunciado actualizado con el despliegue en la nube. La EDT y su diccionario se unificaron en la EDT versión 4 (SC-10)."
        ],
        [
         "Cronograma",
@@ -4852,13 +4852,13 @@ export const DOCUMENTOS: DocDef[] = [
         "La declaración del alcance lista 18 paquetes de trabajo y el diccionario describe 20. Además, las actividades del cronograma usan la numeración anterior de la EDT y las del Sprint 1 (análisis y diseño) no tienen paquete propio.",
         "Línea base del alcance (EDT y diccionario) y cronograma: componente 1.0 «Análisis y diseño» con cuatro paquetes, cada actividad enlazada a su paquete y con su entregable.",
         {
-         "x": "En evaluación",
-         "fill": "amarillo",
+         "x": "Aprobado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "EDT versión 4 propuesta el 07/11/2026; la aprueba el Product Owner.",
-        "—"
+        "Aprobado por el Product Owner el 04/11/2026.",
+        "EDT versión 4 en el enunciado del alcance (ALC-02 v4.0) y en el cronograma (CRO-01 v3.1), el 07/11/2026."
        ],
        [
         "SC-11",
@@ -4917,9 +4917,9 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Enunciado del alcance (ALC-02)",
-        "SC-03, SC-04",
+        "SC-03, SC-04, SC-08, SC-10",
         {
-         "x": "Versión 3 emitida",
+         "x": "Versión 4 emitida",
          "fill": "verde"
         }
        ],
@@ -4927,23 +4927,23 @@ export const DOCUMENTOS: DocDef[] = [
         "EDT y diccionario",
         "SC-01, SC-03, SC-10",
         {
-         "x": "Responsables y despliegue actualizados; unificación pendiente",
-         "fill": "amarillo"
+         "x": "EDT versión 4: unificada y enlazada con el cronograma",
+         "fill": "verde"
         }
        ],
        [
         "Requisitos y matriz de trazabilidad",
         "SC-03, SC-08, SC-09",
         {
-         "x": "Requisitos de despliegue actualizados; SC-08 y SC-09 en evaluación",
+         "x": "SC-08 aprobado: falta actualizar el criterio de REQ-03 en la matriz; SC-09 en evaluación",
          "fill": "amarillo"
         }
        ],
        [
         "Línea base del cronograma (CRO-01)",
-        "SC-01, SC-02, SC-03, SC-06",
+        "SC-01, SC-02, SC-03, SC-06, SC-10",
         {
-         "x": "Versión 3 emitida",
+         "x": "Versión 3.1 emitida",
          "fill": "verde"
         }
        ],

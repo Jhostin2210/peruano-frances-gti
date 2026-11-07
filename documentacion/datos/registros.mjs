@@ -92,9 +92,10 @@ export const CAMBIOS = [
     titulo: "Unificación de la EDT y de su diccionario, y enlace con el cronograma (EDT versión 4)",
     origen: "La declaración del alcance lista 18 paquetes de trabajo y el diccionario describe 20. Además, las actividades del cronograma usan la numeración anterior de la EDT y las del Sprint 1 (análisis y diseño) no tienen paquete propio.",
     impacto: "Línea base del alcance (EDT y diccionario) y cronograma: componente 1.0 «Análisis y diseño» con cuatro paquetes, cada actividad enlazada a su paquete y con su entregable.",
-    estado: "En evaluación",
-    decision: "EDT versión 4 propuesta el 07/11/2026; la aprueba el Product Owner.",
-    aplicacion: "—",
+    estado: "Aprobado",
+    decidido: "2026-11-04",
+    decision: "Aprobado por el Product Owner el 04/11/2026.",
+    aplicacion: "EDT versión 4 en el enunciado del alcance (ALC-02 v4.0) y en el cronograma (CRO-01 v3.1), el 07/11/2026.",
   },
   {
     id: "SC-11",

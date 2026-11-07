@@ -177,16 +177,15 @@ export const CORTES_ALCANCE = [
     casos: {},
     requisitosCambiados: ["REQ-03"],
     hechos: [
+      "04/11: el Product Owner aprueba la EDT versión 4 (SC-10): componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete y su entregable. Se aplica el 07/11.",
       "06/11: revisión del Sprint 1 con el Product Owner. Se aprueban la arquitectura y la lista de variables del modelo: hito 1 cumplido.",
       "06/11: se aprueba sin cambios la solicitud SC-08 (validación del modelo); cambia el criterio de validación de REQ-03.",
-      "07/11: se propone la EDT versión 4 (SC-10): componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete y su entregable.",
     ],
     sprint: [
       { que: "Arquitectura del sistema", estado: "Cumplido", evidencia: "Aprobada en la revisión del Sprint 1 (06/11/2026).", url: `${repo}/arquitectura.md` },
       { que: "Lista de variables del modelo validada con docentes", estado: "Cumplido", evidencia: "Taller del 28/10/2026 y revisión del Sprint 1 (06/11/2026)." },
     ],
     alertas: [
-      { nivel: "Atención", texto: "Aprobar la EDT versión 4 (SC-10) con el Product Owner.", responsable: R.jhostin, fecha: "Sprint 2" },
       { nivel: "Atención", texto: "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.", responsable: R.jadira, fecha: "04/12/2026" },
       { nivel: "Seguimiento", texto: "SC-09 (canal de las alertas por correo) sigue en evaluación.", responsable: R.carlos, fecha: "Sprint 2" },
     ],

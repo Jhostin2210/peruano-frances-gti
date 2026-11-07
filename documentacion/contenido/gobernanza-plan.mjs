@@ -14,6 +14,12 @@ export const GOB04 = DOC({
   area: "Planificación",
   proceso: "Integrar y alinear los planes del proyecto",
   salida: "Plan para la dirección del proyecto",
+  version: "1.1",
+  fecha: "07/11/2026",
+  versiones: [
+    ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
+    ["1.1", "07/11/2026", "La línea base del alcance pasa a la EDT versión 4 (SC-10).", P.director],
+  ],
   resumen:
     "Reúne en un solo documento cómo se ejecuta, se controla y se cierra el proyecto: enfoque de desarrollo, planes que lo componen, líneas base, gobernanza, configuración y medición del desempeño.",
   secciones: [
@@ -79,7 +85,7 @@ export const GOB04 = DOC({
             "Alcance",
             "Enunciado del alcance (ALC-02), EDT de seis componentes y su diccionario.",
             "v3 (10/10/2026)",
-            "Enunciado actualizado con el despliegue en la nube. La EDT y su diccionario están por unificar (SC-10).",
+            "Enunciado actualizado con el despliegue en la nube. La EDT y su diccionario se unificaron en la EDT versión 4 (SC-10).",
           ],
           [
             "Cronograma",

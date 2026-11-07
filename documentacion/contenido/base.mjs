@@ -122,7 +122,7 @@ export function crearBASE01(documentos) {
             ["Documentación de requisitos V3", "Vigente: 20 requisitos.", "ALC-02 (cambios de la versión 3)"],
             ["Matriz de trazabilidad", "Vigente: 80 casos de prueba.", "ALC-03"],
             ["Declaración del alcance", "Reemplazada.", "ALC-02"],
-            ["EDT y diccionario de la EDT", "Vigentes; por unificar.", "SC-10"],
+            ["EDT y diccionario de la EDT", "Unificados en la EDT versión 4.", "SC-10"],
             ["Cronograma (6 sprints)", "Reemplazado.", "CRO-01"],
             ["Línea base de costos", "Montos vigentes; fechas por actualizar.", "SC-02"],
             ["Registro de interesados", "Reemplazado.", "INT-01"],
