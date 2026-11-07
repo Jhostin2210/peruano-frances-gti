@@ -19,7 +19,7 @@ export type Bloque =
   | { t: "tabla"; cols: string[]; anchos: number[]; filas: Celda[][]; titulo?: string; fuente?: string; compacta?: boolean }
   | { t: "nota"; tipo: string; x: string }
   | { t: "kv"; filas: string[][] }
-  | { t: "firmas"; firmantes: { nombre: string; rol: string }[] };
+  | { t: "firmas"; firmantes: { nombre: string; rol: string; firma?: string; fecha?: string; nota?: string }[] };
 
 export interface SeccionDef {
   titulo: string;

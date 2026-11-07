@@ -1845,18 +1845,22 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "nota",
       "tipo": "info",
-      "x": "Documento emitido para firma el 10/10/2026. Aprobado en la reunión de inicio del 12/10/2026 (GOB-12) y firmado en físico por la Promotora Directora y el director del proyecto. El original firmado queda en custodia del equipo."
+      "x": "Documento emitido para firma el 10/10/2026. Aprobado en la reunión de inicio del 12/10/2026 (GOB-12) y firmado en físico por la Promotora Directora y el director del proyecto. El original firmado queda en custodia del equipo; las firmas de esta página son su copia escaneada."
      },
      {
       "t": "firmas",
       "firmantes": [
        {
         "nombre": "Promotora Directora",
-        "rol": "Patrocinadora — I.E.P. Peruano Francés"
+        "rol": "Patrocinadora — I.E.P. Peruano Francés",
+        "firma": "directora",
+        "fecha": "12/10/2026"
        },
        {
         "nombre": "Jhostin J. Galarza Camarena",
-        "rol": "Director del proyecto"
+        "rol": "Director del proyecto",
+        "firma": "jhostin",
+        "fecha": "12/10/2026"
        }
       ]
      }
@@ -5274,8 +5278,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Iniciación",
   "proceso": "Iniciar el proyecto o fase",
   "salida": "Acta de reunión",
-  "version": "1.0",
-  "fecha": "17/10/2026",
+  "version": "1.1",
+  "fecha": "07/11/2026",
   "resumen": "Deja constancia de la reunión de inicio con la Dirección del colegio: la firma del acta de constitución, la conformidad con el calendario y con el alojamiento en la nube, la designación del Product Owner, el canal de comunicación con el colegio y el tratamiento de los datos.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
   "drive": "https://drive.google.com/file/d/1-fKkCdb72Xk3e0t6xDx93MtEv6CdJnQU/view",
@@ -5335,6 +5339,14 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Helber J. Perez Gutierrez",
         "Responsable del modelo de Machine Learning y docente de la institución"
+       ],
+       [
+        "Carlos A. Curo Ramos",
+        "Integrante del equipo del proyecto"
+       ],
+       [
+        "Jadira D. Vasquez Castro",
+        "Integrante del equipo del proyecto"
        ]
       ],
       "titulo": "Asistentes"
@@ -5397,6 +5409,11 @@ export const DOCUMENTOS: DocDef[] = [
         "8",
         "Solicitudes de la entrevista de abril de 2026",
         "Se descartaron la asistencia con código QR, los juegos interactivos para estudiantes y las guías para que los padres ingresen a Cubicol."
+       ],
+       [
+        "9",
+        "Documentación del proyecto y firma",
+        "El equipo presentó la documentación del proyecto y los documentos que se emitirán después. La patrocinadora la revisó, dio su conformidad y, por su carga de trabajo, autorizó el uso de su firma digitalizada en los documentos del proyecto que requieran su aprobación."
        ]
       ],
       "titulo": "Temas y resoluciones"
@@ -5449,6 +5466,12 @@ export const DOCUMENTOS: DocDef[] = [
         "Pedir las exportaciones de notas de Cubicol a través del Product Owner.",
         "Jadira Vasquez y Helber Perez",
         "—"
+       ],
+       [
+        "A-5",
+        "Usar la firma digitalizada de la patrocinadora en los documentos del proyecto que requieran su aprobación, con una nota que lo indique.",
+        "Jhostin Galarza",
+        "Desde el 12/10/2026"
        ]
       ],
       "titulo": "Acuerdos de la reunión"
@@ -5479,18 +5502,23 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "nota",
       "tipo": "info",
-      "x": "Acta emitida para firma el 17/10/2026."
+      "x": "Acta firmada. La firma de la patrocinadora es digitalizada y se usa con su autorización (acuerdo A-5)."
      },
      {
       "t": "firmas",
       "firmantes": [
        {
         "nombre": "Promotora Directora",
-        "rol": "Patrocinadora — I.E.P. Peruano Francés"
+        "rol": "Patrocinadora — I.E.P. Peruano Francés",
+        "firma": "directora",
+        "fecha": "12/10/2026",
+        "nota": "Firma digitalizada, autorizada en la reunión del 12/10/2026"
        },
        {
         "nombre": "Jhostin J. Galarza Camarena",
-        "rol": "Director del proyecto"
+        "rol": "Director del proyecto",
+        "firma": "jhostin",
+        "fecha": "12/10/2026"
        }
       ]
      }

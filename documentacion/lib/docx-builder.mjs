@@ -35,6 +35,15 @@ import { PROYECTO } from "../proyecto.mjs";
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const LOGO_UNI = fs.readFileSync(path.join(AQUI, "..", "assets", "untels.jpg"));
 const LOGO_COL = fs.readFileSync(path.join(AQUI, "..", "assets", "colegio.jpg"));
+// Firmas escaneadas: viven fuera del repositorio (que es público) y solo se usan en los Word.
+// Si la carpeta no existe, el bloque de firmas queda con la línea en blanco, como antes.
+const CARPETA_FIRMAS = path.resolve(AQUI, "../../../TRABAJOS GRUPALES - FORMULACION Y EVALUACION DE PROYECTOS TI/Proyecto - Colegio Peruano Frances - Archivos/Firmas (privado)");
+const FIRMAS = { directora: { archivo: "firma_directora.png", ancho: 150, alto: 54 }, jhostin: { archivo: "firma_jhostin.png", ancho: 42, alto: 51 } };
+const imagenFirma = (clave) => {
+  const def = FIRMAS[clave];
+  const ruta = def && path.join(CARPETA_FIRMAS, def.archivo);
+  return ruta && fs.existsSync(ruta) ? { ...def, data: fs.readFileSync(ruta) } : null;
+};
 
 const NAVY = "1F3864";
 const TEAL = "0D7377";
@@ -267,13 +276,25 @@ function firmasDocx(b, ancho) {
                 margins: { top: 0, bottom: 0, left: 180, right: 180 },
                 borders: SIN_BORDES,
                 children: [
-                  new Paragraph({ spacing: { before: 760, after: 0 }, children: [] }),
+                  ...(() => {
+                    const img = f.firma && imagenFirma(f.firma);
+                    if (!img) return [new Paragraph({ spacing: { before: 760, after: 0 }, children: [] })];
+                    // La imagen ocupa el espacio de la firma, apoyada sobre la línea.
+                    return [
+                      new Paragraph({
+                        alignment: AlignmentType.CENTER,
+                        spacing: { before: Math.max(0, 760 - img.alto * 15), after: 0 },
+                        children: [new ImageRun({ type: "png", data: img.data, transformation: { width: img.ancho, height: img.alto } })],
+                      }),
+                    ];
+                  })(),
                   centro(f.nombre, {
                     bold: true,
                     p: { border: { top: { style: BorderStyle.SINGLE, size: 6, color: "404040", space: 6 } } },
                   }),
                   centro(f.rol, { size: 17, color: GRIS }),
-                  centro("Fecha: ____ / ____ / ________", { size: 16, color: GRIS }),
+                  centro(f.fecha ? `Fecha: ${f.fecha}` : "Fecha: ____ / ____ / ________", { size: 16, color: GRIS }),
+                  ...(f.nota ? [centro(f.nota, { size: 14, color: GRIS })] : []),
                 ],
               }),
           ),

@@ -407,12 +407,12 @@ export const GOB02 = DOC({
         "Con su firma, la patrocinadora autoriza el inicio del proyecto y faculta al director del proyecto a utilizar los recursos descritos en este documento.",
       ),
       nota(
-        `Documento emitido para firma el ${P.fechaEmision}. Aprobado en la reunión de inicio del ${P.inicio} (GOB-12) y firmado en físico por la Promotora Directora y el director del proyecto. El original firmado queda en custodia del equipo.`,
+        `Documento emitido para firma el ${P.fechaEmision}. Aprobado en la reunión de inicio del ${P.inicio} (GOB-12) y firmado en físico por la Promotora Directora y el director del proyecto. El original firmado queda en custodia del equipo; las firmas de esta página son su copia escaneada.`,
         "info",
       ),
       firmas(
-        { nombre: "Promotora Directora", rol: "Patrocinadora — I.E.P. Peruano Francés" },
-        { nombre: P.director, rol: "Director del proyecto" },
+        { nombre: "Promotora Directora", rol: "Patrocinadora — I.E.P. Peruano Francés", firma: "directora", fecha: P.inicio },
+        { nombre: P.director, rol: "Director del proyecto", firma: "jhostin", fecha: P.inicio },
       ),
     ]),
   ],

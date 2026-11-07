@@ -144,9 +144,12 @@ export function BloqueView({ b }: { b: Bloque }) {
         <div className="grid sm:grid-cols-3 gap-6 mt-10 mb-4">
           {b.firmantes.map((f, i) => (
             <div key={i} className="text-center">
-              <div className="border-t border-slate-500 pt-2 mt-8">
+              {f.firma ? <p className="text-[11px] font-semibold text-emerald-700 mt-8">✓ Firmado</p> : null}
+              <div className={`border-t border-slate-500 pt-2 ${f.firma ? "mt-1" : "mt-8"}`}>
                 <p className="text-xs font-semibold text-slate-900">{f.nombre}</p>
                 <p className="text-[11px] text-slate-500">{f.rol}</p>
+                {f.fecha ? <p className="text-[11px] text-slate-500">Fecha: {f.fecha}</p> : null}
+                {f.nota ? <p className="text-[10px] text-slate-400 mt-0.5">{f.nota}</p> : null}
               </div>
             </div>
           ))}
