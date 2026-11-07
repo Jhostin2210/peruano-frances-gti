@@ -139,6 +139,17 @@ export function BloqueView({ b }: { b: Bloque }) {
           ))}
         </div>
       );
+    case "figura":
+      // Los diagramas del Word (generar-figuras.mjs) se copian también a public/figuras.
+      return (
+        <figure className="my-4">
+          <figcaption className="text-xs font-semibold text-[#1f3864] mb-1.5">{b.titulo}</figcaption>
+          <div className="overflow-x-auto border border-slate-200 rounded-lg bg-white">
+            <img src={`/figuras/${b.archivo}`} alt={b.titulo} loading="lazy" className="min-w-[760px] w-full h-auto" />
+          </div>
+          {b.fuente && <p className="text-[11px] text-slate-500 italic mt-1.5 leading-snug">{b.fuente}</p>}
+        </figure>
+      );
     case "firmas":
       return (
         <div className="grid sm:grid-cols-3 gap-6 mt-10 mb-4">

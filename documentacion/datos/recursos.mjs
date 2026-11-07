@@ -100,55 +100,50 @@ export function cocomo(avanceProducto) {
   };
 }
 
-// Recursos físicos, tecnológicos, de datos e instalaciones (requisitos de recursos no humanos).
+// Recursos físicos: equipos, software, servicios e instalaciones (requisitos de recursos no humanos), con las categorías de la RBS.
 export const RECURSOS_MATERIALES = [
-  { grupo: "Físicos", recurso: "Laptops del equipo", cantidad: "4 (una por integrante)", para: "Desarrollo, documentación y reuniones", costo: "Propias", cuando: "Todo el proyecto" },
-  { grupo: "Físicos", recurso: "Conexión a internet", cantidad: "4 hogares y la red del colegio", para: "Trabajo remoto, servicios en la nube y demostraciones", costo: "Propia y del colegio", cuando: "Todo el proyecto" },
-  { grupo: "Físicos", recurso: "Proyector o pantalla del colegio", cantidad: "1", para: "Taller con docentes, piloto y capacitación", costo: "Del colegio", cuando: "Sprints 1, 5 y 6" },
-  { grupo: "Tecnológicos", recurso: "Python, scikit-learn, FastAPI, React y Vite", cantidad: "—", para: "Construcción del sistema y del modelo", costo: "Software libre", cuando: "Sprints 2 a 6" },
-  { grupo: "Tecnológicos", recurso: "Vercel (página) y Render (API)", cantidad: "1 proyecto cada uno", para: "Publicar el sistema", costo: "Plan gratuito", cuando: "Desde el Sprint 2" },
-  { grupo: "Tecnológicos", recurso: "Base de datos gestionada en la nube", cantidad: "1", para: "Datos reales en producción", costo: "Plan gratuito", cuando: "Sprint 6" },
-  { grupo: "Tecnológicos", recurso: "GitHub y GitHub Actions", cantidad: "2 repositorios", para: "Código, versiones y validación nocturna de datos", costo: "Gratuito (repositorios públicos)", cuando: "Todo el proyecto" },
-  { grupo: "Tecnológicos", recurso: "Servicio de envío de correo", cantidad: "1", para: "Alertas al docente tutor (SC-09)", costo: "Plan gratuito", cuando: "Sprint 4" },
-  { grupo: "Tecnológicos", recurso: "Google Drive", cantidad: "1 carpeta compartida", para: "Documentos de gestión en Word", costo: "Gratuito", cuando: "Todo el proyecto" },
-  { grupo: "Tecnológicos", recurso: "MS Project", cantidad: "1 equipo con licencia", para: "Abrir y mantener el cronograma (archivo XML)", costo: "Licencia de estudiante o laboratorio de la universidad", cuando: "Al actualizar el cronograma" },
-  { grupo: "Datos", recurso: "Exportaciones de notas de Cubicol", cantidad: "Una por entrega, tres antes del 04/12/2026", para: "Integración y validación de datos (E-01)", costo: "Las entrega el colegio", cuando: "Sprints 2 y 3" },
-  { grupo: "Datos", recurso: "Base pública Student Performance (UCI)", cantidad: "1", para: "Entrenamiento del modelo de referencia", costo: "Libre", cuando: "Sprint 3" },
+  { grupo: "Equipos e infraestructura", recurso: "Laptops del equipo", cantidad: "4 (una por integrante)", para: "Desarrollo, documentación y reuniones", costo: "Propias", cuando: "Todo el proyecto" },
+  { grupo: "Equipos e infraestructura", recurso: "Conexión a internet", cantidad: "4 hogares y la red del colegio", para: "Trabajo remoto, servicios en la nube y demostraciones", costo: "Propia y del colegio", cuando: "Todo el proyecto" },
+  { grupo: "Equipos e infraestructura", recurso: "Proyector o pantalla del colegio", cantidad: "1", para: "Taller con docentes, piloto y capacitación", costo: "Del colegio", cuando: "Sprints 1, 5 y 6" },
+  { grupo: "Software y servicios", recurso: "Python, scikit-learn, FastAPI, React y Vite", cantidad: "—", para: "Construcción del sistema y del modelo", costo: "Software libre", cuando: "Sprints 2 a 6" },
+  { grupo: "Software y servicios", recurso: "Vercel (página) y Render (API)", cantidad: "1 proyecto cada uno", para: "Publicar el sistema", costo: "Plan gratuito", cuando: "Desde el Sprint 2" },
+  { grupo: "Software y servicios", recurso: "Base de datos gestionada en la nube", cantidad: "1", para: "Datos reales en producción", costo: "Plan gratuito", cuando: "Sprint 6" },
+  { grupo: "Software y servicios", recurso: "GitHub y GitHub Actions", cantidad: "2 repositorios", para: "Código, versiones y validación nocturna de datos", costo: "Gratuito (repositorios públicos)", cuando: "Todo el proyecto" },
+  { grupo: "Software y servicios", recurso: "Servicio de envío de correo", cantidad: "1", para: "Alertas al docente tutor (SC-09)", costo: "Plan gratuito", cuando: "Sprint 4" },
+  { grupo: "Software y servicios", recurso: "Google Drive", cantidad: "1 carpeta compartida", para: "Documentos de gestión en Word", costo: "Gratuito", cuando: "Todo el proyecto" },
+  { grupo: "Software y servicios", recurso: "MS Project", cantidad: "1 equipo con licencia", para: "Abrir y mantener el cronograma (archivo XML)", costo: "Licencia de estudiante o laboratorio de la universidad", cuando: "Al actualizar el cronograma" },
   { grupo: "Instalaciones", recurso: "Aula o laboratorio del colegio", cantidad: "1, dos horas", para: "Capacitación a tutores y coordinadores", costo: "Del colegio", cuando: "Sprint 6" },
 ];
 
-// Estructura de desglose de recursos (RBS).
+// Estructura de desglose de recursos (RBS): por categoría y tipo, como en el PMBOK (personal, equipos,
+// software y servicios, instalaciones). Las notas de Cubicol y la base pública no son recursos: son datos de
+// entrada del sistema y quedan como dependencia en el registro de supuestos (GOB-03).
 export const RBS = [
-  { id: "1", nombre: "Recursos humanos", hijos: [
-    { id: "1.1", nombre: "Equipo del proyecto", hijos: [
-      { id: "1.1.1", nombre: `${R.jhostin}: director del proyecto y Scrum Master` },
-      { id: "1.1.2", nombre: `${R.helber}: modelo de Machine Learning y Product Owner` },
-      { id: "1.1.3", nombre: `${R.jadira}: datos, alertas y despliegue` },
-      { id: "1.1.4", nombre: `${R.carlos}: tablero web y control de cambios` },
+  { id: "1", nombre: "Personal", hijos: [
+    { id: "1.1", nombre: "Equipo del proyecto", detalle: "4 estudiantes al 50 %", hijos: [
+      { id: "1.1.1", nombre: "Dirección del proyecto y Scrum Master", detalle: R.jhostin },
+      { id: "1.1.2", nombre: "Product Owner y modelo de Machine Learning", detalle: R.helber },
+      { id: "1.1.3", nombre: "Datos, alertas y despliegue", detalle: R.jadira },
+      { id: "1.1.4", nombre: "Tablero web y control de cambios", detalle: R.carlos },
     ] },
-    { id: "1.2", nombre: "Colegio", hijos: [
-      { id: "1.2.1", nombre: "Promotora Directora (patrocinadora)" },
+    { id: "1.2", nombre: "Personal del colegio", detalle: "Participación puntual", hijos: [
+      { id: "1.2.1", nombre: "Promotora Directora", detalle: "Patrocinadora" },
       { id: "1.2.2", nombre: "Coordinación académica" },
       { id: "1.2.3", nombre: "Docentes tutores" },
       { id: "1.2.4", nombre: "Gestora de Cubicol y encargado de TI" },
     ] },
   ] },
-  { id: "2", nombre: "Recursos tecnológicos", hijos: [
-    { id: "2.1", nombre: "Software libre de desarrollo y Machine Learning" },
-    { id: "2.2", nombre: "Servicios en la nube (página, API, base de datos y correo)" },
-    { id: "2.3", nombre: "Herramientas de gestión (GitHub, Google Drive y MS Project)" },
+  { id: "2", nombre: "Equipos e infraestructura", hijos: [
+    { id: "2.1", nombre: "Laptops del equipo", detalle: "4, propias" },
+    { id: "2.2", nombre: "Conexión a internet", detalle: "Hogares y red del colegio" },
+    { id: "2.3", nombre: "Proyector o pantalla del colegio", detalle: "1" },
   ] },
-  { id: "3", nombre: "Recursos físicos", hijos: [
-    { id: "3.1", nombre: "Laptops del equipo" },
-    { id: "3.2", nombre: "Conexión a internet" },
-    { id: "3.3", nombre: "Proyector o pantalla del colegio" },
+  { id: "3", nombre: "Software y servicios", hijos: [
+    { id: "3.1", nombre: "Software libre de desarrollo", detalle: "Python, scikit-learn, FastAPI, React y Vite" },
+    { id: "3.2", nombre: "Servicios en la nube", detalle: "Vercel, Render, base de datos y correo (planes gratuitos)" },
+    { id: "3.3", nombre: "Herramientas de gestión", detalle: "GitHub, Google Drive y MS Project" },
   ] },
-  { id: "4", nombre: "Datos", hijos: [
-    { id: "4.1", nombre: "Exportaciones de notas de Cubicol" },
-    { id: "4.2", nombre: "Base consolidada de notas del colegio" },
-    { id: "4.3", nombre: "Base pública Student Performance (UCI)" },
-  ] },
-  { id: "5", nombre: "Instalaciones", hijos: [{ id: "5.1", nombre: "Aula o laboratorio del colegio para el taller y la capacitación" }] },
+  { id: "4", nombre: "Instalaciones", hijos: [{ id: "4.1", nombre: "Aula o laboratorio del colegio", detalle: "Taller y capacitación" }] },
 ];
 
 // Herramientas y técnicas del proceso (guía de clase) y cómo se usó cada una.
@@ -162,7 +157,7 @@ export const HERRAMIENTAS = [
   ["Reuniones", "Sí", "Reunión de inicio con la Dirección (12/10/2026) y revisión del Sprint 1 con el Product Owner (06/11/2026)."],
   ["Recopilación de datos: entrevistas", "Sí", "Entrevista a la Dirección (abril de 2026) sobre el personal y los datos disponibles."],
   ["Inteligencia artificial", "Sí", "El equipo usó un asistente de IA para organizar y calcular las estimaciones a partir del cronograma; el equipo revisó cada resultado."],
-  ["Modelo de costos constructivos (COCOMO)", "Sí", "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 5)."],
+  ["Modelo de costos constructivos (COCOMO)", "Sí", "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 6)."],
   ["Análisis predictivo", "No", "No hay historial de proyectos del equipo para predecir recursos. El producto sí usa un modelo predictivo, pero para el riesgo académico."],
   ["Realidad virtual", "No", "No aporta a un proyecto de software de este tamaño."],
   ["Algoritmos genéticos", "No", "Con 45 actividades y 4 integrantes, la asignación se revisa a mano; no hace falta optimizarla con algoritmos."],

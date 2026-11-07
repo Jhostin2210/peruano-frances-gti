@@ -17,6 +17,8 @@ export const nota = (x, tipo = "info") => ({ t: "nota", tipo, x });
 export const kv = (...filas) => ({ t: "kv", filas });
 
 export const firmas = (...firmantes) => ({ t: "firmas", firmantes });
+// Imagen PNG de documentacion/assets (diagramas que genera generar-figuras.mjs), con título numerado «Figura N.».
+export const figura = (archivo, titulo, extra = {}) => ({ t: "figura", archivo, titulo, ...extra });
 
 // Celda con color de fondo: verde, amarillo, rojo, azul, gris, teal, naranja, morado, navy.
 export const c = (x, fill, extra = {}) => ({ x, fill, ...extra });

@@ -4,6 +4,7 @@
  * Lee documentacion/datos/recursos.mjs (RECURSOS_ESTIMACION), que calcula todo desde el cronograma.
  */
 
+import type { ReactNode } from "react";
 import { AlertTriangle, CheckCircle2, CircleMinus } from "lucide-react";
 import { RECURSOS_ESTIMACION as R, SPRINTS } from "../content/datos";
 
@@ -21,20 +22,88 @@ const tono = (h: number, cap: number) => {
   return "text-slate-400";
 };
 
-type Nodo = { id: string; nombre: string; hijos?: Nodo[] };
-function Rama({ nodo }: { nodo: Nodo; key?: string }) {
+type Nodo = { id: string; nombre: string; detalle?: string; hijos?: Nodo[] };
+const LINEA = "bg-slate-300";
+
+// Fila de hijos de un nodo, unidos por una línea horizontal entre sus centros (como la EDT).
+function Fila({ nodos, render }: { nodos: Nodo[]; render: (n: Nodo) => ReactNode }) {
   return (
-    <li className="mt-1">
-      <span className="font-mono text-[10px] text-slate-400 mr-1">{nodo.id}</span>
-      <span className="text-[12px] text-slate-700">{nodo.nombre}</span>
-      {nodo.hijos && (
-        <ul className="ml-4 border-l border-slate-200 pl-3">
-          {nodo.hijos.map((h) => (
-            <Rama key={h.id} nodo={h} />
-          ))}
-        </ul>
+    <div className="flex">
+      {nodos.map((n, i) => {
+        const tramo = nodos.length === 1 ? "" : i === 0 ? "left-1/2 right-0" : i === nodos.length - 1 ? "left-0 right-1/2" : "left-0 right-0";
+        return (
+          <div key={n.id} className="relative px-1.5 pt-4" style={{ flex: n.hijos?.some((h) => h.hijos?.length) ? n.hijos.length : 1 }}>
+            {tramo && <span className={`absolute top-0 h-0.5 ${tramo} ${LINEA}`} />}
+            <span className={`absolute top-0 left-1/2 h-4 w-0.5 -translate-x-1/2 ${LINEA}`} />
+            {render(n)}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Tipos de recurso del último nivel, en lista vertical bajo su categoría.
+function Hojas({ hijos }: { hijos: Nodo[] }) {
+  return (
+    <div className="mt-2 ml-3 flex flex-col gap-1.5">
+      {hijos.map((h, i) => (
+        <div key={h.id} className="relative ml-3 rounded-md border border-slate-200 bg-white px-2 py-1.5">
+          <span className={`absolute -left-[13px] -top-2 w-0.5 ${LINEA} ${i === hijos.length - 1 ? "h-[calc(50%+0.5rem)]" : "h-[calc(100%+0.5rem)]"}`} />
+          <span className={`absolute -left-[13px] top-1/2 h-0.5 w-3 ${LINEA}`} />
+          <p className="font-mono text-[9px] text-slate-400">{h.id}</p>
+          <p className="text-[11px] font-semibold text-slate-800 leading-tight">{h.nombre}</p>
+          {h.detalle && <p className="text-[10px] text-slate-500 leading-tight mt-0.5">{h.detalle}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Caja({ n, estilo }: { n: Nodo; estilo: string }) {
+  return (
+    <div className={`rounded-lg px-2 py-2 text-center ${estilo}`}>
+      <p className="font-mono text-[10px] opacity-75">{n.id}</p>
+      <p className="text-[12px] font-bold leading-tight">{n.nombre}</p>
+      {n.detalle && <p className="text-[10px] opacity-80 leading-tight mt-0.5">{n.detalle}</p>}
+    </div>
+  );
+}
+
+function ArbolRbs({ rbs }: { rbs: Nodo[] }) {
+  const categoria = (n: Nodo) => (
+    <div>
+      <Caja n={n} estilo="bg-[#0d7377] text-white" />
+      {n.hijos?.some((h) => h.hijos?.length) ? (
+        <div className="relative mt-3">
+          <span className={`absolute -top-3 left-1/2 h-3 w-0.5 -translate-x-1/2 ${LINEA}`} />
+          <Fila
+            nodos={n.hijos}
+            render={(g) => (
+              <div>
+                <Caja n={g} estilo="bg-teal-50 border border-teal-600 text-slate-900" />
+                {g.hijos && <Hojas hijos={g.hijos} />}
+              </div>
+            )}
+          />
+        </div>
+      ) : (
+        n.hijos && <Hojas hijos={n.hijos} />
       )}
-    </li>
+    </div>
+  );
+  return (
+    <div className="overflow-x-auto pb-2">
+      <div className="min-w-[860px]">
+        <div className="flex justify-center">
+          <div className="bg-[#1f3864] text-white rounded-xl px-8 py-2.5 text-center shadow-sm">
+            <p className="font-serif font-bold text-sm">SIA-T · Recursos del proyecto</p>
+          </div>
+        </div>
+        <div className={`mx-auto h-4 w-0.5 ${LINEA}`} />
+        <Fila nodos={rbs} render={categoria} />
+      </div>
+    </div>
   );
 }
 
@@ -123,12 +192,12 @@ export default function RecursosEstimacion() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-4 mt-4">
-          {/* Horas por paquete */}
+        {/* Horas por paquete */}
+        <div className="mt-4">
           <div className="bg-white border border-slate-200 rounded-2xl p-5">
             <h4 className="font-serif font-bold text-slate-900 text-sm">Horas del equipo por paquete de la EDT</h4>
             <p className="text-[11px] text-slate-500 mb-3">Suma ascendente de las actividades de cada paquete. Se indica cuándo participa personal del colegio.</p>
-            <div className="space-y-1.5">
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-1.5">
               {R.paquetes.map((p) => (
                 <div key={p.id} className="grid grid-cols-[minmax(0,12rem)_1fr_auto] items-center gap-2 text-[11px]" title={`${p.actividades} actividades`}>
                   <span className="text-slate-600 truncate">
@@ -144,32 +213,21 @@ export default function RecursosEstimacion() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* RBS */}
-          <div className="bg-white border border-slate-200 rounded-2xl p-5">
-            <h4 className="font-serif font-bold text-slate-900 text-sm">Estructura de desglose de recursos (RBS)</h4>
-            <p className="text-[11px] text-slate-500 mb-2">Los recursos del proyecto por categoría.</p>
-            <ul>
-              {(R.rbs as Nodo[]).map((n) => (
-                <li key={n.id} className="mt-2">
-                  <span className="font-mono text-[10px] text-slate-400 mr-1">{n.id}</span>
-                  <span className="text-[12px] font-bold text-slate-900">{n.nombre}</span>
-                  {n.hijos && (
-                    <ul className="ml-4 border-l border-slate-200 pl-3">
-                      {n.hijos.map((h) => (
-                        <Rama key={h.id} nodo={h} />
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* RBS */}
+        <div id="rec-rbs" className="bg-white border border-slate-200 rounded-2xl p-5 mt-4 scroll-mt-20">
+          <h4 className="font-serif font-bold text-slate-900 text-sm">Estructura de desglose de recursos (RBS)</h4>
+          <p className="text-[11px] text-slate-500 mb-4">
+            Los recursos del proyecto por categoría y tipo; el personal del equipo se agrupa por rol. Las notas de Cubicol y la base pública de UCI no son
+            recursos: son datos de entrada del sistema y quedan como dependencia en el registro de supuestos.
+          </p>
+          <ArbolRbs rbs={R.rbs as Nodo[]} />
         </div>
 
         {/* Recursos no humanos */}
         <div className="bg-white border border-slate-200 rounded-2xl p-5 mt-4">
-          <h4 className="font-serif font-bold text-slate-900 text-sm">Recursos físicos, tecnológicos, de datos e instalaciones</h4>
+          <h4 className="font-serif font-bold text-slate-900 text-sm">Recursos físicos: equipos, software, servicios e instalaciones</h4>
           <div className="overflow-x-auto mt-3">
             <table className="w-full min-w-[760px] text-xs">
               <thead>

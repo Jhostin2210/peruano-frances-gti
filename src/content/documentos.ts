@@ -18220,9 +18220,9 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Estimar los recursos",
   "salida": "Requisitos de recursos, base de las estimaciones y estructura de desglose de recursos",
-  "version": "1.0",
+  "version": "1.1",
   "fecha": "07/11/2026",
-  "resumen": "Estima los recursos del equipo y los recursos físicos, tecnológicos, de datos e instalaciones que necesita cada actividad del cronograma, y los organiza en una estructura de desglose de recursos.",
+  "resumen": "Estima el personal, los equipos, el software y servicios y las instalaciones que necesita cada actividad del cronograma, y los organiza en una estructura de desglose de recursos.",
   "carpeta": "05 - Recursos",
   "drive": "https://drive.google.com/file/d/1r71Hlpg_NXEQUV4vVLHpBPlkZ6U-c_Ze/view",
   "secciones": [
@@ -18902,7 +18902,7 @@ export const DOCUMENTOS: DocDef[] = [
     ]
    },
    {
-    "titulo": "4. Recursos físicos, tecnológicos, de datos e instalaciones",
+    "titulo": "4. Recursos físicos",
     "apaisada": false,
     "bloques": [
      {
@@ -18925,7 +18925,7 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Físicos",
+        "Equipos e infraestructura",
         "Laptops del equipo",
         "4 (una por integrante)",
         "Desarrollo, documentación y reuniones",
@@ -18933,7 +18933,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Físicos",
+        "Equipos e infraestructura",
         "Conexión a internet",
         "4 hogares y la red del colegio",
         "Trabajo remoto, servicios en la nube y demostraciones",
@@ -18941,7 +18941,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Físicos",
+        "Equipos e infraestructura",
         "Proyector o pantalla del colegio",
         "1",
         "Taller con docentes, piloto y capacitación",
@@ -18949,7 +18949,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprints 1, 5 y 6"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "Python, scikit-learn, FastAPI, React y Vite",
         "—",
         "Construcción del sistema y del modelo",
@@ -18957,7 +18957,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprints 2 a 6"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "Vercel (página) y Render (API)",
         "1 proyecto cada uno",
         "Publicar el sistema",
@@ -18965,7 +18965,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Desde el Sprint 2"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "Base de datos gestionada en la nube",
         "1",
         "Datos reales en producción",
@@ -18973,7 +18973,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprint 6"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "GitHub y GitHub Actions",
         "2 repositorios",
         "Código, versiones y validación nocturna de datos",
@@ -18981,7 +18981,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "Servicio de envío de correo",
         "1",
         "Alertas al docente tutor (SC-09)",
@@ -18989,7 +18989,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprint 4"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "Google Drive",
         "1 carpeta compartida",
         "Documentos de gestión en Word",
@@ -18997,28 +18997,12 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Tecnológicos",
+        "Software y servicios",
         "MS Project",
         "1 equipo con licencia",
         "Abrir y mantener el cronograma (archivo XML)",
         "Licencia de estudiante o laboratorio de la universidad",
         "Al actualizar el cronograma"
-       ],
-       [
-        "Datos",
-        "Exportaciones de notas de Cubicol",
-        "Una por entrega, tres antes del 04/12/2026",
-        "Integración y validación de datos (E-01)",
-        "Las entrega el colegio",
-        "Sprints 2 y 3"
-       ],
-       [
-        "Datos",
-        "Base pública Student Performance (UCI)",
-        "1",
-        "Entrenamiento del modelo de referencia",
-        "Libre",
-        "Sprint 3"
        ],
        [
         "Instalaciones",
@@ -19029,144 +19013,24 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprint 6"
        ]
       ],
-      "titulo": "Requisitos de recursos no humanos",
+      "titulo": "Requisitos de recursos físicos",
       "compacta": true
      }
     ]
    },
    {
     "titulo": "5. Estructura de desglose de recursos (RBS)",
-    "apaisada": false,
+    "apaisada": true,
     "bloques": [
      {
-      "t": "tabla",
-      "cols": [
-       "Código",
-       "Recurso"
-      ],
-      "anchos": [
-       16,
-       84
-      ],
-      "filas": [
-       [
-        "1",
-        {
-         "x": "Recursos humanos",
-         "bold": true
-        }
-       ],
-       [
-        "   1.1",
-        "Equipo del proyecto"
-       ],
-       [
-        "      1.1.1",
-        "Jhostin Galarza: director del proyecto y Scrum Master"
-       ],
-       [
-        "      1.1.2",
-        "Helber Perez: modelo de Machine Learning y Product Owner"
-       ],
-       [
-        "      1.1.3",
-        "Jadira Vasquez: datos, alertas y despliegue"
-       ],
-       [
-        "      1.1.4",
-        "Carlos Curo: tablero web y control de cambios"
-       ],
-       [
-        "   1.2",
-        "Colegio"
-       ],
-       [
-        "      1.2.1",
-        "Promotora Directora (patrocinadora)"
-       ],
-       [
-        "      1.2.2",
-        "Coordinación académica"
-       ],
-       [
-        "      1.2.3",
-        "Docentes tutores"
-       ],
-       [
-        "      1.2.4",
-        "Gestora de Cubicol y encargado de TI"
-       ],
-       [
-        "2",
-        {
-         "x": "Recursos tecnológicos",
-         "bold": true
-        }
-       ],
-       [
-        "   2.1",
-        "Software libre de desarrollo y Machine Learning"
-       ],
-       [
-        "   2.2",
-        "Servicios en la nube (página, API, base de datos y correo)"
-       ],
-       [
-        "   2.3",
-        "Herramientas de gestión (GitHub, Google Drive y MS Project)"
-       ],
-       [
-        "3",
-        {
-         "x": "Recursos físicos",
-         "bold": true
-        }
-       ],
-       [
-        "   3.1",
-        "Laptops del equipo"
-       ],
-       [
-        "   3.2",
-        "Conexión a internet"
-       ],
-       [
-        "   3.3",
-        "Proyector o pantalla del colegio"
-       ],
-       [
-        "4",
-        {
-         "x": "Datos",
-         "bold": true
-        }
-       ],
-       [
-        "   4.1",
-        "Exportaciones de notas de Cubicol"
-       ],
-       [
-        "   4.2",
-        "Base consolidada de notas del colegio"
-       ],
-       [
-        "   4.3",
-        "Base pública Student Performance (UCI)"
-       ],
-       [
-        "5",
-        {
-         "x": "Instalaciones",
-         "bold": true
-        }
-       ],
-       [
-        "   5.1",
-        "Aula o laboratorio del colegio para el taller y la capacitación"
-       ]
-      ],
+      "t": "p",
+      "x": "La RBS ordena los recursos del proyecto por categoría y tipo. El personal del equipo se agrupa por rol."
+     },
+     {
+      "t": "figura",
+      "archivo": "rbs.png",
       "titulo": "Estructura de desglose de recursos",
-      "compacta": true
+      "fuente": "Las notas exportadas de Cubicol y la base pública de UCI no son recursos: son datos de entrada del sistema y quedan como dependencia en el registro de supuestos (GOB-03)."
      }
     ]
    },
@@ -19184,7 +19048,8 @@ export const DOCUMENTOS: DocDef[] = [
        "Cada integrante dedica el 50 % de un día hábil de 8 horas a cada actividad que tiene a su cargo; si dos actividades se cruzan, sus horas se suman.",
        "La reunión diaria dura 15 minutos y la hace todo el equipo desde el Sprint 2.",
        "No se trabaja en feriados ni en el receso de febrero de 2027.",
-       "Los servicios en la nube se usan en sus planes gratuitos (SC-03)."
+       "Los servicios en la nube se usan en sus planes gratuitos (SC-03).",
+       "El colegio entrega a tiempo las exportaciones de notas de Cubicol (dependencia, no recurso del proyecto)."
       ]
      },
      {
@@ -19302,7 +19167,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center",
          "bold": true
         },
-        "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 5)."
+        "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 6)."
        ],
        [
         "Análisis predictivo",
@@ -19577,7 +19442,7 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "ul",
       "items": [
-       "**Registro de supuestos (GOB-03):** dedicación del 50 %, planes gratuitos en la nube y acceso a un equipo con licencia de MS Project.",
+       "**Registro de supuestos (GOB-03):** dedicación del 50 %, planes gratuitos en la nube, entrega de las exportaciones de Cubicol por el colegio y acceso a un equipo con licencia de MS Project.",
        "**Riesgos de recursos** (para el registro de riesgos, cuando se desarrolle ese dominio): sobreasignación en los Sprints 2, 3 y 5; disponibilidad de los docentes para el piloto; el plan gratuito de la API tarda en responder la primera vez.",
        "**Lecciones aprendidas (GOB-08):** estimar los recursos desde el cronograma mostró la sobrecarga antes de que ocurriera."
       ]

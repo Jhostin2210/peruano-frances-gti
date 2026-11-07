@@ -313,6 +313,33 @@ function firmasDocx(b, ancho) {
   ];
 }
 
+// Figura: la imagen ocupa el ancho útil (sin pasar de la altura máxima) y lleva su título encima, como las tablas.
+function figuraDocx(b, ancho, numero) {
+  const data = fs.readFileSync(path.join(AQUI, "..", "assets", b.archivo));
+  const [w, h] = [data.readUInt32BE(16), data.readUInt32BE(20)]; // cabecera IHDR del PNG
+  const maxAncho = ancho / 15; // DXA → píxeles a 96 ppp
+  const escala = Math.min(maxAncho / w, (b.altoMax ?? 560) / h);
+  return [
+    new Paragraph({
+      keepNext: true,
+      spacing: { before: 120, after: 80 },
+      children: [
+        new TextRun({ text: `Figura ${numero}. `, font: SANS, size: 18, bold: true, color: NAVY }),
+        new TextRun({ text: b.titulo, font: SANS, size: 18, color: NAVY }),
+      ],
+    }),
+    new Paragraph({
+      keepNext: Boolean(b.fuente),
+      alignment: AlignmentType.CENTER,
+      children: [new ImageRun({ type: "png", data, transformation: { width: Math.round(w * escala), height: Math.round(h * escala) } })],
+    }),
+    ...(b.fuente
+      ? [new Paragraph({ spacing: { before: 60, after: 0 }, children: [new TextRun({ text: b.fuente, font: SANS, size: 16, italics: true, color: GRIS })] })]
+      : []),
+    espacio(160),
+  ];
+}
+
 function bloqueDocx(b, ancho, estado) {
   switch (b.t) {
     case "p":
@@ -349,6 +376,8 @@ function bloqueDocx(b, ancho, estado) {
       return notaDocx(b, ancho);
     case "firmas":
       return firmasDocx(b, ancho);
+    case "figura":
+      return figuraDocx(b, ancho, ++estado.figuras);
     default:
       throw new Error(`Bloque desconocido: ${b.t}`);
   }
@@ -494,7 +523,7 @@ function controlDocumento(doc) {
       border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: TEAL, space: 4 } },
       children: [new TextRun({ text: texto, font: SANS, size: 28, bold: true, color: NAVY })],
     });
-  const estado = { tablas: 0, listas: 0 };
+  const estado = { tablas: 0, listas: 0, figuras: 0 };
   const versiones = doc.versiones ?? [[doc.version, doc.fecha, "Versión inicial del documento.", PROYECTO.director]];
   const ubicacion = [
     ["Dominio de desempeño", doc.dominio ?? "Transversal"],
@@ -579,7 +608,7 @@ const pagina = (apaisada) =>
     : { size: { width: A4.w, height: A4.h, orientation: PageOrientation.PORTRAIT }, margin: MARGEN_V };
 
 export async function construirDocx(doc, destino) {
-  const estado = { tablas: 0, listas: 0 };
+  const estado = { tablas: 0, listas: 0, figuras: 0 };
   // Agrupa las secciones seguidas con la misma orientación en una sola sección de Word.
   const grupos = [];
   for (const s of doc.secciones) {

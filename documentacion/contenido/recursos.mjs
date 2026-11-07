@@ -1,7 +1,7 @@
 // Dominio de Recursos · Planificación: estimación de los recursos de las actividades (REC-01).
 // Las cifras salen de datos/recursos.mjs, que las calcula desde el cronograma.
 
-import { c, h, nota, p, sec, tabla, ul } from "../lib/bloques.mjs";
+import { c, figura, h, nota, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P } from "../proyecto.mjs";
 import { SPRINTS, fmt } from "../datos/calendario.mjs";
 import {
@@ -10,7 +10,6 @@ import {
   HORAS_DAILY,
   HORAS_DIA,
   LINEAS_DE_CODIGO,
-  RBS,
   RECURSOS_MATERIALES,
   capacidadPorSprint,
   cocomo,
@@ -38,8 +37,6 @@ const total = equipo.reduce((s, t) => s + t.total, 0);
 const co = cocomo(AVANCE_PRODUCTO);
 const personaMes = total / 160;
 
-const filaRbs = (nodo, nivel = 0) => [[`${"   ".repeat(nivel)}${nodo.id}`, nivel === 0 ? c(nodo.nombre, undefined, { bold: true }) : nodo.nombre], ...(nodo.hijos ?? []).flatMap((x) => filaRbs(x, nivel + 1))];
-
 export const REC01 = DOC({
   id: "REC-01",
   titulo: "Estimación de los recursos de las actividades",
@@ -49,11 +46,14 @@ export const REC01 = DOC({
   area: "Planificación",
   proceso: "Estimar los recursos",
   salida: "Requisitos de recursos, base de las estimaciones y estructura de desglose de recursos",
-  version: "1.0",
+  version: "1.1",
   fecha: "07/11/2026",
-  versiones: [["1.0", "07/11/2026", "Versión inicial, con el cronograma v3.1 y la EDT versión 4.", P.director]],
+  versiones: [
+    ["1.0", "07/11/2026", "Versión inicial, con el cronograma v3.1 y la EDT versión 4.", P.director],
+    ["1.1", "07/11/2026", "Estructura de desglose de recursos en diagrama y por categorías de recurso; los datos de entrada pasan al registro de supuestos.", P.director],
+  ],
   resumen:
-    "Estima los recursos del equipo y los recursos físicos, tecnológicos, de datos e instalaciones que necesita cada actividad del cronograma, y los organiza en una estructura de desglose de recursos.",
+    "Estima el personal, los equipos, el software y servicios y las instalaciones que necesita cada actividad del cronograma, y los organiza en una estructura de desglose de recursos.",
   secciones: [
     sec("1. Propósito y entradas", [
       p(
@@ -108,17 +108,24 @@ export const REC01 = DOC({
         { titulo: "Actividades con personal del colegio", compacta: true, fuente: "Al taller de validación del 28/10/2026 asistieron los 16 docentes y la directora. La capacitación del Sprint 6 dura dos horas." },
       ),
     ]),
-    sec("4. Recursos físicos, tecnológicos, de datos e instalaciones", [
+    sec("4. Recursos físicos", [
       tabla(
         ["Tipo", "Recurso", "Cantidad", "Para qué", "Costo", "Cuándo"],
         [11, 22, 16, 22, 14, 15],
         RECURSOS_MATERIALES.map((x) => [x.grupo, x.recurso, x.cantidad, x.para, x.costo, x.cuando]),
-        { titulo: "Requisitos de recursos no humanos", compacta: true },
+        { titulo: "Requisitos de recursos físicos", compacta: true },
       ),
     ]),
-    sec("5. Estructura de desglose de recursos (RBS)", [
-      tabla(["Código", "Recurso"], [16, 84], RBS.flatMap((x) => filaRbs(x)), { titulo: "Estructura de desglose de recursos", compacta: true }),
-    ]),
+    sec(
+      "5. Estructura de desglose de recursos (RBS)",
+      [
+        p("La RBS ordena los recursos del proyecto por categoría y tipo. El personal del equipo se agrupa por rol."),
+        figura("rbs.png", "Estructura de desglose de recursos", {
+          fuente: "Las notas exportadas de Cubicol y la base pública de UCI no son recursos: son datos de entrada del sistema y quedan como dependencia en el registro de supuestos (GOB-03).",
+        }),
+      ],
+      { apaisada: true },
+    ),
     sec("6. Base de las estimaciones", [
       h("Supuestos"),
       ul(
@@ -126,6 +133,7 @@ export const REC01 = DOC({
         `La reunión diaria dura ${HORAS_DAILY * 60} minutos y la hace todo el equipo desde el Sprint 2.`,
         "No se trabaja en feriados ni en el receso de febrero de 2027.",
         "Los servicios en la nube se usan en sus planes gratuitos (SC-03).",
+        "El colegio entrega a tiempo las exportaciones de notas de Cubicol (dependencia, no recurso del proyecto).",
       ),
       h("Herramientas y técnicas"),
       tabla(
@@ -166,7 +174,7 @@ export const REC01 = DOC({
       ),
       h("Actualizaciones a otros documentos"),
       ul(
-        "**Registro de supuestos (GOB-03):** dedicación del 50 %, planes gratuitos en la nube y acceso a un equipo con licencia de MS Project.",
+        "**Registro de supuestos (GOB-03):** dedicación del 50 %, planes gratuitos en la nube, entrega de las exportaciones de Cubicol por el colegio y acceso a un equipo con licencia de MS Project.",
         "**Riesgos de recursos** (para el registro de riesgos, cuando se desarrolle ese dominio): sobreasignación en los Sprints 2, 3 y 5; disponibilidad de los docentes para el piloto; el plan gratuito de la API tarda en responder la primera vez.",
         "**Lecciones aprendidas (GOB-08):** estimar los recursos desde el cronograma mostró la sobrecarga antes de que ocurriera.",
       ),

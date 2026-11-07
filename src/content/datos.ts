@@ -2323,7 +2323,7 @@ export const RECURSOS_ESTIMACION = {
  ],
  "materiales": [
   {
-   "grupo": "Físicos",
+   "grupo": "Equipos e infraestructura",
    "recurso": "Laptops del equipo",
    "cantidad": "4 (una por integrante)",
    "para": "Desarrollo, documentación y reuniones",
@@ -2331,7 +2331,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Físicos",
+   "grupo": "Equipos e infraestructura",
    "recurso": "Conexión a internet",
    "cantidad": "4 hogares y la red del colegio",
    "para": "Trabajo remoto, servicios en la nube y demostraciones",
@@ -2339,7 +2339,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Físicos",
+   "grupo": "Equipos e infraestructura",
    "recurso": "Proyector o pantalla del colegio",
    "cantidad": "1",
    "para": "Taller con docentes, piloto y capacitación",
@@ -2347,7 +2347,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprints 1, 5 y 6"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "Python, scikit-learn, FastAPI, React y Vite",
    "cantidad": "—",
    "para": "Construcción del sistema y del modelo",
@@ -2355,7 +2355,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprints 2 a 6"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "Vercel (página) y Render (API)",
    "cantidad": "1 proyecto cada uno",
    "para": "Publicar el sistema",
@@ -2363,7 +2363,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Desde el Sprint 2"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "Base de datos gestionada en la nube",
    "cantidad": "1",
    "para": "Datos reales en producción",
@@ -2371,7 +2371,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprint 6"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "GitHub y GitHub Actions",
    "cantidad": "2 repositorios",
    "para": "Código, versiones y validación nocturna de datos",
@@ -2379,7 +2379,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "Servicio de envío de correo",
    "cantidad": "1",
    "para": "Alertas al docente tutor (SC-09)",
@@ -2387,7 +2387,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprint 4"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "Google Drive",
    "cantidad": "1 carpeta compartida",
    "para": "Documentos de gestión en Word",
@@ -2395,28 +2395,12 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Tecnológicos",
+   "grupo": "Software y servicios",
    "recurso": "MS Project",
    "cantidad": "1 equipo con licencia",
    "para": "Abrir y mantener el cronograma (archivo XML)",
    "costo": "Licencia de estudiante o laboratorio de la universidad",
    "cuando": "Al actualizar el cronograma"
-  },
-  {
-   "grupo": "Datos",
-   "recurso": "Exportaciones de notas de Cubicol",
-   "cantidad": "Una por entrega, tres antes del 04/12/2026",
-   "para": "Integración y validación de datos (E-01)",
-   "costo": "Las entrega el colegio",
-   "cuando": "Sprints 2 y 3"
-  },
-  {
-   "grupo": "Datos",
-   "recurso": "Base pública Student Performance (UCI)",
-   "cantidad": "1",
-   "para": "Entrenamiento del modelo de referencia",
-   "costo": "Libre",
-   "cuando": "Sprint 3"
   },
   {
    "grupo": "Instalaciones",
@@ -2430,37 +2414,44 @@ export const RECURSOS_ESTIMACION = {
  "rbs": [
   {
    "id": "1",
-   "nombre": "Recursos humanos",
+   "nombre": "Personal",
    "hijos": [
     {
      "id": "1.1",
      "nombre": "Equipo del proyecto",
+     "detalle": "4 estudiantes al 50 %",
      "hijos": [
       {
        "id": "1.1.1",
-       "nombre": "Jhostin Galarza: director del proyecto y Scrum Master"
+       "nombre": "Dirección del proyecto y Scrum Master",
+       "detalle": "Jhostin Galarza"
       },
       {
        "id": "1.1.2",
-       "nombre": "Helber Perez: modelo de Machine Learning y Product Owner"
+       "nombre": "Product Owner y modelo de Machine Learning",
+       "detalle": "Helber Perez"
       },
       {
        "id": "1.1.3",
-       "nombre": "Jadira Vasquez: datos, alertas y despliegue"
+       "nombre": "Datos, alertas y despliegue",
+       "detalle": "Jadira Vasquez"
       },
       {
        "id": "1.1.4",
-       "nombre": "Carlos Curo: tablero web y control de cambios"
+       "nombre": "Tablero web y control de cambios",
+       "detalle": "Carlos Curo"
       }
      ]
     },
     {
      "id": "1.2",
-     "nombre": "Colegio",
+     "nombre": "Personal del colegio",
+     "detalle": "Participación puntual",
      "hijos": [
       {
        "id": "1.2.1",
-       "nombre": "Promotora Directora (patrocinadora)"
+       "nombre": "Promotora Directora",
+       "detalle": "Patrocinadora"
       },
       {
        "id": "1.2.2",
@@ -2480,65 +2471,54 @@ export const RECURSOS_ESTIMACION = {
   },
   {
    "id": "2",
-   "nombre": "Recursos tecnológicos",
+   "nombre": "Equipos e infraestructura",
    "hijos": [
     {
      "id": "2.1",
-     "nombre": "Software libre de desarrollo y Machine Learning"
+     "nombre": "Laptops del equipo",
+     "detalle": "4, propias"
     },
     {
      "id": "2.2",
-     "nombre": "Servicios en la nube (página, API, base de datos y correo)"
+     "nombre": "Conexión a internet",
+     "detalle": "Hogares y red del colegio"
     },
     {
      "id": "2.3",
-     "nombre": "Herramientas de gestión (GitHub, Google Drive y MS Project)"
+     "nombre": "Proyector o pantalla del colegio",
+     "detalle": "1"
     }
    ]
   },
   {
    "id": "3",
-   "nombre": "Recursos físicos",
+   "nombre": "Software y servicios",
    "hijos": [
     {
      "id": "3.1",
-     "nombre": "Laptops del equipo"
+     "nombre": "Software libre de desarrollo",
+     "detalle": "Python, scikit-learn, FastAPI, React y Vite"
     },
     {
      "id": "3.2",
-     "nombre": "Conexión a internet"
+     "nombre": "Servicios en la nube",
+     "detalle": "Vercel, Render, base de datos y correo (planes gratuitos)"
     },
     {
      "id": "3.3",
-     "nombre": "Proyector o pantalla del colegio"
+     "nombre": "Herramientas de gestión",
+     "detalle": "GitHub, Google Drive y MS Project"
     }
    ]
   },
   {
    "id": "4",
-   "nombre": "Datos",
-   "hijos": [
-    {
-     "id": "4.1",
-     "nombre": "Exportaciones de notas de Cubicol"
-    },
-    {
-     "id": "4.2",
-     "nombre": "Base consolidada de notas del colegio"
-    },
-    {
-     "id": "4.3",
-     "nombre": "Base pública Student Performance (UCI)"
-    }
-   ]
-  },
-  {
-   "id": "5",
    "nombre": "Instalaciones",
    "hijos": [
     {
-     "id": "5.1",
-     "nombre": "Aula o laboratorio del colegio para el taller y la capacitación"
+     "id": "4.1",
+     "nombre": "Aula o laboratorio del colegio",
+     "detalle": "Taller y capacitación"
     }
    ]
   }
@@ -2592,7 +2572,7 @@ export const RECURSOS_ESTIMACION = {
   {
    "nombre": "Modelo de costos constructivos (COCOMO)",
    "uso": "Sí",
-   "como": "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 5)."
+   "como": "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 6)."
   },
   {
    "nombre": "Análisis predictivo",
