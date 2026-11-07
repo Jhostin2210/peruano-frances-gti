@@ -2032,6 +2032,603 @@ export const TAREAS_PROJECT = [
  }
 ];
 
+export const RECURSOS_ESTIMACION = {
+ "supuestos": {
+  "horasDia": 8,
+  "dedicacion": 0.5,
+  "horasDaily": 0.25
+ },
+ "equipo": [
+  {
+   "nombre": "Jhostin Galarza",
+   "porSprint": [
+    12,
+    37,
+    4,
+    17,
+    80.5,
+    53
+   ],
+   "actividades": 180,
+   "reunionDiaria": 23.5,
+   "total": 203.5
+  },
+  {
+   "nombre": "Helber Perez",
+   "porSprint": [
+    68,
+    21,
+    116,
+    5,
+    80.5,
+    53
+   ],
+   "actividades": 320,
+   "reunionDiaria": 23.5,
+   "total": 343.5
+  },
+  {
+   "nombre": "Jadira Vasquez",
+   "porSprint": [
+    52,
+    109,
+    16,
+    57,
+    96.5,
+    81
+   ],
+   "actividades": 388,
+   "reunionDiaria": 23.5,
+   "total": 411.5
+  },
+  {
+   "nombre": "Carlos Curo",
+   "porSprint": [
+    12,
+    53,
+    4,
+    61,
+    96.5,
+    65
+   ],
+   "actividades": 268,
+   "reunionDiaria": 23.5,
+   "total": 291.5
+  }
+ ],
+ "capacidad": [
+  80,
+  80,
+  64,
+  80,
+  72,
+  80
+ ],
+ "sobreasignaciones": [
+  {
+   "nombre": "Jhostin Galarza",
+   "sprint": 5,
+   "horas": 80.5,
+   "capacidad": 72
+  },
+  {
+   "nombre": "Helber Perez",
+   "sprint": 3,
+   "horas": 116,
+   "capacidad": 64
+  },
+  {
+   "nombre": "Helber Perez",
+   "sprint": 5,
+   "horas": 80.5,
+   "capacidad": 72
+  },
+  {
+   "nombre": "Jadira Vasquez",
+   "sprint": 2,
+   "horas": 109,
+   "capacidad": 80
+  },
+  {
+   "nombre": "Jadira Vasquez",
+   "sprint": 5,
+   "horas": 96.5,
+   "capacidad": 72
+  },
+  {
+   "nombre": "Jadira Vasquez",
+   "sprint": 6,
+   "horas": 81,
+   "capacidad": 80
+  },
+  {
+   "nombre": "Carlos Curo",
+   "sprint": 5,
+   "horas": 96.5,
+   "capacidad": 72
+  }
+ ],
+ "paquetes": [
+  {
+   "id": "1.0.1",
+   "nombre": "Levantamiento del alcance",
+   "actividades": 1,
+   "horas": 48,
+   "colegio": [
+    "Dirección del colegio"
+   ]
+  },
+  {
+   "id": "1.0.2",
+   "nombre": "Diagnóstico de los datos",
+   "actividades": 1,
+   "horas": 40,
+   "colegio": []
+  },
+  {
+   "id": "1.0.3",
+   "nombre": "Variables del modelo",
+   "actividades": 1,
+   "horas": 16,
+   "colegio": [
+    "Docentes tutores"
+   ]
+  },
+  {
+   "id": "1.0.4",
+   "nombre": "Arquitectura del sistema",
+   "actividades": 1,
+   "horas": 40,
+   "colegio": []
+  },
+  {
+   "id": "1.1.1",
+   "nombre": "Cronograma de hitos",
+   "actividades": 3,
+   "horas": 76,
+   "colegio": []
+  },
+  {
+   "id": "1.1.2",
+   "nombre": "Informes de avance",
+   "actividades": 1,
+   "horas": 4,
+   "colegio": []
+  },
+  {
+   "id": "1.2.1",
+   "nombre": "Integración de datos (ETL)",
+   "actividades": 4,
+   "horas": 80,
+   "colegio": []
+  },
+  {
+   "id": "1.2.2",
+   "nombre": "Calidad de datos",
+   "actividades": 2,
+   "horas": 40,
+   "colegio": []
+  },
+  {
+   "id": "1.3.1",
+   "nombre": "Entrenamiento del modelo",
+   "actividades": 4,
+   "horas": 60,
+   "colegio": []
+  },
+  {
+   "id": "1.3.2",
+   "nombre": "Clasificación de riesgo",
+   "actividades": 2,
+   "horas": 36,
+   "colegio": []
+  },
+  {
+   "id": "1.3.3",
+   "nombre": "Validación del modelo",
+   "actividades": 2,
+   "horas": 28,
+   "colegio": []
+  },
+  {
+   "id": "1.4.1",
+   "nombre": "Motor de alertas",
+   "actividades": 4,
+   "horas": 52,
+   "colegio": []
+  },
+  {
+   "id": "1.4.2.1",
+   "nombre": "Diseño de la interfaz",
+   "actividades": 1,
+   "horas": 12,
+   "colegio": []
+  },
+  {
+   "id": "1.4.2.2",
+   "nombre": "Desarrollo del tablero",
+   "actividades": 3,
+   "horas": 44,
+   "colegio": []
+  },
+  {
+   "id": "1.4.2.3",
+   "nombre": "Pruebas con usuarios",
+   "actividades": 1,
+   "horas": 80,
+   "colegio": [
+    "Docentes tutores"
+   ]
+  },
+  {
+   "id": "1.4.3",
+   "nombre": "Roles y accesos",
+   "actividades": 1,
+   "horas": 12,
+   "colegio": []
+  },
+  {
+   "id": "1.5.1",
+   "nombre": "Despliegue del sistema",
+   "actividades": 3,
+   "horas": 52,
+   "colegio": []
+  },
+  {
+   "id": "1.5.2",
+   "nombre": "Manual de usuario",
+   "actividades": 1,
+   "horas": 12,
+   "colegio": []
+  },
+  {
+   "id": "1.5.3",
+   "nombre": "Manual técnico",
+   "actividades": 1,
+   "horas": 12,
+   "colegio": []
+  },
+  {
+   "id": "1.5.4",
+   "nombre": "Plan de capacitación",
+   "actividades": 1,
+   "horas": 8,
+   "colegio": [
+    "Coordinación académica"
+   ]
+  },
+  {
+   "id": "1.5.5",
+   "nombre": "Capacitación y cierre",
+   "actividades": 2,
+   "horas": 68,
+   "colegio": []
+  },
+  {
+   "id": "1.6.1",
+   "nombre": "Pruebas de integración y rendimiento",
+   "actividades": 2,
+   "horas": 112,
+   "colegio": []
+  },
+  {
+   "id": "1.6.2",
+   "nombre": "Piloto y retroalimentación",
+   "actividades": 2,
+   "horas": 224,
+   "colegio": [
+    "Docentes tutores"
+   ]
+  }
+ ],
+ "materiales": [
+  {
+   "grupo": "Físicos",
+   "recurso": "Laptops del equipo",
+   "cantidad": "4 (una por integrante)",
+   "para": "Desarrollo, documentación y reuniones",
+   "costo": "Propias",
+   "cuando": "Todo el proyecto"
+  },
+  {
+   "grupo": "Físicos",
+   "recurso": "Conexión a internet",
+   "cantidad": "4 hogares y la red del colegio",
+   "para": "Trabajo remoto, servicios en la nube y demostraciones",
+   "costo": "Propia y del colegio",
+   "cuando": "Todo el proyecto"
+  },
+  {
+   "grupo": "Físicos",
+   "recurso": "Proyector o pantalla del colegio",
+   "cantidad": "1",
+   "para": "Taller con docentes, piloto y capacitación",
+   "costo": "Del colegio",
+   "cuando": "Sprints 1, 5 y 6"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "Python, scikit-learn, FastAPI, React y Vite",
+   "cantidad": "—",
+   "para": "Construcción del sistema y del modelo",
+   "costo": "Software libre",
+   "cuando": "Sprints 2 a 6"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "Vercel (página) y Render (API)",
+   "cantidad": "1 proyecto cada uno",
+   "para": "Publicar el sistema",
+   "costo": "Plan gratuito",
+   "cuando": "Desde el Sprint 2"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "Base de datos gestionada en la nube",
+   "cantidad": "1",
+   "para": "Datos reales en producción",
+   "costo": "Plan gratuito",
+   "cuando": "Sprint 6"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "GitHub y GitHub Actions",
+   "cantidad": "2 repositorios",
+   "para": "Código, versiones y validación nocturna de datos",
+   "costo": "Gratuito (repositorios públicos)",
+   "cuando": "Todo el proyecto"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "Servicio de envío de correo",
+   "cantidad": "1",
+   "para": "Alertas al docente tutor (SC-09)",
+   "costo": "Plan gratuito",
+   "cuando": "Sprint 4"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "Google Drive",
+   "cantidad": "1 carpeta compartida",
+   "para": "Documentos de gestión en Word",
+   "costo": "Gratuito",
+   "cuando": "Todo el proyecto"
+  },
+  {
+   "grupo": "Tecnológicos",
+   "recurso": "MS Project",
+   "cantidad": "1 equipo con licencia",
+   "para": "Abrir y mantener el cronograma (archivo XML)",
+   "costo": "Licencia de estudiante o laboratorio de la universidad",
+   "cuando": "Al actualizar el cronograma"
+  },
+  {
+   "grupo": "Datos",
+   "recurso": "Exportaciones de notas de Cubicol",
+   "cantidad": "Una por entrega, tres antes del 04/12/2026",
+   "para": "Integración y validación de datos (E-01)",
+   "costo": "Las entrega el colegio",
+   "cuando": "Sprints 2 y 3"
+  },
+  {
+   "grupo": "Datos",
+   "recurso": "Base pública Student Performance (UCI)",
+   "cantidad": "1",
+   "para": "Entrenamiento del modelo de referencia",
+   "costo": "Libre",
+   "cuando": "Sprint 3"
+  },
+  {
+   "grupo": "Instalaciones",
+   "recurso": "Aula o laboratorio del colegio",
+   "cantidad": "1, dos horas",
+   "para": "Capacitación a tutores y coordinadores",
+   "costo": "Del colegio",
+   "cuando": "Sprint 6"
+  }
+ ],
+ "rbs": [
+  {
+   "id": "1",
+   "nombre": "Recursos humanos",
+   "hijos": [
+    {
+     "id": "1.1",
+     "nombre": "Equipo del proyecto",
+     "hijos": [
+      {
+       "id": "1.1.1",
+       "nombre": "Jhostin Galarza: director del proyecto y Scrum Master"
+      },
+      {
+       "id": "1.1.2",
+       "nombre": "Helber Perez: modelo de Machine Learning y Product Owner"
+      },
+      {
+       "id": "1.1.3",
+       "nombre": "Jadira Vasquez: datos, alertas y despliegue"
+      },
+      {
+       "id": "1.1.4",
+       "nombre": "Carlos Curo: tablero web y control de cambios"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "nombre": "Colegio",
+     "hijos": [
+      {
+       "id": "1.2.1",
+       "nombre": "Promotora Directora (patrocinadora)"
+      },
+      {
+       "id": "1.2.2",
+       "nombre": "Coordinación académica"
+      },
+      {
+       "id": "1.2.3",
+       "nombre": "Docentes tutores"
+      },
+      {
+       "id": "1.2.4",
+       "nombre": "Gestora de Cubicol y encargado de TI"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "nombre": "Recursos tecnológicos",
+   "hijos": [
+    {
+     "id": "2.1",
+     "nombre": "Software libre de desarrollo y Machine Learning"
+    },
+    {
+     "id": "2.2",
+     "nombre": "Servicios en la nube (página, API, base de datos y correo)"
+    },
+    {
+     "id": "2.3",
+     "nombre": "Herramientas de gestión (GitHub, Google Drive y MS Project)"
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "nombre": "Recursos físicos",
+   "hijos": [
+    {
+     "id": "3.1",
+     "nombre": "Laptops del equipo"
+    },
+    {
+     "id": "3.2",
+     "nombre": "Conexión a internet"
+    },
+    {
+     "id": "3.3",
+     "nombre": "Proyector o pantalla del colegio"
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "nombre": "Datos",
+   "hijos": [
+    {
+     "id": "4.1",
+     "nombre": "Exportaciones de notas de Cubicol"
+    },
+    {
+     "id": "4.2",
+     "nombre": "Base consolidada de notas del colegio"
+    },
+    {
+     "id": "4.3",
+     "nombre": "Base pública Student Performance (UCI)"
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "nombre": "Instalaciones",
+   "hijos": [
+    {
+     "id": "5.1",
+     "nombre": "Aula o laboratorio del colegio para el taller y la capacitación"
+    }
+   ]
+  }
+ ],
+ "herramientas": [
+  {
+   "nombre": "Juicio de expertos",
+   "uso": "Sí",
+   "como": "Helber Perez, docente del colegio, validó qué participación de los docentes y de la coordinación es realista."
+  },
+  {
+   "nombre": "Estimación ascendente",
+   "uso": "Sí",
+   "como": "Las horas se calculan por actividad del cronograma y se suman por paquete de la EDT, por integrante y por sprint."
+  },
+  {
+   "nombre": "Estimación análoga",
+   "uso": "Sí",
+   "como": "Las duraciones PERT vienen del cronograma del curso anterior, que ya estimó estas mismas actividades."
+  },
+  {
+   "nombre": "Estimación paramétrica",
+   "uso": "Sí",
+   "como": "Reglas fijas: 8 horas por día hábil al 50 % de dedicación y 15 minutos por día de reunión diaria."
+  },
+  {
+   "nombre": "Análisis de alternativas",
+   "uso": "Sí",
+   "como": "Servidor en el colegio frente a servicios gratuitos en la nube; se eligió la nube (SC-03)."
+  },
+  {
+   "nombre": "Sistema de información para la dirección de proyectos",
+   "uso": "Sí",
+   "como": "El archivo de MS Project del cronograma tiene los 7 recursos y sus 82 asignaciones."
+  },
+  {
+   "nombre": "Reuniones",
+   "uso": "Sí",
+   "como": "Reunión de inicio con la Dirección (12/10/2026) y revisión del Sprint 1 con el Product Owner (06/11/2026)."
+  },
+  {
+   "nombre": "Recopilación de datos: entrevistas",
+   "uso": "Sí",
+   "como": "Entrevista a la Dirección (abril de 2026) sobre el personal y los datos disponibles."
+  },
+  {
+   "nombre": "Inteligencia artificial",
+   "uso": "Sí",
+   "como": "El equipo usó un asistente de IA para organizar y calcular las estimaciones a partir del cronograma; el equipo revisó cada resultado."
+  },
+  {
+   "nombre": "Modelo de costos constructivos (COCOMO)",
+   "uso": "Sí",
+   "como": "Se aplicó al tamaño del código del sistema como contraste del esfuerzo (sección 5)."
+  },
+  {
+   "nombre": "Análisis predictivo",
+   "uso": "No",
+   "como": "No hay historial de proyectos del equipo para predecir recursos. El producto sí usa un modelo predictivo, pero para el riesgo académico."
+  },
+  {
+   "nombre": "Realidad virtual",
+   "uso": "No",
+   "como": "No aporta a un proyecto de software de este tamaño."
+  },
+  {
+   "nombre": "Algoritmos genéticos",
+   "uso": "No",
+   "como": "Con 45 actividades y 4 integrantes, la asignación se revisa a mano; no hace falta optimizarla con algoritmos."
+  }
+ ],
+ "cocomo": {
+  "actual": {
+   "kloc": 4.2,
+   "esfuerzo": 10.8,
+   "duracion": 6.2
+  },
+  "previsto": {
+   "kloc": 9.9,
+   "esfuerzo": 26.7,
+   "duracion": 8.7
+  },
+  "lineas": {
+   "valor": 4204,
+   "fecha": "07/11/2026",
+   "detalle": "líneas no vacías del repositorio del sistema (Python, TypeScript, CSS, SQL y la tarea nocturna)"
+  }
+ }
+};
+
 export const GANTT_SEMANAS = [
  {
   "prefijo": "A-0.1.1",

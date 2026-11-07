@@ -10,6 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { FERIADOS, RECESO, SPRINTS, aFecha, aIso, diasHabiles, red } from "./datos/calendario.mjs";
+import { RECURSOS_PROJECT as RECURSOS, recursosDe } from "./datos/recursos.mjs";
 import { PROYECTO } from "./proyecto.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -23,20 +24,6 @@ const fin = (d) => `${aIso(d)}T17:00:00`;
 const horas = (h) => `PT${Math.round(h * 100) / 100}H0M0S`;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// Recursos: cada responsable de la tabla de actividades se separa por «+».
-const EQUIPO = ["Jhostin Galarza", "Helber Perez", "Jadira Vasquez", "Carlos Curo"];
-const RECURSOS = [
-  { nombre: "Jhostin Galarza", iniciales: "JG", grupo: "Equipo del proyecto" },
-  { nombre: "Helber Perez", iniciales: "HP", grupo: "Equipo del proyecto" },
-  { nombre: "Jadira Vasquez", iniciales: "JV", grupo: "Equipo del proyecto" },
-  { nombre: "Carlos Curo", iniciales: "CC", grupo: "Equipo del proyecto" },
-  { nombre: "Dirección del colegio", iniciales: "DIR", grupo: "Colegio" },
-  { nombre: "Coordinación académica", iniciales: "COO", grupo: "Colegio" },
-  { nombre: "Docentes tutores", iniciales: "DOC", grupo: "Colegio" },
-];
-const ALIAS = { "Dirección": "Dirección del colegio", docentes: "Docentes tutores", "Coordinación académica": "Coordinación académica" };
-const recursosDe = (responsable) =>
-  responsable.split("+").map((s) => s.trim()).flatMap((s) => (s === "Equipo del proyecto" ? EQUIPO : [ALIAS[s] ?? s]));
 // El equipo es de estudiantes a tiempo parcial: cada asignación es al 50 %. La reunión diaria (15 min) es el 3 %.
 const UNIDADES = 0.5;
 const UNIDADES_DAILY = 0.03;

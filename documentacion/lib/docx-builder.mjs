@@ -38,11 +38,19 @@ const LOGO_COL = fs.readFileSync(path.join(AQUI, "..", "assets", "colegio.jpg"))
 // Firmas escaneadas: viven fuera del repositorio (que es público) y solo se usan en los Word.
 // Si la carpeta no existe, el bloque de firmas queda con la línea en blanco, como antes.
 const CARPETA_FIRMAS = path.resolve(AQUI, "../../../TRABAJOS GRUPALES - FORMULACION Y EVALUACION DE PROYECTOS TI/Proyecto - Colegio Peruano Frances - Archivos/Firmas (privado)");
-const FIRMAS = { directora: { archivo: "firma_directora.png", ancho: 150, alto: 54 }, jhostin: { archivo: "firma_jhostin.png", ancho: 42, alto: 51 } };
+const FIRMAS = {
+  directora: { archivo: "firma_directora", ancho: 150, alto: 54 },
+  jhostin: { archivo: "firma_jhostin", ancho: 42, alto: 51 },
+  helber: { archivo: "firma_helber", ancho: 84, alto: 54 },
+};
 const imagenFirma = (clave) => {
   const def = FIRMAS[clave];
-  const ruta = def && path.join(CARPETA_FIRMAS, def.archivo);
-  return ruta && fs.existsSync(ruta) ? { ...def, data: fs.readFileSync(ruta) } : null;
+  if (!def) return null;
+  for (const ext of ["png", "jpg", "jpeg"]) {
+    const ruta = path.join(CARPETA_FIRMAS, `${def.archivo}.${ext}`);
+    if (fs.existsSync(ruta)) return { ...def, tipo: ext === "png" ? "png" : "jpg", data: fs.readFileSync(ruta) };
+  }
+  return null;
 };
 
 const NAVY = "1F3864";
@@ -284,7 +292,7 @@ function firmasDocx(b, ancho) {
                       new Paragraph({
                         alignment: AlignmentType.CENTER,
                         spacing: { before: Math.max(0, 760 - img.alto * 15), after: 0 },
-                        children: [new ImageRun({ type: "png", data: img.data, transformation: { width: img.ancho, height: img.alto } })],
+                        children: [new ImageRun({ type: img.tipo, data: img.data, transformation: { width: img.ancho, height: img.alto } })],
                       }),
                     ];
                   })(),

@@ -52,7 +52,7 @@ const CAMBIOS_GUIA = [
   ["Costos", "Dominio de Finanzas"],
 ];
 
-const CAPITULO_DE: Record<string, string> = { Gobernanza: "05", Interesados: "06", Alcance: "07", Cronograma: "08", Finanzas: "09" };
+const CAPITULO_DE: Record<string, string> = { Gobernanza: "05", Interesados: "06", Alcance: "07", Cronograma: "08", Recursos: "09", Finanzas: "10" };
 const COLOR_DOMINIO: Record<string, string> = {
   Desarrollado: "bg-emerald-100 text-emerald-800",
   "Desarrollado en parte": "bg-amber-100 text-amber-800",

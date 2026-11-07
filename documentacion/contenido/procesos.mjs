@@ -15,7 +15,7 @@ export const DOMINIOS = [
   { id: "cronograma", nombre: "Cronograma", procesos: 3, descripcion: "Programa el trabajo y controla los plazos.", estado: "Desarrollado" },
   { id: "finanzas", nombre: "Finanzas", procesos: 4, descripcion: "Estima los costos, arma el presupuesto y controla el gasto.", estado: "Curso anterior" },
   { id: "interesados", nombre: "Interesados", procesos: 7, descripcion: "Identifica a las personas afectadas, planifica su participación y las comunicaciones.", estado: "Desarrollado" },
-  { id: "recursos", nombre: "Recursos", procesos: 5, descripcion: "Planifica, obtiene y lidera al equipo y los recursos físicos.", estado: "Pendiente" },
+  { id: "recursos", nombre: "Recursos", procesos: 5, descripcion: "Planifica, obtiene y lidera al equipo y los recursos físicos.", estado: "Desarrollado en parte" },
   { id: "riesgo", nombre: "Riesgo", procesos: 6, descripcion: "Identifica, analiza y responde a la incertidumbre.", estado: "Pendiente" },
 ];
 
@@ -120,28 +120,28 @@ export const PROCESOS = [
     docs: ["ALC-02"],
   },
   {
-    id: "alc-4", dominio: "Alcance", area: PL, nombre: "Desarrollar la estructura del alcance", estado: "Curso anterior",
-    que: "Divide el trabajo en partes que se pueden estimar, asignar y controlar.",
-    entradas: ["Enunciado del alcance", "Documentación de requisitos"],
-    herramientas: ["Descomposición", "Juicio del equipo"],
-    salidas: ["Estructura de desglose del trabajo (EDT) de seis componentes", "Diccionario de la EDT"],
-    docs: [],
+    id: "alc-4", dominio: "Alcance", area: PL, nombre: "Desarrollar la estructura del alcance", estado: "Aplicado",
+    que: "Divide el trabajo en partes que se pueden estimar, asignar y controlar, y enlaza cada actividad del cronograma con su paquete.",
+    entradas: ["Plan de gestión del alcance", "Enunciado del alcance", "Documentación de requisitos", "Cambios aprobados (SC-10)"],
+    herramientas: ["Juicio de expertos", "Lluvia de ideas", "Descomposición"],
+    salidas: ["Línea base del alcance: enunciado, EDT versión 4 (7 componentes, 24 paquetes) y diccionario", "Paquetes de trabajo enlazados a las actividades del cronograma", "Product Backlog e historias de usuario: en el Sprint 2 (actividad A-1.1.1.2)"],
+    docs: ["ALC-02"],
   },
   {
     id: "alc-5", dominio: "Alcance", area: MC, nombre: "Monitorear y controlar el alcance", estado: "Aplicado",
     que: "Vigila que solo se haga el trabajo aprobado y que los entregables cumplan sus requisitos de calidad.",
     entradas: ["Línea base del alcance: EDT y diccionario", "Plan de gestión del alcance", "Plan de gestión de la calidad", "Prototipo del sistema"],
-    herramientas: ["Inspección del producto", "Pruebas del prototipo", "Análisis de variación frente a la EDT"],
-    salidas: ["Informe de avance del producto por EDT", "Entregables verificados y mediciones de calidad, desde el Sprint 2"],
+    herramientas: ["Análisis de variación frente a la línea base", "Análisis de tendencias (cortes semanales del tablero)", "Evaluaciones de desempeño", "Auditorías e inspecciones", "Pruebas y evaluaciones del producto", "Representación de datos (tablero)", "Automatización de procesos (validación nocturna)"],
+    salidas: ["Información de desempeño del trabajo (informe ALC-05 y tablero del alcance)", "Solicitudes de cambio", "Entregables verificados y mediciones de calidad, desde el Sprint 2"],
     docs: ["ALC-05"],
   },
   {
-    id: "alc-6", dominio: "Alcance", area: MC, nombre: "Validar el alcance", estado: "Planificado",
+    id: "alc-6", dominio: "Alcance", area: MC, nombre: "Validar el alcance", estado: "Aplicado",
     que: "Obtiene la aceptación formal de los entregables por parte del colegio.",
     entradas: ["Línea base del alcance", "Documentación de requisitos", "Entregables verificados"],
     herramientas: ["Inspección", "Reuniones de revisión del sprint", "Pruebas con el cliente"],
-    salidas: ["Procedimiento y formato de acta de aceptación", "Entregables aceptados, desde la revisión del Sprint 1"],
-    docs: ["ALC-04"],
+    salidas: ["Procedimiento y formato de acta de aceptación", "Entregables aceptados: arquitectura y variables del modelo (revisión del Sprint 1, 06/11/2026)"],
+    docs: ["ALC-04", "ALC-06"],
   },
 
   // ───────────── Cronograma ─────────────
@@ -237,7 +237,14 @@ export const PROCESOS = [
 
   // ───────────── Recursos ─────────────
   { id: "rec-1", dominio: "Recursos", area: PL, nombre: "Planificar la gestión de los recursos", estado: "Pendiente", docs: [] },
-  { id: "rec-2", dominio: "Recursos", area: PL, nombre: "Estimar los recursos", estado: "Pendiente", docs: [] },
+  {
+    id: "rec-2", dominio: "Recursos", area: PL, nombre: "Estimar los recursos", estado: "Aplicado",
+    que: "Estima el tipo, la cantidad y las características de los recursos del equipo y de los recursos físicos que necesita cada actividad.",
+    entradas: ["Plan de gestión del cronograma y línea base del alcance", "Atributos y lista de actividades", "Registro de supuestos", "Estimaciones de costos", "Calendarios de recursos", "Factores ambientales y activos de la organización"],
+    herramientas: ["Juicio de expertos", "Estimación ascendente, análoga y paramétrica", "Análisis de alternativas", "Sistema de información (MS Project)", "Reuniones y entrevistas", "Inteligencia artificial (asistente revisado por el equipo)", "Modelo de costos constructivos (COCOMO)"],
+    salidas: ["Requisitos de recursos", "Base de las estimaciones", "Estructura de desglose de recursos (RBS)", "Actualizaciones propuestas a supuestos, riesgos y lecciones aprendidas"],
+    docs: ["REC-01"],
+  },
   { id: "rec-3", dominio: "Recursos", area: E, nombre: "Adquirir recursos", estado: "Pendiente", docs: [] },
   { id: "rec-4", dominio: "Recursos", area: E, nombre: "Liderar al equipo", estado: "Pendiente", docs: [] },
   { id: "rec-5", dominio: "Recursos", area: MC, nombre: "Monitorear y controlar los recursos", estado: "Pendiente", docs: [] },

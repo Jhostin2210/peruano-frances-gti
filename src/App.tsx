@@ -27,6 +27,7 @@ import Entregables from "./components/Entregables";
 import TableroAlcance from "./components/TableroAlcance";
 import EdtProyecto from "./components/EdtProyecto";
 import EntregablesCronograma from "./components/EntregablesCronograma";
+import RecursosEstimacion from "./components/RecursosEstimacion";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -377,14 +378,39 @@ export default function App() {
             }}
           />
 
-          {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}
-
-          {/* CAPÍTULO 09 — DOMINIO DE FINANZAS */}
+          {/* CAPÍTULO 09 — DOMINIO DE RECURSOS */}
           <ChapterIntro
             num="09"
+            title="Dominio de Recursos"
+            subtitle="Planifica, estima, obtiene y lidera los recursos del equipo y los recursos físicos. En esta etapa se desarrolla la estimación de los recursos de las actividades."
+            subheading="Capítulo 09 · Dominio de desempeño · 5 procesos"
+            inputs={[
+              "Cronograma y línea base del alcance (EDT versión 4)",
+              "Lista y atributos de las actividades",
+              "Registro de supuestos y calendario del proyecto",
+            ]}
+            tools={[
+              "Estimación ascendente, análoga y paramétrica",
+              "Análisis de alternativas",
+              "MS Project y asistente de IA",
+              "Modelo de costos constructivos (COCOMO)",
+            ]}
+            outputs={[
+              "Requisitos de recursos",
+              "Base de las estimaciones",
+              "Estructura de desglose de recursos (RBS)",
+            ]}
+          />
+          <DominioPmbok dominio="Recursos" capitulo="09" despues={{ "rec-2": <RecursosEstimacion /> }} />
+
+          {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}
+
+          {/* CAPÍTULO 10 — DOMINIO DE FINANZAS */}
+          <ChapterIntro
+            num="10"
             title="Dominio de Finanzas: Línea Base de Costos"
             subtitle="Estimación de costos por categoría, línea base de costos y distribución en el tiempo. Elaborado en el curso anterior; pendiente de actualizar en esta etapa."
-            subheading="Capítulo 09 · Curso anterior · Pendiente de actualizar"
+            subheading="Capítulo 10 · Curso anterior · Pendiente de actualizar"
             inputs={[
               "Diccionario de la EDT",
               "Cronograma de seis sprints",
@@ -410,12 +436,12 @@ export default function App() {
           </AvisoEtapa>
           <CostBaseline />
 
-          {/* CAPÍTULO 10 — VIDEO DE PRESENTACIÓN */}
+          {/* CAPÍTULO 11 — VIDEO DE PRESENTACIÓN */}
           <ChapterIntro
-            num="10"
+            num="11"
             title="Video de Presentación de la Solución"
             subtitle="Sustentación en video de la propuesta SIA-T presentada en el curso anterior, con la demostración del prototipo."
-            subheading="Capítulo 10 · Curso anterior"
+            subheading="Capítulo 11 · Curso anterior"
           />
           <VideoPresentation />
 

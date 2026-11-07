@@ -341,6 +341,7 @@ const ANEXOS: Record<string, TocSection[]> = {
     { label: "↳ Planillas de requisitos", href: "#p05-planillas" },
   ],
   "alc-5": [{ label: "↳ Tablero de monitoreo del alcance", href: "#alc-tablero" }],
+  "rec-2": [{ label: "↳ Estimación de los recursos", href: "#rec-estimacion" }],
   "alc-4": [
     { label: "↳ Diagrama de la EDT", href: "#p05-diagrama-edt" },
     { label: "↳ Diccionario de la EDT", href: "#p05-diccionario" },
@@ -466,8 +467,9 @@ export const TOC_CHAPTERS: TocChapter[] = [
   { num: "06", label: "Dominio de Interesados", groups: gruposDeInteresados() },
   { num: "07", label: "Dominio de Alcance", groups: gruposDeDominio("Alcance") },
   { num: "08", label: "Dominio de Cronograma", groups: gruposDeDominio("Cronograma") },
+  { num: "09", label: "Dominio de Recursos", groups: gruposDeDominio("Recursos") },
   {
-    num: "09",
+    num: "10",
     label: "Dominio de Finanzas (curso anterior)",
     groups: [
       { label: "Planificación & Estimación", color: "text-blue-600", sections: [
@@ -485,7 +487,7 @@ export const TOC_CHAPTERS: TocChapter[] = [
     ],
   },
   {
-    num: "10",
+    num: "11",
     label: "Video de la Solución (curso anterior)",
     groups: [
       { label: "Solución SIA-T", color: "text-[#0d7377]", sections: [

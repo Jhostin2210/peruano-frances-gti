@@ -17,6 +17,7 @@ import { CAMBIOS, INCIDENTES } from "./datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, PAQUETES, REQUISITOS, TOTALES_ALCANCE } from "./datos/requisitos.mjs";
 import { ACTIVIDADES_REALIZADAS, AVANCE, CASOS_E01, CORTES_ALCANCE, ENTREGABLES_AVANCE } from "./datos/avance.mjs";
 import { DRIVE_CARPETA, enlaceDrive } from "./datos/drive.mjs";
+import { DEDICACION, HERRAMIENTAS, HORAS_DAILY, HORAS_DIA, LINEAS_DE_CODIGO, RBS, RECURSOS_MATERIALES, capacidadPorSprint, cocomo, horasDelEquipo, horasPorPaquete, sobreasignaciones } from "./datos/recursos.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
 import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
 
@@ -189,6 +190,17 @@ const datos = {
   TOTALES,
   ACTIVIDADES: actividades,
   TAREAS_PROJECT: tareasProject(),
+  RECURSOS_ESTIMACION: {
+    supuestos: { horasDia: HORAS_DIA, dedicacion: DEDICACION, horasDaily: HORAS_DAILY },
+    equipo: horasDelEquipo(),
+    capacidad: capacidadPorSprint(),
+    sobreasignaciones: sobreasignaciones(),
+    paquetes: horasPorPaquete(),
+    materiales: RECURSOS_MATERIALES,
+    rbs: RBS,
+    herramientas: HERRAMIENTAS.map(([nombre, uso, como]) => ({ nombre, uso, como })),
+    cocomo: { ...cocomo(42.4), lineas: LINEAS_DE_CODIGO },
+  },
   GANTT_SEMANAS: ganttPorSemanas(),
   RED: red().map((n) => ({ id: n.id, tipo: n.tipo, sprint: n.sprint, descripcion: n.descripcion, responsable: n.responsable ?? "", paquete: n.paquete ?? "", te: n.te ?? 0, critica: Boolean(n.isCritical), dias: n.dias, inicio: aIso(n.inicio), fin: aIso(n.fin), preds: n.preds })),
   NIVELES,
