@@ -224,6 +224,7 @@ const datos = {
     tuckman: GR.TUCKMAN,
     logros: GR.LOGROS_S1,
     autoevaluacion: GR.AUTOEVALUACION,
+    autoevaluacionS1: GR.AUTOEVALUACION_S1,
     reconocimiento: GR.RECONOCIMIENTO,
     control: GR.CONTROL_FISICOS,
     desviaciones: GR.DESVIACIONES,

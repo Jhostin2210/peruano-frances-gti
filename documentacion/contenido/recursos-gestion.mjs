@@ -7,6 +7,7 @@ import { CAMBIOS } from "../datos/registros.mjs";
 import {
   ASIGNACIONES_FISICAS,
   AUTOEVALUACION,
+  AUTOEVALUACION_S1,
   COMPROBACION,
   CONTROL_FISICOS,
   COSTO_BENEFICIO,
@@ -174,7 +175,7 @@ export const REC03 = DOC({
   area: "Planificación",
   proceso: "Planificar la gestión de los recursos",
   salida: "Acta de constitución del equipo",
-  versiones: inicial("Versión para la revisión del equipo."),
+  versiones: inicial("Versión inicial, acordada por el equipo el 07/11/2026."),
   aprobacion: "Acordada por el equipo del proyecto",
   resumen: "Establece los valores, las pautas de comunicación, la forma de decidir y de resolver conflictos, las reglas de las reuniones y los acuerdos de trabajo del equipo.",
   secciones: [
@@ -244,7 +245,7 @@ export const REC03 = DOC({
         "Respetar el horario de clase del sábado: no se programa trabajo del proyecto.",
         "Anotar las horas trabajadas una vez por semana (acción de la retrospectiva del Sprint 1).",
       ),
-      kv(["Acordada por", EQUIPO.join(", ")], ["Fecha", "Por confirmar en la revisión del equipo"]),
+      kv(["Acordada por", EQUIPO.join(", ")], ["Fecha de conformidad", "07/11/2026"]),
     ]),
   ],
 });
@@ -343,7 +344,7 @@ export const REC05 = DOC({
   proceso: "Liderar al equipo",
   salida: "Evaluaciones del desempeño del equipo",
   versiones: inicial("Evaluación del Sprint 1 y retrospectiva del 06/11/2026."),
-  resumen: "Evalúa el desempeño del equipo en el Sprint 1 con indicadores tomados de los registros del proyecto y deja la retrospectiva, la etapa del equipo y el formato de autoevaluación para los siguientes sprints.",
+  resumen: "Evalúa el desempeño del equipo en el Sprint 1 con indicadores tomados de los registros del proyecto, la retrospectiva, la etapa del equipo y la autoevaluación de cada integrante.",
   secciones: [
     sec("1. Datos de la evaluación", [
       kv(["Sprint", "1 · Análisis y diseño (12/10/2026 al 06/11/2026)"], ["Revisión y retrospectiva", RETROSPECTIVA_S1.fecha], ["Evalúa", `${R.jhostin}, Scrum Master`], ["Fuente", "Registros del proyecto: actas, comunicaciones, cambios e incidentes"]),
@@ -373,13 +374,24 @@ export const REC05 = DOC({
     sec("5. Logros y reconocimiento", [
       tabla(["Integrante", "Logro del Sprint 1"], [26, 74], LOGROS_S1.map((x) => [x.persona, x.logro]), { titulo: "Logros a reconocer en el acta de la revisión" }),
     ]),
-    sec("6. Formato de autoevaluación (desde el Sprint 2)", [
+    sec("6. Autoevaluación del Sprint 1", [
       tabla(
-        ["Afirmación (1 = nunca, 5 = siempre)", ...EQUIPO.map((x) => x.split(" ")[0])],
-        [44, 14, 14, 14, 14],
-        AUTOEVALUACION.map((x) => [x, "", "", "", ""]),
-        { titulo: "Autoevaluación individual del sprint", compacta: true, fuente: "Cada integrante la llena al final del sprint; el promedio se comenta en la retrospectiva." },
+        ["Afirmación (1 = nunca, 5 = siempre)", ...EQUIPO.map((x) => x.split(" ")[0]), "Promedio"],
+        [36, 12, 12, 12, 12, 16],
+        [
+          ...AUTOEVALUACION.map((x, i) => {
+            const v = EQUIPO.map((p) => AUTOEVALUACION_S1.puntajes[p][i]);
+            return [x, ...v.map((n) => centro(n)), centro(n1(v.reduce((s, n) => s + n, 0) / v.length), "gris", { bold: true })];
+          }),
+          [
+            c("Promedio", "gris", { bold: true }),
+            ...EQUIPO.map((p) => centro(n1(AUTOEVALUACION_S1.puntajes[p].reduce((s, n) => s + n, 0) / 5), "gris", { bold: true })),
+            centro(n1(Object.values(AUTOEVALUACION_S1.puntajes).flat().reduce((s, n) => s + n, 0) / 20), "verde", { bold: true }),
+          ],
+        ],
+        { titulo: "Autoevaluación individual del Sprint 1 (07/11/2026)", compacta: true, fuente: "Cada integrante se calificó el 07/11/2026. Desde el Sprint 2 se repite al final de cada sprint y el promedio se comenta en la retrospectiva." },
       ),
+      p("El punto más bajo del equipo es «Aprendí algo nuevo que aplico en el proyecto» (4,0): en el Sprint 2 conviene compartir en la reunión diaria lo que cada uno aprende de datos y de modelos."),
       ul("**Lecciones aprendidas (GOB-08, próxima versión):** pedir los datos al cliente con fecha de entrega comprometida y seguirlos cada semana; registrar las horas desde el primer sprint."),
     ]),
   ],

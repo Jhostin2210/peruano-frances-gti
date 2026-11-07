@@ -308,6 +308,15 @@ export const TUCKMAN = {
   evidencia: "Los roles están definidos (Product Owner desde el 12/10/2026), hay acuerdos de trabajo y el equipo cumplió su primer hito. Aún no se mide la productividad real (no hay registro de horas), por eso no se considera en la etapa de desempeño.",
 };
 
+// Autoevaluación del Sprint 1, llenada por cada integrante el 07/11/2026 (escala de 1 a 5, en el orden de AUTOEVALUACION).
+export const AUTOEVALUACION_S1 = {
+  fecha: "07/11/2026",
+  puntajes: { [R.jhostin]: [5, 5, 5, 5, 4], [R.helber]: [5, 5, 5, 5, 4], [R.jadira]: [4, 4, 4, 5, 4], [R.carlos]: [4, 4, 4, 5, 4] },
+};
+const promedio = (xs) => Math.round((xs.reduce((s, x) => s + x, 0) / xs.length) * 10) / 10;
+export const promedioAutoevaluacion = () => promedio(Object.values(AUTOEVALUACION_S1.puntajes).flat());
+INDICADORES_S1.push({ indicador: "Autoevaluación promedio del equipo", meta: "4 o más (de 5)", resultado: `${String(promedioAutoevaluacion()).replace(".", ",")} de 5 (07/11/2026)`, ok: promedioAutoevaluacion() >= 4 });
+
 export const AUTOEVALUACION = [
   "Cumplí los compromisos que asumí en el sprint.",
   "Avisé a tiempo los impedimentos.",

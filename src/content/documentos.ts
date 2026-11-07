@@ -21258,8 +21258,8 @@ export const DOCUMENTOS: DocDef[] = [
         "Jhostin Galarza, Helber Perez, Jadira Vasquez, Carlos Curo"
        ],
        [
-        "Fecha",
-        "Por confirmar en la revisión del equipo"
+        "Fecha de conformidad",
+        "07/11/2026"
        ]
       ]
      }
@@ -21957,7 +21957,7 @@ export const DOCUMENTOS: DocDef[] = [
   "salida": "Evaluaciones del desempeño del equipo",
   "version": "1.0",
   "fecha": "07/11/2026",
-  "resumen": "Evalúa el desempeño del equipo en el Sprint 1 con indicadores tomados de los registros del proyecto y deja la retrospectiva, la etapa del equipo y el formato de autoevaluación para los siguientes sprints.",
+  "resumen": "Evalúa el desempeño del equipo en el Sprint 1 con indicadores tomados de los registros del proyecto, la retrospectiva, la etapa del equipo y la autoevaluación de cada integrante.",
   "carpeta": "05 - Recursos",
   "drive": null,
   "secciones": [
@@ -22077,6 +22077,17 @@ export const DOCUMENTOS: DocDef[] = [
         "Integrantes que dejaron el equipo",
         "Ninguno",
         "Ninguno (supuesto S-10 vigente)",
+        {
+         "x": "Cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Autoevaluación promedio del equipo",
+        "4 o más (de 5)",
+        "4,5 de 5 (07/11/2026)",
         {
          "x": "Cumple",
          "fill": "verde",
@@ -22256,7 +22267,7 @@ export const DOCUMENTOS: DocDef[] = [
     ]
    },
    {
-    "titulo": "6. Formato de autoevaluación (desde el Sprint 2)",
+    "titulo": "6. Autoevaluación del Sprint 1",
     "apaisada": false,
     "bloques": [
      {
@@ -22266,55 +22277,188 @@ export const DOCUMENTOS: DocDef[] = [
        "Jhostin",
        "Helber",
        "Jadira",
-       "Carlos"
+       "Carlos",
+       "Promedio"
       ],
       "anchos": [
-       44,
-       14,
-       14,
-       14,
-       14
+       36,
+       12,
+       12,
+       12,
+       12,
+       16
       ],
       "filas": [
        [
         "Cumplí los compromisos que asumí en el sprint.",
-        "",
-        "",
-        "",
-        ""
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4,5",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
        ],
        [
         "Avisé a tiempo los impedimentos.",
-        "",
-        "",
-        "",
-        ""
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4,5",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
        ],
        [
         "Colaboré con el trabajo de otros integrantes.",
-        "",
-        "",
-        "",
-        ""
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4,5",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
        ],
        [
         "Respeté los acuerdos del acta del equipo.",
-        "",
-        "",
-        "",
-        ""
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
        ],
        [
         "Aprendí algo nuevo que aplico en el proyecto.",
-        "",
-        "",
-        "",
-        ""
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "Promedio",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "4,8",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "4,8",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "4,2",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "4,2",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "4,5",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
        ]
       ],
-      "titulo": "Autoevaluación individual del sprint",
+      "titulo": "Autoevaluación individual del Sprint 1 (07/11/2026)",
       "compacta": true,
-      "fuente": "Cada integrante la llena al final del sprint; el promedio se comenta en la retrospectiva."
+      "fuente": "Cada integrante se calificó el 07/11/2026. Desde el Sprint 2 se repite al final de cada sprint y el promedio se comenta en la retrospectiva."
+     },
+     {
+      "t": "p",
+      "x": "El punto más bajo del equipo es «Aprendí algo nuevo que aplico en el proyecto» (4,0): en el Sprint 2 conviene compartir en la reunión diaria lo que cada uno aprende de datos y de modelos."
      },
      {
       "t": "ul",

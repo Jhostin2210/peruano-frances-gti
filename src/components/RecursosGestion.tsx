@@ -523,6 +523,45 @@ export function LiderarEquipo() {
           </ul>
         </Tarjeta>
       </div>
+
+      <Tarjeta
+        className="mt-4"
+        titulo={`Autoevaluación del Sprint 1 (${G.autoevaluacionS1.fecha})`}
+        nota="Cada integrante se calificó de 1 (nunca) a 5 (siempre). Desde el Sprint 2 se repite al final de cada sprint."
+      >
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[620px] text-[11px]">
+            <thead>
+              <tr className="text-[10px] uppercase tracking-wide text-slate-500">
+                <th className="text-left py-1.5 pr-2 font-semibold">Afirmación</th>
+                {Object.keys(G.autoevaluacionS1.puntajes).map((p) => (
+                  <th key={p} className="py-1.5 px-1 font-semibold text-center">
+                    {corto(p)}
+                  </th>
+                ))}
+                <th className="py-1.5 px-1 font-semibold text-center">Promedio</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {G.autoevaluacion.map((a, i) => {
+                const v = Object.values(G.autoevaluacionS1.puntajes).map((x) => x[i]);
+                const prom = v.reduce((s, x) => s + x, 0) / v.length;
+                return (
+                  <tr key={a}>
+                    <td className="py-1.5 pr-2 text-slate-700">{a}</td>
+                    {v.map((x, k) => (
+                      <td key={k} className="py-1.5 px-1 text-center">
+                        <span className={`inline-block w-7 rounded font-bold ${x === 5 ? "bg-emerald-100 text-emerald-800" : "bg-teal-50 text-teal-800"}`}>{x}</span>
+                      </td>
+                    ))}
+                    <td className="py-1.5 px-1 text-center font-mono font-bold text-slate-800">{n1(prom)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Tarjeta>
     </Bloque>
   );
 }

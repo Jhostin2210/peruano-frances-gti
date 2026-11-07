@@ -4037,6 +4037,12 @@ export const RECURSOS_GESTION = {
    "meta": "Ninguno",
    "resultado": "Ninguno (supuesto S-10 vigente)",
    "ok": true
+  },
+  {
+   "indicador": "Autoevaluación promedio del equipo",
+   "meta": "4 o más (de 5)",
+   "resultado": "4,5 de 5 (07/11/2026)",
+   "ok": true
   }
  ],
  "retrospectiva": {
@@ -4114,6 +4120,39 @@ export const RECURSOS_GESTION = {
   "Respeté los acuerdos del acta del equipo.",
   "Aprendí algo nuevo que aplico en el proyecto."
  ],
+ "autoevaluacionS1": {
+  "fecha": "07/11/2026",
+  "puntajes": {
+   "Jhostin Galarza": [
+    5,
+    5,
+    5,
+    5,
+    4
+   ],
+   "Helber Perez": [
+    5,
+    5,
+    5,
+    5,
+    4
+   ],
+   "Jadira Vasquez": [
+    4,
+    4,
+    4,
+    5,
+    4
+   ],
+   "Carlos Curo": [
+    4,
+    4,
+    4,
+    5,
+    4
+   ]
+  }
+ },
  "reconocimiento": [
   {
    "cuando": "Revisión de cada sprint",
