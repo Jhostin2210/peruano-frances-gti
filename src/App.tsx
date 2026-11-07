@@ -28,6 +28,7 @@ import TableroAlcance from "./components/TableroAlcance";
 import EdtProyecto from "./components/EdtProyecto";
 import EntregablesCronograma from "./components/EntregablesCronograma";
 import RecursosEstimacion from "./components/RecursosEstimacion";
+import { AdquirirRecursos, ControlRecursos, IntroRecursos, LiderarEquipo, PlanRecursos } from "./components/RecursosGestion";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -382,26 +383,38 @@ export default function App() {
           <ChapterIntro
             num="09"
             title="Dominio de Recursos"
-            subtitle="Planifica, estima, obtiene y lidera los recursos del equipo y los recursos físicos. En esta etapa se desarrolla la estimación de los recursos de las actividades."
+            subtitle="Planifica, estima, obtiene y lidera los recursos del equipo y controla los recursos físicos. Los cinco procesos del dominio están aplicados al cierre del Sprint 1."
             subheading="Capítulo 09 · Dominio de desempeño · 5 procesos"
             inputs={[
-              "Cronograma y línea base del alcance (EDT versión 4)",
-              "Lista y atributos de las actividades",
-              "Registro de supuestos y calendario del proyecto",
+              "Acta de constitución y línea base del alcance (EDT versión 4)",
+              "Cronograma, lista y atributos de las actividades",
+              "Registros de supuestos, interesados e incidentes",
             ]}
             tools={[
-              "Estimación ascendente, análoga y paramétrica",
-              "Análisis de alternativas",
-              "MS Project y asistente de IA",
-              "Modelo de costos constructivos (COCOMO)",
+              "Organigrama, matriz RACI y análisis FODA",
+              "Estimación ascendente y COCOMO",
+              "Análisis multicriterio e histograma de recursos",
+              "Retrospectiva, Tuckman y revisiones del desempeño",
             ]}
             outputs={[
-              "Requisitos de recursos",
-              "Base de las estimaciones",
-              "Estructura de desglose de recursos (RBS)",
+              "Plan de gestión de los recursos y acta del equipo",
+              "Requisitos de recursos y RBS",
+              "Asignaciones, calendarios y evaluación del equipo",
+              "Informe de control y solicitud SC-12",
             ]}
           />
-          <DominioPmbok dominio="Recursos" capitulo="09" despues={{ "rec-2": <RecursosEstimacion /> }} />
+          <IntroRecursos />
+          <DominioPmbok
+            dominio="Recursos"
+            capitulo="09"
+            despues={{
+              "rec-1": <PlanRecursos />,
+              "rec-2": <RecursosEstimacion />,
+              "rec-3": <AdquirirRecursos />,
+              "rec-4": <LiderarEquipo />,
+              "rec-5": <ControlRecursos />,
+            }}
+          />
 
           {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}
 

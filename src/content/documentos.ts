@@ -226,7 +226,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Solicitudes de cambio registradas",
-        "11",
+        "12",
         "GOB-10"
        ]
       ],
@@ -692,9 +692,64 @@ export const DOCUMENTOS: DocDef[] = [
         "Estimar los recursos",
         "Planificación",
         "05 - Recursos"
+       ],
+       [
+        {
+         "x": "REC-02",
+         "bold": true
+        },
+        "Plan de gestión de los recursos",
+        "Recursos",
+        "Planificar la gestión de los recursos",
+        "Planificación",
+        "05 - Recursos"
+       ],
+       [
+        {
+         "x": "REC-03",
+         "bold": true
+        },
+        "Acta de constitución del equipo",
+        "Recursos",
+        "Planificar la gestión de los recursos",
+        "Planificación",
+        "05 - Recursos"
+       ],
+       [
+        {
+         "x": "REC-04",
+         "bold": true
+        },
+        "Asignación de recursos y calendarios de recursos",
+        "Recursos",
+        "Adquirir recursos",
+        "Ejecución",
+        "05 - Recursos"
+       ],
+       [
+        {
+         "x": "REC-05",
+         "bold": true
+        },
+        "Evaluación del desempeño del equipo · Sprint 1",
+        "Recursos",
+        "Liderar al equipo",
+        "Ejecución",
+        "05 - Recursos"
+       ],
+       [
+        {
+         "x": "REC-06",
+         "bold": true
+        },
+        "Informe de control de los recursos N.º 1",
+        "Recursos",
+        "Monitorear y controlar los recursos",
+        "Monitoreo y control",
+        "05 - Recursos"
        ]
       ],
-      "titulo": "Documentos emitidos (28)",
+      "titulo": "Documentos emitidos (33)",
       "compacta": true,
       "fuente": "Cada documento está en Word y en PDF dentro de su carpeta. Los PDF también se publican en el blog."
      }
@@ -817,12 +872,12 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "5",
          "align": "center"
         },
         {
-         "x": "Desarrollado en parte",
-         "fill": "amarillo",
+         "x": "Desarrollado",
+         "fill": "verde",
          "bold": true
         },
         "Por desarrollar."
@@ -1897,8 +1952,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Iniciación",
   "proceso": "Iniciar el proyecto o fase",
   "salida": "Registro de supuestos",
-  "version": "1.1",
-  "fecha": "17/10/2026",
+  "version": "1.2",
+  "fecha": "07/11/2026",
   "resumen": "Lista lo que el proyecto da por cierto sin tener aún la prueba y los límites que no puede cambiar. Cada supuesto tiene quién lo comprueba y cuándo.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
   "drive": "https://drive.google.com/file/d/13gZY5mrzkBrcbx5i_OsVqMEZaP60hFWG/view",
@@ -1947,8 +2002,8 @@ export const DOCUMENTOS: DocDef[] = [
         "Jadira Vasquez",
         "Sprint 1 (hasta el 23/10/2026)",
         {
-         "x": "Por comprobar",
-         "fill": "amarillo"
+         "x": "Comprobado en parte: la primera exportación llegó el 06/11/2026; faltan dos antes del 04/12/2026",
+         "fill": "azul"
         }
        ],
        [
@@ -2067,6 +2122,39 @@ export const DOCUMENTOS: DocDef[] = [
         "Se retrasan los pedidos de datos, el taller con docentes y la aceptación de los entregables.",
         "Jhostin Galarza",
         "Cada semana",
+        {
+         "x": "Por comprobar",
+         "fill": "amarillo"
+        }
+       ],
+       [
+        "S-13",
+        "Cada integrante dedica medio día hábil (50 %) al proyecto de lunes a viernes.",
+        "Las horas estimadas (REC-01) no alcanzan y se atrasa el cronograma.",
+        "Jhostin Galarza",
+        "Cada semana, desde el Sprint 2 (registro de horas)",
+        {
+         "x": "Por comprobar",
+         "fill": "amarillo"
+        }
+       ],
+       [
+        "S-14",
+        "El equipo puede usar un equipo con licencia de MS Project en el laboratorio de la universidad.",
+        "El cronograma solo se mantiene como archivo XML.",
+        "Jhostin Galarza",
+        "Sprint 2",
+        {
+         "x": "Por comprobar",
+         "fill": "amarillo"
+        }
+       ],
+       [
+        "S-15",
+        "El colegio presta el proyector y un aula para el piloto y la capacitación si se piden con una semana de anticipación.",
+        "Las sesiones con docentes se hacen de forma virtual.",
+        "Helber Perez",
+        "Sprint 5",
         {
          "x": "Por comprobar",
          "fill": "amarillo"
@@ -4584,7 +4672,7 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Monitoreo y control",
   "proceso": "Evaluar e implementar cambios",
   "salida": "Solicitudes de cambio aprobadas y registro de cambios",
-  "version": "1.2",
+  "version": "1.3",
   "fecha": "07/11/2026",
   "resumen": "Establece cómo se solicita, evalúa y decide un cambio, y registra los cambios que separan la versión anterior del proyecto de la versión vigente.",
   "carpeta": "01 - Gobernanza/1.8 Cambios",
@@ -4895,6 +4983,20 @@ export const DOCUMENTOS: DocDef[] = [
         },
         "Patrocinadora y equipo, reunión de inicio, 12/10/2026 (GOB-12)",
         "Aplicado en INT-03, INT-06 y el tablero de comunicaciones el 17/10/2026."
+       ],
+       [
+        "SC-12",
+        "Nivelación de la carga del equipo en el Sprint 2",
+        "La estimación de los recursos (REC-01) muestra que Jadira Vasquez tiene 109 horas asignadas en el Sprint 2 frente a 80 disponibles.",
+        "Cronograma: cambia el responsable de dos actividades, sin mover fechas. A-2.1.1.1 (levantar y mapear las fuentes de datos) pasa a Helber Perez y A-2.2.1.1 (tareas programadas nocturnas) pasa a Carlos Curo (análisis en REC-04).",
+        {
+         "x": "En evaluación",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "Lo decide el Product Owner en la planificación del Sprint 2.",
+        "—"
        ]
       ],
       "titulo": "Registro de cambios al 17/10/2026",
@@ -18925,7 +19027,7 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
-        "Equipos e infraestructura",
+        "Informática · hardware",
         "Laptops del equipo",
         "4 (una por integrante)",
         "Desarrollo, documentación y reuniones",
@@ -18933,15 +19035,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Equipos e infraestructura",
-        "Conexión a internet",
-        "4 hogares y la red del colegio",
-        "Trabajo remoto, servicios en la nube y demostraciones",
-        "Propia y del colegio",
-        "Todo el proyecto"
-       ],
-       [
-        "Equipos e infraestructura",
+        "Informática · hardware",
         "Proyector o pantalla del colegio",
         "1",
         "Taller con docentes, piloto y capacitación",
@@ -18949,7 +19043,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprints 1, 5 y 6"
        ],
        [
-        "Software y servicios",
+        "Informática · software",
         "Python, scikit-learn, FastAPI, React y Vite",
         "—",
         "Construcción del sistema y del modelo",
@@ -18957,7 +19051,15 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprints 2 a 6"
        ],
        [
-        "Software y servicios",
+        "Informática · software",
+        "MS Project",
+        "1 equipo con licencia",
+        "Abrir y mantener el cronograma (archivo XML)",
+        "Licencia de estudiante o laboratorio de la universidad",
+        "Al actualizar el cronograma"
+       ],
+       [
+        "Informática · servicios",
         "Vercel (página) y Render (API)",
         "1 proyecto cada uno",
         "Publicar el sistema",
@@ -18965,7 +19067,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Desde el Sprint 2"
        ],
        [
-        "Software y servicios",
+        "Informática · servicios",
         "Base de datos gestionada en la nube",
         "1",
         "Datos reales en producción",
@@ -18973,7 +19075,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprint 6"
        ],
        [
-        "Software y servicios",
+        "Informática · servicios",
         "GitHub y GitHub Actions",
         "2 repositorios",
         "Código, versiones y validación nocturna de datos",
@@ -18981,7 +19083,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Software y servicios",
+        "Informática · servicios",
         "Servicio de envío de correo",
         "1",
         "Alertas al docente tutor (SC-09)",
@@ -18989,7 +19091,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprint 4"
        ],
        [
-        "Software y servicios",
+        "Informática · servicios",
         "Google Drive",
         "1 carpeta compartida",
         "Documentos de gestión en Word",
@@ -18997,12 +19099,12 @@ export const DOCUMENTOS: DocDef[] = [
         "Todo el proyecto"
        ],
        [
-        "Software y servicios",
-        "MS Project",
-        "1 equipo con licencia",
-        "Abrir y mantener el cronograma (archivo XML)",
-        "Licencia de estudiante o laboratorio de la universidad",
-        "Al actualizar el cronograma"
+        "Informática · conectividad",
+        "Conexión a internet",
+        "4 hogares y la red del colegio",
+        "Trabajo remoto, servicios en la nube y demostraciones",
+        "Propia y del colegio",
+        "Todo el proyecto"
        ],
        [
         "Instalaciones",
@@ -19451,6 +19553,3226 @@ export const DOCUMENTOS: DocDef[] = [
       "t": "nota",
       "tipo": "info",
       "x": "Estas actualizaciones se incorporan en la próxima versión de cada documento."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "REC-02",
+  "titulo": "Plan de gestión de los recursos",
+  "dominio": "Recursos",
+  "area": "Planificación",
+  "proceso": "Planificar la gestión de los recursos",
+  "salida": "Plan de gestión de los recursos",
+  "version": "1.0",
+  "fecha": "07/11/2026",
+  "resumen": "Define cómo se identifican, obtienen, asignan, desarrollan, controlan y liberan los recursos del equipo y los recursos físicos del proyecto, con el organigrama, los roles y la matriz de responsabilidades.",
+  "carpeta": "05 - Recursos",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Propósito y entradas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Este plan es parte del plan para la dirección del proyecto (GOB-04). Se elaboró con el acta de constitución (GOB-02), la línea base del alcance (ALC-02, EDT versión 4), el cronograma (CRO-01), los requisitos (ALC-03), el registro de interesados (INT-01) y el plan de calidad (ALC-01). El registro de riesgos aún no existe: los riesgos de recursos se anotan en la sección 10."
+     }
+    ]
+   },
+   {
+    "titulo": "2. Identificación y adquisición de los recursos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Tema",
+       "Cómo se hace en el proyecto"
+      ],
+      "anchos": [
+       26,
+       74
+      ],
+      "filas": [
+       [
+        "Identificación",
+        "Los recursos se calculan desde las actividades del cronograma y se suman por paquete de la EDT y por sprint (REC-01). Se revisan en la planificación de cada sprint."
+       ],
+       [
+        "Equipo del proyecto",
+        "Preasignado: lo forma el curso (SC-01). No se incorpora personal (restricción R-03)."
+       ],
+       [
+        "Personal del colegio",
+        "Se pide siempre a través del Product Owner, con una semana de anticipación (SC-11)."
+       ],
+       [
+        "Recursos físicos y servicios",
+        "Software libre y planes gratuitos (restricción R-02), en cuentas del proyecto y no en cuentas personales (lección LA-10). Las asignaciones y el calendario están en REC-04."
+       ]
+      ],
+      "titulo": "Identificación y adquisición"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Organigrama del proyecto",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "figura",
+      "archivo": "organigrama.png",
+      "titulo": "Organigrama del proyecto",
+      "fuente": "El Product Owner es el canal único con el personal del colegio. El director del proyecto y Scrum Master coordina al equipo de desarrollo.",
+      "altoMax": 300
+     }
+    ]
+   },
+   {
+    "titulo": "4. Roles y responsabilidades",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Rol",
+       "Responsabilidades",
+       "Autoridad",
+       "Competencias"
+      ],
+      "anchos": [
+       22,
+       34,
+       26,
+       18
+      ],
+      "filas": [
+       [
+        {
+         "x": [
+          "Director del proyecto y Scrum Master",
+          "Jhostin Galarza"
+         ],
+         "bold": true
+        },
+        "Planificar y mantener las líneas base y los documentos de gestión; Facilitar la reunión diaria, la revisión y la retrospectiva; Quitar impedimentos y mantener la relación con el docente del curso.",
+        "Asigna el trabajo de gestión, aprueba los informes y propone los cambios a las líneas base (GOB-10).",
+        "Gestión de proyectos (PMBOK y Scrum), MS Project, comunicación."
+       ],
+       [
+        {
+         "x": [
+          "Product Owner y responsable del modelo de Machine Learning",
+          "Helber Perez"
+         ],
+         "bold": true
+        },
+        "Ordenar el trabajo de cada sprint y aceptar los entregables; Ser el canal único con el colegio (SC-11); Entrenar y validar el modelo predictivo.",
+        "Decide prioridades y acepta o rechaza los entregables; decide las solicitudes de cambio del producto.",
+        "Conocimiento del colegio y de sus docentes, Python y scikit-learn."
+       ],
+       [
+        {
+         "x": [
+          "Datos, alertas y despliegue",
+          "Jadira Vasquez"
+         ],
+         "bold": true
+        },
+        "Integrar y limpiar las notas de Cubicol (E-01); Construir el motor de alertas; Desplegar el sistema en la nube.",
+        "Decide el diseño técnico de los datos y del despliegue dentro de la arquitectura aprobada.",
+        "Bases de datos, ETL, FastAPI y servicios en la nube."
+       ],
+       [
+        {
+         "x": [
+          "Tablero web y control de cambios",
+          "Carlos Curo"
+         ],
+         "bold": true
+        },
+        "Diseñar y desarrollar el tablero del docente; Llevar las actas y el registro de cambios; Redactar el manual de usuario.",
+        "Decide el diseño de la interfaz dentro de los requisitos; mantiene el registro de cambios.",
+        "React, diseño de interfaces y documentación."
+       ]
+      ],
+      "titulo": "Fichas de rol del equipo (formato orientado al texto)",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "5. Matriz de asignación de responsabilidades (RACI)",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Paquete de la EDT",
+       "Jhostin",
+       "Helber",
+       "Jadira",
+       "Carlos",
+       "Dirección",
+       "Coordinación",
+       "Docentes",
+       "Gestora de Cubicol"
+      ],
+      "anchos": [
+       28,
+       8,
+       8,
+       8,
+       8,
+       9,
+       10,
+       9,
+       12
+      ],
+      "filas": [
+       [
+        "1.0.1 Levantamiento del alcance",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.0.2 Diagnóstico de los datos",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.0.3 Variables del modelo",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.0.4 Arquitectura del sistema",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.1.1 Cronograma de hitos",
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.1.2 Informes de avance",
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.1.3 Actas y control de cambios",
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.2.1 Integración de datos (ETL)",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.2.2 Calidad de datos",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.3.1 Entrenamiento del modelo",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.3.2 Clasificación de riesgo",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.3.3 Validación del modelo",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.4.1 Motor de alertas",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.4.2.1 Diseño de la interfaz",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.4.2.2 Desarrollo del tablero",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.4.2.3 Pruebas con usuarios",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.4.3 Roles y accesos",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.5.1 Despliegue del sistema",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.5.2 Manual de usuario",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.5.3 Manual técnico",
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "R/A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.5.4 Plan de capacitación",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.5.5 Capacitación y cierre",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.6.1 Pruebas de integración y rendimiento",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ],
+       [
+        "1.6.2 Piloto y retroalimentación",
+        {
+         "x": "R",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "A",
+         "fill": "azul",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "I",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "C",
+         "align": "center",
+         "bold": false
+        },
+        {
+         "x": "",
+         "align": "center",
+         "bold": false
+        }
+       ]
+      ],
+      "titulo": "Matriz RACI por paquete de la EDT",
+      "compacta": true,
+      "fuente": "R: encargado de hacer el trabajo (uno por paquete). A: rinde cuentas y acepta (uno por paquete): el Product Owner en el producto y el director en la gestión. C: consultado. I: informado."
+     }
+    ]
+   },
+   {
+    "titulo": "6. Gestión, capacitación y desarrollo del equipo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Tema",
+       "Cómo se hace"
+      ],
+      "anchos": [
+       26,
+       74
+      ],
+      "filas": [
+       [
+        "Incorporación",
+        "Acceso al repositorio, a la carpeta de Drive y lectura del acta del equipo (REC-03)."
+       ],
+       [
+        "Asignación",
+        "En la planificación de cada sprint, según el cronograma y las horas disponibles (REC-04)."
+       ],
+       [
+        "Liberación",
+        "Al cerrar su último paquete, cada integrante entrega sus archivos al repositorio y sus accesos al director."
+       ],
+       [
+        "Capacitación",
+        "Protección de datos personales (Ley N.° 29733) para todos antes de cargar datos reales; MS Project en el laboratorio de la universidad; aprendizaje en pareja para scikit-learn y FastAPI."
+       ],
+       [
+        "Desarrollo del equipo",
+        "Reunión diaria, revisión y retrospectiva de cada sprint, y evaluación del desempeño del equipo al final de cada sprint (REC-05)."
+       ]
+      ],
+      "titulo": "Gestión del equipo"
+     },
+     {
+      "t": "h",
+      "x": "Estilos de liderazgo (teoría organizacional)"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Estilo",
+       "Cómo se usa"
+      ],
+      "anchos": [
+       24,
+       76
+      ],
+      "filas": [
+       [
+        "Líder servidor",
+        "Estilo principal del Scrum Master: facilita, quita impedimentos y protege el tiempo del equipo."
+       ],
+       [
+        "Transformacional",
+        "En las revisiones de sprint: se vuelve al propósito del proyecto (alertar a tiempo a los tutores) para motivar."
+       ],
+       [
+        "Transaccional",
+        "Solo para lo pactado en el acta del equipo: plazos, avisos con anticipación y uso de los repositorios."
+       ]
+      ],
+      "titulo": "Estilos de liderazgo aplicados"
+     }
+    ]
+   },
+   {
+    "titulo": "7. Análisis FODA del equipo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Fortalezas",
+       "Debilidades"
+      ],
+      "anchos": [
+       50,
+       50
+      ],
+      "filas": [
+       [
+        [
+         "• El Product Owner es docente del colegio: conoce a los docentes y los datos, y acorta las consultas.",
+         "• Habilidades complementarias: gestión, Machine Learning, datos y desarrollo web.",
+         "• Los documentos de gestión salen de una fuente única y se actualizan sin contradicciones."
+        ],
+        [
+         "• Dedicación parcial: los cuatro integrantes son estudiantes con otros cursos.",
+         "• Carga desigual: hay integrantes con más horas que las disponibles en los Sprints 2, 3 y 5 (REC-01).",
+         "• Todo el contacto con el colegio depende de una sola persona."
+        ]
+       ]
+      ],
+      "titulo": "Análisis FODA del equipo del proyecto"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Oportunidades",
+       "Amenazas"
+      ],
+      "anchos": [
+       50,
+       50
+      ],
+      "filas": [
+       [
+        [
+         "• Planes gratuitos en la nube y librerías libres de Machine Learning.",
+         "• Asistentes de inteligencia artificial para documentar, calcular y revisar código.",
+         "• Interés de la Dirección y de los docentes: el taller del 28/10/2026 reunió a los 16 docentes y a la directora."
+        ],
+        [
+         "• Los datos dependen de exportaciones de Cubicol que maneja un tercero.",
+         "• Las vacaciones escolares (diciembre a febrero) cortan las actividades con docentes.",
+         "• Límites de los planes gratuitos: la API tarda en responder la primera vez."
+        ]
+       ]
+      ]
+     },
+     {
+      "t": "h",
+      "x": "Estrategias"
+     },
+     {
+      "t": "ul",
+      "items": [
+       "Usar el conocimiento del Product Owner para destrabar los pedidos al colegio, pero dejar cada pedido por escrito con fecha (fortaleza frente a amenaza).",
+       "Nivelar la carga en la planificación de cada sprint y redistribuir actividades entre integrantes con habilidades afines (debilidad frente a oportunidad)."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "8. Control de los recursos físicos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Inventario de servicios y cuentas en REC-04, con su responsable.",
+       "Revisión semanal de los límites de los planes gratuitos; la hace el responsable del despliegue.",
+       "Al cierre, las cuentas de los servicios se transfieren al colegio."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "9. Plan de reconocimiento",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Cuándo",
+       "Cómo"
+      ],
+      "anchos": [
+       26,
+       74
+      ],
+      "filas": [
+       [
+        "Revisión de cada sprint",
+        "Se nombran en el acta y en el blog los logros del sprint y quién los hizo posibles."
+       ],
+       [
+        "Cada demostración",
+        "Presenta el integrante que construyó el entregable."
+       ],
+       [
+        "Cierre del proyecto",
+        "Constancia de participación firmada por el director del proyecto para cada integrante."
+       ]
+      ],
+      "titulo": "Reconocimiento del equipo"
+     },
+     {
+      "t": "p",
+      "x": "El proyecto no tiene presupuesto: los reconocimientos no son monetarios."
+     }
+    ]
+   },
+   {
+    "titulo": "10. Herramientas usadas y actualizaciones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Herramienta",
+       "Cómo se usó"
+      ],
+      "anchos": [
+       30,
+       70
+      ],
+      "filas": [
+       [
+        "Juicio de expertos",
+        "El Product Owner, docente del colegio, indicó qué participación del personal del colegio es realista."
+       ],
+       [
+        "Entrevistas",
+        "Entrevista a la Dirección (abril de 2026) y reunión de inicio (12/10/2026)."
+       ],
+       [
+        "Análisis FODA",
+        "Sección 7."
+       ],
+       [
+        "Gráficos jerárquicos",
+        "Organigrama (sección 3) y estructura de desglose de recursos (REC-01)."
+       ],
+       [
+        "Matriz de asignación de responsabilidades",
+        "Matriz RACI (sección 5)."
+       ],
+       [
+        "Formatos orientados al texto",
+        "Fichas de rol (sección 4)."
+       ],
+       [
+        "Teoría organizacional",
+        "Estilos de liderazgo (sección 6)."
+       ],
+       [
+        "Reuniones",
+        "Revisión y retrospectiva del Sprint 1 (06/11/2026)."
+       ]
+      ],
+      "titulo": "Herramientas y técnicas del proceso"
+     },
+     {
+      "t": "ul",
+      "items": [
+       "**Registro de supuestos (GOB-03, versión 1.2):** supuestos S-13 (dedicación del 50 %), S-14 (MS Project en el laboratorio) y S-15 (proyector y aula del colegio).",
+       "**Riesgos de recursos** (para el registro de riesgos, cuando se desarrolle ese dominio): sobreasignación en los Sprints 2, 3 y 5; dependencia de una sola persona para el contacto con el colegio; arranque lento de la API en el plan gratuito."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "REC-03",
+  "titulo": "Acta de constitución del equipo",
+  "dominio": "Recursos",
+  "area": "Planificación",
+  "proceso": "Planificar la gestión de los recursos",
+  "salida": "Acta de constitución del equipo",
+  "version": "1.0",
+  "fecha": "07/11/2026",
+  "resumen": "Establece los valores, las pautas de comunicación, la forma de decidir y de resolver conflictos, las reglas de las reuniones y los acuerdos de trabajo del equipo.",
+  "carpeta": "05 - Recursos",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Valores del equipo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Valor",
+       "Qué significa para nosotros"
+      ],
+      "anchos": [
+       24,
+       76
+      ],
+      "filas": [
+       [
+        "Respeto",
+        "Escuchamos todas las opiniones y criticamos el trabajo, no a las personas."
+       ],
+       [
+        "Transparencia",
+        "Decimos a tiempo lo que no vamos a poder cumplir y mostramos el avance real."
+       ],
+       [
+        "Responsabilidad compartida",
+        "El resultado del sprint es de todos: si alguien se atrasa, el equipo ayuda."
+       ],
+       [
+        "Cuidado de los datos",
+        "Los datos son de menores de edad: no salen de la carpeta privada ni se publican."
+       ],
+       [
+        "Aprendizaje",
+        "Cada error se convierte en una lección aprendida registrada."
+       ]
+      ],
+      "titulo": "Valores"
+     }
+    ]
+   },
+   {
+    "titulo": "2. Pautas de comunicación",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Grupo de WhatsApp del equipo para la coordinación diaria; respuesta en menos de 24 horas en días hábiles.",
+       "Videollamada para la reunión diaria y las reuniones de sprint.",
+       "Los acuerdos y entregables se guardan en el repositorio y en la carpeta de Drive del proyecto, no en conversaciones.",
+       "El contacto con el colegio se hace solo a través del Product Owner."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "3. Toma de decisiones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Tipo de decisión",
+       "Quién decide"
+      ],
+      "anchos": [
+       40,
+       60
+      ],
+      "filas": [
+       [
+        "Técnica, dentro de un paquete",
+        "El responsable del paquete, después de consultar a quien corresponda."
+       ],
+       [
+        "Prioridad y aceptación del producto",
+        "El Product Owner."
+       ],
+       [
+        "Gestión, cronograma y documentos",
+        "El director del proyecto."
+       ],
+       [
+        "Cambios a las líneas base",
+        "Solicitud de cambio (GOB-10); decide el Product Owner o la patrocinadora."
+       ],
+       [
+        "Sin acuerdo",
+        "Se busca consenso en la reunión; si no lo hay, decide el director del proyecto."
+       ]
+      ],
+      "titulo": "Criterios de decisión"
+     }
+    ]
+   },
+   {
+    "titulo": "4. Resolución de conflictos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Primero, conversación directa entre los involucrados, dentro de las 48 horas.",
+       "Si no se resuelve, media el Scrum Master en una reunión breve.",
+       "Si sigue sin resolverse, decide el director del proyecto o el Product Owner, según el tema.",
+       "Si el conflicto afecta al proyecto, se registra como incidente (GOB-06)."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "5. Pautas para reuniones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Reunión",
+       "Cuándo",
+       "Duración",
+       "Regla"
+      ],
+      "anchos": [
+       26,
+       28,
+       14,
+       32
+      ],
+      "filas": [
+       [
+        "Reunión diaria",
+        "Lunes a viernes, desde el Sprint 2",
+        "15 min",
+        "Qué terminé, qué haré y qué me detiene."
+       ],
+       [
+        "Planificación del sprint",
+        "Primer día del sprint",
+        "1 h",
+        "Se sale con el trabajo asignado."
+       ],
+       [
+        "Revisión del sprint",
+        "Último día del sprint",
+        "1 h",
+        "Se muestra el entregable al Product Owner."
+       ],
+       [
+        "Retrospectiva",
+        "Después de la revisión",
+        "30 min",
+        "Qué salió bien, qué mejorar y acciones."
+       ]
+      ],
+      "titulo": "Reuniones del equipo"
+     },
+     {
+      "t": "p",
+      "x": "Puntualidad, agenda enviada antes y acuerdos anotados al final de cada reunión."
+     }
+    ]
+   },
+   {
+    "titulo": "6. Acuerdos del equipo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Avisar con 48 horas de anticipación si no se podrá cumplir una tarea.",
+       "No subir datos personales de estudiantes al repositorio ni al blog.",
+       "Declarar el uso de herramientas de inteligencia artificial y revisar todo lo que producen.",
+       "Respetar el horario de clase del sábado: no se programa trabajo del proyecto.",
+       "Anotar las horas trabajadas una vez por semana (acción de la retrospectiva del Sprint 1)."
+      ]
+     },
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Acordada por",
+        "Jhostin Galarza, Helber Perez, Jadira Vasquez, Carlos Curo"
+       ],
+       [
+        "Fecha",
+        "Por confirmar en la revisión del equipo"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "REC-04",
+  "titulo": "Asignación de recursos y calendarios de recursos",
+  "dominio": "Recursos",
+  "area": "Ejecución",
+  "proceso": "Adquirir recursos",
+  "salida": "Asignaciones del equipo y de los recursos físicos, calendarios de recursos y solicitudes de cambio",
+  "version": "1.0",
+  "fecha": "07/11/2026",
+  "resumen": "Registra quién integra el equipo y qué recursos físicos y servicios tiene el proyecto, cuándo están disponibles y cómo se reparte la carga semana a semana.",
+  "carpeta": "05 - Recursos",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Asignaciones del equipo del proyecto",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Integrante",
+       "Rol",
+       "Paquetes a su cargo (R)",
+       "Forma de adquisición"
+      ],
+      "anchos": [
+       20,
+       26,
+       22,
+       32
+      ],
+      "filas": [
+       [
+        "Jhostin Galarza",
+        "Director del proyecto y Scrum Master",
+        "1.0.1, 1.1.1, 1.1.2, 1.4.2.3, 1.4.3, 1.5.4, 1.5.5",
+        "Preasignado por el curso (SC-01)"
+       ],
+       [
+        "Helber Perez",
+        "Product Owner y responsable del modelo de Machine Learning",
+        "1.0.3, 1.3.1, 1.3.2, 1.3.3, 1.5.3",
+        "Preasignado por el curso; designado Product Owner en la reunión de inicio (12/10/2026)"
+       ],
+       [
+        "Jadira Vasquez",
+        "Datos, alertas y despliegue",
+        "1.0.2, 1.0.4, 1.2.1, 1.2.2, 1.4.1, 1.5.1",
+        "Preasignado por el curso (SC-01)"
+       ],
+       [
+        "Carlos Curo",
+        "Tablero web y control de cambios",
+        "1.1.3, 1.4.2.1, 1.4.2.2, 1.5.2",
+        "Preasignado por el curso (SC-01)"
+       ]
+      ],
+      "titulo": "Asignaciones del equipo (del 12/10/2026 al 23/04/2027)",
+      "compacta": true
+     },
+     {
+      "t": "p",
+      "x": "Técnicas: preasignación (el equipo y el Product Owner quedaron definidos antes de planificar) y equipo virtual (trabajo remoto con WhatsApp, videollamada, GitHub y Drive)."
+     }
+    ]
+   },
+   {
+    "titulo": "2. Asignaciones de recursos físicos y servicios",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Recurso (RBS)",
+       "Lo provee",
+       "Responsable",
+       "Se necesita",
+       "Estado al 07/11/2026",
+       "Se libera"
+      ],
+      "anchos": [
+       20,
+       15,
+       13,
+       16,
+       22,
+       14
+      ],
+      "filas": [
+       [
+        "Laptops del equipo (2.1.1)",
+        "Cada integrante",
+        "Cada integrante",
+        "Todo el proyecto",
+        {
+         "x": "En uso. Las 4 en uso desde el 12/10/2026",
+         "fill": "verde"
+        },
+        "Al cierre"
+       ],
+       [
+        "Proyector o pantalla del colegio (2.1.1)",
+        "Colegio",
+        "Helber Perez",
+        "Sprints 5 y 6 (piloto y capacitación)",
+        {
+         "x": "Por pedir. Se pide a través del Product Owner una semana antes de usarlo"
+        },
+        "Al terminar cada sesión"
+       ],
+       [
+        "Python, scikit-learn, FastAPI, React y Vite (2.1.2)",
+        "Software libre",
+        "Jadira Vasquez",
+        "Sprints 2 a 6",
+        {
+         "x": "En uso. En uso en el repositorio del sistema",
+         "fill": "verde"
+        },
+        "No aplica"
+       ],
+       [
+        "MS Project (2.1.2)",
+        "Universidad (laboratorio) o licencia de estudiante",
+        "Jhostin Galarza",
+        "Cada vez que se actualiza el cronograma",
+        {
+         "x": "Sin obtener. El equipo no tiene un equipo con licencia; el cronograma se generó como archivo XML de MS Project",
+         "fill": "rojo"
+        },
+        "No aplica"
+       ],
+       [
+        "Vercel (página web) (2.1.3)",
+        "Plan gratuito",
+        "Jadira Vasquez",
+        "Desde el Sprint 2",
+        {
+         "x": "En uso. Página del sistema y blog publicados desde octubre de 2026",
+         "fill": "verde"
+        },
+        "Se transfiere al colegio al cierre"
+       ],
+       [
+        "Render (API) (2.1.3)",
+        "Plan gratuito",
+        "Jadira Vasquez",
+        "Desde el Sprint 2",
+        {
+         "x": "En uso. API publicada; en el plan gratuito tarda cerca de un minuto en responder la primera vez",
+         "fill": "verde"
+        },
+        "Se transfiere al colegio al cierre"
+       ],
+       [
+        "GitHub y GitHub Actions (2.1.3)",
+        "Plan gratuito",
+        "Jhostin Galarza",
+        "Todo el proyecto",
+        {
+         "x": "En uso. Dos repositorios y la validación nocturna de datos en funcionamiento",
+         "fill": "verde"
+        },
+        "Se transfiere al colegio al cierre"
+       ],
+       [
+        "Google Drive (2.1.3)",
+        "Plan gratuito",
+        "Jhostin Galarza",
+        "Todo el proyecto",
+        {
+         "x": "En uso. Carpeta compartida con los documentos de gestión en Word",
+         "fill": "verde"
+        },
+        "Al cierre"
+       ],
+       [
+        "Base de datos gestionada en la nube (2.1.3)",
+        "Plan gratuito",
+        "Jadira Vasquez",
+        "Sprint 6",
+        {
+         "x": "Aún no se necesita. Los datos reales se trabajan en local hasta el Sprint 6"
+        },
+        "Se transfiere al colegio al cierre"
+       ],
+       [
+        "Servicio de envío de correo (2.1.3)",
+        "Plan gratuito",
+        "Jadira Vasquez",
+        "Sprint 4",
+        {
+         "x": "Aún no se necesita. Depende de la solicitud SC-09, en evaluación"
+        },
+        "Se transfiere al colegio al cierre"
+       ],
+       [
+        "Conexión a internet (2.1.4)",
+        "Hogares del equipo y colegio",
+        "Cada integrante",
+        "Todo el proyecto",
+        {
+         "x": "En uso. En uso para el trabajo remoto",
+         "fill": "verde"
+        },
+        "No aplica"
+       ],
+       [
+        "Aula o laboratorio del colegio (2.2.1)",
+        "Colegio",
+        "Helber Perez",
+        "Sprint 6 (capacitación, 2 horas)",
+        {
+         "x": "Por pedir. Se reserva a través del Product Owner en el Sprint 5"
+        },
+        "Al terminar la capacitación"
+       ]
+      ],
+      "titulo": "Asignaciones de recursos físicos y virtuales",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "3. Calendarios de recursos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Equipo: lunes a viernes, medio día hábil (50 %) por integrante; los sábados son de clase del curso y no se programa trabajo.",
+       "Receso del 01/02/2027 al 26/02/2027: no hay actividades programadas.",
+       "Colegio: se coordina siempre a través del Product Owner, con una semana de anticipación."
+      ]
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Sprint",
+       "Fechas",
+       "Días hábiles",
+       "Horas por integrante",
+       "Feriados",
+       "Personal del colegio"
+      ],
+      "anchos": [
+       12,
+       22,
+       10,
+       12,
+       22,
+       22
+      ],
+      "filas": [
+       [
+        "1 · Análisis y diseño",
+        "12/10/2026 al 06/11/2026",
+        {
+         "x": "20",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        },
+        "—",
+        "Docentes disponibles (año escolar 2026)"
+       ],
+       [
+        "2 · Gestión y datos",
+        "09/11/2026 al 04/12/2026",
+        {
+         "x": "20",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        },
+        "—",
+        "Docentes disponibles (año escolar 2026)"
+       ],
+       [
+        "3 · Modelo ML",
+        "07/12/2026 al 01/01/2027",
+        {
+         "x": "16",
+         "align": "center"
+        },
+        {
+         "x": "64",
+         "align": "center"
+        },
+        "08/12/2026 Inmaculada Concepción; 09/12/2026 Batalla de Ayacucho; 25/12/2026 Navidad; 01/01/2027 Año Nuevo",
+        "Cierre del año escolar: disponibilidad limitada"
+       ],
+       [
+        "4 · Alertas y tablero",
+        "04/01/2027 al 29/01/2027",
+        {
+         "x": "20",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        },
+        "—",
+        "Vacaciones escolares: solo el Product Owner"
+       ],
+       [
+        "5 · Pruebas y piloto",
+        "01/03/2027 al 26/03/2027",
+        {
+         "x": "18",
+         "align": "center"
+        },
+        {
+         "x": "72",
+         "align": "center"
+        },
+        "25/03/2027 Jueves Santo; 26/03/2027 Viernes Santo",
+        "Docentes disponibles (año escolar 2027)"
+       ],
+       [
+        "6 · Implantación y cierre",
+        "29/03/2027 al 23/04/2027",
+        {
+         "x": "20",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        },
+        "—",
+        "Docentes disponibles (año escolar 2027)"
+       ]
+      ],
+      "titulo": "Calendario de recursos por sprint",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "4. Histograma de recursos",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "figura",
+      "archivo": "histograma.png",
+      "titulo": "Histograma de recursos: horas por integrante y semana",
+      "fuente": "Línea base del cronograma. 22 semanas-integrante superan en más del 10 % lo disponible; los excesos pequeños se deben a la reunión diaria. Los picos semanales se absorben dentro del sprint; la carga se controla por sprint."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Nivelación del Sprint 2: análisis de decisiones con múltiples criterios",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "En el Sprint 2, Jadira Vasquez tiene 109,2 horas asignadas frente a 80 disponibles. Se analizó a quién pasar dos de sus actividades sin mover fechas."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Criterio",
+       "Peso"
+      ],
+      "anchos": [
+       70,
+       30
+      ],
+      "filas": [
+       [
+        "Horas libres en el Sprint 2",
+        {
+         "x": "40 %",
+         "align": "center"
+        }
+       ],
+       [
+        "Afinidad con la actividad",
+        {
+         "x": "40 %",
+         "align": "center"
+        }
+       ],
+       [
+        "Continuidad con su propio trabajo",
+        {
+         "x": "20 %",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Criterios de selección"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Candidato",
+       "Horas libres en el Sprint 2",
+       "Afinidad con la actividad",
+       "Continuidad con su propio trabajo",
+       "Total",
+       "Razón"
+      ],
+      "anchos": [
+       16,
+       11,
+       11,
+       11,
+       9,
+       42
+      ],
+      "filas": [
+       [
+        "Helber Perez",
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "4,8",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        "59 h libres; hizo con Jadira el diagnóstico de los datos (1.0.2) y conoce las fuentes del colegio; prepara su análisis del Sprint 3."
+       ],
+       [
+        "Jhostin Galarza",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "3,2",
+         "align": "center",
+         "bold": false
+        },
+        "43 h libres; conoce el alcance, pero no trabaja con los datos."
+       ],
+       [
+        "Carlos Curo",
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "2,6",
+         "align": "center",
+         "bold": false
+        },
+        "27 h libres; trabaja en el ETL más adelante."
+       ]
+      ],
+      "titulo": "A-2.1.1.1 Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Candidato",
+       "Horas libres en el Sprint 2",
+       "Afinidad con la actividad",
+       "Continuidad con su propio trabajo",
+       "Total",
+       "Razón"
+      ],
+      "anchos": [
+       16,
+       11,
+       11,
+       11,
+       9,
+       42
+      ],
+      "filas": [
+       [
+        "Carlos Curo",
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "3,8",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        "Colabora en el ETL y verifica la consistencia de los datos (A-2.2.1.2) en los mismos días."
+       ],
+       [
+        "Helber Perez",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "3,2",
+         "align": "center",
+         "bold": false
+        },
+        "Le quedarían 43 h libres tras la otra actividad; su trabajo es el modelo."
+       ],
+       [
+        "Jhostin Galarza",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "2,8",
+         "align": "center",
+         "bold": false
+        },
+        "43 h libres; no trabaja en el código de datos."
+       ]
+      ],
+      "titulo": "A-2.2.1.1 Configurar tareas programadas nocturnas de limpieza y validación de datos",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Integrante",
+       "Horas en el Sprint 2 (línea base)",
+       "Con la SC-12",
+       "Disponibles"
+      ],
+      "anchos": [
+       34,
+       22,
+       22,
+       22
+      ],
+      "filas": [
+       [
+        "Jhostin Galarza",
+        {
+         "x": "37,2",
+         "align": "center"
+        },
+        {
+         "x": "37,2",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        }
+       ],
+       [
+        "Helber Perez",
+        {
+         "x": "21,2",
+         "align": "center"
+        },
+        {
+         "x": "37,2",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        }
+       ],
+       [
+        "Jadira Vasquez",
+        {
+         "x": "109,2",
+         "fill": "rojo",
+         "align": "center"
+        },
+        {
+         "x": "77,2",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        }
+       ],
+       [
+        "Carlos Curo",
+        {
+         "x": "53,2",
+         "align": "center"
+        },
+        {
+         "x": "69,2",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "80",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Efecto de la reasignación",
+      "compacta": true,
+      "fuente": "Puntajes de 1 a 5 asignados por el director del proyecto; la decisión es del Product Owner."
+     },
+     {
+      "t": "nota",
+      "tipo": "info",
+      "x": "Se presenta la solicitud de cambio SC-12 «Nivelación de la carga del equipo en el Sprint 2» (GOB-10), en evaluación."
+     }
+    ]
+   },
+   {
+    "titulo": "6. Negociación y actualizaciones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Con el colegio, a través del Product Owner: exportaciones 2 y 3 de Cubicol con fecha acordada, proyector y aula para el piloto y la capacitación.",
+       "Estructura de desglose de recursos (REC-01, versión 1.1) y registro de supuestos (GOB-03, versión 1.2).",
+       "Si se aprueba la SC-12, se actualizan los responsables de A-2.1.1.1 y A-2.2.1.1 en el cronograma (CRO-01)."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "REC-05",
+  "titulo": "Evaluación del desempeño del equipo · Sprint 1",
+  "dominio": "Recursos",
+  "area": "Ejecución",
+  "proceso": "Liderar al equipo",
+  "salida": "Evaluaciones del desempeño del equipo",
+  "version": "1.0",
+  "fecha": "07/11/2026",
+  "resumen": "Evalúa el desempeño del equipo en el Sprint 1 con indicadores tomados de los registros del proyecto y deja la retrospectiva, la etapa del equipo y el formato de autoevaluación para los siguientes sprints.",
+  "carpeta": "05 - Recursos",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Datos de la evaluación",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Sprint",
+        "1 · Análisis y diseño (12/10/2026 al 06/11/2026)"
+       ],
+       [
+        "Revisión y retrospectiva",
+        "06/11/2026"
+       ],
+       [
+        "Evalúa",
+        "Jhostin Galarza, Scrum Master"
+       ],
+       [
+        "Fuente",
+        "Registros del proyecto: actas, comunicaciones, cambios e incidentes"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "2. Indicadores del desempeño del equipo",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Indicador",
+       "Meta",
+       "Resultado",
+       "Estado"
+      ],
+      "anchos": [
+       36,
+       14,
+       34,
+       16
+      ],
+      "filas": [
+       [
+        "Entregables del sprint aceptados",
+        "Todos",
+        "2 de 2 (ALC-06)",
+        {
+         "x": "Cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Hito del sprint cumplido en fecha",
+        "Sí",
+        "Sí, el 06/11/2026",
+        {
+         "x": "Cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Actividades del sprint terminadas",
+        "Todas",
+        "4 de 4",
+        {
+         "x": "Cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Comunicaciones programadas realizadas",
+        "Todas",
+        "8 de 8",
+        {
+         "x": "Cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Solicitudes de cambio decididas en el sprint",
+        "Las previstas",
+        "2 aprobadas (SC-08, SC-10); SC-09 sigue en evaluación",
+        {
+         "x": "A mejorar",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Incidentes con fecha límite vencida",
+        "Ninguno",
+        "5 (IN-01, IN-04, IN-07, IN-08, IN-11)",
+        {
+         "x": "A mejorar",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Integrantes que dejaron el equipo",
+        "Ninguno",
+        "Ninguno (supuesto S-10 vigente)",
+        {
+         "x": "Cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Indicadores del Sprint 1"
+     },
+     {
+      "t": "p",
+      "x": "No se registraron horas reales, por eso aún no se mide la productividad por hora. Desde el Sprint 2 cada integrante anota sus horas una vez por semana."
+     }
+    ]
+   },
+   {
+    "titulo": "3. Retrospectiva del Sprint 1",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Qué salió bien",
+       "Qué mejorar"
+      ],
+      "anchos": [
+       50,
+       50
+      ],
+      "filas": [
+       [
+        [
+         "• Se cumplió el hito 1 en la fecha prevista: arquitectura validada y variables del modelo definidas.",
+         "• El Product Owner aceptó los dos entregables del sprint sin observaciones (ALC-06).",
+         "• El taller de validación de las variables reunió a los 16 docentes y a la directora.",
+         "• Se aprobaron las solicitudes SC-08 (validación del modelo) y SC-10 (EDT versión 4).",
+         "• Se realizaron todas las comunicaciones programadas en el sprint."
+        ],
+        [
+         "• La primera exportación de Cubicol llegó el 06/11/2026; se había pedido el 20/10/2026.",
+         "• La solicitud SC-09 (correo de las alertas) debía decidirse en el Sprint 1 y sigue en evaluación.",
+         "• 5 incidentes llegaron a su fecha límite sin cerrarse.",
+         "• No se registraron las horas reales trabajadas.",
+         "• El Sprint 2 empieza con un integrante sobreasignado."
+        ]
+       ]
+      ],
+      "titulo": "Retrospectiva del 06/11/2026"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Acción",
+       "Responsable",
+       "Fecha"
+      ],
+      "anchos": [
+       60,
+       22,
+       18
+      ],
+      "filas": [
+       [
+        "Presentar la solicitud SC-12 para nivelar la carga del Sprint 2.",
+        "Jhostin Galarza",
+        "09/11/2026"
+       ],
+       [
+        "Anotar las horas reales de cada integrante en una hoja compartida, una vez por semana.",
+        "Jhostin Galarza",
+        "Desde el 09/11/2026"
+       ],
+       [
+        "Revisar los incidentes abiertos en la reunión diaria de cada lunes.",
+        "Carlos Curo",
+        "Desde el 09/11/2026"
+       ],
+       [
+        "Pedir las exportaciones 2 y 3 de Cubicol con fecha de entrega acordada.",
+        "Helber Perez",
+        "13/11/2026"
+       ]
+      ],
+      "titulo": "Acciones de mejora"
+     }
+    ]
+   },
+   {
+    "titulo": "4. Etapa del equipo (escalera de Tuckman)",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Formación",
+       "Conflicto",
+       "Normalización",
+       "Desempeño",
+       "Disolución"
+      ],
+      "anchos": [
+       20,
+       20,
+       20,
+       20,
+       20
+      ],
+      "filas": [
+       [
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "Etapa actual",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        {
+         "x": "",
+         "align": "center"
+        },
+        {
+         "x": "",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Escalera de Tuckman"
+     },
+     {
+      "t": "p",
+      "x": "Los roles están definidos (Product Owner desde el 12/10/2026), hay acuerdos de trabajo y el equipo cumplió su primer hito. Aún no se mide la productividad real (no hay registro de horas), por eso no se considera en la etapa de desempeño."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Logros y reconocimiento",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Integrante",
+       "Logro del Sprint 1"
+      ],
+      "anchos": [
+       26,
+       74
+      ],
+      "filas": [
+       [
+        "Helber Perez",
+        "Variables del modelo (1.0.3): taller del 28/10/2026 con los 16 docentes y la directora, organizado a través del colegio."
+       ],
+       [
+        "Jadira Vasquez",
+        "Arquitectura del sistema (1.0.4): aceptada en la revisión del 06/11/2026."
+       ],
+       [
+        "Jhostin Galarza",
+        "Levantamiento del alcance (1.0.1): reunión de inicio del 12/10/2026 y su acta (GOB-12)."
+       ],
+       [
+        "Carlos Curo",
+        "Actas y control de cambios (1.1.3): dos solicitudes aprobadas en el sprint (SC-08 y SC-10)."
+       ]
+      ],
+      "titulo": "Logros a reconocer en el acta de la revisión"
+     }
+    ]
+   },
+   {
+    "titulo": "6. Formato de autoevaluación (desde el Sprint 2)",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Afirmación (1 = nunca, 5 = siempre)",
+       "Jhostin",
+       "Helber",
+       "Jadira",
+       "Carlos"
+      ],
+      "anchos": [
+       44,
+       14,
+       14,
+       14,
+       14
+      ],
+      "filas": [
+       [
+        "Cumplí los compromisos que asumí en el sprint.",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Avisé a tiempo los impedimentos.",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Colaboré con el trabajo de otros integrantes.",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Respeté los acuerdos del acta del equipo.",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Aprendí algo nuevo que aplico en el proyecto.",
+        "",
+        "",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Autoevaluación individual del sprint",
+      "compacta": true,
+      "fuente": "Cada integrante la llena al final del sprint; el promedio se comenta en la retrospectiva."
+     },
+     {
+      "t": "ul",
+      "items": [
+       "**Lecciones aprendidas (GOB-08, próxima versión):** pedir los datos al cliente con fecha de entrega comprometida y seguirlos cada semana; registrar las horas desde el primer sprint."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "REC-06",
+  "titulo": "Informe de control de los recursos N.º 1",
+  "dominio": "Recursos",
+  "area": "Monitoreo y control",
+  "proceso": "Monitorear y controlar los recursos",
+  "salida": "Información de desempeño del trabajo y solicitudes de cambio",
+  "version": "1.0",
+  "fecha": "07/11/2026",
+  "resumen": "Compara el uso planificado y el uso real de los recursos físicos y virtuales al cierre del Sprint 1, analiza las desviaciones y la tendencia de la carga, y propone acciones correctivas.",
+  "carpeta": "05 - Recursos",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Uso planificado frente al real",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Este informe controla los recursos físicos y virtuales; el desempeño del equipo se evalúa en REC-05."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Recurso",
+       "Planificado",
+       "Real al 07/11/2026",
+       "Estado"
+      ],
+      "anchos": [
+       22,
+       22,
+       40,
+       16
+      ],
+      "filas": [
+       [
+        "Laptops del equipo",
+        "Todo el proyecto",
+        "Las 4 en uso desde el 12/10/2026",
+        {
+         "x": "En uso",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Proyector o pantalla del colegio",
+        "Sprints 5 y 6 (piloto y capacitación)",
+        "Se pide a través del Product Owner una semana antes de usarlo",
+        {
+         "x": "Por pedir",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Python, scikit-learn, FastAPI, React y Vite",
+        "Sprints 2 a 6",
+        "En uso en el repositorio del sistema",
+        {
+         "x": "En uso",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "MS Project",
+        "Cada vez que se actualiza el cronograma",
+        "El equipo no tiene un equipo con licencia; el cronograma se generó como archivo XML de MS Project",
+        {
+         "x": "Sin obtener",
+         "fill": "rojo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Vercel (página web)",
+        "Desde el Sprint 2",
+        "Página del sistema y blog publicados desde octubre de 2026",
+        {
+         "x": "En uso",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Render (API)",
+        "Desde el Sprint 2",
+        "API publicada; en el plan gratuito tarda cerca de un minuto en responder la primera vez",
+        {
+         "x": "En uso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "GitHub y GitHub Actions",
+        "Todo el proyecto",
+        "Dos repositorios y la validación nocturna de datos en funcionamiento",
+        {
+         "x": "En uso",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Google Drive",
+        "Todo el proyecto",
+        "Carpeta compartida con los documentos de gestión en Word",
+        {
+         "x": "En uso",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Base de datos gestionada en la nube",
+        "Sprint 6",
+        "Los datos reales se trabajan en local hasta el Sprint 6",
+        {
+         "x": "Aún no se necesita",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Servicio de envío de correo",
+        "Sprint 4",
+        "Depende de la solicitud SC-09, en evaluación",
+        {
+         "x": "Aún no se necesita",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Conexión a internet",
+        "Todo el proyecto",
+        "En uso para el trabajo remoto",
+        {
+         "x": "En uso",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Aula o laboratorio del colegio",
+        "Sprint 6 (capacitación, 2 horas)",
+        "Se reserva a través del Product Owner en el Sprint 5",
+        {
+         "x": "Por pedir",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Recursos físicos y virtuales",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "2. Desviaciones y resolución de problemas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Paso",
+       "Aplicación"
+      ],
+      "anchos": [
+       18,
+       82
+      ],
+      "filas": [
+       [
+        "Identificar",
+        "El ETL (1.2.1) no tenía datos reales del periodo para probar."
+       ],
+       [
+        "Definir",
+        "Pedido del 20/10/2026 (C-09); la exportación llegó el 06/11/2026."
+       ],
+       [
+        "Investigar",
+        "La exportación depende de la gestora de Cubicol y pasa por el Product Owner; no había fecha de entrega acordada."
+       ],
+       [
+        "Analizar",
+        "Sin fecha comprometida, cada pedido puede retrasarse igual; faltan dos cargas antes del 04/12/2026."
+       ],
+       [
+        "Resolver",
+        "Pedir las cargas 2 y 3 con fecha de entrega y seguirlas en la reunión diaria de los lunes."
+       ],
+       [
+        "Comprobar",
+        "La carga 2 llega en la fecha acordada (revisión del 20/11/2026)."
+       ]
+      ],
+      "titulo": "La primera exportación de Cubicol llegó 17 días después del pedido"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Paso",
+       "Aplicación"
+      ],
+      "anchos": [
+       18,
+       82
+      ],
+      "filas": [
+       [
+        "Identificar",
+        "El cronograma existe como XML de MS Project, pero nadie lo ha abierto ni guardado en .mpp."
+       ],
+       [
+        "Definir",
+        "Recurso de software planificado y no obtenido."
+       ],
+       [
+        "Investigar",
+        "Opciones: laboratorio de la universidad o licencia de estudiante."
+       ],
+       [
+        "Analizar",
+        "El laboratorio no tiene costo; la licencia depende de la cuenta de estudiante de cada integrante."
+       ],
+       [
+        "Resolver",
+        "Abrir el XML en el laboratorio de la universidad y guardar el archivo .mpp."
+       ],
+       [
+        "Comprobar",
+        "El archivo .mpp está en Drive y coincide con el CRO-01."
+       ]
+      ],
+      "titulo": "No hay un equipo con licencia de MS Project"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Análisis de tendencias",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Carga del equipo: con la línea base, 22 semanas-integrante superan en más del 10 % lo disponible, concentradas en el Sprint 3 (Helber Perez) y en el Sprint 5 (todo el equipo). Se nivelan en la planificación de cada sprint.",
+       "Datos de Cubicol: faltan dos exportaciones antes del 04/12/2026; si se repite el retraso de la primera, se atrasa el E-01.",
+       "Servicios: los planes gratuitos alcanzan para el desarrollo; la base de datos en la nube y el correo se activan recién en los Sprints 6 y 4."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "4. Análisis costo-beneficio",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Opción",
+       "Costo",
+       "Beneficio",
+       "En contra"
+      ],
+      "anchos": [
+       26,
+       14,
+       30,
+       30
+      ],
+      "filas": [
+       [
+        "Mantener el plan gratuito de Render",
+        "S/ 0",
+        "Cumple la restricción R-02 (sin presupuesto).",
+        "La primera consulta del día tarda cerca de un minuto: mala impresión en el piloto."
+       ],
+       [
+        "Plan de pago durante el piloto (marzo de 2027)",
+        "Unos US$ 7 por mes",
+        "Respuesta inmediata durante el piloto con docentes.",
+        "Requiere presupuesto, que hoy no existe (R-02), y una solicitud de cambio."
+       ],
+       [
+        "Mantener el gratuito y «despertar» la API antes de cada sesión",
+        "S/ 0",
+        "Respuesta inmediata en las sesiones programadas.",
+        "Depende de que alguien lo haga a tiempo."
+       ]
+      ],
+      "titulo": "Velocidad de la API durante el piloto"
+     },
+     {
+      "t": "p",
+      "x": "**Recomendación:** Seguir con el plan gratuito y despertar la API antes de cada sesión del piloto. Revisarlo en la planificación del Sprint 5."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Acciones correctivas y solicitudes de cambio",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Acción",
+       "Responsable",
+       "Fecha"
+      ],
+      "anchos": [
+       60,
+       22,
+       18
+      ],
+      "filas": [
+       [
+        "Solicitud SC-12: nivelar la carga del Sprint 2 (REC-04).",
+        "Jhostin Galarza",
+        "09/11/2026"
+       ],
+       [
+        "Pedir las exportaciones 2 y 3 de Cubicol con fecha de entrega acordada.",
+        "Helber Perez",
+        "13/11/2026"
+       ],
+       [
+        "Abrir el cronograma en MS Project en el laboratorio de la universidad y guardar el .mpp.",
+        "Jhostin Galarza",
+        "Sprint 2"
+       ],
+       [
+        "Cerrar el incidente IN-01 (acceso a los datos de Cubicol) en la próxima versión del GOB-06.",
+        "Carlos Curo",
+        "Sprint 2"
+       ]
+      ],
+      "titulo": "Acciones"
+     }
+    ]
+   },
+   {
+    "titulo": "6. Comprobación de resultados del dominio",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Resultado esperado (PMBOK)",
+       "Comprobación al 07/11/2026",
+       "Estado"
+      ],
+      "anchos": [
+       32,
+       50,
+       18
+      ],
+      "filas": [
+       [
+        "Existe una propiedad compartida del proyecto.",
+        "Cada paquete de la EDT tiene un responsable y el equipo presentó el Sprint 1.",
+        {
+         "x": "Se cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Hay un equipo de alto desempeño.",
+        "Hito 1 cumplido y entregables aceptados; equipo en etapa de normalización.",
+        {
+         "x": "En camino",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Los recursos se usan de forma eficaz.",
+        "Los recursos físicos están en uso o se pedirán a tiempo; falta MS Project.",
+        {
+         "x": "En parte",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Hay un porcentaje aceptable de tiempo de inactividad.",
+        "No se puede medir: no hay registro de horas reales (acción de la retrospectiva).",
+        {
+         "x": "Sin datos",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "El equipo es productivo.",
+        "Todas las actividades del Sprint 1 se terminaron; falta medir horas.",
+        {
+         "x": "En parte",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Existe una gestión eficiente de los recursos físicos o virtuales.",
+        "Servicios en planes gratuitos y sin costo; se vigila el arranque lento de la API.",
+        {
+         "x": "Se cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        "Se realiza la gestión de la adquisición de recursos.",
+        "Asignaciones y calendario de recursos (REC-04) con quién provee cada recurso y cuándo.",
+        {
+         "x": "Se cumple",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Comprobación de resultados del dominio de los recursos"
      }
     ]
    }
@@ -20146,8 +23468,32 @@ export const PROCESOS: ProcesoDef[] = [
   "dominio": "Recursos",
   "area": "Planificación",
   "nombre": "Planificar la gestión de los recursos",
-  "estado": "Pendiente",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Define cómo se identifican, obtienen, asignan, desarrollan, controlan y liberan los recursos del equipo y los físicos.",
+  "entradas": [
+   "Acta de constitución del proyecto",
+   "Plan de calidad y línea base del alcance",
+   "Cronograma, requisitos y registro de interesados",
+   "Factores ambientales y activos de la organización"
+  ],
+  "herramientas": [
+   "Juicio de expertos y entrevistas",
+   "Análisis FODA",
+   "Gráficos jerárquicos (organigrama)",
+   "Matriz de asignación de responsabilidades (RACI)",
+   "Formatos orientados al texto (fichas de rol)",
+   "Teoría organizacional y estilos de liderazgo",
+   "Reuniones"
+  ],
+  "salidas": [
+   "Plan de gestión de los recursos",
+   "Acta de constitución del equipo",
+   "Actualizaciones: registro de supuestos"
+  ],
+  "docs": [
+   "REC-02",
+   "REC-03"
+  ]
  },
  {
   "id": "rec-2",
@@ -20188,24 +23534,88 @@ export const PROCESOS: ProcesoDef[] = [
   "dominio": "Recursos",
   "area": "Ejecución",
   "nombre": "Adquirir recursos",
-  "estado": "Pendiente",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Obtiene el equipo y los recursos físicos y servicios, y los asigna a las actividades según su disponibilidad.",
+  "entradas": [
+   "Plan de gestión de los recursos",
+   "Cronograma y calendarios de recursos",
+   "Requisitos de recursos (REC-01)",
+   "Registro de interesados"
+  ],
+  "herramientas": [
+   "Análisis de decisiones con múltiples criterios",
+   "Negociación con el colegio a través del Product Owner",
+   "Preasignación",
+   "Equipos virtuales"
+  ],
+  "salidas": [
+   "Asignaciones del equipo y de los recursos físicos",
+   "Calendarios de recursos e histograma",
+   "Solicitud de cambio SC-12",
+   "Actualizaciones: RBS y supuestos"
+  ],
+  "docs": [
+   "REC-04"
+  ]
  },
  {
   "id": "rec-4",
   "dominio": "Recursos",
   "area": "Ejecución",
   "nombre": "Liderar al equipo",
-  "estado": "Pendiente",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Orienta, desarrolla y dirige al equipo con retroalimentación, colaboración y resolución de conflictos para mejorar su desempeño.",
+  "entradas": [
+   "Plan de gestión de los recursos",
+   "Acta de constitución del equipo",
+   "Asignaciones del equipo y calendarios",
+   "Registros de incidentes y lecciones aprendidas"
+  ],
+  "herramientas": [
+   "Retrospectivas",
+   "Evaluaciones individuales y de equipo",
+   "Escalera de Tuckman",
+   "Reconocimiento y recompensas",
+   "Gestión de conflictos",
+   "Liderazgo de servicio"
+  ],
+  "salidas": [
+   "Evaluación del desempeño del equipo (Sprint 1)",
+   "Acciones de mejora",
+   "Actualizaciones: lecciones aprendidas"
+  ],
+  "docs": [
+   "REC-05"
+  ]
  },
  {
   "id": "rec-5",
   "dominio": "Recursos",
   "area": "Monitoreo y control",
   "nombre": "Monitorear y controlar los recursos",
-  "estado": "Pendiente",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Comprueba que los recursos físicos y virtuales estén disponibles según lo planificado y compara su uso real con el planificado.",
+  "entradas": [
+   "Plan de gestión de los recursos",
+   "Asignaciones de recursos físicos",
+   "Cronograma y RBS",
+   "Registro de incidentes y datos de desempeño"
+  ],
+  "herramientas": [
+   "Revisiones del desempeño",
+   "Análisis de tendencias",
+   "Análisis costo-beneficio",
+   "Resolución de problemas",
+   "Sistema de información (MS Project, GitHub)"
+  ],
+  "salidas": [
+   "Información de desempeño de los recursos",
+   "Solicitudes de cambio",
+   "Actualizaciones: supuestos e incidentes"
+  ],
+  "docs": [
+   "REC-06"
+  ]
  },
  {
   "id": "rie-1",
@@ -20298,7 +23708,7 @@ export const DOMINIOS: DominioDef[] = [
   "nombre": "Recursos",
   "procesos": 5,
   "descripcion": "Planifica, obtiene y lidera al equipo y los recursos físicos.",
-  "estado": "Desarrollado en parte"
+  "estado": "Desarrollado"
  },
  {
   "id": "riesgo",

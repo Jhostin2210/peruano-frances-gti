@@ -2323,7 +2323,7 @@ export const RECURSOS_ESTIMACION = {
  ],
  "materiales": [
   {
-   "grupo": "Equipos e infraestructura",
+   "grupo": "Informática · hardware",
    "recurso": "Laptops del equipo",
    "cantidad": "4 (una por integrante)",
    "para": "Desarrollo, documentación y reuniones",
@@ -2331,15 +2331,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Equipos e infraestructura",
-   "recurso": "Conexión a internet",
-   "cantidad": "4 hogares y la red del colegio",
-   "para": "Trabajo remoto, servicios en la nube y demostraciones",
-   "costo": "Propia y del colegio",
-   "cuando": "Todo el proyecto"
-  },
-  {
-   "grupo": "Equipos e infraestructura",
+   "grupo": "Informática · hardware",
    "recurso": "Proyector o pantalla del colegio",
    "cantidad": "1",
    "para": "Taller con docentes, piloto y capacitación",
@@ -2347,7 +2339,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprints 1, 5 y 6"
   },
   {
-   "grupo": "Software y servicios",
+   "grupo": "Informática · software",
    "recurso": "Python, scikit-learn, FastAPI, React y Vite",
    "cantidad": "—",
    "para": "Construcción del sistema y del modelo",
@@ -2355,7 +2347,15 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprints 2 a 6"
   },
   {
-   "grupo": "Software y servicios",
+   "grupo": "Informática · software",
+   "recurso": "MS Project",
+   "cantidad": "1 equipo con licencia",
+   "para": "Abrir y mantener el cronograma (archivo XML)",
+   "costo": "Licencia de estudiante o laboratorio de la universidad",
+   "cuando": "Al actualizar el cronograma"
+  },
+  {
+   "grupo": "Informática · servicios",
    "recurso": "Vercel (página) y Render (API)",
    "cantidad": "1 proyecto cada uno",
    "para": "Publicar el sistema",
@@ -2363,7 +2363,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Desde el Sprint 2"
   },
   {
-   "grupo": "Software y servicios",
+   "grupo": "Informática · servicios",
    "recurso": "Base de datos gestionada en la nube",
    "cantidad": "1",
    "para": "Datos reales en producción",
@@ -2371,7 +2371,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprint 6"
   },
   {
-   "grupo": "Software y servicios",
+   "grupo": "Informática · servicios",
    "recurso": "GitHub y GitHub Actions",
    "cantidad": "2 repositorios",
    "para": "Código, versiones y validación nocturna de datos",
@@ -2379,7 +2379,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Software y servicios",
+   "grupo": "Informática · servicios",
    "recurso": "Servicio de envío de correo",
    "cantidad": "1",
    "para": "Alertas al docente tutor (SC-09)",
@@ -2387,7 +2387,7 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Sprint 4"
   },
   {
-   "grupo": "Software y servicios",
+   "grupo": "Informática · servicios",
    "recurso": "Google Drive",
    "cantidad": "1 carpeta compartida",
    "para": "Documentos de gestión en Word",
@@ -2395,12 +2395,12 @@ export const RECURSOS_ESTIMACION = {
    "cuando": "Todo el proyecto"
   },
   {
-   "grupo": "Software y servicios",
-   "recurso": "MS Project",
-   "cantidad": "1 equipo con licencia",
-   "para": "Abrir y mantener el cronograma (archivo XML)",
-   "costo": "Licencia de estudiante o laboratorio de la universidad",
-   "cuando": "Al actualizar el cronograma"
+   "grupo": "Informática · conectividad",
+   "recurso": "Conexión a internet",
+   "cantidad": "4 hogares y la red del colegio",
+   "para": "Trabajo remoto, servicios en la nube y demostraciones",
+   "costo": "Propia y del colegio",
+   "cuando": "Todo el proyecto"
   },
   {
    "grupo": "Instalaciones",
@@ -2414,16 +2414,16 @@ export const RECURSOS_ESTIMACION = {
  "rbs": [
   {
    "id": "1",
-   "nombre": "Personal",
+   "nombre": "Recursos del equipo",
    "hijos": [
     {
      "id": "1.1",
-     "nombre": "Equipo del proyecto",
-     "detalle": "4 estudiantes al 50 %",
+     "nombre": "Especialistas",
+     "detalle": "Equipo del proyecto, 4 estudiantes al 50 %",
      "hijos": [
       {
        "id": "1.1.1",
-       "nombre": "Dirección del proyecto y Scrum Master",
+       "nombre": "Director del proyecto y Scrum Master",
        "detalle": "Jhostin Galarza"
       },
       {
@@ -2445,8 +2445,8 @@ export const RECURSOS_ESTIMACION = {
     },
     {
      "id": "1.2",
-     "nombre": "Personal del colegio",
-     "detalle": "Participación puntual",
+     "nombre": "Soporte",
+     "detalle": "Personal del colegio",
      "hijos": [
       {
        "id": "1.2.1",
@@ -2471,54 +2471,44 @@ export const RECURSOS_ESTIMACION = {
   },
   {
    "id": "2",
-   "nombre": "Equipos e infraestructura",
+   "nombre": "Recursos físicos",
    "hijos": [
     {
      "id": "2.1",
-     "nombre": "Laptops del equipo",
-     "detalle": "4, propias"
+     "nombre": "Informática",
+     "hijos": [
+      {
+       "id": "2.1.1",
+       "nombre": "Hardware",
+       "detalle": "4 laptops del equipo; proyector o pantalla del colegio"
+      },
+      {
+       "id": "2.1.2",
+       "nombre": "Software",
+       "detalle": "Python, scikit-learn, FastAPI, React y Vite; MS Project"
+      },
+      {
+       "id": "2.1.3",
+       "nombre": "Servicios en la nube",
+       "detalle": "Vercel, Render, base de datos, correo, GitHub y Google Drive"
+      },
+      {
+       "id": "2.1.4",
+       "nombre": "Conectividad",
+       "detalle": "Internet de los hogares y del colegio"
+      }
+     ]
     },
     {
      "id": "2.2",
-     "nombre": "Conexión a internet",
-     "detalle": "Hogares y red del colegio"
-    },
-    {
-     "id": "2.3",
-     "nombre": "Proyector o pantalla del colegio",
-     "detalle": "1"
-    }
-   ]
-  },
-  {
-   "id": "3",
-   "nombre": "Software y servicios",
-   "hijos": [
-    {
-     "id": "3.1",
-     "nombre": "Software libre de desarrollo",
-     "detalle": "Python, scikit-learn, FastAPI, React y Vite"
-    },
-    {
-     "id": "3.2",
-     "nombre": "Servicios en la nube",
-     "detalle": "Vercel, Render, base de datos y correo (planes gratuitos)"
-    },
-    {
-     "id": "3.3",
-     "nombre": "Herramientas de gestión",
-     "detalle": "GitHub, Google Drive y MS Project"
-    }
-   ]
-  },
-  {
-   "id": "4",
-   "nombre": "Instalaciones",
-   "hijos": [
-    {
-     "id": "4.1",
-     "nombre": "Aula o laboratorio del colegio",
-     "detalle": "Taller y capacitación"
+     "nombre": "Instalaciones",
+     "hijos": [
+      {
+       "id": "2.2.1",
+       "nombre": "Aula o laboratorio del colegio",
+       "detalle": "Taller y capacitación"
+      }
+     ]
     }
    ]
   }
@@ -2607,6 +2597,1741 @@ export const RECURSOS_ESTIMACION = {
    "detalle": "líneas no vacías del repositorio del sistema (Python, TypeScript, CSS, SQL y la tarea nocturna)"
   }
  }
+};
+
+export const RECURSOS_GESTION = {
+ "organigrama": {
+  "raiz": {
+   "nombre": "Promotora Directora",
+   "detalle": "Patrocinadora · I.E.P. Peruano Francés"
+  },
+  "hijos": [
+   {
+    "id": "",
+    "nombre": "Product Owner",
+    "detalle": "Helber Perez · docente del colegio y canal único con la institución",
+    "hijos": [
+     {
+      "id": "",
+      "nombre": "Coordinación académica",
+      "detalle": "Plan de capacitación y piloto"
+     },
+     {
+      "id": "",
+      "nombre": "Docentes tutores",
+      "detalle": "Variables del modelo, pruebas y piloto"
+     },
+     {
+      "id": "",
+      "nombre": "Gestora de Cubicol y encargado de TI",
+      "detalle": "Exportaciones de notas y red del colegio"
+     }
+    ]
+   },
+   {
+    "id": "",
+    "nombre": "Director del proyecto y Scrum Master",
+    "detalle": "Jhostin Galarza",
+    "hijos": [
+     {
+      "id": "",
+      "nombre": "Modelo de Machine Learning",
+      "detalle": "Helber Perez"
+     },
+     {
+      "id": "",
+      "nombre": "Datos, alertas y despliegue",
+      "detalle": "Jadira Vasquez"
+     },
+     {
+      "id": "",
+      "nombre": "Tablero web y control de cambios",
+      "detalle": "Carlos Curo"
+     }
+    ]
+   }
+  ]
+ },
+ "roles": [
+  {
+   "persona": "Jhostin Galarza",
+   "rol": "Director del proyecto y Scrum Master",
+   "responsabilidades": [
+    "Planificar y mantener las líneas base y los documentos de gestión",
+    "Facilitar la reunión diaria, la revisión y la retrospectiva",
+    "Quitar impedimentos y mantener la relación con el docente del curso"
+   ],
+   "autoridad": "Asigna el trabajo de gestión, aprueba los informes y propone los cambios a las líneas base (GOB-10).",
+   "competencias": "Gestión de proyectos (PMBOK y Scrum), MS Project, comunicación."
+  },
+  {
+   "persona": "Helber Perez",
+   "rol": "Product Owner y responsable del modelo de Machine Learning",
+   "responsabilidades": [
+    "Ordenar el trabajo de cada sprint y aceptar los entregables",
+    "Ser el canal único con el colegio (SC-11)",
+    "Entrenar y validar el modelo predictivo"
+   ],
+   "autoridad": "Decide prioridades y acepta o rechaza los entregables; decide las solicitudes de cambio del producto.",
+   "competencias": "Conocimiento del colegio y de sus docentes, Python y scikit-learn."
+  },
+  {
+   "persona": "Jadira Vasquez",
+   "rol": "Datos, alertas y despliegue",
+   "responsabilidades": [
+    "Integrar y limpiar las notas de Cubicol (E-01)",
+    "Construir el motor de alertas",
+    "Desplegar el sistema en la nube"
+   ],
+   "autoridad": "Decide el diseño técnico de los datos y del despliegue dentro de la arquitectura aprobada.",
+   "competencias": "Bases de datos, ETL, FastAPI y servicios en la nube."
+  },
+  {
+   "persona": "Carlos Curo",
+   "rol": "Tablero web y control de cambios",
+   "responsabilidades": [
+    "Diseñar y desarrollar el tablero del docente",
+    "Llevar las actas y el registro de cambios",
+    "Redactar el manual de usuario"
+   ],
+   "autoridad": "Decide el diseño de la interfaz dentro de los requisitos; mantiene el registro de cambios.",
+   "competencias": "React, diseño de interfaces y documentación."
+  }
+ ],
+ "raciColumnas": [
+  "Jhostin",
+  "Helber",
+  "Jadira",
+  "Carlos",
+  "Dirección",
+  "Coordinación",
+  "Docentes",
+  "Gestora de Cubicol"
+ ],
+ "raci": [
+  {
+   "id": "1.0.1",
+   "nombre": "Levantamiento del alcance",
+   "componente": "Análisis y diseño",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "C",
+    "Carlos": "C",
+    "Dirección": "C",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.0.2",
+   "nombre": "Diagnóstico de los datos",
+   "componente": "Análisis y diseño",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "R",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.0.3",
+   "nombre": "Variables del modelo",
+   "componente": "Análisis y diseño",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "R/A",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "C",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.0.4",
+   "nombre": "Arquitectura del sistema",
+   "componente": "Análisis y diseño",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "R",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.1.1",
+   "nombre": "Cronograma de hitos",
+   "componente": "Gestión del proyecto",
+   "fila": {
+    "Jhostin": "R/A",
+    "Helber": "C",
+    "Jadira": "C",
+    "Carlos": "C",
+    "Dirección": "",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.1.2",
+   "nombre": "Informes de avance",
+   "componente": "Gestión del proyecto",
+   "fila": {
+    "Jhostin": "R/A",
+    "Helber": "",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.1.3",
+   "nombre": "Actas y control de cambios",
+   "componente": "Gestión del proyecto",
+   "fila": {
+    "Jhostin": "A",
+    "Helber": "",
+    "Jadira": "",
+    "Carlos": "R",
+    "Dirección": "",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.2.1",
+   "nombre": "Integración de datos (ETL)",
+   "componente": "Datos e integración",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "R",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": "C"
+   }
+  },
+  {
+   "id": "1.2.2",
+   "nombre": "Calidad de datos",
+   "componente": "Datos e integración",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "R",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.3.1",
+   "nombre": "Entrenamiento del modelo",
+   "componente": "Modelo ML predictivo",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "R/A",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.3.2",
+   "nombre": "Clasificación de riesgo",
+   "componente": "Modelo ML predictivo",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "R/A",
+    "Jadira": "C",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.3.3",
+   "nombre": "Validación del modelo",
+   "componente": "Modelo ML predictivo",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "R/A",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.4.1",
+   "nombre": "Motor de alertas",
+   "componente": "Alertas y tablero",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "R",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.4.2.1",
+   "nombre": "Diseño de la interfaz",
+   "componente": "Alertas y tablero",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "",
+    "Carlos": "R",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.4.2.2",
+   "nombre": "Desarrollo del tablero",
+   "componente": "Alertas y tablero",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "",
+    "Carlos": "R",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.4.2.3",
+   "nombre": "Pruebas con usuarios",
+   "componente": "Alertas y tablero",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "C",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "C",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.4.3",
+   "nombre": "Roles y accesos",
+   "componente": "Alertas y tablero",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.5.1",
+   "nombre": "Despliegue del sistema",
+   "componente": "Implantación y cierre",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "R",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.5.2",
+   "nombre": "Manual de usuario",
+   "componente": "Implantación y cierre",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "A",
+    "Jadira": "",
+    "Carlos": "R",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.5.3",
+   "nombre": "Manual técnico",
+   "componente": "Implantación y cierre",
+   "fila": {
+    "Jhostin": "",
+    "Helber": "R/A",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.5.4",
+   "nombre": "Plan de capacitación",
+   "componente": "Implantación y cierre",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "",
+    "Carlos": "",
+    "Dirección": "I",
+    "Coordinación": "C",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.5.5",
+   "nombre": "Capacitación y cierre",
+   "componente": "Implantación y cierre",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "C",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "I",
+    "Docentes": "I",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.6.1",
+   "nombre": "Pruebas de integración y rendimiento",
+   "componente": "Pruebas y piloto",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "C",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "",
+    "Gestora de Cubicol": ""
+   }
+  },
+  {
+   "id": "1.6.2",
+   "nombre": "Piloto y retroalimentación",
+   "componente": "Pruebas y piloto",
+   "fila": {
+    "Jhostin": "R",
+    "Helber": "A",
+    "Jadira": "C",
+    "Carlos": "C",
+    "Dirección": "I",
+    "Coordinación": "",
+    "Docentes": "C",
+    "Gestora de Cubicol": ""
+   }
+  }
+ ],
+ "foda": {
+  "fortalezas": [
+   "El Product Owner es docente del colegio: conoce a los docentes y los datos, y acorta las consultas.",
+   "Habilidades complementarias: gestión, Machine Learning, datos y desarrollo web.",
+   "Los documentos de gestión salen de una fuente única y se actualizan sin contradicciones."
+  ],
+  "debilidades": [
+   "Dedicación parcial: los cuatro integrantes son estudiantes con otros cursos.",
+   "Carga desigual: hay integrantes con más horas que las disponibles en los Sprints 2, 3 y 5 (REC-01).",
+   "Todo el contacto con el colegio depende de una sola persona."
+  ],
+  "oportunidades": [
+   "Planes gratuitos en la nube y librerías libres de Machine Learning.",
+   "Asistentes de inteligencia artificial para documentar, calcular y revisar código.",
+   "Interés de la Dirección y de los docentes: el taller del 28/10/2026 reunió a los 16 docentes y a la directora."
+  ],
+  "amenazas": [
+   "Los datos dependen de exportaciones de Cubicol que maneja un tercero.",
+   "Las vacaciones escolares (diciembre a febrero) cortan las actividades con docentes.",
+   "Límites de los planes gratuitos: la API tarda en responder la primera vez."
+  ],
+  "estrategias": [
+   "Usar el conocimiento del Product Owner para destrabar los pedidos al colegio, pero dejar cada pedido por escrito con fecha (fortaleza frente a amenaza).",
+   "Nivelar la carga en la planificación de cada sprint y redistribuir actividades entre integrantes con habilidades afines (debilidad frente a oportunidad)."
+  ]
+ },
+ "liderazgo": [
+  {
+   "estilo": "Líder servidor",
+   "uso": "Estilo principal del Scrum Master: facilita, quita impedimentos y protege el tiempo del equipo."
+  },
+  {
+   "estilo": "Transformacional",
+   "uso": "En las revisiones de sprint: se vuelve al propósito del proyecto (alertar a tiempo a los tutores) para motivar."
+  },
+  {
+   "estilo": "Transaccional",
+   "uso": "Solo para lo pactado en el acta del equipo: plazos, avisos con anticipación y uso de los repositorios."
+  }
+ ],
+ "asignacionesEquipo": [
+  {
+   "persona": "Jhostin Galarza",
+   "rol": "Director del proyecto y Scrum Master",
+   "paquetes": [
+    "1.0.1",
+    "1.1.1",
+    "1.1.2",
+    "1.4.2.3",
+    "1.4.3",
+    "1.5.4",
+    "1.5.5"
+   ],
+   "desde": "12/10/2026",
+   "hasta": "23/04/2027",
+   "forma": "Preasignado por el curso (SC-01)"
+  },
+  {
+   "persona": "Helber Perez",
+   "rol": "Product Owner y responsable del modelo de Machine Learning",
+   "paquetes": [
+    "1.0.3",
+    "1.3.1",
+    "1.3.2",
+    "1.3.3",
+    "1.5.3"
+   ],
+   "desde": "12/10/2026",
+   "hasta": "23/04/2027",
+   "forma": "Preasignado por el curso; designado Product Owner en la reunión de inicio (12/10/2026)"
+  },
+  {
+   "persona": "Jadira Vasquez",
+   "rol": "Datos, alertas y despliegue",
+   "paquetes": [
+    "1.0.2",
+    "1.0.4",
+    "1.2.1",
+    "1.2.2",
+    "1.4.1",
+    "1.5.1"
+   ],
+   "desde": "12/10/2026",
+   "hasta": "23/04/2027",
+   "forma": "Preasignado por el curso (SC-01)"
+  },
+  {
+   "persona": "Carlos Curo",
+   "rol": "Tablero web y control de cambios",
+   "paquetes": [
+    "1.1.3",
+    "1.4.2.1",
+    "1.4.2.2",
+    "1.5.2"
+   ],
+   "desde": "12/10/2026",
+   "hasta": "23/04/2027",
+   "forma": "Preasignado por el curso (SC-01)"
+  }
+ ],
+ "asignacionesFisicas": [
+  {
+   "recurso": "Laptops del equipo",
+   "rbs": "2.1.1",
+   "provee": "Cada integrante",
+   "responsable": "Cada integrante",
+   "necesita": "Todo el proyecto",
+   "estado": "En uso",
+   "real": "Las 4 en uso desde el 12/10/2026",
+   "libera": "Al cierre"
+  },
+  {
+   "recurso": "Proyector o pantalla del colegio",
+   "rbs": "2.1.1",
+   "provee": "Colegio",
+   "responsable": "Helber Perez",
+   "necesita": "Sprints 5 y 6 (piloto y capacitación)",
+   "estado": "Por pedir",
+   "real": "Se pide a través del Product Owner una semana antes de usarlo",
+   "libera": "Al terminar cada sesión"
+  },
+  {
+   "recurso": "Python, scikit-learn, FastAPI, React y Vite",
+   "rbs": "2.1.2",
+   "provee": "Software libre",
+   "responsable": "Jadira Vasquez",
+   "necesita": "Sprints 2 a 6",
+   "estado": "En uso",
+   "real": "En uso en el repositorio del sistema",
+   "libera": "No aplica"
+  },
+  {
+   "recurso": "MS Project",
+   "rbs": "2.1.2",
+   "provee": "Universidad (laboratorio) o licencia de estudiante",
+   "responsable": "Jhostin Galarza",
+   "necesita": "Cada vez que se actualiza el cronograma",
+   "estado": "Sin obtener",
+   "real": "El equipo no tiene un equipo con licencia; el cronograma se generó como archivo XML de MS Project",
+   "libera": "No aplica"
+  },
+  {
+   "recurso": "Vercel (página web)",
+   "rbs": "2.1.3",
+   "provee": "Plan gratuito",
+   "responsable": "Jadira Vasquez",
+   "necesita": "Desde el Sprint 2",
+   "estado": "En uso",
+   "real": "Página del sistema y blog publicados desde octubre de 2026",
+   "libera": "Se transfiere al colegio al cierre"
+  },
+  {
+   "recurso": "Render (API)",
+   "rbs": "2.1.3",
+   "provee": "Plan gratuito",
+   "responsable": "Jadira Vasquez",
+   "necesita": "Desde el Sprint 2",
+   "estado": "En uso",
+   "real": "API publicada; en el plan gratuito tarda cerca de un minuto en responder la primera vez",
+   "libera": "Se transfiere al colegio al cierre"
+  },
+  {
+   "recurso": "GitHub y GitHub Actions",
+   "rbs": "2.1.3",
+   "provee": "Plan gratuito",
+   "responsable": "Jhostin Galarza",
+   "necesita": "Todo el proyecto",
+   "estado": "En uso",
+   "real": "Dos repositorios y la validación nocturna de datos en funcionamiento",
+   "libera": "Se transfiere al colegio al cierre"
+  },
+  {
+   "recurso": "Google Drive",
+   "rbs": "2.1.3",
+   "provee": "Plan gratuito",
+   "responsable": "Jhostin Galarza",
+   "necesita": "Todo el proyecto",
+   "estado": "En uso",
+   "real": "Carpeta compartida con los documentos de gestión en Word",
+   "libera": "Al cierre"
+  },
+  {
+   "recurso": "Base de datos gestionada en la nube",
+   "rbs": "2.1.3",
+   "provee": "Plan gratuito",
+   "responsable": "Jadira Vasquez",
+   "necesita": "Sprint 6",
+   "estado": "Aún no se necesita",
+   "real": "Los datos reales se trabajan en local hasta el Sprint 6",
+   "libera": "Se transfiere al colegio al cierre"
+  },
+  {
+   "recurso": "Servicio de envío de correo",
+   "rbs": "2.1.3",
+   "provee": "Plan gratuito",
+   "responsable": "Jadira Vasquez",
+   "necesita": "Sprint 4",
+   "estado": "Aún no se necesita",
+   "real": "Depende de la solicitud SC-09, en evaluación",
+   "libera": "Se transfiere al colegio al cierre"
+  },
+  {
+   "recurso": "Conexión a internet",
+   "rbs": "2.1.4",
+   "provee": "Hogares del equipo y colegio",
+   "responsable": "Cada integrante",
+   "necesita": "Todo el proyecto",
+   "estado": "En uso",
+   "real": "En uso para el trabajo remoto",
+   "libera": "No aplica"
+  },
+  {
+   "recurso": "Aula o laboratorio del colegio",
+   "rbs": "2.2.1",
+   "provee": "Colegio",
+   "responsable": "Helber Perez",
+   "necesita": "Sprint 6 (capacitación, 2 horas)",
+   "estado": "Por pedir",
+   "real": "Se reserva a través del Product Owner en el Sprint 5",
+   "libera": "Al terminar la capacitación"
+  }
+ ],
+ "calendario": [
+  {
+   "sprint": 1,
+   "nombre": "Análisis y diseño",
+   "fechas": "12/10/2026 al 06/11/2026",
+   "dias": 20,
+   "horasPorIntegrante": 80,
+   "feriados": [],
+   "colegio": "Docentes disponibles (año escolar 2026)"
+  },
+  {
+   "sprint": 2,
+   "nombre": "Gestión y datos",
+   "fechas": "09/11/2026 al 04/12/2026",
+   "dias": 20,
+   "horasPorIntegrante": 80,
+   "feriados": [],
+   "colegio": "Docentes disponibles (año escolar 2026)"
+  },
+  {
+   "sprint": 3,
+   "nombre": "Modelo ML",
+   "fechas": "07/12/2026 al 01/01/2027",
+   "dias": 16,
+   "horasPorIntegrante": 64,
+   "feriados": [
+    "08/12/2026 Inmaculada Concepción",
+    "09/12/2026 Batalla de Ayacucho",
+    "25/12/2026 Navidad",
+    "01/01/2027 Año Nuevo"
+   ],
+   "colegio": "Cierre del año escolar: disponibilidad limitada"
+  },
+  {
+   "sprint": 4,
+   "nombre": "Alertas y tablero",
+   "fechas": "04/01/2027 al 29/01/2027",
+   "dias": 20,
+   "horasPorIntegrante": 80,
+   "feriados": [],
+   "colegio": "Vacaciones escolares: solo el Product Owner"
+  },
+  {
+   "sprint": 5,
+   "nombre": "Pruebas y piloto",
+   "fechas": "01/03/2027 al 26/03/2027",
+   "dias": 18,
+   "horasPorIntegrante": 72,
+   "feriados": [
+    "25/03/2027 Jueves Santo",
+    "26/03/2027 Viernes Santo"
+   ],
+   "colegio": "Docentes disponibles (año escolar 2027)"
+  },
+  {
+   "sprint": 6,
+   "nombre": "Implantación y cierre",
+   "fechas": "29/03/2027 al 23/04/2027",
+   "dias": 20,
+   "horasPorIntegrante": 80,
+   "feriados": [],
+   "colegio": "Docentes disponibles (año escolar 2027)"
+  }
+ ],
+ "disponibilidad": [
+  "Equipo: lunes a viernes, medio día hábil (50 %) por integrante; los sábados son de clase del curso y no se programa trabajo.",
+  "Receso del 01/02/2027 al 26/02/2027: no hay actividades programadas.",
+  "Colegio: se coordina siempre a través del Product Owner, con una semana de anticipación."
+ ],
+ "histograma": {
+  "semanas": [
+   {
+    "n": 1,
+    "inicio": "2026-10-12",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 2,
+    "inicio": "2026-10-19",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 3,
+    "inicio": "2026-10-26",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 4,
+    "inicio": "2026-11-02",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 5,
+    "inicio": "2026-11-09",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 6,
+    "inicio": "2026-11-16",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 7,
+    "inicio": "2026-11-23",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 8,
+    "inicio": "2026-11-30",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 9,
+    "inicio": "2026-12-07",
+    "sprint": 3,
+    "capacidad": 12
+   },
+   {
+    "n": 10,
+    "inicio": "2026-12-14",
+    "sprint": 3,
+    "capacidad": 20
+   },
+   {
+    "n": 11,
+    "inicio": "2026-12-21",
+    "sprint": 3,
+    "capacidad": 16
+   },
+   {
+    "n": 12,
+    "inicio": "2026-12-28",
+    "sprint": 3,
+    "capacidad": 16
+   },
+   {
+    "n": 13,
+    "inicio": "2027-01-04",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 14,
+    "inicio": "2027-01-11",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 15,
+    "inicio": "2027-01-18",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 16,
+    "inicio": "2027-01-25",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 17,
+    "inicio": "2027-03-01",
+    "sprint": 5,
+    "capacidad": 20
+   },
+   {
+    "n": 18,
+    "inicio": "2027-03-08",
+    "sprint": 5,
+    "capacidad": 20
+   },
+   {
+    "n": 19,
+    "inicio": "2027-03-15",
+    "sprint": 5,
+    "capacidad": 20
+   },
+   {
+    "n": 20,
+    "inicio": "2027-03-22",
+    "sprint": 5,
+    "capacidad": 12
+   },
+   {
+    "n": 21,
+    "inicio": "2027-03-29",
+    "sprint": 6,
+    "capacidad": 20
+   },
+   {
+    "n": 22,
+    "inicio": "2027-04-05",
+    "sprint": 6,
+    "capacidad": 20
+   },
+   {
+    "n": 23,
+    "inicio": "2027-04-12",
+    "sprint": 6,
+    "capacidad": 20
+   },
+   {
+    "n": 24,
+    "inicio": "2027-04-19",
+    "sprint": 6,
+    "capacidad": 20
+   }
+  ],
+  "integrantes": [
+   {
+    "nombre": "Jhostin Galarza",
+    "horas": [
+     12,
+     0,
+     0,
+     0,
+     33.3,
+     1.3,
+     1.3,
+     1.3,
+     0.8,
+     1.3,
+     1,
+     1,
+     1.3,
+     1.3,
+     1.3,
+     13.3,
+     21.3,
+     21.3,
+     25.3,
+     12.8,
+     1.3,
+     21.3,
+     9.3,
+     21.3
+    ]
+   },
+   {
+    "nombre": "Helber Perez",
+    "horas": [
+     12,
+     20,
+     16,
+     20,
+     17.3,
+     1.3,
+     1.3,
+     1.3,
+     20.8,
+     33.3,
+     33,
+     29,
+     1.3,
+     1.3,
+     1.3,
+     1.3,
+     21.3,
+     21.3,
+     25.3,
+     12.8,
+     1.3,
+     21.3,
+     13.3,
+     17.3
+    ]
+   },
+   {
+    "nombre": "Jadira Vasquez",
+    "horas": [
+     12,
+     20,
+     0,
+     20,
+     17.3,
+     29.3,
+     33.3,
+     29.3,
+     0.8,
+     1.3,
+     1,
+     13,
+     21.3,
+     33.3,
+     1.3,
+     1.3,
+     33.3,
+     25.3,
+     25.3,
+     12.8,
+     25.3,
+     37.3,
+     1.3,
+     17.3
+    ]
+   },
+   {
+    "nombre": "Carlos Curo",
+    "horas": [
+     12,
+     0,
+     0,
+     0,
+     17.3,
+     1.3,
+     21.3,
+     13.3,
+     0.8,
+     1.3,
+     1,
+     1,
+     1.3,
+     1.3,
+     25.3,
+     33.3,
+     33.3,
+     25.3,
+     25.3,
+     12.8,
+     1.3,
+     33.3,
+     13.3,
+     17.3
+    ]
+   }
+  ]
+ },
+ "histogramaSc12": {
+  "semanas": [
+   {
+    "n": 1,
+    "inicio": "2026-10-12",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 2,
+    "inicio": "2026-10-19",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 3,
+    "inicio": "2026-10-26",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 4,
+    "inicio": "2026-11-02",
+    "sprint": 1,
+    "capacidad": 20
+   },
+   {
+    "n": 5,
+    "inicio": "2026-11-09",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 6,
+    "inicio": "2026-11-16",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 7,
+    "inicio": "2026-11-23",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 8,
+    "inicio": "2026-11-30",
+    "sprint": 2,
+    "capacidad": 20
+   },
+   {
+    "n": 9,
+    "inicio": "2026-12-07",
+    "sprint": 3,
+    "capacidad": 12
+   },
+   {
+    "n": 10,
+    "inicio": "2026-12-14",
+    "sprint": 3,
+    "capacidad": 20
+   },
+   {
+    "n": 11,
+    "inicio": "2026-12-21",
+    "sprint": 3,
+    "capacidad": 16
+   },
+   {
+    "n": 12,
+    "inicio": "2026-12-28",
+    "sprint": 3,
+    "capacidad": 16
+   },
+   {
+    "n": 13,
+    "inicio": "2027-01-04",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 14,
+    "inicio": "2027-01-11",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 15,
+    "inicio": "2027-01-18",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 16,
+    "inicio": "2027-01-25",
+    "sprint": 4,
+    "capacidad": 20
+   },
+   {
+    "n": 17,
+    "inicio": "2027-03-01",
+    "sprint": 5,
+    "capacidad": 20
+   },
+   {
+    "n": 18,
+    "inicio": "2027-03-08",
+    "sprint": 5,
+    "capacidad": 20
+   },
+   {
+    "n": 19,
+    "inicio": "2027-03-15",
+    "sprint": 5,
+    "capacidad": 20
+   },
+   {
+    "n": 20,
+    "inicio": "2027-03-22",
+    "sprint": 5,
+    "capacidad": 12
+   },
+   {
+    "n": 21,
+    "inicio": "2027-03-29",
+    "sprint": 6,
+    "capacidad": 20
+   },
+   {
+    "n": 22,
+    "inicio": "2027-04-05",
+    "sprint": 6,
+    "capacidad": 20
+   },
+   {
+    "n": 23,
+    "inicio": "2027-04-12",
+    "sprint": 6,
+    "capacidad": 20
+   },
+   {
+    "n": 24,
+    "inicio": "2027-04-19",
+    "sprint": 6,
+    "capacidad": 20
+   }
+  ],
+  "integrantes": [
+   {
+    "nombre": "Jhostin Galarza",
+    "horas": [
+     12,
+     0,
+     0,
+     0,
+     33.3,
+     1.3,
+     1.3,
+     1.3,
+     0.8,
+     1.3,
+     1,
+     1,
+     1.3,
+     1.3,
+     1.3,
+     13.3,
+     21.3,
+     21.3,
+     25.3,
+     12.8,
+     1.3,
+     21.3,
+     9.3,
+     21.3
+    ]
+   },
+   {
+    "nombre": "Helber Perez",
+    "horas": [
+     12,
+     20,
+     16,
+     20,
+     17.3,
+     17.3,
+     1.3,
+     1.3,
+     20.8,
+     33.3,
+     33,
+     29,
+     1.3,
+     1.3,
+     1.3,
+     1.3,
+     21.3,
+     21.3,
+     25.3,
+     12.8,
+     1.3,
+     21.3,
+     13.3,
+     17.3
+    ]
+   },
+   {
+    "nombre": "Jadira Vasquez",
+    "horas": [
+     12,
+     20,
+     0,
+     20,
+     17.3,
+     13.3,
+     33.3,
+     13.3,
+     0.8,
+     1.3,
+     1,
+     13,
+     21.3,
+     33.3,
+     1.3,
+     1.3,
+     33.3,
+     25.3,
+     25.3,
+     12.8,
+     25.3,
+     37.3,
+     1.3,
+     17.3
+    ]
+   },
+   {
+    "nombre": "Carlos Curo",
+    "horas": [
+     12,
+     0,
+     0,
+     0,
+     17.3,
+     1.3,
+     21.3,
+     29.3,
+     0.8,
+     1.3,
+     1,
+     1,
+     1.3,
+     1.3,
+     25.3,
+     33.3,
+     33.3,
+     25.3,
+     25.3,
+     12.8,
+     1.3,
+     33.3,
+     13.3,
+     17.3
+    ]
+   }
+  ]
+ },
+ "reasignacionSc12": {
+  "A-2.1.1.1": "Helber Perez",
+  "A-2.2.1.1": "Carlos Curo"
+ },
+ "criterios": [
+  {
+   "criterio": "Horas libres en el Sprint 2",
+   "peso": 0.4
+  },
+  {
+   "criterio": "Afinidad con la actividad",
+   "peso": 0.4
+  },
+  {
+   "criterio": "Continuidad con su propio trabajo",
+   "peso": 0.2
+  }
+ ],
+ "mcda": [
+  {
+   "actividad": "A-2.1.1.1",
+   "candidatos": [
+    {
+     "persona": "Helber Perez",
+     "puntajes": [
+      5,
+      5,
+      4
+     ],
+     "razon": "59 h libres; hizo con Jadira el diagnóstico de los datos (1.0.2) y conoce las fuentes del colegio; prepara su análisis del Sprint 3.",
+     "total": 4.8
+    },
+    {
+     "persona": "Jhostin Galarza",
+     "puntajes": [
+      4,
+      3,
+      2
+     ],
+     "razon": "43 h libres; conoce el alcance, pero no trabaja con los datos.",
+     "total": 3.2
+    },
+    {
+     "persona": "Carlos Curo",
+     "puntajes": [
+      3,
+      2,
+      3
+     ],
+     "razon": "27 h libres; trabaja en el ETL más adelante.",
+     "total": 2.6
+    }
+   ],
+   "descripcion": "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)"
+  },
+  {
+   "actividad": "A-2.2.1.1",
+   "candidatos": [
+    {
+     "persona": "Carlos Curo",
+     "puntajes": [
+      3,
+      4,
+      5
+     ],
+     "razon": "Colabora en el ETL y verifica la consistencia de los datos (A-2.2.1.2) en los mismos días.",
+     "total": 3.8
+    },
+    {
+     "persona": "Helber Perez",
+     "puntajes": [
+      4,
+      3,
+      2
+     ],
+     "razon": "Le quedarían 43 h libres tras la otra actividad; su trabajo es el modelo.",
+     "total": 3.2
+    },
+    {
+     "persona": "Jhostin Galarza",
+     "puntajes": [
+      4,
+      2,
+      2
+     ],
+     "razon": "43 h libres; no trabaja en el código de datos.",
+     "total": 2.8
+    }
+   ],
+   "descripcion": "Configurar tareas programadas nocturnas de limpieza y validación de datos"
+  }
+ ],
+ "sc12": {
+  "id": "SC-12",
+  "titulo": "Nivelación de la carga del equipo en el Sprint 2",
+  "origen": "La estimación de los recursos (REC-01) muestra que Jadira Vasquez tiene 109 horas asignadas en el Sprint 2 frente a 80 disponibles.",
+  "impacto": "Cronograma: cambia el responsable de dos actividades, sin mover fechas. A-2.1.1.1 (levantar y mapear las fuentes de datos) pasa a Helber Perez y A-2.2.1.1 (tareas programadas nocturnas) pasa a Carlos Curo (análisis en REC-04).",
+  "estado": "En evaluación",
+  "presentado": "2026-11-07",
+  "decision": "Lo decide el Product Owner en la planificación del Sprint 2.",
+  "aplicacion": "—"
+ },
+ "indicadores": [
+  {
+   "indicador": "Entregables del sprint aceptados",
+   "meta": "Todos",
+   "resultado": "2 de 2 (ALC-06)",
+   "ok": true
+  },
+  {
+   "indicador": "Hito del sprint cumplido en fecha",
+   "meta": "Sí",
+   "resultado": "Sí, el 06/11/2026",
+   "ok": true
+  },
+  {
+   "indicador": "Actividades del sprint terminadas",
+   "meta": "Todas",
+   "resultado": "4 de 4",
+   "ok": true
+  },
+  {
+   "indicador": "Comunicaciones programadas realizadas",
+   "meta": "Todas",
+   "resultado": "8 de 8",
+   "ok": true
+  },
+  {
+   "indicador": "Solicitudes de cambio decididas en el sprint",
+   "meta": "Las previstas",
+   "resultado": "2 aprobadas (SC-08, SC-10); SC-09 sigue en evaluación",
+   "ok": false
+  },
+  {
+   "indicador": "Incidentes con fecha límite vencida",
+   "meta": "Ninguno",
+   "resultado": "5 (IN-01, IN-04, IN-07, IN-08, IN-11)",
+   "ok": false
+  },
+  {
+   "indicador": "Integrantes que dejaron el equipo",
+   "meta": "Ninguno",
+   "resultado": "Ninguno (supuesto S-10 vigente)",
+   "ok": true
+  }
+ ],
+ "retrospectiva": {
+  "fecha": "06/11/2026",
+  "bien": [
+   "Se cumplió el hito 1 en la fecha prevista: arquitectura validada y variables del modelo definidas.",
+   "El Product Owner aceptó los dos entregables del sprint sin observaciones (ALC-06).",
+   "El taller de validación de las variables reunió a los 16 docentes y a la directora.",
+   "Se aprobaron las solicitudes SC-08 (validación del modelo) y SC-10 (EDT versión 4).",
+   "Se realizaron todas las comunicaciones programadas en el sprint."
+  ],
+  "mejorar": [
+   "La primera exportación de Cubicol llegó el 06/11/2026; se había pedido el 20/10/2026.",
+   "La solicitud SC-09 (correo de las alertas) debía decidirse en el Sprint 1 y sigue en evaluación.",
+   "5 incidentes llegaron a su fecha límite sin cerrarse.",
+   "No se registraron las horas reales trabajadas.",
+   "El Sprint 2 empieza con un integrante sobreasignado."
+  ],
+  "acciones": [
+   {
+    "accion": "Presentar la solicitud SC-12 para nivelar la carga del Sprint 2.",
+    "responsable": "Jhostin Galarza",
+    "fecha": "09/11/2026"
+   },
+   {
+    "accion": "Anotar las horas reales de cada integrante en una hoja compartida, una vez por semana.",
+    "responsable": "Jhostin Galarza",
+    "fecha": "Desde el 09/11/2026"
+   },
+   {
+    "accion": "Revisar los incidentes abiertos en la reunión diaria de cada lunes.",
+    "responsable": "Carlos Curo",
+    "fecha": "Desde el 09/11/2026"
+   },
+   {
+    "accion": "Pedir las exportaciones 2 y 3 de Cubicol con fecha de entrega acordada.",
+    "responsable": "Helber Perez",
+    "fecha": "13/11/2026"
+   }
+  ]
+ },
+ "tuckman": {
+  "etapas": [
+   "Formación",
+   "Conflicto",
+   "Normalización",
+   "Desempeño",
+   "Disolución"
+  ],
+  "actual": "Normalización",
+  "evidencia": "Los roles están definidos (Product Owner desde el 12/10/2026), hay acuerdos de trabajo y el equipo cumplió su primer hito. Aún no se mide la productividad real (no hay registro de horas), por eso no se considera en la etapa de desempeño."
+ },
+ "logros": [
+  {
+   "persona": "Helber Perez",
+   "logro": "Variables del modelo (1.0.3): taller del 28/10/2026 con los 16 docentes y la directora, organizado a través del colegio."
+  },
+  {
+   "persona": "Jadira Vasquez",
+   "logro": "Arquitectura del sistema (1.0.4): aceptada en la revisión del 06/11/2026."
+  },
+  {
+   "persona": "Jhostin Galarza",
+   "logro": "Levantamiento del alcance (1.0.1): reunión de inicio del 12/10/2026 y su acta (GOB-12)."
+  },
+  {
+   "persona": "Carlos Curo",
+   "logro": "Actas y control de cambios (1.1.3): dos solicitudes aprobadas en el sprint (SC-08 y SC-10)."
+  }
+ ],
+ "autoevaluacion": [
+  "Cumplí los compromisos que asumí en el sprint.",
+  "Avisé a tiempo los impedimentos.",
+  "Colaboré con el trabajo de otros integrantes.",
+  "Respeté los acuerdos del acta del equipo.",
+  "Aprendí algo nuevo que aplico en el proyecto."
+ ],
+ "reconocimiento": [
+  {
+   "cuando": "Revisión de cada sprint",
+   "como": "Se nombran en el acta y en el blog los logros del sprint y quién los hizo posibles."
+  },
+  {
+   "cuando": "Cada demostración",
+   "como": "Presenta el integrante que construyó el entregable."
+  },
+  {
+   "cuando": "Cierre del proyecto",
+   "como": "Constancia de participación firmada por el director del proyecto para cada integrante."
+  }
+ ],
+ "control": [
+  {
+   "recurso": "Laptops del equipo",
+   "planificado": "Todo el proyecto",
+   "real": "Las 4 en uso desde el 12/10/2026",
+   "estado": "En uso",
+   "semaforo": "verde"
+  },
+  {
+   "recurso": "Proyector o pantalla del colegio",
+   "planificado": "Sprints 5 y 6 (piloto y capacitación)",
+   "real": "Se pide a través del Product Owner una semana antes de usarlo",
+   "estado": "Por pedir",
+   "semaforo": "gris"
+  },
+  {
+   "recurso": "Python, scikit-learn, FastAPI, React y Vite",
+   "planificado": "Sprints 2 a 6",
+   "real": "En uso en el repositorio del sistema",
+   "estado": "En uso",
+   "semaforo": "verde"
+  },
+  {
+   "recurso": "MS Project",
+   "planificado": "Cada vez que se actualiza el cronograma",
+   "real": "El equipo no tiene un equipo con licencia; el cronograma se generó como archivo XML de MS Project",
+   "estado": "Sin obtener",
+   "semaforo": "rojo"
+  },
+  {
+   "recurso": "Vercel (página web)",
+   "planificado": "Desde el Sprint 2",
+   "real": "Página del sistema y blog publicados desde octubre de 2026",
+   "estado": "En uso",
+   "semaforo": "verde"
+  },
+  {
+   "recurso": "Render (API)",
+   "planificado": "Desde el Sprint 2",
+   "real": "API publicada; en el plan gratuito tarda cerca de un minuto en responder la primera vez",
+   "estado": "En uso",
+   "semaforo": "amarillo"
+  },
+  {
+   "recurso": "GitHub y GitHub Actions",
+   "planificado": "Todo el proyecto",
+   "real": "Dos repositorios y la validación nocturna de datos en funcionamiento",
+   "estado": "En uso",
+   "semaforo": "verde"
+  },
+  {
+   "recurso": "Google Drive",
+   "planificado": "Todo el proyecto",
+   "real": "Carpeta compartida con los documentos de gestión en Word",
+   "estado": "En uso",
+   "semaforo": "verde"
+  },
+  {
+   "recurso": "Base de datos gestionada en la nube",
+   "planificado": "Sprint 6",
+   "real": "Los datos reales se trabajan en local hasta el Sprint 6",
+   "estado": "Aún no se necesita",
+   "semaforo": "gris"
+  },
+  {
+   "recurso": "Servicio de envío de correo",
+   "planificado": "Sprint 4",
+   "real": "Depende de la solicitud SC-09, en evaluación",
+   "estado": "Aún no se necesita",
+   "semaforo": "gris"
+  },
+  {
+   "recurso": "Conexión a internet",
+   "planificado": "Todo el proyecto",
+   "real": "En uso para el trabajo remoto",
+   "estado": "En uso",
+   "semaforo": "verde"
+  },
+  {
+   "recurso": "Aula o laboratorio del colegio",
+   "planificado": "Sprint 6 (capacitación, 2 horas)",
+   "real": "Se reserva a través del Product Owner en el Sprint 5",
+   "estado": "Por pedir",
+   "semaforo": "gris"
+  }
+ ],
+ "desviaciones": [
+  {
+   "problema": "La primera exportación de Cubicol llegó 17 días después del pedido",
+   "pasos": [
+    [
+     "Identificar",
+     "El ETL (1.2.1) no tenía datos reales del periodo para probar."
+    ],
+    [
+     "Definir",
+     "Pedido del 20/10/2026 (C-09); la exportación llegó el 06/11/2026."
+    ],
+    [
+     "Investigar",
+     "La exportación depende de la gestora de Cubicol y pasa por el Product Owner; no había fecha de entrega acordada."
+    ],
+    [
+     "Analizar",
+     "Sin fecha comprometida, cada pedido puede retrasarse igual; faltan dos cargas antes del 04/12/2026."
+    ],
+    [
+     "Resolver",
+     "Pedir las cargas 2 y 3 con fecha de entrega y seguirlas en la reunión diaria de los lunes."
+    ],
+    [
+     "Comprobar",
+     "La carga 2 llega en la fecha acordada (revisión del 20/11/2026)."
+    ]
+   ]
+  },
+  {
+   "problema": "No hay un equipo con licencia de MS Project",
+   "pasos": [
+    [
+     "Identificar",
+     "El cronograma existe como XML de MS Project, pero nadie lo ha abierto ni guardado en .mpp."
+    ],
+    [
+     "Definir",
+     "Recurso de software planificado y no obtenido."
+    ],
+    [
+     "Investigar",
+     "Opciones: laboratorio de la universidad o licencia de estudiante."
+    ],
+    [
+     "Analizar",
+     "El laboratorio no tiene costo; la licencia depende de la cuenta de estudiante de cada integrante."
+    ],
+    [
+     "Resolver",
+     "Abrir el XML en el laboratorio de la universidad y guardar el archivo .mpp."
+    ],
+    [
+     "Comprobar",
+     "El archivo .mpp está en Drive y coincide con el CRO-01."
+    ]
+   ]
+  }
+ ],
+ "costoBeneficio": [
+  {
+   "opcion": "Mantener el plan gratuito de Render",
+   "costo": "S/ 0",
+   "beneficio": "Cumple la restricción R-02 (sin presupuesto).",
+   "contra": "La primera consulta del día tarda cerca de un minuto: mala impresión en el piloto."
+  },
+  {
+   "opcion": "Plan de pago durante el piloto (marzo de 2027)",
+   "costo": "Unos US$ 7 por mes",
+   "beneficio": "Respuesta inmediata durante el piloto con docentes.",
+   "contra": "Requiere presupuesto, que hoy no existe (R-02), y una solicitud de cambio."
+  },
+  {
+   "opcion": "Mantener el gratuito y «despertar» la API antes de cada sesión",
+   "costo": "S/ 0",
+   "beneficio": "Respuesta inmediata en las sesiones programadas.",
+   "contra": "Depende de que alguien lo haga a tiempo."
+  }
+ ],
+ "recomendacionCB": "Seguir con el plan gratuito y despertar la API antes de cada sesión del piloto. Revisarlo en la planificación del Sprint 5.",
+ "comprobacion": [
+  {
+   "resultado": "Existe una propiedad compartida del proyecto.",
+   "comprobacion": "Cada paquete de la EDT tiene un responsable y el equipo presentó el Sprint 1.",
+   "estado": "Se cumple"
+  },
+  {
+   "resultado": "Hay un equipo de alto desempeño.",
+   "comprobacion": "Hito 1 cumplido y entregables aceptados; equipo en etapa de normalización.",
+   "estado": "En camino"
+  },
+  {
+   "resultado": "Los recursos se usan de forma eficaz.",
+   "comprobacion": "Los recursos físicos están en uso o se pedirán a tiempo; falta MS Project.",
+   "estado": "En parte"
+  },
+  {
+   "resultado": "Hay un porcentaje aceptable de tiempo de inactividad.",
+   "comprobacion": "No se puede medir: no hay registro de horas reales (acción de la retrospectiva).",
+   "estado": "Sin datos"
+  },
+  {
+   "resultado": "El equipo es productivo.",
+   "comprobacion": "Todas las actividades del Sprint 1 se terminaron; falta medir horas.",
+   "estado": "En parte"
+  },
+  {
+   "resultado": "Existe una gestión eficiente de los recursos físicos o virtuales.",
+   "comprobacion": "Servicios en planes gratuitos y sin costo; se vigila el arranque lento de la API.",
+   "estado": "Se cumple"
+  },
+  {
+   "resultado": "Se realiza la gestión de la adquisición de recursos.",
+   "comprobacion": "Asignaciones y calendario de recursos (REC-04) con quién provee cada recurso y cuándo.",
+   "estado": "Se cumple"
+  }
+ ]
 };
 
 export const GANTT_SEMANAS = [
@@ -7757,6 +9482,16 @@ export const CAMBIOS = [
   "estado": "Aprobado",
   "decision": "Patrocinadora y equipo, reunión de inicio, 12/10/2026 (GOB-12)",
   "aplicacion": "Aplicado en INT-03, INT-06 y el tablero de comunicaciones el 17/10/2026."
+ },
+ {
+  "id": "SC-12",
+  "titulo": "Nivelación de la carga del equipo en el Sprint 2",
+  "origen": "La estimación de los recursos (REC-01) muestra que Jadira Vasquez tiene 109 horas asignadas en el Sprint 2 frente a 80 disponibles.",
+  "impacto": "Cronograma: cambia el responsable de dos actividades, sin mover fechas. A-2.1.1.1 (levantar y mapear las fuentes de datos) pasa a Helber Perez y A-2.2.1.1 (tareas programadas nocturnas) pasa a Carlos Curo (análisis en REC-04).",
+  "estado": "En evaluación",
+  "presentado": "2026-11-07",
+  "decision": "Lo decide el Product Owner en la planificación del Sprint 2.",
+  "aplicacion": "—"
  }
 ];
 

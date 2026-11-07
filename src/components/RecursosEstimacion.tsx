@@ -22,7 +22,7 @@ const tono = (h: number, cap: number) => {
   return "text-slate-400";
 };
 
-type Nodo = { id: string; nombre: string; detalle?: string; hijos?: Nodo[] };
+export type Nodo = { id: string; nombre: string; detalle?: string; hijos?: Nodo[] };
 const LINEA = "bg-slate-300";
 
 // Fila de hijos de un nodo, unidos por una línea horizontal entre sus centros (como la EDT).
@@ -51,7 +51,7 @@ function Hojas({ hijos }: { hijos: Nodo[] }) {
         <div key={h.id} className="relative ml-3 rounded-md border border-slate-200 bg-white px-2 py-1.5">
           <span className={`absolute -left-[13px] -top-2 w-0.5 ${LINEA} ${i === hijos.length - 1 ? "h-[calc(50%+0.5rem)]" : "h-[calc(100%+0.5rem)]"}`} />
           <span className={`absolute -left-[13px] top-1/2 h-0.5 w-3 ${LINEA}`} />
-          <p className="font-mono text-[9px] text-slate-400">{h.id}</p>
+          {h.id && <p className="font-mono text-[9px] text-slate-400">{h.id}</p>}
           <p className="text-[11px] font-semibold text-slate-800 leading-tight">{h.nombre}</p>
           {h.detalle && <p className="text-[10px] text-slate-500 leading-tight mt-0.5">{h.detalle}</p>}
         </div>
@@ -63,14 +63,15 @@ function Hojas({ hijos }: { hijos: Nodo[] }) {
 function Caja({ n, estilo }: { n: Nodo; estilo: string }) {
   return (
     <div className={`rounded-lg px-2 py-2 text-center ${estilo}`}>
-      <p className="font-mono text-[10px] opacity-75">{n.id}</p>
+      {n.id && <p className="font-mono text-[10px] opacity-75">{n.id}</p>}
       <p className="text-[12px] font-bold leading-tight">{n.nombre}</p>
       {n.detalle && <p className="text-[10px] opacity-80 leading-tight mt-0.5">{n.detalle}</p>}
     </div>
   );
 }
 
-function ArbolRbs({ rbs }: { rbs: Nodo[] }) {
+// Árbol jerárquico (RBS y organigrama): raíz, categorías en una fila y sus grupos u hojas debajo.
+export function ArbolRbs({ rbs, raiz = { id: "", nombre: "SIA-T · Recursos del proyecto" }, minimo = 860 }: { rbs: Nodo[]; raiz?: Nodo; minimo?: number }) {
   const categoria = (n: Nodo) => (
     <div>
       <Caja n={n} estilo="bg-[#0d7377] text-white" />
@@ -94,10 +95,11 @@ function ArbolRbs({ rbs }: { rbs: Nodo[] }) {
   );
   return (
     <div className="overflow-x-auto pb-2">
-      <div className="min-w-[860px]">
+      <div style={{ minWidth: minimo }}>
         <div className="flex justify-center">
           <div className="bg-[#1f3864] text-white rounded-xl px-8 py-2.5 text-center shadow-sm">
-            <p className="font-serif font-bold text-sm">SIA-T · Recursos del proyecto</p>
+            <p className="font-serif font-bold text-sm">{raiz.nombre}</p>
+            {raiz.detalle && <p className="text-[11px] opacity-80">{raiz.detalle}</p>}
           </div>
         </div>
         <div className={`mx-auto h-4 w-0.5 ${LINEA}`} />
@@ -111,7 +113,7 @@ export default function RecursosEstimacion() {
   const total = R.equipo.reduce((s, t) => s + t.total, 0);
   const personaMes = total / 160;
   const maxPaquete = Math.max(...R.paquetes.map((p) => p.horas));
-  const grupos = [...new Set(R.materiales.map((m) => m.grupo))];
+  const grupos = [...new Set(R.materiales.map((m) => m.grupo.split(" · ")[0]))];
   const tarjetas = [
     { valor: `${n1(total)} h`, etiqueta: "Horas del equipo", detalle: `Unas ${n1(personaMes)} personas-mes, al ${R.supuestos.dedicacion * 100} % de dedicación` },
     { valor: String(R.sobreasignaciones.length), etiqueta: "Sobreasignaciones", detalle: "Integrante y sprint con más horas que las disponibles", alerta: R.sobreasignaciones.length > 0 },
@@ -219,8 +221,9 @@ export default function RecursosEstimacion() {
         <div id="rec-rbs" className="bg-white border border-slate-200 rounded-2xl p-5 mt-4 scroll-mt-20">
           <h4 className="font-serif font-bold text-slate-900 text-sm">Estructura de desglose de recursos (RBS)</h4>
           <p className="text-[11px] text-slate-500 mb-4">
-            Los recursos del proyecto por categoría y tipo; el personal del equipo se agrupa por rol. Las notas de Cubicol y la base pública de UCI no son
-            recursos: son datos de entrada del sistema y quedan como dependencia en el registro de supuestos.
+            Los recursos del proyecto con el modelo de la guía de clase: recursos del equipo (especialistas y soporte) y recursos físicos (informática e
+            instalaciones). Las notas de Cubicol y la base pública de UCI no son recursos: son datos de entrada del sistema y quedan como dependencia en el
+            registro de supuestos.
           </p>
           <ArbolRbs rbs={R.rbs as Nodo[]} />
         </div>

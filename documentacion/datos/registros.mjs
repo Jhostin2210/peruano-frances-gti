@@ -106,6 +106,16 @@ export const CAMBIOS = [
     decision: "Patrocinadora y equipo, reunión de inicio, 12/10/2026 (GOB-12)",
     aplicacion: "Aplicado en INT-03, INT-06 y el tablero de comunicaciones el 17/10/2026.",
   },
+  {
+    id: "SC-12",
+    titulo: "Nivelación de la carga del equipo en el Sprint 2",
+    origen: "La estimación de los recursos (REC-01) muestra que Jadira Vasquez tiene 109 horas asignadas en el Sprint 2 frente a 80 disponibles.",
+    impacto: "Cronograma: cambia el responsable de dos actividades, sin mover fechas. A-2.1.1.1 (levantar y mapear las fuentes de datos) pasa a Helber Perez y A-2.2.1.1 (tareas programadas nocturnas) pasa a Carlos Curo (análisis en REC-04).",
+    estado: "En evaluación",
+    presentado: "2026-11-07",
+    decision: "Lo decide el Product Owner en la planificación del Sprint 2.",
+    aplicacion: "—",
+  },
 ];
 
 // ───────────────────────── Incidentes (GOB-06) ─────────────────────────

@@ -341,7 +341,11 @@ const ANEXOS: Record<string, TocSection[]> = {
     { label: "↳ Planillas de requisitos", href: "#p05-planillas" },
   ],
   "alc-5": [{ label: "↳ Tablero de monitoreo del alcance", href: "#alc-tablero" }],
+  "rec-1": [{ label: "↳ Organigrama, RACI y FODA", href: "#rec-plan" }],
   "rec-2": [{ label: "↳ Estimación de los recursos", href: "#rec-estimacion" }],
+  "rec-3": [{ label: "↳ Asignaciones e histograma", href: "#rec-adquirir" }],
+  "rec-4": [{ label: "↳ Desempeño del equipo", href: "#rec-liderar" }],
+  "rec-5": [{ label: "↳ Tablero de recursos", href: "#rec-control" }],
   "alc-4": [
     { label: "↳ Diagrama de la EDT", href: "#p05-diagrama-edt" },
     { label: "↳ Diccionario de la EDT", href: "#p05-diccionario" },

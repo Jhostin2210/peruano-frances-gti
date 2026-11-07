@@ -19,6 +19,7 @@ import { ACTIVIDADES_REALIZADAS, AVANCE, CASOS_E01, CORTES_ALCANCE, ENTREGABLES_
 import { DRIVE_CARPETA, enlaceDrive } from "./datos/drive.mjs";
 import { DEDICACION, HERRAMIENTAS, HORAS_DAILY, HORAS_DIA, LINEAS_DE_CODIGO, RBS, RECURSOS_MATERIALES, capacidadPorSprint, cocomo, horasDelEquipo, horasPorPaquete, sobreasignaciones } from "./datos/recursos.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
+import * as GR from "./datos/gestion-recursos.mjs";
 import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -200,6 +201,35 @@ const datos = {
     rbs: RBS,
     herramientas: HERRAMIENTAS.map(([nombre, uso, como]) => ({ nombre, uso, como })),
     cocomo: { ...cocomo(42.4), lineas: LINEAS_DE_CODIGO },
+  },
+  RECURSOS_GESTION: {
+    organigrama: GR.ORGANIGRAMA,
+    roles: GR.ROLES_EQUIPO,
+    raciColumnas: GR.RACI_COLUMNAS,
+    raci: GR.matrizRaci(),
+    foda: GR.FODA,
+    liderazgo: GR.LIDERAZGO,
+    asignacionesEquipo: GR.asignacionesEquipo(),
+    asignacionesFisicas: GR.ASIGNACIONES_FISICAS,
+    calendario: GR.calendarioRecursos(),
+    disponibilidad: GR.DISPONIBILIDAD,
+    histograma: GR.histograma(),
+    histogramaSc12: GR.histograma(GR.REASIGNACION_SC12),
+    reasignacionSc12: GR.REASIGNACION_SC12,
+    criterios: GR.CRITERIOS_MCDA,
+    mcda: GR.MCDA,
+    sc12: GR.SC12,
+    indicadores: GR.INDICADORES_S1,
+    retrospectiva: GR.RETROSPECTIVA_S1,
+    tuckman: GR.TUCKMAN,
+    logros: GR.LOGROS_S1,
+    autoevaluacion: GR.AUTOEVALUACION,
+    reconocimiento: GR.RECONOCIMIENTO,
+    control: GR.CONTROL_FISICOS,
+    desviaciones: GR.DESVIACIONES,
+    costoBeneficio: GR.COSTO_BENEFICIO,
+    recomendacionCB: GR.RECOMENDACION_CB,
+    comprobacion: GR.COMPROBACION,
   },
   GANTT_SEMANAS: ganttPorSemanas(),
   RED: red().map((n) => ({ id: n.id, tipo: n.tipo, sprint: n.sprint, descripcion: n.descripcion, responsable: n.responsable ?? "", paquete: n.paquete ?? "", te: n.te ?? 0, critica: Boolean(n.isCritical), dias: n.dias, inicio: aIso(n.inicio), fin: aIso(n.fin), preds: n.preds })),

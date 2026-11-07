@@ -421,11 +421,12 @@ export const GOB02 = DOC({
 export const GOB03 = DOC({
   ...base,
   id: "GOB-03",
-  version: "1.1",
-  fecha: P.fechaCorte,
+  version: "1.2",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Se registran el Product Owner designado (S-04 comprobado), la restricción R-08 y el supuesto S-12.", P.director],
+    ["1.2", "07/11/2026", "Supuestos de recursos S-13 a S-15 (REC-02) y primera exportación de Cubicol recibida (S-01).", P.director],
   ],
   titulo: "Registro de supuestos y restricciones",
   archivo: "GOB-03 Registro de supuestos",
@@ -446,7 +447,7 @@ export const GOB03 = DOC({
           ["ID", "Supuesto", "Qué pasa si no se cumple", "Quién lo comprueba", "Cuándo", "Estado"],
           [5, 28, 25, 14, 14, 14],
           [
-            ["S-01", "El colegio entregará exportaciones de notas de Cubicol de 2025 y 2026.", "No hay datos para entrenar ni validar el modelo.", R.jadira, "Sprint 1 (hasta el 23/10/2026)", c("Por comprobar", "amarillo")],
+            ["S-01", "El colegio entregará exportaciones de notas de Cubicol de 2025 y 2026.", "No hay datos para entrenar ni validar el modelo.", R.jadira, "Sprint 1 (hasta el 23/10/2026)", c("Comprobado en parte: la primera exportación llegó el 06/11/2026; faltan dos antes del 04/12/2026", "azul")],
             [
               "S-02",
               "Los datos históricos cubren al menos dos periodos consecutivos por estudiante.",
@@ -472,6 +473,9 @@ export const GOB03 = DOC({
               c("Comprobado en parte: usan correo personal de Gmail; falta la lista de direcciones", "azul"),
             ],
             ["S-12", "El Product Owner dispone de tiempo cada semana para llevar los pedidos y observaciones entre el colegio y el equipo.", "Se retrasan los pedidos de datos, el taller con docentes y la aceptación de los entregables.", R.jhostin, "Cada semana", c("Por comprobar", "amarillo")],
+            ["S-13", "Cada integrante dedica medio día hábil (50 %) al proyecto de lunes a viernes.", "Las horas estimadas (REC-01) no alcanzan y se atrasa el cronograma.", R.jhostin, "Cada semana, desde el Sprint 2 (registro de horas)", c("Por comprobar", "amarillo")],
+            ["S-14", "El equipo puede usar un equipo con licencia de MS Project en el laboratorio de la universidad.", "El cronograma solo se mantiene como archivo XML.", R.jhostin, "Sprint 2", c("Por comprobar", "amarillo")],
+            ["S-15", "El colegio presta el proyector y un aula para el piloto y la capacitación si se piden con una semana de anticipación.", "Las sesiones con docentes se hacen de forma virtual.", R.helber, "Sprint 5", c("Por comprobar", "amarillo")],
           ],
           { titulo: "Registro de supuestos", compacta: true },
         ),

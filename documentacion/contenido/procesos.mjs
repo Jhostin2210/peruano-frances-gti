@@ -15,7 +15,7 @@ export const DOMINIOS = [
   { id: "cronograma", nombre: "Cronograma", procesos: 3, descripcion: "Programa el trabajo y controla los plazos.", estado: "Desarrollado" },
   { id: "finanzas", nombre: "Finanzas", procesos: 4, descripcion: "Estima los costos, arma el presupuesto y controla el gasto.", estado: "Curso anterior" },
   { id: "interesados", nombre: "Interesados", procesos: 7, descripcion: "Identifica a las personas afectadas, planifica su participación y las comunicaciones.", estado: "Desarrollado" },
-  { id: "recursos", nombre: "Recursos", procesos: 5, descripcion: "Planifica, obtiene y lidera al equipo y los recursos físicos.", estado: "Desarrollado en parte" },
+  { id: "recursos", nombre: "Recursos", procesos: 5, descripcion: "Planifica, obtiene y lidera al equipo y los recursos físicos.", estado: "Desarrollado" },
   { id: "riesgo", nombre: "Riesgo", procesos: 6, descripcion: "Identifica, analiza y responde a la incertidumbre.", estado: "Pendiente" },
 ];
 
@@ -236,7 +236,14 @@ export const PROCESOS = [
   },
 
   // ───────────── Recursos ─────────────
-  { id: "rec-1", dominio: "Recursos", area: PL, nombre: "Planificar la gestión de los recursos", estado: "Pendiente", docs: [] },
+  {
+    id: "rec-1", dominio: "Recursos", area: PL, nombre: "Planificar la gestión de los recursos", estado: "Aplicado",
+    que: "Define cómo se identifican, obtienen, asignan, desarrollan, controlan y liberan los recursos del equipo y los físicos.",
+    entradas: ["Acta de constitución del proyecto", "Plan de calidad y línea base del alcance", "Cronograma, requisitos y registro de interesados", "Factores ambientales y activos de la organización"],
+    herramientas: ["Juicio de expertos y entrevistas", "Análisis FODA", "Gráficos jerárquicos (organigrama)", "Matriz de asignación de responsabilidades (RACI)", "Formatos orientados al texto (fichas de rol)", "Teoría organizacional y estilos de liderazgo", "Reuniones"],
+    salidas: ["Plan de gestión de los recursos", "Acta de constitución del equipo", "Actualizaciones: registro de supuestos"],
+    docs: ["REC-02", "REC-03"],
+  },
   {
     id: "rec-2", dominio: "Recursos", area: PL, nombre: "Estimar los recursos", estado: "Aplicado",
     que: "Estima el tipo, la cantidad y las características de los recursos del equipo y de los recursos físicos que necesita cada actividad.",
@@ -245,9 +252,30 @@ export const PROCESOS = [
     salidas: ["Requisitos de recursos", "Base de las estimaciones", "Estructura de desglose de recursos (RBS)", "Actualizaciones propuestas a supuestos, riesgos y lecciones aprendidas"],
     docs: ["REC-01"],
   },
-  { id: "rec-3", dominio: "Recursos", area: E, nombre: "Adquirir recursos", estado: "Pendiente", docs: [] },
-  { id: "rec-4", dominio: "Recursos", area: E, nombre: "Liderar al equipo", estado: "Pendiente", docs: [] },
-  { id: "rec-5", dominio: "Recursos", area: MC, nombre: "Monitorear y controlar los recursos", estado: "Pendiente", docs: [] },
+  {
+    id: "rec-3", dominio: "Recursos", area: E, nombre: "Adquirir recursos", estado: "Aplicado",
+    que: "Obtiene el equipo y los recursos físicos y servicios, y los asigna a las actividades según su disponibilidad.",
+    entradas: ["Plan de gestión de los recursos", "Cronograma y calendarios de recursos", "Requisitos de recursos (REC-01)", "Registro de interesados"],
+    herramientas: ["Análisis de decisiones con múltiples criterios", "Negociación con el colegio a través del Product Owner", "Preasignación", "Equipos virtuales"],
+    salidas: ["Asignaciones del equipo y de los recursos físicos", "Calendarios de recursos e histograma", "Solicitud de cambio SC-12", "Actualizaciones: RBS y supuestos"],
+    docs: ["REC-04"],
+  },
+  {
+    id: "rec-4", dominio: "Recursos", area: E, nombre: "Liderar al equipo", estado: "Aplicado",
+    que: "Orienta, desarrolla y dirige al equipo con retroalimentación, colaboración y resolución de conflictos para mejorar su desempeño.",
+    entradas: ["Plan de gestión de los recursos", "Acta de constitución del equipo", "Asignaciones del equipo y calendarios", "Registros de incidentes y lecciones aprendidas"],
+    herramientas: ["Retrospectivas", "Evaluaciones individuales y de equipo", "Escalera de Tuckman", "Reconocimiento y recompensas", "Gestión de conflictos", "Liderazgo de servicio"],
+    salidas: ["Evaluación del desempeño del equipo (Sprint 1)", "Acciones de mejora", "Actualizaciones: lecciones aprendidas"],
+    docs: ["REC-05"],
+  },
+  {
+    id: "rec-5", dominio: "Recursos", area: MC, nombre: "Monitorear y controlar los recursos", estado: "Aplicado",
+    que: "Comprueba que los recursos físicos y virtuales estén disponibles según lo planificado y compara su uso real con el planificado.",
+    entradas: ["Plan de gestión de los recursos", "Asignaciones de recursos físicos", "Cronograma y RBS", "Registro de incidentes y datos de desempeño"],
+    herramientas: ["Revisiones del desempeño", "Análisis de tendencias", "Análisis costo-beneficio", "Resolución de problemas", "Sistema de información (MS Project, GitHub)"],
+    salidas: ["Información de desempeño de los recursos", "Solicitudes de cambio", "Actualizaciones: supuestos e incidentes"],
+    docs: ["REC-06"],
+  },
 
   // ───────────── Riesgo ─────────────
   { id: "rie-1", dominio: "Riesgo", area: PL, nombre: "Planificar la gestión de los riesgos", estado: "Pendiente", docs: [] },

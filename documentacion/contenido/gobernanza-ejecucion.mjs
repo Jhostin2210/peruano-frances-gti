@@ -108,6 +108,8 @@ const rango = (cat) => {
 
 // El informe de calidad N.º 1 se emitió el 17/10/2026: las solicitudes decididas después siguen en evaluación para él.
 const estadoAlInforme = (x) => (x.decidido && x.decidido > "2026-10-17" ? "En evaluación" : x.estado);
+// Los informes fechados solo cuentan las solicitudes presentadas hasta su corte.
+const CAMBIOS_AL_INFORME = CAMBIOS.filter((x) => !x.presentado || x.presentado <= "2026-10-17");
 
 export const GOB07 = DOC({
   id: "GOB-07",
@@ -183,7 +185,7 @@ export const GOB07 = DOC({
     ]),
     sec("5. Acciones derivadas", [
       ul(
-        `Se registraron ${CAMBIOS.length} solicitudes de cambio (GOB-10): ${CAMBIOS.filter((x) => estadoAlInforme(x) === "Aprobado").length} aprobadas por el equipo y ${CAMBIOS.filter((x) => estadoAlInforme(x) === "En evaluación").length} en evaluación.`,
+        `Se registraron ${CAMBIOS_AL_INFORME.length} solicitudes de cambio (GOB-10): ${CAMBIOS_AL_INFORME.filter((x) => estadoAlInforme(x) === "Aprobado").length} aprobadas por el equipo y ${CAMBIOS_AL_INFORME.filter((x) => estadoAlInforme(x) === "En evaluación").length} en evaluación.`,
         `Se registraron ${INCIDENTES.length} incidentes (GOB-06), de los cuales ${INCIDENTES.filter((x) => x.estado === "Cerrado").length} ya están cerrados.`,
         "Los hallazgos de coherencia quedan atendidos con los cambios SC-01 a SC-07. Los del modelo dependen de SC-08, en evaluación. Los de datos personales tienen abierto el incidente IN-04.",
       ),
@@ -293,7 +295,7 @@ export function crearGOB09(documentos) {
         ),
         ul(
           `Blog del proyecto publicado en ${P.enlaces.blog} y conectado al repositorio.`,
-          `Registro de cambios con ${CAMBIOS.length} solicitudes e incidentes registrados: ${INCIDENTES.length}.`,
+          `Registro de cambios con ${CAMBIOS_AL_INFORME.length} solicitudes e incidentes registrados: ${INCIDENTES.length}.`,
         ),
       ]),
       sec("5. Hitos próximos", [
@@ -344,12 +346,13 @@ export function crearGOB09(documentos) {
 // ───────────────────────── GOB-10 ─────────────────────────
 export const GOB10 = DOC({
   id: "GOB-10",
-  version: "1.2",
+  version: "1.3",
   fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Conformidad de la patrocinadora con SC-02 y SC-03 y nuevo cambio SC-11.", P.director],
     ["1.2", "07/11/2026", "SC-08 y SC-10 aprobados; la EDT pasa a la versión 4.", P.director],
+    ["1.3", "07/11/2026", "Nueva solicitud SC-12: nivelación de la carga del Sprint 2 (dominio de Recursos).", P.director],
   ],
   titulo: "Plan de gestión de cambios y registro de cambios",
   archivo: "GOB-10 Plan y registro de cambios",

@@ -1,4 +1,4 @@
-// Genera las figuras de los Word que son diagramas (hoy, la RBS del REC-01) como imágenes PNG en assets/.
+// Genera las figuras de los Word que son diagramas (RBS, organigrama e histograma de recursos) como PNG en assets/.
 // Dibuja cada figura en HTML y la captura con Microsoft Edge sin ventana (protocolo de depuración de Chrome).
 // Uso: node documentacion/generar-figuras.mjs   (luego, node documentacion/generar.mjs para rehacer los Word)
 
@@ -8,6 +8,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { RBS } from "./datos/recursos.mjs";
+import { ORGANIGRAMA, histograma } from "./datos/gestion-recursos.mjs";
 import { PROYECTO as P } from "./proyecto.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -18,35 +19,38 @@ const EDGE = [
 const PUERTO = 9341;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// ── RBS: raíz, categorías en una fila y, debajo de cada una, sus tipos de recurso ──
-function htmlRbs() {
+// ── Árbol jerárquico: raíz, categorías en una fila y, debajo de cada una, sus grupos u hojas (RBS y organigrama) ──
+const cod = (n) => (n.id ? `<span class="cod">${n.id}</span>` : "");
+function htmlArbol({ raiz, nodos, ancho = 1100 }) {
   const hoja = (n) =>
-    `<div class="hoja"><span class="cod">${n.id}</span><b>${esc(n.nombre)}</b>${n.detalle ? `<i>${esc(n.detalle)}</i>` : ""}</div>`;
+    `<div class="hoja">${cod(n)}<b>${esc(n.nombre)}</b>${n.detalle ? `<i>${esc(n.detalle)}</i>` : ""}</div>`;
   const lista = (hijos) => `<div class="lista">${hijos.map(hoja).join("")}</div>`;
   const columna = (n, clase) =>
-    `<div class="col"><div class="${clase}"><span class="cod">${n.id}</span><b>${esc(n.nombre)}</b>${n.detalle ? `<i>${esc(n.detalle)}</i>` : ""}</div>${
+    `<div class="col"><div class="${clase}">${cod(n)}<b>${esc(n.nombre)}</b>${n.detalle ? `<i>${esc(n.detalle)}</i>` : ""}</div>${
       n.hijos?.length ? lista(n.hijos) : ""
     }</div>`;
   const categoria = (n) => {
     const conGrupos = n.hijos?.some((h) => h.hijos?.length);
     const cuerpo = conGrupos ? `<div class="sub">${n.hijos.map((h) => columna(h, "grupo")).join("")}</div>` : n.hijos?.length ? lista(n.hijos) : "";
-    return `<div class="cat" style="flex:${conGrupos ? n.hijos.length : 1}"><div class="caja"><span class="cod">${n.id}</span><b>${esc(n.nombre)}</b></div>${cuerpo}</div>`;
+    return `<div class="cat" style="flex:${conGrupos ? n.hijos.length : 1}"><div class="caja">${cod(n)}<b>${esc(n.nombre)}</b>${n.detalle ? `<i>${esc(n.detalle)}</i>` : ""}</div>${cuerpo}</div>`;
   };
   return `<!doctype html><meta charset="utf-8"><style>
   *{box-sizing:border-box;margin:0}
   body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1e293b}
-  #fig{width:1100px;padding:18px 14px 16px;background:#fff}
+  #fig{width:${ancho}px;padding:18px 14px 16px;background:#fff}
   .cod{display:block;font-family:Consolas,monospace;font-size:10px;opacity:.75}
   b{display:block;font-size:12.5px;line-height:1.2}
   i{display:block;font-style:normal;font-size:10.5px;line-height:1.25;color:#475569;margin-top:2px}
-  .raiz{width:520px;margin:0 auto;background:#1f3864;color:#fff;border-radius:10px;padding:9px 14px;text-align:center}
+  .raiz{width:${Math.min(520, ancho - 200)}px;margin:0 auto;background:#1f3864;color:#fff;border-radius:10px;padding:9px 14px;text-align:center}
   .raiz b{font-size:14px}
+  .raiz i{color:#c7d2fe}
   .tallo{width:2px;height:14px;background:#94a3b8;margin:0 auto}
   .fila{display:flex;gap:10px;position:relative}
   .cat{position:relative;padding-top:14px;display:flex;flex-direction:column}
   .cat:before{content:"";position:absolute;top:0;left:50%;width:2px;height:14px;background:#94a3b8}
   .caja{background:#0d7377;color:#fff;border-radius:8px;padding:7px 10px;text-align:center}
   .caja .cod{color:#d1fae5;opacity:1}
+  .caja i{color:#ccfbf1}
   .sub{display:flex;gap:10px;margin-top:12px;position:relative}
   .sub:before{content:"";position:absolute;top:-14px;left:50%;width:2px;height:12px;background:#94a3b8}
   .sub .col{flex:1;position:relative;padding-top:12px}
@@ -64,9 +68,9 @@ function htmlRbs() {
   .barra{position:absolute;top:0;height:2px;background:#94a3b8}
 </style>
 <div id="fig">
-  <div class="raiz"><b>${esc(P.sigla)} · Recursos del proyecto</b></div>
+  <div class="raiz"><b>${esc(raiz.nombre)}</b>${raiz.detalle ? `<i>${esc(raiz.detalle)}</i>` : ""}</div>
   <div class="tallo"></div>
-  <div class="fila">${RBS.map(categoria).join("")}<div class="barra"></div></div>
+  <div class="fila">${nodos.map(categoria).join("")}<div class="barra"></div></div>
 </div>
 <script>
   // Ubica la barra horizontal entre los centros de la primera y la última categoría.
@@ -79,6 +83,39 @@ function htmlRbs() {
     const c=(e)=>e.getBoundingClientRect().left+e.getBoundingClientRect().width/2-r.left;
     x.style.left=c(cs[0])+"px";x.style.width=(c(cs.at(-1))-c(cs[0]))+"px";s.appendChild(x);}
 </script>`;
+}
+
+// ── Histograma de recursos: horas por semana de cada integrante frente a sus horas disponibles ──
+function htmlHistograma() {
+  const h = histograma();
+  const max = 40, alto = 64;
+  const fila = (t) => `<div class="fila-h"><div class="nom">${esc(t.nombre)}</div><div class="barras">${t.horas
+    .map((x, i) => {
+      const cap = h.semanas[i].capacidad, exc = x > cap * 1.1 ? "exc" : x > cap ? "leve" : "";
+      return `<div class="col-h"><div class="cap" style="bottom:${(cap / max) * alto}px"></div><div class="bar ${exc}" style="height:${(Math.min(x, max) / max) * alto}px"></div></div>`;
+    })
+    .join("")}</div></div>`;
+  const sprints = [1, 2, 3, 4, 5, 6].map((n) => `<div class="sp" style="flex:${h.semanas.filter((s) => s.sprint === n).length}">Sprint ${n}</div>`).join("");
+  const semanas = h.semanas.map((s) => `<div class="sem">${s.n}</div>`).join("");
+  return `<!doctype html><meta charset="utf-8"><style>
+  *{box-sizing:border-box;margin:0} body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1e293b}
+  #fig{width:1100px;padding:14px 16px}
+  .fila-h{display:flex;align-items:flex-end;margin-bottom:10px}
+  .nom{width:130px;font-size:12px;font-weight:bold;padding-bottom:4px}
+  .barras,.eje{flex:1;display:flex;gap:3px}
+  .col-h{flex:1;height:${alto}px;position:relative;background:#f1f5f9;border-radius:2px}
+  .bar{position:absolute;bottom:0;left:0;right:0;background:#0d7377;border-radius:2px 2px 0 0}
+  .bar.exc{background:#dc2626}
+  .bar.leve{background:#f59e0b}
+  .cap{position:absolute;left:-1px;right:-1px;height:0;border-top:2px dashed #1f3864;z-index:2}
+  .eje{margin-left:130px}
+  .sem{flex:1;text-align:center;font-size:10px;color:#64748b}
+  .sps{display:flex;gap:3px;margin:4px 0 0 130px}
+  .sp{text-align:center;font-size:10.5px;font-weight:bold;color:#1f3864;border-top:2px solid #1f3864;padding-top:2px}
+  .ley{margin:10px 0 0 130px;font-size:11px;color:#475569;display:flex;gap:18px}
+  .ley span{display:inline-block;width:12px;height:10px;margin-right:5px;vertical-align:middle}
+</style><div id="fig">${h.integrantes.map(fila).join("")}<div class="eje">${semanas}</div><div class="sps">${sprints}</div>
+<div class="ley"><div><span style="background:#0d7377"></span>Horas asignadas</div><div><span style="background:#f59e0b"></span>Hasta 10 % más que lo disponible</div><div><span style="background:#dc2626"></span>Más del 10 % sobre lo disponible</div><div><span style="border-top:2px dashed #1f3864;height:0"></span>Disponible en la semana (20 h; menos con feriados)</div><div>Escala: 0 a ${max} h</div></div></div>`;
 }
 
 // ── Captura con Edge ──
@@ -129,7 +166,11 @@ async function capturar(html, destino) {
 }
 
 // Cada figura queda en assets/ (para los Word) y en public/figuras/ (para el documento desplegado en el blog).
-const FIGURAS = [["rbs.png", htmlRbs()]];
+const FIGURAS = [
+  ["rbs.png", htmlArbol({ raiz: { nombre: `${P.sigla} · Recursos del proyecto` }, nodos: RBS })],
+  ["organigrama.png", htmlArbol({ raiz: ORGANIGRAMA.raiz, nodos: ORGANIGRAMA.hijos, ancho: 900 })],
+  ["histograma.png", htmlHistograma()],
+];
 fs.mkdirSync(path.join(AQUI, "..", "public", "figuras"), { recursive: true });
 for (const [archivo, html] of FIGURAS) {
   const destino = path.join(AQUI, "assets", archivo);
