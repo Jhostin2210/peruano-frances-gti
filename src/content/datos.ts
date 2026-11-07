@@ -4051,7 +4051,7 @@ export const ENTREGABLES_ESTADO = [
   "sprint": 2,
   "descripcion": "Procesos que reúnen y limpian los datos académicos en una base de datos en la nube.",
   "estado": "En validación",
-  "nota": "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Al 31/10/2026, siete de los ocho casos de prueba están aprobados; falta repetir la reconciliación en tres fechas (CP-03). Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
+  "nota": "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Siete de los ocho casos de prueba están aprobados. La reconciliación en tres fechas (CP-03) lleva la primera: 237 notas de Cubicol cargadas el 07/11/2026. Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
   "avance": 90,
   "revision": "04/12/2026",
   "paquetes": [
@@ -4059,17 +4059,17 @@ export const ENTREGABLES_ESTADO = [
     "id": "1.2.1",
     "nombre": "Integración de datos (ETL)",
     "estado": "Cumplido en parte",
-    "pct": 85,
-    "existe": "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
-    "falta": "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03)."
+    "pct": 90,
+    "existe": "Base consolidada de notas cargada y reconciliada. Lector de las exportaciones de Cubicol: carga 1 del 07/11/2026 con 45 archivos y 237 notas de Matemática y Cultura General de 3.° a 6.° de primaria, reconciliación correcta.",
+    "falta": "Dos cargas más en otras fechas (CP-03) y enlazar a 4 estudiantes de Cubicol que quedaron pendientes."
    },
    {
     "id": "1.2.2",
     "nombre": "Calidad de datos",
     "estado": "Cumplido en parte",
-    "pct": 95,
-    "existe": "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
-    "falta": "Cotejar las notas transcritas de fotografías."
+    "pct": 90,
+    "existe": "Diez reglas de calidad y validación automática cada noche, 28 noches seguidas sin fallas al 07/11/2026. Al cargar Cubicol se detectaron estudiantes registrados dos veces: con su nombre completo y solo con su nombre de pila.",
+    "falta": "Unificar a los estudiantes registrados dos veces y cotejar las notas transcritas de fotografías."
    }
   ],
   "requisitos": [
@@ -4641,7 +4641,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-11-19",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 85,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -4656,7 +4656,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-11-20",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 85,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -4671,7 +4671,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-11-27",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 85,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -4686,7 +4686,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-11-27",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 85,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -4701,7 +4701,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-12-03",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 95,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -4716,7 +4716,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-12-04",
   "critica": false,
   "estado": "Programada",
-  "avancePaquete": 95,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -6195,6 +6195,18 @@ export const SEGUIMIENTO_ALCANCE = [
   "fecha": "2026-11-07",
   "fuente": "Revisión del Sprint 1",
   "cambios": {
+   "1.2.1": [
+    "Cumplido en parte",
+    90,
+    "Base consolidada de notas cargada y reconciliada. Lector de las exportaciones de Cubicol: carga 1 del 07/11/2026 con 45 archivos y 237 notas de Matemática y Cultura General de 3.° a 6.° de primaria, reconciliación correcta.",
+    "Dos cargas más en otras fechas (CP-03) y enlazar a 4 estudiantes de Cubicol que quedaron pendientes."
+   ],
+   "1.2.2": [
+    "Cumplido en parte",
+    90,
+    "Diez reglas de calidad y validación automática cada noche, 28 noches seguidas sin fallas al 07/11/2026. Al cargar Cubicol se detectaron estudiantes registrados dos veces: con su nombre completo y solo con su nombre de pila.",
+    "Unificar a los estudiantes registrados dos veces y cotejar las notas transcritas de fotografías."
+   ],
    "1.0.1": [
     "Cumplido",
     100,
@@ -6237,7 +6249,7 @@ export const SEGUIMIENTO_ALCANCE = [
    },
    {
     "id": "CP-03",
-    "estado": "Aprobado en parte"
+    "estado": "En curso"
    },
    {
     "id": "CP-04",
@@ -6266,7 +6278,8 @@ export const SEGUIMIENTO_ALCANCE = [
   "hechos": [
    "04/11: el Product Owner aprueba la EDT versión 4 (SC-10): componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete y su entregable. Se aplica el 07/11.",
    "06/11: revisión del Sprint 1 con el Product Owner. Se aprueban la arquitectura y la lista de variables del modelo: hito 1 cumplido.",
-   "06/11: se aprueba sin cambios la solicitud SC-08 (validación del modelo); cambia el criterio de validación de REQ-03."
+   "06/11: se aprueba sin cambios la solicitud SC-08 (validación del modelo); cambia el criterio de validación de REQ-03.",
+   "07/11: primera carga de las exportaciones de Cubicol: 237 notas de 20 estudiantes, reconciliación correcta (CP-03, 1 de 3 fechas). Quedan 4 estudiantes por enlazar."
   ],
   "sprint": [
    {
@@ -6284,9 +6297,15 @@ export const SEGUIMIENTO_ALCANCE = [
   "alertas": [
    {
     "nivel": "Atención",
-    "texto": "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.",
+    "texto": "Hacer las cargas 2 y 3 de Cubicol en otras fechas para completar la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.",
     "responsable": "Jadira Vasquez",
     "fecha": "04/12/2026"
+   },
+   {
+    "nivel": "Atención",
+    "texto": "Confirmar a los 4 estudiantes de Cubicol sin enlazar y unificar a los estudiantes registrados dos veces.",
+    "responsable": "Helber Perez",
+    "fecha": "Sprint 2"
    },
    {
     "nivel": "Seguimiento",
@@ -6392,24 +6411,24 @@ export const SEGUIMIENTO_ALCANCE = [
     "nombre": "Integración de datos (ETL)",
     "componente": "1.2",
     "estado": "Cumplido en parte",
-    "pct": 85,
-    "existe": "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
-    "falta": "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03).",
+    "pct": 90,
+    "existe": "Base consolidada de notas cargada y reconciliada. Lector de las exportaciones de Cubicol: carga 1 del 07/11/2026 con 45 archivos y 237 notas de Matemática y Cultura General de 3.° a 6.° de primaria, reconciliación correcta.",
+    "falta": "Dos cargas más en otras fechas (CP-03) y enlazar a 4 estudiantes de Cubicol que quedaron pendientes.",
     "entregable": "E-01",
     "revision": "2026-12-04",
-    "cambio": false
+    "cambio": true
    },
    {
     "id": "1.2.2",
     "nombre": "Calidad de datos",
     "componente": "1.2",
     "estado": "Cumplido en parte",
-    "pct": 95,
-    "existe": "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
-    "falta": "Cotejar las notas transcritas de fotografías.",
+    "pct": 90,
+    "existe": "Diez reglas de calidad y validación automática cada noche, 28 noches seguidas sin fallas al 07/11/2026. Al cargar Cubicol se detectaron estudiantes registrados dos veces: con su nombre completo y solo con su nombre de pila.",
+    "falta": "Unificar a los estudiantes registrados dos veces y cotejar las notas transcritas de fotografías.",
     "entregable": "E-01",
     "revision": "2026-12-04",
-    "cambio": false
+    "cambio": true
    },
    {
     "id": "1.3.1",

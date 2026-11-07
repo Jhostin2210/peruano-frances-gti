@@ -36,7 +36,7 @@ export const ENTREGABLES_AVANCE = {
   "E-01": {
     paquetes: ["1.2.1", "1.2.2"],
     estado: "En validación",
-    nota: "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Al 31/10/2026, siete de los ocho casos de prueba están aprobados; falta repetir la reconciliación en tres fechas (CP-03). Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
+    nota: "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Siete de los ocho casos de prueba están aprobados. La reconciliación en tres fechas (CP-03) lleva la primera: 237 notas de Cubicol cargadas el 07/11/2026. Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
     evidencias: [
       { texto: "Pantalla «Datos» del sistema", url: `${sistema}/#/datos` },
       { texto: "Casos de prueba del Sprint 2", url: `${repo}/pruebas-sprint-2.md` },
@@ -163,6 +163,18 @@ export const CORTES_ALCANCE = [
     fecha: "2026-11-07",
     fuente: "Revisión del Sprint 1",
     cambios: {
+      "1.2.1": [
+        "Cumplido en parte",
+        90,
+        "Base consolidada de notas cargada y reconciliada. Lector de las exportaciones de Cubicol: carga 1 del 07/11/2026 con 45 archivos y 237 notas de Matemática y Cultura General de 3.° a 6.° de primaria, reconciliación correcta.",
+        "Dos cargas más en otras fechas (CP-03) y enlazar a 4 estudiantes de Cubicol que quedaron pendientes.",
+      ],
+      "1.2.2": [
+        "Cumplido en parte",
+        90,
+        "Diez reglas de calidad y validación automática cada noche, 28 noches seguidas sin fallas al 07/11/2026. Al cargar Cubicol se detectaron estudiantes registrados dos veces: con su nombre completo y solo con su nombre de pila.",
+        "Unificar a los estudiantes registrados dos veces y cotejar las notas transcritas de fotografías.",
+      ],
       "1.0.1": ["Cumplido", 100, "Reunión de inicio del 12/10/2026 con la Dirección, con su acta (GOB-12).", "—"],
       "1.0.2": ["Cumplido", 100, "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.", "—"],
       "1.0.3": ["Cumplido", 100, "Variables del modelo aprobadas por los docentes tutores en el taller del 28/10/2026.", "—"],
@@ -174,19 +186,21 @@ export const CORTES_ALCANCE = [
         "Aplicar la validación aprobada en SC-08 con los datos del colegio.",
       ],
     },
-    casos: {},
+    casos: { "CP-03": "En curso" },
     requisitosCambiados: ["REQ-03"],
     hechos: [
       "04/11: el Product Owner aprueba la EDT versión 4 (SC-10): componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete y su entregable. Se aplica el 07/11.",
       "06/11: revisión del Sprint 1 con el Product Owner. Se aprueban la arquitectura y la lista de variables del modelo: hito 1 cumplido.",
       "06/11: se aprueba sin cambios la solicitud SC-08 (validación del modelo); cambia el criterio de validación de REQ-03.",
+      "07/11: primera carga de las exportaciones de Cubicol: 237 notas de 20 estudiantes, reconciliación correcta (CP-03, 1 de 3 fechas). Quedan 4 estudiantes por enlazar.",
     ],
     sprint: [
       { que: "Arquitectura del sistema", estado: "Cumplido", evidencia: "Aprobada en la revisión del Sprint 1 (06/11/2026).", url: `${repo}/arquitectura.md` },
       { que: "Lista de variables del modelo validada con docentes", estado: "Cumplido", evidencia: "Taller del 28/10/2026 y revisión del Sprint 1 (06/11/2026)." },
     ],
     alertas: [
-      { nivel: "Atención", texto: "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.", responsable: R.jadira, fecha: "04/12/2026" },
+      { nivel: "Atención", texto: "Hacer las cargas 2 y 3 de Cubicol en otras fechas para completar la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.", responsable: R.jadira, fecha: "04/12/2026" },
+      { nivel: "Atención", texto: "Confirmar a los 4 estudiantes de Cubicol sin enlazar y unificar a los estudiantes registrados dos veces.", responsable: R.helber, fecha: "Sprint 2" },
       { nivel: "Seguimiento", texto: "SC-09 (canal de las alertas por correo) sigue en evaluación.", responsable: R.carlos, fecha: "Sprint 2" },
     ],
     fueraDeAlcance: [
