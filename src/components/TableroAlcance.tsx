@@ -45,7 +45,8 @@ const promedio = (lista: { pct: number | null }[]) => {
   const con = lista.filter((p) => p.pct !== null);
   return con.length ? con.reduce((t, p) => t + (p.pct ?? 0), 0) / con.length : 0;
 };
-const delProducto = (c: Corte) => c.paquetes.filter((p) => p.pct !== null);
+// Paquetes del producto: componentes 1.2 a 1.6 (ALC-01, sección 7). El análisis y diseño (1.0) y la gestión (1.1) no cuentan.
+const delProducto = (c: Corte) => c.paquetes.filter((p) => p.pct !== null && !["1.0", "1.1"].includes(p.componente));
 
 function indicadores(c: Corte, anterior: Corte | null) {
   const terminados = c.paquetes.filter((p) => p.estado === "Cumplido").length;
@@ -55,6 +56,7 @@ function indicadores(c: Corte, anterior: Corte | null) {
   const delta = anterior ? avance - promedio(delProducto(anterior)) : 0;
   const conCasos = c.requisitos.filter((r) => r.casos).length;
   const enEvaluacion = CAMBIOS.filter((s) => s.estado === "En evaluación");
+  const estabilidad = ((c.requisitos.length - c.requisitosCambiados.length) / c.requisitos.length) * 100;
   const reqEnCambio = [...new Set(enEvaluacion.flatMap((s) => s.impacto.match(/(REQ|RNF)-\d\d/g) ?? []))];
   const aprobados = c.casos.filter((x) => x.estado === "Aprobado").length;
   const tasaCasos = (aprobados / c.casos.length) * 100;
@@ -82,9 +84,9 @@ function indicadores(c: Corte, anterior: Corte | null) {
     },
     {
       nombre: "Estabilidad de los requisitos",
-      valor: "100 %",
-      detalle: `Ningún requisito cambió en el sprint. ${reqEnCambio.length ? `En evaluación: ${reqEnCambio.join(", ")}.` : ""}`,
-      semaforo: "verde" as Semaforo,
+      valor: pct1(estabilidad),
+      detalle: `${c.requisitosCambiados.length ? `Cambió en el sprint: ${c.requisitosCambiados.join(", ")}.` : "Ningún requisito cambió en el sprint."}${reqEnCambio.length ? ` En evaluación: ${reqEnCambio.join(", ")}.` : ""} Meta: 90 %.`,
+      semaforo: (estabilidad >= 90 ? "verde" : estabilidad >= 80 ? "amarillo" : "rojo") as Semaforo,
     },
     {
       nombre: "Casos de prueba aprobados",

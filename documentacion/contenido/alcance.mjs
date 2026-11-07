@@ -21,11 +21,12 @@ export const ALC01 = DOC({
   area: "Planificación",
   proceso: "Planificar la gestión del alcance",
   salida: "Plan de gestión del alcance y plan de gestión de los requisitos",
-  version: "1.1",
-  fecha: "31/10/2026",
+  version: "1.2",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", "31/10/2026", "Se agrega el tablero de monitoreo y control del alcance (sección 7), con los umbrales de sus indicadores y el procedimiento cuando uno pasa a rojo.", P.director],
+    ["1.2", "07/11/2026", "La línea base del alcance pasa a la EDT versión 4 (SC-10).", P.director],
   ],
   resumen:
     "Explica cómo se define, se desglosa, se valida y se controla el alcance del proyecto, y cómo se registran, priorizan y siguen los requisitos. Incluye el tablero con que se monitorea y controla el alcance cada semana.",
@@ -103,8 +104,8 @@ export const ALC01 = DOC({
         [26, 38, 36],
         [
           ["Enunciado del alcance", "ALC-02 (versión 3)", c("Actualizado al 10/10/2026", "verde")],
-          ["Estructura de desglose del trabajo (EDT)", "Diagrama de la EDT (fase de formulación)", c("Vigente; responsables actualizados (SC-01)", "verde")],
-          ["Diccionario de la EDT", "Diccionario de la EDT (fase de formulación)", c("Por unificar con la EDT (SC-10)", "amarillo")],
+          ["Estructura de desglose del trabajo (EDT)", "EDT versión 4 (ALC-02, sección 6)", c("Unificada y enlazada con el cronograma (SC-10)", "verde")],
+          ["Diccionario de la EDT", "Diccionario de la EDT versión 4 (ALC-02 y blog, capítulo 07)", c("Unificado con la EDT (SC-10)", "verde")],
         ],
         { titulo: "Componentes de la línea base del alcance" },
       ),
@@ -191,11 +192,13 @@ export const ALC02 = DOC({
   area: "Planificación",
   proceso: "Definir el alcance",
   salida: "Enunciado del alcance del proyecto",
-  version: "3.0",
+  version: "4.0",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", "2026 (curso anterior)", "Declaración del alcance de la fase de formulación.", "Equipo anterior"],
     ["2.0", "2026 (curso anterior)", "Se agregan el componente de pruebas y piloto y el entregable E-09.", "Equipo anterior"],
     ["3.0", P.fechaEmision, "Alojamiento en la nube (SC-03), tres niveles y cuatro roles (SC-04), nuevo equipo (SC-01) y nuevo periodo (SC-02).", P.director],
+    ["4.0", "07/11/2026", "EDT versión 4 (SC-10): EDT y diccionario unificados, componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete. Criterio de validación del modelo según SC-08.", P.director],
   ],
   resumen:
     "Describe el producto, sus entregables y criterios de aceptación, lo que queda fuera, y los supuestos y restricciones. Es la versión 3: reemplaza el alojamiento en el colegio por servicios en la nube.",
@@ -242,7 +245,7 @@ export const ALC02 = DOC({
           ["Rendimiento", "El tablero carga en menos de 3 segundos y la clasificación semanal se genera sin intervención manual."],
           ["Seguridad", "El acceso requiere usuario y contraseña, con vistas distintas según el rol."],
           ["Facilidad de uso", "El docente tutor navega el tablero e interpreta las alertas tras una capacitación de dos horas como máximo."],
-          ["Modelo", "El modelo alcanza el umbral mínimo de 75 % en la métrica acordada, validado con datos reales del colegio. La línea base dice «precisión»; su redefinición está en evaluación (SC-08)."],
+          ["Modelo", "El modelo alcanza el umbral mínimo de 75 % en la métrica acordada, validado con datos reales del colegio, según el criterio de validación aprobado en SC-08 (06/11/2026)."],
           ["Datos personales", "Antes de cargar datos reales se cuenta con la política de tratamiento de datos y el consentimiento informado de los apoderados."],
           ["Documentación", "Se entregan el manual de usuario, el manual técnico y el plan de capacitación, validados con el encargado de TI del colegio."],
         ],
@@ -281,7 +284,7 @@ export const ALC02 = DOC({
     ]),
     sec("6. Estructura de desglose del trabajo", [
       p(
-        `La EDT tiene cuatro niveles: el proyecto, ${COMPONENTES.length} componentes, los paquetes de trabajo y, en el tablero web, un nivel más de detalle.`,
+        `La EDT versión 4 tiene cuatro niveles: el proyecto, ${COMPONENTES.length} componentes, ${PAQUETES.length} paquetes de trabajo y, en el tablero web, un nivel más de detalle. La EDT y su diccionario quedan unificados, y cada actividad del cronograma pertenece a un paquete (CRO-01, sección 10).`,
       ),
       tabla(
         ["Código", "Componente", "Descripción"],
@@ -293,7 +296,7 @@ export const ALC02 = DOC({
         ["Código", "Paquete de trabajo", "Responsable", "Entregable", "Criterio de aceptación"],
         [9, 20, 15, 20, 36],
         PAQUETES.map((x) => [
-          x.origen === "ambos" ? x.id : c(x.id, "amarillo"),
+          x.origen === "v4" ? c(x.id, "teal") : x.id,
           x.nombre,
           x.responsable,
           x.entregable,
@@ -302,7 +305,7 @@ export const ALC02 = DOC({
         {
           titulo: "Paquetes de trabajo",
           compacta: true,
-          fuente: `En amarillo: paquetes que figuran en el diccionario de la EDT pero no en la declaración del alcance anterior. La declaración lista ${T.paquetesDeclaracion} paquetes y el diccionario, ${T.paquetes}; la unificación está en evaluación (SC-10).`,
+          fuente: "En verde azulado: paquetes agregados en la versión 4 para el análisis y diseño del Sprint 1.",
         },
       ),
     ]),

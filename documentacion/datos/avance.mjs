@@ -159,4 +159,51 @@ export const CORTES_ALCANCE = [
       },
     ],
   },
+  {
+    fecha: "2026-11-07",
+    fuente: "Revisión del Sprint 1",
+    cambios: {
+      "1.0.1": ["Cumplido", 100, "Reunión de inicio del 12/10/2026 con la Dirección, con su acta (GOB-12).", "—"],
+      "1.0.2": ["Cumplido", 100, "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.", "—"],
+      "1.0.3": ["Cumplido", 100, "Variables del modelo aprobadas por los docentes tutores en el taller del 28/10/2026.", "—"],
+      "1.0.4": ["Cumplido", 100, "Documento de arquitectura aprobado en la revisión del Sprint 1 (06/11/2026).", "—"],
+      "1.3.3": [
+        "Cumplido en parte",
+        70,
+        "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio. La forma de validarlo (SC-08) se aprobó el 06/11/2026.",
+        "Aplicar la validación aprobada en SC-08 con los datos del colegio.",
+      ],
+    },
+    casos: {},
+    requisitosCambiados: ["REQ-03"],
+    hechos: [
+      "06/11: revisión del Sprint 1 con el Product Owner. Se aprueban la arquitectura y la lista de variables del modelo: hito 1 cumplido.",
+      "06/11: se aprueba sin cambios la solicitud SC-08 (validación del modelo); cambia el criterio de validación de REQ-03.",
+      "07/11: se propone la EDT versión 4 (SC-10): componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete y su entregable.",
+    ],
+    sprint: [
+      { que: "Arquitectura del sistema", estado: "Cumplido", evidencia: "Aprobada en la revisión del Sprint 1 (06/11/2026).", url: `${repo}/arquitectura.md` },
+      { que: "Lista de variables del modelo validada con docentes", estado: "Cumplido", evidencia: "Taller del 28/10/2026 y revisión del Sprint 1 (06/11/2026)." },
+    ],
+    alertas: [
+      { nivel: "Atención", texto: "Aprobar la EDT versión 4 (SC-10) con el Product Owner.", responsable: R.jhostin, fecha: "Sprint 2" },
+      { nivel: "Atención", texto: "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.", responsable: R.jadira, fecha: "04/12/2026" },
+      { nivel: "Seguimiento", texto: "SC-09 (canal de las alertas por correo) sigue en evaluación.", responsable: R.carlos, fecha: "Sprint 2" },
+    ],
+    fueraDeAlcance: [
+      {
+        texto: "Pantalla «Evaluar un caso»: evalúa a un estudiante con datos ingresados a mano. No figura en la matriz de requisitos.",
+        estado: "Por revisar",
+        accion: "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo.",
+      },
+    ],
+  },
 ];
+
+// Actividades del cronograma ya realizadas, con la evidencia de su entregable (entregables del cronograma).
+export const ACTIVIDADES_REALIZADAS = {
+  "A-0.1.1.1": { fecha: "2026-10-12", evidencias: [{ texto: "Acta GOB-12", doc: "GOB-12" }] },
+  "A-0.1.1.2": { fecha: "2026-10-23", evidencias: [{ texto: "Datos y variables", url: `${repo}/datos-y-variables.md` }] },
+  "A-0.1.1.3": { fecha: "2026-10-28", evidencias: [{ texto: "Taller con los 16 docentes y la directora; lista de asistencia y acuerdos" }, { texto: "Variables del modelo", url: `${repo}/datos-y-variables.md` }] },
+  "A-0.1.1.4": { fecha: "2026-11-06", evidencias: [{ texto: "Arquitectura del sistema", url: `${repo}/arquitectura.md` }] },
+};

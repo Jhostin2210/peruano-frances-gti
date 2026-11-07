@@ -186,7 +186,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Componentes de la EDT",
-        "6",
+        "7",
         "ALC-02"
        ],
        [
@@ -4562,8 +4562,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Monitoreo y control",
   "proceso": "Evaluar e implementar cambios",
   "salida": "Solicitudes de cambio aprobadas y registro de cambios",
-  "version": "1.1",
-  "fecha": "17/10/2026",
+  "version": "1.2",
+  "fecha": "07/11/2026",
   "resumen": "Establece cómo se solicita, evalúa y decide un cambio, y registra los cambios que separan la versión anterior del proyecto de la versión vigente.",
   "carpeta": "01 - Gobernanza/1.8 Cambios",
   "drive": "https://drive.google.com/file/d/16NuJVDQzJAE-Uk9rGZfLq8uTR_qgt0ue/view",
@@ -4824,13 +4824,13 @@ export const DOCUMENTOS: DocDef[] = [
         "En el conjunto de datos del prototipo, la etiqueta de riesgo se calcula con las mismas notas que se usan como variables, por lo que la precisión obtenida no demuestra capacidad de predicción.",
         "Criterio de validación del requisito REQ-03 y paquete 1.3: predecir el periodo siguiente con datos reales anonimizados, comparar contra una regla simple, medir la proporción de estudiantes en riesgo detectados y retirar la variable de pensiones.",
         {
-         "x": "En evaluación",
-         "fill": "amarillo",
+         "x": "Aprobado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Se decide en la revisión del Sprint 1 (06/11/2026), con el docente asesor.",
-        "—"
+        "Aprobado sin cambios en la revisión del Sprint 1 (06/11/2026).",
+        "Criterio de validación de REQ-03 y paquete 1.3.3 (validación del modelo)."
        ],
        [
         "SC-09",
@@ -4848,16 +4848,16 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "SC-10",
-        "Unificación de la EDT y de su diccionario",
-        "La declaración del alcance lista 18 paquetes de trabajo y el diccionario describe 20.",
-        "Línea base del alcance: EDT, diccionario y matriz de trazabilidad.",
+        "Unificación de la EDT y de su diccionario, y enlace con el cronograma (EDT versión 4)",
+        "La declaración del alcance lista 18 paquetes de trabajo y el diccionario describe 20. Además, las actividades del cronograma usan la numeración anterior de la EDT y las del Sprint 1 (análisis y diseño) no tienen paquete propio.",
+        "Línea base del alcance (EDT y diccionario) y cronograma: componente 1.0 «Análisis y diseño» con cuatro paquetes, cada actividad enlazada a su paquete y con su entregable.",
         {
          "x": "En evaluación",
          "fill": "amarillo",
          "bold": true,
          "align": "center"
         },
-        "Se decide al revisar la estructura del alcance en el Sprint 1.",
+        "EDT versión 4 propuesta el 07/11/2026; la aprueba el Product Owner.",
         "—"
        ],
        [
@@ -9049,8 +9049,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Ejecución",
   "proceso": "Gestionar las comunicaciones",
   "salida": "Comunicaciones del proyecto",
-  "version": "1.3",
-  "fecha": "31/10/2026",
+  "version": "1.4",
+  "fecha": "07/11/2026",
   "resumen": "Lleva la cuenta de cada comunicación del proyecto: las que ya se hicieron, con su constancia, y las programadas, con su fecha límite y su responsable. Es la fuente del tablero de comunicaciones del blog.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
   "drive": "https://drive.google.com/file/d/1rDKKC1FdkN3tliwMU3pRPU0jP1AhH_G7/view",
@@ -9284,7 +9284,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Los docentes tutores dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos"
+        "Asistieron los 16 docentes y la directora, que dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos"
        ]
       ],
       "titulo": "Comunicaciones realizadas al 31/10/2026",
@@ -10635,8 +10635,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Planificar la gestión del alcance",
   "salida": "Plan de gestión del alcance y plan de gestión de los requisitos",
-  "version": "1.1",
-  "fecha": "31/10/2026",
+  "version": "1.2",
+  "fecha": "07/11/2026",
   "resumen": "Explica cómo se define, se desglosa, se valida y se controla el alcance del proyecto, y cómo se registran, priorizan y siguen los requisitos. Incluye el tablero con que se monitorea y controla el alcance cada semana.",
   "carpeta": "03 - Alcance/3.1 Planificar",
   "drive": "https://drive.google.com/file/d/1h09v8TvLCfzdkgl0Ev4BmcUNuugNOcAn/view",
@@ -10881,18 +10881,18 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Estructura de desglose del trabajo (EDT)",
-        "Diagrama de la EDT (fase de formulación)",
+        "EDT versión 4 (ALC-02, sección 6)",
         {
-         "x": "Vigente; responsables actualizados (SC-01)",
+         "x": "Unificada y enlazada con el cronograma (SC-10)",
          "fill": "verde"
         }
        ],
        [
         "Diccionario de la EDT",
-        "Diccionario de la EDT (fase de formulación)",
+        "Diccionario de la EDT versión 4 (ALC-02 y blog, capítulo 07)",
         {
-         "x": "Por unificar con la EDT (SC-10)",
-         "fill": "amarillo"
+         "x": "Unificado con la EDT (SC-10)",
+         "fill": "verde"
         }
        ]
       ],
@@ -11120,8 +11120,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Definir el alcance",
   "salida": "Enunciado del alcance del proyecto",
-  "version": "3.0",
-  "fecha": "10/10/2026",
+  "version": "4.0",
+  "fecha": "07/11/2026",
   "resumen": "Describe el producto, sus entregables y criterios de aceptación, lo que queda fuera, y los supuestos y restricciones. Es la versión 3: reemplaza el alojamiento en el colegio por servicios en la nube.",
   "carpeta": "03 - Alcance/3.2 Definir el alcance",
   "drive": "https://drive.google.com/file/d/1sYJbV7kekeXonhte9MUjnuu1h6ykjZ5t/view",
@@ -11583,7 +11583,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Modelo",
-        "El modelo alcanza el umbral mínimo de 75 % en la métrica acordada, validado con datos reales del colegio. La línea base dice «precisión»; su redefinición está en evaluación (SC-08)."
+        "El modelo alcanza el umbral mínimo de 75 % en la métrica acordada, validado con datos reales del colegio, según el criterio de validación aprobado en SC-08 (06/11/2026)."
        ],
        [
         "Datos personales",
@@ -11656,7 +11656,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "La EDT tiene cuatro niveles: el proyecto, 6 componentes, los paquetes de trabajo y, en el tablero web, un nivel más de detalle."
+      "x": "La EDT versión 4 tiene cuatro niveles: el proyecto, 7 componentes, 24 paquetes de trabajo y, en el tablero web, un nivel más de detalle. La EDT y su diccionario quedan unificados, y cada actividad del cronograma pertenece a un paquete (CRO-01, sección 10)."
      },
      {
       "t": "tabla",
@@ -11671,6 +11671,11 @@ export const DOCUMENTOS: DocDef[] = [
        62
       ],
       "filas": [
+       [
+        "1.0",
+        "Análisis y diseño",
+        "Levantamiento del alcance, diagnóstico de los datos, variables del modelo y arquitectura del sistema."
+       ],
        [
         "1.1",
         "Gestión del proyecto",
@@ -11722,6 +11727,46 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "filas": [
        [
+        {
+         "x": "1.0.1",
+         "fill": "teal"
+        },
+        "Levantamiento del alcance",
+        "Jhostin Galarza",
+        "Acta de la reunión de levantamiento",
+        "Alcance y acceso a los datos validados con la Dirección y registrados en un acta."
+       ],
+       [
+        {
+         "x": "1.0.2",
+         "fill": "teal"
+        },
+        "Diagnóstico de los datos",
+        "Jadira Vasquez",
+        "Informe de calidad y disponibilidad de los datos",
+        "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas."
+       ],
+       [
+        {
+         "x": "1.0.3",
+         "fill": "teal"
+        },
+        "Variables del modelo",
+        "Helber Perez",
+        "Lista de variables validada con docentes",
+        "Variables del modelo revisadas y aprobadas por los docentes tutores en un taller."
+       ],
+       [
+        {
+         "x": "1.0.4",
+         "fill": "teal"
+        },
+        "Arquitectura del sistema",
+        "Jadira Vasquez",
+        "Documento de arquitectura",
+        "Módulos, flujo de datos y tecnologías definidos y aprobados en la revisión del Sprint 1."
+       ],
+       [
         "1.1.1",
         "Cronograma de hitos",
         "Jhostin Galarza",
@@ -11771,10 +11816,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Clasifica a todos los estudiantes activos cada semana sin intervención manual."
        ],
        [
-        {
-         "x": "1.3.3",
-         "fill": "amarillo"
-        },
+        "1.3.3",
         "Validación del modelo",
         "Helber Perez",
         "Informe de validación del modelo",
@@ -11809,10 +11851,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Pruebas con al menos 3 docentes y observaciones atendidas."
        ],
        [
-        {
-         "x": "1.4.3",
-         "fill": "amarillo"
-        },
+        "1.4.3",
         "Roles y accesos",
         "Jhostin Galarza",
         "Control de acceso por rol",
@@ -11870,7 +11909,7 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "titulo": "Paquetes de trabajo",
       "compacta": true,
-      "fuente": "En amarillo: paquetes que figuran en el diccionario de la EDT pero no en la declaración del alcance anterior. La declaración lista 18 paquetes y el diccionario, 20; la unificación está en evaluación (SC-10)."
+      "fuente": "En verde azulado: paquetes agregados en la versión 4 para el análisis y diseño del Sprint 1."
      }
     ]
    },
@@ -13482,8 +13521,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Desarrollar el cronograma",
   "salida": "Plan de gestión del cronograma, línea base del cronograma y cronograma de hitos",
-  "version": "3.0",
-  "fecha": "10/10/2026",
+  "version": "3.1",
+  "fecha": "07/11/2026",
   "resumen": "Programa las 44 actividades del proyecto y la reunión diaria en seis sprints, del 12/10/2026 al 23/04/2027, con receso en febrero por vacaciones escolares. Mantiene la estimación PERT de la versión 2 y actualiza equipo, fechas y totales.",
   "carpeta": "04 - Cronograma",
   "drive": "https://drive.google.com/file/d/1qtjLB_ofYWwJJDKiBJqYF5eWmoyd_PQM/view",
@@ -17647,6 +17686,400 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "p",
       "x": "En el ejercicio, tres sprints quedan en amarillo y el proyecto cierra con un SPI de 0.97, dentro del umbral. Sirve para mostrar cómo se leerán los indicadores cuando haya datos reales. Las solicitudes de cambio que acompañaban al ejercicio en la versión 2 también eran supuestas y no forman parte del registro de cambios (GOB-10)."
+     }
+    ]
+   },
+   {
+    "titulo": "10. Entregables de las actividades",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Cada actividad del cronograma pertenece a un paquete de trabajo de la EDT versión 4 (ALC-02) y produce un entregable verificable. El entregable de un paquete es la suma de los entregables de sus actividades. Los códigos de actividad se conservan de la versión 2."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Actividad",
+       "Paquete de la EDT",
+       "Entregable"
+      ],
+      "anchos": [
+       10,
+       40,
+       22,
+       28
+      ],
+      "filas": [
+       [
+        "A-0.1.1.1",
+        "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
+        "1.0.1 Levantamiento del alcance",
+        "Acta de la reunión de levantamiento"
+       ],
+       [
+        "A-0.1.1.2",
+        "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
+        "1.0.2 Diagnóstico de los datos",
+        "Informe de calidad y disponibilidad de los datos"
+       ],
+       [
+        "A-0.1.1.3",
+        "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
+        "1.0.3 Variables del modelo",
+        "Lista de variables del modelo validada con docentes"
+       ],
+       [
+        "A-0.1.1.4",
+        "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
+        "1.0.4 Arquitectura del sistema",
+        "Documento de arquitectura del sistema"
+       ]
+      ],
+      "titulo": "Sprint 1 · Análisis y diseño",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Actividad",
+       "Paquete de la EDT",
+       "Entregable"
+      ],
+      "anchos": [
+       10,
+       40,
+       22,
+       28
+      ],
+      "filas": [
+       [
+        "A-1.1.1.1",
+        "Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
+        "1.1.1 Cronograma de hitos",
+        "Cronograma de hitos (CRO-01)"
+       ],
+       [
+        "A-1.1.1.2",
+        "Definir Product Backlog y priorizar historias de usuario",
+        "1.1.1 Cronograma de hitos",
+        "Product Backlog priorizado"
+       ],
+       [
+        "A-1.1.1.3",
+        "Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
+        "1.1.1 Cronograma de hitos",
+        "Roles Scrum asignados"
+       ],
+       [
+        "A-1.2.1.1",
+        "Establecer plantilla de informe de avance semanal",
+        "1.1.2 Informes de avance",
+        "Plantilla del informe de avance semanal"
+       ],
+       [
+        "A-1.2.1.2",
+        "Daily Standup 15 min diarios — continuo todo el proyecto",
+        "1.1.2 Informes de avance",
+        "Registro de las reuniones diarias"
+       ],
+       [
+        "A-2.1.1.1",
+        "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
+        "1.2.1 Integración de datos (ETL)",
+        "Mapa de las fuentes de datos académicos"
+       ],
+       [
+        "A-2.1.1.2",
+        "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
+        "1.2.1 Integración de datos (ETL)",
+        "Modelo entidad-relación de la base de datos"
+       ],
+       [
+        "A-2.1.1.3",
+        "Codificar scripts ETL de extracción, transformación y carga",
+        "1.2.1 Integración de datos (ETL)",
+        "Scripts de carga de datos (ETL)"
+       ],
+       [
+        "A-2.1.1.4",
+        "Ejecutar prueba de migración de datos y validar integridad",
+        "1.2.1 Integración de datos (ETL)",
+        "Informe de la prueba de migración"
+       ],
+       [
+        "A-2.2.1.1",
+        "Configurar tareas programadas nocturnas de limpieza y validación de datos",
+        "1.2.2 Calidad de datos",
+        "Validación nocturna programada"
+       ],
+       [
+        "A-2.2.1.2",
+        "Verificar consistencia de datos y corrección de registros erróneos",
+        "1.2.2 Calidad de datos",
+        "Reporte de consistencia de los datos"
+       ]
+      ],
+      "titulo": "Sprint 2 · Gestión y datos",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Actividad",
+       "Paquete de la EDT",
+       "Entregable"
+      ],
+      "anchos": [
+       10,
+       40,
+       22,
+       28
+      ],
+      "filas": [
+       [
+        "A-3.1.1.1",
+        "Análisis exploratorio del dataset académico (EDA)",
+        "1.3.1 Entrenamiento del modelo",
+        "Informe del análisis exploratorio de los datos"
+       ],
+       [
+        "A-3.1.1.2",
+        "Preprocesar y normalizar variables académicas para el modelo",
+        "1.3.1 Entrenamiento del modelo",
+        "Variables preprocesadas para el modelo"
+       ],
+       [
+        "A-3.1.1.3",
+        "Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)",
+        "1.3.1 Entrenamiento del modelo",
+        "Algoritmo seleccionado y su justificación"
+       ],
+       [
+        "A-3.1.1.4",
+        "Entrenar modelo predictivo con Scikit-learn usando datos históricos",
+        "1.3.1 Entrenamiento del modelo",
+        "Modelo entrenado"
+       ],
+       [
+        "A-3.2.1.1",
+        "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
+        "1.3.3 Validación del modelo",
+        "Reporte de métricas del modelo"
+       ],
+       [
+        "A-3.2.1.2",
+        "Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
+        "1.3.3 Validación del modelo",
+        "Modelo ajustado que cumple el umbral"
+       ],
+       [
+        "A-3.2.1.3",
+        "Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)",
+        "1.3.2 Clasificación de riesgo",
+        "Clasificación en tres niveles de riesgo"
+       ],
+       [
+        "A-3.2.1.4",
+        "Configurar script de actualización semanal automática del modelo",
+        "1.3.2 Clasificación de riesgo",
+        "Actualización semanal automática del modelo"
+       ]
+      ],
+      "titulo": "Sprint 3 · Modelo ML",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Actividad",
+       "Paquete de la EDT",
+       "Entregable"
+      ],
+      "anchos": [
+       10,
+       40,
+       22,
+       28
+      ],
+      "filas": [
+       [
+        "A-4.1.1.1",
+        "Diseñar plantilla de correo de alerta para el docente tutor",
+        "1.4.1 Motor de alertas",
+        "Plantilla del correo de alerta"
+       ],
+       [
+        "A-4.1.1.2",
+        "Desarrollar módulo de envío automático de alertas por correo electrónico",
+        "1.4.1 Motor de alertas",
+        "Envío automático de alertas por correo"
+       ],
+       [
+        "A-4.1.1.3",
+        "Desarrollar módulo web de alertas críticas en panel del docente",
+        "1.4.1 Motor de alertas",
+        "Panel web de alertas del docente"
+       ],
+       [
+        "A-4.1.1.4",
+        "Implementar módulo de registro de seguimiento de casos críticos",
+        "1.4.1 Motor de alertas",
+        "Registro de seguimiento de casos"
+       ],
+       [
+        "A-4.2.1.1",
+        "Diseñar wireframes y prototipo de la interfaz Next.js",
+        "1.4.2.1 Diseño de la interfaz",
+        "Wireframes y prototipo de la interfaz"
+       ],
+       [
+        "A-4.2.1.2",
+        "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
+        "1.4.2.2 Desarrollo del tablero",
+        "Tablero con semáforo de riesgo"
+       ],
+       [
+        "A-4.2.1.3",
+        "Desarrollar ficha individual del estudiante con historial completo",
+        "1.4.2.2 Desarrollo del tablero",
+        "Ficha individual del estudiante"
+       ],
+       [
+        "A-4.2.1.4",
+        "Implementar módulo de roles y control de acceso por perfil de usuario",
+        "1.4.3 Roles y accesos",
+        "Roles y control de acceso"
+       ],
+       [
+        "A-4.2.1.5",
+        "Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa",
+        "1.4.2.2 Desarrollo del tablero",
+        "Reportes exportables en PDF y Excel"
+       ]
+      ],
+      "titulo": "Sprint 4 · Alertas y tablero",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Actividad",
+       "Paquete de la EDT",
+       "Entregable"
+      ],
+      "anchos": [
+       10,
+       40,
+       22,
+       28
+      ],
+      "filas": [
+       [
+        "A-5.0.1.1",
+        "Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto",
+        "1.6.1 Pruebas de integración y rendimiento",
+        "Reporte de pruebas de integración"
+       ],
+       [
+        "A-5.0.1.2",
+        "Pruebas de rendimiento del sistema: confirmar que el tablero carga en menos de 3 segundos y que la clasificación semanal se ejecuta sin intervención manual",
+        "1.6.1 Pruebas de integración y rendimiento",
+        "Reporte de pruebas de rendimiento"
+       ],
+       [
+        "A-5.0.2.1",
+        "Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
+        "1.6.2 Piloto y retroalimentación",
+        "Registro de la prueba piloto"
+       ],
+       [
+        "A-5.0.2.2",
+        "Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real",
+        "1.6.2 Piloto y retroalimentación",
+        "Informe del piloto con los ajustes aplicados"
+       ]
+      ],
+      "titulo": "Sprint 5 · Pruebas y piloto",
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Actividad",
+       "Paquete de la EDT",
+       "Entregable"
+      ],
+      "anchos": [
+       10,
+       40,
+       22,
+       28
+      ],
+      "filas": [
+       [
+        "A-5.1.1.1",
+        "Configurar el entorno de producción en la nube (alojamiento web, base de datos y tarea programada)",
+        "1.5.1 Despliegue del sistema",
+        "Entorno de producción configurado"
+       ],
+       [
+        "A-5.1.1.2",
+        "Desplegar sistema completo en entorno de producción definitivo",
+        "1.5.1 Despliegue del sistema",
+        "Sistema desplegado en producción"
+       ],
+       [
+        "A-5.1.1.3",
+        "Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores",
+        "1.4.2.3 Pruebas con usuarios",
+        "Actas de las pruebas de aceptación con docentes"
+       ],
+       [
+        "A-5.1.1.4",
+        "Corregir observaciones y bugs detectados en pruebas UAT formales",
+        "1.5.1 Despliegue del sistema",
+        "Registro de las correcciones"
+       ],
+       [
+        "A-5.2.1.1",
+        "Elaborar manual de usuario (docentes y coordinadores)",
+        "1.5.2 Manual de usuario",
+        "Manual de usuario"
+       ],
+       [
+        "A-5.2.1.2",
+        "Elaborar manual técnico del sistema para el responsable de TI del colegio",
+        "1.5.3 Manual técnico",
+        "Manual técnico"
+       ],
+       [
+        "A-5.2.1.3",
+        "Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)",
+        "1.5.4 Plan de capacitación",
+        "Lista de asistencia a la capacitación"
+       ],
+       [
+        "A-5.2.1.4",
+        "Realizar retrospectiva final del proyecto SCRUM",
+        "1.5.5 Capacitación y cierre",
+        "Acta de la retrospectiva final"
+       ],
+       [
+        "A-5.2.1.5",
+        "Elaborar informe final del proyecto y presentación de cierre ante el docente del curso",
+        "1.5.5 Capacitación y cierre",
+        "Informe final y presentación de cierre"
+       ]
+      ],
+      "titulo": "Sprint 6 · Implantación y cierre",
+      "compacta": true
      }
     ]
    }

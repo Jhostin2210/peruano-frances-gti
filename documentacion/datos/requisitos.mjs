@@ -80,9 +80,11 @@ export const REQUISITOS = [
     criterio: "Se entrega el manual técnico y se realiza una sesión de transferencia con el encargado de TI antes del cierre.", v3: "El manual describe la administración de los servicios en la nube en lugar de la instalación en un servidor (SC-03)." },
 ];
 
-// Paquetes de trabajo de la EDT. origen: "ambos" si figura en la declaración del alcance v2 y en el
-// diccionario; "diccionario" si solo está en el diccionario (pendiente de unificar, SC-10).
+// Paquetes de trabajo de la EDT versión 4 (SC-10): la declaración del alcance y el diccionario quedan unificados
+// y cada actividad del cronograma pertenece a un paquete. origen: "ambos" (declaración y diccionario) o "v4"
+// (paquete agregado en la versión 4 para el análisis y diseño del Sprint 1).
 export const COMPONENTES = [
+  { id: "1.0", nombre: "Análisis y diseño", descripcion: "Levantamiento del alcance, diagnóstico de los datos, variables del modelo y arquitectura del sistema." },
   { id: "1.1", nombre: "Gestión del proyecto", descripcion: "Planificación, seguimiento y control del proyecto." },
   { id: "1.2", nombre: "Datos e integración", descripcion: "Integración, validación y preparación de los datos académicos." },
   { id: "1.3", nombre: "Modelo ML predictivo", descripcion: "Entrenamiento, validación y clasificación del riesgo." },
@@ -92,6 +94,10 @@ export const COMPONENTES = [
 ];
 
 export const PAQUETES = [
+  { id: "1.0.1", nombre: "Levantamiento del alcance", responsable: R.jhostin, entregable: "Acta de la reunión de levantamiento", criterio: "Alcance y acceso a los datos validados con la Dirección y registrados en un acta.", origen: "v4" },
+  { id: "1.0.2", nombre: "Diagnóstico de los datos", responsable: R.jadira, entregable: "Informe de calidad y disponibilidad de los datos", criterio: "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.", origen: "v4" },
+  { id: "1.0.3", nombre: "Variables del modelo", responsable: R.helber, entregable: "Lista de variables validada con docentes", criterio: "Variables del modelo revisadas y aprobadas por los docentes tutores en un taller.", origen: "v4" },
+  { id: "1.0.4", nombre: "Arquitectura del sistema", responsable: R.jadira, entregable: "Documento de arquitectura", criterio: "Módulos, flujo de datos y tecnologías definidos y aprobados en la revisión del Sprint 1.", origen: "v4" },
   { id: "1.1.1", nombre: "Cronograma de hitos", responsable: R.jhostin, entregable: "Cronograma aprobado", criterio: "Cronograma aprobado y actualizado ante cada cambio del plan.", origen: "ambos" },
   { id: "1.1.2", nombre: "Informes de avance", responsable: R.jhostin, entregable: "Informes de desempeño por sprint", criterio: "Un informe por sprint que refleja el estado real del proyecto.", origen: "ambos" },
   { id: "1.1.3", nombre: "Actas y control de cambios", responsable: R.carlos, entregable: "Registro de cambios al día", criterio: "Toda reunión con acuerdos escritos; todo cambio documentado y decidido antes de aplicarse.", origen: "ambos" },
@@ -99,12 +105,12 @@ export const PAQUETES = [
   { id: "1.2.2", nombre: "Calidad de datos", responsable: R.jadira, entregable: "Base de datos integrada y validada", criterio: "Sin vacíos críticos, duplicados ni inconsistencias; reporte de calidad con métricas de completitud.", origen: "ambos" },
   { id: "1.3.1", nombre: "Entrenamiento del modelo", responsable: R.helber, entregable: "Modelo entrenado", criterio: "El modelo se entrena con los datos disponibles y genera los tres niveles de riesgo.", origen: "ambos" },
   { id: "1.3.2", nombre: "Clasificación de riesgo", responsable: R.helber, entregable: "Clasificación semanal automática", criterio: "Clasifica a todos los estudiantes activos cada semana sin intervención manual.", origen: "ambos" },
-  { id: "1.3.3", nombre: "Validación del modelo", responsable: R.helber, entregable: "Informe de validación del modelo", criterio: "Alcanza el umbral mínimo de 75 % en la métrica acordada, con datos reales (SC-08).", origen: "diccionario" },
+  { id: "1.3.3", nombre: "Validación del modelo", responsable: R.helber, entregable: "Informe de validación del modelo", criterio: "Alcanza el umbral mínimo de 75 % en la métrica acordada, con datos reales (SC-08).", origen: "ambos" },
   { id: "1.4.1", nombre: "Motor de alertas", responsable: R.jadira, entregable: "Alertas por correo y panel web", criterio: "Alertas enviadas en 24 horas como máximo, con historial.", origen: "ambos" },
   { id: "1.4.2.1", nombre: "Diseño de la interfaz", responsable: R.carlos, entregable: "Prototipo validado", criterio: "Maquetas aprobadas por el equipo y mostradas a docentes antes de desarrollar.", origen: "ambos" },
   { id: "1.4.2.2", nombre: "Desarrollo del tablero", responsable: R.carlos, entregable: "Tablero implementado", criterio: "Carga en menos de 3 segundos y funciona en Chrome, Firefox y Edge.", origen: "ambos" },
   { id: "1.4.2.3", nombre: "Pruebas con usuarios", responsable: R.jhostin, entregable: "Reporte de validación de uso", criterio: "Pruebas con al menos 3 docentes y observaciones atendidas.", origen: "ambos" },
-  { id: "1.4.3", nombre: "Roles y accesos", responsable: R.jhostin, entregable: "Control de acceso por rol", criterio: "Cada rol ve solo lo que le corresponde; verificado con pruebas de acceso.", origen: "diccionario" },
+  { id: "1.4.3", nombre: "Roles y accesos", responsable: R.jhostin, entregable: "Control de acceso por rol", criterio: "Cada rol ve solo lo que le corresponde; verificado con pruebas de acceso.", origen: "ambos" },
   { id: "1.5.1", nombre: "Despliegue del sistema", responsable: R.jadira, entregable: "Sistema en producción en la nube", criterio: "Sistema operativo en el entorno de producción y accesos de administración entregados al colegio.", origen: "ambos" },
   { id: "1.5.2", nombre: "Manual de usuario", responsable: R.carlos, entregable: "Manual de usuario", criterio: "Validado con al menos un docente y un coordinador.", origen: "ambos" },
   { id: "1.5.3", nombre: "Manual técnico", responsable: R.helber, entregable: "Manual técnico", criterio: "Validado en la sesión de transferencia con el encargado de TI.", origen: "ambos" },

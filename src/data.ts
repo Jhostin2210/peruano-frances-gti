@@ -351,6 +351,7 @@ const ANEXOS: Record<string, TocSection[]> = {
     { label: "↳ Estimación PERT", href: "#p06-estimacion-pert" },
     { label: "↳ Diagrama de Gantt", href: "#p06-gantt" },
     { label: "↳ Valor ganado (simulación)", href: "#p06-control-desvios" },
+    { label: "↳ Entregables del cronograma", href: "#cro-entregables" },
   ],
 };
 

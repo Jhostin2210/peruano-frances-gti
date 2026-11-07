@@ -219,13 +219,14 @@ const tablaRegistro = (lista, titulo) =>
 export const INT06 = DOC({
   ...base,
   id: "INT-06",
-  version: "1.3",
-  fecha: "31/10/2026",
+  version: "1.4",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Reunión de inicio realizada, canal por el Product Owner, avances los sábados y aviso a los apoderados por WhatsApp de los tutores.", P.director],
   ["1.2", "19/10/2026", "Se registra la presentación del 17/10/2026 al docente asesor y sus observaciones.", P.director],
     ["1.3", "31/10/2026", "Se registran el pedido de las exportaciones de Cubicol y el taller de validación con los docentes tutores del 28/10/2026. Corte al 31/10/2026.", P.director],
+    ["1.4", "07/11/2026", "Se completa la asistencia al taller del 28/10/2026.", P.director],
   ],
   titulo: "Registro de comunicaciones",
   archivo: "INT-06 Registro de comunicaciones",

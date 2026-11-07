@@ -25,6 +25,8 @@ import AvisoEtapa from "./components/AvisoEtapa";
 import TableroComunicaciones from "./components/TableroComunicaciones";
 import Entregables from "./components/Entregables";
 import TableroAlcance from "./components/TableroAlcance";
+import EdtProyecto from "./components/EdtProyecto";
+import EntregablesCronograma from "./components/EntregablesCronograma";
 import { TOC_SECTIONS } from "./data";
 
 export default function App() {
@@ -334,7 +336,7 @@ export default function App() {
             capitulo="07"
             despues={{
               "alc-2": <RequisitosAnalysis parte="requisitos" />,
-              "alc-4": <RequisitosAnalysis parte="edt" />,
+              "alc-4": <EdtProyecto />,
               "alc-5": <TableroAlcance />,
             }}
           />
@@ -365,7 +367,14 @@ export default function App() {
           <DominioPmbok
             dominio="Cronograma"
             capitulo="08"
-            despues={{ "cro-2": <ScheduleBaseline /> }}
+            despues={{
+              "cro-2": (
+                <>
+                  <ScheduleBaseline />
+                  <EntregablesCronograma />
+                </>
+              ),
+            }}
           />
 
           {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}

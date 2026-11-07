@@ -72,6 +72,7 @@ const actividad = (a, nivel, numero, notas, unidades) =>
     fin: a.fin,
     dias: a.dias,
     paquete: a.paquete,
+    entregable: a.entregable,
     notas,
     recursos: recursosDe(a.responsable),
     unidades,
@@ -86,7 +87,7 @@ for (const sp of SPRINTS) {
   for (const a of nodos.filter((x) => x.sprint === sp.n && (x.tipo === "actividad" || x.tipo === "hito"))) {
     const numero = `${resumen.numero}.${++j}`;
     if (a.tipo === "hito") tarea({ clave: a.id, nombre: a.descripcion, nivel: 3, numero, hito: true, inicio: a.inicio, fin: a.fin, predsClave: a.preds });
-    else actividad(a, 3, numero, `Responsable: ${a.responsable}. Semana: ${a.semana}. PERT: To ${a.to} · Tm ${a.tm} · Tp ${a.tp} · Te ${a.te} días.${a.isCritical ? " Ruta crítica según el análisis PERT." : ""}`, UNIDADES);
+    else actividad(a, 3, numero, `Entregable: ${a.entregable}. Responsable: ${a.responsable}. Semana: ${a.semana}. PERT: To ${a.to} · Tm ${a.tm} · Tp ${a.tp} · Te ${a.te} días.${a.isCritical ? " Ruta crítica según el análisis PERT." : ""}`, UNIDADES);
   }
   const r = sp.n === 4 && nodos.find((x) => x.tipo === "receso");
   if (r)
@@ -116,6 +117,7 @@ for (const t of tareas) {
 }
 
 const TEXT1 = 188743731; // campo Texto1 de Project, rotulado «Paquete EDT»
+const TEXT2 = 188743734; // campo Texto2 de Project, rotulado «Entregable»
 
 function xmlTarea(t) {
   const dur = t.hito ? 0 : t.dias * 8;
@@ -137,6 +139,7 @@ function xmlTarea(t) {
   for (const p of t.preds)
     l.push(`<PredecessorLink><PredecessorUID>${p}</PredecessorUID><Type>1</Type><CrossProject>0</CrossProject><LinkLag>0</LinkLag><LinkLagFormat>7</LinkLagFormat></PredecessorLink>`);
   if (t.paquete) l.push(`<ExtendedAttribute><FieldID>${TEXT1}</FieldID><Value>${t.paquete}</Value></ExtendedAttribute>`);
+  if (t.entregable) l.push(`<ExtendedAttribute><FieldID>${TEXT2}</FieldID><Value>${esc(t.entregable)}</Value></ExtendedAttribute>`);
   l.push(`<Baseline><Number>0</Number><Start>${t.hito ? fin(t.inicio) : ini(t.inicio)}</Start><Finish>${fin(t.fin)}</Finish><Duration>${horas(dur)}</Duration><DurationFormat>7</DurationFormat>${trabajo ? `<Work>${horas(trabajo)}</Work>` : ""}</Baseline>`);
   return `    <Task>\n      ${l.join("\n      ")}\n    </Task>`;
 }
@@ -185,6 +188,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
   <CurrentDate>${fechaCorte}T08:00:00</CurrentDate>
   <ExtendedAttributes>
     <ExtendedAttribute><FieldID>${TEXT1}</FieldID><FieldName>Text1</FieldName><Alias>Paquete EDT</Alias></ExtendedAttribute>
+    <ExtendedAttribute><FieldID>${TEXT2}</FieldID><FieldName>Text2</FieldName><Alias>Entregable</Alias></ExtendedAttribute>
   </ExtendedAttributes>
   <Calendars>
     <Calendar>

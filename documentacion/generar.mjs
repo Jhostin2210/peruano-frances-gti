@@ -15,7 +15,7 @@ import { FERIADOS, RECESO, SPRINTS, TOTALES, aIso, fmt, ganttPorSemanas, program
 import { INTERESADOS, NIVELES, brecha, cuadrante, prominencia } from "./datos/interesados.mjs";
 import { CAMBIOS, INCIDENTES } from "./datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, PAQUETES, REQUISITOS, TOTALES_ALCANCE } from "./datos/requisitos.mjs";
-import { AVANCE, CASOS_E01, CORTES_ALCANCE, ENTREGABLES_AVANCE } from "./datos/avance.mjs";
+import { ACTIVIDADES_REALIZADAS, AVANCE, CASOS_E01, CORTES_ALCANCE, ENTREGABLES_AVANCE } from "./datos/avance.mjs";
 import { DRIVE_CARPETA, enlaceDrive } from "./datos/drive.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
 import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
@@ -119,10 +119,11 @@ let casos = { ...CASOS_E01 };
 const seguimiento = CORTES_ALCANCE.map((k) => {
   acumulado = { ...acumulado, ...k.cambios };
   casos = { ...casos, ...k.casos };
-  const paquetes = PAQUETES.map((p) => {
+  // Solo los paquetes que la EDT tenía en ese corte (el componente 1.0 aparece con la versión 4).
+  const paquetes = PAQUETES.filter((p) => acumulado[p.id]).map((p) => {
     const [estado, pct, existe, falta] = acumulado[p.id];
     const e = entregableDe(p.id);
-    const revision = e ? SPRINTS[ENTREGABLES.find((x) => x.id === e).sprint - 1].revision : null;
+    const revision = e ? SPRINTS[ENTREGABLES.find((x) => x.id === e).sprint - 1].revision : p.id.startsWith("1.0.") ? SPRINTS[0].revision : null;
     return { id: p.id, nombre: p.nombre, componente: p.id.split(".").slice(0, 2).join("."), estado, pct, existe, falta, entregable: e, revision, cambio: p.id in k.cambios };
   });
   // Estado de cada requisito según los paquetes que lo producen (ALC-01, sección 3). Ninguno está aceptado aún.
@@ -131,9 +132,34 @@ const seguimiento = CORTES_ALCANCE.map((k) => {
     const empezado = suyos.some((p) => (p.pct ?? 0) > 0);
     return { id: q.id, titulo: q.titulo, prioridad: q.prioridad, entregable: q.entregable, paquete: q.paquete, casos: q.cp, estado: empezado ? "En desarrollo" : "Pendiente" };
   });
-  return { ...k, paquetes, requisitos, casos: Object.entries(casos).map(([id, estado]) => ({ id, estado })) };
+  return { ...k, requisitosCambiados: k.requisitosCambiados ?? [], paquetes, requisitos, casos: Object.entries(casos).map(([id, estado]) => ({ id, estado })) };
 });
 const ultimo = seguimiento[seguimiento.length - 1];
+
+// Entregables del cronograma: cada actividad con su paquete de la EDT, su entregable, su estado y su evidencia.
+const corteIso = ultimo.fecha;
+const entregablesCronograma = red()
+  .filter((n) => n.tipo === "actividad" || n.tipo === "continua")
+  .map((n) => {
+    const hecha = ACTIVIDADES_REALIZADAS[n.id];
+    const paquete = PAQUETES.find((p) => p.id === n.paquete);
+    const avancePaquete = ultimo.paquetes.find((p) => p.id === n.paquete);
+    return {
+      id: n.id,
+      descripcion: n.descripcion,
+      sprint: n.sprint,
+      responsable: n.responsable,
+      paquete: n.paquete,
+      paqueteNombre: paquete.nombre,
+      entregable: n.entregable,
+      inicio: aIso(n.inicio),
+      fin: aIso(n.fin),
+      critica: Boolean(n.isCritical),
+      estado: hecha ? "Realizada" : aIso(n.fin) < corteIso ? "Por confirmar" : aIso(n.inicio) <= corteIso ? "En curso" : "Programada",
+      avancePaquete: avancePaquete?.pct ?? null,
+      evidencias: (hecha?.evidencias ?? []).map((e) => (e.doc ? { texto: e.texto, url: enlaceDrive(e.doc) } : e)),
+    };
+  });
 
 // Entregables del producto con su estado al último corte del seguimiento, para la sección «Entregables» del blog.
 const entregables = ENTREGABLES.map((e) => {
@@ -171,6 +197,7 @@ const datos = {
   ENTREGABLES,
   ENTREGABLES_ESTADO: entregables,
   CORTE_ALCANCE: isoAFecha(ultimo.fecha),
+  ENTREGABLES_CRONOGRAMA: entregablesCronograma,
   SEGUIMIENTO_ALCANCE: seguimiento,
   COMPONENTES_EDT: COMPONENTES,
   DRIVE_CARPETA,

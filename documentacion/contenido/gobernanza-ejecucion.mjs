@@ -106,6 +106,9 @@ const rango = (cat) => {
   return `${ids[0]} a ${ids[ids.length - 1]}`;
 };
 
+// El informe de calidad N.º 1 se emitió el 17/10/2026: las solicitudes decididas después siguen en evaluación para él.
+const estadoAlInforme = (x) => (x.decidido && x.decidido > "2026-10-17" ? "En evaluación" : x.estado);
+
 export const GOB07 = DOC({
   id: "GOB-07",
   titulo: "Informe de calidad N.º 1",
@@ -180,7 +183,7 @@ export const GOB07 = DOC({
     ]),
     sec("5. Acciones derivadas", [
       ul(
-        `Se registraron ${CAMBIOS.length} solicitudes de cambio (GOB-10): ${CAMBIOS.filter((x) => x.estado === "Aprobado").length} aprobadas por el equipo y ${CAMBIOS.filter((x) => x.estado === "En evaluación").length} en evaluación.`,
+        `Se registraron ${CAMBIOS.length} solicitudes de cambio (GOB-10): ${CAMBIOS.filter((x) => estadoAlInforme(x) === "Aprobado").length} aprobadas por el equipo y ${CAMBIOS.filter((x) => estadoAlInforme(x) === "En evaluación").length} en evaluación.`,
         `Se registraron ${INCIDENTES.length} incidentes (GOB-06), de los cuales ${INCIDENTES.filter((x) => x.estado === "Cerrado").length} ya están cerrados.`,
         "Los hallazgos de coherencia quedan atendidos con los cambios SC-01 a SC-07. Los del modelo dependen de SC-08, en evaluación. Los de datos personales tienen abierto el incidente IN-04.",
       ),
@@ -341,11 +344,12 @@ export function crearGOB09(documentos) {
 // ───────────────────────── GOB-10 ─────────────────────────
 export const GOB10 = DOC({
   id: "GOB-10",
-  version: "1.1",
-  fecha: P.fechaCorte,
+  version: "1.2",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Conformidad de la patrocinadora con SC-02 y SC-03 y nuevo cambio SC-11.", P.director],
+    ["1.2", "07/11/2026", "SC-08 aprobado en la revisión del Sprint 1; SC-10 propone la EDT versión 4.", P.director],
   ],
   titulo: "Plan de gestión de cambios y registro de cambios",
   archivo: "GOB-10 Plan y registro de cambios",

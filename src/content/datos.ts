@@ -206,7 +206,8 @@ export const TOTALES = {
 export const ACTIVIDADES = [
  {
   "id": "A-0.1.1.1",
-  "paquete": "1.1.1",
+  "paquete": "1.0.1",
+  "entregable": "Acta de la reunión de levantamiento",
   "descripcion": "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
   "responsable": "Equipo del proyecto + Dirección",
   "semana": "S1",
@@ -226,7 +227,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-0.1.1.2",
-  "paquete": "1.1.1",
+  "paquete": "1.0.2",
+  "entregable": "Informe de calidad y disponibilidad de los datos",
   "descripcion": "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
   "responsable": "Jadira Vasquez + Helber Perez",
   "semana": "S2",
@@ -246,7 +248,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-0.1.1.3",
-  "paquete": "1.1.1",
+  "paquete": "1.0.3",
+  "entregable": "Lista de variables del modelo validada con docentes",
   "descripcion": "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
   "responsable": "Helber Perez + docentes",
   "semana": "S3",
@@ -266,7 +269,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-0.1.1.4",
-  "paquete": "1.1.1",
+  "paquete": "1.0.4",
+  "entregable": "Documento de arquitectura del sistema",
   "descripcion": "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
   "responsable": "Jadira Vasquez + Helber Perez",
   "semana": "S4",
@@ -287,6 +291,7 @@ export const ACTIVIDADES = [
  {
   "id": "A-1.1.1.1",
   "paquete": "1.1.1",
+  "entregable": "Cronograma de hitos (CRO-01)",
   "descripcion": "Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
   "responsable": "Jhostin Galarza",
   "semana": "S5",
@@ -307,6 +312,7 @@ export const ACTIVIDADES = [
  {
   "id": "A-1.1.1.2",
   "paquete": "1.1.1",
+  "entregable": "Product Backlog priorizado",
   "descripcion": "Definir Product Backlog y priorizar historias de usuario",
   "responsable": "Equipo del proyecto",
   "semana": "S5",
@@ -327,6 +333,7 @@ export const ACTIVIDADES = [
  {
   "id": "A-1.1.1.3",
   "paquete": "1.1.1",
+  "entregable": "Roles Scrum asignados",
   "descripcion": "Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
   "responsable": "Equipo del proyecto",
   "semana": "S5",
@@ -346,7 +353,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-1.2.1.1",
-  "paquete": "1.2.1",
+  "paquete": "1.1.2",
+  "entregable": "Plantilla del informe de avance semanal",
   "descripcion": "Establecer plantilla de informe de avance semanal",
   "responsable": "Jhostin Galarza",
   "semana": "S5",
@@ -366,7 +374,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-1.2.1.2",
-  "paquete": "1.2.1",
+  "paquete": "1.1.2",
+  "entregable": "Registro de las reuniones diarias",
   "descripcion": "Daily Standup 15 min diarios — continuo todo el proyecto",
   "responsable": "Jhostin Galarza",
   "semana": "S5–S24",
@@ -386,7 +395,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-2.1.1.1",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
+  "entregable": "Mapa de las fuentes de datos académicos",
   "descripcion": "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
   "responsable": "Jadira Vasquez",
   "semana": "S6",
@@ -406,7 +416,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-2.1.1.2",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
+  "entregable": "Modelo entidad-relación de la base de datos",
   "descripcion": "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
   "responsable": "Jadira Vasquez",
   "semana": "S6",
@@ -426,7 +437,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-2.1.1.3",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
+  "entregable": "Scripts de carga de datos (ETL)",
   "descripcion": "Codificar scripts ETL de extracción, transformación y carga",
   "responsable": "Jadira Vasquez + Carlos Curo",
   "semana": "S7",
@@ -446,7 +458,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-2.1.1.4",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
+  "entregable": "Informe de la prueba de migración",
   "descripcion": "Ejecutar prueba de migración de datos y validar integridad",
   "responsable": "Jadira Vasquez",
   "semana": "S7",
@@ -466,7 +479,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-2.2.1.1",
-  "paquete": "2.2.1",
+  "paquete": "1.2.2",
+  "entregable": "Validación nocturna programada",
   "descripcion": "Configurar tareas programadas nocturnas de limpieza y validación de datos",
   "responsable": "Jadira Vasquez",
   "semana": "S8",
@@ -486,7 +500,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-2.2.1.2",
-  "paquete": "2.2.1",
+  "paquete": "1.2.2",
+  "entregable": "Reporte de consistencia de los datos",
   "descripcion": "Verificar consistencia de datos y corrección de registros erróneos",
   "responsable": "Jadira Vasquez + Carlos Curo",
   "semana": "S8",
@@ -506,7 +521,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.1.1.1",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
+  "entregable": "Informe del análisis exploratorio de los datos",
   "descripcion": "Análisis exploratorio del dataset académico (EDA)",
   "responsable": "Helber Perez",
   "semana": "S9",
@@ -526,7 +542,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.1.1.2",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
+  "entregable": "Variables preprocesadas para el modelo",
   "descripcion": "Preprocesar y normalizar variables académicas para el modelo",
   "responsable": "Helber Perez",
   "semana": "S9",
@@ -546,7 +563,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.1.1.3",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
+  "entregable": "Algoritmo seleccionado y su justificación",
   "descripcion": "Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)",
   "responsable": "Helber Perez",
   "semana": "S10",
@@ -566,7 +584,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.1.1.4",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
+  "entregable": "Modelo entrenado",
   "descripcion": "Entrenar modelo predictivo con Scikit-learn usando datos históricos",
   "responsable": "Helber Perez",
   "semana": "S10",
@@ -586,7 +605,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.2.1.1",
-  "paquete": "3.2.1",
+  "paquete": "1.3.3",
+  "entregable": "Reporte de métricas del modelo",
   "descripcion": "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
   "responsable": "Helber Perez",
   "semana": "S11",
@@ -606,7 +626,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.2.1.2",
-  "paquete": "3.2.1",
+  "paquete": "1.3.3",
+  "entregable": "Modelo ajustado que cumple el umbral",
   "descripcion": "Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
   "responsable": "Helber Perez",
   "semana": "S11",
@@ -626,7 +647,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.2.1.3",
-  "paquete": "3.2.1",
+  "paquete": "1.3.2",
+  "entregable": "Clasificación en tres niveles de riesgo",
   "descripcion": "Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)",
   "responsable": "Helber Perez",
   "semana": "S11",
@@ -646,7 +668,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-3.2.1.4",
-  "paquete": "3.2.1",
+  "paquete": "1.3.2",
+  "entregable": "Actualización semanal automática del modelo",
   "descripcion": "Configurar script de actualización semanal automática del modelo",
   "responsable": "Helber Perez + Jadira Vasquez",
   "semana": "S12",
@@ -666,7 +689,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.1.1.1",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
+  "entregable": "Plantilla del correo de alerta",
   "descripcion": "Diseñar plantilla de correo de alerta para el docente tutor",
   "responsable": "Jadira Vasquez",
   "semana": "S13",
@@ -686,7 +710,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.1.1.2",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
+  "entregable": "Envío automático de alertas por correo",
   "descripcion": "Desarrollar módulo de envío automático de alertas por correo electrónico",
   "responsable": "Jadira Vasquez",
   "semana": "S13",
@@ -706,7 +731,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.1.1.3",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
+  "entregable": "Panel web de alertas del docente",
   "descripcion": "Desarrollar módulo web de alertas críticas en panel del docente",
   "responsable": "Jadira Vasquez",
   "semana": "S14",
@@ -726,7 +752,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.1.1.4",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
+  "entregable": "Registro de seguimiento de casos",
   "descripcion": "Implementar módulo de registro de seguimiento de casos críticos",
   "responsable": "Jadira Vasquez",
   "semana": "S14",
@@ -746,7 +773,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.2.1.1",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.1",
+  "entregable": "Wireframes y prototipo de la interfaz",
   "descripcion": "Diseñar wireframes y prototipo de la interfaz Next.js",
   "responsable": "Carlos Curo",
   "semana": "S15",
@@ -766,7 +794,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.2.1.2",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.2",
+  "entregable": "Tablero con semáforo de riesgo",
   "descripcion": "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
   "responsable": "Carlos Curo",
   "semana": "S15",
@@ -786,7 +815,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.2.1.3",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.2",
+  "entregable": "Ficha individual del estudiante",
   "descripcion": "Desarrollar ficha individual del estudiante con historial completo",
   "responsable": "Carlos Curo",
   "semana": "S16",
@@ -806,7 +836,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.2.1.4",
-  "paquete": "4.2.1",
+  "paquete": "1.4.3",
+  "entregable": "Roles y control de acceso",
   "descripcion": "Implementar módulo de roles y control de acceso por perfil de usuario",
   "responsable": "Jhostin Galarza",
   "semana": "S16",
@@ -826,7 +857,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-4.2.1.5",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.2",
+  "entregable": "Reportes exportables en PDF y Excel",
   "descripcion": "Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa",
   "responsable": "Carlos Curo",
   "semana": "S16",
@@ -846,7 +878,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.0.1.1",
-  "paquete": "6.1.1",
+  "paquete": "1.6.1",
+  "entregable": "Reporte de pruebas de integración",
   "descripcion": "Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto",
   "responsable": "Equipo del proyecto",
   "semana": "S17",
@@ -866,7 +899,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.0.1.2",
-  "paquete": "6.1.1",
+  "paquete": "1.6.1",
+  "entregable": "Reporte de pruebas de rendimiento",
   "descripcion": "Pruebas de rendimiento del sistema: confirmar que el tablero carga en menos de 3 segundos y que la clasificación semanal se ejecuta sin intervención manual",
   "responsable": "Carlos Curo + Jadira Vasquez",
   "semana": "S17",
@@ -886,7 +920,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.0.2.1",
-  "paquete": "6.2.1",
+  "paquete": "1.6.2",
+  "entregable": "Registro de la prueba piloto",
   "descripcion": "Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
   "responsable": "Equipo del proyecto + docentes",
   "semana": "S18–S19",
@@ -906,7 +941,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.0.2.2",
-  "paquete": "6.2.1",
+  "paquete": "1.6.2",
+  "entregable": "Informe del piloto con los ajustes aplicados",
   "descripcion": "Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real",
   "responsable": "Equipo del proyecto + docentes",
   "semana": "S20",
@@ -926,7 +962,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.1.1.1",
-  "paquete": "5.1.1",
+  "paquete": "1.5.1",
+  "entregable": "Entorno de producción configurado",
   "descripcion": "Configurar el entorno de producción en la nube (alojamiento web, base de datos y tarea programada)",
   "responsable": "Jadira Vasquez",
   "semana": "S21",
@@ -946,7 +983,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.1.1.2",
-  "paquete": "5.1.1",
+  "paquete": "1.5.1",
+  "entregable": "Sistema desplegado en producción",
   "descripcion": "Desplegar sistema completo en entorno de producción definitivo",
   "responsable": "Jadira Vasquez",
   "semana": "S21",
@@ -966,7 +1004,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.1.1.3",
-  "paquete": "5.1.1",
+  "paquete": "1.4.2.3",
+  "entregable": "Actas de las pruebas de aceptación con docentes",
   "descripcion": "Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores",
   "responsable": "Equipo del proyecto + docentes",
   "semana": "S22",
@@ -986,7 +1025,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.1.1.4",
-  "paquete": "5.1.1",
+  "paquete": "1.5.1",
+  "entregable": "Registro de las correcciones",
   "descripcion": "Corregir observaciones y bugs detectados en pruebas UAT formales",
   "responsable": "Carlos Curo + Jadira Vasquez",
   "semana": "S22",
@@ -1006,7 +1046,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.2.1.1",
-  "paquete": "5.2.1",
+  "paquete": "1.5.2",
+  "entregable": "Manual de usuario",
   "descripcion": "Elaborar manual de usuario (docentes y coordinadores)",
   "responsable": "Carlos Curo",
   "semana": "S23",
@@ -1026,7 +1067,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.2.1.2",
-  "paquete": "5.2.1",
+  "paquete": "1.5.3",
+  "entregable": "Manual técnico",
   "descripcion": "Elaborar manual técnico del sistema para el responsable de TI del colegio",
   "responsable": "Helber Perez",
   "semana": "S23",
@@ -1046,7 +1088,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.2.1.3",
-  "paquete": "5.2.1",
+  "paquete": "1.5.4",
+  "entregable": "Lista de asistencia a la capacitación",
   "descripcion": "Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)",
   "responsable": "Jhostin Galarza + Coordinación académica",
   "semana": "S23",
@@ -1066,7 +1109,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.2.1.4",
-  "paquete": "5.2.1",
+  "paquete": "1.5.5",
+  "entregable": "Acta de la retrospectiva final",
   "descripcion": "Realizar retrospectiva final del proyecto SCRUM",
   "responsable": "Jhostin Galarza",
   "semana": "S24",
@@ -1086,7 +1130,8 @@ export const ACTIVIDADES = [
  },
  {
   "id": "A-5.2.1.5",
-  "paquete": "5.2.1",
+  "paquete": "1.5.5",
+  "entregable": "Informe final y presentación de cierre",
   "descripcion": "Elaborar informe final del proyecto y presentación de cierre ante el docente del curso",
   "responsable": "Equipo del proyecto",
   "semana": "S24",
@@ -2203,7 +2248,7 @@ export const RED = [
   "sprint": 1,
   "descripcion": "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
   "responsable": "Equipo del proyecto + Dirección",
-  "paquete": "1.1.1",
+  "paquete": "1.0.1",
   "te": 3.2,
   "critica": false,
   "dias": 3,
@@ -2217,7 +2262,7 @@ export const RED = [
   "sprint": 1,
   "descripcion": "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
   "responsable": "Jadira Vasquez + Helber Perez",
-  "paquete": "1.1.1",
+  "paquete": "1.0.2",
   "te": 5.2,
   "critica": false,
   "dias": 5,
@@ -2233,7 +2278,7 @@ export const RED = [
   "sprint": 1,
   "descripcion": "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
   "responsable": "Helber Perez + docentes",
-  "paquete": "1.1.1",
+  "paquete": "1.0.3",
   "te": 4,
   "critica": false,
   "dias": 4,
@@ -2249,7 +2294,7 @@ export const RED = [
   "sprint": 1,
   "descripcion": "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
   "responsable": "Jadira Vasquez + Helber Perez",
-  "paquete": "1.1.1",
+  "paquete": "1.0.4",
   "te": 5,
   "critica": false,
   "dias": 5,
@@ -2329,7 +2374,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Establecer plantilla de informe de avance semanal",
   "responsable": "Jhostin Galarza",
-  "paquete": "1.2.1",
+  "paquete": "1.1.2",
   "te": 1.2,
   "critica": false,
   "dias": 1,
@@ -2345,7 +2390,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
   "responsable": "Jadira Vasquez",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
   "te": 4.2,
   "critica": true,
   "dias": 4,
@@ -2362,7 +2407,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
   "responsable": "Jadira Vasquez",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2379,7 +2424,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Codificar scripts ETL de extracción, transformación y carga",
   "responsable": "Jadira Vasquez + Carlos Curo",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
   "te": 5.3,
   "critica": true,
   "dias": 5,
@@ -2395,7 +2440,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Ejecutar prueba de migración de datos y validar integridad",
   "responsable": "Jadira Vasquez",
-  "paquete": "2.1.1",
+  "paquete": "1.2.1",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2411,7 +2456,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Configurar tareas programadas nocturnas de limpieza y validación de datos",
   "responsable": "Jadira Vasquez",
-  "paquete": "2.2.1",
+  "paquete": "1.2.2",
   "te": 4.2,
   "critica": true,
   "dias": 4,
@@ -2428,7 +2473,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Verificar consistencia de datos y corrección de registros erróneos",
   "responsable": "Jadira Vasquez + Carlos Curo",
-  "paquete": "2.2.1",
+  "paquete": "1.2.2",
   "te": 3,
   "critica": false,
   "dias": 3,
@@ -2463,7 +2508,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Análisis exploratorio del dataset académico (EDA)",
   "responsable": "Helber Perez",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
   "te": 4.2,
   "critica": true,
   "dias": 4,
@@ -2479,7 +2524,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Preprocesar y normalizar variables académicas para el modelo",
   "responsable": "Helber Perez",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
   "te": 3.2,
   "critica": false,
   "dias": 3,
@@ -2495,7 +2540,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)",
   "responsable": "Helber Perez",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2511,7 +2556,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Entrenar modelo predictivo con Scikit-learn usando datos históricos",
   "responsable": "Helber Perez",
-  "paquete": "3.1.1",
+  "paquete": "1.3.1",
   "te": 5.2,
   "critica": true,
   "dias": 5,
@@ -2528,7 +2573,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
   "responsable": "Helber Perez",
-  "paquete": "3.2.1",
+  "paquete": "1.3.3",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2544,7 +2589,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
   "responsable": "Helber Perez",
-  "paquete": "3.2.1",
+  "paquete": "1.3.3",
   "te": 4,
   "critica": true,
   "dias": 4,
@@ -2560,7 +2605,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)",
   "responsable": "Helber Perez",
-  "paquete": "3.2.1",
+  "paquete": "1.3.2",
   "te": 3,
   "critica": true,
   "dias": 3,
@@ -2576,7 +2621,7 @@ export const RED = [
   "sprint": 3,
   "descripcion": "Configurar script de actualización semanal automática del modelo",
   "responsable": "Helber Perez + Jadira Vasquez",
-  "paquete": "3.2.1",
+  "paquete": "1.3.2",
   "te": 3.2,
   "critica": false,
   "dias": 3,
@@ -2610,7 +2655,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Diseñar plantilla de correo de alerta para el docente tutor",
   "responsable": "Jadira Vasquez",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
   "te": 2,
   "critica": false,
   "dias": 2,
@@ -2626,7 +2671,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Desarrollar módulo de envío automático de alertas por correo electrónico",
   "responsable": "Jadira Vasquez",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
   "te": 4.2,
   "critica": false,
   "dias": 4,
@@ -2642,7 +2687,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Desarrollar módulo web de alertas críticas en panel del docente",
   "responsable": "Jadira Vasquez",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
   "te": 4.2,
   "critica": false,
   "dias": 4,
@@ -2658,7 +2703,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Implementar módulo de registro de seguimiento de casos críticos",
   "responsable": "Jadira Vasquez",
-  "paquete": "4.1.1",
+  "paquete": "1.4.1",
   "te": 3,
   "critica": false,
   "dias": 3,
@@ -2674,7 +2719,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Diseñar wireframes y prototipo de la interfaz Next.js",
   "responsable": "Carlos Curo",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.1",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2690,7 +2735,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
   "responsable": "Carlos Curo",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.2",
   "te": 5.3,
   "critica": true,
   "dias": 5,
@@ -2706,7 +2751,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Desarrollar ficha individual del estudiante con historial completo",
   "responsable": "Carlos Curo",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.2",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2722,7 +2767,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Implementar módulo de roles y control de acceso por perfil de usuario",
   "responsable": "Jhostin Galarza",
-  "paquete": "4.2.1",
+  "paquete": "1.4.3",
   "te": 3,
   "critica": true,
   "dias": 3,
@@ -2738,7 +2783,7 @@ export const RED = [
   "sprint": 4,
   "descripcion": "Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa",
   "responsable": "Carlos Curo",
-  "paquete": "4.2.1",
+  "paquete": "1.4.2.2",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2789,7 +2834,7 @@ export const RED = [
   "sprint": 5,
   "descripcion": "Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto",
   "responsable": "Equipo del proyecto",
-  "paquete": "6.1.1",
+  "paquete": "1.6.1",
   "te": 5.2,
   "critica": true,
   "dias": 5,
@@ -2805,7 +2850,7 @@ export const RED = [
   "sprint": 5,
   "descripcion": "Pruebas de rendimiento del sistema: confirmar que el tablero carga en menos de 3 segundos y que la clasificación semanal se ejecuta sin intervención manual",
   "responsable": "Carlos Curo + Jadira Vasquez",
-  "paquete": "6.1.1",
+  "paquete": "1.6.1",
   "te": 4,
   "critica": true,
   "dias": 4,
@@ -2821,7 +2866,7 @@ export const RED = [
   "sprint": 5,
   "descripcion": "Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
   "responsable": "Equipo del proyecto + docentes",
-  "paquete": "6.2.1",
+  "paquete": "1.6.2",
   "te": 7.2,
   "critica": true,
   "dias": 10,
@@ -2837,7 +2882,7 @@ export const RED = [
   "sprint": 5,
   "descripcion": "Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real",
   "responsable": "Equipo del proyecto + docentes",
-  "paquete": "6.2.1",
+  "paquete": "1.6.2",
   "te": 4.2,
   "critica": true,
   "dias": 4,
@@ -2870,7 +2915,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Configurar el entorno de producción en la nube (alojamiento web, base de datos y tarea programada)",
   "responsable": "Jadira Vasquez",
-  "paquete": "5.1.1",
+  "paquete": "1.5.1",
   "te": 3,
   "critica": false,
   "dias": 3,
@@ -2886,7 +2931,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Desplegar sistema completo en entorno de producción definitivo",
   "responsable": "Jadira Vasquez",
-  "paquete": "5.1.1",
+  "paquete": "1.5.1",
   "te": 4.2,
   "critica": true,
   "dias": 4,
@@ -2902,7 +2947,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores",
   "responsable": "Equipo del proyecto + docentes",
-  "paquete": "5.1.1",
+  "paquete": "1.4.2.3",
   "te": 5.2,
   "critica": true,
   "dias": 5,
@@ -2918,7 +2963,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Corregir observaciones y bugs detectados en pruebas UAT formales",
   "responsable": "Carlos Curo + Jadira Vasquez",
-  "paquete": "5.1.1",
+  "paquete": "1.5.1",
   "te": 3.2,
   "critica": true,
   "dias": 3,
@@ -2934,7 +2979,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Elaborar manual de usuario (docentes y coordinadores)",
   "responsable": "Carlos Curo",
-  "paquete": "5.2.1",
+  "paquete": "1.5.2",
   "te": 3,
   "critica": false,
   "dias": 3,
@@ -2951,7 +2996,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Elaborar manual técnico del sistema para el responsable de TI del colegio",
   "responsable": "Helber Perez",
-  "paquete": "5.2.1",
+  "paquete": "1.5.3",
   "te": 3,
   "critica": false,
   "dias": 3,
@@ -2968,7 +3013,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)",
   "responsable": "Jhostin Galarza + Coordinación académica",
-  "paquete": "5.2.1",
+  "paquete": "1.5.4",
   "te": 2,
   "critica": true,
   "dias": 2,
@@ -2984,7 +3029,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Realizar retrospectiva final del proyecto SCRUM",
   "responsable": "Jhostin Galarza",
-  "paquete": "5.2.1",
+  "paquete": "1.5.5",
   "te": 1.2,
   "critica": true,
   "dias": 1,
@@ -3001,7 +3046,7 @@ export const RED = [
   "sprint": 6,
   "descripcion": "Elaborar informe final del proyecto y presentación de cierre ante el docente del curso",
   "responsable": "Equipo del proyecto",
-  "paquete": "5.2.1",
+  "paquete": "1.5.5",
   "te": 4.2,
   "critica": true,
   "dias": 4,
@@ -3033,7 +3078,7 @@ export const RED = [
   "sprint": 2,
   "descripcion": "Daily Standup 15 min diarios — continuo todo el proyecto",
   "responsable": "Jhostin Galarza",
-  "paquete": "1.2.1",
+  "paquete": "1.1.2",
   "te": 1.2,
   "critica": false,
   "dias": 114,
@@ -4100,8 +4145,8 @@ export const ENTREGABLES_ESTADO = [
     "nombre": "Validación del modelo",
     "estado": "Cumplido en parte",
     "pct": 70,
-    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio: en riesgo alto le fue mal al 55 %; en bajo, al 3 %.",
-    "falta": "Cerrar la métrica acordada (SC-08) y contrastar las alertas con los docentes."
+    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio. La forma de validarlo (SC-08) se aprobó el 06/11/2026.",
+    "falta": "Aplicar la validación aprobada en SC-08 con los datos del colegio."
    }
   ],
   "requisitos": [
@@ -4438,7 +4483,708 @@ export const ENTREGABLES_ESTADO = [
  }
 ];
 
-export const CORTE_ALCANCE = "31/10/2026";
+export const CORTE_ALCANCE = "07/11/2026";
+
+export const ENTREGABLES_CRONOGRAMA = [
+ {
+  "id": "A-0.1.1.1",
+  "descripcion": "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
+  "sprint": 1,
+  "responsable": "Equipo del proyecto + Dirección",
+  "paquete": "1.0.1",
+  "paqueteNombre": "Levantamiento del alcance",
+  "entregable": "Acta de la reunión de levantamiento",
+  "inicio": "2026-10-12",
+  "fin": "2026-10-14",
+  "critica": false,
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Acta GOB-12",
+    "url": "https://drive.google.com/file/d/1-fKkCdb72Xk3e0t6xDx93MtEv6CdJnQU/view"
+   }
+  ]
+ },
+ {
+  "id": "A-0.1.1.2",
+  "descripcion": "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
+  "sprint": 1,
+  "responsable": "Jadira Vasquez + Helber Perez",
+  "paquete": "1.0.2",
+  "paqueteNombre": "Diagnóstico de los datos",
+  "entregable": "Informe de calidad y disponibilidad de los datos",
+  "inicio": "2026-10-19",
+  "fin": "2026-10-23",
+  "critica": false,
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Datos y variables",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/datos-y-variables.md"
+   }
+  ]
+ },
+ {
+  "id": "A-0.1.1.3",
+  "descripcion": "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
+  "sprint": 1,
+  "responsable": "Helber Perez + docentes",
+  "paquete": "1.0.3",
+  "paqueteNombre": "Variables del modelo",
+  "entregable": "Lista de variables del modelo validada con docentes",
+  "inicio": "2026-10-26",
+  "fin": "2026-10-29",
+  "critica": false,
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Taller con los 16 docentes y la directora; lista de asistencia y acuerdos"
+   },
+   {
+    "texto": "Variables del modelo",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/datos-y-variables.md"
+   }
+  ]
+ },
+ {
+  "id": "A-0.1.1.4",
+  "descripcion": "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
+  "sprint": 1,
+  "responsable": "Jadira Vasquez + Helber Perez",
+  "paquete": "1.0.4",
+  "paqueteNombre": "Arquitectura del sistema",
+  "entregable": "Documento de arquitectura del sistema",
+  "inicio": "2026-11-02",
+  "fin": "2026-11-06",
+  "critica": false,
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Arquitectura del sistema",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/arquitectura.md"
+   }
+  ]
+ },
+ {
+  "id": "A-1.1.1.1",
+  "descripcion": "Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
+  "sprint": 2,
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.1.1",
+  "paqueteNombre": "Cronograma de hitos",
+  "entregable": "Cronograma de hitos (CRO-01)",
+  "inicio": "2026-11-09",
+  "fin": "2026-11-11",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": null,
+  "evidencias": []
+ },
+ {
+  "id": "A-1.1.1.2",
+  "descripcion": "Definir Product Backlog y priorizar historias de usuario",
+  "sprint": 2,
+  "responsable": "Equipo del proyecto",
+  "paquete": "1.1.1",
+  "paqueteNombre": "Cronograma de hitos",
+  "entregable": "Product Backlog priorizado",
+  "inicio": "2026-11-11",
+  "fin": "2026-11-13",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": null,
+  "evidencias": []
+ },
+ {
+  "id": "A-1.1.1.3",
+  "descripcion": "Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
+  "sprint": 2,
+  "responsable": "Equipo del proyecto",
+  "paquete": "1.1.1",
+  "paqueteNombre": "Cronograma de hitos",
+  "entregable": "Roles Scrum asignados",
+  "inicio": "2026-11-12",
+  "fin": "2026-11-12",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": null,
+  "evidencias": []
+ },
+ {
+  "id": "A-1.2.1.1",
+  "descripcion": "Establecer plantilla de informe de avance semanal",
+  "sprint": 2,
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.1.2",
+  "paqueteNombre": "Informes de avance",
+  "entregable": "Plantilla del informe de avance semanal",
+  "inicio": "2026-11-13",
+  "fin": "2026-11-13",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": null,
+  "evidencias": []
+ },
+ {
+  "id": "A-2.1.1.1",
+  "descripcion": "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
+  "sprint": 2,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.2.1",
+  "paqueteNombre": "Integración de datos (ETL)",
+  "entregable": "Mapa de las fuentes de datos académicos",
+  "inicio": "2026-11-16",
+  "fin": "2026-11-19",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 85,
+  "evidencias": []
+ },
+ {
+  "id": "A-2.1.1.2",
+  "descripcion": "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
+  "sprint": 2,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.2.1",
+  "paqueteNombre": "Integración de datos (ETL)",
+  "entregable": "Modelo entidad-relación de la base de datos",
+  "inicio": "2026-11-18",
+  "fin": "2026-11-20",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 85,
+  "evidencias": []
+ },
+ {
+  "id": "A-2.1.1.3",
+  "descripcion": "Codificar scripts ETL de extracción, transformación y carga",
+  "sprint": 2,
+  "responsable": "Jadira Vasquez + Carlos Curo",
+  "paquete": "1.2.1",
+  "paqueteNombre": "Integración de datos (ETL)",
+  "entregable": "Scripts de carga de datos (ETL)",
+  "inicio": "2026-11-23",
+  "fin": "2026-11-27",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 85,
+  "evidencias": []
+ },
+ {
+  "id": "A-2.1.1.4",
+  "descripcion": "Ejecutar prueba de migración de datos y validar integridad",
+  "sprint": 2,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.2.1",
+  "paqueteNombre": "Integración de datos (ETL)",
+  "entregable": "Informe de la prueba de migración",
+  "inicio": "2026-11-25",
+  "fin": "2026-11-27",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 85,
+  "evidencias": []
+ },
+ {
+  "id": "A-2.2.1.1",
+  "descripcion": "Configurar tareas programadas nocturnas de limpieza y validación de datos",
+  "sprint": 2,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.2.2",
+  "paqueteNombre": "Calidad de datos",
+  "entregable": "Validación nocturna programada",
+  "inicio": "2026-11-30",
+  "fin": "2026-12-03",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 95,
+  "evidencias": []
+ },
+ {
+  "id": "A-2.2.1.2",
+  "descripcion": "Verificar consistencia de datos y corrección de registros erróneos",
+  "sprint": 2,
+  "responsable": "Jadira Vasquez + Carlos Curo",
+  "paquete": "1.2.2",
+  "paqueteNombre": "Calidad de datos",
+  "entregable": "Reporte de consistencia de los datos",
+  "inicio": "2026-12-02",
+  "fin": "2026-12-04",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 95,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.1.1.1",
+  "descripcion": "Análisis exploratorio del dataset académico (EDA)",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.1",
+  "paqueteNombre": "Entrenamiento del modelo",
+  "entregable": "Informe del análisis exploratorio de los datos",
+  "inicio": "2026-12-07",
+  "fin": "2026-12-14",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 100,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.1.1.2",
+  "descripcion": "Preprocesar y normalizar variables académicas para el modelo",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.1",
+  "paqueteNombre": "Entrenamiento del modelo",
+  "entregable": "Variables preprocesadas para el modelo",
+  "inicio": "2026-12-10",
+  "fin": "2026-12-14",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 100,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.1.1.3",
+  "descripcion": "Seleccionar algoritmo ML (Random Forest / Gradient Boosting / Regresión logística)",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.1",
+  "paqueteNombre": "Entrenamiento del modelo",
+  "entregable": "Algoritmo seleccionado y su justificación",
+  "inicio": "2026-12-14",
+  "fin": "2026-12-16",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 100,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.1.1.4",
+  "descripcion": "Entrenar modelo predictivo con Scikit-learn usando datos históricos",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.1",
+  "paqueteNombre": "Entrenamiento del modelo",
+  "entregable": "Modelo entrenado",
+  "inicio": "2026-12-16",
+  "fin": "2026-12-22",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 100,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.2.1.1",
+  "descripcion": "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.3",
+  "paqueteNombre": "Validación del modelo",
+  "entregable": "Reporte de métricas del modelo",
+  "inicio": "2026-12-21",
+  "fin": "2026-12-23",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 70,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.2.1.2",
+  "descripcion": "Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.3",
+  "paqueteNombre": "Validación del modelo",
+  "entregable": "Modelo ajustado que cumple el umbral",
+  "inicio": "2026-12-23",
+  "fin": "2026-12-29",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 70,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.2.1.3",
+  "descripcion": "Implementar lógica de clasificación: riesgo alto (rojo), medio (amarillo), bajo (verde)",
+  "sprint": 3,
+  "responsable": "Helber Perez",
+  "paquete": "1.3.2",
+  "paqueteNombre": "Clasificación de riesgo",
+  "entregable": "Clasificación en tres niveles de riesgo",
+  "inicio": "2026-12-24",
+  "fin": "2026-12-29",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 50,
+  "evidencias": []
+ },
+ {
+  "id": "A-3.2.1.4",
+  "descripcion": "Configurar script de actualización semanal automática del modelo",
+  "sprint": 3,
+  "responsable": "Helber Perez + Jadira Vasquez",
+  "paquete": "1.3.2",
+  "paqueteNombre": "Clasificación de riesgo",
+  "entregable": "Actualización semanal automática del modelo",
+  "inicio": "2026-12-28",
+  "fin": "2026-12-30",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 50,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.1.1.1",
+  "descripcion": "Diseñar plantilla de correo de alerta para el docente tutor",
+  "sprint": 4,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.4.1",
+  "paqueteNombre": "Motor de alertas",
+  "entregable": "Plantilla del correo de alerta",
+  "inicio": "2027-01-04",
+  "fin": "2027-01-05",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.1.1.2",
+  "descripcion": "Desarrollar módulo de envío automático de alertas por correo electrónico",
+  "sprint": 4,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.4.1",
+  "paqueteNombre": "Motor de alertas",
+  "entregable": "Envío automático de alertas por correo",
+  "inicio": "2027-01-06",
+  "fin": "2027-01-11",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.1.1.3",
+  "descripcion": "Desarrollar módulo web de alertas críticas en panel del docente",
+  "sprint": 4,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.4.1",
+  "paqueteNombre": "Motor de alertas",
+  "entregable": "Panel web de alertas del docente",
+  "inicio": "2027-01-11",
+  "fin": "2027-01-14",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.1.1.4",
+  "descripcion": "Implementar módulo de registro de seguimiento de casos críticos",
+  "sprint": 4,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.4.1",
+  "paqueteNombre": "Motor de alertas",
+  "entregable": "Registro de seguimiento de casos",
+  "inicio": "2027-01-13",
+  "fin": "2027-01-15",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.2.1.1",
+  "descripcion": "Diseñar wireframes y prototipo de la interfaz Next.js",
+  "sprint": 4,
+  "responsable": "Carlos Curo",
+  "paquete": "1.4.2.1",
+  "paqueteNombre": "Diseño de la interfaz",
+  "entregable": "Wireframes y prototipo de la interfaz",
+  "inicio": "2027-01-18",
+  "fin": "2027-01-20",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 100,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.2.1.2",
+  "descripcion": "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
+  "sprint": 4,
+  "responsable": "Carlos Curo",
+  "paquete": "1.4.2.2",
+  "paqueteNombre": "Desarrollo del tablero",
+  "entregable": "Tablero con semáforo de riesgo",
+  "inicio": "2027-01-20",
+  "fin": "2027-01-26",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 75,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.2.1.3",
+  "descripcion": "Desarrollar ficha individual del estudiante con historial completo",
+  "sprint": 4,
+  "responsable": "Carlos Curo",
+  "paquete": "1.4.2.2",
+  "paqueteNombre": "Desarrollo del tablero",
+  "entregable": "Ficha individual del estudiante",
+  "inicio": "2027-01-25",
+  "fin": "2027-01-27",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 75,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.2.1.4",
+  "descripcion": "Implementar módulo de roles y control de acceso por perfil de usuario",
+  "sprint": 4,
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.4.3",
+  "paqueteNombre": "Roles y accesos",
+  "entregable": "Roles y control de acceso",
+  "inicio": "2027-01-27",
+  "fin": "2027-01-29",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 5,
+  "evidencias": []
+ },
+ {
+  "id": "A-4.2.1.5",
+  "descripcion": "Desarrollar módulo de reportes exportables en PDF y Excel por unidad evaluativa",
+  "sprint": 4,
+  "responsable": "Carlos Curo",
+  "paquete": "1.4.2.2",
+  "paqueteNombre": "Desarrollo del tablero",
+  "entregable": "Reportes exportables en PDF y Excel",
+  "inicio": "2027-01-27",
+  "fin": "2027-01-29",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 75,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.0.1.1",
+  "descripcion": "Pruebas de integración entre todos los módulos del sistema: verificar ETL, ML, alertas y dashboard funcionan en conjunto",
+  "sprint": 5,
+  "responsable": "Equipo del proyecto",
+  "paquete": "1.6.1",
+  "paqueteNombre": "Pruebas de integración y rendimiento",
+  "entregable": "Reporte de pruebas de integración",
+  "inicio": "2027-03-01",
+  "fin": "2027-03-05",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 20,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.0.1.2",
+  "descripcion": "Pruebas de rendimiento del sistema: confirmar que el tablero carga en menos de 3 segundos y que la clasificación semanal se ejecuta sin intervención manual",
+  "sprint": 5,
+  "responsable": "Carlos Curo + Jadira Vasquez",
+  "paquete": "1.6.1",
+  "paqueteNombre": "Pruebas de integración y rendimiento",
+  "entregable": "Reporte de pruebas de rendimiento",
+  "inicio": "2027-03-03",
+  "fin": "2027-03-08",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 20,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.0.2.1",
+  "descripcion": "Prueba piloto real con grupo de 3 docentes tutores usando datos académicos reales del colegio durante 2 semanas",
+  "sprint": 5,
+  "responsable": "Equipo del proyecto + docentes",
+  "paquete": "1.6.2",
+  "paqueteNombre": "Piloto y retroalimentación",
+  "entregable": "Registro de la prueba piloto",
+  "inicio": "2027-03-08",
+  "fin": "2027-03-19",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.0.2.2",
+  "descripcion": "Recopilar feedback del piloto, documentar observaciones y aplicar ajustes al sistema basados en uso real",
+  "sprint": 5,
+  "responsable": "Equipo del proyecto + docentes",
+  "paquete": "1.6.2",
+  "paqueteNombre": "Piloto y retroalimentación",
+  "entregable": "Informe del piloto con los ajustes aplicados",
+  "inicio": "2027-03-19",
+  "fin": "2027-03-24",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.1.1.1",
+  "descripcion": "Configurar el entorno de producción en la nube (alojamiento web, base de datos y tarea programada)",
+  "sprint": 6,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.5.1",
+  "paqueteNombre": "Despliegue del sistema",
+  "entregable": "Entorno de producción configurado",
+  "inicio": "2027-03-29",
+  "fin": "2027-03-31",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.1.1.2",
+  "descripcion": "Desplegar sistema completo en entorno de producción definitivo",
+  "sprint": 6,
+  "responsable": "Jadira Vasquez",
+  "paquete": "1.5.1",
+  "paqueteNombre": "Despliegue del sistema",
+  "entregable": "Sistema desplegado en producción",
+  "inicio": "2027-03-31",
+  "fin": "2027-04-05",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.1.1.3",
+  "descripcion": "Ejecutar pruebas de aceptación UAT formales con todos los docentes tutores",
+  "sprint": 6,
+  "responsable": "Equipo del proyecto + docentes",
+  "paquete": "1.4.2.3",
+  "paqueteNombre": "Pruebas con usuarios",
+  "entregable": "Actas de las pruebas de aceptación con docentes",
+  "inicio": "2027-04-05",
+  "fin": "2027-04-09",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.1.1.4",
+  "descripcion": "Corregir observaciones y bugs detectados en pruebas UAT formales",
+  "sprint": 6,
+  "responsable": "Carlos Curo + Jadira Vasquez",
+  "paquete": "1.5.1",
+  "paqueteNombre": "Despliegue del sistema",
+  "entregable": "Registro de las correcciones",
+  "inicio": "2027-04-07",
+  "fin": "2027-04-09",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.2.1.1",
+  "descripcion": "Elaborar manual de usuario (docentes y coordinadores)",
+  "sprint": 6,
+  "responsable": "Carlos Curo",
+  "paquete": "1.5.2",
+  "paqueteNombre": "Manual de usuario",
+  "entregable": "Manual de usuario",
+  "inicio": "2027-04-12",
+  "fin": "2027-04-14",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.2.1.2",
+  "descripcion": "Elaborar manual técnico del sistema para el responsable de TI del colegio",
+  "sprint": 6,
+  "responsable": "Helber Perez",
+  "paquete": "1.5.3",
+  "paqueteNombre": "Manual técnico",
+  "entregable": "Manual técnico",
+  "inicio": "2027-04-14",
+  "fin": "2027-04-16",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": 40,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.2.1.3",
+  "descripcion": "Ejecutar sesión formal de capacitación a todos los docentes y coordinadores (2 horas)",
+  "sprint": 6,
+  "responsable": "Jhostin Galarza + Coordinación académica",
+  "paquete": "1.5.4",
+  "paqueteNombre": "Plan de capacitación",
+  "entregable": "Lista de asistencia a la capacitación",
+  "inicio": "2027-04-15",
+  "fin": "2027-04-16",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.2.1.4",
+  "descripcion": "Realizar retrospectiva final del proyecto SCRUM",
+  "sprint": 6,
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.5.5",
+  "paqueteNombre": "Capacitación y cierre",
+  "entregable": "Acta de la retrospectiva final",
+  "inicio": "2027-04-19",
+  "fin": "2027-04-19",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-5.2.1.5",
+  "descripcion": "Elaborar informe final del proyecto y presentación de cierre ante el docente del curso",
+  "sprint": 6,
+  "responsable": "Equipo del proyecto",
+  "paquete": "1.5.5",
+  "paqueteNombre": "Capacitación y cierre",
+  "entregable": "Informe final y presentación de cierre",
+  "inicio": "2027-04-20",
+  "fin": "2027-04-23",
+  "critica": true,
+  "estado": "Programada",
+  "avancePaquete": 0,
+  "evidencias": []
+ },
+ {
+  "id": "A-1.2.1.2",
+  "descripcion": "Daily Standup 15 min diarios — continuo todo el proyecto",
+  "sprint": 2,
+  "responsable": "Jhostin Galarza",
+  "paquete": "1.1.2",
+  "paqueteNombre": "Informes de avance",
+  "entregable": "Registro de las reuniones diarias",
+  "inicio": "2026-11-09",
+  "fin": "2027-04-23",
+  "critica": false,
+  "estado": "Programada",
+  "avancePaquete": null,
+  "evidencias": []
+ }
+];
 
 export const SEGUIMIENTO_ALCANCE = [
  {
@@ -4485,6 +5231,7 @@ export const SEGUIMIENTO_ALCANCE = [
   "sprint": [],
   "alertas": [],
   "fueraDeAlcance": [],
+  "requisitosCambiados": [],
   "paquetes": [
    {
     "id": "1.1.1",
@@ -5018,6 +5765,7 @@ export const SEGUIMIENTO_ALCANCE = [
     "accion": "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo."
    }
   ],
+  "requisitosCambiados": [],
   "paquetes": [
    {
     "id": "1.1.1",
@@ -5442,10 +6190,605 @@ export const SEGUIMIENTO_ALCANCE = [
     "estado": "En desarrollo"
    }
   ]
+ },
+ {
+  "fecha": "2026-11-07",
+  "fuente": "Revisión del Sprint 1",
+  "cambios": {
+   "1.0.1": [
+    "Cumplido",
+    100,
+    "Reunión de inicio del 12/10/2026 con la Dirección, con su acta (GOB-12).",
+    "—"
+   ],
+   "1.0.2": [
+    "Cumplido",
+    100,
+    "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.",
+    "—"
+   ],
+   "1.0.3": [
+    "Cumplido",
+    100,
+    "Variables del modelo aprobadas por los docentes tutores en el taller del 28/10/2026.",
+    "—"
+   ],
+   "1.0.4": [
+    "Cumplido",
+    100,
+    "Documento de arquitectura aprobado en la revisión del Sprint 1 (06/11/2026).",
+    "—"
+   ],
+   "1.3.3": [
+    "Cumplido en parte",
+    70,
+    "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio. La forma de validarlo (SC-08) se aprobó el 06/11/2026.",
+    "Aplicar la validación aprobada en SC-08 con los datos del colegio."
+   ]
+  },
+  "casos": [
+   {
+    "id": "CP-01",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-02",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-03",
+    "estado": "Aprobado en parte"
+   },
+   {
+    "id": "CP-04",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-05",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-06",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-07",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-08",
+    "estado": "Aprobado"
+   }
+  ],
+  "requisitosCambiados": [
+   "REQ-03"
+  ],
+  "hechos": [
+   "06/11: revisión del Sprint 1 con el Product Owner. Se aprueban la arquitectura y la lista de variables del modelo: hito 1 cumplido.",
+   "06/11: se aprueba sin cambios la solicitud SC-08 (validación del modelo); cambia el criterio de validación de REQ-03.",
+   "07/11: se propone la EDT versión 4 (SC-10): componente 1.0 «Análisis y diseño» y cada actividad del cronograma enlazada a su paquete y su entregable."
+  ],
+  "sprint": [
+   {
+    "que": "Arquitectura del sistema",
+    "estado": "Cumplido",
+    "evidencia": "Aprobada en la revisión del Sprint 1 (06/11/2026).",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/arquitectura.md"
+   },
+   {
+    "que": "Lista de variables del modelo validada con docentes",
+    "estado": "Cumplido",
+    "evidencia": "Taller del 28/10/2026 y revisión del Sprint 1 (06/11/2026)."
+   }
+  ],
+  "alertas": [
+   {
+    "nivel": "Atención",
+    "texto": "Aprobar la EDT versión 4 (SC-10) con el Product Owner.",
+    "responsable": "Jhostin Galarza",
+    "fecha": "Sprint 2"
+   },
+   {
+    "nivel": "Atención",
+    "texto": "Cargar las exportaciones de Cubicol y repetir la reconciliación en tres fechas (CP-03) antes de la aceptación del E-01.",
+    "responsable": "Jadira Vasquez",
+    "fecha": "04/12/2026"
+   },
+   {
+    "nivel": "Seguimiento",
+    "texto": "SC-09 (canal de las alertas por correo) sigue en evaluación.",
+    "responsable": "Carlos Curo",
+    "fecha": "Sprint 2"
+   }
+  ],
+  "fueraDeAlcance": [
+   {
+    "texto": "Pantalla «Evaluar un caso»: evalúa a un estudiante con datos ingresados a mano. No figura en la matriz de requisitos.",
+    "estado": "Por revisar",
+    "accion": "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo."
+   }
+  ],
+  "paquetes": [
+   {
+    "id": "1.0.1",
+    "nombre": "Levantamiento del alcance",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Reunión de inicio del 12/10/2026 con la Dirección, con su acta (GOB-12).",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": true
+   },
+   {
+    "id": "1.0.2",
+    "nombre": "Diagnóstico de los datos",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": true
+   },
+   {
+    "id": "1.0.3",
+    "nombre": "Variables del modelo",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Variables del modelo aprobadas por los docentes tutores en el taller del 28/10/2026.",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": true
+   },
+   {
+    "id": "1.0.4",
+    "nombre": "Arquitectura del sistema",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Documento de arquitectura aprobado en la revisión del Sprint 1 (06/11/2026).",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": true
+   },
+   {
+    "id": "1.1.1",
+    "nombre": "Cronograma de hitos",
+    "componente": "1.1",
+    "estado": "Cumplido",
+    "pct": null,
+    "existe": "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).",
+    "falta": "Mantenerla actualizada ante cada cambio.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.2",
+    "nombre": "Informes de avance",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Informe de desempeño N.º 1 (GOB-09).",
+    "falta": "Un informe al cierre de cada sprint.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.3",
+    "nombre": "Actas y control de cambios",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).",
+    "falta": "Actas y cambios hasta el cierre.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.2.1",
+    "nombre": "Integración de datos (ETL)",
+    "componente": "1.2",
+    "estado": "Cumplido en parte",
+    "pct": 85,
+    "existe": "Carga de la base consolidada de notas del colegio (3 878 notas de 173 estudiantes), sin duplicados y reconciliada. El colegio ya entrega las exportaciones de Cubicol de forma periódica, a través del Product Owner.",
+    "falta": "Cargar las exportaciones periódicas de Cubicol y repetir la reconciliación en tres fechas (CP-03).",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": false
+   },
+   {
+    "id": "1.2.2",
+    "nombre": "Calidad de datos",
+    "componente": "1.2",
+    "estado": "Cumplido en parte",
+    "pct": 95,
+    "existe": "Diez reglas de calidad y validación automática cada noche: 21 noches seguidas sin fallas, del 11/10 al 31/10/2026 (CP-05 cumplido el 25/10).",
+    "falta": "Cotejar las notas transcritas de fotografías.",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": false
+   },
+   {
+    "id": "1.3.1",
+    "nombre": "Entrenamiento del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.",
+    "falta": "Volver a entrenarla cuando el colegio acumule datos propios.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.2",
+    "nombre": "Clasificación de riesgo",
+    "componente": "1.3",
+    "estado": "Prototipo",
+    "pct": 50,
+    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
+    "falta": "Ejecución semanal automática.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.3",
+    "nombre": "Validación del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido en parte",
+    "pct": 70,
+    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio. La forma de validarlo (SC-08) se aprobó el 06/11/2026.",
+    "falta": "Aplicar la validación aprobada en SC-08 con los datos del colegio.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": true
+   },
+   {
+    "id": "1.4.1",
+    "nombre": "Motor de alertas",
+    "componente": "1.4",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).",
+    "falta": "Correo al tutor, historial de alertas y registro de seguimiento.",
+    "entregable": "E-03",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.1",
+    "nombre": "Diseño de la interfaz",
+    "componente": "1.4",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Interfaz en línea revisada con los docentes tutores en el taller del 28/10/2026, que dieron su conformidad.",
+    "falta": "Mantenerla al día con los ajustes de los sprints siguientes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.2",
+    "nombre": "Desarrollo del tablero",
+    "componente": "1.4",
+    "estado": "Cumplido en parte",
+    "pct": 75,
+    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
+    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.3",
+    "nombre": "Pruebas con usuarios",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Pruebas con al menos tres docentes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.3",
+    "nombre": "Roles y accesos",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 5,
+    "existe": "La tabla de usuarios con los cuatro roles está en la base de datos.",
+    "falta": "Inicio de sesión y vistas por rol.",
+    "entregable": "E-05",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.5.1",
+    "nombre": "Despliegue del sistema",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Sistema en línea (página en Vercel y API en Render) con datos de práctica.",
+    "falta": "Base gestionada y entorno de producción con datos reales.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.5.2",
+    "nombre": "Manual de usuario",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Manual de usuario.",
+    "entregable": "E-06",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.3",
+    "nombre": "Manual técnico",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.",
+    "falta": "Completarlo y validarlo con el encargado de TI.",
+    "entregable": "E-07",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.4",
+    "nombre": "Plan de capacitación",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Plan de capacitación.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.5",
+    "nombre": "Capacitación y cierre",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Capacitación y cierre.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.6.1",
+    "nombre": "Pruebas de integración y rendimiento",
+    "componente": "1.6",
+    "estado": "Prototipo",
+    "pct": 20,
+    "existe": "Pruebas del entregable E-01 y de los flujos de la página.",
+    "falta": "Reporte formal de integración y prueba de rendimiento.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.6.2",
+    "nombre": "Piloto y retroalimentación",
+    "componente": "1.6",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Piloto con tres docentes tutores.",
+    "entregable": "E-09",
+    "revision": "2027-03-24",
+    "cambio": false
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-01",
+    "titulo": "Centralización de los datos académicos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.1",
+    "casos": "CP-01 a CP-04",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-02",
+    "titulo": "Limpieza y validación automática de los datos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.2",
+    "casos": "CP-05 a CP-08",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-03",
+    "titulo": "Modelo de clasificación del riesgo académico",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.1 y 1.3.3",
+    "casos": "CP-09 a CP-12",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-04",
+    "titulo": "Actualización semanal automática del modelo",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.2",
+    "casos": "CP-13 a CP-16",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-05",
+    "titulo": "Alertas automáticas por correo al docente tutor",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-17 a CP-20",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-06",
+    "titulo": "Panel web de alertas para el docente",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-21 a CP-24",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-07",
+    "titulo": "Registro del seguimiento de cada caso",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-25 a CP-28",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-08",
+    "titulo": "Tablero de indicadores de riesgo",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-29 a CP-32",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-09",
+    "titulo": "Reportes exportables en PDF y Excel",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-33 a CP-36",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-10",
+    "titulo": "Ficha individual del estudiante",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-37 a CP-40",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-11",
+    "titulo": "Roles y accesos diferenciados",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-41 a CP-44",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-12",
+    "titulo": "Comunicado al apoderado del estudiante en riesgo alto",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-45 a CP-48",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-01",
+    "titulo": "Facilidad de uso",
+    "prioridad": "Alta",
+    "entregable": "E-04 y E-08",
+    "paquete": "1.4.2.3 y 1.5.4",
+    "casos": "CP-49 a CP-52",
+    "estado": "Pendiente"
+   },
+   {
+    "id": "RNF-02",
+    "titulo": "Rendimiento del tablero",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-53 a CP-56",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-03",
+    "titulo": "Autenticación y control de acceso",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-57 a CP-60",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-04",
+    "titulo": "Cumplimiento de la Ley N.° 29733",
+    "prioridad": "Alta",
+    "entregable": "E-05 y E-07",
+    "paquete": "1.5.1 y 1.5.3",
+    "casos": "CP-61 a CP-64",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-05",
+    "titulo": "Disponibilidad en horario escolar",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.5.1",
+    "casos": "CP-65 a CP-68",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-06",
+    "titulo": "Compatibilidad con navegadores",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-69 a CP-72",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-07",
+    "titulo": "Capacidad y escalabilidad",
+    "prioridad": "Media",
+    "entregable": "E-01 y E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-73 a CP-76",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-08",
+    "titulo": "Documentación y transferencia",
+    "prioridad": "Media",
+    "entregable": "E-07",
+    "paquete": "1.5.3",
+    "casos": "CP-77 a CP-80",
+    "estado": "En desarrollo"
+   }
+  ]
  }
 ];
 
 export const COMPONENTES_EDT = [
+ {
+  "id": "1.0",
+  "nombre": "Análisis y diseño",
+  "descripcion": "Levantamiento del alcance, diagnóstico de los datos, variables del modelo y arquitectura del sistema."
+ },
  {
   "id": "1.1",
   "nombre": "Gestión del proyecto",
@@ -5482,6 +6825,11 @@ export const DRIVE_CARPETA = "https://drive.google.com/drive/folders/1XRES5CZ7T-
 
 export const COMPONENTES = [
  {
+  "id": "1.0",
+  "nombre": "Análisis y diseño",
+  "descripcion": "Levantamiento del alcance, diagnóstico de los datos, variables del modelo y arquitectura del sistema."
+ },
+ {
   "id": "1.1",
   "nombre": "Gestión del proyecto",
   "descripcion": "Planificación, seguimiento y control del proyecto."
@@ -5514,6 +6862,38 @@ export const COMPONENTES = [
 ];
 
 export const PAQUETES = [
+ {
+  "id": "1.0.1",
+  "nombre": "Levantamiento del alcance",
+  "responsable": "Jhostin Galarza",
+  "entregable": "Acta de la reunión de levantamiento",
+  "criterio": "Alcance y acceso a los datos validados con la Dirección y registrados en un acta.",
+  "origen": "v4"
+ },
+ {
+  "id": "1.0.2",
+  "nombre": "Diagnóstico de los datos",
+  "responsable": "Jadira Vasquez",
+  "entregable": "Informe de calidad y disponibilidad de los datos",
+  "criterio": "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.",
+  "origen": "v4"
+ },
+ {
+  "id": "1.0.3",
+  "nombre": "Variables del modelo",
+  "responsable": "Helber Perez",
+  "entregable": "Lista de variables validada con docentes",
+  "criterio": "Variables del modelo revisadas y aprobadas por los docentes tutores en un taller.",
+  "origen": "v4"
+ },
+ {
+  "id": "1.0.4",
+  "nombre": "Arquitectura del sistema",
+  "responsable": "Jadira Vasquez",
+  "entregable": "Documento de arquitectura",
+  "criterio": "Módulos, flujo de datos y tecnologías definidos y aprobados en la revisión del Sprint 1.",
+  "origen": "v4"
+ },
  {
   "id": "1.1.1",
   "nombre": "Cronograma de hitos",
@@ -5576,7 +6956,7 @@ export const PAQUETES = [
   "responsable": "Helber Perez",
   "entregable": "Informe de validación del modelo",
   "criterio": "Alcanza el umbral mínimo de 75 % en la métrica acordada, con datos reales (SC-08).",
-  "origen": "diccionario"
+  "origen": "ambos"
  },
  {
   "id": "1.4.1",
@@ -5616,7 +6996,7 @@ export const PAQUETES = [
   "responsable": "Jhostin Galarza",
   "entregable": "Control de acceso por rol",
   "criterio": "Cada rol ve solo lo que le corresponde; verificado con pruebas de acceso.",
-  "origen": "diccionario"
+  "origen": "ambos"
  },
  {
   "id": "1.5.1",
@@ -5682,8 +7062,8 @@ export const TOTALES_ALCANCE = {
  "noFuncionales": 8,
  "alta": 14,
  "casosDePrueba": 80,
- "paquetes": 20,
- "paquetesDeclaracion": 18
+ "paquetes": 24,
+ "paquetesDeclaracion": 20
 };
 
 export const CAMBIOS = [
@@ -5755,9 +7135,10 @@ export const CAMBIOS = [
   "titulo": "Rediseño de la validación del modelo de Machine Learning",
   "origen": "En el conjunto de datos del prototipo, la etiqueta de riesgo se calcula con las mismas notas que se usan como variables, por lo que la precisión obtenida no demuestra capacidad de predicción.",
   "impacto": "Criterio de validación del requisito REQ-03 y paquete 1.3: predecir el periodo siguiente con datos reales anonimizados, comparar contra una regla simple, medir la proporción de estudiantes en riesgo detectados y retirar la variable de pensiones.",
-  "estado": "En evaluación",
-  "decision": "Se decide en la revisión del Sprint 1 (06/11/2026), con el docente asesor.",
-  "aplicacion": "—"
+  "estado": "Aprobado",
+  "decidido": "2026-11-06",
+  "decision": "Aprobado sin cambios en la revisión del Sprint 1 (06/11/2026).",
+  "aplicacion": "Criterio de validación de REQ-03 y paquete 1.3.3 (validación del modelo)."
  },
  {
   "id": "SC-09",
@@ -5770,11 +7151,11 @@ export const CAMBIOS = [
  },
  {
   "id": "SC-10",
-  "titulo": "Unificación de la EDT y de su diccionario",
-  "origen": "La declaración del alcance lista 18 paquetes de trabajo y el diccionario describe 20.",
-  "impacto": "Línea base del alcance: EDT, diccionario y matriz de trazabilidad.",
+  "titulo": "Unificación de la EDT y de su diccionario, y enlace con el cronograma (EDT versión 4)",
+  "origen": "La declaración del alcance lista 18 paquetes de trabajo y el diccionario describe 20. Además, las actividades del cronograma usan la numeración anterior de la EDT y las del Sprint 1 (análisis y diseño) no tienen paquete propio.",
+  "impacto": "Línea base del alcance (EDT y diccionario) y cronograma: componente 1.0 «Análisis y diseño» con cuatro paquetes, cada actividad enlazada a su paquete y con su entregable.",
   "estado": "En evaluación",
-  "decision": "Se decide al revisar la estructura del alcance en el Sprint 1.",
+  "decision": "EDT versión 4 propuesta el 07/11/2026; la aprueba el Product Owner.",
   "aplicacion": "—"
  },
  {
@@ -6203,7 +7584,7 @@ export const COMUNICACIONES = [
   "canal": "Taller presencial en el colegio",
   "sprint": 1,
   "estado": "Realizada",
-  "constancia": "Los docentes tutores dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos",
+  "constancia": "Asistieron los 16 docentes y la directora, que dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos",
   "plan": "PC-05"
  },
  {

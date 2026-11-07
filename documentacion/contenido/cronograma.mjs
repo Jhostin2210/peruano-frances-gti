@@ -4,6 +4,7 @@
 import { c, h, nota, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P, R } from "../proyecto.mjs";
 import { ACTIVIDADES } from "../datos/actividades.mjs";
+import { PAQUETES } from "../datos/requisitos.mjs";
 import { FERIADOS, GRUPOS, RECESO, SPRINTS, TOTALES as T, fmt, fmtIso, programar } from "../datos/calendario.mjs";
 import { DOC, tablaFeriados, tablaHitos, tablaSprints } from "./comunes.mjs";
 
@@ -81,11 +82,13 @@ export const CRO01 = DOC({
   area: "Planificación",
   proceso: "Desarrollar el cronograma",
   salida: "Plan de gestión del cronograma, línea base del cronograma y cronograma de hitos",
-  version: "3.0",
+  version: "3.1",
+  fecha: "07/11/2026",
   versiones: [
     ["1.0", "2026 (curso anterior)", "Cronograma inicial de cuatro sprints.", "Equipo anterior"],
     ["2.0", "2026 (curso anterior)", "Seis sprints y 24 semanas: se agregan el sprint de análisis y el de pruebas y piloto.", "Equipo anterior"],
     ["3.0", P.fechaEmision, "Nuevo equipo (SC-01), nuevo calendario con receso en febrero (SC-02), despliegue en la nube (SC-03) y totales corregidos (SC-06).", P.director],
+    ["3.1", "07/11/2026", "Cada actividad se enlaza con su paquete de la EDT versión 4 y con el entregable que produce (sección 10, SC-10). No cambian las fechas.", P.director],
   ],
   resumen:
     `Programa las ${T.actividades} actividades del proyecto y la reunión diaria en seis sprints, del ${P.inicio} al ${P.fin}, con receso en febrero por vacaciones escolares. Mantiene la estimación PERT de la versión 2 y actualiza equipo, fechas y totales.`,
@@ -259,6 +262,19 @@ export const CRO01 = DOC({
       ),
       p(
         "En el ejercicio, tres sprints quedan en amarillo y el proyecto cierra con un SPI de 0.97, dentro del umbral. Sirve para mostrar cómo se leerán los indicadores cuando haya datos reales. Las solicitudes de cambio que acompañaban al ejercicio en la versión 2 también eran supuestas y no forman parte del registro de cambios (GOB-10).",
+      ),
+    ]),
+    sec("10. Entregables de las actividades", [
+      p(
+        "Cada actividad del cronograma pertenece a un paquete de trabajo de la EDT versión 4 (ALC-02) y produce un entregable verificable. El entregable de un paquete es la suma de los entregables de sus actividades. Los códigos de actividad se conservan de la versión 2.",
+      ),
+      ...SPRINTS.map((s) =>
+        tabla(
+          ["ID", "Actividad", "Paquete de la EDT", "Entregable"],
+          [10, 40, 22, 28],
+          deSprint(s.n).map((a) => [a.id, a.descripcion, `${a.paquete} ${PAQUETES.find((x) => x.id === a.paquete).nombre}`, a.entregable]),
+          { titulo: `Sprint ${s.n} · ${s.nombre}`, compacta: true },
+        ),
       ),
     ]),
   ],

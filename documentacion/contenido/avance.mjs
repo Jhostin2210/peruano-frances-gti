@@ -4,8 +4,11 @@
 import { c, kv, nota, ol, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P } from "../proyecto.mjs";
 import { SPRINTS, fmtIso } from "../datos/calendario.mjs";
-import { PAQUETES, REQUISITOS } from "../datos/requisitos.mjs";
+import { PAQUETES as TODOS_LOS_PAQUETES, REQUISITOS } from "../datos/requisitos.mjs";
 import { AVANCE } from "../datos/avance.mjs";
+
+// El informe N.º 2 (17/10/2026) usa los paquetes que tenía la EDT en esa fecha.
+const PAQUETES = TODOS_LOS_PAQUETES.filter((x) => x.id in AVANCE);
 import { DOC } from "./comunes.mjs";
 
 const COLOR = { Cumplido: "verde", "En curso": "azul", "Cumplido en parte": "teal", Prototipo: "amarillo", "No iniciado": "gris" };
