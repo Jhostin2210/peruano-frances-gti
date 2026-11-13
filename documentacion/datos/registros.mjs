@@ -117,6 +117,17 @@ export const CAMBIOS = [
     decision: "Aprobado por el Product Owner en la planificación del Sprint 2, el 09/11/2026.",
     aplicacion: "Helber Perez y Carlos Curo asumen las dos actividades desde el Sprint 2; los responsables se actualizan en la próxima versión del cronograma (CRO-01).",
   },
+  {
+    id: "SC-13",
+    titulo: "Base de datos del colegio armada solo con las exportaciones de Cubicol",
+    origen: "La base consolidada tenía estudiantes registrados dos veces (nombre completo y nombre de pila) y 1 426 notas transcritas de fotografías sin cotejar. El Product Owner propuso usar como base solo las exportaciones de Cubicol.",
+    impacto: "Entregable E-01 (paquetes 1.2.1 y 1.2.2): cambia la fuente de los datos. La base queda con 50 estudiantes y 402 notas de marzo a mayo de 2026 (3.° a 6.° de primaria y 1.° a 3.° de secundaria); los demás grados entran cuando lleguen sus exportaciones. El modelo no se vuelve a entrenar: se aplica a los datos nuevos.",
+    estado: "Aprobado",
+    presentado: "2026-11-13",
+    decidido: "2026-11-13",
+    decision: "Propuesto y aprobado por el Product Owner el 13/11/2026.",
+    aplicacion: "Base rearmada el 13/11/2026 en el sistema; la base anterior queda como respaldo privado. Casos de prueba CP-01 y CP-02 repetidos y CP-03 en 2 de 3 cargas.",
+  },
 ];
 
 // ───────────────────────── Incidentes (GOB-06) ─────────────────────────
