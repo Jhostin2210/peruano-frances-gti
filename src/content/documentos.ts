@@ -4672,8 +4672,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Monitoreo y control",
   "proceso": "Evaluar e implementar cambios",
   "salida": "Solicitudes de cambio aprobadas y registro de cambios",
-  "version": "1.3",
-  "fecha": "07/11/2026",
+  "version": "1.4",
+  "fecha": "13/11/2026",
   "resumen": "Establece cómo se solicita, evalúa y decide un cambio, y registra los cambios que separan la versión anterior del proyecto de la versión vigente.",
   "carpeta": "01 - Gobernanza/1.8 Cambios",
   "drive": "https://drive.google.com/file/d/16NuJVDQzJAE-Uk9rGZfLq8uTR_qgt0ue/view",
@@ -4990,13 +4990,13 @@ export const DOCUMENTOS: DocDef[] = [
         "La estimación de los recursos (REC-01) muestra que Jadira Vasquez tiene 109 horas asignadas en el Sprint 2 frente a 80 disponibles.",
         "Cronograma: cambia el responsable de dos actividades, sin mover fechas. A-2.1.1.1 (levantar y mapear las fuentes de datos) pasa a Helber Perez y A-2.2.1.1 (tareas programadas nocturnas) pasa a Carlos Curo (análisis en REC-04).",
         {
-         "x": "En evaluación",
-         "fill": "amarillo",
+         "x": "Aprobado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Lo decide el Product Owner en la planificación del Sprint 2.",
-        "—"
+        "Aprobado por el Product Owner en la planificación del Sprint 2, el 09/11/2026.",
+        "Helber Perez y Carlos Curo asumen las dos actividades desde el Sprint 2; los responsables se actualizan en la próxima versión del cronograma (CRO-01)."
        ]
       ],
       "titulo": "Registro de cambios al 17/10/2026",

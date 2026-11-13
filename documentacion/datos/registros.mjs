@@ -111,10 +111,11 @@ export const CAMBIOS = [
     titulo: "Nivelación de la carga del equipo en el Sprint 2",
     origen: "La estimación de los recursos (REC-01) muestra que Jadira Vasquez tiene 109 horas asignadas en el Sprint 2 frente a 80 disponibles.",
     impacto: "Cronograma: cambia el responsable de dos actividades, sin mover fechas. A-2.1.1.1 (levantar y mapear las fuentes de datos) pasa a Helber Perez y A-2.2.1.1 (tareas programadas nocturnas) pasa a Carlos Curo (análisis en REC-04).",
-    estado: "En evaluación",
+    estado: "Aprobado",
     presentado: "2026-11-07",
-    decision: "Lo decide el Product Owner en la planificación del Sprint 2.",
-    aplicacion: "—",
+    decidido: "2026-11-09",
+    decision: "Aprobado por el Product Owner en la planificación del Sprint 2, el 09/11/2026.",
+    aplicacion: "Helber Perez y Carlos Curo asumen las dos actividades desde el Sprint 2; los responsables se actualizan en la próxima versión del cronograma (CRO-01).",
   },
 ];
 

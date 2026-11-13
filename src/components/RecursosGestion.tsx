@@ -375,7 +375,7 @@ export function AdquirirRecursos() {
         <div className="flex gap-1.5 mb-3">
           {[
             { v: false, t: "Línea base" },
-            { v: true, t: `Con la ${G.sc12?.id ?? "SC-12"} (propuesta)` },
+            { v: true, t: `Con la ${G.sc12?.id ?? "SC-12"}${G.sc12?.estado === "Aprobado" ? " (aprobada el 09/11)" : " (propuesta)"}` },
           ].map((b) => (
             <button
               key={b.t}

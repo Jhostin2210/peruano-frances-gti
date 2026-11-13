@@ -346,13 +346,14 @@ export function crearGOB09(documentos) {
 // ───────────────────────── GOB-10 ─────────────────────────
 export const GOB10 = DOC({
   id: "GOB-10",
-  version: "1.3",
-  fecha: "07/11/2026",
+  version: "1.4",
+  fecha: "13/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Conformidad de la patrocinadora con SC-02 y SC-03 y nuevo cambio SC-11.", P.director],
     ["1.2", "07/11/2026", "SC-08 y SC-10 aprobados; la EDT pasa a la versión 4.", P.director],
     ["1.3", "07/11/2026", "Nueva solicitud SC-12: nivelación de la carga del Sprint 2 (dominio de Recursos).", P.director],
+    ["1.4", "13/11/2026", "SC-12 aprobada por el Product Owner el 09/11/2026.", P.director],
   ],
   titulo: "Plan de gestión de cambios y registro de cambios",
   archivo: "GOB-10 Plan y registro de cambios",
