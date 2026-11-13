@@ -19569,7 +19569,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Define cómo se identifican, obtienen, asignan, desarrollan, controlan y liberan los recursos del equipo y los recursos físicos del proyecto, con el organigrama, los roles y la matriz de responsabilidades.",
   "carpeta": "05 - Recursos",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/19E0S0OGbMsS8z1Px02zFm5aKHWJKzT6x/view",
   "secciones": [
    {
     "titulo": "1. Propósito y entradas",
@@ -21072,7 +21072,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Establece los valores, las pautas de comunicación, la forma de decidir y de resolver conflictos, las reglas de las reuniones y los acuerdos de trabajo del equipo.",
   "carpeta": "05 - Recursos",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/19kZc8QI0vFddMeaH7yd5CNoRNTqCHFvH/view",
   "secciones": [
    {
     "titulo": "1. Valores del equipo",
@@ -21278,7 +21278,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Registra quién integra el equipo y qué recursos físicos y servicios tiene el proyecto, cuándo están disponibles y cómo se reparte la carga semana a semana.",
   "carpeta": "05 - Recursos",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1vT5EXXgt6fDnmI1McbcHh-Gxz2D6esXv/view",
   "secciones": [
    {
     "titulo": "1. Asignaciones del equipo del proyecto",
@@ -21959,7 +21959,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Evalúa el desempeño del equipo en el Sprint 1 con indicadores tomados de los registros del proyecto, la retrospectiva, la etapa del equipo y la autoevaluación de cada integrante.",
   "carpeta": "05 - Recursos",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1xao6VfAkjjAMrzwewjkjGDgj0ImV2fkE/view",
   "secciones": [
    {
     "titulo": "1. Datos de la evaluación",
@@ -22481,7 +22481,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "07/11/2026",
   "resumen": "Compara el uso planificado y el uso real de los recursos físicos y virtuales al cierre del Sprint 1, analiza las desviaciones y la tendencia de la carga, y propone acciones correctivas.",
   "carpeta": "05 - Recursos",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1ZsETJ3M4ccPSJER-Ud781gi_mv-_EJyL/view",
   "secciones": [
    {
     "titulo": "1. Uso planificado frente al real",

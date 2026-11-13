@@ -33,6 +33,11 @@ const ARCHIVOS = {
   "ALC-06": "1T3PgIWVC0eormz5T792ulzb-uxGjeNuQ", // subido el 07/11/2026
   "CRO-01": "1qtjLB_ofYWwJJDKiBJqYF5eWmoyd_PQM",
   "REC-01": "1r71Hlpg_NXEQUV4vVLHpBPlkZ6U-c_Ze", // subido el 07/11/2026
+  "REC-02": "19E0S0OGbMsS8z1Px02zFm5aKHWJKzT6x", // subido el 13/11/2026
+  "REC-03": "19kZc8QI0vFddMeaH7yd5CNoRNTqCHFvH", // subido el 13/11/2026
+  "REC-04": "1vT5EXXgt6fDnmI1McbcHh-Gxz2D6esXv", // subido el 13/11/2026
+  "REC-05": "1xao6VfAkjjAMrzwewjkjGDgj0ImV2fkE", // subido el 13/11/2026
+  "REC-06": "1ZsETJ3M4ccPSJER-Ud781gi_mv-_EJyL", // subido el 13/11/2026
 };
 
 export const enlaceDrive = (codigo) => (ARCHIVOS[codigo] ? `https://drive.google.com/file/d/${ARCHIVOS[codigo]}/view` : null);
