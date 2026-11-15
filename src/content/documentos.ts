@@ -530,6 +530,17 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         {
+         "x": "GOB-13",
+         "bold": true
+        },
+        "Plantilla del informe de avance semanal",
+        "Gobernanza",
+        "Monitorear y controlar el desempeño del proyecto",
+        "Monitoreo y control",
+        "01 - Gobernanza/1.7 Desempeño"
+       ],
+       [
+        {
          "x": "INT-01",
          "bold": true
         },
@@ -673,6 +684,17 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         {
+         "x": "ALC-07",
+         "bold": true
+        },
+        "Product Backlog priorizado",
+        "Alcance",
+        "Recopilar y analizar los requisitos",
+        "Planificación",
+        "03 - Alcance/3.2 Definir el alcance"
+       ],
+       [
+        {
          "x": "CRO-01",
          "bold": true
         },
@@ -749,7 +771,7 @@ export const DOCUMENTOS: DocDef[] = [
         "05 - Recursos"
        ]
       ],
-      "titulo": "Documentos emitidos (33)",
+      "titulo": "Documentos emitidos (35)",
       "compacta": true,
       "fuente": "Cada documento está en Word y en PDF dentro de su carpeta. Los PDF también se publican en el blog."
      }
@@ -5656,6 +5678,354 @@ export const DOCUMENTOS: DocDef[] = [
         "fecha": "12/10/2026"
        }
       ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "GOB-13",
+  "titulo": "Plantilla del informe de avance semanal",
+  "dominio": "Gobernanza",
+  "area": "Monitoreo y control",
+  "proceso": "Monitorear y controlar el desempeño del proyecto",
+  "salida": "Formato del informe de avance semanal",
+  "version": "1.0",
+  "fecha": "15/11/2026",
+  "resumen": "Formato de una página para informar cada semana el avance, las horas trabajadas, los indicadores de cronograma y costo, los problemas y el plan de la semana siguiente.",
+  "carpeta": "01 - Gobernanza/1.7 Desempeño",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "Instrucciones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Lo llena el director del proyecto cada viernes con los datos de la reunión diaria y del registro de horas; se comparte con el equipo y el Product Owner.",
+       "El avance por paquete sale del tablero del alcance; los indicadores, del informe de control del cronograma y los costos.",
+       "Semáforo: verde si el índice es 0,95 o más; amarillo entre 0,90 y 0,94; rojo por debajo de 0,90."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "1. Datos del informe",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Semana N.º",
+        ""
+       ],
+       [
+        "Fechas",
+        "del ____ / ____ al ____ / ____"
+       ],
+       [
+        "Sprint",
+        ""
+       ],
+       [
+        "Preparado por",
+        ""
+       ],
+       [
+        "Fecha de emisión",
+        ""
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "2. Resumen de la semana",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Aspecto",
+       "Semáforo",
+       "Comentario"
+      ],
+      "anchos": [
+       24,
+       16,
+       60
+      ],
+      "filas": [
+       [
+        "Alcance",
+        "",
+        ""
+       ],
+       [
+        "Cronograma (SPI)",
+        "",
+        ""
+       ],
+       [
+        "Costo (CPI)",
+        "",
+        ""
+       ],
+       [
+        "Calidad",
+        "",
+        ""
+       ],
+       [
+        "Equipo",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Estado general"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Avance",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Actividad",
+       "Paquete EDT",
+       "Responsable",
+       "Estado",
+       "Evidencia"
+      ],
+      "anchos": [
+       32,
+       12,
+       18,
+       14,
+       24
+      ],
+      "filas": [
+       [
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        "",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Actividades terminadas y en curso"
+     }
+    ]
+   },
+   {
+    "titulo": "4. Horas trabajadas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Integrante",
+       "Lun",
+       "Mar",
+       "Mié",
+       "Jue",
+       "Vie",
+       "Total",
+       "Planificadas"
+      ],
+      "anchos": [
+       26,
+       9,
+       9,
+       9,
+       9,
+       9,
+       14,
+       15
+      ],
+      "filas": [
+       [
+        "Jhostin Galarza",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Helber Perez",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Jadira Vasquez",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Carlos Curo",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Registro de horas de la semana"
+     }
+    ]
+   },
+   {
+    "titulo": "5. Indicadores",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Indicador",
+       "Valor",
+       "Semana anterior"
+      ],
+      "anchos": [
+       40,
+       30,
+       30
+      ],
+      "filas": [
+       [
+        "Valor planificado acumulado (PV)",
+        "",
+        ""
+       ],
+       [
+        "Valor ganado acumulado (EV)",
+        "",
+        ""
+       ],
+       [
+        "Costo real acumulado (AC)",
+        "",
+        ""
+       ],
+       [
+        "SPI = EV ÷ PV",
+        "",
+        ""
+       ],
+       [
+        "CPI = EV ÷ AC",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Cronograma y costos"
+     }
+    ]
+   },
+   {
+    "titulo": "6. Problemas, cambios y próxima semana",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Tipo",
+       "Descripción",
+       "Acción y responsable"
+      ],
+      "anchos": [
+       20,
+       45,
+       35
+      ],
+      "filas": [
+       [
+        "Incidente",
+        "",
+        ""
+       ],
+       [
+        "Riesgo nuevo",
+        "",
+        ""
+       ],
+       [
+        "Solicitud de cambio",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Problemas y cambios"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Qué se hará",
+       "Responsable",
+       "Fecha"
+      ],
+      "anchos": [
+       60,
+       22,
+       18
+      ],
+      "filas": [
+       [
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        ""
+       ]
+      ],
+      "titulo": "Plan de la próxima semana"
      }
     ]
    }
@@ -13767,6 +14137,869 @@ export const DOCUMENTOS: DocDef[] = [
         "fecha": "06/11/2026"
        }
       ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ALC-07",
+  "titulo": "Product Backlog priorizado",
+  "dominio": "Alcance",
+  "area": "Planificación",
+  "proceso": "Recopilar y analizar los requisitos",
+  "salida": "Product Backlog con historias de usuario y criterios de aceptación",
+  "version": "1.0",
+  "fecha": "15/11/2026",
+  "resumen": "Lista ordenada de lo que el sistema debe hacer, escrita como historias de usuario con sus criterios de aceptación, puntos de esfuerzo, sprint y estado. Es la forma ágil de los requisitos de la línea base del alcance.",
+  "carpeta": "03 - Alcance/3.2 Definir el alcance",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Propósito",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "El Product Backlog traduce los 12 requisitos funcionales en historias de usuario y los 8 no funcionales en historias técnicas. Cada historia conserva el criterio de aceptación de su requisito (ALC-02), su paquete de la EDT y su entregable. El Product Owner lo ordena y el equipo toma de arriba hacia abajo las historias de cada sprint."
+     },
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Responsable de ordenarlo",
+        "Helber Perez, Product Owner"
+       ],
+       [
+        "Lo mantiene",
+        "Equipo del proyecto"
+       ],
+       [
+        "Se revisa",
+        "En la planificación de cada sprint"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "2. Cómo se ordena y se estima",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "**Orden:** primero el sprint en que se termina el paquete de la EDT; dentro del sprint, la prioridad del requisito (alta antes que media).",
+       "**Puntos:** 1 punto equivale a unas 8 horas del equipo según la estimación de los recursos (REC-01), redondeado a la serie 1, 2, 3, 5, 8, 13. Cuando un paquete tiene varias historias, sus horas se reparten entre ellas.",
+       "**Estado:** Hecho (construido y probado; falta solo la aceptación del Product Owner), En curso o Por hacer."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "3. Product Backlog",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "N.º",
+       "ID",
+       "Historia",
+       "Criterio de aceptación",
+       "Req.",
+       "Paquete",
+       "Sprint",
+       "Puntos",
+       "Estado"
+      ],
+      "anchos": [
+       4,
+       6,
+       27,
+       25,
+       7,
+       8,
+       7,
+       6,
+       10
+      ],
+      "filas": [
+       [
+        {
+         "x": "1",
+         "align": "center"
+        },
+        "HU-01",
+        "Como coordinador académico, quiero tener en una sola base las notas de Cubicol de todos los salones para no revisar los registros archivo por archivo.",
+        "La base reúne el 100 % de los registros entregados, sin duplicados ni registros huérfanos. Se comprueba comparando el origen con la base en tres fechas distintas.",
+        "REQ-01",
+        "1.2.1",
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "8",
+         "align": "center"
+        },
+        {
+         "x": "Hecho",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "2",
+         "align": "center"
+        },
+        "HU-02",
+        "Como encargado de TI, quiero que los datos se revisen solos cada noche para enterarme de los errores antes de que lleguen a los docentes.",
+        "La tarea corre fuera del horario escolar y detecta, como mínimo, duplicados, vacíos críticos y fechas inconsistentes. Se revisan los registros de ejecución de 15 días seguidos sin fallas críticas.",
+        "REQ-02",
+        "1.2.2",
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "Hecho",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "3",
+         "align": "center"
+        },
+        "HU-03",
+        "Como docente tutor, quiero que el sistema ubique a cada estudiante en riesgo bajo, medio o alto para saber a quién atender primero.",
+        "El modelo alcanza una precisión mínima de 75 % al clasificar estudiantes en riesgo, validada con datos reales del colegio. Se entrega un informe de métricas (precisión, sensibilidad y F1).",
+        "REQ-03",
+        "1.3.1 y 1.3.3",
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "13",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "4",
+         "align": "center"
+        },
+        "HU-04",
+        "Como coordinador académico, quiero que la clasificación se actualice sola cada semana para trabajar siempre con datos al día.",
+        "La actualización corre cada 7 días sin intervención manual y los resultados aparecen en el tablero dentro de las 24 horas. Se revisa el historial de 4 semanas seguidas.",
+        "REQ-04",
+        "1.3.2",
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "5",
+         "align": "center"
+        },
+        "HT-01",
+        "Como encargado de TI, quiero inicio de sesión con contraseña segura y sesiones que caducan para que nadie sin cuenta vea los datos.",
+        "Contraseñas de 8 caracteres alfanuméricos como mínimo y cierre de sesión tras 30 minutos sin actividad. Se verifica con pruebas de acceso por rol.",
+        "RNF-03",
+        "1.4.3",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "6",
+         "align": "center"
+        },
+        "HU-05",
+        "Como docente tutor, quiero recibir un correo cuando un estudiante de mi aula pase a riesgo alto para actuar a tiempo.",
+        "La alerta sale en un máximo de 24 horas desde la clasificación; queda un historial por estudiante (fecha, receptor y nivel); el 100 % de las alertas de riesgo alto se notifica en las pruebas de integración.",
+        "REQ-05",
+        "1.4.1",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "7",
+         "align": "center"
+        },
+        "HU-06",
+        "Como docente tutor, quiero un panel con las alertas de mi aula para ver de un vistazo quién necesita apoyo.",
+        "El resumen se actualiza cada vez que el docente ingresa y se llega a la ficha en dos clics como máximo. Se prueba con al menos 3 docentes.",
+        "REQ-06",
+        "1.4.1",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "8",
+         "align": "center"
+        },
+        "HU-09",
+        "Como Promotora Directora, quiero un tablero con los indicadores de riesgo por aula para decidir dónde reforzar.",
+        "El tablero carga en menos de 3 segundos, los filtros funcionan para los 200 estudiantes de los tres niveles educativos y los gráficos muestran los datos de la última actualización.",
+        "REQ-08",
+        "1.4.2.2",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "9",
+         "align": "center"
+        },
+        "HU-10",
+        "Como docente tutor, quiero la ficha de cada estudiante con sus cursos e historial para preparar la conversación con la familia.",
+        "La ficha reúne el 100 % de los registros disponibles y carga en 3 segundos o menos. Se compara con los registros de origen en una muestra de 10 estudiantes.",
+        "REQ-10",
+        "1.4.2.2",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "10",
+         "align": "center"
+        },
+        "HU-12",
+        "Como encargado de TI, quiero que cada usuario entre con su rol y vea solo lo que le corresponde para proteger los datos de los estudiantes.",
+        "Ningún usuario puede ver información fuera de su rol. Se verifica con pruebas de acceso para los cuatro roles.",
+        "REQ-11",
+        "1.4.3",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "11",
+         "align": "center"
+        },
+        "HT-06",
+        "Como docente tutor, quiero usar el sistema en Chrome, Edge o Firefox para entrar desde cualquier equipo del colegio.",
+        "Las vistas principales (tablero, ficha y alertas) se muestran bien en las dos últimas versiones de los tres navegadores.",
+        "RNF-06",
+        "1.4.2.2",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "12",
+         "align": "center"
+        },
+        "HU-07",
+        "Como docente tutor, quiero registrar qué hice con cada alerta para que quede el seguimiento de cada caso.",
+        "Cada registro tiene fecha, responsable, acción y resultado, y se consulta desde la ficha. En el piloto, el 100 % de las alertas de riesgo alto tiene al menos un registro de seguimiento.",
+        "REQ-07",
+        "1.4.1",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "13",
+         "align": "center"
+        },
+        "HU-08",
+        "Como docente tutor, quiero un comunicado listo para el apoderado de un estudiante en riesgo alto para avisarle por WhatsApp sin redactarlo desde cero.",
+        "El comunicado sale en 24 horas como máximo, usa lenguaje sin tecnicismos (validado con al menos 2 padres en el piloto) y se verifica su entrega.",
+        "REQ-12",
+        "1.4.1",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "14",
+         "align": "center"
+        },
+        "HU-11",
+        "Como coordinador académico, quiero exportar los reportes en PDF y Excel para presentarlos en reuniones.",
+        "El reporte se genera sin intervención manual, se exporta en menos de 10 segundos e incluye el porcentaje de estudiantes en riesgo por aula y grado y la comparación con el periodo anterior.",
+        "REQ-09",
+        "1.4.2.2",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "15",
+         "align": "center"
+        },
+        "HT-04",
+        "Como docente tutor, quiero que el tablero cargue rápido para no perder tiempo de clase.",
+        "Carga en 3 segundos o menos en al menos 95 % de los accesos del piloto, medido durante 15 días de uso real.",
+        "RNF-02",
+        "1.6.1",
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "8",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "16",
+         "align": "center"
+        },
+        "HT-07",
+        "Como encargado de TI, quiero que el sistema soporte a todos los estudiantes y usuarios del colegio para no cambiarlo cuando crezca.",
+        "El sistema opera sin lentitud perceptible con el total de usuarios previstos. Se comprueba con una prueba de carga.",
+        "RNF-07",
+        "1.6.1",
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "8",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "17",
+         "align": "center"
+        },
+        "HT-02",
+        "Como Promotora Directora, quiero que el sistema cumpla la Ley N.° 29733 para proteger los datos de menores de edad.",
+        "Existe una política de tratamiento de datos acorde con la ley. Antes del pase a producción se hace una revisión de cumplimiento, documentada en el manual técnico.",
+        "RNF-04",
+        "1.5.1 y 1.5.3",
+        {
+         "x": "6",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "18",
+         "align": "center"
+        },
+        "HT-03",
+        "Como docente tutor, quiero poder usar el sistema después de una capacitación corta para incluirlo en mi rutina.",
+        "Los docentes capacitados navegan el tablero e interpretan las alertas tras dos horas como máximo. Se mide con una encuesta de uso a por lo menos 5 docentes.",
+        "RNF-01",
+        "1.4.2.3 y 1.5.4",
+        {
+         "x": "6",
+         "align": "center"
+        },
+        {
+         "x": "13",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "19",
+         "align": "center"
+        },
+        "HT-05",
+        "Como coordinador académico, quiero que el sistema esté disponible en el horario escolar para consultarlo cuando lo necesite.",
+        "Se verifica con los registros de disponibilidad del servicio de alojamiento durante el piloto. Se documentan las caídas y su tiempo de recuperación.",
+        "RNF-05",
+        "1.5.1",
+        {
+         "x": "6",
+         "align": "center"
+        },
+        {
+         "x": "3",
+         "align": "center"
+        },
+        {
+         "x": "Por hacer",
+         "fill": "gris",
+         "align": "center",
+         "bold": true
+        }
+       ],
+       [
+        {
+         "x": "20",
+         "align": "center"
+        },
+        "HT-08",
+        "Como encargado de TI, quiero documentación técnica y de uso para mantener el sistema cuando el equipo termine.",
+        "Se entrega el manual técnico y se realiza una sesión de transferencia con el encargado de TI antes del cierre.",
+        "RNF-08",
+        "1.5.3",
+        {
+         "x": "6",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "En curso",
+         "fill": "amarillo",
+         "align": "center",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Product Backlog al 15/11/2026",
+      "compacta": true,
+      "fuente": "HU: historia de usuario (requisito funcional). HT: historia técnica (requisito no funcional)."
+     }
+    ]
+   },
+   {
+    "titulo": "4. Estado del backlog",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Sprint",
+       "Historias",
+       "Puntos",
+       "Hechas",
+       "En curso",
+       "Por hacer"
+      ],
+      "anchos": [
+       16,
+       16,
+       16,
+       16,
+       18,
+       18
+      ],
+      "filas": [
+       [
+        "Sprint 2",
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "13",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        }
+       ],
+       [
+        "Sprint 3",
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "18",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        },
+        {
+         "x": "1",
+         "align": "center"
+        }
+       ],
+       [
+        "Sprint 4",
+        {
+         "x": "10",
+         "align": "center"
+        },
+        {
+         "x": "14",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        },
+        {
+         "x": "5",
+         "align": "center"
+        }
+       ],
+       [
+        "Sprint 5",
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "16",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        }
+       ],
+       [
+        "Sprint 6",
+        {
+         "x": "4",
+         "align": "center"
+        },
+        {
+         "x": "20",
+         "align": "center"
+        },
+        {
+         "x": "0",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        },
+        {
+         "x": "2",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Historias y puntos por sprint"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "ID",
+       "Situación al 15/11/2026"
+      ],
+      "anchos": [
+       10,
+       90
+      ],
+      "filas": [
+       [
+        "HU-01",
+        "684 notas de 48 estudiantes; tres reconciliaciones correctas (CP-03). Se presenta para aceptación el 04/12/2026."
+       ],
+       [
+        "HU-02",
+        "Diez reglas de calidad; validación nocturna en GitHub Actions sin fallas (CP-05)."
+       ],
+       [
+        "HU-03",
+        "Red neuronal aplicada a los datos del colegio; validación por competencias (SC-14): AUC 0,71. Falta ajustar los cortes de nivel."
+       ],
+       [
+        "HU-04",
+        "Hoy se clasifica al cargar datos o con el botón «Evaluar aula»."
+       ],
+       [
+        "HT-01",
+        "Se construye junto con HU-12."
+       ],
+       [
+        "HU-05",
+        "Depende de la solicitud SC-09 (correos personales autorizados)."
+       ],
+       [
+        "HU-06",
+        "Prototipo: lista de estudiantes en riesgo por aula."
+       ],
+       [
+        "HU-09",
+        "Indicadores por nivel y por aula en línea; faltan filtros por fecha y comparación con el periodo anterior."
+       ],
+       [
+        "HU-10",
+        "Ficha y reporte en PDF en línea."
+       ],
+       [
+        "HU-12",
+        "La tabla de usuarios con los cuatro roles ya existe en la base."
+       ],
+       [
+        "HT-06",
+        "Se prueba en el Sprint 4."
+       ],
+       [
+        "HU-08",
+        "Prototipo: el sistema redacta el comunicado y el tutor lo envía."
+       ],
+       [
+        "HU-11",
+        "PDF por estudiante y archivo CSV por aula; falta el formato Excel."
+       ],
+       [
+        "HT-04",
+        "Se mide en las pruebas de rendimiento (1.6.1)."
+       ],
+       [
+        "HT-07",
+        "Se mide en las pruebas de rendimiento (1.6.1)."
+       ],
+       [
+        "HT-02",
+        "Datos reales solo en la carpeta privada, códigos en vez de nombres y sin DNI. Falta el consentimiento de los apoderados."
+       ],
+       [
+        "HT-03",
+        "Se comprueba en las pruebas con docentes y en la capacitación."
+       ],
+       [
+        "HT-05",
+        "Requiere la base gestionada en la nube (Sprint 6)."
+       ],
+       [
+        "HT-08",
+        "Arquitectura, datos, modelo, pruebas y modelo entidad-relación en el repositorio del sistema."
+       ]
+      ],
+      "titulo": "Notas de avance",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "5. Definición de listo y de terminado",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "h",
+      "x": "Una historia está lista para entrar a un sprint cuando…"
+     },
+     {
+      "t": "ul",
+      "items": [
+       "La historia está escrita como «Como…, quiero… para…» y tiene su requisito de origen.",
+       "Tiene criterios de aceptación que se pueden comprobar.",
+       "Está estimada en puntos y cabe en un sprint.",
+       "No depende de algo externo sin resolver (por ejemplo, una solicitud de cambio en evaluación)."
+      ]
+     },
+     {
+      "t": "h",
+      "x": "Una historia está terminada cuando…"
+     },
+     {
+      "t": "ul",
+      "items": [
+       "El código está en el repositorio y pasa la validación automática.",
+       "Cumple sus criterios de aceptación y sus casos de prueba de la matriz de trazabilidad.",
+       "No expone datos personales de estudiantes (Ley N.° 29733).",
+       "Está documentado y el Product Owner lo aceptó en la revisión del sprint."
+      ]
+     },
+     {
+      "t": "nota",
+      "tipo": "info",
+      "x": "El orden de esta versión lo propone el equipo. El Product Owner lo confirma o lo cambia en la próxima revisión semanal; los cambios de orden no requieren solicitud de cambio, salvo que alteren la línea base del alcance."
      }
     ]
    }
@@ -23124,10 +24357,12 @@ export const PROCESOS: ProcesoDef[] = [
   ],
   "salidas": [
    "Informe de desempeño del trabajo",
-   "Solicitudes de cambio"
+   "Solicitudes de cambio",
+   "Plantilla del informe de avance semanal"
   ],
   "docs": [
-   "GOB-09"
+   "GOB-09",
+   "GOB-13"
   ]
  },
  {
@@ -23227,9 +24462,12 @@ export const PROCESOS: ProcesoDef[] = [
   ],
   "salidas": [
    "Documentación de requisitos: 12 funcionales y 8 no funcionales",
-   "Matriz de trazabilidad con 80 casos de prueba"
+   "Matriz de trazabilidad con 80 casos de prueba",
+   "Product Backlog priorizado con historias de usuario (Sprint 2)"
   ],
-  "docs": []
+  "docs": [
+   "ALC-07"
+  ]
  },
  {
   "id": "alc-3",

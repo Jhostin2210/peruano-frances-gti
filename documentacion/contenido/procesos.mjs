@@ -74,8 +74,8 @@ export const PROCESOS = [
     que: "Compara el avance con el plan e informa el estado a quienes deciden.",
     entradas: ["Plan para la dirección del proyecto", "Registro de incidentes", "Informes de calidad", "Lista de hitos"],
     herramientas: ["Análisis de variación", "Análisis del valor ganado, desde el Sprint 1", "Tableros del proyecto"],
-    salidas: ["Informe de desempeño del trabajo", "Solicitudes de cambio"],
-    docs: ["GOB-09"],
+    salidas: ["Informe de desempeño del trabajo", "Solicitudes de cambio", "Plantilla del informe de avance semanal"],
+    docs: ["GOB-09", "GOB-13"],
   },
   {
     id: "gob-8", dominio: "Gobernanza", area: MC, nombre: "Evaluar e implementar cambios", estado: "Aplicado",
@@ -108,8 +108,8 @@ export const PROCESOS = [
     que: "Determina y documenta lo que los interesados necesitan del sistema.",
     entradas: ["Caso de negocio", "Registro de interesados"],
     herramientas: ["Entrevista", "Cuestionario a docentes", "Análisis de documentos", "Pensamiento de diseño", "Priorización"],
-    salidas: ["Documentación de requisitos: 12 funcionales y 8 no funcionales", "Matriz de trazabilidad con 80 casos de prueba"],
-    docs: [],
+    salidas: ["Documentación de requisitos: 12 funcionales y 8 no funcionales", "Matriz de trazabilidad con 80 casos de prueba", "Product Backlog priorizado con historias de usuario (Sprint 2)"],
+    docs: ["ALC-07"],
   },
   {
     id: "alc-3", dominio: "Alcance", area: PL, nombre: "Definir el alcance", estado: "Aplicado",
