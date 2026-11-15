@@ -2112,7 +2112,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Dirección, con apoyo del equipo",
         "Antes del Sprint 5",
         {
-         "x": "Comprobado: reunión presencial del 13/11/2026 con la directora y el Product Owner, con unos 50 apoderados de todos los salones; conformidad verbal, también de los que no asistieron. Constancia escrita por firmar",
+         "x": "Comprobado: reunión presencial del 13/11/2026 con la directora y el Product Owner, con unos 50 apoderados de todos los salones; conformidad verbal, y por WhatsApp la de los que no asistieron. Constancia escrita por firmar",
          "fill": "verde"
         }
        ],
@@ -9876,7 +9876,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true,
          "align": "center"
         },
-        "Asistieron unos 50 padres y apoderados de todos los salones. Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Dieron su conformidad de forma verbal, y los que no pudieron asistir también manifestaron que estaban de acuerdo. Constancia escrita para la firma de la directora"
+        "Asistieron unos 50 padres y apoderados de todos los salones. Se les dio toda la información prevista para el aviso (PC-07): objetivo del sistema, datos que usa (notas y promedios por competencia de Cubicol; no DNI, dirección, teléfonos ni salud), cómo se protegen, para qué se usan y su derecho a pedir información o a que no se usen. Dieron su conformidad de forma verbal; los que no pudieron asistir recibieron la misma información por WhatsApp y dieron su conformidad por ese medio. Constancia escrita para la firma de la directora"
        ]
       ],
       "titulo": "Comunicaciones realizadas al 15/11/2026",

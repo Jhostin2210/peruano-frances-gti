@@ -239,7 +239,7 @@ export const CORTES_ALCANCE = [
     hechos: [
       "09/11: el Product Owner aprueba la SC-12 (nivelación de la carga del Sprint 2).",
       "13/11: la base de datos se rearma solo con Cubicol (SC-13): 402 notas de 48 estudiantes; CP-01 y CP-02 repetidos.",
-      "13/11: reunión presencial de la directora y el Product Owner con unos 50 apoderados de todos los salones: conformidad verbal con el uso de los datos, también de los que no asistieron (supuesto S-06).",
+      "13/11: reunión presencial de la directora y el Product Owner con unos 50 apoderados de todos los salones: conformidad verbal con el uso de los datos, y por WhatsApp la de los que no asistieron (supuesto S-06).",
       "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
       "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
       "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03).",
