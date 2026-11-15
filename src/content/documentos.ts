@@ -14999,7 +14999,7 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "nota",
       "tipo": "info",
-      "x": "El orden de esta versión lo propone el equipo. El Product Owner lo confirma o lo cambia en la próxima revisión semanal; los cambios de orden no requieren solicitud de cambio, salvo que alteren la línea base del alcance."
+      "x": "El Product Owner revisó este orden y lo dejó conforme el 15/11/2026. Puede reordenarlo en cada planificación de sprint; los cambios de orden no requieren solicitud de cambio, salvo que alteren la línea base del alcance."
      }
     ]
    }

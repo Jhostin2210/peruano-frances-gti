@@ -22,9 +22,10 @@ export const ALC07 = DOC({
   area: "Planificación",
   proceso: "Recopilar y analizar los requisitos",
   salida: "Product Backlog con historias de usuario y criterios de aceptación",
+  aprobacion: "Orden aprobado por el Product Owner el 15/11/2026",
   version: "1.0",
   fecha: FECHA_BACKLOG,
-  versiones: [["1.0", FECHA_BACKLOG, "Versión inicial, elaborada por el equipo para la priorización del Product Owner (actividad A-1.1.1.2).", P.director]],
+  versiones: [["1.0", FECHA_BACKLOG, "Versión inicial (actividad A-1.1.1.2). Orden revisado y aprobado por el Product Owner el 15/11/2026.", P.director]],
   resumen:
     "Lista ordenada de lo que el sistema debe hacer, escrita como historias de usuario con sus criterios de aceptación, puntos de esfuerzo, sprint y estado. Es la forma ágil de los requisitos de la línea base del alcance.",
   secciones: [
@@ -75,7 +76,7 @@ export const ALC07 = DOC({
       ul(...DEFINICION_LISTO),
       h("Una historia está terminada cuando…"),
       ul(...DEFINICION_TERMINADO),
-      nota("El orden de esta versión lo propone el equipo. El Product Owner lo confirma o lo cambia en la próxima revisión semanal; los cambios de orden no requieren solicitud de cambio, salvo que alteren la línea base del alcance.", "info"),
+      nota("El Product Owner revisó este orden y lo dejó conforme el 15/11/2026. Puede reordenarlo en cada planificación de sprint; los cambios de orden no requieren solicitud de cambio, salvo que alteren la línea base del alcance.", "info"),
     ]),
   ],
 });
