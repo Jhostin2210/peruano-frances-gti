@@ -217,12 +217,12 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Línea base de costos",
         "S/ 19 976,40",
-        "FIN-02 (v3, SC-15 en evaluación)"
+        "FIN-02 (v3, SC-15)"
        ],
        [
         "Presupuesto total",
         "S/ 21 160,40",
-        "FIN-02 (v3, SC-15 en evaluación)"
+        "FIN-02 (v3, SC-15)"
        ],
        [
         "Solicitudes de cambio registradas",
@@ -2609,7 +2609,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Costos",
         "S/ 19 976,40; presupuesto total S/ 21 160,40 (FIN-02).",
         "v3 (15/11/2026)",
-        "Reemplaza la v2 del curso anterior (S/ 59,859.17); SC-15 en evaluación. Distribuida por semanas en la curva S."
+        "Reemplaza la v2 del curso anterior (S/ 59,859.17); SC-15 aprobada el 15/11/2026. Distribuida por semanas en la curva S."
        ]
       ],
       "titulo": "Líneas base del proyecto"
@@ -5087,13 +5087,13 @@ export const DOCUMENTOS: DocDef[] = [
         "La línea base de costos v2 del curso anterior supone jornada completa de 8 horas, tarifas profesionales y las fechas de marzo a agosto de 2026; no coincide con el cronograma v3.1 ni con la estimación de los recursos (REC-01).",
         "Línea base de costos: de S/ 59 859,17 a S/ 19 976,40 (presupuesto total de S/ 63 495,53 a S/ 21 160,40), con tarifas de profesional junior y 50 % de dedicación (FIN-02). Queda dentro de los recursos financieros autorizados en el acta de constitución (GOB-02).",
         {
-         "x": "En evaluación",
-         "fill": "amarillo",
+         "x": "Aprobado",
+         "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "La decide el Product Owner.",
-        "Propuesta en FIN-02 y en el plan para la dirección del proyecto (GOB-04 v1.2)."
+        "Aprobado por el Product Owner el 15/11/2026.",
+        "Aplicado en FIN-02 y en el plan para la dirección del proyecto (GOB-04 v1.2) el 15/11/2026."
        ]
       ],
       "titulo": "Registro de cambios al 17/10/2026",
@@ -25227,7 +25227,7 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "nota",
       "tipo": "info",
-      "x": "Esta línea base (versión 3) reemplaza la del curso anterior mediante la solicitud de cambio SC-15, que decide el Product Owner. Queda dentro de los recursos autorizados en el acta de constitución (S/ 63 495,53)."
+      "x": "Esta línea base (versión 3) reemplaza la del curso anterior mediante la solicitud de cambio SC-15, aprobada por el Product Owner el 15/11/2026. Queda dentro de los recursos autorizados en el acta de constitución (S/ 63 495,53)."
      }
     ]
    },

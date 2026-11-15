@@ -164,7 +164,7 @@ export const FIN02 = DOC({
         ],
         { titulo: "Línea base de costos y presupuesto", fuente: `Curso anterior: línea base ${soles(CURSO_ANTERIOR.lineaBase)} y presupuesto ${soles(CURSO_ANTERIOR.total)}, con jornada completa y tarifas profesionales.` },
       ),
-      nota(`Esta línea base (versión 3) reemplaza la del curso anterior mediante la solicitud de cambio SC-15, que decide el Product Owner. Queda dentro de los recursos autorizados en el acta de constitución (${soles(CURSO_ANTERIOR.total)}).`, "info"),
+      nota(`Esta línea base (versión 3) reemplaza la del curso anterior mediante la solicitud de cambio SC-15, aprobada por el Product Owner el 15/11/2026. Queda dentro de los recursos autorizados en el acta de constitución (${soles(CURSO_ANTERIOR.total)}).`, "info"),
     ]),
     sec(
       "5. Curva S",

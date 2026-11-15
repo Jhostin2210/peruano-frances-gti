@@ -22,7 +22,7 @@ export const GOB04 = DOC({
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", "07/11/2026", "La línea base del alcance pasa a la EDT versión 4 (SC-10).", P.director],
-    ["1.2", "15/11/2026", "Línea base de costos v3 del curso actual (FIN-02), propuesta con la SC-15.", P.director],
+    ["1.2", "15/11/2026", "Línea base de costos v3 del curso actual (FIN-02), aprobada con la SC-15.", P.director],
   ],
   resumen:
     "Reúne en un solo documento cómo se ejecuta, se controla y se cierra el proyecto: enfoque de desarrollo, planes que lo componen, líneas base, gobernanza, configuración y medición del desempeño.",
@@ -101,7 +101,7 @@ export const GOB04 = DOC({
             "Costos",
             `${soles(PRES.lineaBase)}; presupuesto total ${soles(PRES.total)} (FIN-02).`,
             "v3 (15/11/2026)",
-            `Reemplaza la v2 del curso anterior (${P.presupuesto.lineaBase}); SC-15 en evaluación. Distribuida por semanas en la curva S.`,
+            `Reemplaza la v2 del curso anterior (${P.presupuesto.lineaBase}); SC-15 aprobada el 15/11/2026. Distribuida por semanas en la curva S.`,
           ],
         ],
         { titulo: "Líneas base del proyecto" },

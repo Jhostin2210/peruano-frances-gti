@@ -356,7 +356,7 @@ export const GOB10 = DOC({
     ["1.4", "13/11/2026", "SC-12 aprobada por el Product Owner el 09/11/2026.", P.director],
     ["1.5", "13/11/2026", "Nueva solicitud SC-13, aprobada: base de datos del colegio armada solo con Cubicol.", P.director],
     ["1.6", "15/11/2026", "Nueva solicitud SC-14, aprobada: validación del modelo por competencias.", P.director],
-    ["1.7", "15/11/2026", "Nueva solicitud SC-15, en evaluación: línea base de costos del curso actual.", P.director],
+    ["1.7", "15/11/2026", "Nueva solicitud SC-15, aprobada: línea base de costos del curso actual.", P.director],
   ],
   titulo: "Plan de gestión de cambios y registro de cambios",
   archivo: "GOB-10 Plan y registro de cambios",
