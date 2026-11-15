@@ -17,7 +17,7 @@ const EDGE = [
   "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
   "C:/Program Files/Microsoft/Edge/Application/msedge.exe",
 ].find((r) => fs.existsSync(r));
-const PUERTO = 9341;
+let PUERTO = 9341; // cada figura usa un puerto distinto: Edge tarda en liberar el anterior
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 // ── Árbol jerárquico: raíz, categorías en una fila y, debajo de cada una, sus grupos u hojas (RBS y organigrama) ──
@@ -149,6 +149,7 @@ function htmlCurvaS() {
 
 // ── Captura con Edge ──
 async function capturar(html, destino) {
+  PUERTO += 1;
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "sia-t-fig-"));
   const archivo = path.join(tmp, "figura.html");
   fs.writeFileSync(archivo, html);
@@ -190,7 +191,7 @@ async function capturar(html, destino) {
     console.log(`${path.relative(process.cwd(), destino)}: ${Math.round(clip.width)} × ${Math.round(clip.height)} px (× 2,5)`);
   } finally {
     edge.kill();
-    setTimeout(() => fs.rmSync(tmp, { recursive: true, force: true }), 1500);
+    setTimeout(() => { try { fs.rmSync(tmp, { recursive: true, force: true }); } catch { /* Edge aún lo usa; lo borra Windows después */ } }, 1500);
   }
 }
 

@@ -14356,8 +14356,8 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "Por hacer",
-         "fill": "gris",
+         "x": "En curso",
+         "fill": "amarillo",
          "align": "center",
          "bold": true
         }
@@ -14830,11 +14830,11 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "2",
          "align": "center"
         },
         {
-         "x": "1",
+         "x": "0",
          "align": "center"
         }
        ],
@@ -14931,11 +14931,11 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "HU-03",
-        "Red neuronal aplicada a los datos del colegio; validación por competencias (SC-14): AUC 0,71. Falta ajustar los cortes de nivel."
+        "Red neuronal aplicada a los datos del colegio con cortes ajustados: detecta el 80 % de los casos con dificultad en meses no vistos (SC-14). Falta superar a una regla simple por nota."
        ],
        [
         "HU-04",
-        "Hoy se clasifica al cargar datos o con el botón «Evaluar aula»."
+        "Construida y probada el 15/11/2026: la API reclasifica cada 7 días y una tarea programada corre cada lunes. Falta comprobar varias semanas seguidas."
        ],
        [
         "HT-01",
@@ -14951,7 +14951,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "HU-09",
-        "Indicadores por nivel y por aula en línea; faltan filtros por fecha y comparación con el periodo anterior."
+        "Indicadores por nivel y por aula, con filtro por mes y comparación con el mes anterior (15/11/2026). Falta la prueba en navegadores (HT-06)."
        ],
        [
         "HU-10",
@@ -25477,15 +25477,15 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Valor ganado (EV)",
         {
-         "x": "S/ 5 169,06",
+         "x": "S/ 5 867,16",
          "align": "right"
         },
-        "28,5 % del trabajo terminado"
+        "32,3 % del trabajo terminado"
        ],
        [
         "Costo real (AC), estimado",
         {
-         "x": "S/ 5 169,06",
+         "x": "S/ 5 867,16",
          "align": "right"
         },
         "Sin registro de horas: ver la sección 3"
@@ -25493,7 +25493,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Variación del cronograma (SV = EV − PV)",
         {
-         "x": "S/ 1 313,70",
+         "x": "S/ 2 011,80",
          "align": "right"
         },
         "Adelantado"
@@ -25501,12 +25501,12 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Índice del cronograma (SPI)",
         {
-         "x": "1,34",
+         "x": "1,52",
          "fill": "verde",
          "align": "center",
          "bold": true
         },
-        "Lo terminado equivale a lo planificado hasta la semana 8"
+        "Lo terminado equivale a lo planificado hasta la semana 10"
        ],
        [
         "Variación del costo (CV = EV − AC)",
@@ -25545,7 +25545,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Por gastar (ETC = EAC − AC)",
         {
-         "x": "S/ 12 991,30",
+         "x": "S/ 12 293,20",
          "align": "right"
         },
         ""
@@ -25561,7 +25561,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "El proyecto va adelantado: SPI 1,34. Las actividades de datos del Sprint 2 (carga y reconciliación de Cubicol, validación y corrección de los datos) se terminaron antes de sus fechas, porque las exportaciones llegaron y el Product Owner aprobó rearmar la base (SC-13). La fecha de fin se mantiene en el 23/04/2027: los hitos con el colegio (piloto y capacitación) dependen de su calendario, no del avance del equipo."
+      "x": "El proyecto va adelantado: SPI 1,52. Las actividades de datos del Sprint 2 (carga y reconciliación de Cubicol, validación y corrección de los datos) se terminaron antes de sus fechas, porque las exportaciones llegaron y el Product Owner aprobó rearmar la base (SC-13). Con su acuerdo, el equipo adelantó además tres trabajos de los Sprints 3 y 4: la clasificación semanal automática, los cortes de nivel ajustados con los datos del colegio y el filtro por mes del tablero. La fecha de fin se mantiene en el 23/04/2027: los hitos con el colegio (piloto y capacitación) dependen de su calendario, no del avance del equipo."
      },
      {
       "t": "tabla",
@@ -25843,19 +25843,70 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 187,56",
+         "align": "right"
+        }
+       ],
+       [
+        "A-3.2.1.2 Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la ",
+        "1.3.3",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
          "x": "50 %",
          "fill": "amarillo",
          "align": "center"
         },
         {
-         "x": "S/ 93,78",
+         "x": "S/ 125,04",
+         "align": "right"
+        }
+       ],
+       [
+        "A-3.2.1.4 Configurar script de actualización semanal automática del modelo",
+        "1.3.2",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 346,68",
+         "align": "right"
+        }
+       ],
+       [
+        "A-4.2.1.2 Desarrollar dashboard interactivo con semáforo de riesgo por alumno, a",
+        "1.4.2.2",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "50 %",
+         "fill": "amarillo",
+         "align": "center"
+        },
+        {
+         "x": "S/ 132,60",
          "align": "right"
         }
        ]
       ],
       "titulo": "Actividades con valor planificado o ganado al corte",
       "compacta": true,
-      "fuente": "A-3.2.1.1 al 50 %: Métricas del modelo en el colegio con el criterio de la SC-14 (AUC 0,71, detecta 39 %); falta compararlas con una regla simple."
+      "fuente": "A-3.2.1.2 al 50 %: Cortes de nivel ajustados con los datos del colegio: detecta el 80 % en meses no vistos; falta superar a la regla simple. A-4.2.1.2 al 50 %: Tablero con filtro por mes y comparación con el mes anterior, en total y por aula; se completa en el Sprint 4."
      }
     ]
    },
@@ -26085,11 +26136,11 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 93,78",
+         "x": "S/ 312,60",
          "align": "right"
         },
         {
-         "x": "21 %",
+         "x": "71 %",
          "fill": "amarillo",
          "align": "center"
         }
@@ -26105,11 +26156,12 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 0,00",
+         "x": "S/ 346,68",
          "align": "right"
         },
         {
-         "x": "0 %",
+         "x": "65 %",
+         "fill": "amarillo",
          "align": "center"
         }
        ],
@@ -26162,11 +26214,12 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 0,00",
+         "x": "S/ 132,60",
          "align": "right"
         },
         {
-         "x": "0 %",
+         "x": "23 %",
+         "fill": "amarillo",
          "align": "center"
         }
        ],
@@ -26385,8 +26438,8 @@ export const DOCUMENTOS: DocDef[] = [
         "Sprint 2"
        ],
        [
-        "Los cortes de nivel del modelo detectan el 39 % de los casos con dificultad (SC-14).",
-        "Revisar los cortes con los datos del colegio en el Sprint 3.",
+        "Con los cortes ajustados el modelo detecta el 80 % de los casos con dificultad, pero ordena igual que una regla simple por nota.",
+        "Mejorar el modelo, por ejemplo con las competencias como variables.",
         "Helber Perez",
         "Sprint 3"
        ]

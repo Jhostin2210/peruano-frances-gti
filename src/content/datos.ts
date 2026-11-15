@@ -4811,22 +4811,22 @@ export const FINANZAS = {
  ],
  "evm": {
   "PV": 3855.36,
-  "EV": 5169.06,
-  "AC": 5169.06,
-  "SV": 1313.7,
+  "EV": 5867.16,
+  "AC": 5867.16,
+  "SV": 2011.8,
   "CV": 0,
-  "SPI": 1.34,
+  "SPI": 1.52,
   "CPI": 1,
   "BAC": 18160.36,
   "EAC": 18160.36,
-  "ETC": 12991.3,
+  "ETC": 12293.2,
   "VAC": 0,
   "TCPI": 1,
   "avance": {
    "planificado": 21.23,
-   "real": 28.46
+   "real": 32.31
   },
-  "semanaEquivalente": 8,
+  "semanaEquivalente": 10,
   "semaforoSPI": "Verde",
   "semaforoCPI": "Verde",
   "porPaquete": [
@@ -4907,7 +4907,7 @@ export const FINANZAS = {
     "costo": 437.64,
     "horas": 28,
     "pv": 0,
-    "ev": 93.78,
+    "ev": 312.6,
     "nombre": "Validación del modelo"
    },
    {
@@ -4915,7 +4915,7 @@ export const FINANZAS = {
     "costo": 534.24,
     "horas": 36,
     "pv": 0,
-    "ev": 0,
+    "ev": 346.68,
     "nombre": "Clasificación de riesgo"
    },
    {
@@ -4939,7 +4939,7 @@ export const FINANZAS = {
     "costo": 583.44,
     "horas": 44,
     "pv": 0,
-    "ev": 0,
+    "ev": 132.6,
     "nombre": "Desarrollo del tablero"
    },
    {
@@ -5032,13 +5032,13 @@ export const FINANZAS = {
     "sprint": 3,
     "presupuesto": 1909.68,
     "pv": 0,
-    "ev": 93.78
+    "ev": 659.28
    },
    {
     "sprint": 4,
     "presupuesto": 1636.68,
     "pv": 0,
-    "ev": 0
+    "ev": 132.6
    },
    {
     "sprint": 5,
@@ -5210,15 +5210,49 @@ export const FINANZAS = {
     "paquete": "1.3.3",
     "sprint": 3,
     "pv": 0,
-    "pct": 50,
-    "ev": 93.78,
+    "pct": 100,
+    "ev": 187.56,
     "fin": "2026-12-23"
+   },
+   {
+    "id": "A-3.2.1.2",
+    "descripcion": "Ajustar hiperparámetros hasta alcanzar el umbral mínimo de 75 % en la métrica acordada",
+    "paquete": "1.3.3",
+    "sprint": 3,
+    "pv": 0,
+    "pct": 50,
+    "ev": 125.04,
+    "fin": "2026-12-29"
+   },
+   {
+    "id": "A-3.2.1.4",
+    "descripcion": "Configurar script de actualización semanal automática del modelo",
+    "paquete": "1.3.2",
+    "sprint": 3,
+    "pv": 0,
+    "pct": 100,
+    "ev": 346.68,
+    "fin": "2026-12-30"
+   },
+   {
+    "id": "A-4.2.1.2",
+    "descripcion": "Desarrollar dashboard interactivo con semáforo de riesgo por alumno, aula y grado",
+    "paquete": "1.4.2.2",
+    "sprint": 4,
+    "pv": 0,
+    "pct": 50,
+    "ev": 132.6,
+    "fin": "2027-01-26"
    }
   ],
   "parciales": {
-   "A-3.2.1.1": {
+   "A-3.2.1.2": {
     "pct": 50,
-    "evidencia": "Métricas del modelo en el colegio con el criterio de la SC-14 (AUC 0,71, detecta 39 %); falta compararlas con una regla simple."
+    "evidencia": "Cortes de nivel ajustados con los datos del colegio: detecta el 80 % en meses no vistos; falta superar a la regla simple."
+   },
+   "A-4.2.1.2": {
+    "pct": 50,
+    "evidencia": "Tablero con filtro por mes y comparación con el mes anterior, en total y por aula; se completa en el Sprint 4."
    }
   }
  }
@@ -7313,7 +7347,7 @@ export const ENTREGABLES_ESTADO = [
   "descripcion": "Modelo entrenado en Python con Scikit-learn que clasifica a cada estudiante en riesgo bajo, medio o alto y se actualiza cada semana.",
   "estado": "En desarrollo",
   "nota": "La red neuronal está entrenada y clasifica en tres niveles; falta la ejecución semanal automática y cerrar la métrica acordada (SC-08).",
-  "avance": 75,
+  "avance": 93,
   "revision": "30/12/2026",
   "paquetes": [
    {
@@ -7327,18 +7361,18 @@ export const ENTREGABLES_ESTADO = [
    {
     "id": "1.3.2",
     "nombre": "Clasificación de riesgo",
-    "estado": "Prototipo",
-    "pct": 50,
-    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
-    "falta": "Ejecución semanal automática."
+    "estado": "Cumplido en parte",
+    "pct": 90,
+    "existe": "Clasificación semanal automática: la API reclasifica cada 7 días y una tarea programada corre cada lunes; cada clasificación queda en una bitácora con su motivo.",
+    "falta": "Comprobar que corra varias semanas seguidas."
    },
    {
     "id": "1.3.3",
     "nombre": "Validación del modelo",
     "estado": "Cumplido en parte",
-    "pct": 75,
-    "existe": "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
-    "falta": "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3)."
+    "pct": 90,
+    "existe": "Validación por competencias (SC-14) y cortes de nivel ajustados con los datos del colegio: en meses que el ajuste no vio detecta el 80 % de los casos con dificultad (antes 43 %), con AUC 0,71, igual que una regla simple por nota.",
+    "falta": "Contrastar las alertas con los docentes; superar a la regla simple (Sprint 3)."
    }
   ],
   "requisitos": [
@@ -7433,7 +7467,7 @@ export const ENTREGABLES_ESTADO = [
   "descripcion": "Interfaz web con semáforo de riesgo, fichas de estudiante, reportes y comparación por aula y grado.",
   "estado": "En desarrollo",
   "nota": "La interfaz en línea tiene aulas, estudiantes, ficha y reportes en PDF, y los docentes tutores le dieron su conformidad en el taller del 28/10/2026. Faltan las pruebas de uso con docentes (1.4.2.3).",
-  "avance": 58,
+  "avance": 63,
   "revision": "29/01/2027",
   "paquetes": [
    {
@@ -7448,9 +7482,9 @@ export const ENTREGABLES_ESTADO = [
     "id": "1.4.2.2",
     "nombre": "Desarrollo del tablero",
     "estado": "Cumplido en parte",
-    "pct": 75,
-    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
-    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge."
+    "pct": 90,
+    "existe": "Indicadores por nivel y por aula, ficha, reporte en PDF y exportación por aula; filtro por mes y comparación con el mes anterior, en total y por aula.",
+    "falta": "Prueba en Firefox y Edge."
    },
    {
     "id": "1.4.2.3",
@@ -8036,9 +8070,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-12-21",
   "fin": "2026-12-23",
   "critica": true,
-  "estado": "Programada",
-  "avancePaquete": 75,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 90,
+  "evidencias": [
+   {
+    "texto": "Métricas del modelo en el colegio y comparación con una regla simple",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/modelo-y-validacion.md"
+   }
+  ]
  },
  {
   "id": "A-3.2.1.2",
@@ -8052,7 +8091,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-12-29",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 75,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -8067,7 +8106,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-12-29",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 50,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -8081,9 +8120,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-12-28",
   "fin": "2026-12-30",
   "critica": false,
-  "estado": "Programada",
-  "avancePaquete": 50,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 90,
+  "evidencias": [
+   {
+    "texto": "Clasificación semanal automática y su bitácora",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/modelo-y-validacion.md"
+   }
+  ]
  },
  {
   "id": "A-4.1.1.1",
@@ -8172,7 +8216,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2027-01-26",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 75,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -8187,7 +8231,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2027-01-27",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 75,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -8217,7 +8261,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2027-01-29",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 75,
+  "avancePaquete": 90,
   "evidencias": []
  },
  {
@@ -10056,11 +10100,23 @@ export const SEGUIMIENTO_ALCANCE = [
     "Validación con 0 fallas críticas. Los estudiantes registrados dos veces y las notas de fotografías desaparecen al rearmar la base (SC-13).",
     "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026)."
    ],
+   "1.3.2": [
+    "Cumplido en parte",
+    90,
+    "Clasificación semanal automática: la API reclasifica cada 7 días y una tarea programada corre cada lunes; cada clasificación queda en una bitácora con su motivo.",
+    "Comprobar que corra varias semanas seguidas."
+   ],
    "1.3.3": [
     "Cumplido en parte",
-    75,
-    "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
-    "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3)."
+    90,
+    "Validación por competencias (SC-14) y cortes de nivel ajustados con los datos del colegio: en meses que el ajuste no vio detecta el 80 % de los casos con dificultad (antes 43 %), con AUC 0,71, igual que una regla simple por nota.",
+    "Contrastar las alertas con los docentes; superar a la regla simple (Sprint 3)."
+   ],
+   "1.4.2.2": [
+    "Cumplido en parte",
+    90,
+    "Indicadores por nivel y por aula, ficha, reporte en PDF y exportación por aula; filtro por mes y comparación con el mes anterior, en total y por aula.",
+    "Prueba en Firefox y Edge."
    ]
   },
   "casos": [
@@ -10106,7 +10162,8 @@ export const SEGUIMIENTO_ALCANCE = [
    "13/11: reunión presencial de la directora y el Product Owner con unos 50 apoderados de todos los salones: conformidad verbal con el uso de los datos, y por WhatsApp la de los que no asistieron (supuesto S-06).",
    "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
    "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
-   "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03)."
+   "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha (FIN-03).",
+   "15/11: con el acuerdo del Product Owner se adelantan tres trabajos de los Sprints 3 y 4: clasificación semanal automática, cortes de nivel ajustados con los datos del colegio y filtro por mes con comparación en el tablero."
   ],
   "sprint": [
    {
@@ -10125,7 +10182,7 @@ export const SEGUIMIENTO_ALCANCE = [
    },
    {
     "nivel": "Atención",
-    "texto": "Ajustar los cortes de nivel del modelo con los datos del colegio: hoy detecta el 39 % de los casos con dificultad.",
+    "texto": "El modelo todavía no ordena mejor que una regla simple por nota (mismo AUC): mejorarlo, por ejemplo con las competencias como variables.",
     "responsable": "Helber Perez",
     "fecha": "Sprint 3"
    },
@@ -10274,22 +10331,22 @@ export const SEGUIMIENTO_ALCANCE = [
     "id": "1.3.2",
     "nombre": "Clasificación de riesgo",
     "componente": "1.3",
-    "estado": "Prototipo",
-    "pct": 50,
-    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
-    "falta": "Ejecución semanal automática.",
+    "estado": "Cumplido en parte",
+    "pct": 90,
+    "existe": "Clasificación semanal automática: la API reclasifica cada 7 días y una tarea programada corre cada lunes; cada clasificación queda en una bitácora con su motivo.",
+    "falta": "Comprobar que corra varias semanas seguidas.",
     "entregable": "E-02",
     "revision": "2026-12-30",
-    "cambio": false
+    "cambio": true
    },
    {
     "id": "1.3.3",
     "nombre": "Validación del modelo",
     "componente": "1.3",
     "estado": "Cumplido en parte",
-    "pct": 75,
-    "existe": "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
-    "falta": "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3).",
+    "pct": 90,
+    "existe": "Validación por competencias (SC-14) y cortes de nivel ajustados con los datos del colegio: en meses que el ajuste no vio detecta el 80 % de los casos con dificultad (antes 43 %), con AUC 0,71, igual que una regla simple por nota.",
+    "falta": "Contrastar las alertas con los docentes; superar a la regla simple (Sprint 3).",
     "entregable": "E-02",
     "revision": "2026-12-30",
     "cambio": true
@@ -10323,12 +10380,12 @@ export const SEGUIMIENTO_ALCANCE = [
     "nombre": "Desarrollo del tablero",
     "componente": "1.4",
     "estado": "Cumplido en parte",
-    "pct": 75,
-    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
-    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge.",
+    "pct": 90,
+    "existe": "Indicadores por nivel y por aula, ficha, reporte en PDF y exportación por aula; filtro por mes y comparación con el mes anterior, en total y por aula.",
+    "falta": "Prueba en Firefox y Edge.",
     "entregable": "E-04",
     "revision": "2027-01-29",
-    "cambio": false
+    "cambio": true
    },
    {
     "id": "1.4.2.3",

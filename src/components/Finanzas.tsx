@@ -217,7 +217,7 @@ export function ControlCronogramaCostos() {
           valor={E.SPI}
           semaforo={E.semaforoSPI}
           formula="SPI = EV ÷ PV"
-          lectura={`Adelantado: lo terminado equivale a lo planificado hasta la semana ${E.semanaEquivalente} (fin del Sprint 2). Las actividades de datos se terminaron antes de su fecha.`}
+          lectura={`Adelantado: lo terminado equivale a lo planificado hasta la semana ${E.semanaEquivalente} (Sprint ${Math.ceil(E.semanaEquivalente / 4)}). Los datos se terminaron antes de su fecha y se adelantaron trabajos de los Sprints 3 y 4.`}
         />
         <Indice
           nombre="Índice del costo (CPI)"

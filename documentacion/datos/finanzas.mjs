@@ -101,7 +101,8 @@ export function curvaS() {
 // Porcentaje completado de cada actividad a la fecha de corte, con su evidencia (ACTIVIDADES_REALIZADAS).
 // Las actividades parciales se declaran aquí. La reunión diaria es de nivel de esfuerzo: su EV es igual a su PV.
 export const PARCIALES = {
-  "A-3.2.1.1": { pct: 50, evidencia: "Métricas del modelo en el colegio con el criterio de la SC-14 (AUC 0,71, detecta 39 %); falta compararlas con una regla simple." },
+  "A-3.2.1.2": { pct: 50, evidencia: "Cortes de nivel ajustados con los datos del colegio: detecta el 80 % en meses no vistos; falta superar a la regla simple." },
+  "A-4.2.1.2": { pct: 50, evidencia: "Tablero con filtro por mes y comparación con el mes anterior, en total y por aula; se completa en el Sprint 4." },
 };
 
 export function valorGanado(corteIso) {

@@ -227,11 +227,23 @@ export const CORTES_ALCANCE = [
         "Validación con 0 fallas críticas. Los estudiantes registrados dos veces y las notas de fotografías desaparecen al rearmar la base (SC-13).",
         "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026).",
       ],
+      "1.3.2": [
+        "Cumplido en parte",
+        90,
+        "Clasificación semanal automática: la API reclasifica cada 7 días y una tarea programada corre cada lunes; cada clasificación queda en una bitácora con su motivo.",
+        "Comprobar que corra varias semanas seguidas.",
+      ],
       "1.3.3": [
         "Cumplido en parte",
-        75,
-        "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
-        "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3).",
+        90,
+        "Validación por competencias (SC-14) y cortes de nivel ajustados con los datos del colegio: en meses que el ajuste no vio detecta el 80 % de los casos con dificultad (antes 43 %), con AUC 0,71, igual que una regla simple por nota.",
+        "Contrastar las alertas con los docentes; superar a la regla simple (Sprint 3).",
+      ],
+      "1.4.2.2": [
+        "Cumplido en parte",
+        90,
+        "Indicadores por nivel y por aula, ficha, reporte en PDF y exportación por aula; filtro por mes y comparación con el mes anterior, en total y por aula.",
+        "Prueba en Firefox y Edge.",
       ],
     },
     casos: { "CP-03": "Aprobado" },
@@ -242,14 +254,15 @@ export const CORTES_ALCANCE = [
       "13/11: reunión presencial de la directora y el Product Owner con unos 50 apoderados de todos los salones: conformidad verbal con el uso de los datos, y por WhatsApp la de los que no asistieron (supuesto S-06).",
       "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
       "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
-      "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03).",
+      "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha (FIN-03).",
+      "15/11: con el acuerdo del Product Owner se adelantan tres trabajos de los Sprints 3 y 4: clasificación semanal automática, cortes de nivel ajustados con los datos del colegio y filtro por mes con comparación en el tablero.",
     ],
     sprint: [
       { que: "E-01 · Módulo de integración y limpieza de datos", estado: "Cumplido", evidencia: "684 notas reconciliadas, validación sin fallas críticas; se presenta para aceptación el 04/12/2026.", url: `${repo}/pruebas-sprint-2.md` },
     ],
     alertas: [
       { nivel: "Atención", texto: "Registrar las horas reales de cada integrante cada semana (plantilla GOB-13) para medir el costo real.", responsable: R.jhostin, fecha: "Desde el 16/11/2026" },
-      { nivel: "Atención", texto: "Ajustar los cortes de nivel del modelo con los datos del colegio: hoy detecta el 39 % de los casos con dificultad.", responsable: R.helber, fecha: "Sprint 3" },
+      { nivel: "Atención", texto: "El modelo todavía no ordena mejor que una regla simple por nota (mismo AUC): mejorarlo, por ejemplo con las competencias como variables.", responsable: R.helber, fecha: "Sprint 3" },
       { nivel: "Seguimiento", texto: "SC-09 (canal de las alertas por correo) sigue en evaluación.", responsable: R.carlos, fecha: "Sprint 3" },
       { nivel: "Seguimiento", texto: "Pedir las exportaciones de los grados que faltan (1.° y 2.° de primaria, 4.° y 5.° de secundaria) antes del piloto.", responsable: R.helber, fecha: "Sprint 4" },
     ],
@@ -280,4 +293,7 @@ export const ACTIVIDADES_REALIZADAS = {
   "A-2.1.1.4": { fecha: "2026-11-15", evidencias: [{ texto: "Tres reconciliaciones correctas (CP-03): 684 notas", url: `${repo}/pruebas-sprint-2.md` }] },
   "A-2.2.1.1": { fecha: "2026-10-25", evidencias: [{ texto: "Validación nocturna: 15 noches seguidas sin fallas (CP-05)", url: `${repo}/pruebas-sprint-2.md` }] },
   "A-2.2.1.2": { fecha: "2026-11-15", evidencias: [{ texto: "Validación con 0 fallas críticas tras la carga 3", url: `${repo}/pruebas-sprint-2.md` }] },
+  // Adelantadas del Sprint 3 con el acuerdo del Product Owner (15/11/2026).
+  "A-3.2.1.1": { fecha: "2026-11-15", evidencias: [{ texto: "Métricas del modelo en el colegio y comparación con una regla simple", url: `${repo}/modelo-y-validacion.md` }] },
+  "A-3.2.1.4": { fecha: "2026-11-15", evidencias: [{ texto: "Clasificación semanal automática y su bitácora", url: `${repo}/modelo-y-validacion.md` }] },
 };

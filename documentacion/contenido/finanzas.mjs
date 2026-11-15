@@ -228,7 +228,7 @@ export const FIN03 = DOC({
     ]),
     sec("2. Cronograma", [
       p(
-        `El proyecto va adelantado: SPI ${num(EVM.SPI)}. Las actividades de datos del Sprint 2 (carga y reconciliación de Cubicol, validación y corrección de los datos) se terminaron antes de sus fechas, porque las exportaciones llegaron y el Product Owner aprobó rearmar la base (SC-13). La fecha de fin se mantiene en el ${P.fin}: los hitos con el colegio (piloto y capacitación) dependen de su calendario, no del avance del equipo.`,
+        `El proyecto va adelantado: SPI ${num(EVM.SPI)}. Las actividades de datos del Sprint 2 (carga y reconciliación de Cubicol, validación y corrección de los datos) se terminaron antes de sus fechas, porque las exportaciones llegaron y el Product Owner aprobó rearmar la base (SC-13). Con su acuerdo, el equipo adelantó además tres trabajos de los Sprints 3 y 4: la clasificación semanal automática, los cortes de nivel ajustados con los datos del colegio y el filtro por mes del tablero. La fecha de fin se mantiene en el ${P.fin}: los hitos con el colegio (piloto y capacitación) dependen de su calendario, no del avance del equipo.`,
       ),
       tabla(
         ["Actividad", "Paquete", "PV", "% hecho", "EV"],
@@ -263,7 +263,7 @@ export const FIN03 = DOC({
         [
           ["Sin registro de horas reales: el CPI no mide eficiencia.", "Anotar las horas cada semana en la plantilla GOB-13.", R.jhostin, "Desde el 16/11/2026"],
           ["Adelanto del Sprint 2 en el paquete de datos.", "Usar el tiempo libre para preparar el Sprint 3, donde Helber tiene más horas que las disponibles (REC-04).", R.helber, "Sprint 2"],
-          ["Los cortes de nivel del modelo detectan el 39 % de los casos con dificultad (SC-14).", "Revisar los cortes con los datos del colegio en el Sprint 3.", R.helber, "Sprint 3"],
+          ["Con los cortes ajustados el modelo detecta el 80 % de los casos con dificultad, pero ordena igual que una regla simple por nota.", "Mejorar el modelo, por ejemplo con las competencias como variables.", R.helber, "Sprint 3"],
         ],
         { titulo: "Acciones" },
       ),
