@@ -4479,23 +4479,23 @@ export const FINANZAS = {
   "porPersona": [
    {
     "persona": "Jhostin Galarza",
-    "horas": 208.5,
-    "costo": 3554.93
+    "horas": 203.5,
+    "costo": 3469.68
    },
    {
     "persona": "Helber Perez",
-    "horas": 348.5,
-    "costo": 5447.06
+    "horas": 343.5,
+    "costo": 5368.91
    },
    {
     "persona": "Jadira Vasquez",
-    "horas": 416.5,
-    "costo": 5522.79
+    "horas": 411.5,
+    "costo": 5456.49
    },
    {
     "persona": "Carlos Curo",
-    "horas": 296.5,
-    "costo": 3931.59
+    "horas": 291.5,
+    "costo": 3865.29
    }
   ],
   "porPaquete": [
@@ -4531,8 +4531,8 @@ export const FINANZAS = {
    },
    {
     "paquete": "1.1.2",
-    "costo": 1755.4,
-    "horas": 118,
+    "costo": 1459.4,
+    "horas": 98,
     "nombre": "Informes de avance"
    },
    {
@@ -4872,8 +4872,8 @@ export const FINANZAS = {
    },
    {
     "paquete": "1.1.2",
-    "costo": 1755.4,
-    "horas": 118,
+    "costo": 1459.4,
+    "horas": 98,
     "pv": 216.2,
     "ev": 216.2,
     "nombre": "Informes de avance"
@@ -5024,7 +5024,7 @@ export const FINANZAS = {
    },
    {
     "sprint": 2,
-    "presupuesto": 4498.4,
+    "presupuesto": 4202.4,
     "pv": 1739.28,
     "ev": 2959.2
    },
@@ -5140,7 +5140,7 @@ export const FINANZAS = {
     "paquete": "1.1.2",
     "sprint": 2,
     "pv": 148,
-    "pct": 9,
+    "pct": 11,
     "ev": 148,
     "fin": "2027-04-23"
    },
@@ -11040,6 +11040,16 @@ export const CAMBIOS = [
   "decidido": "2026-11-15",
   "decision": "Aprobado por el Product Owner el 15/11/2026 (opción B de las tres evaluadas).",
   "aplicacion": "Aplicado en el sistema el 15/11/2026: 118 de 550 casos con alguna competencia desaprobada; AUC en el colegio 0,71. El criterio del REQ-03 se actualiza en la próxima versión de los requisitos (ALC-03)."
+ },
+ {
+  "id": "SC-15",
+  "titulo": "Línea base de costos del curso actual (versión 3)",
+  "origen": "La línea base de costos v2 del curso anterior supone jornada completa de 8 horas, tarifas profesionales y las fechas de marzo a agosto de 2026; no coincide con el cronograma v3.1 ni con la estimación de los recursos (REC-01).",
+  "impacto": "Línea base de costos: de S/ 59 859,17 a S/ 19 976,40 (presupuesto total de S/ 63 495,53 a S/ 21 160,40), con tarifas de profesional junior y 50 % de dedicación (FIN-02). Queda dentro de los recursos financieros autorizados en el acta de constitución (GOB-02).",
+  "estado": "En evaluación",
+  "presentado": "2026-11-15",
+  "decision": "La decide el Product Owner.",
+  "aplicacion": "Propuesta en FIN-02 y en el plan para la dirección del proyecto (GOB-04 v1.2)."
  }
 ];
 

@@ -216,17 +216,17 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Línea base de costos",
-        "S/ 59,859.17",
-        "Línea base de costos v2"
+        "S/ 19 976,40",
+        "FIN-02 (v3, SC-15 en evaluación)"
        ],
        [
         "Presupuesto total",
-        "S/ 63,495.53",
-        "Línea base de costos v2"
+        "S/ 21 160,40",
+        "FIN-02 (v3, SC-15 en evaluación)"
        ],
        [
         "Solicitudes de cambio registradas",
-        "14",
+        "15",
         "GOB-10"
        ]
       ],
@@ -237,24 +237,24 @@ export const DOCUMENTOS: DocDef[] = [
       "t": "kv",
       "filas": [
        [
-        "Costo de la EDT (44 actividades y reunión diaria)",
-        "S/ 54,417.42"
+        "Costo del trabajo (BAC)",
+        "S/ 18 160,36"
        ],
        [
-        "Reserva de contingencia (10 %)",
-        "S/ 5,441.74"
+        "Reserva de contingencia (10 % por sprint)",
+        "S/ 1 816,04"
        ],
        [
-        "Línea base de costos",
-        "S/ 59,859.17"
+        "Línea base de costos (v3)",
+        "S/ 19 976,40"
        ],
        [
         "Reserva de gestión (una semana)",
-        "S/ 3,636.36"
+        "S/ 1 184,00"
        ],
        [
         "Presupuesto total del proyecto",
-        "S/ 63,495.53"
+        "S/ 21 160,40"
        ]
       ]
      }
@@ -2344,8 +2344,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Integrar y alinear los planes del proyecto",
   "salida": "Plan para la dirección del proyecto",
-  "version": "1.1",
-  "fecha": "07/11/2026",
+  "version": "1.2",
+  "fecha": "15/11/2026",
   "resumen": "Reúne en un solo documento cómo se ejecuta, se controla y se cierra el proyecto: enfoque de desarrollo, planes que lo componen, líneas base, gobernanza, configuración y medición del desempeño.",
   "carpeta": "01 - Gobernanza/1.2 Integrar los planes",
   "drive": "https://drive.google.com/file/d/1-JZ8qVz3mV2Th8U1F1Wu9iH-kMVjb81X/view",
@@ -2607,9 +2607,9 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Costos",
-        "S/ 59,859.17; presupuesto total S/ 63,495.53.",
-        "v2 (curso anterior)",
-        "Montos vigentes. La distribución por fechas está pendiente (SC-02)."
+        "S/ 19 976,40; presupuesto total S/ 21 160,40 (FIN-02).",
+        "v3 (15/11/2026)",
+        "Reemplaza la v2 del curso anterior (S/ 59,859.17); SC-15 en evaluación. Distribuida por semanas en la curva S."
        ]
       ],
       "titulo": "Líneas base del proyecto"
@@ -4727,7 +4727,7 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Monitoreo y control",
   "proceso": "Evaluar e implementar cambios",
   "salida": "Solicitudes de cambio aprobadas y registro de cambios",
-  "version": "1.6",
+  "version": "1.7",
   "fecha": "15/11/2026",
   "resumen": "Establece cómo se solicita, evalúa y decide un cambio, y registra los cambios que separan la versión anterior del proyecto de la versión vigente.",
   "carpeta": "01 - Gobernanza/1.8 Cambios",
@@ -5080,6 +5080,20 @@ export const DOCUMENTOS: DocDef[] = [
         },
         "Aprobado por el Product Owner el 15/11/2026 (opción B de las tres evaluadas).",
         "Aplicado en el sistema el 15/11/2026: 118 de 550 casos con alguna competencia desaprobada; AUC en el colegio 0,71. El criterio del REQ-03 se actualiza en la próxima versión de los requisitos (ALC-03)."
+       ],
+       [
+        "SC-15",
+        "Línea base de costos del curso actual (versión 3)",
+        "La línea base de costos v2 del curso anterior supone jornada completa de 8 horas, tarifas profesionales y las fechas de marzo a agosto de 2026; no coincide con el cronograma v3.1 ni con la estimación de los recursos (REC-01).",
+        "Línea base de costos: de S/ 59 859,17 a S/ 19 976,40 (presupuesto total de S/ 63 495,53 a S/ 21 160,40), con tarifas de profesional junior y 50 % de dedicación (FIN-02). Queda dentro de los recursos financieros autorizados en el acta de constitución (GOB-02).",
+        {
+         "x": "En evaluación",
+         "fill": "amarillo",
+         "bold": true,
+         "align": "center"
+        },
+        "La decide el Product Owner.",
+        "Propuesta en FIN-02 y en el plan para la dirección del proyecto (GOB-04 v1.2)."
        ]
       ],
       "titulo": "Registro de cambios al 17/10/2026",
@@ -5738,7 +5752,7 @@ export const DOCUMENTOS: DocDef[] = [
       "items": [
        "Lo llena el director del proyecto cada viernes con los datos de la reunión diaria y del registro de horas; se comparte con el equipo y el Product Owner.",
        "El avance por paquete sale del tablero del alcance; los indicadores, del informe de control del cronograma y los costos.",
-       "Semáforo: verde si el índice es 0,95 o más; amarillo entre 0,90 y 0,94; rojo por debajo de 0,90."
+       "Semáforo: verde si el índice es 1,00 o más; amarillo entre 0,90 y 0,99; rojo por debajo de 0,90 (GOB-04)."
       ]
      }
     ]
@@ -14315,7 +14329,7 @@ export const DOCUMENTOS: DocDef[] = [
         },
         "HU-03",
         "Como docente tutor, quiero que el sistema ubique a cada estudiante en riesgo bajo, medio o alto para saber a quién atender primero.",
-        "El modelo alcanza una precisión mínima de 75 % al clasificar estudiantes en riesgo, validada con datos reales del colegio. Se entrega un informe de métricas (precisión, sensibilidad y F1).",
+        "Validado con datos reales del colegio: el nivel que da el modelo se compara con lo que pasó en el periodo siguiente; «le fue mal» si alguna competencia tiene promedio menor de 11. Se informan AUC, proporción detectada y aciertos de las alertas, frente a una regla simple (SC-08 y SC-14).",
         "REQ-03",
         "1.3.1 y 1.3.3",
         {
@@ -24236,6 +24250,10 @@ export const DOCUMENTOS: DocDef[] = [
      {
       "t": "p",
       "x": "Este plan forma parte del plan para la dirección del proyecto (GOB-04). Se basa en el cronograma v3.1 (CRO-01), la estimación de los recursos (REC-01), la estrategia de abastecimiento (GOB-05) y la restricción R-02: el proyecto no tiene presupuesto institucional."
+     },
+     {
+      "t": "p",
+      "x": "El acta de constitución (GOB-02) autorizó recursos por hasta S/ 63 495,53 con la estimación del curso anterior. El presupuesto del curso actual (S/ 21 160,40) queda dentro de ese monto y reemplaza la línea base anterior mediante la solicitud de cambio SC-15."
      }
     ]
    },
@@ -24435,12 +24453,12 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "SPI y CPI",
         {
-         "x": "0,95 o más",
+         "x": "1,00 o más",
          "fill": "verde",
          "align": "center"
         },
         {
-         "x": "0,90 a 0,94",
+         "x": "0,90 a 0,99",
          "fill": "amarillo",
          "align": "center"
         },
@@ -24466,7 +24484,8 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ]
       ],
-      "titulo": "Umbrales de control"
+      "titulo": "Umbrales de control",
+      "fuente": "Los mismos del plan para la dirección del proyecto (GOB-04) y del cronograma (CRO-01)."
      },
      {
       "t": "p",
@@ -24567,7 +24586,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Jhostin Galarza",
         {
-         "x": "208,5",
+         "x": "203,5",
          "align": "right"
         },
         {
@@ -24575,14 +24594,14 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 3 554,93",
+         "x": "S/ 3 469,68",
          "align": "right"
         }
        ],
        [
         "Helber Perez",
         {
-         "x": "348,5",
+         "x": "343,5",
          "align": "right"
         },
         {
@@ -24590,14 +24609,14 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 5 447,06",
+         "x": "S/ 5 368,91",
          "align": "right"
         }
        ],
        [
         "Jadira Vasquez",
         {
-         "x": "416,5",
+         "x": "411,5",
          "align": "right"
         },
         {
@@ -24605,14 +24624,14 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 5 522,79",
+         "x": "S/ 5 456,49",
          "align": "right"
         }
        ],
        [
         "Carlos Curo",
         {
-         "x": "296,5",
+         "x": "291,5",
          "align": "right"
         },
         {
@@ -24620,7 +24639,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "S/ 3 931,59",
+         "x": "S/ 3 865,29",
          "align": "right"
         }
        ],
@@ -24631,7 +24650,7 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "1270,0",
+         "x": "1250,0",
          "fill": "gris",
          "align": "right",
          "bold": true
@@ -24750,15 +24769,15 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "1.1.2 Informes de avance",
         {
-         "x": "118,0",
+         "x": "98,0",
          "align": "right"
         },
         {
-         "x": "S/ 1 755,40",
+         "x": "S/ 1 459,40",
          "align": "right"
         },
         {
-         "x": "9,7 %",
+         "x": "8,0 %",
          "align": "right"
         }
        ],
@@ -25204,6 +25223,11 @@ export const DOCUMENTOS: DocDef[] = [
       ],
       "titulo": "Línea base de costos y presupuesto",
       "fuente": "Curso anterior: línea base S/ 59 859,17 y presupuesto S/ 63 495,53, con jornada completa y tarifas profesionales."
+     },
+     {
+      "t": "nota",
+      "tipo": "info",
+      "x": "Esta línea base (versión 3) reemplaza la del curso anterior mediante la solicitud de cambio SC-15, que decide el Product Owner. Queda dentro de los recursos autorizados en el acta de constitución (S/ 63 495,53)."
      }
     ]
    },
@@ -25710,7 +25734,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "9 %",
+         "x": "11 %",
          "fill": "amarillo",
          "align": "center"
         },
@@ -25984,7 +26008,7 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "1.1.2 Informes de avance",
         {
-         "x": "S/ 1 755,40",
+         "x": "S/ 1 459,40",
          "align": "right"
         },
         {
@@ -25996,7 +26020,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "right"
         },
         {
-         "x": "12 %",
+         "x": "15 %",
          "fill": "amarillo",
          "align": "center"
         }

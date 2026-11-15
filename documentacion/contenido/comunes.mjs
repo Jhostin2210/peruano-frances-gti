@@ -69,6 +69,21 @@ export const tablaFeriados = (titulo = "Feriados dentro del periodo del proyecto
     { titulo },
   );
 
+// Presupuesto del curso actual (FIN-02). kvPresupuesto conserva el del curso anterior para los documentos
+// de la formulación (caso de negocio y acta de constitución firmada).
+export const soles = (x) => {
+  const [e, d] = Math.abs(x).toFixed(2).split(".");
+  return `S/ ${e.replace(/\B(?=(\d{3})+(?!\d))/g, " ")},${d}`;
+};
+export const kvPresupuestoVigente = (p) =>
+  kv(
+    ["Costo del trabajo (BAC)", soles(p.bac)],
+    ["Reserva de contingencia (10 % por sprint)", soles(p.contingencia)],
+    ["Línea base de costos (v3)", soles(p.lineaBase)],
+    ["Reserva de gestión (una semana)", soles(p.reservaGestion)],
+    ["Presupuesto total del proyecto", soles(p.total)],
+  );
+
 export const kvPresupuesto = () =>
   kv(
     ["Costo de la EDT (44 actividades y reunión diaria)", P.presupuesto.edt],

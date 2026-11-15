@@ -139,6 +139,16 @@ export const CAMBIOS = [
     decision: "Aprobado por el Product Owner el 15/11/2026 (opción B de las tres evaluadas).",
     aplicacion: "Aplicado en el sistema el 15/11/2026: 118 de 550 casos con alguna competencia desaprobada; AUC en el colegio 0,71. El criterio del REQ-03 se actualiza en la próxima versión de los requisitos (ALC-03).",
   },
+  {
+    id: "SC-15",
+    titulo: "Línea base de costos del curso actual (versión 3)",
+    origen: "La línea base de costos v2 del curso anterior supone jornada completa de 8 horas, tarifas profesionales y las fechas de marzo a agosto de 2026; no coincide con el cronograma v3.1 ni con la estimación de los recursos (REC-01).",
+    impacto: "Línea base de costos: de S/ 59 859,17 a S/ 19 976,40 (presupuesto total de S/ 63 495,53 a S/ 21 160,40), con tarifas de profesional junior y 50 % de dedicación (FIN-02). Queda dentro de los recursos financieros autorizados en el acta de constitución (GOB-02).",
+    estado: "En evaluación",
+    presentado: "2026-11-15",
+    decision: "La decide el Product Owner.",
+    aplicacion: "Propuesta en FIN-02 y en el plan para la dirección del proyecto (GOB-04 v1.2).",
+  },
 ];
 
 // ───────────────────────── Incidentes (GOB-06) ─────────────────────────

@@ -8,6 +8,11 @@ import { ACTIVIDADES } from "./actividades.mjs";
 
 export const FECHA_BACKLOG = "15/11/2026";
 
+// Criterios cambiados por solicitudes aprobadas que aún no llegan a la próxima versión del enunciado (ALC-02).
+const CRITERIO_VIGENTE = {
+  "REQ-03": "Validado con datos reales del colegio: el nivel que da el modelo se compara con lo que pasó en el periodo siguiente; «le fue mal» si alguna competencia tiene promedio menor de 11. Se informan AUC, proporción detectada y aciertos de las alertas, frente a una regla simple (SC-08 y SC-14).",
+};
+
 // Estado real de cada historia al 15/11/2026 (Hecho = construido y probado; queda la aceptación del Product Owner).
 const H = [
   ["HU-01", "REQ-01", "coordinador académico", "tener en una sola base las notas de Cubicol de todos los salones", "no revisar los registros archivo por archivo", "Hecho", "684 notas de 48 estudiantes; tres reconciliaciones correctas (CP-03). Se presenta para aceptación el 04/12/2026."],
@@ -56,7 +61,7 @@ export function productBacklog() {
       requisito: req,
       titulo: r.titulo,
       historia: `Como ${rol}, quiero ${quiero} para ${para}.`,
-      criterio: r.criterio,
+      criterio: CRITERIO_VIGENTE[req] ?? r.criterio,
       prioridad: r.prioridad,
       entregable: r.entregable,
       paquete: r.paquete,

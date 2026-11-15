@@ -39,6 +39,7 @@ export const FIN01 = DOC({
   secciones: [
     sec("1. Propósito y entradas", [
       p("Este plan forma parte del plan para la dirección del proyecto (GOB-04). Se basa en el cronograma v3.1 (CRO-01), la estimación de los recursos (REC-01), la estrategia de abastecimiento (GOB-05) y la restricción R-02: el proyecto no tiene presupuesto institucional."),
+      p(`El acta de constitución (GOB-02) autorizó recursos por hasta ${soles(CURSO_ANTERIOR.total)} con la estimación del curso anterior. El presupuesto del curso actual (${soles(PRES.total)}) queda dentro de ese monto y reemplaza la línea base anterior mediante la solicitud de cambio SC-15.`),
     ]),
     sec("2. Financiamiento y unidades", [
       tabla(
@@ -84,10 +85,10 @@ export const FIN01 = DOC({
         ["Índice", "Verde", "Amarillo", "Rojo"],
         [25, 25, 25, 25],
         [
-          ["SPI y CPI", centro("0,95 o más", "verde"), centro("0,90 a 0,94", "amarillo"), centro("menos de 0,90", "rojo")],
+          ["SPI y CPI", centro("1,00 o más", "verde"), centro("0,90 a 0,99", "amarillo"), centro("menos de 0,90", "rojo")],
           ["Qué se hace", centro("Seguir"), centro("Acción correctiva en el sprint"), centro("Solicitud de cambio (GOB-10)")],
         ],
-        { titulo: "Umbrales de control" },
+        { titulo: "Umbrales de control", fuente: "Los mismos del plan para la dirección del proyecto (GOB-04) y del cronograma (CRO-01)." },
       ),
       p("Corte: el viernes de cada semana para el informe semanal (GOB-13) y al cierre de cada sprint para el informe de control (FIN-03 y siguientes)."),
     ]),
@@ -163,6 +164,7 @@ export const FIN02 = DOC({
         ],
         { titulo: "Línea base de costos y presupuesto", fuente: `Curso anterior: línea base ${soles(CURSO_ANTERIOR.lineaBase)} y presupuesto ${soles(CURSO_ANTERIOR.total)}, con jornada completa y tarifas profesionales.` },
       ),
+      nota(`Esta línea base (versión 3) reemplaza la del curso anterior mediante la solicitud de cambio SC-15, que decide el Product Owner. Queda dentro de los recursos autorizados en el acta de constitución (${soles(CURSO_ANTERIOR.total)}).`, "info"),
     ]),
     sec(
       "5. Curva S",

@@ -101,7 +101,7 @@ export const GOB13 = DOC({
       ul(
         "Lo llena el director del proyecto cada viernes con los datos de la reunión diaria y del registro de horas; se comparte con el equipo y el Product Owner.",
         "El avance por paquete sale del tablero del alcance; los indicadores, del informe de control del cronograma y los costos.",
-        "Semáforo: verde si el índice es 0,95 o más; amarillo entre 0,90 y 0,94; rojo por debajo de 0,90.",
+        "Semáforo: verde si el índice es 1,00 o más; amarillo entre 0,90 y 0,99; rojo por debajo de 0,90 (GOB-04).",
       ),
     ]),
     sec("1. Datos del informe", [kv(["Semana N.º", ""], ["Fechas", "del ____ / ____ al ____ / ____"], ["Sprint", ""], ["Preparado por", ""], ["Fecha de emisión", ""])]),

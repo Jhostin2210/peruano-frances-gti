@@ -24,9 +24,11 @@ export const CONTINGENCIA = 0.1; // 10 % del costo de cada sprint (curso anterio
 export const SEMANAS_RESERVA_GESTION = 1; // una semana de todo el equipo
 
 const esHabil = (d) => d.getUTCDay() !== 0 && d.getUTCDay() !== 6 && !FERIADOS.some((f) => f.fecha === aIso(d));
+// Días hábiles dentro de algún sprint (fuera del receso de febrero), como en la estimación de recursos (REC-01).
+const enSprint = (iso) => SPRINTS.some((s) => iso >= s.inicio && iso <= s.fin);
 const dias = (a, b) => {
   const out = [];
-  for (let d = new Date(a); d <= b; d = new Date(d.getTime() + 86400000)) if (esHabil(d)) out.push(aIso(d));
+  for (let d = new Date(a); d <= b; d = new Date(d.getTime() + 86400000)) if (esHabil(d) && enSprint(aIso(d))) out.push(aIso(d));
   return out;
 };
 
@@ -141,6 +143,7 @@ export function valorGanado(corteIso) {
   };
 }
 
-export const semaforo = (indice) => (indice >= 0.95 ? "Verde" : indice >= 0.9 ? "Amarillo" : "Rojo");
+// Umbrales del plan para la dirección del proyecto (GOB-04) y del cronograma (CRO-01).
+export const semaforo = (indice) => (indice >= 1 ? "Verde" : indice >= 0.9 ? "Amarillo" : "Rojo");
 export const CORTE_CONTROL = "2026-11-20";
 export const fechaCorte = () => fmt(aFecha(CORTE_CONTROL));

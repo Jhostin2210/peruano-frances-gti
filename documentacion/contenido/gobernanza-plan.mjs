@@ -3,7 +3,10 @@
 
 import { c, nota, p, sec, tabla, ul } from "../lib/bloques.mjs";
 import { PROYECTO as P, R } from "../proyecto.mjs";
-import { DOC } from "./comunes.mjs";
+import { DOC, soles } from "./comunes.mjs";
+import { presupuesto } from "../datos/finanzas.mjs";
+
+const PRES = presupuesto();
 
 export const GOB04 = DOC({
   id: "GOB-04",
@@ -14,11 +17,12 @@ export const GOB04 = DOC({
   area: "Planificación",
   proceso: "Integrar y alinear los planes del proyecto",
   salida: "Plan para la dirección del proyecto",
-  version: "1.1",
-  fecha: "07/11/2026",
+  version: "1.2",
+  fecha: "15/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", "07/11/2026", "La línea base del alcance pasa a la EDT versión 4 (SC-10).", P.director],
+    ["1.2", "15/11/2026", "Línea base de costos v3 del curso actual (FIN-02), propuesta con la SC-15.", P.director],
   ],
   resumen:
     "Reúne en un solo documento cómo se ejecuta, se controla y se cierra el proyecto: enfoque de desarrollo, planes que lo componen, líneas base, gobernanza, configuración y medición del desempeño.",
@@ -95,9 +99,9 @@ export const GOB04 = DOC({
           ],
           [
             "Costos",
-            `${P.presupuesto.lineaBase}; presupuesto total ${P.presupuesto.total}.`,
-            "v2 (curso anterior)",
-            "Montos vigentes. La distribución por fechas está pendiente (SC-02).",
+            `${soles(PRES.lineaBase)}; presupuesto total ${soles(PRES.total)} (FIN-02).`,
+            "v3 (15/11/2026)",
+            `Reemplaza la v2 del curso anterior (${P.presupuesto.lineaBase}); SC-15 en evaluación. Distribuida por semanas en la curva S.`,
           ],
         ],
         { titulo: "Líneas base del proyecto" },

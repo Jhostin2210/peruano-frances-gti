@@ -6,7 +6,8 @@ import { TOTALES as TC } from "../datos/calendario.mjs";
 import { INTERESADOS } from "../datos/interesados.mjs";
 import { CAMBIOS } from "../datos/registros.mjs";
 import { COMPONENTES, ENTREGABLES, TOTALES_ALCANCE as TA } from "../datos/requisitos.mjs";
-import { DOC, kvPresupuesto, tablaEquipo, tablaSprints } from "./comunes.mjs";
+import { DOC, kvPresupuestoVigente, soles, tablaEquipo, tablaSprints } from "./comunes.mjs";
+import { presupuesto } from "../datos/finanzas.mjs";
 import { DOMINIOS, PROCESOS } from "./procesos.mjs";
 
 export const BASE_META = {
@@ -66,13 +67,13 @@ export function crearBASE01(documentos) {
             ["Actividades del cronograma", `${TC.actividades} y una reunión diaria`, "CRO-01"],
             ["Sprints y semanas", `6 sprints de 4 semanas: ${TC.semanas} semanas`, "CRO-01"],
             ["Suma de duraciones esperadas (PERT)", `${TC.te.toFixed(1)} días`, "CRO-01"],
-            ["Línea base de costos", P.presupuesto.lineaBase, "Línea base de costos v2"],
-            ["Presupuesto total", P.presupuesto.total, "Línea base de costos v2"],
+            ["Línea base de costos", soles(presupuesto().lineaBase), "FIN-02 (v3, SC-15 en evaluación)"],
+            ["Presupuesto total", soles(presupuesto().total), "FIN-02 (v3, SC-15 en evaluación)"],
             ["Solicitudes de cambio registradas", String(CAMBIOS.length), "GOB-10"],
           ],
           { titulo: "Cifras de referencia del proyecto", compacta: true },
         ),
-        kvPresupuesto(),
+        kvPresupuestoVigente(presupuesto()),
       ]),
       sec("3. Calendario", [tablaSprints()]),
       sec("4. Índice de documentos", [
