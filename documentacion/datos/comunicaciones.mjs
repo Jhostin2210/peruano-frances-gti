@@ -8,7 +8,7 @@ import { R } from "../proyecto.mjs";
 import { SPRINTS } from "./calendario.mjs";
 
 // Fecha de corte de los documentos emitidos.
-export const CORTE = "2026-11-07";
+export const CORTE = "2026-11-15";
 
 // ───────────────────────── Matriz del plan (INT-03) ─────────────────────────
 export const PLAN_COMUNICACIONES = [
@@ -60,7 +60,9 @@ export const COMUNICACIONES = [
   { fecha: "2026-10-28", tipo: "Taller", asunto: "Taller de validación de las variables del modelo, organizado por el Product Owner", emisor: `${R.helber} y ${R.carlos}`, interesados: ["I-05", "I-06"], canal: "Taller presencial en el colegio", sprint: 1, estado: "Realizada", constancia: "Asistieron los 16 docentes y la directora, que dieron su conformidad con las variables del modelo y con la interfaz del sistema. Lista de asistencia y acuerdos", plan: "PC-05" },
   { fecha: "2026-10-31", tipo: "Avance académico", asunto: "Avance semanal al docente asesor", emisor: R.equipo, interesados: ["I-13"], canal: "Clase y blog del proyecto", sprint: 1, estado: "Realizada", constancia: "Avance presentado en clase", plan: "PC-06" },
   { fecha: "2026-11-03", tipo: "Consulta", asunto: "Consulta sobre el registro de incidencias, a través del Product Owner", emisor: `${R.jadira} y ${R.helber}`, interesados: ["I-04"], canal: "Consulta del Product Owner en el colegio", sprint: 1, estado: "Realizada", constancia: "El colegio registra las incidencias en papel con su formato «Reporte de incidencia escolar», que el Product Owner obtuvo: datos generales (fecha, hora, lugar y quién reporta), estudiantes involucrados con su grado y sección, tipo de incidencia (conductual, académica, salud o accidente, propiedad u otros), descripción de los hechos, acciones inmediatas, compromisos y seguimiento, y firmas del docente y del alumno. Para usarlas en el sistema hay que digitalizarlas; las académicas y las conductuales son las más relacionadas con el rendimiento", plan: "PC-12" },
-  { fecha: "2026-11-20", tipo: "Comunicado", asunto: "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)", emisor: "Dirección, por medio de los tutores; redacta el equipo", interesados: ["I-11", "I-05"], canal: "Mensaje de WhatsApp del tutor de cada aula", sprint: 2, estado: "Programada", constancia: "Texto del mensaje y confirmación de envío de cada tutor", plan: "PC-07" },
+  { fecha: "2026-11-13", tipo: "Reunión", asunto: "Reunión informativa con los padres y apoderados sobre el proyecto y el uso de los datos", emisor: `Promotora Directora y ${R.helber}, Product Owner`, interesados: ["I-11", "I-05"], canal: "Reunión con los padres y apoderados", sprint: 2, estado: "Realizada", constancia: "Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Los apoderados de todos los salones dieron su conformidad de forma verbal. Constancia escrita para la firma de la directora", plan: "PC-07",
+    // Cómo figuraba antes de realizarse (los informes con fecha anterior la muestran así).
+    antes: { fecha: "2026-11-20", tipo: "Comunicado", asunto: "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)", emisor: "Dirección, por medio de los tutores; redacta el equipo", interesados: ["I-11", "I-05"], canal: "Mensaje de WhatsApp del tutor de cada aula", sprint: 2, estado: "Programada", constancia: "Texto del mensaje y confirmación de envío de cada tutor", plan: "PC-07" } },
   { ...revisionSprint(1, "arquitectura y variables del modelo"), estado: "Realizada", constancia: "Se aprobaron la arquitectura del sistema, la lista de variables del modelo y la solicitud SC-08" },
 
   // Sprints 2 a 6

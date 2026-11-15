@@ -2007,8 +2007,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Iniciación",
   "proceso": "Iniciar el proyecto o fase",
   "salida": "Registro de supuestos",
-  "version": "1.2",
-  "fecha": "07/11/2026",
+  "version": "1.3",
+  "fecha": "15/11/2026",
   "resumen": "Lista lo que el proyecto da por cierto sin tener aún la prueba y los límites que no puede cambiar. Cada supuesto tiene quién lo comprueba y cuándo.",
   "carpeta": "01 - Gobernanza/1.1 Iniciar el proyecto",
   "drive": "https://drive.google.com/file/d/13gZY5mrzkBrcbx5i_OsVqMEZaP60hFWG/view",
@@ -2112,8 +2112,8 @@ export const DOCUMENTOS: DocDef[] = [
         "Dirección, con apoyo del equipo",
         "Antes del Sprint 5",
         {
-         "x": "Por comprobar",
-         "fill": "amarillo"
+         "x": "Comprobado: reunión informativa del 13/11/2026 con la directora y el Product Owner; conformidad verbal de los apoderados de todos los salones. Constancia escrita por firmar",
+         "fill": "verde"
         }
        ],
        [
@@ -8855,8 +8855,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Planificación",
   "proceso": "Planificar la gestión de las comunicaciones",
   "salida": "Plan de gestión de las comunicaciones",
-  "version": "1.3",
-  "fecha": "07/11/2026",
+  "version": "1.4",
+  "fecha": "15/11/2026",
   "resumen": "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
   "drive": "https://drive.google.com/file/d/1z0R1F6IIdWfBQqQl-jj5WkgVUop6X6Fo/view",
@@ -9139,7 +9139,7 @@ export const DOCUMENTOS: DocDef[] = [
     "bloques": [
      {
       "t": "p",
-      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 07/11/2026; el registro y el tablero del blog muestran su estado actualizado."
+      "x": "La matriz se convierte en fechas concretas en el registro de comunicaciones (INT-06). Estas son las comunicaciones programadas al 15/11/2026; el registro y el tablero del blog muestran su estado actualizado."
      },
      {
       "t": "tabla",
@@ -9158,16 +9158,6 @@ export const DOCUMENTOS: DocDef[] = [
        10
       ],
       "filas": [
-       [
-        "20/11/2026",
-        "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
-        "I-11, I-05",
-        "Dirección, por medio de los tutores; redacta el equipo",
-        {
-         "x": "2",
-         "align": "center"
-        }
-       ],
        [
         "04/12/2026",
         "Revisión del Sprint 2 e informe de desempeño: base de datos centralizada",
@@ -9558,8 +9548,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Ejecución",
   "proceso": "Gestionar las comunicaciones",
   "salida": "Comunicaciones del proyecto",
-  "version": "1.4",
-  "fecha": "07/11/2026",
+  "version": "1.5",
+  "fecha": "15/11/2026",
   "resumen": "Lleva la cuenta de cada comunicación del proyecto: las que ya se hicieron, con su constancia, y las programadas, con su fecha límite y su responsable. Es la fuente del tablero de comunicaciones del blog.",
   "carpeta": "02 - Interesados/2.5 Comunicaciones",
   "drive": "https://drive.google.com/file/d/1rDKKC1FdkN3tliwMU3pRPU0jP1AhH_G7/view",
@@ -9868,9 +9858,28 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Se aprobaron la arquitectura del sistema, la lista de variables del modelo y la solicitud SC-08"
+       ],
+       [
+        "C-15",
+        "13/11/2026",
+        "Reunión",
+        "Reunión informativa con los padres y apoderados sobre el proyecto y el uso de los datos",
+        "Promotora Directora y Helber Perez, Product Owner",
+        [
+         "I-11 Padres de familia y apoderados",
+         "I-05 Docentes tutores y auxiliares"
+        ],
+        "Reunión con los padres y apoderados",
+        {
+         "x": "Realizada",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Los apoderados de todos los salones dieron su conformidad de forma verbal. Constancia escrita para la firma de la directora"
        ]
       ],
-      "titulo": "Comunicaciones realizadas al 07/11/2026",
+      "titulo": "Comunicaciones realizadas al 15/11/2026",
       "compacta": true
      },
      {
@@ -9943,25 +9952,6 @@ export const DOCUMENTOS: DocDef[] = [
        11
       ],
       "filas": [
-       [
-        "C-15",
-        "20/11/2026",
-        "Comunicado",
-        "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
-        "Dirección, por medio de los tutores; redacta el equipo",
-        [
-         "I-11 Padres de familia y apoderados",
-         "I-05 Docentes tutores y auxiliares"
-        ],
-        "Mensaje de WhatsApp del tutor de cada aula",
-        {
-         "x": "Programada",
-         "fill": "azul",
-         "bold": true,
-         "align": "center"
-        },
-        "Texto del mensaje y confirmación de envío de cada tutor"
-       ],
        [
         "C-16",
         "04/12/2026",
@@ -10176,11 +10166,11 @@ export const DOCUMENTOS: DocDef[] = [
        [
         "Sprint 2",
         {
-         "x": "0",
+         "x": "1",
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "1",
          "align": "center"
         },
         {
@@ -10280,13 +10270,13 @@ export const DOCUMENTOS: DocDef[] = [
          "bold": true
         },
         {
-         "x": "14",
+         "x": "15",
          "fill": "gris",
          "align": "center",
          "bold": true
         },
         {
-         "x": "8",
+         "x": "7",
          "fill": "gris",
          "align": "center",
          "bold": true
@@ -10305,7 +10295,7 @@ export const DOCUMENTOS: DocDef[] = [
         }
        ]
       ],
-      "titulo": "Comunicaciones por momento del proyecto, al 07/11/2026"
+      "titulo": "Comunicaciones por momento del proyecto, al 15/11/2026"
      }
     ]
    }
@@ -14993,7 +14983,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "HT-02",
-        "Datos reales solo en la carpeta privada, códigos en vez de nombres y sin DNI. Falta el consentimiento de los apoderados."
+        "Datos reales solo en la carpeta privada, códigos en vez de nombres y sin DNI. Los apoderados dieron su conformidad en la reunión del 13/11/2026; faltan el inicio de sesión por rol y la base protegida en la nube."
        ],
        [
         "HT-03",

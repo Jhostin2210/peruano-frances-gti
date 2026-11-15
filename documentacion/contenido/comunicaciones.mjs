@@ -34,13 +34,14 @@ export const INT03 = DOC({
   area: "Planificación",
   proceso: "Planificar la gestión de las comunicaciones",
   salida: "Plan de gestión de las comunicaciones",
-  version: "1.3",
-  fecha: "07/11/2026",
+  version: "1.4",
+  fecha: "15/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaEmision, "Se agregan los requisitos de información, el calendario de comunicaciones, los formatos, los indicadores y el glosario.", P.director],
     ["1.2", P.fechaCorte, "Canal único con el colegio a través del Product Owner (SC-11), aviso a los apoderados por WhatsApp de los tutores y avances semanales los sábados.", P.director],
     ["1.3", "07/11/2026", "El aviso a los apoderados se reprograma para el 20/11/2026 (fecha tentativa).", P.director],
+    ["1.4", "15/11/2026", "El aviso a los apoderados (PC-07) se cumplió en la reunión informativa del 13/11/2026 con la directora y el Product Owner. Corte al 15/11/2026.", P.director],
   ],
   resumen:
     "Establece qué información necesita cada interesado, quién la envía, por qué canal, con qué frecuencia y en qué fechas; los formatos que se usan, las reglas para proteger los datos de los estudiantes y cómo se mide si la comunicación funciona.",
@@ -220,14 +221,15 @@ const tablaRegistro = (lista, titulo) =>
 export const INT06 = DOC({
   ...base,
   id: "INT-06",
-  version: "1.4",
-  fecha: "07/11/2026",
+  version: "1.5",
+  fecha: "15/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Reunión de inicio realizada, canal por el Product Owner, avances los sábados y aviso a los apoderados por WhatsApp de los tutores.", P.director],
   ["1.2", "19/10/2026", "Se registra la presentación del 17/10/2026 al docente asesor y sus observaciones.", P.director],
     ["1.3", "31/10/2026", "Se registran el pedido de las exportaciones de Cubicol y el taller de validación con los docentes tutores del 28/10/2026. Corte al 31/10/2026.", P.director],
     ["1.4", "07/11/2026", "Se registran las comunicaciones del 24/10 al 06/11/2026, la asistencia al taller del 28/10 y la revisión del Sprint 1; el aviso a los apoderados se reprograma.", P.director],
+    ["1.5", "15/11/2026", "Reunión informativa con los apoderados del 13/11/2026 (conformidad verbal de todos los salones). Corte al 15/11/2026.", P.director],
   ],
   titulo: "Registro de comunicaciones",
   archivo: "INT-06 Registro de comunicaciones",
@@ -298,15 +300,17 @@ export const INT06 = DOC({
 });
 
 // ───────────────────────── INT-07 ─────────────────────────
+// El informe es al 17/10/2026: las comunicaciones que cambiaron después se muestran como figuraban entonces.
+const HISTORICO = COMUNICACIONES.map((x) => x.antes ?? x);
 const porCanal = Object.entries(
-  COMUNICACIONES.reduce((a, x) => {
+  HISTORICO.reduce((a, x) => {
     a[x.canal] ??= { Realizada: 0, Programada: 0, "Por confirmar": 0, Vencida: 0 };
     a[x.canal][estadoAl(x, CORTE_INFORME)]++;
     return a;
   }, {}),
 ).sort((a, b) => b[1].Realizada + b[1].Programada + b[1].Vencida - (a[1].Realizada + a[1].Programada + a[1].Vencida));
 const centro = (n, extra = {}) => c(String(n), undefined, { align: "center", ...extra });
-const debidas = COMUNICACIONES.filter((x) => x.fecha < CORTE_INFORME);
+const debidas = HISTORICO.filter((x) => x.fecha < CORTE_INFORME);
 const pctCalendario = debidas.length ? `${Math.round((100 * debidas.filter((x) => estadoAl(x, CORTE_INFORME) === "Realizada").length) / debidas.length)} %` : "—";
 
 export const INT07 = DOC({

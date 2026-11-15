@@ -421,12 +421,13 @@ export const GOB02 = DOC({
 export const GOB03 = DOC({
   ...base,
   id: "GOB-03",
-  version: "1.2",
-  fecha: "07/11/2026",
+  version: "1.3",
+  fecha: "15/11/2026",
   versiones: [
     ["1.0", P.fechaEmision, "Versión inicial del documento.", P.director],
     ["1.1", P.fechaCorte, "Se registran el Product Owner designado (S-04 comprobado), la restricción R-08 y el supuesto S-12.", P.director],
     ["1.2", "07/11/2026", "Supuestos de recursos S-13 a S-15 (REC-02) y primera exportación de Cubicol recibida (S-01).", P.director],
+    ["1.3", "15/11/2026", "S-06 comprobado: conformidad de los apoderados en la reunión informativa del 13/11/2026.", P.director],
   ],
   titulo: "Registro de supuestos y restricciones",
   archivo: "GOB-03 Registro de supuestos",
@@ -459,7 +460,8 @@ export const GOB03 = DOC({
             ["S-03", "La asistencia y las incidencias podrán registrarse en formato digital desde el Sprint 2.", "El modelo trabaja solo con notas y pierde variables.", `${R.jadira}, con la Dirección`, "Sprint 2", c("Por comprobar", "amarillo")],
             ["S-04", "El colegio designará a una persona como Product Owner.", "Se retrasan las decisiones de prioridad y la aceptación de entregables.", R.jhostin, `Semana del ${P.inicio}`, c("Comprobado: Helber Perez, docente de la institución (reunión de inicio, 12/10/2026)", "verde")],
             ["S-05", "Los planes gratuitos de alojamiento y base de datos alcanzan para 200 estudiantes y unos 20 usuarios.", "Se requiere un plan de pago o cambiar de proveedor.", R.jadira, "Sprint 1 (diseño de arquitectura)", c("Por comprobar", "amarillo")],
-            ["S-06", "Los apoderados serán informados y darán su consentimiento para el tratamiento de los datos.", "No se pueden cargar datos reales en la nube; el piloto se haría con datos anonimizados.", "Dirección, con apoyo del equipo", "Antes del Sprint 5", c("Por comprobar", "amarillo")],
+            ["S-06", "Los apoderados serán informados y darán su consentimiento para el tratamiento de los datos.", "No se pueden cargar datos reales en la nube; el piloto se haría con datos anonimizados.", "Dirección, con apoyo del equipo", "Antes del Sprint 5", c("Comprobado: reunión informativa del 13/11/2026 con la directora y el Product Owner; conformidad verbal de los apoderados de todos los salones. Constancia escrita por firmar", "verde")],
+
             ["S-07", "Tres docentes tutores participarán en el piloto en marzo de 2027.", "El piloto no se realiza o pierde validez.", R.jhostin, "Sprint 4", c("Por comprobar", "amarillo")],
             ["S-08", "Las clases terminan en diciembre de 2026 y se reanudan en marzo de 2027.", "Cambian las fechas del piloto y de las pruebas de aceptación.", `${R.jhostin}, con la Dirección`, `Semana del ${P.inicio}`, c("Por comprobar", "amarillo")],
             ["S-09", "El servicio de internet del colegio se mantiene estable.", "El tablero no está disponible en horario escolar.", "Encargado de TI del colegio", "Sprint 5", c("Por comprobar: en la entrevista se mencionó lentitud reciente", "amarillo")],

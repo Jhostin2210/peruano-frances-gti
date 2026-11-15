@@ -10103,6 +10103,7 @@ export const SEGUIMIENTO_ALCANCE = [
   "hechos": [
    "09/11: el Product Owner aprueba la SC-12 (nivelación de la carga del Sprint 2).",
    "13/11: la base de datos se rearma solo con Cubicol (SC-13): 402 notas de 48 estudiantes; CP-01 y CP-02 repetidos.",
+   "13/11: reunión informativa de la directora y el Product Owner con los apoderados de todos los salones: conformidad verbal con el uso de los datos (supuesto S-06).",
    "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
    "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
    "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03)."
@@ -11178,7 +11179,7 @@ export const INCIDENTES = [
  }
 ];
 
-export const CORTE = "2026-11-07";
+export const CORTE = "2026-11-15";
 
 export const PLAN_COMUNICACIONES = [
  {
@@ -11525,19 +11526,34 @@ export const COMUNICACIONES = [
  {
   "id": "C-15",
   "cuando": "",
-  "fecha": "2026-11-20",
-  "tipo": "Comunicado",
-  "asunto": "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
-  "emisor": "Dirección, por medio de los tutores; redacta el equipo",
+  "fecha": "2026-11-13",
+  "tipo": "Reunión",
+  "asunto": "Reunión informativa con los padres y apoderados sobre el proyecto y el uso de los datos",
+  "emisor": "Promotora Directora y Helber Perez, Product Owner",
   "interesados": [
    "I-11",
    "I-05"
   ],
-  "canal": "Mensaje de WhatsApp del tutor de cada aula",
+  "canal": "Reunión con los padres y apoderados",
   "sprint": 2,
-  "estado": "Programada",
-  "constancia": "Texto del mensaje y confirmación de envío de cada tutor",
-  "plan": "PC-07"
+  "estado": "Realizada",
+  "constancia": "Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Los apoderados de todos los salones dieron su conformidad de forma verbal. Constancia escrita para la firma de la directora",
+  "plan": "PC-07",
+  "antes": {
+   "fecha": "2026-11-20",
+   "tipo": "Comunicado",
+   "asunto": "Aviso a los apoderados sobre el proyecto y el uso de los datos (reprogramado del 06/11; fecha tentativa)",
+   "emisor": "Dirección, por medio de los tutores; redacta el equipo",
+   "interesados": [
+    "I-11",
+    "I-05"
+   ],
+   "canal": "Mensaje de WhatsApp del tutor de cada aula",
+   "sprint": 2,
+   "estado": "Programada",
+   "constancia": "Texto del mensaje y confirmación de envío de cada tutor",
+   "plan": "PC-07"
+  }
  },
  {
   "id": "C-16",
