@@ -226,7 +226,7 @@ export const DOCUMENTOS: DocDef[] = [
        ],
        [
         "Solicitudes de cambio registradas",
-        "13",
+        "14",
         "GOB-10"
        ]
       ],
@@ -4672,8 +4672,8 @@ export const DOCUMENTOS: DocDef[] = [
   "area": "Monitoreo y control",
   "proceso": "Evaluar e implementar cambios",
   "salida": "Solicitudes de cambio aprobadas y registro de cambios",
-  "version": "1.5",
-  "fecha": "13/11/2026",
+  "version": "1.6",
+  "fecha": "15/11/2026",
   "resumen": "Establece cómo se solicita, evalúa y decide un cambio, y registra los cambios que separan la versión anterior del proyecto de la versión vigente.",
   "carpeta": "01 - Gobernanza/1.8 Cambios",
   "drive": "https://drive.google.com/file/d/16NuJVDQzJAE-Uk9rGZfLq8uTR_qgt0ue/view",
@@ -5010,7 +5010,21 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         "Propuesto y aprobado por el Product Owner el 13/11/2026.",
-        "Base rearmada el 13/11/2026 en el sistema; la base anterior queda como respaldo privado. Casos de prueba CP-01 y CP-02 repetidos y CP-03 en 2 de 3 cargas."
+        "Base rearmada el 13/11/2026 en el sistema; la base anterior queda como respaldo privado. Casos de prueba CP-01 y CP-02 repetidos; CP-03 aprobado con la carga 3 del 15/11/2026."
+       ],
+       [
+        "SC-14",
+        "Validación del modelo por competencias",
+        "Cubicol guarda el promedio del curso después de la recuperación, que nunca baja de 11: con el criterio de la SC-08 («le fue mal» si la nota del periodo siguiente es menor de 11) no hay ningún caso que medir.",
+        "Criterio de validación del requisito REQ-03 y paquete 1.3.3: «le fue mal» si alguna competencia del curso tiene promedio menor de 11 en el periodo siguiente. El sistema guarda el promedio de cada competencia que trae el registro auxiliar de Cubicol.",
+        {
+         "x": "Aprobado",
+         "fill": "verde",
+         "bold": true,
+         "align": "center"
+        },
+        "Aprobado por el Product Owner el 15/11/2026 (opción B de las tres evaluadas).",
+        "Aplicado en el sistema el 15/11/2026: 118 de 550 casos con alguna competencia desaprobada; AUC en el colegio 0,71. El criterio del REQ-03 se actualiza en la próxima versión de los requisitos (ALC-03)."
        ]
       ],
       "titulo": "Registro de cambios al 17/10/2026",

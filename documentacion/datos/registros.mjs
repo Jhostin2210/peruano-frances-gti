@@ -126,7 +126,18 @@ export const CAMBIOS = [
     presentado: "2026-11-13",
     decidido: "2026-11-13",
     decision: "Propuesto y aprobado por el Product Owner el 13/11/2026.",
-    aplicacion: "Base rearmada el 13/11/2026 en el sistema; la base anterior queda como respaldo privado. Casos de prueba CP-01 y CP-02 repetidos y CP-03 en 2 de 3 cargas.",
+    aplicacion: "Base rearmada el 13/11/2026 en el sistema; la base anterior queda como respaldo privado. Casos de prueba CP-01 y CP-02 repetidos; CP-03 aprobado con la carga 3 del 15/11/2026.",
+  },
+  {
+    id: "SC-14",
+    titulo: "Validación del modelo por competencias",
+    origen: "Cubicol guarda el promedio del curso después de la recuperación, que nunca baja de 11: con el criterio de la SC-08 («le fue mal» si la nota del periodo siguiente es menor de 11) no hay ningún caso que medir.",
+    impacto: "Criterio de validación del requisito REQ-03 y paquete 1.3.3: «le fue mal» si alguna competencia del curso tiene promedio menor de 11 en el periodo siguiente. El sistema guarda el promedio de cada competencia que trae el registro auxiliar de Cubicol.",
+    estado: "Aprobado",
+    presentado: "2026-11-15",
+    decidido: "2026-11-15",
+    decision: "Aprobado por el Product Owner el 15/11/2026 (opción B de las tres evaluadas).",
+    aplicacion: "Aplicado en el sistema el 15/11/2026: 118 de 550 casos con alguna competencia desaprobada; AUC en el colegio 0,71. El criterio del REQ-03 se actualiza en la próxima versión de los requisitos (ALC-03).",
   },
 ];
 
