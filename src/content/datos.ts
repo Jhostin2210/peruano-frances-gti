@@ -11537,7 +11537,7 @@ export const COMUNICACIONES = [
   "canal": "Reunión presencial en el colegio",
   "sprint": 2,
   "estado": "Realizada",
-  "constancia": "Asistieron unos 50 padres y apoderados de todos los salones. Se les dio toda la información prevista para el aviso (PC-07): objetivo del sistema, datos que usa (notas y promedios por competencia de Cubicol; no DNI, dirección, teléfonos ni salud), cómo se protegen, para qué se usan y su derecho a pedir información o a que no se usen. Dieron su conformidad de forma verbal; los que no pudieron asistir recibieron la misma información por WhatsApp y dieron su conformidad por ese medio. Constancia escrita para la firma de la directora",
+  "constancia": "Asistieron unos 50 padres y apoderados de todos los salones. Se les dio toda la información prevista para el aviso (PC-07): objetivo del sistema, datos que usa (notas y promedios por competencia de Cubicol; no DNI, dirección, teléfonos ni salud), cómo se protegen, para qué se usan y su derecho a pedir información o a que no se usen. Dieron su conformidad de forma verbal; los que no pudieron asistir recibieron la misma información por WhatsApp y dieron su conformidad por ese medio. Constancia firmada por la directora y el Product Owner el 15/11/2026",
   "plan": "PC-07",
   "antes": {
    "fecha": "2026-11-20",
