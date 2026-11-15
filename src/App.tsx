@@ -16,7 +16,7 @@ import ObjetivoAnalysis from "./components/ObjetivoAnalysis";
 import AlternativesAnalysis from "./components/AlternativesAnalysis";
 import RequisitosAnalysis from "./components/RequisitosAnalysis";
 import ScheduleBaseline from "./components/ScheduleBaseline";
-import CostBaseline from "./components/CostBaseline";
+import { ControlCronogramaCostos, FinanzasPresupuesto, ResumenControlCronograma } from "./components/Finanzas";
 import VideoPresentation from "./components/VideoPresentation";
 import ReferenciasBiblio from "./components/ReferenciasBiblio";
 import MarcoPmbok from "./components/MarcoPmbok";
@@ -364,6 +364,7 @@ export default function App() {
               "Plan de gestión del cronograma",
               "Línea base del cronograma y calendario",
               "Cronograma de hitos",
+              "Control con valor ganado: SPI al corte (FIN-03)",
             ]}
           />
           <DominioPmbok
@@ -376,6 +377,7 @@ export default function App() {
                   <EntregablesCronograma />
                 </>
               ),
+              "cro-3": <ResumenControlCronograma />,
             }}
           />
 
@@ -416,38 +418,39 @@ export default function App() {
             }}
           />
 
-          {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}
-
           {/* CAPÍTULO 10 — DOMINIO DE FINANZAS */}
           <ChapterIntro
             num="10"
-            title="Dominio de Finanzas: Línea Base de Costos"
-            subtitle="Estimación de costos por categoría, línea base de costos y distribución en el tiempo. Elaborado en el curso anterior; pendiente de actualizar en esta etapa."
-            subheading="Capítulo 10 · Curso anterior · Pendiente de actualizar"
+            title="Dominio de Finanzas"
+            subtitle="Plan de gestión financiera, estimación de costos, línea base de costos con su curva S y control con valor ganado, con el cronograma v3.1 y tarifas de profesional junior."
+            subheading="Capítulo 10 · Dominio de desempeño · 4 procesos"
             inputs={[
-              "Diccionario de la EDT",
-              "Cronograma de seis sprints",
-              "Tarifas del mercado laboral de TI de Lima, 2026",
+              "Cronograma v3.1 y estimación de los recursos (REC-01)",
+              "Tarifario del curso anterior (mercado de Lima 2026)",
+              "Actividades terminadas con su evidencia",
             ]}
             tools={[
-              "Estimación ascendente",
-              "Estimación por tres valores (PERT)",
-              "Análisis de reserva",
-              "Curva S por sprints",
+              "Estimación ascendente y paramétrica",
+              "Análisis de reservas",
+              "Curva S",
+              "Análisis del valor ganado y pronósticos",
             ]}
             outputs={[
-              "Estimación de costos por categoría",
-              "Línea base de costos: S/ 59,859.17",
-              "Presupuesto total: S/ 63,495.53",
+              "Plan de gestión financiera (FIN-01)",
+              "Línea base de costos (FIN-02)",
+              "Informe de control del cronograma y los costos (FIN-03)",
             ]}
           />
-          <AvisoEtapa tipo="anterior">
-            Este capítulo se elaboró en el curso anterior con la sexta edición del PMBOK y el equipo de entonces. Los
-            montos siguen vigentes, pero las fechas, los responsables y la partida de servidor local corresponden a la versión anterior:
-            se actualizarán cuando el equipo desarrolle el dominio de Finanzas (pendiente registrado en <strong>SC-02</strong> y{" "}
-            <strong>SC-03</strong>).
-          </AvisoEtapa>
-          <CostBaseline />
+          <DominioPmbok
+            dominio="Finanzas"
+            capitulo="10"
+            despues={{
+              "fin-3": <FinanzasPresupuesto />,
+              "fin-4": <ControlCronogramaCostos />,
+            }}
+          />
+
+          {/* ═════════ PARTE III · MATERIAL DEL CURSO ANTERIOR ═════════ */}
 
           {/* CAPÍTULO 11 — VIDEO DE PRESENTACIÓN */}
           <ChapterIntro

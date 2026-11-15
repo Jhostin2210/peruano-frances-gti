@@ -341,6 +341,9 @@ const ANEXOS: Record<string, TocSection[]> = {
     { label: "↳ Planillas de requisitos", href: "#p05-planillas" },
   ],
   "alc-5": [{ label: "↳ Tablero de monitoreo del alcance", href: "#alc-tablero" }],
+  "cro-3": [{ label: "↳ Índice del cronograma (SPI)", href: "#cro-control" }],
+  "fin-3": [{ label: "↳ Línea base y curva S", href: "#fin-presupuesto" }],
+  "fin-4": [{ label: "↳ Tablero de valor ganado", href: "#fin-control" }],
   "rec-1": [{ label: "↳ Organigrama, RACI y FODA", href: "#rec-plan" }],
   "rec-2": [{ label: "↳ Estimación de los recursos", href: "#rec-estimacion" }],
   "rec-3": [{ label: "↳ Asignaciones e histograma", href: "#rec-adquirir" }],
@@ -472,24 +475,7 @@ export const TOC_CHAPTERS: TocChapter[] = [
   { num: "07", label: "Dominio de Alcance", groups: gruposDeDominio("Alcance") },
   { num: "08", label: "Dominio de Cronograma", groups: gruposDeDominio("Cronograma") },
   { num: "09", label: "Dominio de Recursos", groups: gruposDeDominio("Recursos") },
-  {
-    num: "10",
-    label: "Dominio de Finanzas (curso anterior)",
-    groups: [
-      { label: "Planificación & Estimación", color: "text-blue-600", sections: [
-        { label: "Plan de Gestión de Costos", href: "#p07-gestion-costos" },
-        { label: "Estimación de Costos (PERT)", href: "#p07-estimacion-pert" },
-      ] },
-      { label: "Presupuesto", color: "text-amber-600", sections: [
-        { label: "Determinación de Presupuesto", href: "#p07-presupuesto" },
-        { label: "Distribución Temporal (Curva S)", href: "#p07-curva-s" },
-      ] },
-      { label: "Alineación y Cierre", color: "text-purple-600", sections: [
-        { label: "Alineación SCRUM v2", href: "#p07-alineacion-scrum" },
-        { label: "Conclusiones Financieras", href: "#p07-conclusiones" },
-      ] },
-    ],
-  },
+  { num: "10", label: "Dominio de Finanzas", groups: gruposDeDominio("Finanzas") },
   {
     num: "11",
     label: "Video de la Solución (curso anterior)",

@@ -9,6 +9,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { RBS } from "./datos/recursos.mjs";
 import { ORGANIGRAMA, histograma } from "./datos/gestion-recursos.mjs";
+import { CORTE_CONTROL, curvaS, valorGanado } from "./datos/finanzas.mjs";
 import { PROYECTO as P } from "./proyecto.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -118,6 +119,34 @@ function htmlHistograma() {
 <div class="ley"><div><span style="background:#0d7377"></span>Horas asignadas</div><div><span style="background:#f59e0b"></span>Hasta 10 % más que lo disponible</div><div><span style="background:#dc2626"></span>Más del 10 % sobre lo disponible</div><div><span style="border-top:2px dashed #1f3864;height:0"></span>Disponible en la semana (20 h; menos con feriados)</div><div>Escala: 0 a ${max} h</div></div></div>`;
 }
 
+// ── Curva S: valor planificado acumulado por semana y valor ganado y costo real al corte ──
+function htmlCurvaS() {
+  const c = curvaS(), v = valorGanado(CORTE_CONTROL);
+  const W = 1000, H = 380, m = { l: 70, r: 20, t: 20, b: 50 };
+  const max = Math.ceil(c[c.length - 1].pvAcumulado / 2000) * 2000;
+  const x = (k) => m.l + ((k - 0.5) / c.length) * (W - m.l - m.r);
+  const y = (val) => H - m.b - (val / max) * (H - m.t - m.b);
+  const semCorte = c.findIndex((s) => s.viernes >= CORTE_CONTROL) + 1;
+  const linea = c.map((s, i) => `${i ? "L" : "M"}${x(s.semana).toFixed(1)},${y(s.pvAcumulado).toFixed(1)}`).join(" ");
+  const ejeY = Array.from({ length: max / 2000 + 1 }, (_, i) => i * 2000).map((val) => `<line x1="${m.l}" x2="${W - m.r}" y1="${y(val)}" y2="${y(val)}" stroke="#e2e8f0"/><text x="${m.l - 8}" y="${y(val) + 4}" text-anchor="end" font-size="11" fill="#64748b">S/ ${(val / 1000).toFixed(0)} mil</text>`).join("");
+  const ejeX = c.map((s) => `<text x="${x(s.semana)}" y="${H - m.b + 16}" text-anchor="middle" font-size="10" fill="#64748b">${s.semana}</text>`).join("");
+  const sprints = [[1, 4], [5, 8], [9, 12], [13, 16], [17, 20], [21, 24]].map(([a, b], i) => `<text x="${(x(a) + x(b)) / 2}" y="${H - m.b + 34}" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f3864">Sprint ${i + 1}</text>`).join("");
+  const pvCorte = c[semCorte - 1].pvAcumulado;
+  return `<!doctype html><meta charset="utf-8"><style>*{margin:0} body{font-family:Arial,sans-serif;background:#fff} #fig{width:${W}px;padding:6px}</style>
+<div id="fig"><svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">${ejeY}${ejeX}${sprints}
+<line x1="${x(semCorte)}" x2="${x(semCorte)}" y1="${m.t}" y2="${H - m.b}" stroke="#94a3b8" stroke-dasharray="4 4"/>
+<text x="${x(semCorte) + 6}" y="${m.t + 12}" font-size="11" fill="#475569">Corte ${CORTE_CONTROL.split("-").reverse().join("/")}</text>
+<path d="${linea}" fill="none" stroke="#1f3864" stroke-width="2.5"/>
+<circle cx="${x(semCorte)}" cy="${y(pvCorte)}" r="6" fill="#1f3864"/>
+<circle cx="${x(semCorte)}" cy="${y(v.EV)}" r="7" fill="#0d7377"/>
+<circle cx="${x(semCorte)}" cy="${y(v.AC)}" r="3.5" fill="#f59e0b"/>
+<text x="${x(semCorte) + 12}" y="${y(v.EV) - 6}" font-size="12" font-weight="bold" fill="#0d7377">EV S/ ${v.EV.toFixed(0)}</text>
+<text x="${x(semCorte) + 12}" y="${y(pvCorte) + 16}" font-size="12" font-weight="bold" fill="#1f3864">PV S/ ${pvCorte.toFixed(0)}</text>
+</svg>
+<div style="font-size:12px;color:#334155;margin:4px 0 0 ${m.l}px;display:flex;gap:22px">
+<span><b style="color:#1f3864">━</b> Valor planificado acumulado (PV)</span><span><b style="color:#0d7377">●</b> Valor ganado (EV)</span><span><b style="color:#f59e0b">●</b> Costo real estimado (AC = EV)</span><span>Eje X: semana del cronograma</span></div></div>`;
+}
+
 // ── Captura con Edge ──
 async function capturar(html, destino) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "sia-t-fig-"));
@@ -170,6 +199,7 @@ const FIGURAS = [
   ["rbs.png", htmlArbol({ raiz: { nombre: `${P.sigla} · Recursos del proyecto` }, nodos: RBS })],
   ["organigrama.png", htmlArbol({ raiz: ORGANIGRAMA.raiz, nodos: ORGANIGRAMA.hijos, ancho: 900 })],
   ["histograma.png", htmlHistograma()],
+  ["curva-s.png", htmlCurvaS()],
 ];
 fs.mkdirSync(path.join(AQUI, "..", "public", "figuras"), { recursive: true });
 for (const [archivo, html] of FIGURAS) {

@@ -769,9 +769,42 @@ export const DOCUMENTOS: DocDef[] = [
         "Monitorear y controlar los recursos",
         "Monitoreo y control",
         "05 - Recursos"
+       ],
+       [
+        {
+         "x": "FIN-01",
+         "bold": true
+        },
+        "Plan de gestión financiera",
+        "Finanzas",
+        "Planificar la gestión financiera",
+        "Planificación",
+        "06 - Finanzas"
+       ],
+       [
+        {
+         "x": "FIN-02",
+         "bold": true
+        },
+        "Estimación de costos y presupuesto",
+        "Finanzas",
+        "Estimar los costos y desarrollar el presupuesto",
+        "Planificación",
+        "06 - Finanzas"
+       ],
+       [
+        {
+         "x": "FIN-03",
+         "bold": true
+        },
+        "Informe de control del cronograma y los costos N.º 1",
+        "Finanzas",
+        "Monitorear y controlar el cronograma y las finanzas",
+        "Monitoreo y control",
+        "06 - Finanzas"
        ]
       ],
-      "titulo": "Documentos emitidos (35)",
+      "titulo": "Documentos emitidos (38)",
       "compacta": true,
       "fuente": "Cada documento está en Word y en PDF dentro de su carpeta. Los PDF también se publican en el blog."
      }
@@ -843,7 +876,7 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "2",
+         "x": "3",
          "align": "center"
         },
         {
@@ -860,12 +893,12 @@ export const DOCUMENTOS: DocDef[] = [
          "align": "center"
         },
         {
-         "x": "0",
+         "x": "4",
          "align": "center"
         },
         {
-         "x": "Curso anterior",
-         "fill": "azul",
+         "x": "Desarrollado",
+         "fill": "verde",
          "bold": true
         },
         "Estimación y presupuesto del curso anterior; falta redistribuirlos con el calendario nuevo."
@@ -24182,6 +24215,2177 @@ export const DOCUMENTOS: DocDef[] = [
     ]
    }
   ]
+ },
+ {
+  "id": "FIN-01",
+  "titulo": "Plan de gestión financiera",
+  "dominio": "Finanzas",
+  "area": "Planificación",
+  "proceso": "Planificar la gestión financiera",
+  "salida": "Plan de gestión financiera",
+  "version": "1.0",
+  "fecha": "15/11/2026",
+  "resumen": "Define cómo se estiman, presupuestan y controlan los costos del proyecto: unidades, tarifas, reservas, método de valor ganado, umbrales e informes.",
+  "carpeta": "06 - Finanzas",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Propósito y entradas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "Este plan forma parte del plan para la dirección del proyecto (GOB-04). Se basa en el cronograma v3.1 (CRO-01), la estimación de los recursos (REC-01), la estrategia de abastecimiento (GOB-05) y la restricción R-02: el proyecto no tiene presupuesto institucional."
+     }
+    ]
+   },
+   {
+    "titulo": "2. Financiamiento y unidades",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Tema",
+       "Definición"
+      ],
+      "anchos": [
+       26,
+       74
+      ],
+      "filas": [
+       [
+        "Financiamiento",
+        "Autofinanciado por el equipo. No hay pagos en efectivo: los costos son de oportunidad (el valor de las horas del equipo)."
+       ],
+       [
+        "Recursos físicos",
+        "Sin costo para el proyecto: laptops e internet propios, software libre y planes gratuitos en la nube (REC-01)."
+       ],
+       [
+        "Personal del colegio",
+        "No se costea: su participación es aporte del colegio."
+       ],
+       [
+        "Unidad de medida",
+        "Soles (S/) con dos decimales; horas de trabajo."
+       ],
+       [
+        "Unidad de control",
+        "Actividad del cronograma, agrupada por paquete de la EDT y por sprint."
+       ]
+      ],
+      "titulo": "Financiamiento y unidades"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Tarifas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Integrante",
+       "Rol",
+       "Referencia del curso anterior",
+       "Mensual",
+       "Por hora"
+      ],
+      "anchos": [
+       20,
+       26,
+       24,
+       15,
+       15
+      ],
+      "filas": [
+       [
+        "Jhostin Galarza",
+        "Director del proyecto y Scrum Master",
+        "Líder de proyecto (S/ 6 000)",
+        {
+         "x": "S/ 3 000,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 17,05",
+         "align": "right",
+         "bold": true
+        }
+       ],
+       [
+        "Helber Perez",
+        "Product Owner y modelo de Machine Learning",
+        "Científico de datos (S/ 5 500)",
+        {
+         "x": "S/ 2 750,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 15,63",
+         "align": "right",
+         "bold": true
+        }
+       ],
+       [
+        "Jadira Vasquez",
+        "Datos, alertas y despliegue",
+        "Área de TI (S/ 4 666,67)",
+        {
+         "x": "S/ 2 333,33",
+         "align": "right"
+        },
+        {
+         "x": "S/ 13,26",
+         "align": "right",
+         "bold": true
+        }
+       ],
+       [
+        "Carlos Curo",
+        "Tablero web y control de cambios",
+        "Área de TI (S/ 4 666,67)",
+        {
+         "x": "S/ 2 333,33",
+         "align": "right"
+        },
+        {
+         "x": "S/ 13,26",
+         "align": "right",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Tarifas de profesional junior (176 horas por mes)",
+      "fuente": "El equipo eligió el 15/11/2026 la mitad del tarifario del curso anterior (mercado laboral de Lima 2026), por tratarse de estudiantes en roles profesionales."
+     }
+    ]
+   },
+   {
+    "titulo": "4. Reservas",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Reserva",
+       "Cálculo",
+       "Monto",
+       "Quién la usa"
+      ],
+      "anchos": [
+       22,
+       34,
+       16,
+       28
+      ],
+      "filas": [
+       [
+        "Contingencia",
+        "10 % del costo de cada sprint",
+        {
+         "x": "S/ 1 816,04",
+         "align": "right"
+        },
+        "El director del proyecto, para riesgos identificados (por ejemplo, la sobrecarga de los Sprints 3 y 5)."
+       ],
+       [
+        "Gestión",
+        "Una semana de trabajo de todo el equipo",
+        {
+         "x": "S/ 1 184,00",
+         "align": "right"
+        },
+        "Con solicitud de cambio aprobada por el Product Owner (GOB-10)."
+       ]
+      ],
+      "titulo": "Reservas del presupuesto"
+     }
+    ]
+   },
+   {
+    "titulo": "5. Control con valor ganado",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "**Valor planificado (PV):** costo de las horas que el cronograma programa hasta la fecha de corte.",
+       "**Valor ganado (EV):** costo planificado de lo realmente terminado. Cada actividad vale 0 % o 100 %; pasa a 100 % cuando su entregable tiene evidencia. Las parciales se declaran con su evidencia. La reunión diaria es de nivel de esfuerzo (su EV es igual a su PV).",
+       "**Costo real (AC):** horas registradas por la tarifa de cada integrante (plantilla GOB-13, desde el 16/11/2026).",
+       "**Índices:** SPI = EV ÷ PV y CPI = EV ÷ AC; pronóstico EAC = BAC ÷ CPI."
+      ]
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Índice",
+       "Verde",
+       "Amarillo",
+       "Rojo"
+      ],
+      "anchos": [
+       25,
+       25,
+       25,
+       25
+      ],
+      "filas": [
+       [
+        "SPI y CPI",
+        {
+         "x": "0,95 o más",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "0,90 a 0,94",
+         "fill": "amarillo",
+         "align": "center"
+        },
+        {
+         "x": "menos de 0,90",
+         "fill": "rojo",
+         "align": "center"
+        }
+       ],
+       [
+        "Qué se hace",
+        {
+         "x": "Seguir",
+         "align": "center"
+        },
+        {
+         "x": "Acción correctiva en el sprint",
+         "align": "center"
+        },
+        {
+         "x": "Solicitud de cambio (GOB-10)",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Umbrales de control"
+     },
+     {
+      "t": "p",
+      "x": "Corte: el viernes de cada semana para el informe semanal (GOB-13) y al cierre de cada sprint para el informe de control (FIN-03 y siguientes)."
+     }
+    ]
+   },
+   {
+    "titulo": "6. Cambios respecto del curso anterior",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Aspecto",
+       "Curso anterior",
+       "Curso actual"
+      ],
+      "anchos": [
+       26,
+       37,
+       37
+      ],
+      "filas": [
+       [
+        "Jornada",
+        "8 horas diarias, jornada completa",
+        "50 % de dedicación (4 horas por día por actividad), como en REC-01"
+       ],
+       [
+        "Tarifas",
+        "Mercado de Lima 2026, nivel profesional",
+        "Profesional junior: la mitad"
+       ],
+       [
+        "Fechas",
+        "marzo a agosto de 2026",
+        "Del 12/10/2026 al 23/04/2027 (cronograma v3.1)"
+       ],
+       [
+        "Presupuesto total",
+        "S/ 63 495,53",
+        "S/ 21 160,40"
+       ]
+      ],
+      "titulo": "Qué cambió"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "FIN-02",
+  "titulo": "Estimación de costos y presupuesto",
+  "dominio": "Finanzas",
+  "area": "Planificación",
+  "proceso": "Estimar los costos y desarrollar el presupuesto",
+  "salida": "Estimaciones de costos, línea base de costos y requisitos de financiamiento",
+  "version": "1.0",
+  "fecha": "15/11/2026",
+  "resumen": "Estima el costo de cada actividad desde las horas del cronograma y las tarifas, lo agrega por integrante, paquete de la EDT y sprint, y fija la línea base de costos con su curva S.",
+  "carpeta": "06 - Finanzas",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Base de la estimación",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "ul",
+      "items": [
+       "Estimación ascendente: 45 actividades del cronograma; cada responsable del equipo dedica 4 horas por día hábil (8 horas al 50 %).",
+       "Reunión diaria: 15 minutos por integrante y día hábil, desde el Sprint 2.",
+       "Costo = horas × tarifa del integrante (FIN-01). Recursos físicos y personal del colegio: sin costo para el proyecto."
+      ]
+     }
+    ]
+   },
+   {
+    "titulo": "2. Costo por integrante",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Integrante",
+       "Horas",
+       "Tarifa",
+       "Costo"
+      ],
+      "anchos": [
+       40,
+       20,
+       20,
+       20
+      ],
+      "filas": [
+       [
+        "Jhostin Galarza",
+        {
+         "x": "208,5",
+         "align": "right"
+        },
+        {
+         "x": "S/ 17,05",
+         "align": "right"
+        },
+        {
+         "x": "S/ 3 554,93",
+         "align": "right"
+        }
+       ],
+       [
+        "Helber Perez",
+        {
+         "x": "348,5",
+         "align": "right"
+        },
+        {
+         "x": "S/ 15,63",
+         "align": "right"
+        },
+        {
+         "x": "S/ 5 447,06",
+         "align": "right"
+        }
+       ],
+       [
+        "Jadira Vasquez",
+        {
+         "x": "416,5",
+         "align": "right"
+        },
+        {
+         "x": "S/ 13,26",
+         "align": "right"
+        },
+        {
+         "x": "S/ 5 522,79",
+         "align": "right"
+        }
+       ],
+       [
+        "Carlos Curo",
+        {
+         "x": "296,5",
+         "align": "right"
+        },
+        {
+         "x": "S/ 13,26",
+         "align": "right"
+        },
+        {
+         "x": "S/ 3 931,59",
+         "align": "right"
+        }
+       ],
+       [
+        {
+         "x": "Total",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "1270,0",
+         "fill": "gris",
+         "align": "right",
+         "bold": true
+        },
+        {
+         "x": "",
+         "fill": "gris",
+         "align": "right"
+        },
+        {
+         "x": "S/ 18 160,36",
+         "fill": "gris",
+         "align": "right",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Costo por integrante"
+     }
+    ]
+   },
+   {
+    "titulo": "3. Costo por paquete de la EDT",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Paquete",
+       "Horas",
+       "Costo",
+       "% del total"
+      ],
+      "anchos": [
+       52,
+       14,
+       20,
+       14
+      ],
+      "filas": [
+       [
+        "1.0.1 Levantamiento del alcance",
+        {
+         "x": "48,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        },
+        {
+         "x": "3,9 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.0.2 Diagnóstico de los datos",
+        {
+         "x": "40,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "3,2 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.0.3 Variables del modelo",
+        {
+         "x": "16,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 250,08",
+         "align": "right"
+        },
+        {
+         "x": "1,4 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.0.4 Arquitectura del sistema",
+        {
+         "x": "40,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "3,2 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.1.1 Cronograma de hitos",
+        {
+         "x": "76,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 151,80",
+         "align": "right"
+        },
+        {
+         "x": "6,3 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.1.2 Informes de avance",
+        {
+         "x": "118,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 755,40",
+         "align": "right"
+        },
+        {
+         "x": "9,7 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.2.1 Integración de datos (ETL)",
+        {
+         "x": "80,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 060,80",
+         "align": "right"
+        },
+        {
+         "x": "5,8 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.2.2 Calidad de datos",
+        {
+         "x": "40,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 530,40",
+         "align": "right"
+        },
+        {
+         "x": "2,9 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.3.1 Entrenamiento del modelo",
+        {
+         "x": "60,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 937,80",
+         "align": "right"
+        },
+        {
+         "x": "5,2 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.3.3 Validación del modelo",
+        {
+         "x": "28,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 437,64",
+         "align": "right"
+        },
+        {
+         "x": "2,4 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.3.2 Clasificación de riesgo",
+        {
+         "x": "36,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 534,24",
+         "align": "right"
+        },
+        {
+         "x": "2,9 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.4.1 Motor de alertas",
+        {
+         "x": "52,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 689,52",
+         "align": "right"
+        },
+        {
+         "x": "3,8 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.4.2.1 Diseño de la interfaz",
+        {
+         "x": "12,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        },
+        {
+         "x": "0,9 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.4.2.2 Desarrollo del tablero",
+        {
+         "x": "44,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 583,44",
+         "align": "right"
+        },
+        {
+         "x": "3,2 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.4.3 Roles y accesos",
+        {
+         "x": "12,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 204,60",
+         "align": "right"
+        },
+        {
+         "x": "1,1 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.6.1 Pruebas de integración y rendimiento",
+        {
+         "x": "112,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 608,32",
+         "align": "right"
+        },
+        {
+         "x": "8,9 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.6.2 Piloto y retroalimentación",
+        {
+         "x": "224,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 3 315,20",
+         "align": "right"
+        },
+        {
+         "x": "18,3 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.5.1 Despliegue del sistema",
+        {
+         "x": "52,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 689,52",
+         "align": "right"
+        },
+        {
+         "x": "3,8 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.4.2.3 Pruebas con usuarios",
+        {
+         "x": "80,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 184,00",
+         "align": "right"
+        },
+        {
+         "x": "6,5 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.5.2 Manual de usuario",
+        {
+         "x": "12,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        },
+        {
+         "x": "0,9 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.5.3 Manual técnico",
+        {
+         "x": "12,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 187,56",
+         "align": "right"
+        },
+        {
+         "x": "1,0 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.5.4 Plan de capacitación",
+        {
+         "x": "8,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 136,40",
+         "align": "right"
+        },
+        {
+         "x": "0,8 %",
+         "align": "right"
+        }
+       ],
+       [
+        "1.5.5 Capacitación y cierre",
+        {
+         "x": "68,0",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 015,40",
+         "align": "right"
+        },
+        {
+         "x": "5,6 %",
+         "align": "right"
+        }
+       ]
+      ],
+      "titulo": "Estimación por paquete",
+      "compacta": true
+     }
+    ]
+   },
+   {
+    "titulo": "4. Presupuesto por sprint y línea base",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Sprint",
+       "Fechas",
+       "Costo",
+       "Contingencia (10 %)",
+       "Total del sprint"
+      ],
+      "anchos": [
+       24,
+       24,
+       17,
+       17,
+       18
+      ],
+      "filas": [
+       [
+        "1 · Análisis y diseño",
+        "12/10/2026 al 06/11/2026",
+        {
+         "x": "S/ 2 116,08",
+         "align": "right"
+        },
+        {
+         "x": "S/ 211,61",
+         "align": "right"
+        },
+        {
+         "x": "S/ 2 327,69",
+         "align": "right"
+        }
+       ],
+       [
+        "2 · Gestión y datos",
+        "09/11/2026 al 04/12/2026",
+        {
+         "x": "S/ 3 107,20",
+         "align": "right"
+        },
+        {
+         "x": "S/ 310,72",
+         "align": "right"
+        },
+        {
+         "x": "S/ 3 417,92",
+         "align": "right"
+        }
+       ],
+       [
+        "3 · Modelo ML",
+        "07/12/2026 al 01/01/2027",
+        {
+         "x": "S/ 2 146,48",
+         "align": "right"
+        },
+        {
+         "x": "S/ 214,65",
+         "align": "right"
+        },
+        {
+         "x": "S/ 2 361,13",
+         "align": "right"
+        }
+       ],
+       [
+        "4 · Alertas y tablero",
+        "04/01/2027 al 29/01/2027",
+        {
+         "x": "S/ 1 932,68",
+         "align": "right"
+        },
+        {
+         "x": "S/ 193,27",
+         "align": "right"
+        },
+        {
+         "x": "S/ 2 125,95",
+         "align": "right"
+        }
+       ],
+       [
+        "5 · Pruebas y piloto",
+        "01/03/2027 al 26/03/2027",
+        {
+         "x": "S/ 5 189,92",
+         "align": "right"
+        },
+        {
+         "x": "S/ 518,99",
+         "align": "right"
+        },
+        {
+         "x": "S/ 5 708,91",
+         "align": "right"
+        }
+       ],
+       [
+        "6 · Implantación y cierre",
+        "29/03/2027 al 23/04/2027",
+        {
+         "x": "S/ 3 668,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 366,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 4 034,80",
+         "align": "right"
+        }
+       ]
+      ],
+      "titulo": "Presupuesto por sprint"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Componente",
+       "Monto"
+      ],
+      "anchos": [
+       70,
+       30
+      ],
+      "filas": [
+       [
+        "Costo del trabajo (BAC)",
+        {
+         "x": "S/ 18 160,36",
+         "align": "right"
+        }
+       ],
+       [
+        "Reserva de contingencia",
+        {
+         "x": "S/ 1 816,04",
+         "align": "right"
+        }
+       ],
+       [
+        {
+         "x": "Línea base de costos",
+         "fill": "gris",
+         "bold": true
+        },
+        {
+         "x": "S/ 19 976,40",
+         "fill": "gris",
+         "align": "right",
+         "bold": true
+        }
+       ],
+       [
+        "Reserva de gestión",
+        {
+         "x": "S/ 1 184,00",
+         "align": "right"
+        }
+       ],
+       [
+        {
+         "x": "Presupuesto total del proyecto",
+         "fill": "verde",
+         "bold": true
+        },
+        {
+         "x": "S/ 21 160,40",
+         "fill": "verde",
+         "align": "right",
+         "bold": true
+        }
+       ]
+      ],
+      "titulo": "Línea base de costos y presupuesto",
+      "fuente": "Curso anterior: línea base S/ 59 859,17 y presupuesto S/ 63 495,53, con jornada completa y tarifas profesionales."
+     }
+    ]
+   },
+   {
+    "titulo": "5. Curva S",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "figura",
+      "archivo": "curva-s.png",
+      "titulo": "Valor planificado acumulado por semana (línea base sin reservas)"
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Semana",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "10",
+       "11",
+       "12"
+      ],
+      "anchos": [
+       16,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7
+      ],
+      "filas": [
+       [
+        "PV acumulado (S/)",
+        {
+         "x": "710",
+         "align": "right"
+        },
+        {
+         "x": "1288",
+         "align": "right"
+        },
+        {
+         "x": "1538",
+         "align": "right"
+        },
+        {
+         "x": "2116",
+         "align": "right"
+        },
+        {
+         "x": "3410",
+         "align": "right"
+        },
+        {
+         "x": "3855",
+         "align": "right"
+        },
+        {
+         "x": "4619",
+         "align": "right"
+        },
+        {
+         "x": "5223",
+         "align": "right"
+        },
+        {
+         "x": "5580",
+         "align": "right"
+        },
+        {
+         "x": "6154",
+         "align": "right"
+        },
+        {
+         "x": "6714",
+         "align": "right"
+        },
+        {
+         "x": "7370",
+         "align": "right"
+        }
+       ]
+      ],
+      "compacta": true
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Semana",
+       "13",
+       "14",
+       "15",
+       "16",
+       "17",
+       "18",
+       "19",
+       "20",
+       "21",
+       "22",
+       "23",
+       "24"
+      ],
+      "anchos": [
+       16,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7,
+       7
+      ],
+      "filas": [
+       [
+        "PV acumulado (S/)",
+        {
+         "x": "7709",
+         "align": "right"
+        },
+        {
+         "x": "8207",
+         "align": "right"
+        },
+        {
+         "x": "8600",
+         "align": "right"
+        },
+        {
+         "x": "9302",
+         "align": "right"
+        },
+        {
+         "x": "10879",
+         "align": "right"
+        },
+        {
+         "x": "12243",
+         "align": "right"
+        },
+        {
+         "x": "13738",
+         "align": "right"
+        },
+        {
+         "x": "14492",
+         "align": "right"
+        },
+        {
+         "x": "14885",
+         "align": "right"
+        },
+        {
+         "x": "16514",
+         "align": "right"
+        },
+        {
+         "x": "17071",
+         "align": "right"
+        },
+        {
+         "x": "18160",
+         "align": "right"
+        }
+       ]
+      ],
+      "compacta": true,
+      "fuente": "Las semanas 17 a 24 son de marzo y abril de 2027 (después del receso de febrero)."
+     }
+    ]
+   },
+   {
+    "titulo": "6. Requisitos de financiamiento",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "No se requiere dinero en efectivo. Lo que el proyecto necesita en cada sprint son horas del equipo; su valor por sprint es el de la tabla de la sección 4. Si en algún momento se necesitara un servicio de pago (por ejemplo, el plan de pago de la API durante el piloto), se presentaría una solicitud de cambio con su costo."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "FIN-03",
+  "titulo": "Informe de control del cronograma y los costos N.º 1",
+  "dominio": "Finanzas",
+  "area": "Monitoreo y control",
+  "proceso": "Monitorear y controlar el cronograma y las finanzas",
+  "salida": "Información de desempeño del trabajo, pronósticos y solicitudes de cambio",
+  "version": "1.0",
+  "fecha": "20/11/2026",
+  "resumen": "Mide el avance del cronograma y de los costos al 20/11/2026 con valor ganado: valor planificado, valor ganado, costo real, índices, pronósticos y avance por paquete de la EDT.",
+  "carpeta": "06 - Finanzas",
+  "drive": null,
+  "secciones": [
+   {
+    "titulo": "1. Resumen",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "kv",
+      "filas": [
+       [
+        "Fecha de corte",
+        "20/11/2026"
+       ],
+       [
+        "Sprint",
+        "2 · Gestión y datos"
+       ],
+       [
+        "Preparó",
+        "Jhostin Galarza, director del proyecto"
+       ]
+      ]
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Indicador",
+       "Valor",
+       "Lectura"
+      ],
+      "anchos": [
+       34,
+       22,
+       44
+      ],
+      "filas": [
+       [
+        "Valor planificado (PV)",
+        {
+         "x": "S/ 3 855,36",
+         "align": "right"
+        },
+        "21,2 % del trabajo planificado"
+       ],
+       [
+        "Valor ganado (EV)",
+        {
+         "x": "S/ 5 169,06",
+         "align": "right"
+        },
+        "28,5 % del trabajo terminado"
+       ],
+       [
+        "Costo real (AC), estimado",
+        {
+         "x": "S/ 5 169,06",
+         "align": "right"
+        },
+        "Sin registro de horas: ver la sección 3"
+       ],
+       [
+        "Variación del cronograma (SV = EV − PV)",
+        {
+         "x": "S/ 1 313,70",
+         "align": "right"
+        },
+        "Adelantado"
+       ],
+       [
+        "Índice del cronograma (SPI)",
+        {
+         "x": "1,34",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        "Lo terminado equivale a lo planificado hasta la semana 8"
+       ],
+       [
+        "Variación del costo (CV = EV − AC)",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        "Sin variación (por el método de estimación)"
+       ],
+       [
+        "Índice del costo (CPI)",
+        {
+         "x": "1,00",
+         "fill": "verde",
+         "align": "center",
+         "bold": true
+        },
+        "1,00 por construcción: no mide eficiencia todavía"
+       ],
+       [
+        "Presupuesto del trabajo (BAC)",
+        {
+         "x": "S/ 18 160,36",
+         "align": "right"
+        },
+        "Línea base sin reservas (FIN-02)"
+       ],
+       [
+        "Estimación al término (EAC = BAC ÷ CPI)",
+        {
+         "x": "S/ 18 160,36",
+         "align": "right"
+        },
+        "Igual al presupuesto"
+       ],
+       [
+        "Por gastar (ETC = EAC − AC)",
+        {
+         "x": "S/ 12 991,30",
+         "align": "right"
+        },
+        ""
+       ]
+      ],
+      "titulo": "Indicadores de valor ganado al 20/11/2026"
+     }
+    ]
+   },
+   {
+    "titulo": "2. Cronograma",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "El proyecto va adelantado: SPI 1,34. Las actividades de datos del Sprint 2 (carga y reconciliación de Cubicol, validación y corrección de los datos) se terminaron antes de sus fechas, porque las exportaciones llegaron y el Product Owner aprobó rearmar la base (SC-13). La fecha de fin se mantiene en el 23/04/2027: los hitos con el colegio (piloto y capacitación) dependen de su calendario, no del avance del equipo."
+     },
+     {
+      "t": "tabla",
+      "cols": [
+       "Actividad",
+       "Paquete",
+       "PV",
+       "% hecho",
+       "EV"
+      ],
+      "anchos": [
+       48,
+       10,
+       14,
+       12,
+       16
+      ],
+      "filas": [
+       [
+        "A-0.1.1.1 Reunión de levantamiento con directivos, coordinadores y área de TI pa",
+        "1.0.1",
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        }
+       ],
+       [
+        "A-0.1.1.2 Análisis de calidad y disponibilidad de datos académicos existentes en",
+        "1.0.2",
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        }
+       ],
+       [
+        "A-0.1.1.3 Definición y validación con docentes de las variables académicas que p",
+        "1.0.3",
+        {
+         "x": "S/ 250,08",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 250,08",
+         "align": "right"
+        }
+       ],
+       [
+        "A-0.1.1.4 Diseño de la arquitectura completa del sistema: módulos, integraciones",
+        "1.0.4",
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        }
+       ],
+       [
+        "A-1.1.1.1 Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
+        "1.1.1",
+        {
+         "x": "S/ 204,60",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 204,60",
+         "align": "right"
+        }
+       ],
+       [
+        "A-1.1.1.2 Definir Product Backlog y priorizar historias de usuario",
+        "1.1.1",
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        }
+       ],
+       [
+        "A-1.1.1.3 Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
+        "1.1.1",
+        {
+         "x": "S/ 236,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 236,80",
+         "align": "right"
+        }
+       ],
+       [
+        "A-1.2.1.1 Establecer plantilla de informe de avance semanal",
+        "1.1.2",
+        {
+         "x": "S/ 68,20",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 68,20",
+         "align": "right"
+        }
+       ],
+       [
+        "A-1.2.1.2 Daily Standup 15 min diarios — continuo todo el proyecto",
+        "1.1.2",
+        {
+         "x": "S/ 148,00",
+         "align": "right"
+        },
+        {
+         "x": "9 %",
+         "fill": "amarillo",
+         "align": "center"
+        },
+        {
+         "x": "S/ 148,00",
+         "align": "right"
+        }
+       ],
+       [
+        "A-2.1.1.1 Levantar y mapear fuentes de datos académicos (asistencia, notas, part",
+        "1.2.1",
+        {
+         "x": "S/ 212,16",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 212,16",
+         "align": "right"
+        }
+       ],
+       [
+        "A-2.1.1.2 Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
+        "1.2.1",
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        }
+       ],
+       [
+        "A-2.1.1.3 Codificar scripts ETL de extracción, transformación y carga",
+        "1.2.1",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 530,40",
+         "align": "right"
+        }
+       ],
+       [
+        "A-2.1.1.4 Ejecutar prueba de migración de datos y validar integridad",
+        "1.2.1",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        }
+       ],
+       [
+        "A-2.2.1.1 Configurar tareas programadas nocturnas de limpieza y validación de da",
+        "1.2.2",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 212,16",
+         "align": "right"
+        }
+       ],
+       [
+        "A-2.2.1.2 Verificar consistencia de datos y corrección de registros erróneos",
+        "1.2.2",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        },
+        {
+         "x": "S/ 318,24",
+         "align": "right"
+        }
+       ],
+       [
+        "A-3.2.1.1 Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
+        "1.3.3",
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "50 %",
+         "fill": "amarillo",
+         "align": "center"
+        },
+        {
+         "x": "S/ 93,78",
+         "align": "right"
+        }
+       ]
+      ],
+      "titulo": "Actividades con valor planificado o ganado al corte",
+      "compacta": true,
+      "fuente": "A-3.2.1.1 al 50 %: Métricas del modelo en el colegio con el criterio de la SC-14 (AUC 0,71, detecta 39 %); falta compararlas con una regla simple."
+     }
+    ]
+   },
+   {
+    "titulo": "3. Costos",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "p",
+      "x": "El equipo no registró las horas trabajadas hasta el 15/11/2026. El costo real se estimó suponiendo que cada actividad terminada consumió las horas que tenía estimadas (REC-01); por eso el CPI sale 1,00 y todavía no dice si el equipo gasta más o menos de lo previsto. Desde el 16/11/2026 cada integrante anota sus horas en la plantilla semanal (GOB-13): el informe N.º 2 tendrá costo real medido."
+     },
+     {
+      "t": "nota",
+      "tipo": "aviso",
+      "x": "Lectura correcta de este informe: el SPI sí es una medida real (sale de actividades terminadas con evidencia); el CPI no lo es todavía."
+     }
+    ]
+   },
+   {
+    "titulo": "4. Avance de la implementación por paquete de la EDT",
+    "apaisada": true,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Paquete de la EDT",
+       "Presupuesto",
+       "PV al corte",
+       "EV al corte",
+       "% ganado del paquete"
+      ],
+      "anchos": [
+       40,
+       15,
+       15,
+       15,
+       15
+      ],
+      "filas": [
+       [
+        "1.0.1 Levantamiento del alcance",
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        },
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        },
+        {
+         "x": "S/ 710,40",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.0.2 Diagnóstico de los datos",
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.0.3 Variables del modelo",
+        {
+         "x": "S/ 250,08",
+         "align": "right"
+        },
+        {
+         "x": "S/ 250,08",
+         "align": "right"
+        },
+        {
+         "x": "S/ 250,08",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.0.4 Arquitectura del sistema",
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 577,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.1.1 Cronograma de hitos",
+        {
+         "x": "S/ 1 151,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 151,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 151,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.1.2 Informes de avance",
+        {
+         "x": "S/ 1 755,40",
+         "align": "right"
+        },
+        {
+         "x": "S/ 216,20",
+         "align": "right"
+        },
+        {
+         "x": "S/ 216,20",
+         "align": "right"
+        },
+        {
+         "x": "12 %",
+         "fill": "amarillo",
+         "align": "center"
+        }
+       ],
+       [
+        "1.2.1 Integración de datos (ETL)",
+        {
+         "x": "S/ 1 060,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 371,28",
+         "align": "right"
+        },
+        {
+         "x": "S/ 1 060,80",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.2.2 Calidad de datos",
+        {
+         "x": "S/ 530,40",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 530,40",
+         "align": "right"
+        },
+        {
+         "x": "100 %",
+         "fill": "verde",
+         "align": "center"
+        }
+       ],
+       [
+        "1.3.1 Entrenamiento del modelo",
+        {
+         "x": "S/ 937,80",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.3.3 Validación del modelo",
+        {
+         "x": "S/ 437,64",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 93,78",
+         "align": "right"
+        },
+        {
+         "x": "21 %",
+         "fill": "amarillo",
+         "align": "center"
+        }
+       ],
+       [
+        "1.3.2 Clasificación de riesgo",
+        {
+         "x": "S/ 534,24",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.4.1 Motor de alertas",
+        {
+         "x": "S/ 689,52",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.4.2.1 Diseño de la interfaz",
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.4.2.2 Desarrollo del tablero",
+        {
+         "x": "S/ 583,44",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.4.3 Roles y accesos",
+        {
+         "x": "S/ 204,60",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.6.1 Pruebas de integración y rendimiento",
+        {
+         "x": "S/ 1 608,32",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.6.2 Piloto y retroalimentación",
+        {
+         "x": "S/ 3 315,20",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.5.1 Despliegue del sistema",
+        {
+         "x": "S/ 689,52",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.4.2.3 Pruebas con usuarios",
+        {
+         "x": "S/ 1 184,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.5.2 Manual de usuario",
+        {
+         "x": "S/ 159,12",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.5.3 Manual técnico",
+        {
+         "x": "S/ 187,56",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.5.4 Plan de capacitación",
+        {
+         "x": "S/ 136,40",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ],
+       [
+        "1.5.5 Capacitación y cierre",
+        {
+         "x": "S/ 1 015,40",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "S/ 0,00",
+         "align": "right"
+        },
+        {
+         "x": "0 %",
+         "align": "center"
+        }
+       ]
+      ],
+      "titulo": "Valor ganado por paquete",
+      "compacta": true,
+      "fuente": "El avance funcional del producto (qué existe del sistema) se mide aparte en el tablero del alcance (ALC-05 y blog, capítulo 07)."
+     },
+     {
+      "t": "figura",
+      "archivo": "curva-s.png",
+      "titulo": "Curva S: valor planificado, valor ganado y costo real al corte"
+     }
+    ]
+   },
+   {
+    "titulo": "5. Análisis y acciones",
+    "apaisada": false,
+    "bloques": [
+     {
+      "t": "tabla",
+      "cols": [
+       "Hallazgo",
+       "Acción",
+       "Responsable",
+       "Fecha"
+      ],
+      "anchos": [
+       36,
+       36,
+       16,
+       12
+      ],
+      "filas": [
+       [
+        "Sin registro de horas reales: el CPI no mide eficiencia.",
+        "Anotar las horas cada semana en la plantilla GOB-13.",
+        "Jhostin Galarza",
+        "Desde el 16/11/2026"
+       ],
+       [
+        "Adelanto del Sprint 2 en el paquete de datos.",
+        "Usar el tiempo libre para preparar el Sprint 3, donde Helber tiene más horas que las disponibles (REC-04).",
+        "Helber Perez",
+        "Sprint 2"
+       ],
+       [
+        "Los cortes de nivel del modelo detectan el 39 % de los casos con dificultad (SC-14).",
+        "Revisar los cortes con los datos del colegio en el Sprint 3.",
+        "Helber Perez",
+        "Sprint 3"
+       ]
+      ],
+      "titulo": "Acciones"
+     },
+     {
+      "t": "p",
+      "x": "No se requiere solicitud de cambio: el adelanto no altera la línea base y los índices están en verde."
+     }
+    ]
+   }
+  ]
  }
 ];
 
@@ -24635,23 +26839,24 @@ export const PROCESOS: ProcesoDef[] = [
   "dominio": "Cronograma",
   "area": "Monitoreo y control",
   "nombre": "Monitorear y controlar el cronograma",
-  "estado": "Planificado",
+  "estado": "Aplicado",
   "que": "Mide el avance frente a la línea base y gestiona sus cambios.",
   "entradas": [
    "Línea base del cronograma",
-   "Datos de desempeño del trabajo"
+   "Datos de desempeño del trabajo: actividades terminadas con su evidencia"
   ],
   "herramientas": [
-   "Análisis del valor ganado",
-   "Gráfica de trabajo pendiente",
+   "Análisis del valor ganado (PV, EV, SV, SPI)",
+   "Curva S",
    "Reuniones diarias",
    "Revisiones del sprint"
   ],
   "salidas": [
-   "Información de desempeño y pronósticos, desde el Sprint 1"
+   "Información de desempeño y pronósticos (FIN-03)",
+   "Plantilla del informe semanal (GOB-13)"
   ],
   "docs": [
-   "CRO-01"
+   "FIN-03"
   ]
  },
  {
@@ -24659,32 +26864,98 @@ export const PROCESOS: ProcesoDef[] = [
   "dominio": "Finanzas",
   "area": "Planificación",
   "nombre": "Planificar la gestión financiera",
-  "estado": "Curso anterior",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Define cómo se estiman, presupuestan y controlan los costos: unidades, tarifas, reservas, umbrales e informes.",
+  "entradas": [
+   "Acta de constitución y restricción R-02 (sin presupuesto)",
+   "Cronograma v3.1 y estimación de los recursos (REC-01)",
+   "Estrategia de abastecimiento (GOB-05)"
+  ],
+  "herramientas": [
+   "Juicio de expertos: tarifario del curso anterior",
+   "Análisis de datos: alternativas de tarifa",
+   "Reuniones"
+  ],
+  "salidas": [
+   "Plan de gestión financiera"
+  ],
+  "docs": [
+   "FIN-01"
+  ]
  },
  {
   "id": "fin-2",
   "dominio": "Finanzas",
   "area": "Planificación",
   "nombre": "Estimar los costos",
-  "estado": "Curso anterior",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Estima el costo de cada actividad con sus horas y la tarifa de su responsable.",
+  "entradas": [
+   "Plan de gestión financiera",
+   "Cronograma y requisitos de recursos (REC-01)"
+  ],
+  "herramientas": [
+   "Estimación ascendente",
+   "Estimación paramétrica (horas × tarifa)",
+   "Análisis de reservas"
+  ],
+  "salidas": [
+   "Estimaciones de costos",
+   "Base de las estimaciones"
+  ],
+  "docs": [
+   "FIN-02"
+  ]
  },
  {
   "id": "fin-3",
   "dominio": "Finanzas",
   "area": "Planificación",
   "nombre": "Desarrollar el presupuesto",
-  "estado": "Curso anterior",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Suma las estimaciones por paquete y sprint, agrega las reservas y fija la línea base de costos.",
+  "entradas": [
+   "Estimaciones de costos",
+   "Cronograma",
+   "EDT versión 4"
+  ],
+  "herramientas": [
+   "Agregación de costos",
+   "Análisis de reservas",
+   "Curva S"
+  ],
+  "salidas": [
+   "Línea base de costos",
+   "Requisitos de financiamiento"
+  ],
+  "docs": [
+   "FIN-02"
+  ]
  },
  {
   "id": "fin-4",
   "dominio": "Finanzas",
   "area": "Monitoreo y control",
   "nombre": "Monitorear y controlar las finanzas",
-  "estado": "Pendiente",
-  "docs": []
+  "estado": "Aplicado",
+  "que": "Compara el costo real con lo planificado y pronostica el costo final.",
+  "entradas": [
+   "Línea base de costos",
+   "Datos de desempeño del trabajo",
+   "Registro de horas (desde el 16/11/2026)"
+  ],
+  "herramientas": [
+   "Análisis del valor ganado (CV, CPI)",
+   "Pronósticos (EAC, ETC, VAC)",
+   "Índice de desempeño del trabajo por completar (TCPI)"
+  ],
+  "salidas": [
+   "Información de desempeño del trabajo",
+   "Pronósticos de costos"
+  ],
+  "docs": [
+   "FIN-03"
+  ]
  },
  {
   "id": "int-1",
@@ -25104,7 +27375,7 @@ export const DOMINIOS: DominioDef[] = [
   "nombre": "Finanzas",
   "procesos": 4,
   "descripcion": "Estima los costos, arma el presupuesto y controla el gasto.",
-  "estado": "Curso anterior"
+  "estado": "Desarrollado"
  },
  {
   "id": "interesados",

@@ -20,6 +20,7 @@ import { DRIVE_CARPETA, enlaceDrive } from "./datos/drive.mjs";
 import { DEDICACION, HERRAMIENTAS, HORAS_DAILY, HORAS_DIA, LINEAS_DE_CODIGO, RBS, RECURSOS_MATERIALES, capacidadPorSprint, cocomo, horasDelEquipo, horasPorPaquete, sobreasignaciones } from "./datos/recursos.mjs";
 import { PLANILLAS } from "./datos/planillas.mjs";
 import * as GR from "./datos/gestion-recursos.mjs";
+import * as FN from "./datos/finanzas.mjs";
 import { COMUNICACIONES, CORTE, PLAN_COMUNICACIONES } from "./datos/comunicaciones.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -232,6 +233,32 @@ const datos = {
     recomendacionCB: GR.RECOMENDACION_CB,
     comprobacion: GR.COMPROBACION,
   },
+  FINANZAS: (() => {
+    const p = FN.presupuesto();
+    const v = FN.valorGanado(FN.CORTE_CONTROL);
+    const nombre = (id) => PAQUETES.find((q) => q.id === id)?.nombre ?? "";
+    return {
+      corte: FN.CORTE_CONTROL,
+      tarifas: FN.TARIFAS,
+      contingencia: FN.CONTINGENCIA,
+      cursoAnterior: FN.CURSO_ANTERIOR,
+      presupuesto: {
+        bac: p.bac, contingencia: p.contingencia, lineaBase: p.lineaBase, reservaGestion: p.reservaGestion, total: p.total,
+        porSprint: p.porSprint, porPersona: p.porPersona,
+        porPaquete: p.porPaquete.map((x) => ({ ...x, nombre: nombre(x.paquete) })),
+      },
+      curvaS: FN.curvaS(),
+      evm: {
+        PV: v.PV, EV: v.EV, AC: v.AC, SV: v.SV, CV: v.CV, SPI: v.SPI, CPI: v.CPI, BAC: v.BAC, EAC: v.EAC, ETC: v.ETC, VAC: v.VAC, TCPI: v.TCPI,
+        avance: v.avance, semanaEquivalente: v.semanaEquivalente,
+        semaforoSPI: FN.semaforo(v.SPI), semaforoCPI: FN.semaforo(v.CPI),
+        porPaquete: v.porPaquete.map((x) => ({ ...x, nombre: nombre(x.paquete) })),
+        porSprint: v.porSprint,
+        actividades: v.filas.filter((x) => x.pv || x.ev).map((x) => ({ id: x.id, descripcion: x.descripcion, paquete: x.paquete, sprint: x.sprint, pv: x.pv, pct: x.pct, ev: x.ev, fin: x.fin })),
+        parciales: FN.PARCIALES,
+      },
+    };
+  })(),
   GANTT_SEMANAS: ganttPorSemanas(),
   RED: red().map((n) => ({ id: n.id, tipo: n.tipo, sprint: n.sprint, descripcion: n.descripcion, responsable: n.responsable ?? "", paquete: n.paquete ?? "", te: n.te ?? 0, critica: Boolean(n.isCritical), dias: n.dias, inicio: aIso(n.inicio), fin: aIso(n.fin), preds: n.preds })),
   NIVELES,

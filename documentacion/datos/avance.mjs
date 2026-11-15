@@ -211,6 +211,55 @@ export const CORTES_ALCANCE = [
       },
     ],
   },
+  {
+    fecha: "2026-11-20",
+    fuente: "Corte para la EC3 (informe de control FIN-03)",
+    cambios: {
+      "1.2.1": [
+        "Cumplido",
+        100,
+        "Base armada solo con las exportaciones de Cubicol (SC-13): 684 notas de 48 estudiantes, de marzo a agosto de 2026. Tres reconciliaciones correctas (CP-03 aprobado). Modelo entidad-relación y mapa de las fuentes de datos.",
+        "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026).",
+      ],
+      "1.2.2": [
+        "Cumplido",
+        100,
+        "Validación con 0 fallas críticas. Los estudiantes registrados dos veces y las notas de fotografías desaparecen al rearmar la base (SC-13).",
+        "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026).",
+      ],
+      "1.3.3": [
+        "Cumplido en parte",
+        75,
+        "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
+        "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3).",
+      ],
+    },
+    casos: { "CP-03": "Aprobado" },
+    requisitosCambiados: ["REQ-03"],
+    hechos: [
+      "09/11: el Product Owner aprueba la SC-12 (nivelación de la carga del Sprint 2).",
+      "13/11: la base de datos se rearma solo con Cubicol (SC-13): 402 notas de 48 estudiantes; CP-01 y CP-02 repetidos.",
+      "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
+      "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
+      "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03).",
+    ],
+    sprint: [
+      { que: "E-01 · Módulo de integración y limpieza de datos", estado: "Cumplido", evidencia: "684 notas reconciliadas, validación sin fallas críticas; se presenta para aceptación el 04/12/2026.", url: `${repo}/pruebas-sprint-2.md` },
+    ],
+    alertas: [
+      { nivel: "Atención", texto: "Registrar las horas reales de cada integrante cada semana (plantilla GOB-13) para medir el costo real.", responsable: R.jhostin, fecha: "Desde el 16/11/2026" },
+      { nivel: "Atención", texto: "Ajustar los cortes de nivel del modelo con los datos del colegio: hoy detecta el 39 % de los casos con dificultad.", responsable: R.helber, fecha: "Sprint 3" },
+      { nivel: "Seguimiento", texto: "SC-09 (canal de las alertas por correo) sigue en evaluación.", responsable: R.carlos, fecha: "Sprint 3" },
+      { nivel: "Seguimiento", texto: "Pedir las exportaciones de los grados que faltan (1.° y 2.° de primaria, 4.° y 5.° de secundaria) antes del piloto.", responsable: R.helber, fecha: "Sprint 4" },
+    ],
+    fueraDeAlcance: [
+      {
+        texto: "Pantalla «Evaluar un caso»: evalúa a un estudiante con datos ingresados a mano. No figura en la matriz de requisitos.",
+        estado: "Por revisar",
+        accion: "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo.",
+      },
+    ],
+  },
 ];
 
 // Actividades del cronograma ya realizadas, con la evidencia de su entregable (entregables del cronograma).
@@ -219,4 +268,15 @@ export const ACTIVIDADES_REALIZADAS = {
   "A-0.1.1.2": { fecha: "2026-10-23", evidencias: [{ texto: "Datos y variables", url: `${repo}/datos-y-variables.md` }] },
   "A-0.1.1.3": { fecha: "2026-10-28", evidencias: [{ texto: "Taller con los 16 docentes y la directora; lista de asistencia y acuerdos" }, { texto: "Variables del modelo", url: `${repo}/datos-y-variables.md` }] },
   "A-0.1.1.4": { fecha: "2026-11-06", evidencias: [{ texto: "Arquitectura del sistema", url: `${repo}/arquitectura.md` }] },
+  // Sprint 2 (registradas el 15/11/2026; varias se adelantaron a su fecha del cronograma).
+  "A-1.1.1.1": { fecha: "2026-11-07", evidencias: [{ texto: "Cronograma v3.1 con hitos y entregables", doc: "CRO-01" }] },
+  "A-1.1.1.2": { fecha: "2026-11-15", evidencias: [{ texto: "Product Backlog aprobado por el Product Owner", doc: "ALC-07" }] },
+  "A-1.1.1.3": { fecha: "2026-11-07", evidencias: [{ texto: "Product Owner designado en la reunión de inicio", doc: "GOB-12" }, { texto: "Fichas de rol y matriz RACI", doc: "REC-02" }] },
+  "A-1.2.1.1": { fecha: "2026-11-15", evidencias: [{ texto: "Plantilla del informe de avance semanal", doc: "GOB-13" }] },
+  "A-2.1.1.1": { fecha: "2026-11-15", evidencias: [{ texto: "Mapa de las fuentes de datos", url: `${repo}/datos-y-variables.md` }] },
+  "A-2.1.1.2": { fecha: "2026-11-15", evidencias: [{ texto: "Modelo entidad-relación", url: `${repo}/modelo-entidad-relacion.md` }] },
+  "A-2.1.1.3": { fecha: "2026-11-13", evidencias: [{ texto: "Lector y carga de las exportaciones de Cubicol; base rearmada (SC-13)", url: `${repo}/pruebas-sprint-2.md` }] },
+  "A-2.1.1.4": { fecha: "2026-11-15", evidencias: [{ texto: "Tres reconciliaciones correctas (CP-03): 684 notas", url: `${repo}/pruebas-sprint-2.md` }] },
+  "A-2.2.1.1": { fecha: "2026-10-25", evidencias: [{ texto: "Validación nocturna: 15 noches seguidas sin fallas (CP-05)", url: `${repo}/pruebas-sprint-2.md` }] },
+  "A-2.2.1.2": { fecha: "2026-11-15", evidencias: [{ texto: "Validación con 0 fallas críticas tras la carga 3", url: `${repo}/pruebas-sprint-2.md` }] },
 };

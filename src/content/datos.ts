@@ -4374,6 +4374,856 @@ export const RECURSOS_GESTION = {
  ]
 };
 
+export const FINANZAS = {
+ "corte": "2026-11-20",
+ "tarifas": [
+  {
+   "persona": "Jhostin Galarza",
+   "rol": "Director del proyecto y Scrum Master",
+   "referencia": "Líder de proyecto (S/ 6 000)",
+   "mensual": 3000,
+   "hora": 17.05
+  },
+  {
+   "persona": "Helber Perez",
+   "rol": "Product Owner y modelo de Machine Learning",
+   "referencia": "Científico de datos (S/ 5 500)",
+   "mensual": 2750,
+   "hora": 15.63
+  },
+  {
+   "persona": "Jadira Vasquez",
+   "rol": "Datos, alertas y despliegue",
+   "referencia": "Área de TI (S/ 4 666,67)",
+   "mensual": 2333.33,
+   "hora": 13.26
+  },
+  {
+   "persona": "Carlos Curo",
+   "rol": "Tablero web y control de cambios",
+   "referencia": "Área de TI (S/ 4 666,67)",
+   "mensual": 2333.33,
+   "hora": 13.26
+  }
+ ],
+ "contingencia": 0.1,
+ "cursoAnterior": {
+  "lineaBase": 59859.17,
+  "reservaGestion": 3636.36,
+  "total": 63495.53,
+  "jornada": "8 horas diarias, jornada completa",
+  "fechas": "marzo a agosto de 2026"
+ },
+ "presupuesto": {
+  "bac": 18160.36,
+  "contingencia": 1816.04,
+  "lineaBase": 19976.4,
+  "reservaGestion": 1184,
+  "total": 21160.4,
+  "porSprint": [
+   {
+    "sprint": 1,
+    "nombre": "Análisis y diseño",
+    "inicio": "2026-10-12",
+    "fin": "2026-11-06",
+    "costo": 2116.08,
+    "contingencia": 211.61,
+    "total": 2327.69
+   },
+   {
+    "sprint": 2,
+    "nombre": "Gestión y datos",
+    "inicio": "2026-11-09",
+    "fin": "2026-12-04",
+    "costo": 3107.2,
+    "contingencia": 310.72,
+    "total": 3417.92
+   },
+   {
+    "sprint": 3,
+    "nombre": "Modelo ML",
+    "inicio": "2026-12-07",
+    "fin": "2027-01-01",
+    "costo": 2146.48,
+    "contingencia": 214.65,
+    "total": 2361.13
+   },
+   {
+    "sprint": 4,
+    "nombre": "Alertas y tablero",
+    "inicio": "2027-01-04",
+    "fin": "2027-01-29",
+    "costo": 1932.68,
+    "contingencia": 193.27,
+    "total": 2125.95
+   },
+   {
+    "sprint": 5,
+    "nombre": "Pruebas y piloto",
+    "inicio": "2027-03-01",
+    "fin": "2027-03-26",
+    "costo": 5189.92,
+    "contingencia": 518.99,
+    "total": 5708.91
+   },
+   {
+    "sprint": 6,
+    "nombre": "Implantación y cierre",
+    "inicio": "2027-03-29",
+    "fin": "2027-04-23",
+    "costo": 3668,
+    "contingencia": 366.8,
+    "total": 4034.8
+   }
+  ],
+  "porPersona": [
+   {
+    "persona": "Jhostin Galarza",
+    "horas": 208.5,
+    "costo": 3554.93
+   },
+   {
+    "persona": "Helber Perez",
+    "horas": 348.5,
+    "costo": 5447.06
+   },
+   {
+    "persona": "Jadira Vasquez",
+    "horas": 416.5,
+    "costo": 5522.79
+   },
+   {
+    "persona": "Carlos Curo",
+    "horas": 296.5,
+    "costo": 3931.59
+   }
+  ],
+  "porPaquete": [
+   {
+    "paquete": "1.0.1",
+    "costo": 710.4,
+    "horas": 48,
+    "nombre": "Levantamiento del alcance"
+   },
+   {
+    "paquete": "1.0.2",
+    "costo": 577.8,
+    "horas": 40,
+    "nombre": "Diagnóstico de los datos"
+   },
+   {
+    "paquete": "1.0.3",
+    "costo": 250.08,
+    "horas": 16,
+    "nombre": "Variables del modelo"
+   },
+   {
+    "paquete": "1.0.4",
+    "costo": 577.8,
+    "horas": 40,
+    "nombre": "Arquitectura del sistema"
+   },
+   {
+    "paquete": "1.1.1",
+    "costo": 1151.8,
+    "horas": 76,
+    "nombre": "Cronograma de hitos"
+   },
+   {
+    "paquete": "1.1.2",
+    "costo": 1755.4,
+    "horas": 118,
+    "nombre": "Informes de avance"
+   },
+   {
+    "paquete": "1.2.1",
+    "costo": 1060.8,
+    "horas": 80,
+    "nombre": "Integración de datos (ETL)"
+   },
+   {
+    "paquete": "1.2.2",
+    "costo": 530.4,
+    "horas": 40,
+    "nombre": "Calidad de datos"
+   },
+   {
+    "paquete": "1.3.1",
+    "costo": 937.8,
+    "horas": 60,
+    "nombre": "Entrenamiento del modelo"
+   },
+   {
+    "paquete": "1.3.3",
+    "costo": 437.64,
+    "horas": 28,
+    "nombre": "Validación del modelo"
+   },
+   {
+    "paquete": "1.3.2",
+    "costo": 534.24,
+    "horas": 36,
+    "nombre": "Clasificación de riesgo"
+   },
+   {
+    "paquete": "1.4.1",
+    "costo": 689.52,
+    "horas": 52,
+    "nombre": "Motor de alertas"
+   },
+   {
+    "paquete": "1.4.2.1",
+    "costo": 159.12,
+    "horas": 12,
+    "nombre": "Diseño de la interfaz"
+   },
+   {
+    "paquete": "1.4.2.2",
+    "costo": 583.44,
+    "horas": 44,
+    "nombre": "Desarrollo del tablero"
+   },
+   {
+    "paquete": "1.4.3",
+    "costo": 204.6,
+    "horas": 12,
+    "nombre": "Roles y accesos"
+   },
+   {
+    "paquete": "1.6.1",
+    "costo": 1608.32,
+    "horas": 112,
+    "nombre": "Pruebas de integración y rendimiento"
+   },
+   {
+    "paquete": "1.6.2",
+    "costo": 3315.2,
+    "horas": 224,
+    "nombre": "Piloto y retroalimentación"
+   },
+   {
+    "paquete": "1.5.1",
+    "costo": 689.52,
+    "horas": 52,
+    "nombre": "Despliegue del sistema"
+   },
+   {
+    "paquete": "1.4.2.3",
+    "costo": 1184,
+    "horas": 80,
+    "nombre": "Pruebas con usuarios"
+   },
+   {
+    "paquete": "1.5.2",
+    "costo": 159.12,
+    "horas": 12,
+    "nombre": "Manual de usuario"
+   },
+   {
+    "paquete": "1.5.3",
+    "costo": 187.56,
+    "horas": 12,
+    "nombre": "Manual técnico"
+   },
+   {
+    "paquete": "1.5.4",
+    "costo": 136.4,
+    "horas": 8,
+    "nombre": "Plan de capacitación"
+   },
+   {
+    "paquete": "1.5.5",
+    "costo": 1015.4,
+    "horas": 68,
+    "nombre": "Capacitación y cierre"
+   }
+  ]
+ },
+ "curvaS": [
+  {
+   "semana": 1,
+   "lunes": "2026-10-12",
+   "viernes": "2026-10-16",
+   "pv": 710.4,
+   "pvAcumulado": 710.4
+  },
+  {
+   "semana": 2,
+   "lunes": "2026-10-19",
+   "viernes": "2026-10-23",
+   "pv": 577.8,
+   "pvAcumulado": 1288.2
+  },
+  {
+   "semana": 3,
+   "lunes": "2026-10-26",
+   "viernes": "2026-10-30",
+   "pv": 250.08,
+   "pvAcumulado": 1538.28
+  },
+  {
+   "semana": 4,
+   "lunes": "2026-11-02",
+   "viernes": "2026-11-06",
+   "pv": 577.8,
+   "pvAcumulado": 2116.08
+  },
+  {
+   "semana": 5,
+   "lunes": "2026-11-09",
+   "viernes": "2026-11-13",
+   "pv": 1294,
+   "pvAcumulado": 3410.08
+  },
+  {
+   "semana": 6,
+   "lunes": "2026-11-16",
+   "viernes": "2026-11-20",
+   "pv": 445.28,
+   "pvAcumulado": 3855.36
+  },
+  {
+   "semana": 7,
+   "lunes": "2026-11-23",
+   "viernes": "2026-11-27",
+   "pv": 763.52,
+   "pvAcumulado": 4618.88
+  },
+  {
+   "semana": 8,
+   "lunes": "2026-11-30",
+   "viernes": "2026-12-04",
+   "pv": 604.4,
+   "pvAcumulado": 5223.28
+  },
+  {
+   "semana": 9,
+   "lunes": "2026-12-07",
+   "viernes": "2026-12-11",
+   "pv": 357,
+   "pvAcumulado": 5580.28
+  },
+  {
+   "semana": 10,
+   "lunes": "2026-12-14",
+   "viernes": "2026-12-18",
+   "pv": 574.16,
+   "pvAcumulado": 6154.44
+  },
+  {
+   "semana": 11,
+   "lunes": "2026-12-21",
+   "viernes": "2026-12-25",
+   "pv": 559.36,
+   "pvAcumulado": 6713.8
+  },
+  {
+   "semana": 12,
+   "lunes": "2026-12-28",
+   "viernes": "2027-01-01",
+   "pv": 655.96,
+   "pvAcumulado": 7369.76
+  },
+  {
+   "semana": 13,
+   "lunes": "2027-01-04",
+   "viernes": "2027-01-08",
+   "pv": 339.2,
+   "pvAcumulado": 7708.96
+  },
+  {
+   "semana": 14,
+   "lunes": "2027-01-11",
+   "viernes": "2027-01-15",
+   "pv": 498.32,
+   "pvAcumulado": 8207.28
+  },
+  {
+   "semana": 15,
+   "lunes": "2027-01-18",
+   "viernes": "2027-01-22",
+   "pv": 392.24,
+   "pvAcumulado": 8599.52
+  },
+  {
+   "semana": 16,
+   "lunes": "2027-01-25",
+   "viernes": "2027-01-29",
+   "pv": 702.92,
+   "pvAcumulado": 9302.44
+  },
+  {
+   "semana": 17,
+   "lunes": "2027-03-01",
+   "viernes": "2027-03-05",
+   "pv": 1576.24,
+   "pvAcumulado": 10878.68
+  },
+  {
+   "semana": 18,
+   "lunes": "2027-03-08",
+   "viernes": "2027-03-12",
+   "pv": 1364.08,
+   "pvAcumulado": 12242.76
+  },
+  {
+   "semana": 19,
+   "lunes": "2027-03-15",
+   "viernes": "2027-03-19",
+   "pv": 1494.8,
+   "pvAcumulado": 13737.56
+  },
+  {
+   "semana": 20,
+   "lunes": "2027-03-22",
+   "viernes": "2027-03-26",
+   "pv": 754.8,
+   "pvAcumulado": 14492.36
+  },
+  {
+   "semana": 21,
+   "lunes": "2027-03-29",
+   "viernes": "2027-04-02",
+   "pv": 392.24,
+   "pvAcumulado": 14884.6
+  },
+  {
+   "semana": 22,
+   "lunes": "2027-04-05",
+   "viernes": "2027-04-09",
+   "pv": 1629.28,
+   "pvAcumulado": 16513.88
+  },
+  {
+   "semana": 23,
+   "lunes": "2027-04-12",
+   "viernes": "2027-04-16",
+   "pv": 557.08,
+   "pvAcumulado": 17070.96
+  },
+  {
+   "semana": 24,
+   "lunes": "2027-04-19",
+   "viernes": "2027-04-23",
+   "pv": 1089.4,
+   "pvAcumulado": 18160.36
+  }
+ ],
+ "evm": {
+  "PV": 3855.36,
+  "EV": 5169.06,
+  "AC": 5169.06,
+  "SV": 1313.7,
+  "CV": 0,
+  "SPI": 1.34,
+  "CPI": 1,
+  "BAC": 18160.36,
+  "EAC": 18160.36,
+  "ETC": 12991.3,
+  "VAC": 0,
+  "TCPI": 1,
+  "avance": {
+   "planificado": 21.23,
+   "real": 28.46
+  },
+  "semanaEquivalente": 8,
+  "semaforoSPI": "Verde",
+  "semaforoCPI": "Verde",
+  "porPaquete": [
+   {
+    "paquete": "1.0.1",
+    "costo": 710.4,
+    "horas": 48,
+    "pv": 710.4,
+    "ev": 710.4,
+    "nombre": "Levantamiento del alcance"
+   },
+   {
+    "paquete": "1.0.2",
+    "costo": 577.8,
+    "horas": 40,
+    "pv": 577.8,
+    "ev": 577.8,
+    "nombre": "Diagnóstico de los datos"
+   },
+   {
+    "paquete": "1.0.3",
+    "costo": 250.08,
+    "horas": 16,
+    "pv": 250.08,
+    "ev": 250.08,
+    "nombre": "Variables del modelo"
+   },
+   {
+    "paquete": "1.0.4",
+    "costo": 577.8,
+    "horas": 40,
+    "pv": 577.8,
+    "ev": 577.8,
+    "nombre": "Arquitectura del sistema"
+   },
+   {
+    "paquete": "1.1.1",
+    "costo": 1151.8,
+    "horas": 76,
+    "pv": 1151.8,
+    "ev": 1151.8,
+    "nombre": "Cronograma de hitos"
+   },
+   {
+    "paquete": "1.1.2",
+    "costo": 1755.4,
+    "horas": 118,
+    "pv": 216.2,
+    "ev": 216.2,
+    "nombre": "Informes de avance"
+   },
+   {
+    "paquete": "1.2.1",
+    "costo": 1060.8,
+    "horas": 80,
+    "pv": 371.28,
+    "ev": 1060.8,
+    "nombre": "Integración de datos (ETL)"
+   },
+   {
+    "paquete": "1.2.2",
+    "costo": 530.4,
+    "horas": 40,
+    "pv": 0,
+    "ev": 530.4,
+    "nombre": "Calidad de datos"
+   },
+   {
+    "paquete": "1.3.1",
+    "costo": 937.8,
+    "horas": 60,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Entrenamiento del modelo"
+   },
+   {
+    "paquete": "1.3.3",
+    "costo": 437.64,
+    "horas": 28,
+    "pv": 0,
+    "ev": 93.78,
+    "nombre": "Validación del modelo"
+   },
+   {
+    "paquete": "1.3.2",
+    "costo": 534.24,
+    "horas": 36,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Clasificación de riesgo"
+   },
+   {
+    "paquete": "1.4.1",
+    "costo": 689.52,
+    "horas": 52,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Motor de alertas"
+   },
+   {
+    "paquete": "1.4.2.1",
+    "costo": 159.12,
+    "horas": 12,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Diseño de la interfaz"
+   },
+   {
+    "paquete": "1.4.2.2",
+    "costo": 583.44,
+    "horas": 44,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Desarrollo del tablero"
+   },
+   {
+    "paquete": "1.4.3",
+    "costo": 204.6,
+    "horas": 12,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Roles y accesos"
+   },
+   {
+    "paquete": "1.6.1",
+    "costo": 1608.32,
+    "horas": 112,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Pruebas de integración y rendimiento"
+   },
+   {
+    "paquete": "1.6.2",
+    "costo": 3315.2,
+    "horas": 224,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Piloto y retroalimentación"
+   },
+   {
+    "paquete": "1.5.1",
+    "costo": 689.52,
+    "horas": 52,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Despliegue del sistema"
+   },
+   {
+    "paquete": "1.4.2.3",
+    "costo": 1184,
+    "horas": 80,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Pruebas con usuarios"
+   },
+   {
+    "paquete": "1.5.2",
+    "costo": 159.12,
+    "horas": 12,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Manual de usuario"
+   },
+   {
+    "paquete": "1.5.3",
+    "costo": 187.56,
+    "horas": 12,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Manual técnico"
+   },
+   {
+    "paquete": "1.5.4",
+    "costo": 136.4,
+    "horas": 8,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Plan de capacitación"
+   },
+   {
+    "paquete": "1.5.5",
+    "costo": 1015.4,
+    "horas": 68,
+    "pv": 0,
+    "ev": 0,
+    "nombre": "Capacitación y cierre"
+   }
+  ],
+  "porSprint": [
+   {
+    "sprint": 1,
+    "presupuesto": 2116.08,
+    "pv": 2116.08,
+    "ev": 2116.08
+   },
+   {
+    "sprint": 2,
+    "presupuesto": 4498.4,
+    "pv": 1739.28,
+    "ev": 2959.2
+   },
+   {
+    "sprint": 3,
+    "presupuesto": 1909.68,
+    "pv": 0,
+    "ev": 93.78
+   },
+   {
+    "sprint": 4,
+    "presupuesto": 1636.68,
+    "pv": 0,
+    "ev": 0
+   },
+   {
+    "sprint": 5,
+    "presupuesto": 4923.52,
+    "pv": 0,
+    "ev": 0
+   },
+   {
+    "sprint": 6,
+    "presupuesto": 3372,
+    "pv": 0,
+    "ev": 0
+   }
+  ],
+  "actividades": [
+   {
+    "id": "A-0.1.1.1",
+    "descripcion": "Reunión de levantamiento con directivos, coordinadores y área de TI para validar el alcance del sistema y acceso a datos académicos",
+    "paquete": "1.0.1",
+    "sprint": 1,
+    "pv": 710.4,
+    "pct": 100,
+    "ev": 710.4,
+    "fin": "2026-10-14"
+   },
+   {
+    "id": "A-0.1.1.2",
+    "descripcion": "Análisis de calidad y disponibilidad de datos académicos existentes en los sistemas del colegio",
+    "paquete": "1.0.2",
+    "sprint": 1,
+    "pv": 577.8,
+    "pct": 100,
+    "ev": 577.8,
+    "fin": "2026-10-23"
+   },
+   {
+    "id": "A-0.1.1.3",
+    "descripcion": "Definición y validación con docentes de las variables académicas que predicen el riesgo de bajo rendimiento",
+    "paquete": "1.0.3",
+    "sprint": 1,
+    "pv": 250.08,
+    "pct": 100,
+    "ev": 250.08,
+    "fin": "2026-10-29"
+   },
+   {
+    "id": "A-0.1.1.4",
+    "descripcion": "Diseño de la arquitectura completa del sistema: módulos, integraciones, flujo de datos y tecnologías",
+    "paquete": "1.0.4",
+    "sprint": 1,
+    "pv": 577.8,
+    "pct": 100,
+    "ev": 577.8,
+    "fin": "2026-11-06"
+   },
+   {
+    "id": "A-1.1.1.1",
+    "descripcion": "Elaborar cronograma de hitos del proyecto (Gantt SCRUM)",
+    "paquete": "1.1.1",
+    "sprint": 2,
+    "pv": 204.6,
+    "pct": 100,
+    "ev": 204.6,
+    "fin": "2026-11-11"
+   },
+   {
+    "id": "A-1.1.1.2",
+    "descripcion": "Definir Product Backlog y priorizar historias de usuario",
+    "paquete": "1.1.1",
+    "sprint": 2,
+    "pv": 710.4,
+    "pct": 100,
+    "ev": 710.4,
+    "fin": "2026-11-13"
+   },
+   {
+    "id": "A-1.1.1.3",
+    "descripcion": "Asignar roles SCRUM: Product Owner, Scrum Master, Dev Team",
+    "paquete": "1.1.1",
+    "sprint": 2,
+    "pv": 236.8,
+    "pct": 100,
+    "ev": 236.8,
+    "fin": "2026-11-12"
+   },
+   {
+    "id": "A-1.2.1.1",
+    "descripcion": "Establecer plantilla de informe de avance semanal",
+    "paquete": "1.1.2",
+    "sprint": 2,
+    "pv": 68.2,
+    "pct": 100,
+    "ev": 68.2,
+    "fin": "2026-11-13"
+   },
+   {
+    "id": "A-1.2.1.2",
+    "descripcion": "Daily Standup 15 min diarios — continuo todo el proyecto",
+    "paquete": "1.1.2",
+    "sprint": 2,
+    "pv": 148,
+    "pct": 9,
+    "ev": 148,
+    "fin": "2027-04-23"
+   },
+   {
+    "id": "A-2.1.1.1",
+    "descripcion": "Levantar y mapear fuentes de datos académicos (asistencia, notas, participación, incidencias)",
+    "paquete": "1.2.1",
+    "sprint": 2,
+    "pv": 212.16,
+    "pct": 100,
+    "ev": 212.16,
+    "fin": "2026-11-19"
+   },
+   {
+    "id": "A-2.1.1.2",
+    "descripcion": "Diseñar modelo entidad-relación de la BD centralizada (PostgreSQL)",
+    "paquete": "1.2.1",
+    "sprint": 2,
+    "pv": 159.12,
+    "pct": 100,
+    "ev": 159.12,
+    "fin": "2026-11-20"
+   },
+   {
+    "id": "A-2.1.1.3",
+    "descripcion": "Codificar scripts ETL de extracción, transformación y carga",
+    "paquete": "1.2.1",
+    "sprint": 2,
+    "pv": 0,
+    "pct": 100,
+    "ev": 530.4,
+    "fin": "2026-11-27"
+   },
+   {
+    "id": "A-2.1.1.4",
+    "descripcion": "Ejecutar prueba de migración de datos y validar integridad",
+    "paquete": "1.2.1",
+    "sprint": 2,
+    "pv": 0,
+    "pct": 100,
+    "ev": 159.12,
+    "fin": "2026-11-27"
+   },
+   {
+    "id": "A-2.2.1.1",
+    "descripcion": "Configurar tareas programadas nocturnas de limpieza y validación de datos",
+    "paquete": "1.2.2",
+    "sprint": 2,
+    "pv": 0,
+    "pct": 100,
+    "ev": 212.16,
+    "fin": "2026-12-03"
+   },
+   {
+    "id": "A-2.2.1.2",
+    "descripcion": "Verificar consistencia de datos y corrección de registros erróneos",
+    "paquete": "1.2.2",
+    "sprint": 2,
+    "pv": 0,
+    "pct": 100,
+    "ev": 318.24,
+    "fin": "2026-12-04"
+   },
+   {
+    "id": "A-3.2.1.1",
+    "descripcion": "Evaluar métricas del modelo (accuracy, precision, recall, F1-score)",
+    "paquete": "1.3.3",
+    "sprint": 3,
+    "pv": 0,
+    "pct": 50,
+    "ev": 93.78,
+    "fin": "2026-12-23"
+   }
+  ],
+  "parciales": {
+   "A-3.2.1.1": {
+    "pct": 50,
+    "evidencia": "Métricas del modelo en el colegio con el criterio de la SC-14 (AUC 0,71, detecta 39 %); falta compararlas con una regla simple."
+   }
+  }
+ }
+};
+
 export const GANTT_SEMANAS = [
  {
   "prefijo": "A-0.1.1",
@@ -6394,24 +7244,24 @@ export const ENTREGABLES_ESTADO = [
   "descripcion": "Procesos que reúnen y limpian los datos académicos en una base de datos en la nube.",
   "estado": "En validación",
   "nota": "Presentado al docente asesor el 17/10/2026 con el informe ALC-05 N.º 2. Siete de los ocho casos de prueba están aprobados. La reconciliación en tres fechas (CP-03) lleva la primera: 237 notas de Cubicol cargadas el 07/11/2026. Se acepta en la revisión del Sprint 2 (04/12/2026), con el Product Owner.",
-  "avance": 90,
+  "avance": 100,
   "revision": "04/12/2026",
   "paquetes": [
    {
     "id": "1.2.1",
     "nombre": "Integración de datos (ETL)",
-    "estado": "Cumplido en parte",
-    "pct": 90,
-    "existe": "Base consolidada de notas cargada y reconciliada. Lector de las exportaciones de Cubicol: carga 1 del 07/11/2026 con 45 archivos y 237 notas de Matemática y Cultura General de 3.° a 6.° de primaria, reconciliación correcta.",
-    "falta": "Dos cargas más en otras fechas (CP-03) y enlazar a 4 estudiantes de Cubicol que quedaron pendientes."
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Base armada solo con las exportaciones de Cubicol (SC-13): 684 notas de 48 estudiantes, de marzo a agosto de 2026. Tres reconciliaciones correctas (CP-03 aprobado). Modelo entidad-relación y mapa de las fuentes de datos.",
+    "falta": "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026)."
    },
    {
     "id": "1.2.2",
     "nombre": "Calidad de datos",
-    "estado": "Cumplido en parte",
-    "pct": 90,
-    "existe": "Diez reglas de calidad y validación automática cada noche, 28 noches seguidas sin fallas al 07/11/2026. Al cargar Cubicol se detectaron estudiantes registrados dos veces: con su nombre completo y solo con su nombre de pila.",
-    "falta": "Unificar a los estudiantes registrados dos veces y cotejar las notas transcritas de fotografías."
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Validación con 0 fallas críticas. Los estudiantes registrados dos veces y las notas de fotografías desaparecen al rearmar la base (SC-13).",
+    "falta": "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026)."
    }
   ],
   "requisitos": [
@@ -6463,7 +7313,7 @@ export const ENTREGABLES_ESTADO = [
   "descripcion": "Modelo entrenado en Python con Scikit-learn que clasifica a cada estudiante en riesgo bajo, medio o alto y se actualiza cada semana.",
   "estado": "En desarrollo",
   "nota": "La red neuronal está entrenada y clasifica en tres niveles; falta la ejecución semanal automática y cerrar la métrica acordada (SC-08).",
-  "avance": 73,
+  "avance": 75,
   "revision": "30/12/2026",
   "paquetes": [
    {
@@ -6486,9 +7336,9 @@ export const ENTREGABLES_ESTADO = [
     "id": "1.3.3",
     "nombre": "Validación del modelo",
     "estado": "Cumplido en parte",
-    "pct": 70,
-    "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio. La forma de validarlo (SC-08) se aprobó el 06/11/2026.",
-    "falta": "Aplicar la validación aprobada en SC-08 con los datos del colegio."
+    "pct": 75,
+    "existe": "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
+    "falta": "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3)."
    }
   ],
   "requisitos": [
@@ -6825,7 +7675,7 @@ export const ENTREGABLES_ESTADO = [
  }
 ];
 
-export const CORTE_ALCANCE = "07/11/2026";
+export const CORTE_ALCANCE = "20/11/2026";
 
 export const ENTREGABLES_CRONOGRAMA = [
  {
@@ -6922,9 +7772,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-09",
   "fin": "2026-11-11",
   "critica": false,
-  "estado": "Programada",
+  "estado": "Realizada",
   "avancePaquete": null,
-  "evidencias": []
+  "evidencias": [
+   {
+    "texto": "Cronograma v3.1 con hitos y entregables",
+    "url": "https://drive.google.com/file/d/1qtjLB_ofYWwJJDKiBJqYF5eWmoyd_PQM/view"
+   }
+  ]
  },
  {
   "id": "A-1.1.1.2",
@@ -6937,9 +7792,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-11",
   "fin": "2026-11-13",
   "critica": false,
-  "estado": "Programada",
+  "estado": "Realizada",
   "avancePaquete": null,
-  "evidencias": []
+  "evidencias": [
+   {
+    "texto": "Product Backlog aprobado por el Product Owner",
+    "url": null
+   }
+  ]
  },
  {
   "id": "A-1.1.1.3",
@@ -6952,9 +7812,18 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-12",
   "fin": "2026-11-12",
   "critica": false,
-  "estado": "Programada",
+  "estado": "Realizada",
   "avancePaquete": null,
-  "evidencias": []
+  "evidencias": [
+   {
+    "texto": "Product Owner designado en la reunión de inicio",
+    "url": "https://drive.google.com/file/d/1-fKkCdb72Xk3e0t6xDx93MtEv6CdJnQU/view"
+   },
+   {
+    "texto": "Fichas de rol y matriz RACI",
+    "url": "https://drive.google.com/file/d/19E0S0OGbMsS8z1Px02zFm5aKHWJKzT6x/view"
+   }
+  ]
  },
  {
   "id": "A-1.2.1.1",
@@ -6967,9 +7836,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-13",
   "fin": "2026-11-13",
   "critica": false,
-  "estado": "Programada",
+  "estado": "Realizada",
   "avancePaquete": null,
-  "evidencias": []
+  "evidencias": [
+   {
+    "texto": "Plantilla del informe de avance semanal",
+    "url": null
+   }
+  ]
  },
  {
   "id": "A-2.1.1.1",
@@ -6982,9 +7856,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-16",
   "fin": "2026-11-19",
   "critica": true,
-  "estado": "Programada",
-  "avancePaquete": 90,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Mapa de las fuentes de datos",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/datos-y-variables.md"
+   }
+  ]
  },
  {
   "id": "A-2.1.1.2",
@@ -6997,9 +7876,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-18",
   "fin": "2026-11-20",
   "critica": true,
-  "estado": "Programada",
-  "avancePaquete": 90,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Modelo entidad-relación",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/modelo-entidad-relacion.md"
+   }
+  ]
  },
  {
   "id": "A-2.1.1.3",
@@ -7012,9 +7896,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-23",
   "fin": "2026-11-27",
   "critica": true,
-  "estado": "Programada",
-  "avancePaquete": 90,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Lector y carga de las exportaciones de Cubicol; base rearmada (SC-13)",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/pruebas-sprint-2.md"
+   }
+  ]
  },
  {
   "id": "A-2.1.1.4",
@@ -7027,9 +7916,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-25",
   "fin": "2026-11-27",
   "critica": true,
-  "estado": "Programada",
-  "avancePaquete": 90,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Tres reconciliaciones correctas (CP-03): 684 notas",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/pruebas-sprint-2.md"
+   }
+  ]
  },
  {
   "id": "A-2.2.1.1",
@@ -7042,9 +7936,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-30",
   "fin": "2026-12-03",
   "critica": true,
-  "estado": "Programada",
-  "avancePaquete": 90,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Validación nocturna: 15 noches seguidas sin fallas (CP-05)",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/pruebas-sprint-2.md"
+   }
+  ]
  },
  {
   "id": "A-2.2.1.2",
@@ -7057,9 +7956,14 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-12-02",
   "fin": "2026-12-04",
   "critica": false,
-  "estado": "Programada",
-  "avancePaquete": 90,
-  "evidencias": []
+  "estado": "Realizada",
+  "avancePaquete": 100,
+  "evidencias": [
+   {
+    "texto": "Validación con 0 fallas críticas tras la carga 3",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/pruebas-sprint-2.md"
+   }
+  ]
  },
  {
   "id": "A-3.1.1.1",
@@ -7133,7 +8037,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-12-23",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 70,
+  "avancePaquete": 75,
   "evidencias": []
  },
  {
@@ -7148,7 +8052,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "fin": "2026-12-29",
   "critica": true,
   "estado": "Programada",
-  "avancePaquete": 70,
+  "avancePaquete": 75,
   "evidencias": []
  },
  {
@@ -7522,7 +8426,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "inicio": "2026-11-09",
   "fin": "2027-04-23",
   "critica": false,
-  "estado": "Programada",
+  "estado": "En curso",
   "avancePaquete": null,
   "evidencias": []
  }
@@ -8804,6 +9708,587 @@ export const SEGUIMIENTO_ALCANCE = [
     "pct": 70,
     "existe": "Prueba con 209 registros no vistos: exactitud 83,7 %, AUC 0,95. Aplicada a 558 casos del colegio. La forma de validarlo (SC-08) se aprobó el 06/11/2026.",
     "falta": "Aplicar la validación aprobada en SC-08 con los datos del colegio.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": true
+   },
+   {
+    "id": "1.4.1",
+    "nombre": "Motor de alertas",
+    "componente": "1.4",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Lista de estudiantes en riesgo alto y comunicado al apoderado que el sistema redacta y el tutor envía por WhatsApp (REQ-12).",
+    "falta": "Correo al tutor, historial de alertas y registro de seguimiento.",
+    "entregable": "E-03",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.1",
+    "nombre": "Diseño de la interfaz",
+    "componente": "1.4",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Interfaz en línea revisada con los docentes tutores en el taller del 28/10/2026, que dieron su conformidad.",
+    "falta": "Mantenerla al día con los ajustes de los sprints siguientes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.2",
+    "nombre": "Desarrollo del tablero",
+    "componente": "1.4",
+    "estado": "Cumplido en parte",
+    "pct": 75,
+    "existe": "Indicadores por nivel y por aula, ficha del estudiante, reporte en PDF y exportación por aula.",
+    "falta": "Filtros por fecha, comparación con el periodo anterior y prueba en Firefox y Edge.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.2.3",
+    "nombre": "Pruebas con usuarios",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Pruebas con al menos tres docentes.",
+    "entregable": "E-04",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.4.3",
+    "nombre": "Roles y accesos",
+    "componente": "1.4",
+    "estado": "No iniciado",
+    "pct": 5,
+    "existe": "La tabla de usuarios con los cuatro roles está en la base de datos.",
+    "falta": "Inicio de sesión y vistas por rol.",
+    "entregable": "E-05",
+    "revision": "2027-01-29",
+    "cambio": false
+   },
+   {
+    "id": "1.5.1",
+    "nombre": "Despliegue del sistema",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Sistema en línea (página en Vercel y API en Render) con datos de práctica.",
+    "falta": "Base gestionada y entorno de producción con datos reales.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.5.2",
+    "nombre": "Manual de usuario",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Manual de usuario.",
+    "entregable": "E-06",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.3",
+    "nombre": "Manual técnico",
+    "componente": "1.5",
+    "estado": "Prototipo",
+    "pct": 40,
+    "existe": "Documentos de arquitectura, datos y variables, modelo y pruebas en el repositorio del sistema.",
+    "falta": "Completarlo y validarlo con el encargado de TI.",
+    "entregable": "E-07",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.4",
+    "nombre": "Plan de capacitación",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Plan de capacitación.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.5.5",
+    "nombre": "Capacitación y cierre",
+    "componente": "1.5",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Capacitación y cierre.",
+    "entregable": "E-08",
+    "revision": "2027-04-23",
+    "cambio": false
+   },
+   {
+    "id": "1.6.1",
+    "nombre": "Pruebas de integración y rendimiento",
+    "componente": "1.6",
+    "estado": "Prototipo",
+    "pct": 20,
+    "existe": "Pruebas del entregable E-01 y de los flujos de la página.",
+    "falta": "Reporte formal de integración y prueba de rendimiento.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.6.2",
+    "nombre": "Piloto y retroalimentación",
+    "componente": "1.6",
+    "estado": "No iniciado",
+    "pct": 0,
+    "existe": "—",
+    "falta": "Piloto con tres docentes tutores.",
+    "entregable": "E-09",
+    "revision": "2027-03-24",
+    "cambio": false
+   }
+  ],
+  "requisitos": [
+   {
+    "id": "REQ-01",
+    "titulo": "Centralización de los datos académicos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.1",
+    "casos": "CP-01 a CP-04",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-02",
+    "titulo": "Limpieza y validación automática de los datos",
+    "prioridad": "Alta",
+    "entregable": "E-01",
+    "paquete": "1.2.2",
+    "casos": "CP-05 a CP-08",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-03",
+    "titulo": "Modelo de clasificación del riesgo académico",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.1 y 1.3.3",
+    "casos": "CP-09 a CP-12",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-04",
+    "titulo": "Actualización semanal automática del modelo",
+    "prioridad": "Alta",
+    "entregable": "E-02",
+    "paquete": "1.3.2",
+    "casos": "CP-13 a CP-16",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-05",
+    "titulo": "Alertas automáticas por correo al docente tutor",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-17 a CP-20",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-06",
+    "titulo": "Panel web de alertas para el docente",
+    "prioridad": "Alta",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-21 a CP-24",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-07",
+    "titulo": "Registro del seguimiento de cada caso",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-25 a CP-28",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-08",
+    "titulo": "Tablero de indicadores de riesgo",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-29 a CP-32",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-09",
+    "titulo": "Reportes exportables en PDF y Excel",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-33 a CP-36",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-10",
+    "titulo": "Ficha individual del estudiante",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-37 a CP-40",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-11",
+    "titulo": "Roles y accesos diferenciados",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-41 a CP-44",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "REQ-12",
+    "titulo": "Comunicado al apoderado del estudiante en riesgo alto",
+    "prioridad": "Media",
+    "entregable": "E-03",
+    "paquete": "1.4.1",
+    "casos": "CP-45 a CP-48",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-01",
+    "titulo": "Facilidad de uso",
+    "prioridad": "Alta",
+    "entregable": "E-04 y E-08",
+    "paquete": "1.4.2.3 y 1.5.4",
+    "casos": "CP-49 a CP-52",
+    "estado": "Pendiente"
+   },
+   {
+    "id": "RNF-02",
+    "titulo": "Rendimiento del tablero",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-53 a CP-56",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-03",
+    "titulo": "Autenticación y control de acceso",
+    "prioridad": "Alta",
+    "entregable": "E-05",
+    "paquete": "1.4.3",
+    "casos": "CP-57 a CP-60",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-04",
+    "titulo": "Cumplimiento de la Ley N.° 29733",
+    "prioridad": "Alta",
+    "entregable": "E-05 y E-07",
+    "paquete": "1.5.1 y 1.5.3",
+    "casos": "CP-61 a CP-64",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-05",
+    "titulo": "Disponibilidad en horario escolar",
+    "prioridad": "Alta",
+    "entregable": "E-04",
+    "paquete": "1.5.1",
+    "casos": "CP-65 a CP-68",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-06",
+    "titulo": "Compatibilidad con navegadores",
+    "prioridad": "Media",
+    "entregable": "E-04",
+    "paquete": "1.4.2.2",
+    "casos": "CP-69 a CP-72",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-07",
+    "titulo": "Capacidad y escalabilidad",
+    "prioridad": "Media",
+    "entregable": "E-01 y E-04",
+    "paquete": "1.6.1",
+    "casos": "CP-73 a CP-76",
+    "estado": "En desarrollo"
+   },
+   {
+    "id": "RNF-08",
+    "titulo": "Documentación y transferencia",
+    "prioridad": "Media",
+    "entregable": "E-07",
+    "paquete": "1.5.3",
+    "casos": "CP-77 a CP-80",
+    "estado": "En desarrollo"
+   }
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "fuente": "Corte para la EC3 (informe de control FIN-03)",
+  "cambios": {
+   "1.2.1": [
+    "Cumplido",
+    100,
+    "Base armada solo con las exportaciones de Cubicol (SC-13): 684 notas de 48 estudiantes, de marzo a agosto de 2026. Tres reconciliaciones correctas (CP-03 aprobado). Modelo entidad-relación y mapa de las fuentes de datos.",
+    "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026)."
+   ],
+   "1.2.2": [
+    "Cumplido",
+    100,
+    "Validación con 0 fallas críticas. Los estudiantes registrados dos veces y las notas de fotografías desaparecen al rearmar la base (SC-13).",
+    "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026)."
+   ],
+   "1.3.3": [
+    "Cumplido en parte",
+    75,
+    "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
+    "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3)."
+   ]
+  },
+  "casos": [
+   {
+    "id": "CP-01",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-02",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-03",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-04",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-05",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-06",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-07",
+    "estado": "Aprobado"
+   },
+   {
+    "id": "CP-08",
+    "estado": "Aprobado"
+   }
+  ],
+  "requisitosCambiados": [
+   "REQ-03"
+  ],
+  "hechos": [
+   "09/11: el Product Owner aprueba la SC-12 (nivelación de la carga del Sprint 2).",
+   "13/11: la base de datos se rearma solo con Cubicol (SC-13): 402 notas de 48 estudiantes; CP-01 y CP-02 repetidos.",
+   "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
+   "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
+   "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03)."
+  ],
+  "sprint": [
+   {
+    "que": "E-01 · Módulo de integración y limpieza de datos",
+    "estado": "Cumplido",
+    "evidencia": "684 notas reconciliadas, validación sin fallas críticas; se presenta para aceptación el 04/12/2026.",
+    "url": "https://github.com/Jhostin2210/Proyecto-SIAT/blob/main/docs/pruebas-sprint-2.md"
+   }
+  ],
+  "alertas": [
+   {
+    "nivel": "Atención",
+    "texto": "Registrar las horas reales de cada integrante cada semana (plantilla GOB-13) para medir el costo real.",
+    "responsable": "Jhostin Galarza",
+    "fecha": "Desde el 16/11/2026"
+   },
+   {
+    "nivel": "Atención",
+    "texto": "Ajustar los cortes de nivel del modelo con los datos del colegio: hoy detecta el 39 % de los casos con dificultad.",
+    "responsable": "Helber Perez",
+    "fecha": "Sprint 3"
+   },
+   {
+    "nivel": "Seguimiento",
+    "texto": "SC-09 (canal de las alertas por correo) sigue en evaluación.",
+    "responsable": "Carlos Curo",
+    "fecha": "Sprint 3"
+   },
+   {
+    "nivel": "Seguimiento",
+    "texto": "Pedir las exportaciones de los grados que faltan (1.° y 2.° de primaria, 4.° y 5.° de secundaria) antes del piloto.",
+    "responsable": "Helber Perez",
+    "fecha": "Sprint 4"
+   }
+  ],
+  "fueraDeAlcance": [
+   {
+    "texto": "Pantalla «Evaluar un caso»: evalúa a un estudiante con datos ingresados a mano. No figura en la matriz de requisitos.",
+    "estado": "Por revisar",
+    "accion": "Registrarla como solicitud de cambio o dejarla solo como demostración del modelo."
+   }
+  ],
+  "paquetes": [
+   {
+    "id": "1.0.1",
+    "nombre": "Levantamiento del alcance",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Reunión de inicio del 12/10/2026 con la Dirección, con su acta (GOB-12).",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": false
+   },
+   {
+    "id": "1.0.2",
+    "nombre": "Diagnóstico de los datos",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Fuentes de datos del colegio identificadas, con su calidad y disponibilidad descritas.",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": false
+   },
+   {
+    "id": "1.0.3",
+    "nombre": "Variables del modelo",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Variables del modelo aprobadas por los docentes tutores en el taller del 28/10/2026.",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": false
+   },
+   {
+    "id": "1.0.4",
+    "nombre": "Arquitectura del sistema",
+    "componente": "1.0",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Documento de arquitectura aprobado en la revisión del Sprint 1 (06/11/2026).",
+    "falta": "—",
+    "entregable": null,
+    "revision": "2026-11-06",
+    "cambio": false
+   },
+   {
+    "id": "1.1.1",
+    "nombre": "Cronograma de hitos",
+    "componente": "1.1",
+    "estado": "Cumplido",
+    "pct": null,
+    "existe": "Línea base del cronograma v3 (CRO-01), con la conformidad de la patrocinadora (12/10/2026).",
+    "falta": "Mantenerla actualizada ante cada cambio.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.2",
+    "nombre": "Informes de avance",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Informe de desempeño N.º 1 (GOB-09).",
+    "falta": "Un informe al cierre de cada sprint.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.1.3",
+    "nombre": "Actas y control de cambios",
+    "componente": "1.1",
+    "estado": "En curso",
+    "pct": null,
+    "existe": "Registro de cambios con 11 solicitudes (GOB-10) y acta de la reunión de inicio (GOB-12).",
+    "falta": "Actas y cambios hasta el cierre.",
+    "entregable": null,
+    "revision": null,
+    "cambio": false
+   },
+   {
+    "id": "1.2.1",
+    "nombre": "Integración de datos (ETL)",
+    "componente": "1.2",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Base armada solo con las exportaciones de Cubicol (SC-13): 684 notas de 48 estudiantes, de marzo a agosto de 2026. Tres reconciliaciones correctas (CP-03 aprobado). Modelo entidad-relación y mapa de las fuentes de datos.",
+    "falta": "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026).",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": true
+   },
+   {
+    "id": "1.2.2",
+    "nombre": "Calidad de datos",
+    "componente": "1.2",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Validación con 0 fallas críticas. Los estudiantes registrados dos veces y las notas de fotografías desaparecen al rearmar la base (SC-13).",
+    "falta": "Aceptación del Product Owner en la revisión del Sprint 2 (04/12/2026).",
+    "entregable": "E-01",
+    "revision": "2026-12-04",
+    "cambio": true
+   },
+   {
+    "id": "1.3.1",
+    "nombre": "Entrenamiento del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido",
+    "pct": 100,
+    "existe": "Red neuronal 35-32-16-8-1 entrenada con una base pública (Student Performance, UCI); clasifica en tres niveles.",
+    "falta": "Volver a entrenarla cuando el colegio acumule datos propios.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.2",
+    "nombre": "Clasificación de riesgo",
+    "componente": "1.3",
+    "estado": "Prototipo",
+    "pct": 50,
+    "existe": "Clasifica a todos los estudiantes al cargar datos y con el botón «Evaluar aula».",
+    "falta": "Ejecución semanal automática.",
+    "entregable": "E-02",
+    "revision": "2026-12-30",
+    "cambio": false
+   },
+   {
+    "id": "1.3.3",
+    "nombre": "Validación del modelo",
+    "componente": "1.3",
+    "estado": "Cumplido en parte",
+    "pct": 75,
+    "existe": "Validación por competencias aprobada (SC-14): 118 de 550 casos con alguna competencia desaprobada; AUC 0,71; alertando los niveles medio y alto detecta el 39 %.",
+    "falta": "Comparar con una regla simple y ajustar los cortes de nivel con los datos del colegio (Sprint 3).",
     "entregable": "E-02",
     "revision": "2026-12-30",
     "cambio": true
