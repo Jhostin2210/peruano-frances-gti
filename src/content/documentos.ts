@@ -2112,7 +2112,7 @@ export const DOCUMENTOS: DocDef[] = [
         "Dirección, con apoyo del equipo",
         "Antes del Sprint 5",
         {
-         "x": "Comprobado: reunión informativa del 13/11/2026 con la directora y el Product Owner; conformidad verbal de los apoderados de todos los salones. Constancia escrita por firmar",
+         "x": "Comprobado: reunión presencial del 13/11/2026 con la directora y el Product Owner, con unos 50 apoderados de todos los salones; conformidad verbal, también de los que no asistieron. Constancia escrita por firmar",
          "fill": "verde"
         }
        ],
@@ -9869,14 +9869,14 @@ export const DOCUMENTOS: DocDef[] = [
          "I-11 Padres de familia y apoderados",
          "I-05 Docentes tutores y auxiliares"
         ],
-        "Reunión con los padres y apoderados",
+        "Reunión presencial en el colegio",
         {
          "x": "Realizada",
          "fill": "verde",
          "bold": true,
          "align": "center"
         },
-        "Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Los apoderados de todos los salones dieron su conformidad de forma verbal. Constancia escrita para la firma de la directora"
+        "Asistieron unos 50 padres y apoderados de todos los salones. Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Dieron su conformidad de forma verbal, y los que no pudieron asistir también manifestaron que estaban de acuerdo. Constancia escrita para la firma de la directora"
        ]
       ],
       "titulo": "Comunicaciones realizadas al 15/11/2026",

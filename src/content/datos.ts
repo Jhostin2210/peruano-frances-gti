@@ -10103,7 +10103,7 @@ export const SEGUIMIENTO_ALCANCE = [
   "hechos": [
    "09/11: el Product Owner aprueba la SC-12 (nivelación de la carga del Sprint 2).",
    "13/11: la base de datos se rearma solo con Cubicol (SC-13): 402 notas de 48 estudiantes; CP-01 y CP-02 repetidos.",
-   "13/11: reunión informativa de la directora y el Product Owner con los apoderados de todos los salones: conformidad verbal con el uso de los datos (supuesto S-06).",
+   "13/11: reunión presencial de la directora y el Product Owner con unos 50 apoderados de todos los salones: conformidad verbal con el uso de los datos, también de los que no asistieron (supuesto S-06).",
    "15/11: carga 3 de Cubicol (junio a agosto): 282 notas más, CP-03 aprobado con tres reconciliaciones correctas.",
    "15/11: el Product Owner aprueba validar el modelo por competencias (SC-14) y el orden del Product Backlog (ALC-07).",
    "15/11: actividades de datos del Sprint 2 terminadas antes de su fecha; SPI 1,34 al corte (FIN-03)."
@@ -11534,10 +11534,10 @@ export const COMUNICACIONES = [
    "I-11",
    "I-05"
   ],
-  "canal": "Reunión con los padres y apoderados",
+  "canal": "Reunión presencial en el colegio",
   "sprint": 2,
   "estado": "Realizada",
-  "constancia": "Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Los apoderados de todos los salones dieron su conformidad de forma verbal. Constancia escrita para la firma de la directora",
+  "constancia": "Asistieron unos 50 padres y apoderados de todos los salones. Se les dio toda la información prevista para el aviso por WhatsApp (PC-07): el alcance del proyecto y el uso de las notas de los estudiantes. Dieron su conformidad de forma verbal, y los que no pudieron asistir también manifestaron que estaban de acuerdo. Constancia escrita para la firma de la directora",
   "plan": "PC-07",
   "antes": {
    "fecha": "2026-11-20",
