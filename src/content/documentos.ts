@@ -5741,7 +5741,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "15/11/2026",
   "resumen": "Formato de una página para informar cada semana el avance, las horas trabajadas, los indicadores de cronograma y costo, los problemas y el plan de la semana siguiente.",
   "carpeta": "01 - Gobernanza/1.7 Desempeño",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1A8RW-qjT9HqIwQubYb9CCL1UE4ITITHf/view",
   "secciones": [
    {
     "titulo": "Instrucciones",
@@ -14190,7 +14190,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "15/11/2026",
   "resumen": "Lista ordenada de lo que el sistema debe hacer, escrita como historias de usuario con sus criterios de aceptación, puntos de esfuerzo, sprint y estado. Es la forma ágil de los requisitos de la línea base del alcance.",
   "carpeta": "03 - Alcance/3.2 Definir el alcance",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1ucPU2Z2iEps7Hzf-dUcbdY-QVa0RJFBs/view",
   "secciones": [
    {
     "titulo": "1. Propósito",
@@ -24231,7 +24231,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "15/11/2026",
   "resumen": "Define cómo se estiman, presupuestan y controlan los costos del proyecto: unidades, tarifas, reservas, método de valor ganado, umbrales e informes.",
   "carpeta": "06 - Finanzas",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1Cok4GjKExW4sFblivZdw2mpjqhn1ZnHm/view",
   "secciones": [
    {
     "titulo": "1. Propósito y entradas",
@@ -24538,7 +24538,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "15/11/2026",
   "resumen": "Estima el costo de cada actividad desde las horas del cronograma y las tarifas, lo agrega por integrante, paquete de la EDT y sprint, y fija la línea base de costos con su curva S.",
   "carpeta": "06 - Finanzas",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1DnYLZ8p7XgsU_U-UGvT7-VZOa2DJYlb2/view",
   "secciones": [
    {
     "titulo": "1. Base de la estimación",
@@ -25430,7 +25430,7 @@ export const DOCUMENTOS: DocDef[] = [
   "fecha": "20/11/2026",
   "resumen": "Mide el avance del cronograma y de los costos al 20/11/2026 con valor ganado: valor planificado, valor ganado, costo real, índices, pronósticos y avance por paquete de la EDT.",
   "carpeta": "06 - Finanzas",
-  "drive": null,
+  "drive": "https://drive.google.com/file/d/1V_zL0znRibdG_YDTgCXzc4QxBnBuu_K3/view",
   "secciones": [
    {
     "titulo": "1. Resumen",

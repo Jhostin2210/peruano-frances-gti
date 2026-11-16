@@ -7831,7 +7831,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "evidencias": [
    {
     "texto": "Product Backlog aprobado por el Product Owner",
-    "url": null
+    "url": "https://drive.google.com/file/d/1ucPU2Z2iEps7Hzf-dUcbdY-QVa0RJFBs/view"
    }
   ]
  },
@@ -7875,7 +7875,7 @@ export const ENTREGABLES_CRONOGRAMA = [
   "evidencias": [
    {
     "texto": "Plantilla del informe de avance semanal",
-    "url": null
+    "url": "https://drive.google.com/file/d/1A8RW-qjT9HqIwQubYb9CCL1UE4ITITHf/view"
    }
   ]
  },

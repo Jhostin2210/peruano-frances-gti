@@ -31,6 +31,7 @@ const ARCHIVOS = {
   "ALC-04": "1LSWrbXPY2o7ChgUFdcmdPe__dA1xf6Ai",
   "ALC-05": "1PNypm_v1OYE8V_anF6oO47e8_lONrxKQ",
   "ALC-06": "1T3PgIWVC0eormz5T792ulzb-uxGjeNuQ", // subido el 07/11/2026
+  "ALC-07": "1ucPU2Z2iEps7Hzf-dUcbdY-QVa0RJFBs", // subido el 15/11/2026
   "CRO-01": "1qtjLB_ofYWwJJDKiBJqYF5eWmoyd_PQM",
   "REC-01": "1r71Hlpg_NXEQUV4vVLHpBPlkZ6U-c_Ze", // subido el 07/11/2026
   "REC-02": "19E0S0OGbMsS8z1Px02zFm5aKHWJKzT6x", // subido el 13/11/2026
@@ -38,6 +39,10 @@ const ARCHIVOS = {
   "REC-04": "1vT5EXXgt6fDnmI1McbcHh-Gxz2D6esXv", // subido el 13/11/2026
   "REC-05": "1xao6VfAkjjAMrzwewjkjGDgj0ImV2fkE", // subido el 13/11/2026
   "REC-06": "1ZsETJ3M4ccPSJER-Ud781gi_mv-_EJyL", // subido el 13/11/2026
+  "FIN-01": "1Cok4GjKExW4sFblivZdw2mpjqhn1ZnHm", // subido el 15/11/2026
+  "FIN-02": "1DnYLZ8p7XgsU_U-UGvT7-VZOa2DJYlb2", // subido el 15/11/2026
+  "FIN-03": "1V_zL0znRibdG_YDTgCXzc4QxBnBuu_K3", // subido el 15/11/2026
+  "GOB-13": "1A8RW-qjT9HqIwQubYb9CCL1UE4ITITHf", // subido el 15/11/2026
 };
 
 export const enlaceDrive = (codigo) => (ARCHIVOS[codigo] ? `https://drive.google.com/file/d/${ARCHIVOS[codigo]}/view` : null);
